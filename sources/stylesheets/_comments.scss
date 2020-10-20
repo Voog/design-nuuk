@@ -1,0 +1,12 @@
+/* COMMENTS */
+// Styling rules for the article comments area.
+// Comment form inputs are styled using the form fields styles located in the "_forms.scss" partial.
+.comments {
+  margin-top: 50px;
+
+  .comment-title,
+  .comment,
+  .comment-form {
+    margin-top: 25px;
+  }
+}

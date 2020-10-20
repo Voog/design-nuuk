@@ -1,0 +1,6 @@
+{
+  "name": "voog-design-boilerplate",
+  "devDependencies": {
+    "bourbon": "^4.3.4" 
+  }
+}

@@ -1,0 +1,282 @@
+// Styling rules for the site's editable content area and its elements.
+// NB! Each editable content-area - {% content %} - should be wrapped in the element that has the "content-formatted" class.
+// NB! Contact forms and image galleries are located in the separate partials: "_forms.scss" and "_gallery.scss".
+.content-formatted {
+  &:empty {
+    display: none;
+  }
+
+  @extend %clearfix;
+  @include hyphenate(true);
+
+  .dark-background & {
+    @include color($white, 1);
+  }
+
+  // Resets the bottom margin for all elements and top margin for all first elements in the editable content-area (to prevent unwanted white-space at the beginning of a content-area).
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl,
+  table,
+  pre,
+  code,
+  iframe,
+  table,
+  form,
+  .table-container,
+  .edy-positionable-container-left-block,
+  .edy-positionable-container-center-block,
+  .edy-positionable-container-right-block,
+  .edy-texteditor-container-wrapper-left-block,
+  .edy-texteditor-container-wrapper-center,
+  .edy-texteditor-container-wrapper-right-block,
+  .edy-positionable-container-maxwidth {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Styling rules for the editable content area headings.
+  h1, h2, h3, h4, h5, h6 {
+    @include color($secondary-color, 1);
+    @include hyphenate(true);
+
+    .dark-background & {
+      @include color($white, 1);
+    }
+  }
+
+  h1 {
+    margin-top: 40px;
+    font-size: 50px;
+  }
+
+  h2 {
+    margin-top: 15px;
+    font-size: 30px;
+  }
+
+  h3, h4, h5, h6 {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+    @include query($mobile-1) {
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 25px;
+      }
+    }
+
+  // Styling rules for the editable content area paragraphs, lists and links.
+  p {
+    margin-top: 20px;
+  }
+
+  ul {
+    li {
+    }
+  }
+
+  ol {
+    li {
+    }
+  }
+
+  a:not(.custom-btn) {
+    @include color($blue-1, 1);
+
+    .dark-background & {
+      @include color($white, 1);
+    }
+
+    &:hover {
+      @include color($blue-1, .8);
+
+      .dark-background & {
+        @include color($white, .8);
+      }
+    }
+  }
+
+  // Styling rules for the editable content area images, embedded videos, preformatted texts, code examples etc.
+  iframe {
+    max-width: 100%;
+  }
+
+  iframe,
+  pre {
+    margin-top: 25px;
+  }
+
+  // Code blocks and preformatted content.
+  pre,
+  code {
+    font-size: 14px;
+    @include bg($grey-3);
+
+    .dark-background & {
+      color: rgba($black, 1);
+    }
+  }
+
+  pre {
+    overflow: auto;
+    padding: 10px;
+
+    code {
+      display: inline;
+      padding: 0;
+      white-space: pre;
+      line-height: inherit;
+      background-color: transparent;
+      @include word-wrap(normal);
+    }
+  }
+
+  code {
+    display: inline-block;
+    padding: 5px;
+    @include word-wrap(break-word);
+  }
+
+  blockquote {
+    margin: 20px 40px;
+  }
+
+  .custom-btn {
+    display: inline-block;
+    padding: 7px 9px;
+    font-size: 14px;
+    @include color($secondary-color, 1);
+    @include bg($white);
+    @include border(all, 1px, solid, $black, 0.75);
+    opacity: .75;
+
+    &:hover {
+      @include border(all,1px,solid,$black, 0.1);
+    }
+
+    .public & {
+      cursor: pointer;
+    }
+
+    .dark-background & {
+      @include bg($black);
+      @include border(all, 1px, solid, $white, 0.75);
+
+      &:hover {
+        @include color($white, 1);
+        @include border(all,1px,solid,$white, 0.1);
+        opacity: .8;
+      }
+    }
+
+    &-disabled {
+      // scss-lint:disable NestingDepth
+      .public & {
+        cursor: default;
+
+        &,
+        &:hover {
+          color: rgba($grey-2, 1);
+          background-color: rgba($disabled, 1);
+          border-color: rgba($disabled, 1);
+        }
+      }
+      // scss-lint:enable NestingDepth
+    }
+  }
+
+  .edy-positionable-container-center,
+  .edy-positionable-container-left-block,
+  .edy-positionable-container-right-block,
+  .edy-texteditor-container-wrapper-center,
+  .edy-texteditor-container-wrapper-left-block,
+  .edy-texteditor-container-wrapper-right-block {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Content area floating images
+  .edy-positionable-container-left,
+  .edy-positionable-container-right {
+    width: 45%;
+  }
+
+  .edy-positionable-container-left {
+    margin-right: 20px;
+  }
+
+  .edy-positionable-container-right {
+    margin-left: 20px;
+  }
+
+  // Content area image title
+  .edy-image-container-with-title {
+    &:after {
+      display: block;
+      padding: 4px;
+      font-size: 12px;
+      line-height: 1.3em;
+      content: attr(data-title);
+    }
+  }
+
+  // Styling rules for the site's editable content area tables.
+  // Container around editable content-area table.
+  .table-container {
+    margin-top: 20px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  // Adds dashed border to indicate that the table is too wide and can be scrolled horizontally.
+  .horizontal-scroll {
+    @include border(left, 1px, dashed, $third-color);
+    @include border(right, 1px, dashed, $third-color);
+  }
+
+  table {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+    border-collapse: collapse;
+
+    td {
+      padding: 10px;
+      @include border(top, 1px, solid, $third-color);
+      @include border(bottom, 1px, solid, $third-color);
+    }
+  }
+
+  .edy-texteditor-view {
+    min-height: 32px;
+  }
+
+  .edy-partial-view {
+    margin-top: 25px;
+  }
+}

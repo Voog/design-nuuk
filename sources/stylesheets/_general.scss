@@ -1,0 +1,130 @@
+/* GENERAL */
+// Styling rules for the basic parts of the page. These rules affect the entire site.
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: $primary-font;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+  @include color($primary-color, 1);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+
+  &.dark-background {
+    @include color($white, 1);
+  }
+}
+
+// Layout specific body classes.
+.front-page {
+}
+
+.common-page {
+}
+
+.blog-page,
+.post-page {
+}
+
+.blog-page {
+}
+
+.post-page {
+}
+
+// Pseudo classes to declare commonly used styling rules for different elements.
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+%stretch {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+%inline-block {
+  display: inline-block;
+}
+
+%button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: none;
+  }
+}
+
+// Styling rules for the independent elements that can be located everywhere in the DOM and always have the same look.
+.voog-bg-picker-btn {
+  @extend %button;
+  position: absolute;
+
+  .container & {
+    top: 68px;
+    right: 15px;
+  }
+}
+
+.background-image,
+.background-color {
+  position: fixed;
+  z-index: -2;
+
+  .container & {
+    position: static;
+    padding: 40px 20px;
+    @include bg($white, 1);
+
+    @include query($tablet-2) {
+      padding-top: 1px;
+    }
+  }
+}
+
+.background-image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.background-color {
+  @extend %stretch;
+}
+
+// Styling rules for the main container.
+.container {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+
+  @include query($tablet-2) {
+    padding: 20px
+  }
+
+  a {
+    text-decoration: none;
+
+    img {
+      border: none;
+    }
+  }
+}
