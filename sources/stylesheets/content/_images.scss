@@ -1,0 +1,29 @@
+.image_ {
+  &portrait {
+    width: 560px;
+    height: 776px;
+    max-width: 100%;
+
+    &-small {
+      width: 416px;
+      height: 495px;
+    }
+  }
+
+  &square {
+    width: 318px;
+    height: 304px;
+    max-width: 100%;
+  }
+
+  &landscape {
+    width: 672px;
+    height: 344px;
+    max-width: 100%;
+
+    &-small {
+      width: 344px;
+      height: 192px;
+    }
+  }
+}

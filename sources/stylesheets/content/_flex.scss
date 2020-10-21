@@ -1,0 +1,19 @@
+.flex_ {
+  &col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &row {
+    display: flex;
+    flex-direction: row;
+
+    &-3 {
+      flex-wrap: wrap;
+
+      &--item {
+        width: 33%;
+      }
+    }
+  }
+}

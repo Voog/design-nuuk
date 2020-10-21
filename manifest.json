@@ -8,6 +8,13 @@
     {
       "content_type": "page",
       "component": false,
+      "file": "layouts/product.tpl",
+      "layout_name": "product",
+      "title": "Product"
+    },
+    {
+      "content_type": "page",
+      "component": false,
       "file": "layouts/front_page.tpl",
       "layout_name": "page_front",
       "title": "Front page"
@@ -18,6 +25,13 @@
       "file": "layouts/common_page.tpl",
       "layout_name": "page_default",
       "title": "Common page"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/product_list.tpl",
+      "layout_name": "product_list",
+      "title": "Product list"
     },
     {
       "content_type": "blog",
@@ -36,9 +50,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/menu-lang.tpl",
-      "layout_name": "menu-lang",
-      "title": "menu-lang"
+      "file": "components/post-box.tpl",
+      "layout_name": "post-box",
+      "title": "post-box"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/settings_editor.tpl",
+      "layout_name": "settings_editor",
+      "title": "settings_editor"
     },
     {
       "content_type": "component",
@@ -99,9 +120,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/post-box.tpl",
-      "layout_name": "post-box",
-      "title": "post-box"
+      "file": "components/bg_picker_scripts.tpl",
+      "layout_name": "bg_picker_scripts",
+      "title": "bg_picker_scripts"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
@@ -113,9 +141,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/menu-lang.tpl",
+      "layout_name": "menu-lang",
+      "title": "menu-lang"
     },
     {
       "content_type": "component",
@@ -179,6 +207,13 @@
       "file": "components/template-styles.tpl",
       "layout_name": "template-styles",
       "title": "template-styles"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/image_src_variable.tpl",
+      "layout_name": "image_src_variable",
+      "title": "image_src_variable"
     },
     {
       "content_type": "component",
