@@ -178,9 +178,6 @@ body.dark-background {
   font-size: var(--button-font-size);
   font-style: var(--button-font-style);
   font-weight: var(--button-font-weight);
-  -webkit-hyphens: var(--button-hyphens);
-      -ms-hyphens: var(--button-hyphens);
-          hyphens: var(--button-hyphens);
   -webkit-text-decoration: var(--button-text-decoration);
           text-decoration: var(--button-text-decoration);
   text-transform: var(--button-text-transform);
@@ -202,9 +199,6 @@ body.dark-background {
   font-size: var(--button-font-size);
   font-style: var(--button-font-style);
   font-weight: var(--button-font-weight);
-  -webkit-hyphens: var(--button-hyphens);
-      -ms-hyphens: var(--button-hyphens);
-          hyphens: var(--button-hyphens);
   -webkit-text-decoration: var(--button-text-decoration);
           text-decoration: var(--button-text-decoration);
   text-transform: var(--button-text-transform);

@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/post-box.tpl",
-      "layout_name": "post-box",
-      "title": "post-box"
+      "file": "components/bg_picker_scripts.tpl",
+      "layout_name": "bg_picker_scripts",
+      "title": "bg_picker_scripts"
     },
     {
       "content_type": "component",
@@ -99,6 +99,20 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/product-list-filter.tpl",
+      "layout_name": "product-list-filter",
+      "title": "product-list-filter"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/product-list-block.tpl",
+      "layout_name": "product-list-block",
+      "title": "product-list-block"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/tags-blog.tpl",
       "layout_name": "tags-blog",
       "title": "tags-blog"
@@ -127,16 +141,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/bg_picker_scripts.tpl",
-      "layout_name": "bg_picker_scripts",
-      "title": "bg_picker_scripts"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/post-box.tpl",
+      "layout_name": "post-box",
+      "title": "post-box"
     },
     {
       "content_type": "component",

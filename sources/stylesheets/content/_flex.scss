@@ -1,4 +1,8 @@
 .flex_ {
+  &box {
+    display: flex;
+  }
+
   &col {
     display: flex;
     flex-direction: column;
@@ -15,5 +19,21 @@
         width: 33%;
       }
     }
+
+    &-2 {
+      flex-wrap: wrap;
+
+      &--item {
+        width: 50%;
+      }
+    }
+  }
+
+  &a-center {
+    align-items: center;
+  }
+
+  &j-center {
+    justify-content: center;
   }
 }

@@ -57,6 +57,9 @@
     }
   }
 
+  a.bold {
+    font-weight: 600;
+  }
 
   // Styling rules for the editable content area paragraphs, lists and links.
 
@@ -203,6 +206,10 @@
       @include word-wrap(normal);
     }
   }
+  b,
+  strong {
+    font-weight: 600;
+  }
 
   code {
     display: inline-block;
@@ -338,9 +345,5 @@
 
   .edy-texteditor-view {
     min-height: 32px;
-  }
-
-  .edy-partial-view {
-    margin-top: 25px;
   }
 }

@@ -44,3 +44,9 @@ $mobile-2: 420px;
 // Define the reusable variables here.
 // For example the width of several different elements, that allways have to be with the same height:
 // $box-width: 400px;
+
+
+$bezier-default: cubic-bezier(0.1, 0.6, 0, 1);
+$bezier-medium: cubic-bezier(0, 0.6, 0.25, 1);
+$bezier-fast: cubic-bezier(0.15, 0.95, 0.1, 1);
+$bezier-menu: cubic-bezier(0, 1.02, 0.41, 1);

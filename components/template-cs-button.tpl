@@ -20,14 +20,6 @@
   --button-font-size: 16px;
   /* VoogStyle
     "pathI18n": ["content", "button", "normal"],
-    "titleI18n": "hyphens",
-    "editor": "listPicker",
-    "list": {{ base_hyphens_toggle_set }},
-    "scope": "global"
-  */
-  --button-hyphens: auto;
-  /* VoogStyle
-    "pathI18n": ["content", "button", "normal"],
     "titleI18n": "font_size",
     "type": "button",
     "editor": "toggleIcon",
@@ -97,14 +89,6 @@
     "scope": "global"
   */
   --button-hover-font-size: 16px;
-  /* VoogStyle
-    "pathI18n": ["content", "button", "hover"],
-    "titleI18n": "hyphens",
-    "editor": "listPicker",
-    "list": {{ base_hyphens_toggle_set }},
-    "scope": "global"
-  */
-  --button-hover-hyphens: auto;
   /* VoogStyle
     "pathI18n": ["content", "button", "hover"],
     "titleI18n": "font_size",
