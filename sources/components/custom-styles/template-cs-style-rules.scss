@@ -325,15 +325,48 @@ body {
     }
   }
 
+  // Code blocks and preformatted content.
   .custom-btn {
-    color: var(--secondary-color);
+    color: var(--button-color);
+    font-size: var(--button-font-size);
+    font-style: var(--button-font-style);
+    font-weight: var(--button-font-weight);
+    hyphens: var(--button-hyphens);
+    text-decoration: var(--button-text-decoration);
+    text-transform: var(--button-text-transform);
 
-    .dark-background & {
-      // scss-lint:disable NestingDepth
+    &:hover {
+      color: var(--button-hover-color);
+      font-size: var(--button-hover-font-size);
+      font-style: var(--button-hover-font-style);
+      font-weight: var(--button-hover-font-weight);
+      hyphens: var(--button-hover-hyphens);
+      text-decoration: var(--button-hover-text-decoration);
+      text-transform: var(--button-hover-text-transform);
+    }
+  }
+
+  .form_submit {
+    input {
+      color: var(--button-color);
+      font-size: var(--button-font-size);
+      font-style: var(--button-font-style);
+      font-weight: var(--button-font-weight);
+      hyphens: var(--button-hyphens);
+      text-decoration: var(--button-text-decoration);
+      text-transform: var(--button-text-transform);
+      white-space: normal;
+      word-break: break-word;
+
       &:hover {
-        color: var(--fourth-color);
+        color: var(--button-hover-color);
+        font-size: var(--button-hover-font-size);
+        font-style: var(--button-hover-font-style);
+        font-weight: var(--button-hover-font-weight);
+        hyphens: var(--button-hover-hyphens);
+        text-decoration: var(--button-hover-text-decoration);
+        text-transform: var(--button-hover-text-transform);
       }
-      // scss-lint:disable NestingDepth
     }
   }
 }

@@ -174,10 +174,54 @@ body.dark-background {
   color: var(--fourth-color);
 }
 .content-formatted .custom-btn {
-  color: var(--secondary-color);
+  color: var(--button-color);
+  font-size: var(--button-font-size);
+  font-style: var(--button-font-style);
+  font-weight: var(--button-font-weight);
+  -webkit-hyphens: var(--button-hyphens);
+      -ms-hyphens: var(--button-hyphens);
+          hyphens: var(--button-hyphens);
+  -webkit-text-decoration: var(--button-text-decoration);
+          text-decoration: var(--button-text-decoration);
+  text-transform: var(--button-text-transform);
 }
-.dark-background .content-formatted .custom-btn:hover {
-  color: var(--fourth-color);
+.content-formatted .custom-btn:hover {
+  color: var(--button-hover-color);
+  font-size: var(--button-hover-font-size);
+  font-style: var(--button-hover-font-style);
+  font-weight: var(--button-hover-font-weight);
+  -webkit-hyphens: var(--button-hover-hyphens);
+      -ms-hyphens: var(--button-hover-hyphens);
+          hyphens: var(--button-hover-hyphens);
+  -webkit-text-decoration: var(--button-hover-text-decoration);
+          text-decoration: var(--button-hover-text-decoration);
+  text-transform: var(--button-hover-text-transform);
+}
+.content-formatted .form_submit input {
+  color: var(--button-color);
+  font-size: var(--button-font-size);
+  font-style: var(--button-font-style);
+  font-weight: var(--button-font-weight);
+  -webkit-hyphens: var(--button-hyphens);
+      -ms-hyphens: var(--button-hyphens);
+          hyphens: var(--button-hyphens);
+  -webkit-text-decoration: var(--button-text-decoration);
+          text-decoration: var(--button-text-decoration);
+  text-transform: var(--button-text-transform);
+  white-space: normal;
+  word-break: break-word;
+}
+.content-formatted .form_submit input:hover {
+  color: var(--button-hover-color);
+  font-size: var(--button-hover-font-size);
+  font-style: var(--button-hover-font-style);
+  font-weight: var(--button-hover-font-weight);
+  -webkit-hyphens: var(--button-hover-hyphens);
+      -ms-hyphens: var(--button-hover-hyphens);
+          hyphens: var(--button-hover-hyphens);
+  -webkit-text-decoration: var(--button-hover-text-decoration);
+          text-decoration: var(--button-hover-text-decoration);
+  text-transform: var(--button-hover-text-transform);
 }
 
 .blog-page .post-read-more-btn {

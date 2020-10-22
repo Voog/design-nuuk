@@ -1612,10 +1612,10 @@ body.dark-background {
   width: 33%;
 }
 
-.mar_08-neg {
+.mar_0-8-neg {
   margin: 0 -8px;
 }
-.mar_08 {
+.mar_0-8 {
   margin: 0 8px;
 }
 
@@ -1735,4 +1735,8 @@ button:active {
   font-size: 14px;
   line-height: 194%;
   padding: 0px 8px;
+}
+
+.pad_40-0 {
+  padding: 40px 0;
 }
