@@ -1,4 +1,4 @@
-<article class="post">
+<article class="post translated-y--100">
   <header class="post-header">
     <h2 class="post-title">{% if post-box == "article" %}{% editable article.title %}{% else %}<a href="{{ article.url }}">{{ article.title }}</a>{% endif %}</h2>
     {% assign article_year = article.created_at | format_date: "%Y" | to_num %}

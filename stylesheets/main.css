@@ -1782,10 +1782,77 @@ p {
   padding: 40px 0;
 }
 
+body {
+  opacity: 0;
+}
+body .animate_scale-down {
+  opacity: 1;
+  -webkit-transition: all .9s;
+  -o-transition: all .9s;
+  transition: all .9s;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+body .animate_scale-up {
+  opacity: 1;
+  -webkit-transition: all .9s;
+  -o-transition: all .9s;
+  transition: all .9s;
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+body .animate_translated-y--0 {
+  opacity: 1;
+  -webkit-transform: translatey(0);
+      -ms-transform: translatey(0);
+          transform: translatey(0);
+  -webkit-transition: all .9s;
+  -o-transition: all .9s;
+  transition: all .9s;
+}
+body .animate_translated-x--0 {
+  opacity: 1;
+  -webkit-transform: translatex(0);
+      -ms-transform: translatex(0);
+          transform: translatex(0);
+  -webkit-transition: all .9s;
+  -o-transition: all .9s;
+  transition: all .9s;
+}
+
+.scale-down {
+  opacity: 0;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+.scale-up {
+  opacity: 0;
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.translated-y--100 {
+  opacity: 0;
+  -webkit-transform: translatey(100%);
+      -ms-transform: translatey(100%);
+          transform: translatey(100%);
+}
+.translated-x--100 {
+  opacity: 0;
+  -webkit-transform: translatex(-100%);
+      -ms-transform: translatex(-100%);
+          transform: translatex(-100%);
+}
+
 .product_item {
   min-width: 318px;
+  overflow: hidden;
 }
-.product_image {
+.product_list .product_image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1799,13 +1866,13 @@ p {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.product_image div {
+.product_list .product_image div {
   opacity: 0;
   -webkit-transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
   -o-transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
   transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
 }
-.product_image:hover {
+.product_list .product_image:hover {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
@@ -1815,7 +1882,7 @@ p {
   transition: transform 0.6s cubic-bezier(0.1, 0.6, 0, 1);
   transition: transform 0.6s cubic-bezier(0.1, 0.6, 0, 1), -webkit-transform 0.6s cubic-bezier(0.1, 0.6, 0, 1);
 }
-.product_image:hover div {
+.product_list .product_image:hover div {
   opacity: 1;
   -webkit-transition: opacity 0.6s cubic-bezier(0.1, 0.6, 0, 1);
   -o-transition: opacity 0.6s cubic-bezier(0.1, 0.6, 0, 1);

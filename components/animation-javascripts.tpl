@@ -1,0 +1,26 @@
+<script>
+  $('body').animate({'opacity':'1'},800);
+  //$('.product_item.scale-up').addClass("animate_scale-down");
+  //$('.post.translated-y--100').addClass("animate_translated-y--0")
+  window.addEventListener('beforeunload', function () {
+    $('body').animate({'opacity':'0'},800);
+  });
+
+  $(document).ready(function() {
+    $('.post.translated-y--100').each(function() {
+      var delay = $(this).index();
+      $(this).addClass("animate_translated-y--0")
+      $(this).css('transition-delay', delay / 3 + 's');
+    });
+  });
+
+  $(document).ready(function() {
+    $('.product_item.scale-up').each(function() {
+      var item = $(this);
+      var delay = item.index();
+      item.addClass("animate_scale-down")
+      item.css('transition-delay', delay / 3 + 's');
+      setTimeout(function(){ item.css('transition-delay', 'none'); }, delay / 3);
+    });
+  });
+</script>

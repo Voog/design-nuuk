@@ -36,7 +36,6 @@
                     style="background-image: url({{_src}});"
                   {%- endif -%}
                 >
-
                   {% if editmode %}
                     <button class="bg-picker" data-picture="true" data-color="false" data-elem=".product_image" data-name="product_image" data-bg="{{ page.data.product_image | json | escape }}"></button>
                   {% endif %}
@@ -51,11 +50,10 @@
                 <section class="content-body content-formatted">{% content name="product-content-1" %}</section>
               </div>
             </div>
-
           </div>
 
-          <h3>Eelnevalt vaadatud tooted</h3>
-          <div class="product-list flex_row flex_row-3 mar_0-8-neg pad_40-0">
+          <h3 class="visits-title" style="display: none;">Eelnevalt vaadatud tooted</h3>
+          <div class="product_list flex_row flex_row-3 mar_0-8-neg pad_40-0">
             {%- for i in (1..4) -%}
               {%- assign level_str = 'menuitems_on_level_' | append: i -%}
               {%- for item in site[level_str] -%}
@@ -63,7 +61,7 @@
                   {%- if item_child.layout_title == product_layout -%}
                     {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}
                     {%- assign product = buy_button.product -%}
-                    <div class="product_item js-product-item flex_row-3--item" data-path="{{item_child.path}}" style="display: none;">
+                    <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{item_child.path}}" style="display: none;">
                       {% include 'image_src_variable', _data: item_child.data.product_image, _targetWidth: "500" %}
                       <div class="mar_0-8 mar_b-32 content-formatted">
                         <div
@@ -125,6 +123,26 @@
         $(this).show();
       }
     });
+
+    var visitUrls = [];
+    var locationPathName = window.location.pathname.slice(1);
+
+    // Parse the serialized data back into an aray of objects
+    visitUrls = JSON.parse(localStorage.getItem('session')) || [];
+    // Push the new data (whether it be an object or anything else) onto the array
+    visitUrls.unshift(locationPathName);
+    // Re-serialize the array back into a string and store it in localStorage
+    var uniqueVisits = visitUrls.filter(function(elem, index, self) {
+      return index === self.indexOf(elem);
+    })
+
+    localStorage.setItem('session', JSON.stringify(uniqueVisits));
+
+    var visitsWithoutCurrent = uniqueVisits.filter(e => e !== locationPathName)
+
+    if (visitsWithoutCurrent.length >= 1) {
+      $('.visits-title').show();
+    }
   </script>
 </body>
 </html>

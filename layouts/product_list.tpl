@@ -40,9 +40,20 @@
   {%- include "template-tools" -%}
   <script>
     site.initCommonPage();
-    $(".js-sort-price-ascending").on("click", function() {
-      var $wrapper = $('.product-list');
+    function fadeAnimation(wrapper) {
+      wrapper.find('.js-product-item').each(function() {
+        var item = $(this);
+        var delay = item.index();
+        item.css({'opacity':'0', 'transition': 'none'});
+        setTimeout((function() {
+          item.animate({'opacity':'1'}, 500);
+        }), delay * 40);
+      });
+    }
 
+    $(".js-sort-price-ascending").on("click", function() {
+      var $wrapper = $('.product_list');
+      fadeAnimation($wrapper);
       $wrapper.find('.js-product-item').sort(function(a, b) {
         return +a.dataset.price - +b.dataset.price;
       })
@@ -50,8 +61,8 @@
     });
 
     $(".js-sort-price-descending").on("click", function() {
-      var $wrapper = $('.product-list');
-
+      var $wrapper = $('.product_list');
+      fadeAnimation($wrapper);
       $wrapper.find('.js-product-item').sort(function(a, b) {
         return +b.dataset.price - +a.dataset.price;
       })
@@ -59,8 +70,8 @@
     });
 
     $(".js-sort-title-ascending").on("click", function() {
-      var $wrapper = $('.product-list');
-
+      var $wrapper = $('.product_list');
+      fadeAnimation($wrapper);
       $wrapper.find('.js-product-item').sort(function(a, b) {
         if(a.dataset.title < b.dataset.title) { return -1; }
         if(a.dataset.title > b.dataset.title) { return 1; }
@@ -70,8 +81,8 @@
     });
 
     $(".js-sort-title-descending").on("click", function() {
-      var $wrapper = $('.product-list');
-
+      var $wrapper = $('.product_list');
+      fadeAnimation($wrapper);
       $wrapper.find('.js-product-item').sort(function(a, b) {
         if(a.dataset.title < b.dataset.title) { return 1; }
         if(a.dataset.title > b.dataset.title) { return -1; }
@@ -82,7 +93,8 @@
 
     $("#myInput").on("keyup", function() {
       var value = $(this).val().toLowerCase();
-      $(".product-list .js-product-item").filter(function() {
+      fadeAnimation($('.product_list'));
+      $(".product_list .js-product-item").filter(function() {
         $(this).toggle($(this).attr("data-title").toLowerCase().indexOf(value) > -1)
       });
     });

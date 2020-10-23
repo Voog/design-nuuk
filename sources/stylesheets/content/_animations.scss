@@ -1,0 +1,55 @@
+body {
+  opacity: 0;
+
+  .animate_ {
+    &scale- {
+      &down {
+        opacity: 1;
+        transition: all .9s;
+        transform: scale(1);
+      }
+      &up {
+        opacity: 1;
+        transition: all .9s;
+        transform: scale(1.2);
+      }
+    }
+
+    &translated- {
+      &y--0 {
+        opacity: 1;
+        transform: translatey(0);
+        transition: all .9s;
+      }
+
+      &x--0 {
+        opacity: 1;
+        transform: translatex(0);
+        transition: all .9s;
+      }
+    }
+  }
+}
+
+.scale- {
+  &down {
+    opacity: 0;
+    transform: scale(1);
+  }
+  &up {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+.translated- {
+  &y--100 {
+    opacity: 0;
+    transform: translatey(100%);
+  }
+
+  &x--100 {
+    opacity: 0;
+    transform: translatex(-100%);
+  }
+}

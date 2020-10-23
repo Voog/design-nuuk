@@ -53,3 +53,5 @@
     {% include "bg_picker_scripts" %}
   {% endeditorjsblock %}
 {% endif %}
+
+{% include 'animation-javascripts' %}

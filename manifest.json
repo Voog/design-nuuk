@@ -246,6 +246,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/animation-javascripts.tpl",
+      "layout_name": "animation-javascripts",
+      "title": "animation-javascripts"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/html-head.tpl",
       "layout_name": "html-head",
       "title": "html-head"
