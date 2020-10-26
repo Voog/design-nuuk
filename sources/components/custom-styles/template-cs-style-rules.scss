@@ -39,7 +39,7 @@ body {
 // =============================================================================
 // Styling rules for the site's header. These rules affect the entire site.
 .header {
-  .header-left {
+  .header-top {
     .header-title {
       // scss-lint:disable NestingDepth, SelectorDepth, SingleLinePerSelector
       &, a {
@@ -127,13 +127,11 @@ body {
 // =============================================================================
 // Menu button. Only visible on smaller screens.
 .menu-btn {
-  @include query($tablet-2) {
-    .menu-stripe {
-      background-color: var(--secondary-color);
+  .menu-stripe {
+    background-color: var(--secondary-color);
 
-      .dark-background & {
-        background-color: var(--fourth-color);
-      }
+    .dark-background & {
+      background-color: var(--fourth-color);
     }
   }
 }

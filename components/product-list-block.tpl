@@ -7,14 +7,14 @@
           {%- if item_child.layout_title == product_list_layout or item_child.layout_title == product_layout -%}
             {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}
             {%- assign product = buy_button.product -%}
-            <div class="product_item js-product-item flex_row-3--item scale-up" data-title="{{item_child.title}}" data-price="{{product.price}}">
+            <div class="product_item js-product-item flex_row-3--item scale-up" data-title="{{item_child.title | escape }}" data-price="{{product.price}}">
               {% include 'image_src_variable', _data: item_child.data.product_image, _targetWidth: "500" %}
               <div class="mar_0-8 mar_b-32 content-formatted">
                 <div
                   class="product_image bg_img-cover{%- if _src != blank %} image_square{%- endif -%}"
                   {% if _src != blank -%}
                     style="background-image: url({{_src}});"
-                  {%- endif -%}https://www.voog.com/developers/markup/objects/page
+                  {%- endif -%}
                 >
                   {%- if buy_button.content -%}
                     {%- content content=buy_button.content -%}

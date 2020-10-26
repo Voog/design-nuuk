@@ -588,6 +588,7 @@ MMCQ = (function() {
   var bindSideClicks = function() {
     $('.container').on('mousedown', function(event) {
       if (!$(event.target).closest('.js-prevent-sideclick').length) {
+        $('.js-semimodal').removeClass('semimodal-visible');
         $('.js-popover').removeClass('expanded');
         $('.js-search-close-btn').trigger('click');
       };
@@ -604,7 +605,7 @@ MMCQ = (function() {
   // Shows/hides the popover main menu (visible on smalles screens).
   var toggleMainMenu = function() {
     $('.js-menu-btn').click(function() {
-      $(this).toggleClass('open');
+      $('.js-semimodal').toggleClass('semimodal-visible');
       $('.js-menu-main').toggleClass('expanded');
     });
   };

@@ -4,6 +4,9 @@
   {% include "template-variables" %}
   {% include "html-head" %}
   {% include "template-styles" %}
+  {%- assign productPageSettings = 'product_page_settings_' | append: page.id -%}
+  {%-  assign productPageCategoryKey = 'product_page_category' -%}
+  {%-  assign productPageFeaturedKey = 'product_page_featured' -%}
 </head>
 
 <body class="product-page js-bg-picker-area">
@@ -22,10 +25,11 @@
         {% endif %}
 
         {% include "header" %}
-        {% include "menu-level-2" %}
 
         <main class="content" role="main" data-search-indexing-allowed="true">
-
+          {% if editmode %}
+            <button disabled class="js-product-page-settings-btn">Product page settings</button>
+          {% endif %}
           <div class="flex_row flex_row-2 mar_0-16-neg flex_a-center">
             {% include 'image_src_variable', _data: page.data.product_image, _targetWidth: "1200" %}
             <div class="flex_row-2--item">
@@ -52,38 +56,50 @@
             </div>
           </div>
 
-          <h3 class="visits-title" style="display: none;">Eelnevalt vaadatud tooted</h3>
+          <h3 class="visits-title" style="display: none;">Related products</h3>
           <div class="product_list flex_row flex_row-3 mar_0-8-neg pad_40-0">
             {%- for i in (1..4) -%}
               {%- assign level_str = 'menuitems_on_level_' | append: i -%}
               {%- for item in site[level_str] -%}
                 {%- for item_child in item.visible_children_with_data -%}
-                  {%- if item_child.layout_title == product_layout -%}
-                    {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}
-                    {%- assign product = buy_button.product -%}
-                    <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{item_child.path}}" style="display: none;">
-                      {% include 'image_src_variable', _data: item_child.data.product_image, _targetWidth: "500" %}
-                      <div class="mar_0-8 mar_b-32 content-formatted">
-                        <div
-                          class="product_image bg_img-cover{%- if _src != blank %} image_square{%- endif -%}"
-                          {% if _src != blank -%}
-                            style="background-image: url({{_src}});"
-                          {%- endif -%}
-                        >
-                          {%- if buy_button.content -%}
-                            {%- content content=buy_button.content -%}
-                          {%- endif -%}
-                        </div>
-                        <div class="p14 mar_t-16">
-                          <a class="bold" href="{{ item.url }}">
-                            {{ item.title }}
-                          </a>
-                          <div>{{ product.price }}</div>
+                  {%- if item_child.layout_title == product_layout and page.id != item_child.page_id -%}
+
+                    {%- assign childProductPageSettingsKey = 'product_page_settings_' | append: item_child.page_id -%}
+                    {% assign childProductPageCategoryArray = item_child.data[childProductPageSettingsKey][productPageCategoryKey] | split: "," %}
+                    {% assign productPageCategoryArray = page.data[productPageSettings][productPageCategoryKey] | split: "," %}
+                    {%- assign relatedProduct = false -%}
+
+                    {% for category in productPageCategoryArray %}
+                      {%- if childProductPageCategoryArray contains category -%}
+                        {%- assign relatedProduct = true -%}
+                        {% break %}
+                      {%- endif -%}
+                    {% endfor %}
+
+                    {%- if relatedProduct == true -%}
+                      {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}
+                      {%- assign product = buy_button.product -%}
+                      <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{item_child.path}}">
+                        {% include 'image_src_variable', _data: item_child.data.product_image, _targetWidth: "500" %}
+                        <div class="mar_0-8 mar_b-32 content-formatted">
+                          <div
+                            class="product_image bg_img-cover{%- if _src != blank %} image_square{%- endif -%}"
+                            {% if _src != blank -%}
+                              style="background-image: url({{_src}});"
+                            {%- endif -%}
+                          >
+                            {%- if buy_button.content -%}
+                              {%- content content=buy_button.content -%}
+                            {%- endif -%}
+                          </div>
+                          <div class="p14 mar_t-16">
+                            <a class="bold" href="{{ item.url }}">
+                              {{ item.title }}
+                            </a>
+                            <div>{{ product.price }}</div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    {%- if forloop.index == 4 -%}
-                      {% break %}
                     {%- endif -%}
                   {%- endif -%}
                 {%- endfor -%}
@@ -99,50 +115,49 @@
   {% include "site-signout" %}
   {% include "javascripts" %}
   {% include "template-tools" %}
+
   <script>
     site.initCommonPage();
-  </script>
-  <script>
-    var visitUrls = [];
-    var locationPathName = window.location.pathname.slice(1);
 
-    // Parse the serialized data back into an aray of objects
-    visitUrls = JSON.parse(localStorage.getItem('session')) || [];
-    // Push the new data (whether it be an object or anything else) onto the array
-    visitUrls.push(locationPathName);
-    // Re-serialize the array back into a string and store it in localStorage
-    var unique = visitUrls.filter(function(elem, index, self) {
-      return index === self.indexOf(elem);
-    })
-    localStorage.setItem('session', JSON.stringify(unique));
-
-    $( ".js-product-item" ).each(function() {
-      var path = $(this).attr( "data-path" );
-      if (unique.includes(path) && path !== locationPathName) {
-        console.log($(this).attr( "data-path" ))
-        $(this).show();
-      }
-    });
-
-    var visitUrls = [];
-    var locationPathName = window.location.pathname.slice(1);
-
-    // Parse the serialized data back into an aray of objects
-    visitUrls = JSON.parse(localStorage.getItem('session')) || [];
-    // Push the new data (whether it be an object or anything else) onto the array
-    visitUrls.unshift(locationPathName);
-    // Re-serialize the array back into a string and store it in localStorage
-    var uniqueVisits = visitUrls.filter(function(elem, index, self) {
-      return index === self.indexOf(elem);
-    })
-
-    localStorage.setItem('session', JSON.stringify(uniqueVisits));
-
-    var visitsWithoutCurrent = uniqueVisits.filter(e => e !== locationPathName)
-
-    if (visitsWithoutCurrent.length >= 1) {
+    if ($('.product_list .product_item').length >= 1) {
       $('.visits-title').show();
     }
+    {% if editmode %}
+      window.addEventListener('DOMContentLoaded', (event) => {
+        {% if page.data[productPageSettings] %}
+          var valuesObj = {{ page.data[productPageSettings] | json }};
+        {% else %}
+          var valuesObj = {};
+        {% endif %}
+
+        initSettingsEditor(
+          {
+            settingsBtn: document.querySelector('.js-product-page-settings-btn'),
+            menuItems: [
+              {
+                "title": "Add category",
+                "tooltip": "Multiple categories must me separated with comma for example chairs,lamps,tables",
+                "type": "text",
+                "key": "{{productPageCategoryKey}}",
+                "placeholder": "Featured product (are rendered in featured products lists)"
+              },
+              {
+                "title": "Featured product",
+                "tooltip": "This product is rendered in featured products lists",
+                "type": "checkbox",
+                "key": "{{productPageFeaturedKey}}",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
+              }
+            ],
+            dataKey: '{{productPageSettings}}',
+            values: valuesObj
+          }
+        );
+      });
+    {% endif %}
   </script>
 </body>
 </html>

@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/bg_picker_scripts.tpl",
-      "layout_name": "bg_picker_scripts",
-      "title": "bg_picker_scripts"
+      "file": "components/post-box.tpl",
+      "layout_name": "post-box",
+      "title": "post-box"
     },
     {
       "content_type": "component",
@@ -141,16 +141,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/bg_picker_scripts.tpl",
+      "layout_name": "bg_picker_scripts",
+      "title": "bg_picker_scripts"
     },
     {
       "content_type": "component",
       "component": true,
-      "file": "components/post-box.tpl",
-      "layout_name": "post-box",
-      "title": "post-box"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
@@ -260,6 +260,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/visited-products.tpl",
+      "layout_name": "visited-products",
+      "title": "visited-products"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/blog-article-variables.tpl",
       "layout_name": "blog-article-variables",
       "title": "blog-article-variables"
@@ -285,6 +292,12 @@
       "file": "assets/ico-flags.svg",
       "kind": "assets",
       "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/close-ico.svg",
+      "kind": "assets",
+      "filename": "close-ico.svg"
     },
     {
       "content_type": "image/png",

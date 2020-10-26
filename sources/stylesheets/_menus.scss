@@ -3,53 +3,58 @@
 
 // Menu button. Only visible on smaller screens.
 .menu-btn {
-  display: none;
+  position: fixed;
+  top: 32px;
+  left: 32px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
 
-  @include query($tablet-2) {
-    position: absolute;
-    top: 28px;
-    right: 20px;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    &.open {
-      .menu-stripe {
-        opacity: .47;
-      }
-    }
-
-    &:focus {
-      outline: none;
-    }
-
-    &::-moz-focus-inner {
-      padding: 0;
-      border: 0;
-    }
-
+  &.open {
     .menu-stripe {
-      display: block;
-      width: 23px;
-      height: 4px;
-      margin: 4px 0;
-      @include bg($secondary-color, 1);
-      opacity: .67;
-      border-radius: 5px;
-
-      &:first-child,
-      &:last-child {
-        margin: 0;
-      }
-
-      .dark-background & {
-        @include bg($white, 1);
-      }
+      opacity: .47;
     }
   }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  .menu-stripe {
+    display: block;
+    width: 23px;
+    height: 4px;
+    margin: 4px 0;
+    @include bg($secondary-color, 1);
+    opacity: .67;
+    border-radius: 5px;
+
+    &:first-child,
+    &:last-child {
+      margin: 0;
+    }
+
+    .dark-background & {
+      @include bg($white, 1);
+    }
+  }
+}
+
+.close-menu-btn {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  background-image: url('../assets/close-ico.svg');
 }
 
 // Wrapper for the CMS adminmode on-page buttons. For example "hidden menu items" or "add-page" buttons.
@@ -60,6 +65,8 @@
 
   .menu-main & {
     margin-right: 20px;
+    position: relative;
+    left: 32px;
 
     @include query($tablet-2) {
       margin-right: 0;
@@ -72,6 +79,8 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
 
   .menu-item {
     @include hyphenate(true);
@@ -79,6 +88,7 @@
 
   .menu-link {
     display: block;
+
     @include color($blue-1);
 
     .dark-background & {
@@ -105,36 +115,48 @@
 
 // Styling rules for the site's main menu.
 .menu-main {
-  padding: 6px 0;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
 
   .menu {
     .menu-item {
-      display: inline-block;
+      display: flex;
       margin-right: 20px;
       line-height: 1;
-
+      align-items: center;
+      position: relative;
     }
 
     .menu-link {
+      display: flex;
+      color: #8D9091;
+      font-size: 18px;
+      line-height: 36px;
+      padding-left: 24px;
+      align-items: center;
+      position: relative;
 
       &.untranslated {
 
       }
 
       &:hover {
-
+        color: #C4C4C4;
       }
 
       &.active {
         font-weight: 700;
-        @include color($primary-color, 1);
-        opacity: .8;
+        color: #000000;
 
-        .dark-background & {
-          @include query($tablet-2, 'min-width') {
-            @include color($white, 1);
-            opacity: .5;
-          }
+        &:before {
+          content: '';
+          background-color: #000000;
+          border: 1px solid;
+          height: 8px;
+          width: 8px;
+          position: absolute;
+          left: 0px;
         }
       }
     }
@@ -142,162 +164,36 @@
 
   .menu-sub {
     display: none;
+
+    &.active {
+      display: flex;
+      flex-direction: column;
+      left: 24px;
+      position: relative;
+      border-left: 1px solid #c4c4c4b8;
+      margin: 8px 0;
+
+      .menu-link {
+        font-size: 16px;
+        line-height: 194%;
+        padding-left: 16px;
+
+        &:before {
+          content: none;
+        }
+      }
+    }
+
+    .edit-btn {
+      position: relative;
+      left: 32px;
+      font-size: 16px;
+      line-height: 194%;
+    }
   }
 
   .menu-lang {
     display: none;
-  }
-
-  @include query($tablet-2) {
-    display: none;
-
-    &.expanded {
-      position: absolute;
-      top: 75px;
-      right: 20px;
-      z-index: 1;
-      display: block;
-      min-width: 350px;
-      margin-bottom: 60px;
-      padding: 0;
-      text-align: left;
-      @include bg($white);
-      @include box-shadow(0, 0, 5px, rgba($black, 0.3));
-
-      .menu {
-        .menu-item {
-          display: block;
-          margin-right: 0;
-          @include border(top, 1px, solid, $primary-color, 0.2);
-
-          &:first-child {
-            border-top: none;
-          }
-
-          .menu-link {
-            display: block;
-            padding: 10px 20px;
-            font-size: 20px;
-
-            &.active {
-              @include bg($blue-2);
-            }
-
-            &:hover {
-              @include bg($blue-2, 0.5);
-            }
-          }
-        }
-
-        .edit-btn {
-          display: block;
-          padding: 12px 25px;
-          @include border(top, 1px, solid, $primary-color, 0.2);
-        }
-      }
-
-      // Styling rules for the sub menu in the site's main menu. Only visible on smaller screens.
-      .menu-sub {
-        display: block;
-
-        .menu {
-
-          .menu-item {
-            &:first-child {
-              @include border(top, 1px, solid, $grey-2, 0.1);
-            }
-          }
-
-          .menu-link {
-            padding: 10px 40px;
-            font-size: 14px;
-
-            &.active {
-              @include bg($black, 0.5);
-            }
-          }
-        }
-      }
-
-      // Styling rules for the language menu in the site's main menu. Only visible on smaller screens.
-      .menu-lang {
-        display: block;
-        margin-top: 0;
-        @include border(top, 1px, solid, $primary-color, 0.2);
-
-        .menu-item {
-          .menu-link {
-            position: relative;
-            padding: 15px 20px 14px 50px;
-            font-size: 12px;
-            @include color($secondary-color, 1);
-
-            &, &.active {
-              &:hover {
-                @include bg($grey-2, 0.1);
-              }
-            }
-
-            &.active {
-              @include color($primary-color, 1);
-              background: none;
-            }
-
-            &.lang-flag:before,
-            &.lang-flag:after {
-              position: absolute;
-              top: 13px;
-              left: 20px;
-              display: block;
-              width: 21px;
-              height: 15px;
-            }
-
-            &.lang-flag:before {
-              @include bg($black);
-              content: '';
-            }
-
-            &.lang-flag:after {
-              opacity: 0.95;
-              padding-top: 3px;
-              padding-bottom: 3px;
-              font-size: 9px;
-              line-height: 1;
-              text-align: center;
-              text-transform: uppercase;
-              box-sizing: border-box;
-              background-repeat: no-repeat;
-
-              .no-svg & {
-                background-image: url('../images/ico-flags.png');
-              }
-
-              .svg & {
-                background-image: url('../assets/ico-flags.svg');
-              }
-            }
-
-            &.edy-menu-langadd {
-              padding-left: 20px;
-            }
-          }
-
-        }
-      }
-    }
-  }
-
-  @include query($mobile-1) {
-    &.expanded {
-      min-width: 100%;
-      right: 0;
-      left: 0;
-      margin: 0 0 60px;
-      @include border(top, 1px, solid, $primary-color, 0.2);
-      @include border(bottom, 1px, solid, $primary-color, 0.2);
-      @include no-box-shadow;
-    }
   }
 }
 
@@ -326,7 +222,6 @@
         &.active {
           font-weight: 700;
           @include color($primary-color, 1);
-          opacity: .8;
 
           .dark-background & {
             @include query($tablet-2, 'min-width') {

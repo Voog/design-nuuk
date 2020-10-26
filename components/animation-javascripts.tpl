@@ -1,9 +1,7 @@
 <script>
-  $('body').animate({'opacity':'1'},800);
-  //$('.product_item.scale-up').addClass("animate_scale-down");
-  //$('.post.translated-y--100').addClass("animate_translated-y--0")
+  $('body').animate({'opacity':'1'}, 200);
   window.addEventListener('beforeunload', function () {
-    $('body').animate({'opacity':'0'},800);
+    $('body').animate({'opacity':'0'}, 200);
   });
 
   $(document).ready(function() {

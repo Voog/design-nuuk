@@ -10,7 +10,7 @@ body.dark-background {
   max-width: var(--container-max-width);
 }
 
-.header .header-left .header-title, .header .header-left .header-title a {
+.header .header-top .header-title, .header .header-top .header-title a {
   color: var(--primary-color);
 }
 
@@ -48,13 +48,11 @@ body.dark-background {
   color: var(--fourth-color);
 }
 
-@media screen and (max-width: 752px) {
-  .menu-btn .menu-stripe {
-    background-color: var(--secondary-color);
-  }
-  .dark-background .menu-btn .menu-stripe {
-    background-color: var(--fourth-color);
-  }
+.menu-btn .menu-stripe {
+  background-color: var(--secondary-color);
+}
+.dark-background .menu-btn .menu-stripe {
+  background-color: var(--fourth-color);
 }
 
 .menu .menu-link {

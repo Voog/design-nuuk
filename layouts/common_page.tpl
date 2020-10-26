@@ -22,7 +22,6 @@
         {% endif %}
 
         {% include "header" %}
-        {% include "menu-level-2" %}
 
         <main class="content" role="main" data-search-indexing-allowed="true">
           <header class="content-header content-formatted" {{ edy_intro_edit_text }}>{% content name="slogan" %}</header>
