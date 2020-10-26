@@ -295,9 +295,9 @@
     },
     {
       "content_type": "image/svg+xml",
-      "file": "assets/close-ico.svg",
+      "file": "assets/ico-close.svg",
       "kind": "assets",
-      "filename": "close-ico.svg"
+      "filename": "ico-close.svg"
     },
     {
       "content_type": "image/png",

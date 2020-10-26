@@ -423,6 +423,12 @@ body.dark-background {
   background: none;
   border: none;
   cursor: pointer;
+  -webkit-transition: top .6s ease-in;
+  -o-transition: top .6s ease-in;
+  transition: top .6s ease-in;
+}
+.edy-checkout-button-visible .menu-btn {
+  top: 64px;
 }
 .menu-btn.open .menu-stripe {
   opacity: .47;
@@ -449,6 +455,9 @@ body.dark-background {
 .dark-background .menu-btn .menu-stripe {
   background-color: white;
 }
+.menu-btn:hover {
+  opacity: .6;
+}
 
 .close-menu-btn {
   position: absolute;
@@ -456,7 +465,11 @@ body.dark-background {
   top: 32px;
   width: 32px;
   height: 32px;
-  background-image: url("../assets/close-ico.svg");
+  background-image: url("../assets/ico-close.svg");
+  cursor: pointer;
+}
+.close-menu-btn:hover {
+  opacity: .7;
 }
 
 .edit-btn {
@@ -1484,6 +1497,12 @@ body.dark-background {
   background-repeat: no-repeat;
 }
 
+.bg_color-absolute {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 .image_portrait {
   width: 560px;
   height: 776px;
@@ -1693,6 +1712,10 @@ p {
   padding: 0px 8px;
 }
 
+.body_bg-picker--btn.edy-bgpicker-toggle-button {
+  left: 72px;
+}
+
 .pad_40-0 {
   padding: 40px 0;
 }
@@ -1826,6 +1849,9 @@ body .animate_translated-x--0 {
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+}
+.edy-checkout-button-visible .semimodal {
+  top: 40px;
 }
 .semimodal .semimodal-content {
   pointer-events: none;

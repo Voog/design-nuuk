@@ -3,7 +3,20 @@
   <span class="menu-stripe"></span>
   <span class="menu-stripe"></span>
 </button>
-<div class="semimodal js-semimodal js-prevent-sideclick">
+{% include 'image_src_variable', _data: site.data.semimodal_image, _targetWidth: "500" %}
+<div class="semimodal js-semimodal js-prevent-sideclick semimodal_bg-image bg_img-cover"
+  {% if _src != blank -%}
+    style="background-image: url({{_src}});"
+  {%- endif -%}
+>
+  <div class="semimodal_bg-color bg_color-absolute"
+    {% if site.data.semimodal_image.color != blank %}
+      style="background-color: {{ site.data.semimodal_image.color }};"
+    {% endif %}
+  ></div>
+  {% if editmode %}
+    <button class="bg-picker" data-entity="siteData" data-picture="true" data-color="true" data-image_elem=".semimodal_bg-image" data-color_elem=".semimodal_bg-color" data-name="semimodal_image" data-bg="{{ site.data.semimodal_image | json | escape }}"></button>
+  {% endif %}
   <header class="header">
     <div class="js-close-menu close-menu-btn bg_img-cover"></div>
     <div class="header-top">

@@ -63,9 +63,8 @@
 
   // Shows/hides the popover main menu (visible on smalles screens).
   var toggleMainMenu = function() {
-    $('.js-menu-btn').click(function() {
+    $('.js-menu-btn, .js-close-menu').click(function() {
       $('.js-semimodal').toggleClass('semimodal-visible');
-      $('.js-menu-main').toggleClass('expanded');
     });
   };
 

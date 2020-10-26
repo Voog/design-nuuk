@@ -7,28 +7,30 @@
       var opts = {
         picture: pickerOpts.picture,
         color: pickerOpts.color,
+        showAlpha: true,
 
         preview: function(data) {
-          if (pickerOpts.elem) {
-            var $el = $(pickerOpts.elem);
+          if (pickerOpts.image_elem || pickerOpts.color_elem) {
+            var $imageEl = $(pickerOpts.image_elem);
+            var $colorEl = $(pickerOpts.color_elem);
             var col = (data.color && data.color !== "") ? data.color : "transparent";
             if (pickerOpts.type === 'img') {
               if (data.image) {
-                $el.attr('src', data.image);
-                $el.attr('srcset', data.image);
+                $imageEl.attr('src', data.image);
+                $imageEl.attr('srcset', data.image);
               } else {
-                $el.attr('src', 'none');
-                $el.attr('srcset', 'none');
+                $imageEl.attr('src', 'none');
+                $imageEl.attr('srcset', 'none');
               }
             } else {
               if (data.image) {
-                $el.css('background-image', 'url("'+ data.image+'")');
+                $imageEl.css('background-image', 'url("'+ data.image+'")');
               } else {
-                $el.css('background-image', 'none');
+                $imageEl.css('background-image', 'none');
               }
 
               if (data.color) {
-                $el.css('background-color', col);
+                $colorEl.css('background-color', col);
               }
             }
           }

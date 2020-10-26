@@ -5,13 +5,12 @@
   {% include "html-head" %}
   {% include "template-styles" %}
   {%- assign productPageSettings = 'product_page_settings_' | append: page.id -%}
-  {%-  assign productPageCategoryKey = 'product_page_category' -%}
   {%-  assign productPageFeaturedKey = 'product_page_featured' -%}
 </head>
 
 <body class="product-page js-bg-picker-area">
   {% if editmode %}
-    <button class="voog-bg-picker-btn js-background-settings" data-bg-key="body_bg" data-bg-picture-boolean="true" data-bg-image="{{ body_bg_image }}" data-bg-image-sizes="{{ body_bg_image_sizes_str | escape }}" data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
+    <button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="true" data-bg-image="{{ body_bg_image }}" data-bg-image-sizes="{{ body_bg_image_sizes_str | escape }}" data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
   {% endif %}
 
   <div class="background-image js-background-image"></div>
@@ -56,56 +55,67 @@
             </div>
           </div>
 
-          <h3 class="visits-title" style="display: none;">Related products</h3>
-          <div class="product_list flex_row flex_row-3 mar_0-8-neg pad_40-0">
-            {%- for i in (1..4) -%}
-              {%- assign level_str = 'menuitems_on_level_' | append: i -%}
-              {%- for item in site[level_str] -%}
-                {%- for item_child in item.visible_children_with_data -%}
-                  {%- if item_child.layout_title == product_layout and page.id != item_child.page_id -%}
+          {%- assign relatedProducts = null -%}
 
-                    {%- assign childProductPageSettingsKey = 'product_page_settings_' | append: item_child.page_id -%}
-                    {% assign childProductPageCategoryArray = item_child.data[childProductPageSettingsKey][productPageCategoryKey] | split: "," %}
-                    {% assign productPageCategoryArray = page.data[productPageSettings][productPageCategoryKey] | split: "," %}
-                    {%- assign relatedProduct = false -%}
+          {%- for i in (1..3) -%}
+            {%- assign relatedProduct = 'related_product_' | append: i -%}
+            {%- assign relatedProducts = relatedProducts | append: page.data[productPageSettings][relatedProduct] | append: "," -%}
+          {%- endfor -%}
+          {%- assign relatedProductsArray = relatedProducts | split: ',' -%}
+          <div>
+            <h3 class="visits-title"{% if relatedProductsArray.size >= 1 %} style="display: none;"{% endif %}>Related products</h3>
+            <div class="product_list flex_row flex_row-3 mar_0-8-neg pad_40-0">
+              {% assign productObj = null %}
+              {%- for i in (1..4) -%}
+                {%- assign level_str = 'menuitems_on_level_' | append: i -%}
+                {%- for item in site[level_str] -%}
+                  {%- for item_child in item.visible_children_with_data -%}
+                    {%- if item_child.layout_title == product_layout -%}
 
-                    {% for category in productPageCategoryArray %}
-                      {%- if childProductPageCategoryArray contains category -%}
-                        {%- assign relatedProduct = true -%}
-                        {% break %}
+                      {%- capture productObject -%}
+                        {"title": "{{item_child.title}}","id": "{{item_child.page_id}}"}
+                      {%- endcapture -%}
+                      {% assign productObj = productObj | append: productObject | append: ", " %}
+
+                      {%- assign renderProduct = false -%}
+                      {%- assign pageIdStr = item_child.page_id | downcase -%}
+
+                      {%- if relatedProductsArray contains pageIdStr -%}
+                        {%- assign renderProduct = true -%}
                       {%- endif -%}
-                    {% endfor %}
 
-                    {%- if relatedProduct == true -%}
-                      {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}
-                      {%- assign product = buy_button.product -%}
-                      <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{item_child.path}}">
-                        {% include 'image_src_variable', _data: item_child.data.product_image, _targetWidth: "500" %}
-                        <div class="mar_0-8 mar_b-32 content-formatted">
-                          <div
-                            class="product_image bg_img-cover{%- if _src != blank %} image_square{%- endif -%}"
-                            {% if _src != blank -%}
-                              style="background-image: url({{_src}});"
-                            {%- endif -%}
-                          >
-                            {%- if buy_button.content -%}
-                              {%- content content=buy_button.content -%}
-                            {%- endif -%}
-                          </div>
-                          <div class="p14 mar_t-16">
-                            <a class="bold" href="{{ item.url }}">
-                              {{ item.title }}
-                            </a>
-                            <div>{{ product.price }}</div>
+                      {%- if renderProduct == true -%}
+                        {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}
+                        {%- assign product = buy_button.product -%}
+                        <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{item_child.path}}">
+                          {% include 'image_src_variable', _data: item_child.data.product_image, _targetWidth: "500" %}
+                          <div class="mar_0-8 mar_b-32 content-formatted">
+                            <div
+                              class="product_image bg_img-cover{%- if _src != blank %} image_square{%- endif -%}"
+                              {% if _src != blank -%}
+                                style="background-image: url({{_src}});"
+                              {%- endif -%}
+                            >
+                              {%- if buy_button.content -%}
+                                {%- content content=buy_button.content -%}
+                              {%- endif -%}
+                            </div>
+                            <div class="p14 mar_t-16">
+                              <a class="bold" href="{{ item.url }}">
+                                {{ item.title }}
+                              </a>
+                              <div>{{ product.price }}</div>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      {%- endif -%}
                     {%- endif -%}
-                  {%- endif -%}
+                  {%- endfor -%}
                 {%- endfor -%}
               {%- endfor -%}
-            {%- endfor -%}
+            </div>
           </div>
+
         </main>
         {% include "footer" %}
       </div>
@@ -116,12 +126,10 @@
   {% include "javascripts" %}
   {% include "template-tools" %}
 
+
   <script>
     site.initCommonPage();
 
-    if ($('.product_list .product_item').length >= 1) {
-      $('.visits-title').show();
-    }
     {% if editmode %}
       window.addEventListener('DOMContentLoaded', (event) => {
         {% if page.data[productPageSettings] %}
@@ -130,16 +138,42 @@
           var valuesObj = {};
         {% endif %}
 
+        {%- assign productPagesArray = productObj | split: ', ' -%}
+
+        var relatedProductList = [
+          {%- for productPage in productPagesArray -%}
+            {%- assign p = productPage | json_parse -%}
+            {
+              "title": "{{p.title }}",
+              "value": "{{p.id}}"
+            },
+          {%- endfor -%}
+        ];
+
         initSettingsEditor(
           {
             settingsBtn: document.querySelector('.js-product-page-settings-btn'),
             menuItems: [
               {
-                "title": "Add category",
-                "tooltip": "Multiple categories must me separated with comma for example chairs,lamps,tables",
-                "type": "text",
-                "key": "{{productPageCategoryKey}}",
-                "placeholder": "Featured product (are rendered in featured products lists)"
+                "title": "Select related product",
+                "tooltip": "Visible under product page",
+                "type": "select",
+                "key": "related_product_1",
+                "list": relatedProductList,
+              },
+              {
+                "title": "Select related product",
+                "tooltip": "Visible under product page",
+                "type": "select",
+                "key": "related_product_2",
+                "list": relatedProductList,
+              },
+              {
+                "title": "Select related product",
+                "tooltip": "Visible under product page",
+                "type": "select",
+                "key": "related_product_3",
+                "list": relatedProductList,
               },
               {
                 "title": "Featured product",

@@ -12,6 +12,11 @@
   background: none;
   border: none;
   cursor: pointer;
+  transition: top .6s ease-in;
+
+  .edy-checkout-button-visible & {
+    top: 64px;
+  }
 
   &.open {
     .menu-stripe {
@@ -46,6 +51,10 @@
       @include bg($white, 1);
     }
   }
+
+  &:hover {
+    opacity: .6;
+  }
 }
 
 .close-menu-btn {
@@ -54,7 +63,12 @@
   top: 32px;
   width: 32px;
   height: 32px;
-  background-image: url('../assets/close-ico.svg');
+  background-image: url('../assets/ico-close.svg');
+  cursor: pointer;
+
+  &:hover {
+    opacity: .7;
+  }
 }
 
 // Wrapper for the CMS adminmode on-page buttons. For example "hidden menu items" or "add-page" buttons.
