@@ -31,7 +31,7 @@
       "--content-body-color"
     ]
   */
-  --primary-color: #727272;
+  --primary-color: #000000;
   /* VoogStyle
     "pathI18n": ["main_styles", "colors"],
     "titleI18n": "secondary_color",
@@ -44,7 +44,7 @@
       "--headings-subheading-color"
     ]
   */
-  --secondary-color: #1b2124;
+  --secondary-color: #D5AFB6;
   /* VoogStyle
     "pathI18n": ["main_styles", "colors"],
     "titleI18n": "third_color",

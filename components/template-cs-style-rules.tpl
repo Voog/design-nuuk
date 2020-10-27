@@ -72,29 +72,31 @@ body.dark-background {
   }
 }
 
-.menu-main .menu .menu-link.active {
-  color: var(--primary-color);
+.menu-main .menu .menu-link {
+  color: var(--header-mainmenu-color);
 }
-@media screen and (min-width: 752px) {
-  .dark-background .menu-main .menu .menu-link.active {
-    color: var(--fourth-color);
-  }
+.menu-main .menu .menu-link.active {
+  color: var(--header-mainmenu-active-color);
+  font-weight: var(--header-mainmenu-active-font-weight);
+}
+.menu-main .menu .menu-link.active::before {
+  background-color: var(--header-mainmenu-active-color);
+}
+.menu-main .menu .menu-link.active:hover {
+  color: var(--header-mainmenu-color);
+}
+.menu-main .menu .menu-link.active:hover::before {
+  background-color: var(--header-mainmenu-color);
+}
+.menu-main .menu .menu-link:hover {
+  color: var(--header-mainmenu-hover-color);
+}
+.menu-main .menu .menu-sub .menu-link.active {
+  font-weight: 400;
 }
 @media screen and (max-width: 752px) {
   .menu-main.expanded .menu-lang .menu-item .menu-link {
     color: var(--secondary-color);
-  }
-}
-
-.dark-background .menu-sub .menu .menu-item .menu-link {
-  color: var(--fourth-color);
-}
-.menu-sub .menu .menu-item .menu-link.active {
-  color: var(--primary-color);
-}
-@media screen and (min-width: 752px) {
-  .dark-background .menu-sub .menu .menu-item .menu-link.active {
-    color: var(--fourth-color);
   }
 }
 

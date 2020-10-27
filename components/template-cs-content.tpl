@@ -28,7 +28,7 @@
     "featured": true,
     "scope": "global"
   */
-  --content-body-color: #727272;
+  --content-body-color: black;
   /* VoogStyle
     "pathI18n": ["content", "link", "normal"],
     "titleI18n": "font_size",

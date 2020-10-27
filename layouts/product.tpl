@@ -24,6 +24,7 @@
         {% endif %}
 
         {% include "header" %}
+        <div class="flex_box">{% include 'menu-level-2' %}</div>
 
         <main class="content" role="main" data-search-indexing-allowed="true">
           {% if editmode %}
@@ -40,7 +41,7 @@
                   {%- endif -%}
                 >
                   {% if editmode %}
-                    <button class="bg-picker" data-picture="true" data-color="false" data-elem=".product_image" data-name="product_image" data-bg="{{ page.data.product_image | json | escape }}"></button>
+                    <button class="bg-picker" data-picture="true" data-color="false" data-image_elem=".product_image" data-name="product_image" data-bg="{{ page.data.product_image | json | escape }}"></button>
                   {% endif %}
                 </div>
               </div>
@@ -55,63 +56,43 @@
             </div>
           </div>
 
-          {%- assign relatedProducts = null -%}
-
-          {%- for i in (1..3) -%}
-            {%- assign relatedProduct = 'related_product_' | append: i -%}
-            {%- assign relatedProducts = relatedProducts | append: page.data[productPageSettings][relatedProduct] | append: "," -%}
-          {%- endfor -%}
-          {%- assign relatedProductsArray = relatedProducts | split: ',' -%}
           <div>
-            <h3 class="visits-title"{% if relatedProductsArray.size >= 1 %} style="display: none;"{% endif %}>Related products</h3>
+            {%- assign pageIdsArr = "" | split: ',' -%}
+            {%- for i in (1..3) -%}
+              {%- assign relatedProductKey = 'related_product_' | append: i -%}
+              {%- assign relatedProductPageId = page.data[productPageSettings][relatedProductKey] -%}
+              {%- assign pageIdsArr = pageIdsArr | push: relatedProductPageId -%}
+              {%- assign pageIdCompactArr = pageIdsArr | compact -%}
+            {%- endfor -%}
+
+            <h3 class="visits-title"{% if pageIdCompactArr.size <= 0 %} style="display: none;"{% endif %}>Related products</h3>
+
             <div class="product_list flex_row flex_row-3 mar_0-8-neg pad_40-0">
-              {% assign productObj = null %}
-              {%- for i in (1..4) -%}
-                {%- assign level_str = 'menuitems_on_level_' | append: i -%}
-                {%- for item in site[level_str] -%}
-                  {%- for item_child in item.visible_children_with_data -%}
-                    {%- if item_child.layout_title == product_layout -%}
+              {%- for id in pageIdCompactArr -%}
+                {%- load buy_button to "buy_button" q.content.parent_id=id q.content.parent_type="page" -%}
+                {%- assign product = buy_button.product -%}
 
-                      {%- capture productObject -%}
-                        {"title": "{{item_child.title}}","id": "{{item_child.page_id}}"}
-                      {%- endcapture -%}
-                      {% assign productObj = productObj | append: productObject | append: ", " %}
-
-                      {%- assign renderProduct = false -%}
-                      {%- assign pageIdStr = item_child.page_id | downcase -%}
-
-                      {%- if relatedProductsArray contains pageIdStr -%}
-                        {%- assign renderProduct = true -%}
+                <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{item_child.path}}">
+                  {% include 'image_src_variable', _data: buy_button.content.parent.data.product_image, _targetWidth: "500" %}
+                  <div class="mar_0-8 mar_b-32 content-formatted">
+                    <div
+                      class="product_image bg_img-cover{%- if _src != blank %} image_square{%- endif -%}"
+                      {% if _src != blank -%}
+                        style="background-image: url({{_src}});"
                       {%- endif -%}
-
-                      {%- if renderProduct == true -%}
-                        {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}
-                        {%- assign product = buy_button.product -%}
-                        <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{item_child.path}}">
-                          {% include 'image_src_variable', _data: item_child.data.product_image, _targetWidth: "500" %}
-                          <div class="mar_0-8 mar_b-32 content-formatted">
-                            <div
-                              class="product_image bg_img-cover{%- if _src != blank %} image_square{%- endif -%}"
-                              {% if _src != blank -%}
-                                style="background-image: url({{_src}});"
-                              {%- endif -%}
-                            >
-                              {%- if buy_button.content -%}
-                                {%- content content=buy_button.content -%}
-                              {%- endif -%}
-                            </div>
-                            <div class="p14 mar_t-16">
-                              <a class="bold" href="{{ item.url }}">
-                                {{ item.title }}
-                              </a>
-                              <div>{{ product.price }}</div>
-                            </div>
-                          </div>
-                        </div>
+                    >
+                      {%- if buy_button.content -%}
+                        {%- content content=buy_button.content -%}
                       {%- endif -%}
-                    {%- endif -%}
-                  {%- endfor -%}
-                {%- endfor -%}
+                    </div>
+                    <div class="p14 mar_t-16">
+                      <a class="bold" href="{{ buy_button.content.parent.url }}">
+                        {{ product.title }}
+                      </a>
+                      <div>{{ product.price }}</div>
+                    </div>
+                  </div>
+                </div>
               {%- endfor -%}
             </div>
           </div>
@@ -138,57 +119,61 @@
           var valuesObj = {};
         {% endif %}
 
-        {%- assign productPagesArray = productObj | split: ', ' -%}
+        var productsPageList = [];
 
-        var relatedProductList = [
-          {%- for productPage in productPagesArray -%}
-            {%- assign p = productPage | json_parse -%}
-            {
-              "title": "{{p.title }}",
-              "value": "{{p.id}}"
-            },
-          {%- endfor -%}
-        ];
-
-        initSettingsEditor(
-          {
-            settingsBtn: document.querySelector('.js-product-page-settings-btn'),
-            menuItems: [
-              {
-                "title": "Select related product",
-                "tooltip": "Visible under product page",
-                "type": "select",
-                "key": "related_product_1",
-                "list": relatedProductList,
-              },
-              {
-                "title": "Select related product",
-                "tooltip": "Visible under product page",
-                "type": "select",
-                "key": "related_product_2",
-                "list": relatedProductList,
-              },
-              {
-                "title": "Select related product",
-                "tooltip": "Visible under product page",
-                "type": "select",
-                "key": "related_product_3",
-                "list": relatedProductList,
-              },
-              {
-                "title": "Featured product",
-                "tooltip": "This product is rendered in featured products lists",
-                "type": "checkbox",
-                "key": "{{productPageFeaturedKey}}",
-                "states": {
-                  "on": true,
-                  "off": false
+        $.ajax({
+          type: 'GET',
+          contentType: 'application/json',
+          url: '/admin/api/buy_buttons?q.content.parent_type=page&q.content.language_id={{page.language_id}}&per_page=100',
+          dataType: 'json',
+          success: function(data) {
+            for (var i = 0; i < data.length; i++) {
+              productsPageList.push(
+                {
+                  "title": data[i].product.name,
+                  "value": data[i].parent.id
                 }
-              }
-            ],
-            dataKey: '{{productPageSettings}}',
-            values: valuesObj
+              );
+            };
           }
+        }).then(() =>
+          initSettingsEditor(
+            {
+              settingsBtn: document.querySelector('.js-product-page-settings-btn'),
+              menuItems: [
+                {
+                  "title": "Select related product",
+                  "type": "select",
+                  "key": "related_product_1",
+                  "list": productsPageList,
+                },
+                {
+                  "title": "Select related product",
+                  "type": "select",
+                  "key": "related_product_2",
+                  "list": productsPageList,
+                },
+                {
+                  "title": "Select related product",
+                  "type": "select",
+                  "key": "related_product_3",
+                  "list": productsPageList,
+                },
+                {
+                  "title": "Featured product",
+                  "tooltip": "This product is rendered in featured products lists",
+                  "type": "checkbox",
+                  "key": "{{productPageFeaturedKey}}",
+                  "states": {
+                    "on": true,
+                    "off": false
+                  }
+                }
+              ],
+              dataKey: '{{productPageSettings}}',
+              values: valuesObj
+            }
+          )
         );
       });
     {% endif %}

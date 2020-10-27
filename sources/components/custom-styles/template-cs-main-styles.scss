@@ -53,7 +53,7 @@
       "--content-body-color"
     ]
   */
-  #{--primary-color}: rgba($primary-color, 1);
+  #{--primary-color}: $primary-color;
 
   /* VoogStyle
     "pathI18n": ["main_styles", "colors"],
@@ -67,7 +67,7 @@
       "--headings-subheading-color"
     ]
   */
-  #{--secondary-color}: rgba($secondary-color, 1);
+  #{--secondary-color}: $secondary-color;
 
   /* VoogStyle
     "pathI18n": ["main_styles", "colors"],

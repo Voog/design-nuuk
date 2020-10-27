@@ -144,7 +144,6 @@
 
     .menu-link {
       display: flex;
-      color: #8D9091;
       font-size: 18px;
       line-height: 36px;
       padding-left: 24px;
@@ -160,7 +159,6 @@
       }
 
       &.active {
-        font-weight: 700;
         color: #000000;
 
         &:before {
@@ -234,15 +232,6 @@
         }
 
         &.active {
-          font-weight: 700;
-          @include color($primary-color, 1);
-
-          .dark-background & {
-            @include query($tablet-2, 'min-width') {
-              @include color($white, 1);
-              opacity: .5;
-            }
-          }
         }
 
         &:hover {
