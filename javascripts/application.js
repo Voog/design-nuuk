@@ -586,7 +586,7 @@ MMCQ = (function() {
   };
 
   var bindSideClicks = function() {
-    $('body').on('mousedown', function(event) {
+    $('.container, .bg_img-cover').on('mousedown', function(event) {
       if (!$(event.target).closest('.js-prevent-sideclick').length) {
         $('.js-semimodal').removeClass('semimodal-visible');
         $('.js-popover').removeClass('expanded');

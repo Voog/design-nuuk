@@ -14,22 +14,22 @@
   {% assign body_bg_color_data = body_bg.colorData %}
   {% assign body_bg_combined_lightness = body_bg.combinedLightness %}
 
-  {% if body_bg_image == nil %}
+  {% if body_bg_image == blank %}
     {% assign body_bg_image = "" %}
   {% endif %}
 
-  {% if body_bg_image_sizes == nil %}
+  {% if body_bg_image_sizes == blank %}
     {% assign body_bg_image_sizes_str = "" %}
   {% else %}
     {% assign body_bg_image_sizes_str = body_bg_image_sizes | json %}
   {% endif %}
 
-  {% if body_bg_color == nil %}
-    {% assign body_bg_color = "" %}
+  {% if body_bg_color == blank %}
+    {% assign body_bg_color = "#F2F2F2" %}
   {% endif %}
 
-  {% if body_bg_color_data == nil %}
-    {% assign body_bg_color_data_str = "" %}
+  {% if body_bg_color_data == blank %}
+    {% assign body_bg_color_data_str = "#F2F2F2" %}
   {% else %}
     {% assign body_bg_color_data_str = body_bg_color_data | json %}
   {% endif %}
@@ -68,7 +68,7 @@
     {% assign container_bg_type = "light-background" %}
   {% endif %}
 
-  {% if container_bg_color == nil %}
+  {% if container_bg_color == blank %}
     {% if front_page %}
       {% assign container_bg_color = "" %}
     {% else %}
@@ -76,7 +76,7 @@
     {% endif %}
   {% endif %}
 
-  {% if container_bg_color_data == nil %}
+  {% if container_bg_color_data == blank %}
     {% assign container_bg_color_data_str = "" %}
   {% else %}
     {% assign container_bg_color_data_str = container_bg_color_data | json %}

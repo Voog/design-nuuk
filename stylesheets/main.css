@@ -93,7 +93,8 @@ body.dark-background {
 .container {
   position: relative;
   max-width: 960px;
-  margin: 0 auto;
+  margin: 96px auto 0;
+  width: 100%;
 }
 @media screen and (max-width: 752px) {
   .container {
@@ -437,9 +438,6 @@ body.dark-background {
 .edy-checkout-button-visible .menu-btn {
   top: 64px;
 }
-.menu-btn.open .menu-stripe {
-  opacity: .47;
-}
 .menu-btn:focus {
   outline: none;
 }
@@ -449,21 +447,18 @@ body.dark-background {
 }
 .menu-btn .menu-stripe {
   display: block;
-  width: 23px;
-  height: 4px;
-  margin: 4px 0;
-  background-color: #8d9091;
-  opacity: .67;
-  border-radius: 5px;
+  width: 32px;
+  height: 2px;
+  color: #000000;
 }
-.menu-btn .menu-stripe:first-child, .menu-btn .menu-stripe:last-child {
-  margin: 0;
+.menu-btn .menu-stripe:first-child {
+  margin-bottom: 8px;
 }
 .dark-background .menu-btn .menu-stripe {
   background-color: white;
 }
 .menu-btn:hover {
-  opacity: .6;
+  opacity: .7;
 }
 
 .close-menu-btn {
@@ -1289,12 +1284,19 @@ body.dark-background {
 
 /* FOOTER */
 .footer {
-  margin-top: 50px;
+  margin-top: 40px;
+  padding: 16px 0;
 }
 @media screen and (max-width: 752px) {
   .footer {
-    margin-top: 35px;
+    margin-top: 32px;
   }
+}
+.footer_separator {
+  width: 100%;
+  opacity: 0.2;
+  border: 1px solid var(--secondary-color);
+  margin-bottom: 48px;
 }
 .footer .content-formatted {
   font-size: 14px;
@@ -1596,6 +1598,9 @@ body.dark-background {
 .mar_t-16 {
   margin-top: 16px;
 }
+.mar_t-96 {
+  margin-top: 96px;
+}
 
 h1 {
   font-size: 72px;
@@ -1717,6 +1722,19 @@ p {
 
 .body_bg-picker--btn.edy-bgpicker-toggle-button {
   left: 72px;
+}
+
+.edy-content-social-button svg {
+  border: 1px solid var(--secondary-color);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-right: 8px;
+}
+.edy-content-social-button svg:last-child {
+  margin-right: 0;
 }
 
 .pad_40-0 {
@@ -1891,8 +1909,8 @@ body .animate_translated-x--0 {
   bottom: 0;
   max-width: 0;
   width: 0;
-  -webkit-box-shadow: 0 25px 35px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 25px 35px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 25px 35px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 25px 35px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1);
   background-color: #FBFBFB;
   width: 100%;
   max-width: 320px;

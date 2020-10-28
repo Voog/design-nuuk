@@ -44,3 +44,16 @@
 .body_bg-picker--btn.edy-bgpicker-toggle-button {
   left: 72px;
 }
+
+.edy-content-social-button svg {
+  border: 1px solid var(--secondary-color);
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-right: 8px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

@@ -120,7 +120,8 @@ body {
 .container {
   position: relative;
   max-width: 960px;
-  margin: 0 auto;
+  margin: 96px auto 0;
+  width: 100%;
 
   @include query($tablet-2) {
     padding: 20px

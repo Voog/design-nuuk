@@ -1,7 +1,6 @@
 <button class="menu-btn js-menu-btn js-prevent-sideclick">
   <span class="menu-stripe"></span>
   <span class="menu-stripe"></span>
-  <span class="menu-stripe"></span>
 </button>
 {% include 'image_src_variable', _data: site.data.semimodal_image, _targetWidth: "1000" %}
 <div class="semimodal js-semimodal js-prevent-sideclick semimodal_bg-image bg_img-cover"

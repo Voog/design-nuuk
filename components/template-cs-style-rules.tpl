@@ -49,7 +49,7 @@ body.dark-background {
 }
 
 .menu-btn .menu-stripe {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 .dark-background .menu-btn .menu-stripe {
   background-color: var(--fourth-color);
@@ -74,16 +74,22 @@ body.dark-background {
 
 .menu-main .menu .menu-link {
   color: var(--header-mainmenu-color);
+  -webkit-text-decoration: var(--header-mainmenu-decoration);
+          text-decoration: var(--header-mainmenu-decoration);
 }
 .menu-main .menu .menu-link.active {
   color: var(--header-mainmenu-active-color);
   font-weight: var(--header-mainmenu-active-font-weight);
+  -webkit-text-decoration: var(--header-mainmenu-active-decoration);
+          text-decoration: var(--header-mainmenu-active-decoration);
 }
 .menu-main .menu .menu-link.active::before {
   background-color: var(--header-mainmenu-active-color);
 }
 .menu-main .menu .menu-link.active:hover {
   color: var(--header-mainmenu-color);
+  -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
+          text-decoration: var(--header-mainmenu-hover-decoration);
 }
 .menu-main .menu .menu-link.active:hover::before {
   background-color: var(--header-mainmenu-color);

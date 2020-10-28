@@ -128,7 +128,7 @@ body {
 // Menu button. Only visible on smaller screens.
 .menu-btn {
   .menu-stripe {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 
     .dark-background & {
       background-color: var(--fourth-color);
@@ -166,15 +166,19 @@ body {
   .menu {
     .menu-link {
       color: var(--header-mainmenu-color);
+      text-decoration: var(--header-mainmenu-decoration);
       // scss-lint:disable NestingDepth
       &.active {
         color: var(--header-mainmenu-active-color);
         font-weight: var(--header-mainmenu-active-font-weight);
+        text-decoration: var(--header-mainmenu-active-decoration);
+
         &::before {
           background-color: var(--header-mainmenu-active-color);
         }
         &:hover {
           color: var(--header-mainmenu-color);
+          text-decoration: var(--header-mainmenu-hover-decoration);
           &::before {
             background-color: var(--header-mainmenu-color);
           }

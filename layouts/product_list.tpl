@@ -6,7 +6,8 @@
   {%- include "template-styles" -%}
 </head>
 
-<body class="product-list-page js-bg-picker-area">
+<body class="product-list-page js-bg-picker-area flex_box">
+  {%- include "header" -%}
   {%- if editmode -%}
     <button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="true" data-bg-image="{{ body_bg_image }}" data-bg-image-sizes="{{ body_bg_image_sizes_str | escape }}" data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
   {%- endif -%}
@@ -14,24 +15,18 @@
   <div class="background-image js-background-image"></div>
   <div class="background-color js-background-color"></div>
 
-  <div class="container js-bg-picker-area">
-    <div class="js-background-type {{ container_bg_type }}">
-      <div class="background-color js-background-color">
-        {%- if editmode -%}
-          <button class="voog-bg-picker-btn js-background-settings" data-bg-key="container_bg" data-bg-picture-boolean="false" data-bg-color="{{ container_bg_color }}" data-bg-color-data="{{ container_bg_color_data_str | escape }}"></button>
-        {%- endif -%}
-
-        {%- include "header" -%}
-
-        <main class="content" role="main" data-search-indexing-allowed="true">
-          {% include 'product-list-filter' %}
-          {% include 'product-list-block' %}
-        </main>
-
-        {%- include "footer" -%}
-
+  <div class="container js-bg-picker-area flex_col flex_j-space-between">
+    <main class="content" role="main" data-search-indexing-allowed="true">
+      <div class="content-body content-formatted">
+        {% contentblock name="page-title" publish_default_content="true" %}
+          <h1>{{page.title}}</h1>
+        {% endcontentblock %}
       </div>
-    </div>
+      {% include 'product-list-filter' %}
+      {% include 'product-list-block' %}
+    </main>
+
+    {%- include "footer" -%}
   </div>
 
   {%- include "site-signout" -%}

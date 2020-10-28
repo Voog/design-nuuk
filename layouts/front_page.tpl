@@ -16,9 +16,9 @@
 
 
   <div class="flex_col w-100p">
-    {% include 'image_src_variable', _data: page.data.front_header_bg, _targetWidth: "1200" %}
+    {% include 'image_src_variable', _data: page.data.front_header_bg, _targetWidth: "1800" %}
     <div
-      class="front_header-image mar_b-56 bg_img-cover{%- if _src != blank %} image_header{%- endif -%}"
+      class="front_header-image bg_img-cover{%- if _src != blank %} image_header{%- endif -%}"
       {% if _src != blank -%}
         style="background-image: url({{_src}});"
       {%- endif -%}
