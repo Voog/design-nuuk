@@ -303,6 +303,18 @@
   "assets": [
     {
       "content_type": "image/svg+xml",
+      "file": "assets/ico-arrow-right-small.svg",
+      "kind": "assets",
+      "filename": "ico-arrow-right-small.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-search.svg",
+      "kind": "assets",
+      "filename": "ico-search.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
       "file": "assets/ico-flags.svg",
       "kind": "assets",
       "filename": "ico-flags.svg"
@@ -312,6 +324,12 @@
       "file": "assets/ico-close.svg",
       "kind": "assets",
       "filename": "ico-close.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-cart.svg",
+      "kind": "assets",
+      "filename": "ico-cart.svg"
     },
     {
       "content_type": "image/png",

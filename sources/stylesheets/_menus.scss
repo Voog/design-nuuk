@@ -204,10 +204,13 @@
 // Styling rules for the site's sub menu.
 .menu-sub {
   .menu {
+    display: flex;
+    flex-direction: row;
 
     .menu-item {
-      display: inline-block;
-      margin-right: 10px;
+      display: flex;
+      flex-direction: row;
+      margin-right: 8px;
       font-size: 14px;
 
       &:first-child {
@@ -215,6 +218,21 @@
       }
 
       .menu-link {
+        &.with_arrow {
+          display: flex;
+          align-items: center;
+
+          &::before {
+            content: '';
+            margin-right: 8px;
+            border: solid;
+            border-width: 0px 2px 2px 0;
+            display: inline-block;
+            padding: 2px;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+          }
+        }
         .dark-background & {
           @include color($white, 1);
         }

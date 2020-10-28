@@ -167,7 +167,12 @@ body {
     .menu-link {
       color: var(--header-mainmenu-color);
       text-decoration: var(--header-mainmenu-decoration);
+
+      &::before {
+        background-color: var(--header-mainmenu-color);
+      }
       // scss-lint:disable NestingDepth
+
       &.active {
         color: var(--header-mainmenu-active-color);
         font-weight: var(--header-mainmenu-active-font-weight);
@@ -214,6 +219,49 @@ body {
   }
   // scss-lint:enable DeclarationOrder
 }
+
+.menu-sub {
+  .menu-link {
+    color: var(--header-mainmenu-color);
+    text-decoration: var(--header-mainmenu-decoration);
+
+    &::after {
+      background-color: var(--header-mainmenu-color);
+    }
+    // scss-lint:disable NestingDepth
+
+    &.active {
+      color: var(--header-mainmenu-active-color);
+      font-weight: var(--header-mainmenu-active-font-weight);
+      text-decoration: var(--header-mainmenu-active-decoration);
+
+      &::before {
+        border-color: var(--header-mainmenu-active-color);
+      }
+      &:hover {
+        color: var(--header-mainmenu-color);
+        text-decoration: var(--header-mainmenu-hover-decoration);
+        svg,
+        path {
+          fill: var(--header-mainmenu-color);
+        }
+      }
+    }
+
+    &:hover {
+      color: var(--header-mainmenu-hover-color);
+
+      &::before {
+        border-color: var(--header-mainmenu-hover-color);
+      }
+    }
+
+    &::before {
+      border-color: var(--header-mainmenu-color);
+    }
+  }
+}
+
 // =============================================================================
 // SITE FOOTER
 // =============================================================================

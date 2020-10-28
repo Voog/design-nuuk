@@ -77,6 +77,9 @@ body.dark-background {
   -webkit-text-decoration: var(--header-mainmenu-decoration);
           text-decoration: var(--header-mainmenu-decoration);
 }
+.menu-main .menu .menu-link::before {
+  background-color: var(--header-mainmenu-color);
+}
 .menu-main .menu .menu-link.active {
   color: var(--header-mainmenu-active-color);
   font-weight: var(--header-mainmenu-active-font-weight);
@@ -104,6 +107,42 @@ body.dark-background {
   .menu-main.expanded .menu-lang .menu-item .menu-link {
     color: var(--secondary-color);
   }
+}
+
+.menu-sub .menu-link {
+  color: var(--header-mainmenu-color);
+  -webkit-text-decoration: var(--header-mainmenu-decoration);
+          text-decoration: var(--header-mainmenu-decoration);
+}
+.menu-sub .menu-link::after {
+  background-color: var(--header-mainmenu-color);
+}
+.menu-sub .menu-link.active {
+  color: var(--header-mainmenu-active-color);
+  font-weight: var(--header-mainmenu-active-font-weight);
+  -webkit-text-decoration: var(--header-mainmenu-active-decoration);
+          text-decoration: var(--header-mainmenu-active-decoration);
+}
+.menu-sub .menu-link.active::before {
+  border-color: var(--header-mainmenu-active-color);
+}
+.menu-sub .menu-link.active:hover {
+  color: var(--header-mainmenu-color);
+  -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
+          text-decoration: var(--header-mainmenu-hover-decoration);
+}
+.menu-sub .menu-link.active:hover svg,
+.menu-sub .menu-link.active:hover path {
+  fill: var(--header-mainmenu-color);
+}
+.menu-sub .menu-link:hover {
+  color: var(--header-mainmenu-hover-color);
+}
+.menu-sub .menu-link:hover::before {
+  border-color: var(--header-mainmenu-hover-color);
+}
+.menu-sub .menu-link::before {
+  border-color: var(--header-mainmenu-color);
 }
 
 .footer .voog-reference a {
