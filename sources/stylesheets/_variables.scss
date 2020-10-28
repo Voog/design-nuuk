@@ -4,8 +4,8 @@
 
 // General colors
 $primary-color: #000000;
-$secondary-color: #D5AFB6;
-$third-color: #8D9091;
+$secondary-color: #8D9091;
+$third-color: #D5AFB6;
 
 // Specific colors
 $black: #000000;
@@ -52,4 +52,5 @@ $bezier-medium: cubic-bezier(0, 0.6, 0.25, 1);
 $bezier-fast: cubic-bezier(0.15, 0.95, 0.1, 1);
 $bezier-menu: cubic-bezier(0, 1.02, 0.41, 1);
 
+$zindex-menu-btn: 99;
 $zindex-semimodal: 100;

@@ -13,6 +13,7 @@
   transform: translateX(-320px);
   transition: all 0.6s;
   transition-timing-function: $bezier-medium;
+  z-index: $zindex-semimodal;
 
   .edy-checkout-button-visible & {
     top: 40px;
@@ -30,7 +31,6 @@
 
 
   &-visible {
-    z-index: $zindex-semimodal;
     transform: translateX(0px);
 
     @include query($tablet-3) {

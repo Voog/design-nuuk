@@ -26,4 +26,10 @@
       height: 192px;
     }
   }
+
+  &header {
+    min-height: 528px;
+    height: 100%;
+    position: relative;
+  }
 }

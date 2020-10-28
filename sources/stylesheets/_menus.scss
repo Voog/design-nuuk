@@ -13,6 +13,7 @@
   border: none;
   cursor: pointer;
   transition: top .6s ease-in;
+  z-index: $zindex-menu-btn;
 
   .edy-checkout-button-visible & {
     top: 64px;

@@ -12,6 +12,12 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  .editmode & {
+    min-height: calc(100vh - 72px);
+  }
 
   &.dark-background {
     @include color($white, 1);

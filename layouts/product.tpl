@@ -9,6 +9,7 @@
 </head>
 
 <body class="product-page js-bg-picker-area">
+  {% include "header" %}
   {% if editmode %}
     <button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="true" data-bg-image="{{ body_bg_image }}" data-bg-image-sizes="{{ body_bg_image_sizes_str | escape }}" data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
   {% endif %}
@@ -23,7 +24,7 @@
           <button class="voog-bg-picker-btn js-background-settings" data-bg-key="container_bg" data-bg-picture-boolean="false" data-bg-color="{{ container_bg_color }}" data-bg-color-data="{{ container_bg_color_data_str | escape }}"></button>
         {% endif %}
 
-        {% include "header" %}
+
         <div class="flex_box">{% include 'menu-level-2' %}</div>
 
         <main class="content" role="main" data-search-indexing-allowed="true">

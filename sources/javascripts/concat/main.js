@@ -45,7 +45,7 @@
   };
 
   var bindSideClicks = function() {
-    $('.container').on('mousedown', function(event) {
+    $('body').on('mousedown', function(event) {
       if (!$(event.target).closest('.js-prevent-sideclick').length) {
         $('.js-semimodal').removeClass('semimodal-visible');
         $('.js-popover').removeClass('expanded');

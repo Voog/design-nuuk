@@ -44,7 +44,7 @@
       "--headings-subheading-color"
     ]
   */
-  --secondary-color: #D5AFB6;
+  --secondary-color: #8D9091;
   /* VoogStyle
     "pathI18n": ["main_styles", "colors"],
     "titleI18n": "third_color",
