@@ -14,6 +14,7 @@ body {
   min-height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow-x: hidden;
 }
 .editmode body {
   min-height: calc(100vh - 72px);
@@ -448,11 +449,12 @@ body.dark-background {
 .menu-btn .menu-stripe {
   display: block;
   width: 32px;
-  height: 2px;
+  height: 3px;
   color: #000000;
+  border-radius: 2px;
 }
 .menu-btn .menu-stripe:first-child {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .dark-background .menu-btn .menu-stripe {
   background-color: white;
