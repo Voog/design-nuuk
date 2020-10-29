@@ -91,3 +91,11 @@
     margin-top: 35px;
   }
 }
+
+.publicmode {
+  .content-item-box {
+    &.without-image {
+      display: none;
+    }
+  }
+}

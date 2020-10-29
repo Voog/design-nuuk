@@ -271,3 +271,7 @@ body.dark-background {
           text-decoration: var(--content-link-text-decoration);
   text-transform: var(--content-link-text-transform);
 }
+
+.loader::before {
+  border-top-color: var(--secondary-color);
+}

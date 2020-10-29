@@ -18,18 +18,17 @@
   <div class="flex_col w-100p">
     {% include 'image_src_variable', _data: page.data.front_header_bg, _targetWidth: "1800" %}
     <div
-      class="front_header-image bg_img-cover{%- if _src != blank %} image_header{%- endif -%}"
-      {% if _src != blank -%}
-        style="background-image: url({{_src}});"
-      {%- endif -%}
+      class="{%- if page.data.front_header_bg != blank %} image_header{%- endif -%}"
     >
+    {%- assign imageClass = "image_fit-cover front_header-image" -%}
+    {% include "lazy-image", _data: page.data.front_header_bg, _targetWidth: '1400', _className: imageClass  %}
       <div class="front_header-color bg_color-absolute"
         {% if site.data.front_header_bg.color != blank %}
           style="background-color: {{ site.data.front_header_bg.color }};"
         {% endif %}
       ></div>
       {% if editmode %}
-        <button class="bg-picker r-32 t-32" data-picture="true" data-color="true" data-image_elem=".front_header-image" data-color_elem=".front_header-color" data-name="front_header_bg" data-bg="{{ page.data.front_header_bg | json | escape }}"></button>
+        <button class="bg-picker r-32 t-32" data-type="img" data-picture="true" data-color="true" data-image_elem=".front_header-image" data-color_elem=".front_header-color" data-name="front_header_bg" data-bg="{{ page.data.front_header_bg | json | escape }}"></button>
       {% endif %}
     </div>
     <div class="container flex_col flex_j-space-between h-100p">

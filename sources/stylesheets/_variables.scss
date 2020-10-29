@@ -15,6 +15,7 @@ $red: #cc0000;
 $green: #60a740;
 $blue-1: #0066bb;
 $blue-2: #c7e5ff;
+$science-blue: #06b;
 
 $grey-1:#8D9091;
 $grey-2: #C4C4C4;
@@ -33,6 +34,8 @@ $color-silver-2: rgb(196,196,196);
 // Fonts
 $primary-font: 'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Segoe UI', sans-serif;
 $avenir: 'Avenir Next', 'AvenirX';
+$base-font-size: 18px;
+
 // Media queries
 $tablet-1: 900px;
 $tablet-2: 752px;
@@ -40,6 +43,10 @@ $tablet-3: 506px;
 
 $mobile-1: 480px;
 $mobile-2: 420px;
+
+$tiny: 340px;
+$micro: 290px;
+$nano: 240px;
 
 // Reusable values
 // Define the reusable variables here.

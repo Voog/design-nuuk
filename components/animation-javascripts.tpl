@@ -5,14 +5,6 @@
   });
 
   $(document).ready(function() {
-    $('.post.translated-y--100').each(function() {
-      var delay = $(this).index();
-      $(this).addClass("animate_translated-y--0")
-      $(this).css('transition-delay', delay / 3 + 's');
-    });
-  });
-
-  $(document).ready(function() {
     $('.product_item.scale-up').each(function() {
       var item = $(this);
       var delay = item.index();
@@ -22,3 +14,15 @@
     });
   });
 </script>
+
+{% if blog_listing_page %}
+  <script>
+    $(document).ready(function() {
+      $('.post.translated-y--100').each(function() {
+        var delay = $(this).index();
+        $(this).addClass("animate_translated-y--0")
+        $(this).css('transition-delay', delay / 3 + 's');
+      });
+    });
+  </script>
+{% endif %}

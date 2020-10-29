@@ -194,10 +194,10 @@
       font-size: 16px;
       line-height: 194%;
     }
-  }
 
-  .menu-lang {
-    display: none;
+    .menu {
+      flex-direction: column;
+    }
   }
 }
 

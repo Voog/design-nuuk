@@ -123,6 +123,7 @@ body {
   max-width: 960px;
   margin: 96px auto 0;
   width: 100%;
+  box-sizing: border-box;
 
   @include query($tablet-2) {
     padding: 20px
@@ -135,4 +136,93 @@ body {
       border: none;
     }
   }
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  opacity: 0;
+  transition: opacity .3s;
+
+  &::before {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    box-sizing: content-box;
+  }
+
+  .not-loaded &,
+  .is-loaded & {
+    margin-top: calc((20px / 2) * -1);
+    margin-left: calc((20px / 2) * -1);
+    border: 1px solid rgba($black, 0);
+    animation: spin 1s infinite linear;
+
+    &::before {
+      border-top: 1px solid rgba($black, 1);
+      border-right: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-radius: 100%;
+    }
+  }
+
+  .not-loaded & {
+    opacity: 1;
+  }
+
+  .is-loaded & {
+    opacity: 0;
+  }
+
+  .with-error & {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    background-color: rgba($red, .7);
+    opacity: 1;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 14px;
+      width: 22px;
+      height: 2px;
+      background-color: $white;
+      border-radius: 2px;
+      content: '';
+    }
+
+
+    &::before {
+      left: 4px;
+      transform: rotate(45deg);
+    }
+
+    &::after{
+      right: 4px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
+.svg-spritesheet {
+  display: none;
 }

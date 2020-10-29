@@ -242,7 +242,7 @@
       top: 2px;
     }
 
-    .public & {
+    .publicmode & {
       cursor: pointer;
     }
 
@@ -259,7 +259,7 @@
 
     &-disabled {
       // scss-lint:disable NestingDepth
-      .public & {
+      .publicmode & {
         cursor: default;
 
         &,

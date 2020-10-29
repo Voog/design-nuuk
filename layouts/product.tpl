@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
+<html class="{% if editmode %}editmode{% else %}publicmode{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
   {% include "template-variables" %}
   {% include "html-head" %}
@@ -85,7 +85,7 @@
                 </div>
                 <div class="p14 mar_t-16">
                   <a class="bold" href="{{ buy_button.content.parent.url }}">
-                    {{ product.title }}
+                    {{ product.name }}
                   </a>
                   <div>{{ product.price }}</div>
                 </div>

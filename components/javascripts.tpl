@@ -1,5 +1,7 @@
 {% comment %}SITE WIDE JAVASCRIPTS{% endcomment %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.1.3/lazyload.min.js" integrity="sha512-V3DZ9ZAJrv8ZYY5Zarlfjusec9J6S8htRT3bJDKTdEgq0g9OhbHQUjK+vsBkE6CH0J5VJtBCzPSXJ0ZCVpjPdQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js" integrity="sha512-7taFZYSf0eAWyi1UvMzNrBoPVuvLU7KX6h10e4AzyHVnPjzuxeGWbXYX+ED9zXVVq+r9Xox5WqvABACBSCevmg==" crossorigin="anonymous"></script>
 <script src="{{ javascripts_path }}/application.js?v=1"></script>
 {% sitejs_include %}
 
@@ -51,6 +53,21 @@
     </script>
     {% include "settings_editor" %}
     {% include "bg_picker_scripts" %}
+
+    <script>
+      var siteData = new Edicy.CustomData({
+        type: 'site'
+      });
+
+      site.bindContentItemImgDropAreas('{{ "drag_picture_for_product_here" | lc: editor_locale | escape }}');
+      site.bindContentItemImageCropToggle();
+
+      {%if site.data.settings_root_item %}
+        rootItemValuesObj = {{ site.data.settings_root_item | json }};
+      {% else %}
+        rootItemValuesObj = {};
+      {% endif %};
+    </script>
   {% endeditorjsblock %}
 {% endif %}
 

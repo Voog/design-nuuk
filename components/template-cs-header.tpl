@@ -204,13 +204,6 @@
   */
   --header-mainmenu-active-decoration: none;
   /* VoogStyle
-    "pathI18n": ["header", "main_menu", "normal"],
-    "titleI18n": "button_color",
-    "editor": "colorPicker",
-    "scope": "global",
-    "featured": true
-  */
-  /* VoogStyle
     "pathI18n": ["header", "main_menu", "active"],
     "titleI18n": "font_weight",
     "type": "button",
@@ -236,6 +229,13 @@
     "scope": "global"
   */
   --header-mainmenu-active-font-style: normal;
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu", "normal"],
+    "titleI18n": "button_color",
+    "editor": "colorPicker",
+    "scope": "global",
+    "featured": true
+  */
   --header-mainmenu-btn-color: #000000;
  /* VoogStyle
   "pathI18n": ["header", "main_menu", "hover"],
