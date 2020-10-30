@@ -4,11 +4,21 @@
   <script>
     initSwiper();
 
-      $( window ).resize(function() {
+    $( window ).resize(function() {
       initSwiper();
     });
 
+
+
     function initSwiper() {
+      {%- if editmode -%}
+        var conditionalBool = false;
+        var autoPlay = false;
+      {%- else -%}
+        var conditionalBool = true;
+        var autoPlay = {delay: 3000, disableOnInteraction: true};
+      {%- endif -%}
+
       if ($('.swiper-container').length > 0) {
         var swiper = new Swiper('.swiper-container', {
           preloadImages: false,
@@ -17,14 +27,10 @@
             loadPrevNextAmount: 2,
           },
           dynamicBullets: true,
-          grabCursor: false,
+          grabCursor: conditionalBool,
           loop: true,
           centeredSlides: true,
-          autoplay: {
-            enabled: false,
-            delay: 2500,
-            disableOnInteraction: true,
-          },
+          autoplay: autoPlay,
           pagination: {
             el: '.swiper-pagination',
             clickable: true
@@ -41,8 +47,8 @@
           fadeEffect: { crossFade: true },
           speed: 1000,
           parallax: true,
-          allowTouchMove: false,
-          slideToClickedSlide: false
+          allowTouchMove: conditionalBool,
+          slideToClickedSlide: conditionalBool
         });
       }
     }
