@@ -24,9 +24,15 @@
       var siteData = new Edicy.CustomData({
         type: 'site'
       });
+
       var pageData = new Edicy.CustomData({
         type: 'page',
-        id: '{{ page.id }}'
+        id: {{ page.id }}
+      });
+
+      var articleData = new Edicy.CustomData({
+        type: "article",
+        id: {{ article.id }}
       });
 
       $('.js-data-item').each(function() {
@@ -42,6 +48,8 @@
 
           if (dataEntity == 'siteData') {
             var entityData = siteData;
+          } else if (dataEntity === 'articleData') {
+            var entityData = 'articleData';
           } else {
             var entityData = pageData;
           }

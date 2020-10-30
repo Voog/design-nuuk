@@ -6,6 +6,8 @@
   {% include "template-variables" with "article" %}
   {% include "html-head" %}
   {% include "template-styles" %}
+  {%- assign articleSettingsKey = 'article_settings_' | append: article.id -%}
+  {%- assign articleSettingsData = article.data[articleSettingsKey] -%}
 </head>
 
 <body class="post-page js-bg-picker-area">
@@ -19,10 +21,15 @@
   <div class="background-color js-background-color"></div>
 
   <div class="container">
+    {% if editmode %}
+      <div class="mar_b-32">
+        <button disabled class="js-article-settings-btn">Article settings</button>
+      </div>
+    {% endif %}
     {% include "tags-post" %}
 
     <main class="content" role="main" data-search-indexing-allowed="true">
-      {% include 'menu-level-2' %}
+
       {% include "post-box" with "article" %}
 
       {% if article.older or article.newer %}
@@ -67,6 +74,50 @@
 
         {% include "comment-form" %}
       </section>
+
+      {%- if articleSettingsData.show_related_articles -%}
+        {%- if articleSettingsData.is_settings_published or previewmode or editmode -%}
+          {% assign current_article_id = article.id %}
+
+          <h3>Continue reading</h3>
+          <div>
+            <div class="flex_row flex_row-3 mar_0-8-neg">
+              {%- load articles to "articles" q.article.tag$in=article.tags -%}
+              {% for article in articles %}
+                {%- if article.id != current_article_id -%}
+                  <div class="flex_row-3--item">
+                    <div class="mar_0-8">
+                      {% include "post-box" %}
+                    </div>
+                  </div>
+                  {%- if forloop.index == 3 -%}
+                    {% break %}
+                  {%- endif -%}
+                {%- endif -%}
+              {% endfor %}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- unless editmode -%}
+        {%- if articleSettingsData.is_settings_published or previewmode -%}
+          {%- if articleSettingsData.has_share_on_facebook_btn == true or articleSettingsData.has_share_on_twitter_btn == true or articleSettingsData.has_share_on_linkedin_btn == true -%}
+            <h3>Share this article</h3>
+            <div>
+              {%- if articleSettingsData.has_share_on_facebook_btn == true -%}
+                <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');">Facebook </a>
+              {%- endif -%}
+              {%- if articleSettingsData.has_share_on_twitter_btn == true -%}
+                <a href="#" onclick="javascript:popup_share('http://twitter.com/home?status={{ article.title }} {{ site.url }}{{ article.url }}',800,320)">Twitter </a>
+              {%- endif -%}
+              {%- if articleSettingsData.has_share_on_linkedin_btn == true -%}
+                <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ article.url | remove_first:'/' }}&title={{ article.title | remove:'&' }}">LinkedIn</a>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endunless -%}
     </main>
 
     {% include "footer" %}
@@ -75,6 +126,76 @@
   {% include "site-signout" %}
   {% include "javascripts" %}
   {% include "template-tools" with 'article' %}
-  <script>site.initPostPage();</script>
+  <script>
+    site.initPostPage();
+    {% if editmode %}
+      window.addEventListener('DOMContentLoaded', (event) => {
+        {% if article.data[articleSettingsKey] %}
+          var valuesObj = {{ article.data[articleSettingsKey] | json }};
+        {% else %}
+          var valuesObj = {};
+        {% endif %}
+
+        initSettingsEditor(
+          {
+            settingsBtn: document.querySelector('.js-article-settings-btn'),
+            menuItems: [
+              {
+                "title": "Add share on Facebook button",
+                "tooltip": "Visible in live & preview mode.",
+                "type": "checkbox",
+                "key": "has_share_on_facebook_btn",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
+              },
+              {
+                "title": "Add share on Twitter button",
+                "tooltip": "Visible in live & preview mode.",
+                "type": "checkbox",
+                "key": "has_share_on_twitter_btn",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
+              },
+              {
+                "title": "Add share on LinkedIn button",
+                "tooltip": "Visible in live & preview mode.",
+                "type": "checkbox",
+                "key": "has_share_on_linkedin_btn",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
+              },
+              {
+                "title": "Show related articles by tags",
+                "type": "checkbox",
+                "key": "show_related_articles",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
+              },
+              {
+                "title": "Publish settings changes",
+                "type": "checkbox",
+                "key": "is_settings_published",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
+              }
+            ],
+            dataKey: '{{articleSettingsKey}}',
+            values: valuesObj,
+            entityData: 'articleData'
+          }
+        );
+      });
+    {% endif %}
+  </script>
 </body>
 </html>

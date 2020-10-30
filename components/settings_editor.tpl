@@ -1,7 +1,11 @@
 <script>
   function initSettingsEditor(options = {}) {
+    var entityData;
+
     if (options.entityData === 'siteData') {
       var entityData = siteData;
+    } else if (options.entityData === 'articleData') {
+      var entityData = articleData;
     } else {
       var entityData = pageData;
     }
@@ -12,7 +16,9 @@
       commit: function(data) {
         entityData.set(options.dataKey, data, {
           success: function() {
-            window.location.reload();
+            if (options.noReload !== true) {
+              window.location.reload();
+            }
           }
         });
       }

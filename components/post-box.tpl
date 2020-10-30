@@ -1,5 +1,4 @@
 <article class="post{% if blog_listing_page %} translated-y--100{% endif %}">
-
   <header class="post-header">
     {% unless article.data.item_image %}
       {% assign article_image_state = "without-image" %}
