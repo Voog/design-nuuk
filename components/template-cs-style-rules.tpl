@@ -226,6 +226,7 @@ body.dark-background {
   -webkit-text-decoration: var(--button-text-decoration);
           text-decoration: var(--button-text-decoration);
   text-transform: var(--button-text-transform);
+  background-color: var(--button-background-color);
 }
 .content-formatted .custom-btn:hover {
   color: var(--button-hover-color);
@@ -238,6 +239,7 @@ body.dark-background {
   -webkit-text-decoration: var(--button-hover-text-decoration);
           text-decoration: var(--button-hover-text-decoration);
   text-transform: var(--button-hover-text-transform);
+  background-color: var(--button-hover-background-color);
 }
 .content-formatted .form_submit input {
   color: var(--button-color);
@@ -247,6 +249,7 @@ body.dark-background {
   -webkit-text-decoration: var(--button-text-decoration);
           text-decoration: var(--button-text-decoration);
   text-transform: var(--button-text-transform);
+  background-color: var(--button-background-color);
   white-space: normal;
   word-break: break-word;
 }
@@ -261,6 +264,7 @@ body.dark-background {
   -webkit-text-decoration: var(--button-hover-text-decoration);
           text-decoration: var(--button-hover-text-decoration);
   text-transform: var(--button-hover-text-transform);
+  background-color: var(--button-hover-background-color);
 }
 
 .blog-page .post-read-more-btn {

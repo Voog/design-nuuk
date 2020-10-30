@@ -48,8 +48,29 @@
   .form_field_file,
   .form_submit input {
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all  0.3s $bezier-default;
   }
+  .form_submit input {
+    border: none;
+    line-height: 194%;
+    padding: 4px 16px;
+    outline: none;
+    position: relative;
+
+    &:active {
+      background-color: $secondary-color;
+      top: 2px;
+      transition: all  0.3s $bezier-default;
+    }
+
+    &:hover {
+      background-color: $secondary-color;
+      transition: all  0.3s $bezier-default;
+    }
+  }
+
   .form_field_textfield,
   .form_field_textarea,
   .form_field_select,

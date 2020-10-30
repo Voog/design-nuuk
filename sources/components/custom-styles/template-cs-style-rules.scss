@@ -367,6 +367,7 @@ body {
     font-weight: var(--button-font-weight);
     text-decoration: var(--button-text-decoration);
     text-transform: var(--button-text-transform);
+    background-color: var(--button-background-color);
 
     &:hover {
       color: var(--button-hover-color);
@@ -376,6 +377,7 @@ body {
       hyphens: var(--button-hover-hyphens);
       text-decoration: var(--button-hover-text-decoration);
       text-transform: var(--button-hover-text-transform);
+      background-color: var(--button-hover-background-color);
     }
   }
 
@@ -388,6 +390,7 @@ body {
 
       text-decoration: var(--button-text-decoration);
       text-transform: var(--button-text-transform);
+      background-color: var(--button-background-color);
       white-space: normal;
       word-break: break-word;
 
@@ -399,6 +402,7 @@ body {
         hyphens: var(--button-hover-hyphens);
         text-decoration: var(--button-hover-text-decoration);
         text-transform: var(--button-hover-text-transform);
+        background-color: var(--button-hover-background-color);
       }
     }
   }

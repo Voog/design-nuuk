@@ -421,15 +421,22 @@ body.dark-background {
   color: white;
   padding: 4px 16px;
   text-align: center;
-  color: #8d9091;
+  color: black;
+  outline: none;
   background-color: black;
 }
 .content-formatted .custom-btn:hover {
-  background-color: #8D9091;
+  background-color: #8d9091;
+  -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
 }
 .content-formatted .custom-btn:active {
-  background-color: #8D9091;
+  background-color: #8d9091;
   top: 2px;
+  -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
 }
 .publicmode .content-formatted .custom-btn {
   cursor: pointer;
@@ -549,7 +556,7 @@ body.dark-background {
   display: block;
   width: 32px;
   height: 3px;
-  color: #000000;
+  color: black;
   border-radius: 2px;
 }
 .menu-btn .menu-stripe:first-child {
@@ -1271,7 +1278,7 @@ body.dark-background {
 .blog-page .post {
   margin-bottom: 50px;
   padding-bottom: 50px;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid black;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 .blog-page .post .post-excerpt {
@@ -1531,7 +1538,31 @@ body.dark-background {
 .content-formatted .form_field_file,
 .content-formatted .form_submit input {
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+}
+.content-formatted .form_submit input {
+  border: none;
+  line-height: 194%;
+  padding: 4px 16px;
+  outline: none;
+  position: relative;
+}
+.content-formatted .form_submit input:active {
+  background-color: #8d9091;
+  top: 2px;
+  -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+}
+.content-formatted .form_submit input:hover {
+  background-color: #8d9091;
+  -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
 }
 .content-formatted .form_field_textfield,
 .content-formatted .form_field_textarea,

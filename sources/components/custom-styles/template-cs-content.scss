@@ -50,7 +50,7 @@
     "featured": true,
     "scope": "global"
   */
-  #{--content-body-color}: rgba($primary-color, 1);
+  #{--content-body-color}: $primary-color;
 
   /* VoogStyle
     "pathI18n": ["content", "link", "normal"],

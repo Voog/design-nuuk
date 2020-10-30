@@ -26,7 +26,16 @@
     "featured": true,
     "scope": "global"
   */
-  #{--button-color}: white;
+  #{--button-color}: $white;
+
+  /* VoogStyle
+    "pathI18n": ["content", "button", "normal"],
+    "titleI18n": "background_color",
+    "editor": "colorPicker",
+    "featured": true,
+    "scope": "global"
+  */
+  #{--button-background-color}: $primary-color;
 
   /* VoogStyle
     "pathI18n": ["content", "button", "normal"],
@@ -103,7 +112,16 @@
     "featured": true,
     "scope": "global"
   */
-  #{--button-hover-color}: white;
+  #{--button-hover-color}: $white;
+
+  /* VoogStyle
+    "pathI18n": ["content", "button", "hover"],
+    "titleI18n": "background_color",
+    "editor": "colorPicker",
+    "featured": true,
+    "scope": "global"
+  */
+  #{--button-hover-background-color}: $secondary-color;
 
   /* VoogStyle
     "pathI18n": ["content", "button", "hover"],

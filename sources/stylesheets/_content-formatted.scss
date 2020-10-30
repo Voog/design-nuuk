@@ -49,7 +49,7 @@
 
   // Styling rules for the editable content area headings.
   h1, h2, h3, h4, h5, h6 {
-    @include color($secondary-color, 1);
+    color: $secondary-color;
     @include hyphenate(true);
 
     .dark-background & {
@@ -230,16 +230,19 @@
     color: white;
     padding: 4px 16px;
     text-align: center;
-    @include color($secondary-color, 1);
+    color: $primary-color;
+    outline: none;
     @include bg($black);
 
     &:hover {
-      background-color: #8D9091;
+      background-color: $secondary-color;
+      transition: all  0.3s $bezier-default;
     }
 
     &:active {
-      background-color: #8D9091;
+      background-color: $secondary-color;
       top: 2px;
+      transition: all  0.3s $bezier-default;
     }
 
     .publicmode & {
