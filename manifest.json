@@ -312,6 +312,13 @@
       "file": "components/comment-form.tpl",
       "layout_name": "comment-form",
       "title": "comment-form"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/swiper-js.tpl",
+      "layout_name": "swiper-js",
+      "title": "swiper-js"
     }
   ],
   "assets": [

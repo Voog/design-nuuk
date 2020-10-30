@@ -28,12 +28,12 @@
 
       var pageData = new Edicy.CustomData({
         type: 'page',
-        id: {{ page.id }}
+        id: '{{ page.id }}'
       });
 
       var articleData = new Edicy.CustomData({
         type: "article",
-        id: {{ article.id }}
+        id: '{{ article.id }}'
       });
 
       $('.js-data-item').each(function() {
@@ -81,3 +81,4 @@
 {% endif %}
 
 {% include 'animation-javascripts' %}
+{% include 'swiper-js' %}

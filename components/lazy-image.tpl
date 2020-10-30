@@ -8,7 +8,7 @@
 
 {% include 'image_src_variable', _data: _data, _targetWidth: _maxWidth %}
 
-<img class="js-lazyload {{ _className }}" data-src="{{_src}}" data-sizes="{{sizes}}"
+<img class="{% if disableLazyLoad != true %}js-lazyload{% endif %} {{ _className }}" data-src="{{_src}}" data-sizes="{{sizes}}"
   {% if _data.imageSizes != blank -%}
     {%- if _data.imageSizes.size >= 1 -%}
       data-srcset="
