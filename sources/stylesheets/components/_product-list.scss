@@ -1,7 +1,27 @@
 .product_ {
   &item {
     min-width: 318px;
-    overflow: hidden;
+
+    &-link {
+      .custom-btn {
+        opacity: 0;
+        transition: opacity .6s $bezier-default;
+      }
+
+      &:hover {
+        .product_image,
+        .item-top,
+        p {
+          transform: scale(1.1);
+          transition: transform .6s $bezier-default;
+        }
+
+        .custom-btn {
+          opacity: 1;
+          transition: all .6s $bezier-default;
+        }
+      }
+    }
   }
 
   &image {
@@ -9,23 +29,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 16px;
       box-sizing: border-box;
-
-      div {
-        opacity: 0;
-        transition: all .6s $bezier-default;
-      }
-
-      &:hover {
-        transform: scale(1.1);
-        transition: transform .6s $bezier-default;
-
-        div {
-          opacity: 1;
-          transition: opacity .6s $bezier-default;
-        }
-      }
     }
   }
 }

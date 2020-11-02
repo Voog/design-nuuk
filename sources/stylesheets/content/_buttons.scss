@@ -20,6 +20,14 @@
     background-color: #8D9091;
     top: 2px;
   }
+
+  &.p-abs {
+    position: absolute;
+
+    &:active {
+      top: unset;
+    }
+  }
 }
 
 .content-formatted .button_,

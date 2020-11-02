@@ -4,7 +4,7 @@
 // Basic CoffeeScript port of the (MMCQ) Modified Media Cut Quantization
 // algorithm from the Leptonica library (http://www.leptonica.com/).
 // Return a color map you can use to map original pixels to the reduced palette.
-//
+// 
 // Rewritten from the JavaScript port (http://gist.github.com/1104622)
 // developed by Nick Rabinowitz under the MIT license.
 
@@ -907,16 +907,10 @@ MMCQ = (function() {
     $contentItemBox.removeClass('not-loaded with-error').addClass('is-loaded');
   };
 
-  var callback_error = function (element) {
-    var $contentItemBox = $(element).closest('.js-content-item-box');
-    $contentItemBox.removeClass('not-loaded is-loaded with-error').addClass('with-error');
-  };
-
   var bindContentItemImageLazyload = new LazyLoad({
     threshold : 500,
     elements_selector: ".js-lazyload",
-    callback_loaded: callback_loaded,
-    callback_error: callback_error
+    callback_loaded: callback_loaded
   });
 
   var bindCustomTexteditorStyles = function() {

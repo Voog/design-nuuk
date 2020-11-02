@@ -28,16 +28,13 @@
         {% include 'image_src_variable', _data: page.data.product_image, _targetWidth: "1200" %}
         <div class="flex_row-2--item">
           <div class="mar_0-16">
-            <div
-              class="product_image bg_img-cover{%- if _src != blank %} image_portrait{%- endif -%}"
-              {% if _src != blank -%}
-                style="background-image: url({{_src}});"
-              {%- endif -%}
-            >
-              {% if editmode %}
-                <button class="bg-picker" data-picture="true" data-color="false" data-image_elem=".product_image" data-name="product_image" data-bg="{{ page.data.product_image | json | escape }}"></button>
-              {% endif %}
-            </div>
+            {%- if page.data.product_image != blank or editmode -%}
+              {%- assign imageClass = "image_fit-cover product_image" -%}
+              {% include "lazy-image", _data: page.data.product_image, _targetWidth: '800', _className: imageClass  %}
+            {%- endif -%}
+            {% if editmode %}
+              <button class="bg-picker" data-picture="true" data-type="img" data-color="false" data-image_elem=".product_image" data-name="product_image" data-bg="{{ page.data.product_image | json | escape }}"></button>
+            {% endif %}
           </div>
         </div>
 

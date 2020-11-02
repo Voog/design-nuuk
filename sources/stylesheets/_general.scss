@@ -121,12 +121,13 @@ body {
 .container {
   position: relative;
   max-width: 960px;
+  padding: 32px 40px;
   margin: 96px auto 0;
   width: 100%;
   box-sizing: border-box;
 
   @include query($tablet-2) {
-    padding: 20px
+    padding: 16px
   }
 
   a {

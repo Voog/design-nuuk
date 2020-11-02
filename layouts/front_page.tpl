@@ -42,7 +42,6 @@
                     {% endcontentblock %}
                   </div>
                 {%- endif -%}
-
               </div>
               {% if editmode %}
                 <button class="bg-picker r-32 t-32" data-type="img" data-picture="true" data-color="true" data-image_elem=".front_header-image-{{i}}" data-color_elem=".front_header-color-{{i}}" data-name="{{headerImageKey}}" data-bg="{{ page.data[headerImageKey] | json | escape }}"></button>

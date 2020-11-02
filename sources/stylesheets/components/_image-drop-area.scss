@@ -1,6 +1,9 @@
 .item-top {
-  height: 344px;
+  height: 304px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     .btn {
@@ -43,7 +46,7 @@
   }
 
   .top-inner {
-    height: 344px;
+    height: 304px;
     position: relative;
     @include hyphenate;
     // scss-lint:disable ImportantRule
@@ -54,6 +57,10 @@
     font-weight: 300;
     line-height: 1.2;
     text-align: center;
+
+    &.image_square {
+      height: 304px;
+    }
 
     .with-image & {
       background-color: rgba($white, 1);
