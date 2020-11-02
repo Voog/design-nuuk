@@ -618,24 +618,24 @@ body.dark-background {
   word-break: break-word;
   word-wrap: break-word;
 }
-.menu .menu-link {
+.menu .menu-item a {
   display: block;
   color: #0066bb;
 }
 @media screen and (min-width: 752px) {
-  .dark-background .menu .menu-link {
+  .dark-background .menu .menu-item a {
     color: white;
   }
 }
-.menu .menu-link.untranslated {
+.menu .menu-item a.untranslated {
   color: #cc0000;
   color: rgba(204, 0, 0, 0.5);
 }
-.menu .menu-link:hover {
+.menu .menu-item a:hover {
   color: black;
 }
 @media screen and (min-width: 752px) {
-  .dark-background .menu .menu-link:hover {
+  .dark-background .menu .menu-item a:hover {
     color: white;
   }
 }
@@ -659,7 +659,7 @@ body.dark-background {
           align-items: center;
   position: relative;
 }
-.menu-main .menu .menu-link {
+.menu-main .menu .menu-item a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -671,13 +671,13 @@ body.dark-background {
           align-items: center;
   position: relative;
 }
-.menu-main .menu .menu-link:hover {
+.menu-main .menu .menu-item a:hover {
   color: #C4C4C4;
 }
-.menu-main .menu .menu-link.active {
+.menu-main .menu .menu-item a.active {
   color: #000000;
 }
-.menu-main .menu .menu-link.active:before {
+.menu-main .menu .menu-item a.active:before {
   content: '';
   background-color: #000000;
   border: 1px solid;
@@ -702,12 +702,12 @@ body.dark-background {
   border-left: 1px solid #c4c4c4b8;
   margin: 8px 0;
 }
-.menu-main .menu-sub.active .menu-link {
+.menu-main .menu-sub.active .menu-item a {
   font-size: 16px;
   line-height: 194%;
   padding-left: 16px;
 }
-.menu-main .menu-sub.active .menu-link:before {
+.menu-main .menu-sub.active .menu-item a:before {
   content: none;
 }
 .menu-main .menu-sub .edit-btn {
@@ -746,7 +746,7 @@ body.dark-background {
 .menu-sub .menu .menu-item:first-child {
   margin-left: 0;
 }
-.menu-sub .menu .menu-item .menu-link.with_arrow {
+.menu-sub .menu .menu-item a.with_arrow {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -754,7 +754,7 @@ body.dark-background {
       -ms-flex-align: center;
           align-items: center;
 }
-.menu-sub .menu .menu-item .menu-link.with_arrow::before {
+.menu-sub .menu .menu-item a.with_arrow::before {
   content: '';
   margin-right: 8px;
   border: solid;
@@ -765,7 +765,7 @@ body.dark-background {
       transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
-.dark-background .menu-sub .menu .menu-item .menu-link {
+.dark-background .menu-sub .menu .menu-item a {
   color: white;
 }
 @media screen and (max-width: 752px) {

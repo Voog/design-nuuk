@@ -138,7 +138,7 @@ body {
 
 // General rules for all navigation menus.
 .menu {
-  .menu-link {
+  .menu-item a {
     color: var(--third-color);
 
     .dark-background & {
@@ -164,7 +164,7 @@ body {
 // Styling rules for the site's main menu.
 .menu-main {
   .menu {
-    .menu-link {
+    .menu-item a {
       color: var(--header-mainmenu-color);
       text-decoration: var(--header-mainmenu-decoration);
 
@@ -193,7 +193,7 @@ body {
         color: var(--header-mainmenu-hover-color);
       }
     }
-    .menu-sub .menu-link {
+    .menu-sub .menu-item a {
       &.active {
         font-weight: 400;
       }
@@ -208,7 +208,7 @@ body {
         // scss-lint:disable NestingDepth
         .menu-item {
           // scss-lint:disable SelectorDepth
-          .menu-link {
+          .menu-item a {
             color: var(--secondary-color);
           }
           // scss-lint:enable SelectorDepth
@@ -221,7 +221,7 @@ body {
 }
 
 .menu-sub {
-  .menu-link {
+  .menu-item a {
     color: var(--header-mainmenu-color);
     text-decoration: var(--header-mainmenu-decoration);
 

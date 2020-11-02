@@ -1,28 +1,20 @@
 <ul class="menu">
   {% unless site.root_item.hidden? %}
-    <li class="menu-item">
-      <a class="menu-link{% if site.root_item.selected? %} active{% endif %}" href="{{ site.root_item.url }}">{{ site.root_item.title }}</a>
-    </li>
+    {% menulink site.root_item wrapper-tag="li" wrapper-class="menu-item" current-class="active" %}
   {% endunless %}
 
   {% for item in site.visible_menuitems %}
-    <li class="menu-item">
-      <a class="menu-link{% if item.selected? %} active{% endif %}{% unless item.translated? %} untranslated fci-editor-menuadd{% endunless %}" href="{{ item.url }}">{{ item.title }}</a>
-    </li>
+    {% menulink item wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
 
     {% if item.children? %}
       <div class="menu-sub{% if item.selected? %} active{% endif %}">
         <ul class="menu">
           {% for subitem in item.visible_children %}
-            <li class="menu-item">
-              <a class="menu-link{% if subitem.selected? %} active{% endif %}{% unless subitem.translated? %} untranslated fci-editor-menuadd{% endunless %}" href="{{ subitem.url }}">{{ subitem.title }}</a>
-            </li>
+            {% menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
           {% endfor %}
-
           {% if item.hidden_children.size > 0 %}
             <li class="edit-btn">{% menubtn item.hidden_children %}</li>
           {% endif %}
-
           {% if editmode %}
             <li class="edit-btn">{% menuadd parent="item" %}</li>
           {% endif %}

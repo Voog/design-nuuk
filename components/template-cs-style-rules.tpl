@@ -55,93 +55,93 @@ body.dark-background {
   background-color: var(--fourth-color);
 }
 
-.menu .menu-link {
+.menu .menu-item a {
   color: var(--third-color);
 }
 @media screen and (min-width: 752px) {
-  .dark-background .menu .menu-link {
+  .dark-background .menu .menu-item a {
     color: var(--fourth-color);
   }
 }
-.menu .menu-link:hover {
+.menu .menu-item a:hover {
   color: var(--primary-color);
 }
 @media screen and (min-width: 752px) {
-  .dark-background .menu .menu-link:hover {
+  .dark-background .menu .menu-item a:hover {
     color: var(--fourth-color);
   }
 }
 
-.menu-main .menu .menu-link {
+.menu-main .menu .menu-item a {
   color: var(--header-mainmenu-color);
   -webkit-text-decoration: var(--header-mainmenu-decoration);
           text-decoration: var(--header-mainmenu-decoration);
 }
-.menu-main .menu .menu-link::before {
+.menu-main .menu .menu-item a::before {
   background-color: var(--header-mainmenu-color);
 }
-.menu-main .menu .menu-link.active {
+.menu-main .menu .menu-item a.active {
   color: var(--header-mainmenu-active-color);
   font-weight: var(--header-mainmenu-active-font-weight);
   -webkit-text-decoration: var(--header-mainmenu-active-decoration);
           text-decoration: var(--header-mainmenu-active-decoration);
 }
-.menu-main .menu .menu-link.active::before {
+.menu-main .menu .menu-item a.active::before {
   background-color: var(--header-mainmenu-active-color);
 }
-.menu-main .menu .menu-link.active:hover {
+.menu-main .menu .menu-item a.active:hover {
   color: var(--header-mainmenu-color);
   -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
           text-decoration: var(--header-mainmenu-hover-decoration);
 }
-.menu-main .menu .menu-link.active:hover::before {
+.menu-main .menu .menu-item a.active:hover::before {
   background-color: var(--header-mainmenu-color);
 }
-.menu-main .menu .menu-link:hover {
+.menu-main .menu .menu-item a:hover {
   color: var(--header-mainmenu-hover-color);
 }
-.menu-main .menu .menu-sub .menu-link.active {
+.menu-main .menu .menu-sub .menu-item a.active {
   font-weight: 400;
 }
 @media screen and (max-width: 752px) {
-  .menu-main.expanded .menu-lang .menu-item .menu-link {
+  .menu-main.expanded .menu-lang .menu-item .menu-item a {
     color: var(--secondary-color);
   }
 }
 
-.menu-sub .menu-link {
+.menu-sub .menu-item a {
   color: var(--header-mainmenu-color);
   -webkit-text-decoration: var(--header-mainmenu-decoration);
           text-decoration: var(--header-mainmenu-decoration);
 }
-.menu-sub .menu-link::after {
+.menu-sub .menu-item a::after {
   background-color: var(--header-mainmenu-color);
 }
-.menu-sub .menu-link.active {
+.menu-sub .menu-item a.active {
   color: var(--header-mainmenu-active-color);
   font-weight: var(--header-mainmenu-active-font-weight);
   -webkit-text-decoration: var(--header-mainmenu-active-decoration);
           text-decoration: var(--header-mainmenu-active-decoration);
 }
-.menu-sub .menu-link.active::before {
+.menu-sub .menu-item a.active::before {
   border-color: var(--header-mainmenu-active-color);
 }
-.menu-sub .menu-link.active:hover {
+.menu-sub .menu-item a.active:hover {
   color: var(--header-mainmenu-color);
   -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
           text-decoration: var(--header-mainmenu-hover-decoration);
 }
-.menu-sub .menu-link.active:hover svg,
-.menu-sub .menu-link.active:hover path {
+.menu-sub .menu-item a.active:hover svg,
+.menu-sub .menu-item a.active:hover path {
   fill: var(--header-mainmenu-color);
 }
-.menu-sub .menu-link:hover {
+.menu-sub .menu-item a:hover {
   color: var(--header-mainmenu-hover-color);
 }
-.menu-sub .menu-link:hover::before {
+.menu-sub .menu-item a:hover::before {
   border-color: var(--header-mainmenu-hover-color);
 }
-.menu-sub .menu-link::before {
+.menu-sub .menu-item a::before {
   border-color: var(--header-mainmenu-color);
 }
 

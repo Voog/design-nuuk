@@ -90,29 +90,29 @@
 
   .menu-item {
     @include hyphenate(true);
-  }
 
-  .menu-link {
-    display: block;
+    a {
+      display: block;
 
-    @include color($blue-1);
-
-    .dark-background & {
-      @include query($tablet-2, 'min-width') {
-        @include color($white, 1);
-      }
-    }
-
-    &.untranslated {
-      @include color($red, 0.5);
-    }
-
-    &:hover {
-      @include color($primary-color, 1);
+      @include color($blue-1);
 
       .dark-background & {
         @include query($tablet-2, 'min-width') {
           @include color($white, 1);
+        }
+      }
+
+      &.untranslated {
+        @include color($red, 0.5);
+      }
+
+      &:hover {
+        @include color($primary-color, 1);
+
+        .dark-background & {
+          @include query($tablet-2, 'min-width') {
+            @include color($white, 1);
+          }
         }
       }
     }
@@ -132,35 +132,35 @@
       line-height: 1;
       align-items: center;
       position: relative;
-    }
 
-    .menu-link {
-      display: flex;
-      font-size: 18px;
-      line-height: 36px;
-      padding-left: 24px;
-      align-items: center;
-      position: relative;
+      a {
+        display: flex;
+        font-size: 18px;
+        line-height: 36px;
+        padding-left: 24px;
+        align-items: center;
+        position: relative;
 
-      &.untranslated {
+        &.untranslated {
 
-      }
+        }
 
-      &:hover {
-        color: #C4C4C4;
-      }
+        &:hover {
+          color: #C4C4C4;
+        }
 
-      &.active {
-        color: #000000;
+        &.active {
+          color: #000000;
 
-        &:before {
-          content: '';
-          background-color: #000000;
-          border: 1px solid;
-          height: 8px;
-          width: 8px;
-          position: absolute;
-          left: 0px;
+          &:before {
+            content: '';
+            background-color: #000000;
+            border: 1px solid;
+            height: 8px;
+            width: 8px;
+            position: absolute;
+            left: 0px;
+          }
         }
       }
     }
@@ -177,7 +177,7 @@
       border-left: 1px solid #c4c4c4b8;
       margin: 8px 0;
 
-      .menu-link {
+      .menu-item a {
         font-size: 16px;
         line-height: 194%;
         padding-left: 16px;
@@ -217,7 +217,7 @@
         margin-left: 0;
       }
 
-      .menu-link {
+      a {
         &.with_arrow {
           display: flex;
           align-items: center;
@@ -375,7 +375,7 @@ $flags:
 
     .menu-item {
 
-      .menu-link {
+      .a{
 
         &:hover {
 
