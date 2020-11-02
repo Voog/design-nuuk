@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
-  {%- assign frontPageSettingsKey = 'front_page_settings_' -%}
-  {%- assign frontPageSettingsData = page.data[frontPageSettingsKey] -%}
-  {%- if frontPageSettingsData.is_slider == true -%}
-    {%- assign has_swiper = true -%}
-  {% endif %}
+  {%- assign swiperSettingsData = page.data.swiper_settings -%}
   {% include "template-variables" %}
   {% include "html-head" %}
   {% include "template-styles" %}
@@ -21,10 +17,10 @@
 
 
   <div class="flex_col w-100p">
-    {%- if frontPageSettingsData.is_slider == true -%}
+    {%- if swiperSettingsData.is_slider == true -%}
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          {%- for i in (1..frontPageSettingsData.slides_count) -%}
+          {%- for i in (1..swiperSettingsData.slides_count) -%}
             {% assign headerImageKey = 'front_header_bg_' | append: i %}
             {% assign contentKey = 'front_header_content_' | append: i %}
             {% include 'image_src_variable', _data: page.data[headerImageKey], _targetWidth: "1400" %}
@@ -39,11 +35,14 @@
                   style="background-color: {{ site.data[headerImageKey].color }};"
                 {% endif %}
               >
-                <div class="swiper-content content-formatted" data-swiper-parallax="-300">
-                  {% contentblock name=contentKey publish_default_content="true" %}
-                    <h1>Shop</h1>
-                  {% endcontentblock %}
-                </div>
+                {%- if swiperSettingsData.is_content_by_slide == true -%}
+                  <div class="swiper-content content-formatted" data-swiper-parallax="-300">
+                    {% contentblock name=contentKey publish_default_content="true" %}
+                      <h1>Shop</h1>
+                    {% endcontentblock %}
+                  </div>
+                {%- endif -%}
+
               </div>
               {% if editmode %}
                 <button class="bg-picker r-32 t-32" data-type="img" data-picture="true" data-color="true" data-image_elem=".front_header-image-{{i}}" data-color_elem=".front_header-color-{{i}}" data-name="{{headerImageKey}}" data-bg="{{ page.data[headerImageKey] | json | escape }}"></button>
@@ -57,6 +56,14 @@
         <!-- If we need navigation buttons -->
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
+
+        {%- if swiperSettingsData.is_content_by_slide != true -%}
+          <div class="swiper-content swiper-content-absolute content-formatted">
+            {% contentblock name="front_header_content" publish_default_content="true" %}
+              <h1>Shop</h1>
+            {% endcontentblock %}
+          </div>
+        {%- endif -%}
       </div>
     {%- else -%}
       {% include 'image_src_variable', _data: page.data.front_header_bg_1, _targetWidth: "1800" %}
@@ -95,13 +102,14 @@
 
   {% include "site-signout" %}
   {% include "javascripts" %}
+  {% include 'swiper-js' %}
   {% include "template-tools" %}
   <script>
     site.initFrontPage();
     {% if editmode %}
       window.addEventListener('DOMContentLoaded', (event) => {
-        {% if page.data[frontPageSettingsKey] %}
-          var valuesObj = {{ page.data[frontPageSettingsKey] | json }};
+        {% if swiperSettingsData %}
+          var valuesObj = {{ swiperSettingsData | json }};
         {% else %}
           var valuesObj = {};
         {% endif %}
@@ -121,6 +129,24 @@
                 }
               },
               {
+                "title": "Use different content areas for every slide",
+                "type": "checkbox",
+                "key": "is_content_by_slide",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
+              },
+              {
+                "title": "Use fade effect in slider",
+                "type": "checkbox",
+                "key": "is_fade_effect",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
+              },
+              {
                 "title": "Number of header images",
                 "type": "number",
                 "key": "slides_count",
@@ -129,7 +155,7 @@
                 "min": 1
               }
             ],
-            dataKey: '{{frontPageSettingsKey}}',
+            dataKey: 'swiper_settings',
             values: valuesObj
           }
         );

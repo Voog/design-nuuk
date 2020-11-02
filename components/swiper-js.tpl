@@ -1,5 +1,4 @@
-
-{%- if has_swiper == true -%}
+{%- if swiperSettingsData.is_slider == true -%}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js" integrity="sha512-VHsNaV1C4XbgKSc2O0rZDmkUOhMKPg/rIi8abX9qTaVDzVJnrDGHFnLnCnuPmZ3cNi1nQJm+fzJtBbZU9yRCww==" crossorigin="anonymous"></script>
   <script>
     initSwiper();
@@ -11,6 +10,7 @@
 
 
     function initSwiper() {
+      console.log('init');
       {%- if editmode -%}
         var conditionalBool = false;
         var autoPlay = false;
@@ -18,6 +18,8 @@
         var conditionalBool = true;
         var autoPlay = {delay: 3000, disableOnInteraction: true};
       {%- endif -%}
+
+      var sliderEffect = {%- if swiperSettingsData.is_fade_effect -%}'fade'{%- else -%}'slide'{%- endif -%};
 
       if ($('.swiper-container').length > 0) {
         var swiper = new Swiper('.swiper-container', {
@@ -43,9 +45,8 @@
             enabled: true,
             onlyInViewport: false,
           },
-          effect: 'fade',
-          fadeEffect: { crossFade: true },
-          speed: 1000,
+          effect: sliderEffect,
+          speed: 800,
           parallax: true,
           allowTouchMove: conditionalBool,
           slideToClickedSlide: conditionalBool

@@ -81,4 +81,3 @@
 {% endif %}
 
 {% include 'animation-javascripts' %}
-{% include 'swiper-js' %}
