@@ -29,8 +29,13 @@
         <div class="flex_row-2--item">
           <div class="mar_0-16">
             {%- if page.data.product_image != blank or editmode -%}
-              {%- assign imageClass = "image_fit-cover product_image" -%}
-              {% include "lazy-image", _data: page.data.product_image, _targetWidth: '800', _className: imageClass  %}
+              <div class="content-item-box">
+                <div class="item-top mar_b-32">
+                  <div class="top-inner of-hidden">
+                    {% include "lazy-image", _data: page.data.product_image, _targetWidth: '300', _className: "item-image is-cropped" %}
+                  </div>
+                </div>
+              </div>
             {%- endif -%}
             {% if editmode %}
               <button class="bg-picker" data-picture="true" data-type="img" data-color="false" data-image_elem=".product_image" data-name="product_image" data-bg="{{ page.data.product_image | json | escape }}"></button>
@@ -68,24 +73,24 @@
             {%- assign product = buy_button.product -%}
 
             <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{item_child.path}}">
-              {% include 'image_src_variable', _data: buy_button.content.parent.data.product_image, _targetWidth: "500" %}
               <div class="mar_0-8 mar_b-32 content-formatted">
-                <div
-                  class="product_image bg_img-cover{%- if _src != blank %} image_square{%- endif -%}"
-                  {% if _src != blank -%}
-                    style="background-image: url({{_src}});"
-                  {%- endif -%}
-                >
-                  {%- if buy_button.content -%}
-                    {%- content content=buy_button.content -%}
-                  {%- endif -%}
+              <a class="product_item-link" href="{{ buy_button.content.parent.url }}">
+                <div class="content-item-box">
+                  <div class="item-top mar_b-32">
+                    <div class="top-inner of-hidden">
+                      {% include "lazy-image", _data: buy_button.content.parent.data.product_image, _targetWidth: '300', _className: "item-image is-cropped" %}
+                    </div>
+                    <div class="custom-btn p-abs">Look closer</div>
+                  </div>
                 </div>
+
                 <div class="p14 mar_t-16">
-                  <a class="bold" href="{{ buy_button.content.parent.url }}">
-                    {{ product.name }}
-                  </a>
-                  <div>{{ product.price }}</div>
+                  <p class="bold">
+                    {{ buy_button.content.parent.title }}
+                  </p>
+                  <p>{{ product.price_with_tax | money_with_currency: "EUR" }}</p>
                 </div>
+              </a>
               </div>
             </div>
           {%- endfor -%}

@@ -17,6 +17,14 @@
 
       &--item {
         width: 33%;
+
+        @media screen and (max-width: $tablet-1) {
+          width: 50%;
+        }
+
+        @media screen and (max-width: $mobile-1) {
+          width: 100%;
+        }
       }
     }
 

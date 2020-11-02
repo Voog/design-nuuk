@@ -35,7 +35,7 @@
                             <use xlink:href="#ico-toggle"></use>
                           </svg>
                         </button>
-                        <div class="top-inner aspect-ratio-inner image-drop-area image_square {{ page_image_crop_state }} js-content-item-img-drop-area js-lazyload" data-image="{{ item_child.data.item_image.url }}">
+                        <div class="top-inner aspect-ratio-inner image-drop-area {{ page_image_crop_state }} js-content-item-img-drop-area js-lazyload" data-image="{{ item_child.data.item_image.url }}">
                         </div>
                         <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
                       </div>
@@ -46,13 +46,13 @@
                         <div class="top-inner of-hidden">
                           {% if item_child.data.item_image != blank %}
                             <div class="loader js-loader"></div>
-                            {%- assign imageClass = "item-image image_square image_fit-cover " | append: page_image_crop_state -%}
+                            {%- assign imageClass = "item-image " | append: page_image_crop_state -%}
                             {% include "lazy-image", _data: item_child.data.item_image, _targetWidth: '300', _className: imageClass %}
                           {% else %}
                             <div class="item-placeholder">{{ item_child.title | truncate: 50 }}</div>
                           {% endif %}
-                          <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
                         </div>
+                        <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
                       </div>
                     </div>
                   {% endif %}
@@ -62,11 +62,13 @@
                     </p>
                   </div>
                 {%- else -%}
-                  <div
-                    class="product_image image_square"
-                  >
-                    {% include "lazy-image", _data: item_child.data.product_image, _targetWidth: '300', _className: "image_square image_fit-cover" %}
-                    <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
+                  <div class="content-item-box">
+                    <div class="item-top mar_b-32">
+                      <div class="top-inner of-hidden">
+                        {% include "lazy-image", _data: item_child.data.product_image, _targetWidth: '300', _className: "item-image is-cropped" %}
+                      </div>
+                      <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
+                    </div>
                   </div>
 
                   {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}

@@ -13,7 +13,7 @@
 
     {% if editmode %}
       <div class="content-item-box {{ article_image_state }} js-content-item-box not-loaded" data-item-type="article" data-item-id="{{ article.id }}">
-        <div class="item-top mar_b-32">
+        <div class="item-top mar_b-32{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
           <button class="btn bg-crop-btn {% if article.data.item_image == blank %}is-hidden{% else %}is-visible{% endif %} js-toggle-crop-state">
             <svg width="20" height="20" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="#ico-toggle"></use>
@@ -24,7 +24,7 @@
       </div>
     {% else %}
       <a class="content-item-box {{ article_image_state }} js-content-item-box not-loaded" href="{{ article.url }}">
-        <div class="item-top mar_b-32">
+        <div class="item-top mar_b-32{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
           <div class="top-inner of-hidden">
             {% if article.data.item_image != blank %}
               <div class="loader js-loader"></div>
