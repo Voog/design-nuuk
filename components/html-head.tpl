@@ -12,29 +12,28 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/ico">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 {% endif %}
-{% comment %}TODO: Add functionality after the CMS is going to support it{% endcomment %}
-{% if site.data.touch_icon %}<link rel="apple-touch-icon" href="{{ site.data.touch_icon }}">{% endif %}
 
 {% comment %}STYLESHEETS{% endcomment %}
-<!--[if lt IE 9]>{% stylesheet_link "ie8.css?v=1" %}<![endif]-->
-{% stylesheet_link "main.css?v=1" %}
+{% stylesheet_link "main.min.css?v=1" %}
 {% if editmode %}
   <link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">
 {% endif %}
-<link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-search/latest/edicy-search.css">
+
 
 {% comment %}Google fonts for Design Editor{% endcomment %}
 <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,400i,700,700i|Arvo:400,400i,700,700i|Cousine:400,400i,700,700i|Crimson+Text:400,400i,700,700i|Fira+Sans:400,400i,700,700i|Lato:400,400i,700,700i|Lora:400,400i,700,700i|Montserrat:400,400i,700,700i|Noto+Serif:400,400i,700,700i|Open+Sans:400,400i,700,700i|PT+Sans:400,400i,700,700i|PT+Serif:400,400i,700,700i|Playfair+Display:400,400i,700,700i|Raleway:400,400i,700,700i|Roboto+Mono:400,400i,700,700i|Roboto+Slab:400,700|Roboto:400,400i,700,700i|Source+Sans+Pro:400,400i,700,700i|Ubuntu+Mono:400,400i,700,700i|Ubuntu:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,hebrew,latin-ext,vietnamese" rel="stylesheet">
+
+{% comment %}Swiper javascript{% endcomment %}
 {%- if swiperSettingsData.is_slider == true -%}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css" integrity="sha512-uCQmAoax6aJTxC03VlH0uCEtE0iLi83TW1Qh6VezEZ5Y17rTrIE+8irz4H4ehM7Fbfbm8rb30OkxVkuwhXxrRg==" crossorigin="anonymous" />
 {%- endif -%}
+
 {% customstyle %}
   {% include "template-cs-main-styles" %}
   {% include "template-cs-header" %}
   {% include "template-cs-headings" %}
   {% include "template-cs-content" %}
   {% include "template-cs-button" %}
-
   {% include "template-cs-style-rules" %}
 {% endcustomstyle %}
 
@@ -42,10 +41,13 @@
 <script src="{{ javascripts_path }}/modernizr-custom.min.js"></script>
 
 {% comment %}SITE TITLE{% endcomment %}
-{% capture page_title %}{% if article %}{{ article.title }}{% unless page.site_title == "" %} — {{ page.site_title }}{% endunless %}{% else %}{% if site.root_item.selected? and page.site_title != "" %}{{ page.site_title }}{% else %}{{ page.title }}{% unless page.site_title == "" %} — {{ page.site_title }}{% endunless %}{% endif %}{% endif %}{% endcapture %}
-<title>{{ page_title }}</title>
+<title>{% title %}</title>
 
+{% comment %}MISC{% endcomment %}
 {% include "template-meta" %}
+
+{% comment %}BREADCRUMBS{% endcomment %}
+{% sd_breadcrumbs %}
 
 {% if blog %}{{ blog.rss_link }}{% endif %}
 {{ site.stats_header }}

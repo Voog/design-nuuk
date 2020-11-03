@@ -1,6 +1,5 @@
 /* GENERAL */
 body {
-  position: relative;
   margin: 0;
   padding: 0;
   font-family: "Avenir Next", "Avenir", "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
@@ -1714,6 +1713,16 @@ body.dark-background {
   min-height: 100%;
   height: 100%;
 }
+.image_abs {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
 
 .flex_box {
   display: -webkit-box;
@@ -2082,15 +2091,8 @@ body .animate_translated-x--0 {
   max-height: 344px;
 }
 
-.product_item-link .custom-btn {
-  opacity: 0;
-  -webkit-transition: opacity 0.6s cubic-bezier(0.1, 0.6, 0, 1);
-  -o-transition: opacity 0.6s cubic-bezier(0.1, 0.6, 0, 1);
-  transition: opacity 0.6s cubic-bezier(0.1, 0.6, 0, 1);
-}
 .product_item-link:hover .product_image,
-.product_item-link:hover .item-top,
-.product_item-link:hover p {
+.product_item-link:hover .item-top {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
@@ -2099,12 +2101,6 @@ body .animate_translated-x--0 {
   -o-transition: transform 0.6s cubic-bezier(0.1, 0.6, 0, 1);
   transition: transform 0.6s cubic-bezier(0.1, 0.6, 0, 1);
   transition: transform 0.6s cubic-bezier(0.1, 0.6, 0, 1), -webkit-transform 0.6s cubic-bezier(0.1, 0.6, 0, 1);
-}
-.product_item-link:hover .custom-btn {
-  opacity: 1;
-  -webkit-transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
-  -o-transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
-  transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
 }
 
 .semimodal {
@@ -2250,17 +2246,24 @@ body .animate_translated-x--0 {
   bottom: 0;
   left: 0;
 }
-.item-top:hover .btn {
+.item-top:hover .btn,
+.item-top:hover .custom-btn {
   opacity: 1;
+  -webkit-transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
+  -o-transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
+  transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
+}
+.item-top .custom-btn,
+.item-top .btn {
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
+  -o-transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
+  transition: all 0.6s cubic-bezier(0.1, 0.6, 0, 1);
 }
 .item-top .btn {
   padding: 0;
   background-color: rgba(0, 102, 187, 0.3);
   border: 0;
-  opacity: 0;
-  -webkit-transition: background-color .5s, opacity .5s;
-  -o-transition: background-color .5s, opacity .5s;
-  transition: background-color .5s, opacity .5s;
 }
 .item-top .btn:hover {
   background-color: #0066bb;
@@ -2310,31 +2313,6 @@ body .animate_translated-x--0 {
   border-color: rgba(0, 0, 0, 0.1);
   border-style: solid;
   border-width: 1px;
-}
-@media screen and (max-width: 240px) {
-  .item-top .top-inner {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 241px) {
-  .item-top .top-inner {
-    font-size: 13px;
-  }
-}
-@media screen and (min-width: 291px) {
-  .item-top .top-inner {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 341px) {
-  .item-top .top-inner {
-    font-size: 20px;
-  }
-}
-@media screen and (min-width: 901px) {
-  .item-top .top-inner {
-    font-size: 30px;
-  }
 }
 .cms-blog-article-add-button .item-top .top-inner {
   border-color: rgba(0, 0, 0, 0.4);
@@ -2396,8 +2374,6 @@ body .animate_translated-x--0 {
   border: 0;
   text-align: center;
   position: absolute;
-  width: auto;
-  height: auto;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);

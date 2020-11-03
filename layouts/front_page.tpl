@@ -9,11 +9,10 @@
 
 <body class="front-page js-bg-picker-area flex_box">
   {% include "header" %}
-  <div class="background-image js-background-image"></div>
-  <div class="background-color js-background-color"></div>
   {% if editmode %}
     <button class="voog-bg-picker-btn js-background-settings l-64 t-32" data-bg-key="body_bg" data-bg-picture-boolean="false" data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
   {% endif %}
+  <div class="background-color js-background-color"></div>
 
 
   <div class="flex_col w-100p">

@@ -14,75 +14,36 @@
                 {%- assign buttonTag = 'div' -%}
               {%- endif -%}
 
-              <{{wrapperTag}} class="product_item-link" href="{{ item_child.url }}">
+              <div class="product_item-link">
                 {%- if item_child.layout_title == product_list_layout -%}
-                  {% unless item_child.data.item_image %}
-                    {% assign page_image_state = "without-image" %}
-                  {% else %}
-                    {% assign page_image_state = "with-image" %}
-                    {% if item_child.data.image_crop_state %}
-                      {% assign page_image_crop_state = item_child.data.image_crop_state %}
-                    {% else %}
-                      {% assign page_image_crop_state = "not-cropped" %}
-                    {% endif %}
-                  {% endunless %}
-
-                  {% if editmode %}
-                    <div class="content-item-box {{ page_image_state }} js-content-item-box not-loaded" data-item-type="page" data-item-id="{{ item_child.page_id }}">
-                      <div class="item-top mar_b-32">
-                        <button class="btn bg-crop-btn {% if item_child.data.item_image == blank %}is-hidden{% else %}is-visible{% endif %} js-toggle-crop-state">
-                          <svg width="20" height="20" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-                            <use xlink:href="#ico-toggle"></use>
-                          </svg>
-                        </button>
-                        <div class="top-inner aspect-ratio-inner image-drop-area {{ page_image_crop_state }} js-content-item-img-drop-area js-lazyload" data-image="{{ item_child.data.item_image.url }}">
-                        </div>
-                        <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
-                      </div>
-                    </div>
-                  {% else %}
-                    <div class="content-item-box {{ page_image_state }} js-content-item-box not-loaded">
-                      <div class="item-top mar_b-32">
-                        <div class="top-inner of-hidden">
-                          {% if item_child.data.item_image != blank %}
-                            <div class="loader js-loader"></div>
-                            {%- assign imageClass = "item-image " | append: page_image_crop_state -%}
-                            {% include "lazy-image", _data: item_child.data.item_image, _targetWidth: '300', _className: imageClass %}
-                          {% else %}
-                            <div class="item-placeholder">{{ item_child.title | truncate: 50 }}</div>
-                          {% endif %}
-                        </div>
-                        <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
-                      </div>
-                    </div>
-                  {% endif %}
-                  <div class="p14 mar_t-16">
+                  {% include 'content-item', _entityData: item_child, _itemType: 'page', _id: item_child.page_id, _hoverButton: true %}
+                  <a class="p14 mar_t-16" href="{{ item_child.url }}">
                     <p class="bold">
                       {{ item_child.title }}
                     </p>
-                  </div>
+                  </a>
                 {%- else -%}
-                  <div class="content-item-box">
+                  <a class="content-item-box" href="{{ item_child.url }}">
                     <div class="item-top mar_b-32">
                       <div class="top-inner of-hidden">
                         {% include "lazy-image", _data: item_child.data.product_image, _targetWidth: '300', _className: "item-image is-cropped" %}
                       </div>
                       <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
                     </div>
-                  </div>
+                  </a>
 
                   {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}
                   {%- assign product = buy_button.product -%}
-                  <div class="p14 mar_t-16">
+                  <a class="p14 mar_t-16" href="{{ item_child.url }}">
                     <p class="bold">
                       {{ item_child.title }}
                     </p>
                     <p>{{ product.price_with_tax | money_with_currency: "EUR" }}</p>
-                  </div>
+                  </a>
                 {%- endif -%}
-              </{{wrapperTag}}>
+                </div>
 
-              {%- if buy_button.content -%}
+              {%- if buy_button.content and item_child.layout_title == product_layout -%}
                 {%- content content=buy_button.content -%}
               {%- endif -%}
             </div>

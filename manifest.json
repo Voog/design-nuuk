@@ -99,6 +99,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/content-item.tpl",
+      "layout_name": "content-item",
+      "title": "content-item"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/menu-level-1.tpl",
       "layout_name": "menu-level-1",
       "title": "menu-level-1"

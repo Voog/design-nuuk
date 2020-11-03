@@ -3,18 +3,16 @@
   <span class="menu-stripe"></span>
 </button>
 {% include 'image_src_variable', _data: site.data.semimodal_image, _targetWidth: "1000" %}
-<div class="semimodal js-semimodal js-prevent-sideclick semimodal_bg-image bg_img-cover"
-  {% if _src != blank -%}
-    style="background-image: url({{_src}});"
-  {%- endif -%}
->
+<div class="semimodal js-semimodal js-prevent-sideclick">
+  {%- assign imageClass = "image_fit-cover semimodal_bg-image image_abs" -%}
+  {% include "lazy-image", _data: site.data.semimodal_image, _targetWidth: '600', _className: imageClass %}
   <div class="semimodal_bg-color bg_color-absolute"
     {% if site.data.semimodal_image.color != blank %}
       style="background-color: {{ site.data.semimodal_image.color }};"
     {% endif %}
   ></div>
   {% if editmode %}
-    <button class="bg-picker" data-entity="siteData" data-picture="true" data-color="true" data-image_elem=".semimodal_bg-image" data-color_elem=".semimodal_bg-color" data-name="semimodal_image" data-bg="{{ site.data.semimodal_image | json | escape }}"></button>
+    <button class="bg-picker" data-type="img" data-entity="siteData" data-picture="true" data-color="true" data-image_elem=".semimodal_bg-image" data-color_elem=".semimodal_bg-color" data-name="semimodal_image" data-bg="{{ site.data.semimodal_image | json | escape }}"></button>
   {% endif %}
   <header class="header">
     <div class="js-close-menu close-menu-btn bg_img-cover"></div>

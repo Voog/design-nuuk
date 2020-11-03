@@ -1,22 +1,11 @@
 .product_ {
   &item {
     &-link {
-      .custom-btn {
-        opacity: 0;
-        transition: opacity .6s $bezier-default;
-      }
-
       &:hover {
         .product_image,
-        .item-top,
-        p {
+        .item-top {
           transform: scale(1.1);
           transition: transform .6s $bezier-default;
-        }
-
-        .custom-btn {
-          opacity: 1;
-          transition: all .6s $bezier-default;
         }
       }
     }

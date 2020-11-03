@@ -6,17 +6,23 @@
   justify-content: center;
 
   &:hover {
-    .btn {
+    .btn,
+    .custom-btn {
       opacity: 1;
+      transition: all .6s $bezier-default;
     }
+  }
+
+  .custom-btn,
+  .btn {
+    opacity: 0;
+    transition: all .6s $bezier-default;
   }
 
   .btn {
     padding: 0;
     background-color: rgba($science-blue, .3);
     border: 0;
-    opacity: 0;
-    transition: background-color .5s, opacity .5s;
 
     &:hover {
       background-color: rgba($science-blue, 1);
@@ -64,26 +70,6 @@
       border-color: rgba($black, .1);
       border-style: solid;
       border-width: 1px;
-    }
-
-    @media screen and (max-width: $nano) {
-      font-size: 16px;
-    }
-
-    @media screen and (min-width: $nano + 1) {
-      font-size: 13px;
-    }
-
-    @media screen and (min-width: $micro + 1) {
-      font-size: 16px;
-    }
-
-    @media screen and (min-width: $tiny + 1) {
-      font-size: 20px;
-    }
-
-    @media screen and (min-width: $tablet-1 + 1) {
-      font-size: 30px;
     }
 
     .cms-blog-article-add-button & {
@@ -157,8 +143,6 @@
   border: 0;
   text-align: center;
   position: absolute;
-  width: auto;
-  height: auto;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
