@@ -30,7 +30,7 @@
               <div class="content-item-box">
                 <div class="item-top mar_b-32">
                   <div class="top-inner of-hidden js-zoom">
-                    {% include "lazy-image", _data: page.data.product_image, _targetWidth: '300', _className: "item-image is-cropped" %}
+                    {% include "lazy-image", _data: page.data.product_image, _targetWidth: '300', _className: "item-image is-cropped cursor-zoomin" %}
                   </div>
                 </div>
               </div>
@@ -174,9 +174,10 @@
       });
     {% endif %}
   </script>
+  <script>
     $('.top-inner.js-zoom').click(function() {
       $(this).toggleClass('zoom');
     });
-</script>
+  </script>
 </body>
 </html>
