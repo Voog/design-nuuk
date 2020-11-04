@@ -33,6 +33,10 @@
 
       &--item {
         width: 50%;
+
+        @media screen and (max-width: $mobile-1) {
+          width: 100%;
+        }
       }
     }
   }

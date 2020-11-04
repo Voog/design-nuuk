@@ -61,6 +61,10 @@
     font-weight: 300;
     line-height: 1.2;
     text-align: center;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    transition: all .9s $bezier-default;
 
     .with-image & {
       background-color: rgba($white, 1);
@@ -76,6 +80,29 @@
       border-color: rgba($black, .4);
       border-style: dashed;
       border-width: 1px;
+    }
+
+    &.zoom {
+      .publicmode & {
+        position: fixed;
+        padding: 32px;
+        height: 100vh;
+        width: 100vw;
+        left: 0;
+        top: 0;
+        z-index: 100000;
+        background-color: white;
+        transition: all .9s $bezier-default;
+
+        img {
+          object-fit: contain;
+          font-family: 'object-fit: contain;'; // uses object-fit-images polyfill
+          min-width: 100%;
+          min-height: 100%;
+          height: 100%;
+          cursor: zoom-out;
+        }
+      }
     }
   }
 
