@@ -10,7 +10,7 @@
   {%- assign articleSettingsData = article.data[articleSettingsKey] -%}
 </head>
 
-<body class="post-page js-bg-picker-area">
+<body class="post-page js-bg-picker-area flex_box{% include 'semimodal-class-names' %}">
   {% include "template-svg-spritesheet" %}
   {% include "header" %}
   {% if editmode %}
@@ -120,7 +120,7 @@
 
     {% include "footer" %}
   </div>
-
+  {% include 'site-components' %}
   {% include "site-signout" %}
   {% include "javascripts" %}
   {% include "template-tools" with 'article' %}

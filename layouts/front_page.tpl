@@ -7,7 +7,7 @@
   {% include "template-styles" %}
 </head>
 
-<body class="front-page js-bg-picker-area flex_box">
+<body class="front-page js-bg-picker-area flex_box{% include 'semimodal-class-names' %}">
   {% include "header" %}
   {% if editmode %}
     <button class="voog-bg-picker-btn js-background-settings l-64 t-32" data-bg-key="body_bg" data-bg-picture-boolean="false" data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
@@ -15,7 +15,7 @@
   <div class="background-color js-background-color"></div>
 
 
-  <div class="flex_col w-100p">
+  <div class="flex_col content_wrap">
     {%- if swiperSettingsData.is_slider == true -%}
       <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -40,11 +40,12 @@
                       <h1>Shop</h1>
                     {% endcontentblock %}
                   </div>
+                  {% if editmode %}
+                    <button class="bg-picker r-32 t-32" data-type="img" data-picture="true" data-color="true" data-image_elem=".front_header-image-{{i}}" data-color_elem=".front_header-color-{{i}}" data-name="{{headerImageKey}}" data-bg="{{ page.data[headerImageKey] | json | escape }}"></button>
+                  {% endif %}
                 {%- endif -%}
               </div>
-              {% if editmode %}
-                <button class="bg-picker r-32 t-32" data-type="img" data-picture="true" data-color="true" data-image_elem=".front_header-image-{{i}}" data-color_elem=".front_header-color-{{i}}" data-name="{{headerImageKey}}" data-bg="{{ page.data[headerImageKey] | json | escape }}"></button>
-              {% endif %}
+
             </div>
           {%- endfor -%}
         </div>
@@ -60,6 +61,10 @@
             {% contentblock name="front_header_content" publish_default_content="true" %}
               <h1>Shop</h1>
             {% endcontentblock %}
+
+            {% if editmode %}
+              <button class="bg-picker r-32 t-32" data-type="img" data-picture="true" data-color="true" data-image_elem=".front_header-image-{{i}}" data-color_elem=".front_header-color-{{i}}" data-name="{{headerImageKey}}" data-bg="{{ page.data[headerImageKey] | json | escape }}"></button>
+            {% endif %}
           </div>
         {%- endif -%}
       </div>
@@ -97,7 +102,7 @@
 
     </div>
   </div>
-
+  {% include 'site-components' %}
   {% include "site-signout" %}
   {% include "javascripts" %}
   {% include 'swiper-js' %}

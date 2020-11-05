@@ -8,7 +8,7 @@
   {%-  assign productPageFeaturedKey = 'product_page_featured' -%}
 </head>
 
-<body class="product-page js-bg-picker-area">
+<body class="product-page js-bg-picker-area flex_box{% include 'semimodal-class-names' %}">
   {% include "header" %}
   {% if editmode %}
     <button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
@@ -98,7 +98,7 @@
     </main>
     {% include "footer" %}
   </div>
-
+  {% include 'site-components' %}
   {% include "site-signout" %}
   {% include "javascripts" %}
   {% include "template-tools" %}

@@ -18,9 +18,15 @@
               if (data.image) {
                 $imageEl.attr('src', data.image);
                 $imageEl.attr('srcset', data.image);
+                $imageEl.css('display', 'initial');
               } else {
                 $imageEl.attr('src', 'none');
                 $imageEl.attr('srcset', 'none');
+                $imageEl.css('display', 'none');
+              }
+
+              if (data.color) {
+                $colorEl.css('background-color', col);
               }
             } else {
               if (data.image) {

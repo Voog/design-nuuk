@@ -38,15 +38,15 @@ body {
 // HEADER
 // =============================================================================
 // Styling rules for the site's header. These rules affect the entire site.
-.header {
-  .header-top {
-    .header-title {
-      // scss-lint:disable NestingDepth, SelectorDepth, SingleLinePerSelector
-      &, a {
-        color: var(--primary-color);
-      }
-      // scss-lint:enable NestingDepth, SelectorDepth, SingleLinePerSelector
-    }
+header {
+  .header_title {
+    font-size: var(--header-site-title-font-size);
+    font-weight: var(--header-site-title-font-weight);
+    font-style: var(--header-site-title-font-style);
+    text-decoration: var(--header-site-title-text-decoration);
+    text-transform: var(--header-site-title-text-transform);
+    color: var(--header-site-title-color);
+    // scss-lint:enable NestingDepth, SelectorDepth, SingleLinePerSelector
   }
 }
 
@@ -224,6 +224,7 @@ body {
   .menu-item a {
     color: var(--header-mainmenu-color);
     text-decoration: var(--header-mainmenu-decoration);
+    font-size: var(--header-mainmenu-font-size);
 
     &::after {
       background-color: var(--header-mainmenu-color);

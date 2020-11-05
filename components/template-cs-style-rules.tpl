@@ -10,8 +10,14 @@ body.dark-background {
   max-width: var(--container-max-width);
 }
 
-.header .header-top .header-title, .header .header-top .header-title a {
-  color: var(--primary-color);
+header .header_title {
+  font-size: var(--header-site-title-font-size);
+  font-weight: var(--header-site-title-font-weight);
+  font-style: var(--header-site-title-font-style);
+  -webkit-text-decoration: var(--header-site-title-text-decoration);
+          text-decoration: var(--header-site-title-text-decoration);
+  text-transform: var(--header-site-title-text-transform);
+  color: var(--header-site-title-color);
 }
 
 .post .post-title, .post .post-title a {
@@ -113,6 +119,7 @@ body.dark-background {
   color: var(--header-mainmenu-color);
   -webkit-text-decoration: var(--header-mainmenu-decoration);
           text-decoration: var(--header-mainmenu-decoration);
+  font-size: var(--header-mainmenu-font-size);
 }
 .menu-sub .menu-item a::after {
   background-color: var(--header-mainmenu-color);

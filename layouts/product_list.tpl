@@ -6,7 +6,7 @@
   {%- include "template-styles" -%}
 </head>
 
-<body class="product-list-page js-bg-picker-area flex_box">
+<body class="product-list-page js-bg-picker-area flex_box{% include 'semimodal-class-names' %}">
   {% include "template-svg-spritesheet" %}
   {%- include "header" -%}
   {%- if editmode -%}
@@ -27,6 +27,7 @@
 
     {%- include "footer" -%}
   </div>
+  {% include 'site-components' %}
 
   {%- include "site-signout" -%}
   {%- include "javascripts" -%}

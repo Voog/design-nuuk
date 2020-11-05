@@ -8,7 +8,7 @@
   {%- assign blog_listing_page = true -%}
 </head>
 
-<body class="blog-page js-bg-picker-area">
+<body class="blog-page js-bg-picker-area flex_box{% include 'semimodal-class-names' %}">
   {% include "template-svg-spritesheet" %}
   {% include "header" %}
   {% if editmode %}
@@ -32,7 +32,7 @@
 
     {% include "footer" %}
   </div>
-
+  {% include 'site-components' %}
   {% include "site-signout" %}
   {% include "javascripts" %}
   {% include "template-tools" %}

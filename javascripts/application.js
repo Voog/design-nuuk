@@ -586,9 +586,9 @@ MMCQ = (function() {
   };
 
   var bindSideClicks = function() {
-    $('.container, .bg_img-cover').on('mousedown', function(event) {
+    $('.container, .bg_img-cover, .content_wrap').on('mousedown', function(event) {
       if (!$(event.target).closest('.js-prevent-sideclick').length) {
-        $('.js-semimodal').removeClass('semimodal-visible');
+        $('.js-semimodal-toggle').removeClass('semimodal-open');
         $('.js-popover').removeClass('expanded');
         $('.js-search-close-btn').trigger('click');
       };
@@ -605,7 +605,7 @@ MMCQ = (function() {
   // Shows/hides the popover main menu (visible on smalles screens).
   var toggleMainMenu = function() {
     $('.js-menu-btn, .js-close-menu').click(function() {
-      $('.js-semimodal').toggleClass('semimodal-visible');
+      $('.js-semimodal-toggle').toggleClass('semimodal-open');
     });
   };
 

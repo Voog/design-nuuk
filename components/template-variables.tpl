@@ -7,6 +7,18 @@
     {% assign body_bg = page.data.body_bg %}
   {% endif %}
 
+  {% if site.data.semimodal_settings.is_relative_position == true %}
+    {% assign isSemimodalRelative = true %}
+  {% endif %}
+
+  {% if site.data.semimodal_settings.is_open == true %}
+    {% assign isSemimodalOpen = true %}
+  {% endif %}
+
+  {% if site.data.semimodal_settings.is_border == true %}
+    {% assign isSemimodalBorder = true %}
+  {% endif %}
+
   {% comment %}Assign variables based on page type.{% endcomment %}
   {% assign body_bg_image = body_bg.image %}
   {% assign body_bg_image_sizes = body_bg.imageSizes %}
