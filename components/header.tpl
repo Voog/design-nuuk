@@ -1,9 +1,7 @@
-{%- if isSemimodalOpen != true -%}
-  <button class="menu-btn js-menu-btn js-prevent-sideclick">
-    <span class="menu-stripe"></span>
-    <span class="menu-stripe"></span>
-  </button>
-{%- endif -%}
+<button class="menu-btn js-menu-btn js-prevent-sideclick">
+  <span class="menu-stripe"></span>
+  <span class="menu-stripe"></span>
+</button>
 
 {%- include 'image_src_variable', _data: site.data.semimodal_image, _targetWidth: "1000" -%}
 <div class="semimodal js-prevent-sideclick{% if isSemimodalBorder %} semimodal-border{% endif %}">
@@ -27,9 +25,7 @@
     </div>
   {%- endif -%}
   <header class="header_wrapper">
-    {%- if isSemimodalOpen != true -%}
-      <div class="js-close-menu close-menu-btn bg_img-cover"></div>
-    {%- endif -%}
+    <div class="js-close-menu close-menu-btn bg_img-cover"></div>
 
     <div class="header_bottom">
       <div class="header_title content-formatted">

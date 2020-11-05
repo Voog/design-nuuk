@@ -2,7 +2,6 @@
   semimodal-relative
 {% endif %}
 {% if isSemimodalOpen %}
-  semimodal-open
-{% else %}
-  js-semimodal-toggle
+  semimodal-open-state
 {% endif %}
+  js-semimodal-toggle

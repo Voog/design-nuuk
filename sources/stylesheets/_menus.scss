@@ -19,6 +19,14 @@
     top: 64px;
   }
 
+  .semimodal-open-state & {
+    display: none;
+
+    @include query($tablet-3) {
+      display: block;
+    }
+  }
+
   &:focus {
     outline: none;
   }
@@ -60,6 +68,14 @@
 
   &:hover {
     opacity: .7;
+  }
+
+  .semimodal-open-state & {
+    display: none;
+
+    @include query($tablet-3) {
+      display: block;
+    }
   }
 }
 
