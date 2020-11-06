@@ -292,27 +292,32 @@ body.dark-background {
   font-size: 72px;
   line-height: 83px;
   margin-top: 32px;
+  margin-bottom: 8px;
 }
 .content-formatted h2 {
   font-size: 56px;
   line-height: 114.8%;
   margin-top: 24px;
+  margin-bottom: 8px;
 }
 .content-formatted h3 {
   font-size: 36px;
   line-height: 114.8%;
   margin-top: 16px;
+  margin-bottom: 8px;
 }
 .content-formatted h4 {
   font-size: 24px;
   line-height: 114.8%;
   margin-top: 16px;
+  margin-bottom: 8px;
 }
 .content-formatted h5 {
   font-weight: 500;
   font-size: 8px;
   line-height: 114.8%;
   margin-top: 16px;
+  margin-bottom: 8px;
 }
 .content-formatted a {
   color: black;
@@ -1616,11 +1621,11 @@ body.dark-background {
 }
 
 .front-page .content-body {
-  margin-top: 45px;
+  margin-top: 40px;
 }
 @media screen and (max-width: 752px) {
   .front-page .content-body {
-    margin-top: 35px;
+    margin-top: 32px;
   }
 }
 .front-page .content-body p {
@@ -1634,7 +1639,7 @@ body.dark-background {
   }
 }
 .common-page .content-body {
-  margin-top: 35px;
+  margin-top: 32px;
 }
 
 .publicmode .content-item-box.without-image {

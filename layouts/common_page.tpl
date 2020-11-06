@@ -5,57 +5,62 @@
   {% include "html-head" %}
   {% include "template-styles" %}
 
-  {% assign contentAreaCount = page.data.content_area_settings.items_count | to_num %}
-  {% if contentAreaCount == blank %}
-    {% assign contentAreaCount = 1 %}
-  {% endif %}
+  {%- assign contentAreaCount = 1 -%}
+  {%- assign contentAreaSettings = page.data.content_area_settings -%}
 
-  {% for id in (1..contentAreaCount) %}
-    {% assign columnSettingsKey = 'column_settings' | append: id %}
-    {% assign columnSettings = page.data[columnSettingsKey] %}
+  {%- if contentAreaSettings != blank -%}
+    {%- assign contentAreaCount = contentAreaSettings.items_count | to_num -%}
+  {%- endif -%}
 
-    {% if columnSettings.items_count != blank %}
-      {% assign columnCount = columnSettings.items_count %}
-    {% else %}
-      {% assign columnCount = 1 %}
-    {% endif %}
+  {%- for id in (1..contentAreaCount) -%}
+    {%- assign columnSettingsKey = 'column_settings' | append: id -%}
+    {%- assign columnSettings = page.data[columnSettingsKey] -%}
+
+    {%- if columnSettings.items_count != blank -%}
+      {%- assign columnCount = columnSettings.items_count -%}
+    {%- else -%}
+      {%- assign columnCount = 1 -%}
+    {%- endif -%}
 
     <style>
       .column-container-{{ id }} {
-        {% if columnSettings.padding != blank %}
+        {%- if columnSettings.padding != blank -%}
           margin: 0 -{{columnSettings.padding}}px;
-        {% endif %}
+        {%- endif -%}
       }
       .column-container-{{ id }} .col-item {
-        {% if columnSettings.min_width != blank %}
+        {%- if columnSettings.min_width != blank -%}
           min-width: {{columnSettings.min_width}}px;
-        {% endif %}
-        {% if columnSettings.padding %}
-          padding: {{columnSettings.padding}}px;
-        {% endif %}
+        {%- endif -%}
+        {%- if columnSettings.padding -%}
+          padding: 0 {{columnSettings.padding}}px {{columnSettings.padding}}px;
+        {%- endif -%}
       }
 
       .column-container-{{columnCount}}-{{ id }} .col-item {
-        {% if columnSettings.padding != blank %}
+        {%- if columnSettings.padding != blank -%}
           width: calc(100%/{{columnCount}} - {{columnSettings.padding}}*2px);
-        {% else %}
+        {%- else -%}
           width: calc(100%/{{columnCount}});
-        {% endif %}
+        {%- endif -%}
+        {%- if columnSettings.max_width != blank -%}
+          max-width: {{columnSettings.max_width}}px;
+        {%- endif -%}
       }
     </style>
-  {% endfor %}
+  {%- endfor -%}
 </head>
 
 <body class="common-page js-bg-picker-area flex_box{% include 'semimodal-class-names' %}">
-  {% include "header" %}
-  {% if editmode %}
+  {%- include "header" -%}
+  {%- if editmode -%}
     <button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
-  {% endif %}
+  {%- endif -%}
   <div class="background-color js-background-color"></div>
 
   <div class="container js-bg-picker-area">
     <main class="content" role="main" data-search-indexing-allowed="true">
-      <div class="content-body content-formatted">
+      <div class="content-body content-formatted mar_b-32">
         {% contentblock name="page-title" publish_default_content="true" %}
           <h1>{{page.title}}</h1>
         {% endcontentblock %}
@@ -67,10 +72,7 @@
         </div>
       {%- endif -%}
 
-      {% if contentAreaCount == blank %}
-        {% assign contentAreaCount = 1 %}
-      {% endif %}
-      {% for id in (1..contentAreaCount) %}
+      {%- for id in (1..contentAreaCount) -%}
         <section class="content-body content-formatted">
         {%- if editmode -%}
           <div>
@@ -78,40 +80,39 @@
           </div>
         {%- endif -%}
 
-        {% assign columnSettingsKey = 'column_settings' | append: id %}
-        {% assign columnCount = page.data[columnSettingsKey].items_count %}
-        {% assign count = 1 %}
-        {% if columnCount %}
-          {% assign count = columnCount | to_num %}
-        {% endif %}
+        {%- assign columnSettingsKey = 'column_settings' | append: id -%}
+        {%- assign columnCount = page.data[columnSettingsKey].items_count -%}
+        {%- assign count = 1 -%}
+        {%- if columnCount -%}
+          {%- assign count = columnCount | to_num -%}
+        {%- endif -%}
 
         <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap">
-          {% for i in (1..count) %}
-            {% assign name = "col-" | append: i | append: id %}
+          {%- for i in (1..count) -%}
+            {%- assign name = "col-" | append: i | append: id -%}
             <div class="col-item flex_auto" data-search-indexing-allowed="true">
-              {% content name=name %}
+              {%- content name=name -%}
             </div>
-          {% endfor %}
+          {%- endfor -%}
         </section>
-      {% endfor %}
+      {%- endfor -%}
     </main>
 
-    {% include "footer" %}
+    {%- include "footer" -%}
   </div>
-  {% include 'site-components' %}
-  {% include "site-signout" %}
-  {% include "javascripts" %}
-  {% include "template-tools" %}
+  {%- include 'site-components' -%}
+  {%- include "site-signout" -%}
+  {%- include "javascripts" -%}
+  {%- include "template-tools" -%}
   <script>
     site.initCommonPage();
-    {% if editmode %}
+    {%- if editmode -%}
       window.addEventListener('DOMContentLoaded', (event) => {
-        {% if page.data.content_area_settings %}
+        {%- if page.data.content_area_settings %}
           var valuesObj = {{ page.data.content_area_settings | json }};
-        {% else %}
-          var valuesObj = {items_count: "1"};
-        {% endif %}
-
+        {%- else %}
+          var valuesObj = {items_count: 1};
+        {%- endif %}
 
         initSettingsEditor(
           {
@@ -137,14 +138,13 @@
 
 
         {% for id in (1..contentAreaCount) %}
-          {% assign columnSettingsKey = 'column_settings' | append: id %}
+          {%- assign columnSettingsKey = 'column_settings' | append: id -%}
 
-          {% if page.data[columnSettingsKey] %}
+          {%- if page.data[columnSettingsKey] %}
             var valuesObj = {{ page.data[columnSettingsKey] | json }};
-          {% else %}
-            var valuesObj = {items_count: "1"};
-          {% endif %}
-
+          {%- else %}
+            var valuesObj = {items_count: 1};
+          {%- endif %}
 
           initSettingsEditor(
             {
@@ -170,6 +170,13 @@
                   "placeholder": "Set min row item width in px"
                 },
                 {
+                  "title": "Max column item width in px",
+                  "type": "number",
+                  "min": 1,
+                  "key": "max_width",
+                  "placeholder": "Set max row item width in px"
+                },
+                {
                   "title": "Column item padding in px",
                   "type": "number",
                   "min": 1,
@@ -181,9 +188,9 @@
               values: valuesObj
             }
           );
-        {% endfor %}
+        {%- endfor -%}
       });
-    {% endif %}
+    {%- endif -%}
   </script>
 </body>
 </html>
