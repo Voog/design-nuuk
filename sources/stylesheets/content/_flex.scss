@@ -56,6 +56,12 @@
 
   &j-center {
     justify-content: center;
+
+    &-mobile {
+      @media screen and (max-width: $mobile-1) {
+        justify-content: center;
+      }
+    }
   }
 
   &j-space-between {

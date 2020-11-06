@@ -87,10 +87,10 @@
           {%- assign count = columnCount | to_num -%}
         {%- endif -%}
 
-        <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap">
+        <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap flex_j-center-mobile">
           {%- for i in (1..count) -%}
             {%- assign name = "col-" | append: i | append: id -%}
-            <div class="col-item flex_auto" data-search-indexing-allowed="true">
+            <div class="col-item flex_auto b-box" data-search-indexing-allowed="true">
               {%- content name=name -%}
             </div>
           {%- endfor -%}
@@ -191,6 +191,13 @@
         {%- endfor -%}
       });
     {%- endif -%}
+  </script>
+  <script>
+    $( ".col-item" ).each(function( index ) {
+      if  ($( this ).width() >= $( ".content-body" ).width()) {
+        $( this ).css('min-width', '100%');
+      }
+    });
   </script>
 </body>
 </html>
