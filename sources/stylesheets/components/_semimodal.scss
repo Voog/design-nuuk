@@ -7,17 +7,24 @@
   width: 0;
   box-shadow: 0 25px 35px rgba(0,0,0,.2), 0 0 5px rgba(0,0,0,.1);
   background-color: #FBFBFB;
-  width: 100%;
-  min-width: 320px;
-  max-width: 320px;
+  width: 0;
+  min-width: 0;
+  max-width: 0;
   overflow: auto;
   z-index: $zindex-semimodal;
   display: flex;
+  opacity: 0;
+  transition: all 0.2s;
+  transition-timing-function: $bezier-medium;
+
+  .header_wrapper {
+    width: 100%;
+    min-width: 320px;
+    max-width: 320px;
+  }
 
   body:not(.semimodal-relative) & {
     transform: translateX(-320px);
-    transition: all 0.1s;
-    transition-timing-function: $bezier-medium;
   }
 
   .edy-checkout-button-visible & {
@@ -29,8 +36,6 @@
 
     @include query($tablet-3) {
       transform: translateX(-320px);
-      transition: all 0.1s;
-      transition-timing-function: $bezier-medium;
       position: fixed;
     }
 
@@ -55,6 +60,11 @@
   }
 
   .semimodal-open & {
+    width: 100%;
+    min-width: 320px;
+    max-width: 320px;
+    opacity: 1;
+
     @include query($tablet-3) {
       transform: translateX(0px);
       box-shadow: none;
@@ -76,30 +86,6 @@
     position: absolute;
     top: 56px;
     left: 32px;
-  }
-}
-
-body.semimodal-relative {
-  margin-left: -320px;
-  transition: all 0.1s;
-  transition-timing-function: $bezier-medium;
-
-  &.semimodal-open,
-  &.semimodal-open-state {
-    margin-left: 0;
-
-    .content_wrap {
-      width: calc(100% - 320px);
-
-      @include query($tablet-3) {
-        width: 100%;
-      }
-    }
-  }
-
-  @include query($tablet-3) {
-    margin-left: 0;
-    transition: none;
   }
 }
 
