@@ -551,11 +551,11 @@ MMCQ = (function() {
         // Language code for restricting the search to page language.
         lang: languageCode,
         // If given, an DOM element results are rendered inside that element
-        resultsContainer: $('.js-voog-search-modal-inner').get(0),
+        resultsContainer: $('.js-voog-search-modal').get(0),
         // Defines if modal should close on sideclick.
         sideclick: true,
-        // Mobile checkpoint
-        mobileModeWidth: 480,
+        // Mobile checkpoint.
+        mobileModeWidth: 640,
         // Updates results on every keypress.
         updateOnKeypress: true,
         // String for feedback if no results are found.
@@ -590,7 +590,9 @@ MMCQ = (function() {
       if (!$(event.target).closest('.js-prevent-sideclick').length) {
         $('.js-semimodal-toggle').removeClass('semimodal-open');
         $('.js-popover').removeClass('expanded');
-        $('.js-search-close-btn').trigger('click');
+        $('html').removeClass('search-open');
+        $('.js-search').removeClass('active');
+        $('.search-btn').removeClass('open');
       };
     });
   };
@@ -898,6 +900,69 @@ MMCQ = (function() {
     });
   };
 
+  var handleElementsClick = function() {
+    if ($('.js-search').hasClass('active')) {
+      $('.js-search').removeClass('active');
+      $('.search-btn').removeClass('open');
+    }
+
+    $('.js-search-toggle-btn').click(function() {
+      $('html').removeClass('mobilemenu-open');
+      $('html').removeClass('menu-language-popover-open');
+      $('.js-search').toggleClass('active');
+      $('.js-search').hasClass('active') ? $('.js-search-input').focus() : '';
+      $('html').toggleClass('search-open');
+    });
+
+    $('.js-search-input').on('input', function() {
+      var searchCleanBtn = $(this).parent().next();
+
+      if ($(this).val().length > 1) {
+        searchCleanBtn.addClass('active');
+      } else {
+        searchCleanBtn.removeClass('active');
+      }
+
+      handleMobileSearchHeight();
+    });
+
+    $('.js-search-reset-btn').click(function() {
+      $('html').removeClass('search-open');
+      $('.js-search').removeClass('active');
+    });
+  };
+
+  // Sets the search modal height.
+  var handleSearchModalHeight = function() {
+    var windowWidth = $(window).width();
+        windowHeight = $(window).height(),
+        searchModal = $('.js-voog-search-modal');
+
+        if (windowWidth >= 1400 ) {
+          searchModalHeight = windowHeight - 190;
+        }
+        else {
+          searchModalHeight = windowHeight - 171;
+        }
+
+    searchModal.css({'max-height': searchModalHeight});
+  };
+
+  // Sets search modal height on search submit.
+  var handleSearchSubmit = function() {
+    $('.js-search-form').on('submit', function() {
+      handleSearchModalHeight();
+    });
+  };
+
+  var handleMobileSearchHeight = function() {
+    if ($(window).width() <= 640) {
+      $('.js-voog-search-modal').css('max-height', $(window).height() - 56);
+    } else {
+      $('.js-voog-search-modal').css('max-height', 'auto');
+    }
+  };
+
   // ===========================================================================
   // Load article cover images only when they are close or appearing in the
   // viewport.
@@ -947,6 +1012,7 @@ MMCQ = (function() {
     // Add site wide functions here.
     bindSideClicks();
     handleLanguageSwitch();
+    handleElementsClick();
     toggleMainMenu();
     focusFormWithErrors();
     handleWindowResize();

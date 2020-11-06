@@ -1,0 +1,52 @@
+// FRAMEWORK
+// Extendable classes for commonly used styling rules for different elements.
+
+// BASIC
+%clearfix:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+// POSITIONING
+%stretch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// REUASBLE ELEMENTS
+%button {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border-style: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+  }
+}
+
+%input-ios-reset {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+%inherit-base-font {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+%inline-block {
+  display: inline-block;
+}

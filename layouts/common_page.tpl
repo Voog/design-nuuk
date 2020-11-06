@@ -97,10 +97,10 @@
         </section>
       {%- endfor -%}
     </main>
-
+{%- include 'site-components' -%}
     {%- include "footer" -%}
   </div>
-  {%- include 'site-components' -%}
+
   {%- include "site-signout" -%}
   {%- include "javascripts" -%}
   {%- include "template-tools" -%}
