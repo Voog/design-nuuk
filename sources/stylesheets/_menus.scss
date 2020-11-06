@@ -3,9 +3,6 @@
 
 // Menu button. Only visible on smaller screens.
 .menu-btn {
-  position: fixed;
-  top: 32px;
-  left: 32px;
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -13,17 +10,18 @@
   border: none;
   cursor: pointer;
   transition: top .6s ease-in;
-  z-index: $zindex-menu-btn;
 
   .edy-checkout-button-visible & {
     top: 64px;
   }
 
   .semimodal-open-state & {
-    display: none;
+    pointer-events: none;
+    opacity: 0;
 
     @include query($tablet-3) {
-      display: block;
+      pointer-events: all;
+      opacity: 1;
     }
   }
 

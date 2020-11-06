@@ -1,6 +1,30 @@
 /* HEADER */
 // Styling rules for the site's header. These rules affect the entire site.
 .header_ {
+  &fixed {
+    position: fixed;
+    background: white;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: $zindex-header-fixed;
+    padding: 16px;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    transition-timing-function: $bezier-medium;
+
+    .semimodal-open &,
+    .semimodal-open-state & {
+      width: calc(100% - 320px);
+
+      @include query($tablet-3) {
+        width: 100%;
+      }
+    }
+  }
+
   &wrapper {
     padding-bottom: 30px;
     opacity: 1;
@@ -10,9 +34,7 @@
   }
 
   &components {
-    position: absolute;
-    top: 32px;
-    right: 32px;
+    display: flex;
   }
 
   &bottom {
@@ -20,10 +42,6 @@
     flex-direction: column;
     height: 100%;
     box-sizing: border-box;
-  }
-
-  &title.content-formatted {
-    margin: 96px 24px 64px 24px;
-    z-index: 1;
+    margin-top: 80px;
   }
 }

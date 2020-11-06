@@ -26,81 +26,68 @@
 }
 
 .search {
-  width: 320px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   line-height: 1;
-  position: fixed;
+  position: absolute;
+  top: 0;
   right: 0;
-  transform: translateX(320px);
+  transform: translateX(100%);
   pointer-events: none;
   transition: transform 0.2s;
   transition-timing-function: $bezier-medium;
-
-  @media screen and (min-width: $tablet-3 + 1) {
-    top: 26px;
-  }
-
-  @media screen and (max-width: $tablet-3) {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: auto;
-    width: auto;
-    background-color: #f7f7f7;
-    transform: translateX(100%);
-  }
+  z-index: $zindex-search;
+  background-color: $white;
 
   &.active {
-    z-index: $zindex-search;
+    width: 100%;
     display: block;
-    max-width: 100vw;
     pointer-events: all;
     transform: translateX(0px);
+    @media screen and (max-width: $tablet-3) {
+      width: 100vw;
+    }
   }
 }
 
 .search-middle {
   vertical-align: middle;
   width: 100%;
+  height: 100%;
   box-sizing: border-box;
+  display: flex;
 }
 
 .search-inner {
   position: relative;
-  box-shadow: 0 2px 4px 0 rgba($black, .1);
+  height: 100%;
+  width: 100%;
 }
 
 .search-form {
   position: relative;
   z-index: 20;
   background-color: rgba($white, 1);
-  box-shadow: 0 2px 4px 0 rgba($black, .1);
+  width: 100%;
+  padding: 16px 40px 16px 16px;
+  box-sizing: border-box;
 
   @media screen and (max-width: $tablet-3) {
     padding-top: 10px;
     padding-bottom: 6px;
-    box-shadow: 0 1px 1px 0 rgba($black, .1);
+    padding: 16px 40px 16px 16px;
   }
 
   &,
   &.selected {
-    margin: 0 auto;
     border: none;
-
-    @media screen and (min-width: $tablet-3 + 1) {
-      max-width: 400px;
-    }
   }
 }
 
 .search-input {
   vertical-align: middle;
   width: 100%;
-  height: 40px;
   margin: 0;
-  padding: 0 55px 0 15px;
   font-family: inherit;
   font-size: 16px;
   line-height: 20px;
@@ -108,12 +95,6 @@
   background: none;
   box-sizing: border-box;
   border: none;
-
-  @media screen and (max-width: $tablet-3) {
-    .search-open & {
-      padding: 0px 61px 0 42px;
-    }
-  }
 
   // Removes the clear input button in IE11
   &::-ms-clear {
@@ -236,13 +217,12 @@
 .search-close-btn {
   position: absolute;
   right: 0;
+  top: 16px;
   width: auto;
   height: auto;
   margin: 0;
-  border-left: 1px solid #eeeeee;
 
   @media screen and (min-width: $tablet-3 + 1) {
-    top: 8px;
     padding: 8px 15px;
   }
 
@@ -258,11 +238,8 @@
   box-sizing: border-box;
   z-index: 999;
   width: 100%;
-  max-height: calc(100vh - 140px);
-  margin: 0 auto;
   background-color: rgba($white, 1);
   box-shadow: none;
-  overflow: auto;
   -webkit-overflow-scrolling: touch;
   text-align: left;
 
@@ -274,13 +251,11 @@
   &.search-results-active {
     display: block;
   }
-
-  @media screen and (min-width: $tablet-3 + 1) {
-    max-width: 400px;
-  }
 }
 
 .voog-search-modal-results {
+  overflow: auto;
+
   h3 {
     margin: 0;
     font-size: 16px;
