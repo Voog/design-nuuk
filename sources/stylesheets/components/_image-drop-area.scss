@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: center;
 
+  article & {
+    @include aspect-ratio(2, 1);
+  }
+
   &:hover {
     .btn,
     .custom-btn {

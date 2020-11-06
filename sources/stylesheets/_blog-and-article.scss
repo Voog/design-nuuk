@@ -1,5 +1,54 @@
 /* BLOG & BLOG ARTICLE */
 // Styling rules for both - the blog listing view and the blog single article view
+.blog_ {
+  &listing- {
+    &wrapper {
+      display: flex;
+      flex-wrap: wrap;
+
+      article {
+        padding: 0 16px;
+      }
+    }
+
+    &item {
+      margin: 0 -16px;
+      width: 50%;
+      flex: auto;
+      padding: 0 16px;
+
+      &:first-child {
+        width: 100%;
+      }
+
+      .post {
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        @include border(bottom, 1px, solid, $primary-color, 0.3);
+
+        .post-excerpt {
+          margin-bottom: 10px;
+        }
+      }
+
+      &:nth-last-child(-n+2) {
+        .post {
+          border-bottom: none;
+        }
+      }
+
+      @media screen and (max-width: $tablet-1) {
+        width: 100%;
+
+        &:nth-last-child(2) {
+          .post {
+            @include border(bottom, 1px, solid, $primary-color, 0.3);
+          }
+        }
+      }
+    }
+  }
+}
 .post-intro-content {
   padding-bottom: 25px;
 }
@@ -175,16 +224,6 @@
 
 // Style rules for the blog listing view only
 .blog-page {
-  .post {
-    margin-bottom: 50px;
-    padding-bottom: 50px;
-    @include border(bottom, 1px, solid, $primary-color, 0.3);
-
-    .post-excerpt {
-      margin-bottom: 10px;
-    }
-  }
-
   .post-read-more-btn {
     display: inline-block;
     margin-bottom: 5px;

@@ -23,9 +23,11 @@
       <section class="content-body content-formatted post-intro-content" {{ edy_intro_edit_text }}>{% content %}</section>
 
       {% addbutton %}
-      <div>
+      <div class="blog_listing-wrapper">
         {% for article in articles %}
+          <div class="blog_listing-item">
           {% include "post-box" %}
+          </div>
         {% endfor %}
       </div>
     </main>
