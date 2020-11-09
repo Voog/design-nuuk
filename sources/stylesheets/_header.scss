@@ -3,7 +3,6 @@
 .header_ {
   &fixed {
     position: fixed;
-    background: white;
     top: 0;
     right: 0;
     width: 100%;
@@ -22,6 +21,10 @@
       @include query($tablet-3) {
         width: 100%;
       }
+    }
+
+    &.scroll {
+      background: $white;
     }
   }
 

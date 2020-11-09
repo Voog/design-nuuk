@@ -80,6 +80,12 @@ body.dark-background {
   right: 15px;
 }
 
+.bg-picker-top {
+  z-index: 99;
+  top: 64px;
+  position: absolute;
+}
+
 .background-image, .background-color {
   position: fixed;
   z-index: -2;
@@ -109,7 +115,7 @@ body.dark-background {
 .container {
   position: relative;
   max-width: 960px;
-  padding: 96px 40px;
+  padding: 96px 40px 40px;
   margin: 0 auto;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -119,6 +125,12 @@ body.dark-background {
   .container {
     padding: 36px 16px;
   }
+}
+.editmode .container {
+  margin-bottom: 72px;
+}
+.edy-bar-open .container {
+  margin-bottom: 200px;
 }
 .container a {
   text-decoration: none;
@@ -1106,7 +1118,6 @@ body.dark-background {
 /* HEADER */
 .header_fixed {
   position: fixed;
-  background: white;
   top: 0;
   right: 0;
   width: 100%;
@@ -1116,7 +1127,7 @@ body.dark-background {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  z-index: 99;
+  z-index: 98;
   padding: 16px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1134,6 +1145,9 @@ body.dark-background {
   .semimodal-open .header_fixed, .semimodal-open-state .header_fixed {
     width: 100%;
   }
+}
+.header_fixed.scroll {
+  background: #ffffff;
 }
 .header_wrapper {
   padding-bottom: 30px;

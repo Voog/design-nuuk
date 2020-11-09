@@ -57,6 +57,12 @@ body {
   }
 }
 
+.bg-picker-top {
+  z-index: $zindex-bg-picker;
+  top: 64px;
+  position: absolute;
+}
+
 .background-image,
 .background-color {
   position: fixed;
@@ -90,13 +96,21 @@ body {
 .container {
   position: relative;
   max-width: 960px;
-  padding: 96px 40px;
+  padding: 96px 40px 40px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 
   @include query($tablet-2) {
     padding: 36px 16px
+  }
+
+  .editmode & {
+    margin-bottom: 72px;
+  }
+
+  .edy-bar-open & {
+    margin-bottom: 200px;
   }
 
   a {

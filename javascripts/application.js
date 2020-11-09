@@ -990,6 +990,19 @@ MMCQ = (function() {
     // $(window).resize(debounce(yourFunctionName, 3000));
   };
 
+  var handleWindowScroll = function() {
+    window.addEventListener('scroll', function(e) {
+      var wrapperHeight = $('.header_fixed').height();
+
+      if (window.scrollY > wrapperHeight) {
+        $('.header_fixed').addClass('scroll');
+      } else {
+        $('.header_fixed').removeClass('scroll');
+      }
+    });
+  };
+
+
   // FUNCTIONS INITIATIONS
   var initFrontPage = function() {
     // Add front page layout specific functions here.
@@ -1016,6 +1029,7 @@ MMCQ = (function() {
     toggleMainMenu();
     focusFormWithErrors();
     handleWindowResize();
+    handleWindowScroll();
 
     if (editmode()) {
       bindCustomTexteditorStyles();
