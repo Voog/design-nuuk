@@ -15,6 +15,12 @@
   {%- assign buttonTag = 'div' -%}
 {%- endif -%}
 
+{%- if _staticItem == true -%}
+  {%- assign wrapperTag = 'div' -%}
+{%- else -%}
+  {%- assign wrapperTag = 'a' -%}
+{%- endif -%}
+
 {% if editmode %}
   <div class="content-item-box {{ item_image_state }} js-content-item-box not-loaded" data-item-type="{{_itemType}}" data-item-id="{{ _id }}">
     <div class="item-top mar_b-32{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
@@ -31,7 +37,7 @@
     </div>
   </div>
 {% else %}
-  <a class="content-item-box {{ item_image_state }} js-content-item-box not-loaded" href="{{ _entityData.url }}">
+  <{{wrapperTag}} class="content-item-box {{ item_image_state }} js-content-item-box not-loaded"{% if _staticItem != true %} href="{{ _entityData.url }}"{% endif %}>
     <div class="item-top mar_b-32{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
       <div class="top-inner of-hidden">
         {% if _entityData.data.item_image != blank %}
@@ -46,5 +52,5 @@
         <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
       {%- endif -%}
     </div>
-  </a>
+  </{{wrapperTag}}>
 {% endif %}

@@ -5,13 +5,15 @@
   {% include "html-head" %}
   {% include "template-styles" %}
   {%- assign productPageSettings = 'product_page_settings_' | append: page.id -%}
-  {%-  assign productPageFeaturedKey = 'product_page_featured' -%}
 </head>
 
 <body class="product-page js-bg-picker-area flex_box{% include 'semimodal-class-names' %}">
+  {% include "template-svg-spritesheet" %}
   {% include "header" %}
   {% if editmode %}
-    <div class="bg-picker-top"><button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button></div>
+    <div class="bg-picker-top">
+      <button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
+    </div>
   {% endif %}
   <div class="background-color js-background-color"></div>
 
@@ -23,21 +25,11 @@
         <button disabled class="js-product-page-settings-btn">Product page settings</button>
       {% endif %}
       <div class="flex_row flex_row-2 mar_0-16-neg flex_a-center">
-        {% include 'image_src_variable', _data: page.data.product_image, _targetWidth: "1200" %}
         <div class="flex_row-2--item">
           <div class="mar_0-16">
-            {%- if page.data.product_image != blank or editmode -%}
-              <div class="content-item-box">
-                <div class="item-top mar_b-32">
-                  <div class="top-inner of-hidden js-zoom">
-                    {% include "lazy-image", _data: page.data.product_image, _targetWidth: '300', _className: "item-image is-cropped cursor-zoomin" %}
-                  </div>
-                </div>
-              </div>
+            {%- if page.data.item_image != blank or editmode -%}
+              {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id, _staticItem: true %}
             {%- endif -%}
-            {% if editmode %}
-              <button class="bg-picker" data-picture="true" data-type="img" data-color="false" data-image_elem=".product_image" data-name="product_image" data-bg="{{ page.data.product_image | json | escape }}"></button>
-            {% endif %}
           </div>
         </div>
 
@@ -49,10 +41,11 @@
               {% endcontentblock %}
             </div>
             <section class="content-body content-formatted">{% content %}</section>
-            <section class="content-body content-formatted">{% content name="product-content-1" %}</section>
           </div>
         </div>
       </div>
+
+      <section class="content-body content-formatted">{% content name="product-content-1" %}</section>
 
       <div>
         {%- assign pageIdsArr = "" | split: ',' -%}
@@ -76,7 +69,7 @@
                 <div class="content-item-box">
                   <div class="item-top mar_b-32">
                     <div class="top-inner of-hidden js-zoom">
-                      {% include "lazy-image", _data: buy_button.content.parent.data.product_image, _targetWidth: '300', _className: "item-image is-cropped" %}
+                      {% include "lazy-image", _data: buy_button.content.parent.data.item_image, _targetWidth: '300', _className: "item-image is-cropped" %}
                     </div>
                     <div class="custom-btn p-abs">Look closer</div>
                   </div>
@@ -102,82 +95,6 @@
   {% include "site-signout" %}
   {% include "javascripts" %}
   {% include "template-tools" %}
-
-
-  <script>
-    site.initCommonPage();
-
-    {% if editmode %}
-      window.addEventListener('DOMContentLoaded', (event) => {
-        {% if page.data[productPageSettings] %}
-          var valuesObj = {{ page.data[productPageSettings] | json }};
-        {% else %}
-          var valuesObj = {};
-        {% endif %}
-
-        var productsPageList = [];
-
-        $.ajax({
-          type: 'GET',
-          contentType: 'application/json',
-          url: '/admin/api/buy_buttons?q.content.parent_type=page&q.content.language_id={{page.language_id}}&per_page=100',
-          dataType: 'json',
-          success: function(data) {
-            for (var i = 0; i < data.length; i++) {
-              productsPageList.push(
-                {
-                  "title": data[i].product.name,
-                  "value": data[i].parent.id
-                }
-              );
-            };
-          }
-        }).then(() =>
-          initSettingsEditor(
-            {
-              settingsBtn: document.querySelector('.js-product-page-settings-btn'),
-              menuItems: [
-                {
-                  "title": "Select related product",
-                  "type": "select",
-                  "key": "related_product_1",
-                  "list": productsPageList,
-                },
-                {
-                  "title": "Select related product",
-                  "type": "select",
-                  "key": "related_product_2",
-                  "list": productsPageList,
-                },
-                {
-                  "title": "Select related product",
-                  "type": "select",
-                  "key": "related_product_3",
-                  "list": productsPageList,
-                },
-                {
-                  "title": "Featured product",
-                  "tooltip": "This product is rendered in featured products lists",
-                  "type": "checkbox",
-                  "key": "{{productPageFeaturedKey}}",
-                  "states": {
-                    "on": true,
-                    "off": false
-                  }
-                }
-              ],
-              dataKey: '{{productPageSettings}}',
-              values: valuesObj
-            }
-          )
-        );
-      });
-    {% endif %}
-  </script>
-  <script>
-    $('.top-inner.js-zoom').click(function() {
-      $(this).toggleClass('zoom');
-    });
-  </script>
+  {% include 'product-page-scripts' %}
 </body>
 </html>

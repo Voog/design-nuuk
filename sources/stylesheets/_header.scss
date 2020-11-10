@@ -11,13 +11,17 @@
     display: flex;
     justify-content: space-between;
     z-index: $zindex-header-fixed;
-    padding: 24px 32px;
+    padding: 16px 32px;
     box-sizing: border-box;
     transition: all 0.2s;
     transition-timing-function: $bezier-medium;
 
     @include query($tablet-3) {
       padding: 16px;
+    }
+
+    .edy-checkout-button-visible & {
+      top: 41px;
     }
 
     .semimodal-open &,

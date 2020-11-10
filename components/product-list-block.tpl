@@ -26,7 +26,7 @@
                   <a class="content-item-box" href="{{ item_child.url }}">
                     <div class="item-top mar_b-32">
                       <div class="top-inner of-hidden">
-                        {% include "lazy-image", _data: item_child.data.product_image, _targetWidth: '300', _className: "item-image is-cropped" %}
+                        {% include "lazy-image", _data: item_child.data.item_image, _targetWidth: '300', _className: "item-image is-cropped" %}
                       </div>
                       <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
                     </div>

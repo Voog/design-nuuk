@@ -131,6 +131,7 @@ body.dark-background {
           box-sizing: border-box;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  overflow: hidden;
 }
 @media screen and (max-width: 752px) {
   .container {
@@ -1163,7 +1164,7 @@ body.dark-background {
       -ms-flex-pack: justify;
           justify-content: space-between;
   z-index: 101;
-  padding: 24px 32px;
+  padding: 16px 32px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-transition: all 0.2s;
@@ -1177,6 +1178,9 @@ body.dark-background {
   .header_fixed {
     padding: 16px;
   }
+}
+.edy-checkout-button-visible .header_fixed {
+  top: 41px;
 }
 @media screen and (max-width: 506px) {
   .semimodal-open .header_fixed, .semimodal-open-state .header_fixed {
@@ -2226,6 +2230,16 @@ body.dark-background {
     width: 100%;
   }
 }
+@media screen and (max-width: 1100px) {
+  .semimodal-open .flex_row-3--item, .semimodal-open-state .flex_row-3--item {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .semimodal-open .flex_row-3--item, .semimodal-open-state .flex_row-3--item {
+    width: 100%;
+  }
+}
 .flex_row-2 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -2233,7 +2247,12 @@ body.dark-background {
 .flex_row-2--item {
   width: 50%;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1100px) {
+  .semimodal-open .flex_row-2--item, .semimodal-open-state .flex_row-2--item {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 752px) {
   .flex_row-2--item {
     width: 100%;
   }
@@ -2689,9 +2708,6 @@ body:not(.semimodal-relative) .semimodal {
   -webkit-transform: translateX(-320px);
       -ms-transform: translateX(-320px);
           transform: translateX(-320px);
-}
-.edy-checkout-button-visible .semimodal {
-  top: 40px;
 }
 .semimodal-relative .semimodal {
   position: relative;
