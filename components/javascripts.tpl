@@ -76,6 +76,26 @@
         rootItemValuesObj = {};
       {% endif %};
     </script>
+
+    <script>
+      //==========================================================================
+      // Sets the variable for saving global custom data.
+      //==========================================================================
+      var siteData = new Edicy.CustomData({
+        type: 'site'
+      });
+
+      //==========================================================================
+      // Initiates the language menu mode toggleing popover.
+      //==========================================================================
+      {%if site.data.settings_language_menu %}
+        languageMenuValuesObj = {{ site.data.settings_language_menu | json }};
+      {% else %}
+        languageMenuValuesObj = {};
+      {% endif %};
+
+      site.bindLanguageMenuSettings(languageMenuValuesObj);
+    </script>
   {% endeditorjsblock %}
 {% endif %}
 

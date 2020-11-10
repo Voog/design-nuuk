@@ -42,13 +42,13 @@ header .header_title {
   color: var(--fourth-color);
 }
 .post .post-comments-count a {
-  color: var(--third-color);
+  color: var(--secondary-color);
 }
 .dark-background .post .post-comments-count a {
   color: var(--fourth-color);
 }
 .post .post-comments-count a:hover {
-  color: var(--third-color);
+  color: var(--secondary-color);
 }
 .dark-background .post .post-comments-count a:hover {
   color: var(--fourth-color);
@@ -62,7 +62,7 @@ header .header_title {
 }
 
 .menu .menu-item a {
-  color: var(--third-color);
+  color: var(--secondary-color);
 }
 @media screen and (min-width: 752px) {
   .dark-background .menu .menu-item a {

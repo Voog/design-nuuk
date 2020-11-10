@@ -94,6 +94,48 @@
     {% assign container_bg_color_data_str = container_bg_color_data | json %}
   {% endif %}
 
+  {% comment %}Detects language flags visibility setting.{% endcomment %}
+  {% if site.data.settings_language_menu.item_state %}
+    {% if site.data.settings_language_menu.item_state == "names_only" %}
+      {% assign language_flags_mode = "language-flags-disabled" %}
+    {% else %}
+      {% assign language_flags_mode = "language-flags-enabled" %}
+    {% endif %}
+  {% else %}
+    {% assign language_flags_mode = "language-flags-enabled" %}
+  {% endif %}
+
+  {% comment %}Detects language flags visibility setting.{% endcomment %}
+  {% if site.data.settings_language_menu.item_state == "flags_only" %}
+    {% assign language_names_mode = "language-names-disabled" %}
+  {% else %}
+    {% assign language_names_mode = "language-names-enabled" %}
+  {% endif %}
+
+  {% comment %}Detects language menu mode setting.{% endcomment %}
+  {% if site.data.settings_language_menu.type == "list" %}
+    {% assign language_menu_mode = "language-menu-mode-list" %}
+  {% else %}
+    {% assign language_menu_mode = "language-menu-mode-popover" %}
+  {% endif %}
+
+  {% if editmode %}
+    {% assign show_language_menu_popover = true %}
+  {% else %}
+    {% if language_menu_mode == "language-menu-mode-popover" and site.has_many_languages? %}
+      {% assign show_language_menu_popover = true %}
+    {% else %}
+      {% assign show_language_menu_popover = false %}
+    {% endif %}
+  {% endif %}
+
+  {% comment %}Sets current language title variable.{% endcomment %}
+  {% for language in site.languages %}
+    {% if language.selected? %}
+      {% assign current_language_title = language.title %}
+    {% endif %}
+  {% endfor %}
+
   {% assign product_list_layout = "Product list" %}
   {% assign product_layout = "Product" %}
 

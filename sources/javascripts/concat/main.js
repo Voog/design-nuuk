@@ -52,6 +52,7 @@
         $('html').removeClass('search-open');
         $('.js-search').removeClass('active');
         $('.search-btn').removeClass('open');
+        $('html').removeClass('menu-language-popover-open');
       };
     });
   };
@@ -390,6 +391,128 @@
   };
 
   // ===========================================================================
+  // Function to detect if site language menu popover is open.
+  // ===========================================================================
+  var languageMenuPopoverOpen = function() {
+    return $('html').hasClass('menu-language-popover-open');
+  };
+
+  // ===========================================================================
+  // Positions popover menus under the toggleing button.
+  // ===========================================================================
+  var positionPopoverMenu = function(popoverButton, popoverMenu) {
+    var $popoverButton = $(popoverButton);
+
+    $(popoverMenu).css({
+      top: Math.round($popoverButton.offset().top + $popoverButton.outerHeight()),
+      right: Math.round($(window).width() - $popoverButton.offset().left - $popoverButton.outerWidth())
+    });
+  };
+
+  // ===========================================================================
+  // Toggles language menu mode.
+  // ===========================================================================
+  var bindLanguageMenuSettings = function(languageMenuValuesObj) {
+    if (!('type' in languageMenuValuesObj)) {
+      languageMenuValuesObj.type = 'popover';
+    }
+
+    if (!('item_state' in languageMenuValuesObj)) {
+      languageMenuValuesObj.item_state = 'flags_and_names';
+    }
+
+    $('.js-menu-language-settings-toggle').each(function(index, languageMenuSettingsButton) {
+      var langSettingsEditor = new Edicy.SettingsEditor(languageMenuSettingsButton, {
+        menuItems: [
+          {
+            "titleI18n": "format",
+            "type": "radio",
+            "key": "type",
+            "list": [
+              {
+                "titleI18n": "dropdown_menu",
+                "value": "popover"
+              },
+              {
+                "titleI18n": "expanded_menu",
+                "value": "list"
+              },
+            ]
+          },
+          {
+            "titleI18n": "show",
+            "type": "radio",
+            "key": "item_state",
+            "list": [
+              {
+                "titleI18n": "flags_only",
+                "value": "flags_only"
+              },
+              {
+                "titleI18n": "names_only",
+                "value": "names_only"
+              },
+              {
+                "titleI18n": "flags_and_names",
+                "value": "flags_and_names"
+              }
+            ]
+          }
+        ],
+
+        buttonTitleI18n: "settings",
+
+        values: languageMenuValuesObj,
+
+        containerClass: ['js-menu-language-settings-popover', 'js-prevent-sideclick'],
+
+        preview: function(data) {
+          var $html = $('html'),
+              $languageSettingsMenuElement = $('.js-menu-language-settings');
+
+          if (data.type === 'list') {
+            $html.removeClass('language-menu-mode-popover');
+            $html.removeClass('menu-language-popover-open');
+            $html.addClass('language-menu-mode-list');
+
+            $languageSettingsMenuElement.appendTo('.js-menu-language-list-setting-parent');
+          } else {
+            $html.removeClass('language-menu-mode-list');
+            $html.addClass('language-menu-mode-popover');
+            $html.addClass('menu-language-popover-open');
+
+            $languageSettingsMenuElement.appendTo('.js-menu-language-popover-setting-parent');
+          }
+
+          if (data.item_state === 'flags_only') {
+            $html.removeClass('language-flags-disabled');
+            $html.removeClass('language-names-enabled');
+            $html.addClass('language-flags-enabled');
+            $html.addClass('language-names-disabled');
+          } else if (data.item_state === 'names_only') {
+            $html.removeClass('language-flags-enabled');
+            $html.removeClass('language-names-disabled');
+            $html.addClass('language-flags-disabled');
+            $html.addClass('language-names-enabled');
+          } else if (data.item_state === 'flags_and_names') {
+            $html.removeClass('language-flags-disabled');
+            $html.removeClass('language-names-disabled');
+            $html.addClass('language-flags-enabled');
+            $html.addClass('language-names-enabled');
+          }
+
+          positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
+          this.setPosition();
+        },
+
+        commit: function(data) {
+          siteData.set('settings_language_menu', data);
+        }
+      });
+    });
+  };
+
+  // ===========================================================================
   // Load article cover images only when they are close or appearing in the
   // viewport.
   // ===========================================================================
@@ -411,7 +534,12 @@
 
   // Initiates the table horisontal scroll function when window is resized.
   var handleWindowResize = function() {
-    $(window).resize(debounce(handleMenuPos, 3000));
+    $(window).resize(debounce(function() {
+      handleMenuPos();
+      if (languageMenuPopoverOpen()) {
+        positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
+      }
+    }, 25));
   };
 
   var handleMenuPos = function() {
@@ -432,6 +560,24 @@
     });
   };
 
+  var bindLanguageMenuButttons = function() {
+    // Toggles language menu popover.
+    $('.js-toggle-menu-language').click(function() {
+      var $html = $('html');
+
+      $html.toggleClass('menu-language-popover-open');
+
+      if ($html.hasClass('menu-main-opened') || $html.hasClass('site-search-opened')) {
+        $html.removeClass('menu-main-opened site-search-opened');
+
+        setTimeout(function(){
+          positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
+        }, 300);
+      } else if ($html.hasClass('menu-language-popover-open')) {
+        positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
+      }
+    });
+  };
 
   // FUNCTIONS INITIATIONS
   var initFrontPage = function() {
@@ -461,6 +607,7 @@
     handleWindowResize();
     handleWindowScroll();
     handleMenuPos();
+    bindLanguageMenuButttons();
 
     if (editmode()) {
       bindCustomTexteditorStyles();
@@ -481,7 +628,8 @@
     initPostPage: initPostPage,
     bindContentItemImgDropAreas: bindContentItemImgDropAreas,
     bindContentItemImageCropToggle: bindContentItemImageCropToggle,
-    bindSiteSearch: bindSiteSearch
+    bindSiteSearch: bindSiteSearch,
+    bindLanguageMenuSettings: bindLanguageMenuSettings
   });
 
   // Initiates site wide functions.

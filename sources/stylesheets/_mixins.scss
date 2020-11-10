@@ -150,3 +150,11 @@
   perspective: 1000;
   backface-visibility: hidden;
 }
+
+
+@mixin language-flag-icon-position($x-medium, $y-medium, $x-medium-up, $y-medium-up) {
+  &::after {
+    content: '';
+    background-position: $x-medium $y-medium;
+  }
+}

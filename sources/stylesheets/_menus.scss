@@ -271,140 +271,22 @@
     }
   }
 
-
-
   @include query($tablet-2) {
     margin-top: 30px;
   }
 }
 
-// Styling rules for the site's language menu.
-.menu-lang {
-  @extend %inline-block;
+.menu-popover {
+  position: fixed;
+  display: none;
+  margin-top: 8px;
+  background-color: rgba($white, 1);
+  border-color: rgba($primary-color, .1);
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 2px 10px rgba($primary-color, .07);
 
   .menu {
-    vertical-align: middle;
-  }
-
-  .header-right & {
-    .edit-btn {
-      margin-left: 10px;
-    }
-  }
-
-
-  @include query($tablet-1) {
-    margin-top: 5px;
-  }
-
-  @include query($tablet-2) {
-    display: block;
-
-    .header-right & {
-      display: none;
-    }
-  }
-}
-
-.lang-flag {
-  &::after {
-    background-position: 0 -75px;
-    content: attr(data-lang-code);
-  }
-}
-
-/// Language flag icons positioning in the spritemap.
-$flags:
-  (sq, 0 0), // Albanian (Albania)
-  (hy, -21px 0), // Armenian (Armenia)
-  (bn, -42px 0), // Bengali (Bangladesh)
-  (bg, -84px 0), // Bulgarian (Bulgaria)
-  (zh, -105px 0), // Chinese (China)
-  (hr, -126px 0), // Croatian (Croatia)
-  (da, -147px 0), // Danish (Denmark)
-  (cs, -168px 0), // Czech (Czech Republic)
-  (et, -189px 0), // Estonian (Estonia)
-
-  (fi, 0 -15px), // Finnish (Finland)
-  (fr, -21px -15px), // French (France)
-  (ka, -42px -15px), // Georgian (Georgia)
-  (de, -63px -15px), // German (Germany)
-  (el, -84px -15px), // Greek (Greece)
-  (hu, -105px -15px), // Hungarian (Hungary)
-  (is, -126px -15px), // Icelandic (Iceland)
-  (hi, -147px -15px), // Hindi (India)
-  (id, -168px -15px), // Indonesian (Indonesia)
-  (fa, -189px -15px), // Iranian (Iran)
-
-  (he, 0 -30px), // Hebrew (Israel)
-  (it, -21px -30px), // Italian (Italy)
-  (ja, -42px -30px), // Japanese (Japan)
-  (ko, -63px -30px), // Korean (Korea, South)
-  (lv, -84px -30px), // Latvian (Latvia)
-  (lt, -105px -30px), // Lithuanian (Lithuania)
-  (ms, -126px -30px), // Malaysian (Malaysia)
-  (nl, -147px -30px), // Dutch (Netherlands)
-  (no, -168px -30px), // Norwegian (Norway)
-  (ur, -189px -30px), // Urdu (Pakistan)
-
-  (fil, 0 -45px), // Filipino (Philippines)
-  (pl, -21px -45px), // Polish (Poland)
-  (ro, -42px -45px), // Romanian (Romania)
-  (ru, -63px -45px), // Russian (Russia)
-  (ar, -84px -45px), // Arabic (Saudi Arabia)
-  (sk, -105px -45px), // Slovakian (Slovakia)
-  (sl, -126px -45px), // Slovenian (Slovenia)
-  (es, -147px -45px), // Spanish (Spain)
-  (sv, -168px -45px), // Swedish (Sweden)
-  (tr, -189px -45px), // Turkish (Turkey)
-
-  (uk, 0 -60px), // Ukrainian (Ukraine)
-  (en, -21px -60px), // American English (United States of America)
-  (pt, -84px -60px), // Portuguese (Portuguese Republic)
-  (sr, -126px -60px), // Serbian (Republic of Serbia)
-  (bn, -147px -60px), // Dutch, French, German (Kingdom of Belgium)
-  (th, -189px -60px), // Thai (Thailand)
-  (en_US, -21px -60px), // American English (United States of America)
-  (en_GB, -63px -60px), // British English (Great Britian)
-  (en_AU, -168px -60px), // Australian English (Commonwealth of Australia)
-  (en_CA, -105px -60px), // Canadian English (Canada)
-  (pt_BR, -63px 0), // Brazilian Portuguese (Brazil)
-  (fr_IC, -42px -60px), // French (Ivory Coast)
-  (fr_CA, -105px -60px), // Canadian French (Canada)
-;
-
-@each $flag, $pos in $flags {
-  [data-lang-code^="#{$flag}"]:after {
-    background-position: $pos;
-    content: '';
-  }
-}
-
-// Styling rules for the site's blog article tags menu. These rules affects both - the blog article listing view and the single blog article view.
-// By default the tags menu shares the same style with the sub menu.
-// To add custom styles remove the ".menu-sub" class from the "tags-blog" and "tags-post" components and write the custom style below.
-.tags-title {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.menu-tags {
-  display: inline-block;
-  .menu {
-
-    .menu-item {
-
-      .a{
-
-        &:hover {
-
-        }
-
-        &.active {
-
-        }
-      }
-    }
+    padding-bottom: 16px;
   }
 }

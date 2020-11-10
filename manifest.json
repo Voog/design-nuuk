@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/lazy-image.tpl",
-      "layout_name": "lazy-image",
-      "title": "lazy-image"
+      "file": "components/menu-lang-mobile.tpl",
+      "layout_name": "menu-lang-mobile",
+      "title": "menu-lang-mobile"
     },
     {
       "content_type": "component",
@@ -134,6 +134,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/language-menu-class-names.tpl",
+      "layout_name": "language-menu-class-names",
+      "title": "language-menu-class-names"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/semimodal-class-names.tpl",
       "layout_name": "semimodal-class-names",
       "title": "semimodal-class-names"
@@ -144,6 +151,13 @@
       "file": "components/topbar.tpl",
       "layout_name": "topbar",
       "title": "topbar"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-language-list.tpl",
+      "layout_name": "menu-language-list",
+      "title": "menu-language-list"
     },
     {
       "content_type": "component",
@@ -176,16 +190,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/menu-lang-mobile.tpl",
-      "layout_name": "menu-lang-mobile",
-      "title": "menu-lang-mobile"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/lazy-image.tpl",
+      "layout_name": "lazy-image",
+      "title": "lazy-image"
     },
     {
       "content_type": "component",
@@ -354,9 +368,22 @@
       "file": "components/swiper-js.tpl",
       "layout_name": "swiper-js",
       "title": "swiper-js"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-language-popover.tpl",
+      "layout_name": "menu-language-popover",
+      "title": "menu-language-popover"
     }
   ],
   "assets": [
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-flags-medium-up.svg",
+      "kind": "assets",
+      "filename": "ico-flags-medium-up.svg"
+    },
     {
       "content_type": "image/svg+xml",
       "file": "assets/ico-arrow-right-small.svg",
@@ -374,6 +401,12 @@
       "file": "assets/ico-flags.svg",
       "kind": "assets",
       "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-flags-medium.svg",
+      "kind": "assets",
+      "filename": "ico-flags-medium.svg"
     },
     {
       "content_type": "image/svg+xml",

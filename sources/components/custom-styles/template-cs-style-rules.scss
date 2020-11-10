@@ -99,7 +99,7 @@ header {
 
   .post-comments-count {
     a {
-      color: var(--third-color);
+      color: var(--secondary-color);
 
       // scss-lint:disable NestingDepth, SelectorDepth
       .dark-background & {
@@ -109,7 +109,7 @@ header {
 
       // scss-lint:disable NestingDepth
       &:hover {
-        color: var(--third-color);
+        color: var(--secondary-color);
 
         // scss-lint:disable SelectorDepth
         .dark-background & {
@@ -139,7 +139,7 @@ header {
 // General rules for all navigation menus.
 .menu {
   .menu-item a {
-    color: var(--third-color);
+    color: var(--secondary-color);
 
     .dark-background & {
       @include query($tablet-2, 'min-width') {
