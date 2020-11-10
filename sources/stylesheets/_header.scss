@@ -3,6 +3,8 @@
 .header_ {
   &fixed {
     position: fixed;
+    display: flex;
+    align-items: center;
     top: 0;
     right: 0;
     width: 100%;
@@ -13,7 +15,6 @@
     box-sizing: border-box;
     transition: all 0.2s;
     transition-timing-function: $bezier-medium;
-    box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
 
     @include query($tablet-3) {
       padding: 16px;
@@ -24,11 +25,13 @@
       @include query($tablet-3) {
         width: 100%;
         background: $white;
+        box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
       }
     }
 
     &.scroll {
       background: $white;
+      box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
     }
 
     .search-open &,
