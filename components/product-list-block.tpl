@@ -14,7 +14,14 @@
                 {%- assign buttonTag = 'div' -%}
               {%- endif -%}
 
-              <div class="product_item-link">
+              {%- assign productPageSettings = 'product_page_settings_' | append: item_child.page_id -%}
+
+              <div class="product_item-link p-rel">
+                {%- if item_child.data[productPageSettings].product_label != blank -%}
+                  <div class="product_label">
+                    {{item_child.data[productPageSettings].product_label}}
+                  </div>
+                {%- endif -%}
                 {%- if item_child.layout_title == product_list_layout -%}
                   {% include 'content-item', _entityData: item_child, _itemType: 'page', _id: item_child.page_id, _hoverButton: true %}
                   <a class="p14 mar_t-16" href="{{ item_child.url }}">

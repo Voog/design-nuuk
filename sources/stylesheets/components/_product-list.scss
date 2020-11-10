@@ -10,4 +10,16 @@
       }
     }
   }
+
+  &label {
+    padding: 8px 16px;
+    background: pink;
+    color: #fff;
+    display: inline-block;
+    border-radius: 5%;
+    position: absolute;
+    top: 16px;
+    right: -4px;
+    z-index: 1;
+  }
 }

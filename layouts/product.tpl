@@ -26,7 +26,12 @@
       {% endif %}
       <div class="flex_row flex_row-2 mar_0-16-neg flex_a-center">
         <div class="flex_row-2--item">
-          <div class="mar_0-16">
+          <div class="mar_0-16 p-rel">
+            {%- if page.data[productPageSettings].product_label != blank -%}
+              <div class="product_label">
+                {{page.data[productPageSettings].product_label}}
+              </div>
+            {%- endif -%}
             {%- if page.data.item_image != blank or editmode -%}
               {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id, _staticItem: true %}
             {%- endif -%}
@@ -67,7 +72,12 @@
               <div class="mar_0-8 mar_b-32 content-formatted">
               <a class="product_item-link" href="{{ buy_button.content.parent.url }}">
                 <div class="content-item-box">
-                  <div class="item-top mar_b-32">
+                  <div class="item-top mar_b-32 p-rel">
+                    {%- if page.data[productPageSettings].product_label != blank -%}
+                      <div class="product_label">
+                        {{page.data[productPageSettings].product_label}}
+                      </div>
+                    {%- endif -%}
                     <div class="top-inner of-hidden js-zoom">
                       {% include "lazy-image", _data: buy_button.content.parent.data.item_image, _targetWidth: '300', _className: "item-image is-cropped" %}
                     </div>

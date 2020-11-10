@@ -2452,9 +2452,6 @@ p {
   padding: 40px 0;
 }
 
-body {
-  opacity: 0;
-}
 body .animate_scale-down {
   opacity: 1;
   -webkit-transition: all 900ms;
@@ -2608,6 +2605,10 @@ body .animate_translated-x--0 {
   position: absolute;
 }
 
+.p-rel {
+  position: relative;
+}
+
 .b-box {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -2639,6 +2640,17 @@ body .animate_translated-x--0 {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+.product_label {
+  padding: 8px 16px;
+  background: pink;
+  color: #fff;
+  display: inline-block;
+  border-radius: 5%;
+  position: absolute;
+  top: 16px;
+  right: -4px;
+  z-index: 1;
 }
 
 .semimodal {

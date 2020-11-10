@@ -49,6 +49,12 @@
                 "list": productsPageList,
               },
               {
+                "title": "Add product label",
+                "type": "text",
+                "key": "product_label",
+                "placeholder": "Add product label"
+              },
+              {
                 "title": "Add product note input",
                 "type": "checkbox",
                 "key": "is_product_note_input",

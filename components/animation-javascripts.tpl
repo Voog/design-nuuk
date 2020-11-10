@@ -1,9 +1,4 @@
 <script>
-  $('body').animate({'opacity':'1'}, 200);
-  window.addEventListener('beforeunload', function () {
-    $('body').animate({'opacity':'0'}, 200);
-  });
-
   $(document).ready(function() {
     $('.product_item.scale-up').each(function() {
       var item = $(this);
@@ -14,7 +9,6 @@
     });
   });
 </script>
-
 {% if blog_listing_page %}
   <script>
     $(document).ready(function() {
