@@ -10,7 +10,6 @@
 
 
     function initSwiper() {
-      console.log('init');
       {%- if editmode -%}
         var conditionalBool = false;
         var autoPlay = false;

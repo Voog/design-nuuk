@@ -5,12 +5,12 @@ body {
     &scale- {
       &down {
         opacity: 1;
-        transition: all .9s;
+        @include transition(all 900ms);
         transform: scale(1);
       }
       &up {
         opacity: 1;
-        transition: all .9s;
+        @include transition(all 900ms);
         transform: scale(1.2);
       }
     }
@@ -19,13 +19,13 @@ body {
       &y--0 {
         opacity: 1;
         transform: translatey(0);
-        transition: all .9s;
+        @include transition(all 900ms);
       }
 
       &x--0 {
         opacity: 1;
         transform: translatex(0);
-        transition: all .9s;
+        @include transition(all 900ms);
       }
     }
   }

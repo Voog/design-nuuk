@@ -11,18 +11,32 @@
   min-width: 0;
   max-width: 0;
   pointer-events: none;
-  overflow: hidden;
   z-index: $zindex-semimodal;
   display: flex;
-  opacity: 0;
-  transition: all 0.2s;
-  transition-timing-function: $bezier-medium;
+  @include transition(all 200ms);
+
+  .header_wrapper {
+    transform: translateX(-320px);
+    @include transition(transform 200ms);
+
+    .semimodal-open &,
+    .semimodal-open-state & {
+      transform: translateX(0px);
+    }
+  }
 
   .header_wrapper {
     width: 100%;
     min-width: 320px;
     max-width: 320px;
+
+    @include query($tablet-3) {
+      min-width: 100%;
+      max-width: 100%;
+      overflow: auto;
+    }
   }
+
 
   body:not(.semimodal-relative) & {
     transform: translateX(-320px);
@@ -65,7 +79,6 @@
     width: 100%;
     min-width: 320px;
     max-width: 320px;
-    opacity: 1;
     pointer-events: all;
   }
 

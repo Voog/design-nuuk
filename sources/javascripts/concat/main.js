@@ -25,20 +25,20 @@
 
   // Remove comments if debouncing is used.
   // Function to limit the rate at which a function can fire.
-  // var debounce = function(func, wait, immediate) {
-  //   var timeout;
-  //   return function() {
-  //     var context = this, args = arguments;
-  //     var later = function() {
-  //       timeout = null;
-  //       if (!immediate) func.apply(context, args);
-  //     };
-  //     var callNow = immediate && !timeout;
-  //     clearTimeout(timeout);
-  //     timeout = setTimeout(later, wait);
-  //     if (callNow) func.apply(context, args);
-  //   };
-  // };
+  var debounce = function(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
 
   var editmode = function () {
     return $('html').hasClass('editmode');
@@ -381,45 +381,12 @@
       } else {
         searchCleanBtn.removeClass('active');
       }
-
-      handleMobileSearchHeight();
     });
 
     $('.js-search-reset-btn').click(function() {
       $('html').removeClass('search-open');
       $('.js-search').removeClass('active');
     });
-  };
-
-  // Sets the search modal height.
-  var handleSearchModalHeight = function() {
-    var windowWidth = $(window).width();
-        windowHeight = $(window).height(),
-        searchModal = $('.js-voog-search-modal');
-
-        if (windowWidth >= 1400 ) {
-          searchModalHeight = windowHeight - 190;
-        }
-        else {
-          searchModalHeight = windowHeight - 171;
-        }
-
-    searchModal.css({'max-height': searchModalHeight});
-  };
-
-  // Sets search modal height on search submit.
-  var handleSearchSubmit = function() {
-    $('.js-search-form').on('submit', function() {
-      handleSearchModalHeight();
-    });
-  };
-
-  var handleMobileSearchHeight = function() {
-    if ($(window).width() <= 640) {
-      $('.js-voog-search-modal').css('max-height', $(window).height() - 56);
-    } else {
-      $('.js-voog-search-modal').css('max-height', 'auto');
-    }
   };
 
   // ===========================================================================
@@ -444,9 +411,13 @@
 
   // Initiates the table horisontal scroll function when window is resized.
   var handleWindowResize = function() {
-    // Add functions that should be triggered while resizing the window here.
-    // Example:
-    // $(window).resize(debounce(yourFunctionName, 3000));
+    $(window).resize(debounce(handleMenuPos, 3000));
+  };
+
+  var handleMenuPos = function() {
+    $('.header_bottom').css('top', $('.header_fixed').innerHeight() + 60);
+    $('.semimodal_settings-btn').css('top', $('.header_fixed').innerHeight());
+    $('.semimodal_picker-btn').css('top', $('.header_fixed').innerHeight() + 30);
   };
 
   var handleWindowScroll = function() {
@@ -489,6 +460,7 @@
     focusFormWithErrors();
     handleWindowResize();
     handleWindowScroll();
+    handleMenuPos();
 
     if (editmode()) {
       bindCustomTexteditorStyles();

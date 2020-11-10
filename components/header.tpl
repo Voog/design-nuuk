@@ -1,4 +1,5 @@
 
+{% include "site-search" %}
 <div class="header_fixed">
   <button class="menu-btn js-menu-btn js-prevent-sideclick">
     <span class="menu-stripe"></span>
@@ -15,7 +16,6 @@
   </div>
   <div class="header_components">
     {%- if site.search.enabled -%}{%- include "search" -%}{%- endif -%}
-
     {%- if editmode or site.has_many_languages? -%}
       <nav class="menu-lang">
         {%- include "menu-lang" -%}
@@ -46,8 +46,6 @@
     </div>
   {%- endif -%}
   <header class="header_wrapper">
-    <div class="js-close-menu close-menu-btn bg_img-cover"></div>
-
     <div class="header_bottom">
       <nav class="menu-main js-menu-main js-popover js-prevent-sideclick">
         {%- include "menu-level-1" -%}

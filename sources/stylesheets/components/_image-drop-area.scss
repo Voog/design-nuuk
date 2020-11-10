@@ -120,6 +120,10 @@
       background-size: contain;
     }
 
+    &.is-cropped {
+      background-size: cover;
+    }
+
     &:not(.active) {
       border-color: rgba($black, .4);
       border-style: dashed;
@@ -177,6 +181,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  @include transition(transform 200ms);
   width: 100%;
   height: 100%;
 

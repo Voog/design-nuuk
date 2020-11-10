@@ -143,3 +143,10 @@
     word-wrap: normal;
   }
 }
+
+@mixin transition($prop) {
+  transition: $prop;
+  transition-timing-function: $bezier-medium;
+  perspective: 1000;
+  backface-visibility: hidden;
+}

@@ -40,9 +40,18 @@
     height: 3px;
     color: $primary-color;
     border-radius: 2px;
+    @include transition(transform 200ms);
 
     &:first-child {
       margin-bottom: 10px;
+    }
+
+    .semimodal-open:not(.semimodal-open-state) & {
+      transform: rotate(45deg) translate(-5px, -5px);
+
+      &:first-child {
+        transform: rotate(-45deg) translate(-5px, 5px);
+      }
     }
 
     .dark-background & {
@@ -63,17 +72,14 @@
   height: 32px;
   background-image: url('../assets/ico-close.svg');
   cursor: pointer;
+  display: none;
 
   &:hover {
     opacity: .7;
   }
 
-  .semimodal-open-state & {
-    display: none;
-
-    @include query($tablet-3) {
-      display: block;
-    }
+  @include query($tablet-3) {
+    display: block;
   }
 }
 
@@ -149,8 +155,8 @@
 
       a {
         display: flex;
-        font-size: 18px;
-        line-height: 36px;
+        font-size: 24px;
+        line-height: 44px;
         padding-left: 24px;
         align-items: center;
         position: relative;

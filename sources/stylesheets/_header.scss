@@ -9,22 +9,31 @@
     display: flex;
     justify-content: space-between;
     z-index: $zindex-header-fixed;
-    padding: 16px;
+    padding: 24px 32px;
     box-sizing: border-box;
     transition: all 0.2s;
     transition-timing-function: $bezier-medium;
+    box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
+
+    @include query($tablet-3) {
+      padding: 16px;
+    }
 
     .semimodal-open &,
     .semimodal-open-state & {
-      width: calc(100% - 320px);
-
       @include query($tablet-3) {
         width: 100%;
+        background: $white;
       }
     }
 
     &.scroll {
       background: $white;
+    }
+
+    .search-open &,
+    .comments-open & {
+      opacity: 0;
     }
   }
 
@@ -38,13 +47,17 @@
 
   &components {
     display: flex;
+    align-items: center;
   }
 
   &bottom {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
     box-sizing: border-box;
-    margin-top: 80px;
+    margin-top: 160px;
+    align-items: center;
+    position: sticky;
+    top: 64px;
   }
 }
