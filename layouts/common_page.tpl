@@ -52,54 +52,58 @@
   {%- endfor -%}
 </head>
 
-<body class="common-page js-bg-picker-area flex_box{% include 'semimodal-class-names' %}">
-  {%- include "header" -%}
-  {%- if editmode -%}
-    <div class="bg-picker-top"><button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button></div>
-  {%- endif -%}
+<body class="common-page js-bg-picker-area {% include 'semimodal-class-names' %}">
   <div class="background-color js-background-color"></div>
+  {%- if editmode -%}
+    <div class="bg-picker-top">
+      <button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
+    </div>
+  {%- endif -%}
 
-  <div class="container js-bg-picker-area">
-    <main class="content" role="main" data-search-indexing-allowed="true">
-      <div class="content-body content-formatted mar_b-32">
-        {% contentblock name="page-title" publish_default_content="true" %}
-          <h1>{{page.title}}</h1>
-        {% endcontentblock %}
-      </div>
-      <header class="content-header content-formatted" {{ edy_intro_edit_text }}>{% content name="slogan" %}</header>
-      {%- if editmode -%}
-        <div>
-          <button disabled class="js-content-area-settings-btn">Content area settings</button>
+  <div class="flex_box">
+    {%- include "header" -%}
+    <div class="container">
+      <main class="content" role="main" data-search-indexing-allowed="true">
+        <div class="content-body content-formatted mar_b-32">
+          {% contentblock name="page-title" publish_default_content="true" %}
+            <h1>{{page.title}}</h1>
+          {% endcontentblock %}
         </div>
-      {%- endif -%}
-
-      {%- for id in (1..contentAreaCount) -%}
-        <section class="content-body content-formatted">
+        <header class="content-header content-formatted" {{ edy_intro_edit_text }}>{% content name="slogan" %}</header>
         {%- if editmode -%}
           <div>
-            <button disabled class="js-column-settings-btn-{{ id }}">Columns settings {{ id }}</button>
+            <button disabled class="js-content-area-settings-btn">Content area settings</button>
           </div>
         {%- endif -%}
 
-        {%- assign columnSettingsKey = 'column_settings' | append: id -%}
-        {%- assign columnCount = page.data[columnSettingsKey].items_count -%}
-        {%- assign count = 1 -%}
-        {%- if columnCount -%}
-          {%- assign count = columnCount | to_num -%}
-        {%- endif -%}
-
-        <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap flex_j-center-mobile">
-          {%- for i in (1..count) -%}
-            {%- assign name = "col-" | append: i | append: id -%}
-            <div class="col-item flex_auto b-box" data-search-indexing-allowed="true">
-              {%- content name=name -%}
+        {%- for id in (1..contentAreaCount) -%}
+          <section class="content-body content-formatted">
+          {%- if editmode -%}
+            <div>
+              <button disabled class="js-column-settings-btn-{{ id }}">Columns settings {{ id }}</button>
             </div>
-          {%- endfor -%}
-        </section>
-      {%- endfor -%}
-    </main>
-{%- include 'site-components' -%}
-    {%- include "footer" -%}
+          {%- endif -%}
+
+          {%- assign columnSettingsKey = 'column_settings' | append: id -%}
+          {%- assign columnCount = page.data[columnSettingsKey].items_count -%}
+          {%- assign count = 1 -%}
+          {%- if columnCount -%}
+            {%- assign count = columnCount | to_num -%}
+          {%- endif -%}
+
+          <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap flex_j-center-mobile">
+            {%- for i in (1..count) -%}
+              {%- assign name = "col-" | append: i | append: id -%}
+              <div class="col-item flex_auto b-box" data-search-indexing-allowed="true">
+                {%- content name=name -%}
+              </div>
+            {%- endfor -%}
+          </section>
+        {%- endfor -%}
+      </main>
+      {%- include 'site-components' -%}
+      {%- include "footer" -%}
+    </div>
   </div>
 
   {%- include "site-signout" -%}

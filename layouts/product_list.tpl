@@ -6,26 +6,28 @@
   {%- include "template-styles" -%}
 </head>
 
-<body class="product-list-page js-bg-picker-area flex_box{% include 'semimodal-class-names' %}">
+<body class="product-list-page {% include 'semimodal-class-names' %}">
   {% include "template-svg-spritesheet" %}
-  {%- include "header" -%}
   {%- if editmode -%}
     <div class="bg-picker-top"><button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button></div>
   {%- endif -%}
   <div class="background-color js-background-color"></div>
 
-  <div class="container js-bg-picker-area flex_col flex_j-space-between">
-    <main class="content" role="main" data-search-indexing-allowed="true">
-      <div class="content-body content-formatted">
-        {% contentblock name="page-title" publish_default_content="true" %}
-          <h1>{{page.title}}</h1>
-        {% endcontentblock %}
-      </div>
-      {% include 'product-list-filter' %}
-      {% include 'product-list-block' %}
-    </main>
+  <div class="flex_box js-bg-picker-area">
+    {%- include "header" -%}
+    <div class="container js-bg-picker-area flex_col flex_j-space-between">
+      <main class="content" role="main" data-search-indexing-allowed="true">
+        <div class="content-body content-formatted">
+          {% contentblock name="page-title" publish_default_content="true" %}
+            <h1>{{page.title}}</h1>
+          {% endcontentblock %}
+        </div>
+        {% include 'product-list-filter' %}
+        {% include 'product-list-block' %}
+      </main>
 
-    {%- include "footer" -%}
+      {%- include "footer" -%}
+    </div>
   </div>
   {% include 'site-components' %}
 
