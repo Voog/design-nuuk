@@ -2157,6 +2157,10 @@ p {
   left: 72px;
 }
 
+.front-page .edy-bgpicker-toggle-button {
+  z-index: 102;
+}
+
 .edy-content-social-button svg {
   border: 1px solid var(--secondary-color);
   -webkit-box-sizing: border-box;
@@ -2591,6 +2595,12 @@ body:not(.semimodal-relative) .semimodal {
   z-index: 49;
   position: absolute;
   top: 0;
+}
+.front-page .swiper-settings {
+  position: absolute;
+  top: 96px;
+  right: 39px;
+  z-index: 100;
 }
 
 .item-top {

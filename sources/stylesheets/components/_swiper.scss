@@ -58,4 +58,11 @@
       top: 0;
     }
   }
+
+  .swiper-settings {
+    position: absolute;
+    top: 96px;
+    right: 39px;
+    z-index: $zindex-header-fixed - 1;
+  }
 }

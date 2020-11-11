@@ -20,21 +20,9 @@
   {% endif %}
 
   {% comment %}Assign variables based on page type.{% endcomment %}
-  {% assign body_bg_image = body_bg.image %}
-  {% assign body_bg_image_sizes = body_bg.imageSizes %}
   {% assign body_bg_color = body_bg.color %}
   {% assign body_bg_color_data = body_bg.colorData %}
   {% assign body_bg_combined_lightness = body_bg.combinedLightness %}
-
-  {% if body_bg_image == blank %}
-    {% assign body_bg_image = "" %}
-  {% endif %}
-
-  {% if body_bg_image_sizes == blank %}
-    {% assign body_bg_image_sizes_str = "" %}
-  {% else %}
-    {% assign body_bg_image_sizes_str = body_bg_image_sizes | json %}
-  {% endif %}
 
   {% if body_bg_color == blank %}
     {% assign body_bg_color = "#F2F2F2" %}

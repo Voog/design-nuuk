@@ -373,14 +373,8 @@
       $('html').toggleClass('search-open');
     }
 
-    $('.js-search-toggle-btn').click(function() {
-      toggleSearch();
-    });
-
     $('.js-search-toggle-btn').focus(function() {
-      if ($('.search-open').length <= 0) {
-        toggleSearch();
-      }
+      toggleSearch();
     });
 
     $('.js-search-input').on('input', function() {
