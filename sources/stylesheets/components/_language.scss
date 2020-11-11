@@ -116,6 +116,36 @@
   }
 }
 
+.lang_menu {
+  &-popover {
+    background-color: rgba($white, 1);
+    border-color: rgba($primary-color, .1);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 2px 10px rgba($primary-color, .07);
+
+    .menu {
+      padding: 8px 0;
+    }
+
+    &--wrap {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      padding: 16px 8px 8px 0;
+      opacity: 0;
+      pointer-events: none;
+      @include transition(all 200ms);
+
+      .menu-language-popover-open & {
+        z-index: 2;
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+}
+
 .menu-language {
   text-align: right;
 
@@ -123,11 +153,6 @@
     .language-menu-mode-list & {
       display: none;
     }
-  }
-
-  .menu-language-popover-open & {
-    z-index: 2;
-    display: block;
   }
 
   .menu-public {

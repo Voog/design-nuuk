@@ -20,7 +20,7 @@
 
           {% if language_menu_mode == "language-menu-mode-list" %}
             <li class="menu-item menu-item-cms-settings js-menu-language-settings">
-              <button class="btn btn-js-styled js-menu-language-settings-toggle" data-sideclick="prevent"></button>
+              <button class="btn btn-js-styled js-menu-language-settings-toggle"></button>
             </li>
           {% endif %}
         </ul>

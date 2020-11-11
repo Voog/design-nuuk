@@ -13,8 +13,7 @@
     z-index: $zindex-header-fixed;
     padding: 16px 32px;
     box-sizing: border-box;
-    transition: all 0.2s;
-    transition-timing-function: $bezier-medium;
+    @include transition(all 200ms);
 
     @include query($tablet-3) {
       padding: 16px;

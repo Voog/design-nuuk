@@ -593,7 +593,6 @@ MMCQ = (function() {
         $('html').removeClass('search-open');
         $('.js-search').removeClass('active');
         $('.search-btn').removeClass('open');
-        $('html').removeClass('menu-language-popover-open');
       };
     });
   };
@@ -907,12 +906,19 @@ MMCQ = (function() {
       $('.search-btn').removeClass('open');
     }
 
-    $('.js-search-toggle-btn').click(function() {
+    var toggleSearch = function() {
       $('html').removeClass('mobilemenu-open');
-      $('html').removeClass('menu-language-popover-open');
       $('.js-search').toggleClass('active');
       $('.js-search').hasClass('active') ? $('.js-search-input').focus() : '';
       $('html').toggleClass('search-open');
+    }
+
+    $('.js-search-toggle-btn').click(function() {
+      toggleSearch();
+    });
+
+    $('.js-search-toggle-btn').focus(function() {
+      toggleSearch();
     });
 
     $('.js-search-input').on('input', function() {
@@ -1103,7 +1109,7 @@ MMCQ = (function() {
 
   var bindLanguageMenuButttons = function() {
     // Toggles language menu popover.
-    $('.js-toggle-menu-language').click(function() {
+    var togglePopover = function() {
       var $html = $('html');
 
       $html.toggleClass('menu-language-popover-open');
@@ -1117,6 +1123,12 @@ MMCQ = (function() {
       } else if ($html.hasClass('menu-language-popover-open')) {
         positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
       }
+    }
+    $('.js-toggle-menu-language').hover(function() {
+      togglePopover();
+    });
+    $('.js-toggle-menu-language').focus(function() {
+      togglePopover();
     });
   };
 

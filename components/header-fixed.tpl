@@ -4,7 +4,7 @@
       <span class="menu-stripe"></span>
       <span class="menu-stripe"></span>
     </div>
-    <span class="mar_l-16">{{ 'menu' | lc }}</span>
+    <label>{{ 'menu' | lc }}</label>
   </button>
   <div class="header_title content-formatted">
     {%- unless editmode -%}
@@ -17,8 +17,8 @@
   </div>
   <div class="header_components">
     {% if show_language_menu_popover %}
-      <div>
-        <button class="menu-language-btn ico-flags ico-flag-{{ page.language_code }} js-toggle-menu-language js-menu-language-popover-btn" data-lang-code="{{ page.language_locale }}" data-sideclick="prevent" {{ edy_intro_add_lang }}>
+      <div class="js-toggle-menu-language" tabindex=0>
+        <button class="menu-language-btn ico-flags ico-flag-{{ page.language_code }} js-menu-language-popover-btn" data-lang-code="{{ page.language_locale }}" {{ edy_intro_add_lang }}>
           <span>{{ current_language_title }}</span>
           <svg class="menu-language-btn-circle" width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="#ico-circle"></use>
