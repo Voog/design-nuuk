@@ -945,7 +945,7 @@ MMCQ = (function() {
     var $popoverButton = $(popoverButton);
 
     $(popoverMenu).css({
-      top: Math.round($popoverButton.offset().top + $popoverButton.outerHeight()),
+      top: '40px',
       right: Math.round($(window).width() - $popoverButton.offset().left - $popoverButton.outerWidth())
     });
   };

@@ -157,7 +157,7 @@
       // scss-lint:disable NestingDepth
       &::before,
       &::after {
-        top: 18px;
+        top: 10px;
 
         // scss-lint:disable SelectorDepth
         .language-menu-mode-popover.language-flags-enabled & {
@@ -203,7 +203,8 @@
       }
 
       .language-menu-mode-popover.language-flags-enabled.language-names-enabled & {
-        padding-top: 16px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         padding-left: 48px;
       }
 
