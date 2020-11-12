@@ -52,52 +52,48 @@
       });
     }
 
-    $(".js-sort-price-ascending").on("click", function() {
-      var $wrapper = $('.product_list');
-      fadeAnimation($wrapper);
-      $wrapper.find('.js-product-item').sort(function(a, b) {
-        return +a.dataset.price - +b.dataset.price;
-      })
-      .appendTo($wrapper);
-    });
-
-    $(".js-sort-price-descending").on("click", function() {
-      var $wrapper = $('.product_list');
-      fadeAnimation($wrapper);
-      $wrapper.find('.js-product-item').sort(function(a, b) {
-        return +b.dataset.price - +a.dataset.price;
-      })
-      .appendTo($wrapper);
-    });
-
-    $(".js-sort-title-ascending").on("click", function() {
-      var $wrapper = $('.product_list');
-      fadeAnimation($wrapper);
-      $wrapper.find('.js-product-item').sort(function(a, b) {
-        if(a.dataset.title < b.dataset.title) { return -1; }
-        if(a.dataset.title > b.dataset.title) { return 1; }
-        return 0;
-      })
-      .appendTo($wrapper);
-    });
-
-    $(".js-sort-title-descending").on("click", function() {
-      var $wrapper = $('.product_list');
-      fadeAnimation($wrapper);
-      $wrapper.find('.js-product-item').sort(function(a, b) {
-        if(a.dataset.title < b.dataset.title) { return 1; }
-        if(a.dataset.title > b.dataset.title) { return -1; }
-        return 0;
-      })
-      .appendTo($wrapper);
-    });
-
-    $("#myInput").on("keyup", function() {
+    $(".product_list-search").on("keyup", function() {
       var value = $(this).val().toLowerCase();
       fadeAnimation($('.product_list'));
       $(".product_list .js-product-item").filter(function() {
         $(this).toggle($(this).attr("data-title").toLowerCase().indexOf(value) > -1)
       });
+    });
+
+    $('.product_list-filter').on('change', function() {
+      if (this.value === 'price-ascending') {
+        var $wrapper = $('.product_list');
+        fadeAnimation($wrapper);
+        $wrapper.find('.js-product-item').sort(function(a, b) {
+          return +a.dataset.price - +b.dataset.price;
+        })
+        .appendTo($wrapper);
+      } else if (this.value === 'price-descending') {
+        var $wrapper = $('.product_list');
+        fadeAnimation($wrapper);
+        $wrapper.find('.js-product-item').sort(function(a, b) {
+          return +b.dataset.price - +a.dataset.price;
+        })
+        .appendTo($wrapper);
+      } else if (this.value === 'title-ascending') {
+        var $wrapper = $('.product_list');
+        fadeAnimation($wrapper);
+        $wrapper.find('.js-product-item').sort(function(a, b) {
+          if(a.dataset.title < b.dataset.title) { return -1; }
+          if(a.dataset.title > b.dataset.title) { return 1; }
+          return 0;
+        })
+        .appendTo($wrapper);
+      } else if (this.value === 'title-descending') {
+        var $wrapper = $('.product_list');
+        fadeAnimation($wrapper);
+        $wrapper.find('.js-product-item').sort(function(a, b) {
+          if(a.dataset.title < b.dataset.title) { return 1; }
+          if(a.dataset.title > b.dataset.title) { return -1; }
+          return 0;
+        })
+        .appendTo($wrapper);
+      }
     });
   </script>
 </body>

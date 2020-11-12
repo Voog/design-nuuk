@@ -13,8 +13,9 @@
   }
 
   .form_field {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
+    position: relative;
+    padding-top: 8px;
 
     &:first-child {
       padding-top: 0;
@@ -70,6 +71,11 @@
       transition: all  0.3s $bezier-default;
     }
   }
+  .form_field_select {
+    padding: 6px 0 8px;
+    @include border(bottom, 1px, solid, $grey-1);
+    padding-right: 16px;
+  }
 
   .form_field_textfield,
   .form_field_textarea,
@@ -81,9 +87,8 @@
   .form_field_textarea {
     width: 280px;
     margin: 0;
-    padding: 7px;
-    @include border(all, 1px, solid, $grey-1);
-    border-radius: 3px;
+    padding: 8px 0;
+    @include border(bottom, 1px, solid, $grey-1);
     box-sizing: border-box;
 
     @include query($mobile-2) {

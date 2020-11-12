@@ -450,6 +450,13 @@ body.dark-background {
   word-wrap: break-word;
   word-break: break-all;
 }
+.content-formatted input,
+.content-formatted textarea,
+.content-formatted select {
+  background: none;
+  border: none;
+  outline: none;
+}
 .content-formatted blockquote {
   margin: 20px 40px;
 }
@@ -1503,8 +1510,9 @@ body.dark-background {
   font-size: 14px;
 }
 .content-formatted .form_field {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
+  position: relative;
+  padding-top: 8px;
 }
 .content-formatted .form_field:first-child {
   padding-top: 0;
@@ -1556,6 +1564,11 @@ body.dark-background {
   -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
   transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
 }
+.content-formatted .form_field_select {
+  padding: 6px 0 8px;
+  border-bottom: 1px solid #8d9091;
+  padding-right: 16px;
+}
 .content-formatted .form_field_textfield,
 .content-formatted .form_field_textarea,
 .content-formatted .form_field_select,
@@ -1566,9 +1579,8 @@ body.dark-background {
 .content-formatted .form_field_textarea {
   width: 280px;
   margin: 0;
-  padding: 7px;
-  border: 1px solid #8d9091;
-  border-radius: 3px;
+  padding: 8px 0;
+  border-bottom: 1px solid #8d9091;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -2049,6 +2061,9 @@ body.dark-background {
 }
 .mar_l-16 {
   margin-left: 16px;
+}
+.mar_r-32 {
+  margin-right: 32px;
 }
 
 h1 {

@@ -222,6 +222,14 @@
     @include word-wrap(break-word);
   }
 
+  input,
+  textarea,
+  select {
+    background: none;
+    border: none;
+    outline: none;
+  }
+
   blockquote {
     margin: 20px 40px;
   }

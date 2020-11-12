@@ -1,17 +1,15 @@
-<div class="flex_row flex_row-3 mar_0-8-neg pad_40-0">
-  <div class="">
-    <button class="mar_0-8 js-sort-price-ascending">Sort by price Lo -> Hi</button>
+<div class="flex_row flex_row-3 mar_0-8-neg pad_40-0 content-formatted">
+  <div class="form_field mar_r-32">
+    <label class="form_field_label" for="field_field_filter">Filter</label>
+    <select class="form_field_select product_list-filter" id="field_field_filter">
+      <option value="price-ascending">Sort by price Lo -> Hi</option>
+      <option value="price-descending">Sort by price Hi -> Lo</option>
+      <option value="title-ascending">Sort by title A -> Z</option>
+      <option value="title-descending">Sort by title Z -> A</option>
+    </select>
   </div>
-  <div class="">
-    <button class="mar_0-8 js-sort-price-descending">Sort by price Hi -> Lo</button>
-  </div>
-  <div class="">
-    <button class="mar_0-8 js-sort-title-ascending">Sort by title A -> Z</button>
-  </div>
-  <div class="">
-    <button class="mar_0-8 js-sort-title-descending">Sort by title Z -> A</button>
-  </div>
-  <div class="">
-    <input class="mar_0-8" id="myInput" type="search" placeholder="Search">
+  <div class="form_field" style="padding-top: 0;">
+    <label for="product-list-search" class="form_field_label">Seach</label>
+    <input type="search" placeholder="Search product..." id="product-list-search" class="form_field_textfield input_option product_list-search">
   </div>
 </div>
