@@ -80,7 +80,7 @@
                         </div>
                       {%- endif -%}
                       <div class="top-inner of-hidden js-zoom">
-                        {% include "lazy-image", _data: buy_button.content.parent.data.item_image, _targetWidth: '300', _className: "item-image is-cropped" %}
+                        {% include "lazy-image", _altAttr: _entityData.data.item_image_alt_attr, _data: buy_button.content.parent.data.item_image, _targetWidth: '300', _className: "item-image is-cropped" %}
                       </div>
                       <div class="custom-btn p-abs">Look closer</div>
                     </div>

@@ -45,14 +45,22 @@
           var dataKey = e.target.dataset.name;
           var dataEntity = e.target.dataset.entity;
           var dataReload = e.target.dataset.reload;
+          var dataMenuItem = e.target.dataset.menuItem;
+          var dataMenuItemObj = dataMenuItem && JSON.parse(dataMenuItem);
 
-          if (dataEntity == 'siteData') {
+          if (dataEntity == 'site') {
             var entityData = siteData;
-          } else if (dataEntity === 'articleData') {
-            var entityData = 'articleData';
+          } else if (dataEntity === 'article') {
+            var entityData = 'article';
+          } else if (dataEntity === 'menuItem' && dataMenuItemObj) {
+            var entityData = new Edicy.CustomData({
+              type: dataMenuItemObj.content_type,
+              id: dataMenuItemObj.page_id
+            });
           } else {
             var entityData = pageData;
           }
+
           entityData.set({ [dataKey] : val }, { success: function() {
             if (dataReload) {location.reload();};
           }});
