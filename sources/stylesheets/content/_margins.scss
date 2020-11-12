@@ -3,16 +3,24 @@
     margin: 0 -8px;
   }
 
+  &0-16-neg {
+    margin: 0 -16px;
+  }
+
+  &0-24-neg {
+    margin: 0 -24px;
+  }
+
   &0-8 {
     margin: 0 8px;
   }
 
-  &0-16-neg {
-    margin: 0 -8px;
+  &0-16 {
+    margin: 0 16px;
   }
 
-  &0-16 {
-    margin: 0 8px;
+  &0-24 {
+    margin: 0 24px;
   }
 
   &b-32 {
@@ -25,6 +33,10 @@
 
   &t-16 {
     margin-top: 16px;
+  }
+
+  &t-32 {
+    margin-top: 32px;
   }
 
   &t-96 {

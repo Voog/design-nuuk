@@ -460,7 +460,7 @@ body.dark-background {
   background: black;
   display: inline-block;
   color: white;
-  padding: 4px 16px;
+  padding: 16px;
   text-align: center;
   color: black;
   outline: none;
@@ -860,6 +860,10 @@ body.dark-background {
   .menu-sub {
     margin-top: 30px;
   }
+}
+
+.menu-sub.menu-breadcrumbs .menu-item a {
+  font-size: 14px;
 }
 
 /* HEADER */
@@ -2013,14 +2017,20 @@ body.dark-background {
 .mar_0-8-neg {
   margin: 0 -8px;
 }
+.mar_0-16-neg {
+  margin: 0 -16px;
+}
+.mar_0-24-neg {
+  margin: 0 -24px;
+}
 .mar_0-8 {
   margin: 0 8px;
 }
-.mar_0-16-neg {
-  margin: 0 -8px;
-}
 .mar_0-16 {
-  margin: 0 8px;
+  margin: 0 16px;
+}
+.mar_0-24 {
+  margin: 0 24px;
 }
 .mar_b-32 {
   margin-bottom: 32px;
@@ -2030,6 +2040,9 @@ body.dark-background {
 }
 .mar_t-16 {
   margin-top: 16px;
+}
+.mar_t-32 {
+  margin-top: 32px;
 }
 .mar_t-96 {
   margin-top: 96px;
@@ -2127,7 +2140,7 @@ p {
   background: black;
   display: inline-block;
   color: white;
-  padding: 4px 16px;
+  padding: 16px;
   text-align: center;
   font-size: 16px;
   line-height: 194%;

@@ -1,6 +1,6 @@
 {% for item in site.menuitems %}
   {% if item.selected? and item.children? or editmode %}
-    <nav class="menu-sub">
+    <nav class="menu-sub menu-breadcrumbs">
       <ul class="menu">
         {% if editmode or item.children? %}
           <li class="menu-item">

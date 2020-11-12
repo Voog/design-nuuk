@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/lazy-image.tpl",
-      "layout_name": "lazy-image",
-      "title": "lazy-image"
+      "file": "components/template-tools.tpl",
+      "layout_name": "template-tools",
+      "title": "template-tools"
     },
     {
       "content_type": "component",
@@ -85,13 +85,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/menu-level-2.tpl",
-      "layout_name": "menu-level-2",
-      "title": "menu-level-2"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/site-signout.tpl",
       "layout_name": "site-signout",
       "title": "site-signout"
@@ -102,13 +95,6 @@
       "file": "components/content-item.tpl",
       "layout_name": "content-item",
       "title": "content-item"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/menu-level-1.tpl",
-      "layout_name": "menu-level-1",
-      "title": "menu-level-1"
     },
     {
       "content_type": "component",
@@ -197,9 +183,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/lazy-image.tpl",
+      "layout_name": "lazy-image",
+      "title": "lazy-image"
     },
     {
       "content_type": "component",
@@ -211,9 +197,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-tools.tpl",
-      "layout_name": "template-tools",
-      "title": "template-tools"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
@@ -277,6 +263,13 @@
       "file": "components/template-variables.tpl",
       "layout_name": "template-variables",
       "title": "template-variables"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-main.tpl",
+      "layout_name": "menu-main",
+      "title": "menu-main"
     },
     {
       "content_type": "component",
@@ -354,6 +347,13 @@
       "file": "components/template-svg-spritesheet.tpl",
       "layout_name": "template-svg-spritesheet",
       "title": "template-svg-spritesheet"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-breadcrumbs.tpl",
+      "layout_name": "menu-breadcrumbs",
+      "title": "menu-breadcrumbs"
     },
     {
       "content_type": "component",

@@ -19,15 +19,19 @@
   <div class="flex_box">
     {% include "header" %}
     <div class="container js-bg-picker-area">
-      {% include 'menu-level-2' %}
+      <div class="mar_t-32">
+        {% include 'menu-breadcrumbs' %}
+      </div>
 
       <main class="content" role="main" data-search-indexing-allowed="true">
         {% if editmode %}
-          <button disabled class="js-product-page-settings-btn">Product page settings</button>
+          <div class="mar_b-32">
+            <button disabled class="js-product-page-settings-btn">Product page settings</button>
+          </div>
         {% endif %}
-        <div class="flex_row flex_row-2 mar_0-16-neg flex_a-center">
+        <div class="flex_row flex_row-2 mar_0-24-neg mar_b-32">
           <div class="flex_row-2--item">
-            <div class="mar_0-16 p-rel">
+            <div class="mar_0-24 p-rel">
               {%- if page.data[productPageSettings].product_label != blank -%}
                 <div class="product_label">
                   {{page.data[productPageSettings].product_label}}
@@ -40,7 +44,7 @@
           </div>
 
           <div class="flex_row-2--item">
-            <div class="mar_0-16 flex_col flex_a-center flex_j-center">
+            <div class="mar_0-24 flex_col">
               <div class="content-body content-formatted">
                 {% contentblock name="page-title" publish_default_content="true" %}
                   <h3>{{page.title}}</h3>

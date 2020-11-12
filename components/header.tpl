@@ -23,7 +23,7 @@
     {%- endif -%}
     <div class="header_bottom">
       <nav class="menu-main js-menu-main js-popover js-prevent-sideclick">
-        {%- include "menu-level-1" -%}
+        {%- include "menu-main" -%}
       </nav>
     </div>
   </header>
