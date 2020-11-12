@@ -9,12 +9,6 @@
   {% endif %}
 {% endunless %}
 
-{%- if editmode -%}
-  {%- assign buttonTag = 'a' -%}
-{%- else -%}
-  {%- assign buttonTag = 'div' -%}
-{%- endif -%}
-
 {%- if _staticItem == true -%}
   {%- assign wrapperTag = 'div' -%}
 {%- else -%}
@@ -23,32 +17,33 @@
 
 {% if editmode %}
   <div class="content-item-box {{ item_image_state }} js-content-item-box not-loaded" data-item-type="{{_itemType}}" data-item-id="{{ _id }}">
-    <input
-      class="js-data-item"
-      value="{{_entityData.data.item_image_alt_attr}}"
-      data-name="item_image_alt_attr"
-      data-entity="{{_itemType}}"
-      {%- if _entityData.page_id -%}
-        data-menu-item="{{ _entityData | json | escape}}"
-      {%- endif -%}
-      placeholder="Add image alt attribute"
-    >
+    <div class="flex_box" style="position: absolute;bottom: 64px;left: 8px;z-index: 1;">
+      <label for="item-image-alt"></label>
+      <input
+        class="js-data-item mar_l-16"
+        value="{{_entityData.data.item_image_alt_attr}}"
+        data-name="item_image_alt_attr"
+        data-entity="{{_itemType}}"
+        {%- if _entityData.page_id -%}
+          data-menu-item="{{ _entityData | json | escape}}"
+        {%- endif -%}
+        placeholder="Add image alt attribute"
+        id="item-image-alt"
+      >
+    </div>
 
-    <div class="item-top mar_b-32{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
+    <div class="item-top{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
       <button class="btn bg-crop-btn {% if _entityData.data.item_image == blank %}is-hidden{% else %}is-visible{% endif %} js-toggle-crop-state">
         <svg width="20" height="20" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
           <use xlink:href="#ico-toggle"></use>
         </svg>
       </button>
       <div class="top-inner aspect-ratio-inner image-drop-area {{ item_image_crop_state }} js-content-item-img-drop-area js-lazyload" data-image="{{ _entityData.data.item_image.url }}"></div>
-      {%- if _hoverButton == true -%}
-        <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
-      {%- endif -%}
     </div>
   </div>
 {% else %}
   <{{wrapperTag}} class="content-item-box {{ item_image_state }} js-content-item-box not-loaded"{% if _staticItem != true %} href="{{ _entityData.url }}"{% endif %}>
-    <div class="item-top mar_b-32{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
+    <div class="item-top{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
       <div class="top-inner of-hidden">
         {% if _entityData.data.item_image != blank %}
           <div class="loader js-loader"></div>
@@ -58,9 +53,6 @@
           <div class="item-placeholder">{{ _entityData.title | truncate: 50 }}</div>
         {% endif %}
       </div>
-      {%- if _hoverButton == true -%}
-        <{{buttonTag}} class="custom-btn p-abs">Look closer</{{buttonTag}}>
-      {%- endif -%}
     </div>
   </{{wrapperTag}}>
 {% endif %}

@@ -108,3 +108,11 @@
 {% endif %}
 
 {% include 'animation-javascripts' %}
+
+<script>
+  $('.js-cart-btn').click(function() {
+    if ($(this).data('product-id')) {
+      Voog.ShoppingCart.addProductById($(this).data('product-id'))
+    }
+  });
+</script>

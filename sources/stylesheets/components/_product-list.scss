@@ -1,12 +1,59 @@
 .product_ {
   &item {
-    &-link {
+    &-wrap {
+      .product_item-btn {
+        transform: translateY(20px);
+        pointer-events: none;
+        top: 0;
+        @include transition(transform 200ms);
+      }
+
+      .product_item-price {
+        transform: translateY(0px);
+        pointer-events: all;
+        top: 0;
+        margin: 0;
+        color: $grey-1;
+        @include transition(transform 200ms);
+      }
+
       &:hover {
         .product_image,
-        .item-top {
-          transform: scale(1.1);
-          @include transition(transform 600ms);
+        .item-top,
+        .product_item-title {
+          @include transition(opacity 200ms);
+          opacity: .7;
         }
+
+        .product_item-price {
+          transform: translateY(-20px);
+          pointer-events: none;
+        }
+
+        .product_item-btn {
+          transform: translateY(0px);
+          font-size: 14px;
+          pointer-events: all;
+        }
+      }
+    }
+
+    &-details {
+      position: relative;
+      overflow: hidden;
+      height: 20px;
+    }
+
+    &-btn {
+      cursor: pointer;
+      color: $green;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      @extend %button;
+
+      &:hover {
+        opacity: .6;
       }
     }
   }

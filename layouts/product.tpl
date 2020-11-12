@@ -66,33 +66,11 @@
 
           <div class="product_list flex_row flex_row-3 mar_0-8-neg pad_40-0">
             {%- for id in pageIdCompactArr -%}
-              {%- load buy_button to "buy_button" q.content.parent_id=id q.content.parent_type="page" -%}
-              {%- assign product = buy_button.product -%}
-
-              <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{item_child.path}}">
-                <div class="mar_0-8 mar_b-32 content-formatted">
-                <a class="product_item-link" href="{{ buy_button.content.parent.url }}">
-                  <div class="content-item-box">
-                    <div class="item-top mar_b-32 p-rel">
-                      {%- if page.data[productPageSettings].product_label != blank -%}
-                        <div class="product_label">
-                          {{page.data[productPageSettings].product_label}}
-                        </div>
-                      {%- endif -%}
-                      <div class="top-inner of-hidden js-zoom">
-                        {% include "lazy-image", _altAttr: _entityData.data.item_image_alt_attr, _data: buy_button.content.parent.data.item_image, _targetWidth: '300', _className: "item-image is-cropped" %}
-                      </div>
-                      <div class="custom-btn p-abs">Look closer</div>
-                    </div>
+              <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{page.path}}">
+                <div class="mar_0-8 mar_b-32">
+                  <div class="product_item-wrap" href="{{ buy_button.content.parent.url }}">
+                    {% include 'product-item', _parentId: id, _parentType: "page", _entityData: page %}
                   </div>
-
-                  <div class="p14 mar_t-16">
-                    <p class="bold">
-                      {{ buy_button.content.parent.title }}
-                    </p>
-                    <p>{{ product.price_with_tax | money_with_currency: "EUR" }}</p>
-                  </div>
-                </a>
                 </div>
               </div>
             {%- endfor -%}
