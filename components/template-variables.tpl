@@ -34,6 +34,28 @@
     {% assign body_bg_color_data_str = body_bg_color_data | json %}
   {% endif %}
 
+  {% if body_bg %}
+    {% if body_bg_combined_lightness %}
+      {% if body_bg_combined_lightness > 0.6 %}
+        {% assign body_bg_type = "light-background" %}
+      {% else %}
+        {% assign body_bg_type = "dark-background" %}
+      {% endif %}
+    {% else %}
+      {% if body_bg_color_data.a >= 0.6 %}
+        {% if body_bg_color_data.lightness >= 0.6 %}
+          {% assign body_bg_type = "light-background" %}
+        {% else %}
+          {% assign body_bg_type = "dark-background" %}
+        {% endif %}
+      {% else %}
+        {% assign body_bg_type = "light-background" %}
+      {% endif %}
+    {% endif %}
+  {% else %}
+    {% assign body_bg_type = "light-background" %}
+  {% endif %}
+
   {% comment %}SITE CONTAINER RELATED VARIABLES.{% endcomment %}
   {% if blog_article_page %}
     {% assign container_bg = article.data.container_bg %}

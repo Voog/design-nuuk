@@ -286,3 +286,86 @@ header .header_title {
 .loader::before {
   border-top-color: var(--secondary-color);
 }
+
+.content-area .form_field .form_field_label,
+.content-area .form_field .edy-fe-label {
+  font-size: var(--form-label-font-size);
+}
+.content-area .form_field_textfield,
+.content-area .form_field_textarea,
+.content-area label:not(.form_field_label) {
+  font-style: var(--form-field-font-style);
+  font-weight: var(--form-field-font-weight);
+  font-size: var(--form-field-font-size);
+  -webkit-text-decoration: var(--form-field-text-decoration);
+          text-decoration: var(--form-field-text-decoration);
+  text-transform: var(--form-field-text-transform);
+}
+.dark-background .content-area .form_field_textfield,
+.dark-background .content-area .form_field_textarea,
+.dark-background .content-area .form_field_select {
+  color: var(--third-color);
+  border-color: var(--third-color);
+}
+.dark-background .content-area .form_field_textfield::-webkit-input-placeholder,
+.dark-background .content-area .form_field_textarea::-webkit-input-placeholder,
+.dark-background .content-area .form_field_select::-webkit-input-placeholder {
+  color: var(--third-color);
+}
+.dark-background .content-area .form_field_textfield:-ms-input-placeholder,
+.dark-background .content-area .form_field_textarea:-ms-input-placeholder,
+.dark-background .content-area .form_field_select:-ms-input-placeholder {
+  color: var(--third-color);
+}
+.dark-background .content-area .form_field_textfield::-ms-input-placeholder,
+.dark-background .content-area .form_field_textarea::-ms-input-placeholder,
+.dark-background .content-area .form_field_select::-ms-input-placeholder {
+  color: var(--third-color);
+}
+.dark-background .content-area .form_field_textfield::placeholder,
+.dark-background .content-area .form_field_textarea::placeholder,
+.dark-background .content-area .form_field_select::placeholder {
+  color: var(--third-color);
+}
+.light-background .content-area .form_field_textfield,
+.light-background .content-area .form_field_textarea,
+.light-background .content-area .form_field_select {
+  color: var(--primary-color);
+}
+.light-background .content-area .form_field_textfield::-webkit-input-placeholder,
+.light-background .content-area .form_field_textarea::-webkit-input-placeholder,
+.light-background .content-area .form_field_select::-webkit-input-placeholder {
+  color: var(--primary-color);
+}
+.light-background .content-area .form_field_textfield:-ms-input-placeholder,
+.light-background .content-area .form_field_textarea:-ms-input-placeholder,
+.light-background .content-area .form_field_select:-ms-input-placeholder {
+  color: var(--primary-color);
+}
+.light-background .content-area .form_field_textfield::-ms-input-placeholder,
+.light-background .content-area .form_field_textarea::-ms-input-placeholder,
+.light-background .content-area .form_field_select::-ms-input-placeholder {
+  color: var(--primary-color);
+}
+.light-background .content-area .form_field_textfield::placeholder,
+.light-background .content-area .form_field_textarea::placeholder,
+.light-background .content-area .form_field_select::placeholder {
+  color: var(--primary-color);
+}
+.content-area .form_submit input {
+  padding: calc(var(--button-padding) - 18px) var(--button-padding) calc(var(--button-padding) - 17px);
+  font-size: var(--button-font-size);
+  font-style: var(--button-font-style);
+  font-weight: var(--button-font-weight);
+  -webkit-text-decoration: var(--button-text-decoration);
+          text-decoration: var(--button-text-decoration);
+  text-transform: var(--button-text-transform);
+}
+.dark-background .content-area .form_submit input {
+  color: var(--secondary-color);
+  background-color: var(--third-color);
+}
+.light-background .content-area .form_submit input {
+  color: var(--third-color);
+  background-color: var(--secondary-color);
+}

@@ -18,7 +18,7 @@
       ></button>
     </div>
   {%- endif -%}
-  <div class="flex_box js-bg-picker-area">
+  <div class="flex_box js-background-type {{ body_bg_type }}">
     {%- include "header" -%}
     <div class="container js-bg-picker-area flex_col flex_j-space-between">
       <main class="content" role="main" data-search-indexing-allowed="true">

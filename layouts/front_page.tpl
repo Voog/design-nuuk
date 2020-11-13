@@ -7,7 +7,7 @@
   {% include "template-styles" %}
 </head>
 
-<body class="front-page js-bg-picker-area{% include 'semimodal-class-names' %}">
+<body class="front-page js-bg-picker-area {% include 'semimodal-class-names' %}">
   {% if editmode %}
     <div class="bg-picker-top"
       {%- if page.data.front_header_bg_1.image != blank %}
@@ -19,7 +19,7 @@
   {% endif %}
   <div class="background-color js-background-color"></div>
 
-  <div class="flex_box">
+  <div class="flex_box js-background-type {{ body_bg_type }}">
     {% include "header" %}
     <div class="flex_col content_wrap">
 
@@ -70,11 +70,14 @@
             {%- endfor -%}
           </div>
         <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          {%- if swiperSettingsData.are_navigation_bullets == true -%}
+            <div class="swiper-pagination"></div>
+          {%- endif -%}
+          {%- if swiperSettingsData.are_navigation_arrows == true -%}
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          {%- endif -%}
 
           {%- if swiperSettingsData.is_content_by_slide != true -%}
             {{header_content}}
@@ -164,6 +167,24 @@
                 "title": "Use fade effect in slider",
                 "type": "checkbox",
                 "key": "is_fade_effect",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
+              },
+              {
+                "title": "Add swiper navigation arrows",
+                "type": "checkbox",
+                "key": "are_navigation_arrows",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
+              },
+              {
+                "title": "Add swiper navigation bullets",
+                "type": "checkbox",
+                "key": "are_navigation_bullets",
                 "states": {
                   "on": true,
                   "off": false
