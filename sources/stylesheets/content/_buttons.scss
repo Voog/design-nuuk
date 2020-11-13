@@ -53,6 +53,16 @@
   left: 72px;
 }
 
+body .edy-bgpicker-toggle-button {
+  left: 72px;
+  background-color: #443df6;
+  opacity: 1;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
 .front-page .edy-bgpicker-toggle-button {
   z-index: $zindex-header-fixed + 1;
 }

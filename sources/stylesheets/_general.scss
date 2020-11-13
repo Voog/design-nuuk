@@ -222,3 +222,23 @@ body {
 .svg-spritesheet {
   display: none;
 }
+
+body {
+  .edy-cbtn .edy-cbtn-ico {
+    margin-right: 4px !important;
+  }
+
+  .edy-cbtn>span:before, body .edy-cbtn>div:before {
+    height: 24px !important;
+    padding: 2px 8px 2px 8px !important;
+    margin-top: -8px !important;
+    margin-left: -8px !important;
+    background-color: #443df6 !important;
+    border-radius: 4px !important;
+  }
+
+  .edy-cbtn>span:hover:before, body .edy-cbtn>div:hover:before {
+    background-color: #443df6 !important;
+    opacity: .9;
+  }
+}

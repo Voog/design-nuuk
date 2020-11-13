@@ -172,25 +172,25 @@ header {
         background-color: var(--header-mainmenu-color);
       }
       // scss-lint:disable NestingDepth
-
-      &.active {
-        color: var(--header-mainmenu-active-color);
-        font-weight: var(--header-mainmenu-active-font-weight);
-        text-decoration: var(--header-mainmenu-active-decoration);
-
-        &::before {
-          background-color: var(--header-mainmenu-active-color);
-        }
-        &:hover {
-          color: var(--header-mainmenu-color);
-          text-decoration: var(--header-mainmenu-hover-decoration);
-          &::before {
-            background-color: var(--header-mainmenu-color);
-          }
-        }
-      }
       &:hover {
         color: var(--header-mainmenu-hover-color);
+      }
+    }
+
+    .menu-item.active a {
+      color: var(--header-mainmenu-active-color);
+      font-weight: var(--header-mainmenu-active-font-weight);
+      text-decoration: var(--header-mainmenu-active-decoration);
+
+      &::before {
+        background-color: var(--header-mainmenu-active-color);
+      }
+      &:hover {
+        color: var(--header-mainmenu-color);
+        text-decoration: var(--header-mainmenu-hover-decoration);
+        &::before {
+          background-color: var(--header-mainmenu-color);
+        }
       }
     }
     .menu-sub .menu-item a {

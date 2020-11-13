@@ -1103,7 +1103,7 @@ MMCQ = (function() {
   var handleMenuPos = function() {
     $('.header_bottom').css('top', $('.header_fixed').innerHeight() + 60);
     $('.semimodal_settings-btn').css('top', $('.header_fixed').innerHeight());
-    $('.semimodal_picker-btn').css('top', $('.header_fixed').innerHeight() + 30);
+    $('.semimodal_picker-btn').css('top', $('.header_fixed').innerHeight());
   };
 
   var handleWindowScroll = function() {

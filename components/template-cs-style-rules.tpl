@@ -86,25 +86,25 @@ header .header_title {
 .menu-main .menu .menu-item a::before {
   background-color: var(--header-mainmenu-color);
 }
-.menu-main .menu .menu-item a.active {
+.menu-main .menu .menu-item a:hover {
+  color: var(--header-mainmenu-hover-color);
+}
+.menu-main .menu .menu-item.active a {
   color: var(--header-mainmenu-active-color);
   font-weight: var(--header-mainmenu-active-font-weight);
   -webkit-text-decoration: var(--header-mainmenu-active-decoration);
           text-decoration: var(--header-mainmenu-active-decoration);
 }
-.menu-main .menu .menu-item a.active::before {
+.menu-main .menu .menu-item.active a::before {
   background-color: var(--header-mainmenu-active-color);
 }
-.menu-main .menu .menu-item a.active:hover {
+.menu-main .menu .menu-item.active a:hover {
   color: var(--header-mainmenu-color);
   -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
           text-decoration: var(--header-mainmenu-hover-decoration);
 }
-.menu-main .menu .menu-item a.active:hover::before {
+.menu-main .menu .menu-item.active a:hover::before {
   background-color: var(--header-mainmenu-color);
-}
-.menu-main .menu .menu-item a:hover {
-  color: var(--header-mainmenu-hover-color);
 }
 .menu-main .menu .menu-sub .menu-item a.active {
   font-weight: 400;
