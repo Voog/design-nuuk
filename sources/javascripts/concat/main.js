@@ -360,6 +360,17 @@
     });
   };
 
+  var handleFocus = function(el, func) {
+    el.focus(function() {
+      $(window).keyup(function (e) {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code == 9) {
+          func()
+        }
+      });
+    });
+  }
+
   var handleElementsClick = function() {
     if ($('.js-search').hasClass('active')) {
       $('.js-search').removeClass('active');
@@ -371,9 +382,12 @@
       $('.js-search').toggleClass('active');
       $('.js-search').hasClass('active') ? $('.js-search-input').focus() : '';
       $('html').toggleClass('search-open');
+      $('html').removeClass('menu-language-popover-open');
     }
 
-    $('.js-search-toggle-btn').focus(function() {
+    handleFocus($('.js-search-toggle-btn'), toggleSearch);
+
+    $('.js-search-toggle-btn').click(function() {
       toggleSearch();
     });
 
@@ -586,14 +600,17 @@
         togglePopover();
       });
     } else {
-      $('.js-toggle-menu-language').hover(function() {
-        togglePopover();
-      });
+      if ("ontouchstart" in document.documentElement) {
+        handleFocus($('.js-toggle-menu-language'), togglePopover);
+        $('.js-toggle-menu-language .menu-language-btn').click(function() {
+          togglePopover();
+        });
+      } else {
+        $('.js-toggle-menu-language').hover(function() {
+          togglePopover();
+        });
+      }
     }
-
-    $('.js-toggle-menu-language').focus(function() {
-      togglePopover();
-    });
   };
 
   // FUNCTIONS INITIATIONS

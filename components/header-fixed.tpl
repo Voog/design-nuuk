@@ -31,7 +31,7 @@
     {% endif %}
 
     {% include "menu-language-list" %}
-    {%- if site.search.enabled -%}{%- include "search-btn" -%}{%- endif -%}
+    {%- if site.search.enabled -%}<div class="js-prevent-sideclick">{%- include "search-btn" -%}</div>{%- endif -%}
 
   </div>
 </div>

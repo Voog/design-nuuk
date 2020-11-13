@@ -456,6 +456,10 @@ body.dark-background {
   background: none;
   border: none;
   outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
 }
 .content-formatted blockquote {
   margin: 20px 40px;

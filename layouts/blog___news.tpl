@@ -9,7 +9,7 @@
   {%- assign blog_listing_page = true -%}
 </head>
 
-<body class="blog-page js-bg-picker-area flex_box{% include 'semimodal-class-names' %}">
+<body class="blog-page js-bg-picker-area{% include 'semimodal-class-names' %}">
   {% include "template-svg-spritesheet" %}
   {% if editmode %}
     <div class="bg-picker-top"><button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button></div>
