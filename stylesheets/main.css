@@ -2824,6 +2824,8 @@ body .edy-settings-editor {
   bottom: 0;
   height: 100%;
   min-width: 320px;
+  max-width: 400px;
+  width: 100%;
   z-index: 57000 !important;
   background-color: white;
   -webkit-box-shadow: 0 25px 35px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.05);
@@ -2839,6 +2841,10 @@ body .edy-settings-editor {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   overflow: hidden;
+}
+body .edy-settings-editor h3 {
+  font-size: 24px;
+  line-height: 32px;
 }
 body .edy-settings-editor .edy-popover-content {
   height: 100%;
@@ -3009,11 +3015,11 @@ article .item-top > .aspect-ratio-inner {
 }
 .item-top .btn {
   padding: 0;
-  background-color: rgba(0, 102, 187, 0.3);
+  background-color: #443df6;
   border: 0;
 }
 .item-top .btn:hover {
-  background-color: #0066bb;
+  opacity: .8;
 }
 .item-top .bg-crop-btn {
   height: 45px;
@@ -3124,7 +3130,7 @@ article .item-top > .aspect-ratio-inner {
   right: 10px;
   z-index: 9;
   color: white;
-  background-color: rgba(0, 102, 187, 0.3);
+  background-color: #443df6;
   border: 0;
   opacity: 0;
   -webkit-transition: background-color .5s, opacity .5s;
@@ -3132,7 +3138,7 @@ article .item-top > .aspect-ratio-inner {
   transition: background-color .5s, opacity .5s;
 }
 .item-top .image-drop-area .edy-img-drop-area-remove-image:hover {
-  background-color: #0066bb;
+  opacity: .8;
 }
 .item-top .image-drop-area .edy-img-drop-area-remove-image-ico {
   margin-top: -10px;
