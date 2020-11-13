@@ -9,9 +9,9 @@
               {%- assign productPageSettings = 'product_page_settings_' | append: item_child.page_id -%}
 
               <div class="product_item-wrap p-rel">
-                {%- if item_child.data[productPageSettings].product_label != blank -%}
+                {%- if item_child.data[productPageSettingsKey].product_label != blank -%}
                   <div class="product_label">
-                    {{item_child.data[productPageSettings].product_label}}
+                    {{item_child.data[productPageSettingsKey].product_label}}
                   </div>
                 {%- endif -%}
                 {%- if item_child.layout_title == product_list_layout -%}

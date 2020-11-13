@@ -90,14 +90,17 @@
     padding: 8px 0;
     @include border(bottom, 1px, solid, $grey-1);
     box-sizing: border-box;
+    cursor: text;
 
     @include query($mobile-2) {
       width: 100%;
     }
   }
+
   .form_field_textarea {
     min-height: 98px;
   }
+
   .form_field_select {
   }
 

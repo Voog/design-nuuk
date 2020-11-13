@@ -1583,6 +1583,7 @@ body.dark-background {
   border-bottom: 1px solid #8d9091;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  cursor: text;
 }
 @media screen and (max-width: 420px) {
   .content-formatted .form_field_textfield,
@@ -1829,6 +1830,35 @@ body.dark-background {
 
 .publicmode .content-item-box.without-image {
   display: none;
+}
+
+.content-item-box .form_field {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 200ms;
+  -o-transition: opacity 200ms;
+  transition: opacity 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  width: calc(100% - 32px);
+  max-width: 300px;
+  position: absolute;
+  left: 8px;
+  z-index: 1;
+  bottom: 0px;
+}
+.product_list-page .content-item-box .form_field {
+  bottom: 64px;
+}
+.content-item-box:hover .form_field {
+  opacity: 1;
+  pointer-events: all;
+  cursor: text;
 }
 
 .bg_img-contain {
@@ -2646,6 +2676,64 @@ body:not(.semimodal-relative) .semimodal {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
+}
+
+body .edy-settings-editor {
+  position: fixed !important;
+  right: 0;
+  left: unset !important;
+  top: 0 !important;
+  bottom: 0;
+  height: 100%;
+  min-width: 320px;
+  z-index: 57000 !important;
+  background-color: white;
+  -webkit-box-shadow: 0 25px 35px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 25px 35px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.05);
+  -webkit-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  overflow: hidden;
+}
+body .edy-settings-editor .edy-popover-content {
+  height: 100%;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner label,
+body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner select,
+body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner input,
+body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner textarea {
+  font-size: 14px !important;
+}
+body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-settings-editor-list {
+  padding: 32px 32px 0;
+}
+body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-bubble-row-padded {
+  padding: 17px 32px;
+  margin-top: auto;
+}
+body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-bubble-row-padded .edy-btn {
+  padding: 11px 16px;
+  border-radius: 6px;
 }
 
 .swiper-container {

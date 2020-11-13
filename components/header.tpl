@@ -15,7 +15,7 @@
   <header class="header_wrapper">
     {%- if editmode -%}
       <div class="semimodal_settings-btn">
-        <button disabled class="js-semimodal-settings-btn">Semimodal settings</button>
+        <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">Semimodal settings</button>
       </div>
       <div class="semimodal_picker-btn js-prevent-sideclick">
         <button class="bg-picker" data-type="img" data-entity="siteData" data-picture="true" data-color="true" data-image_elem=".semimodal_bg-image" data-color_elem=".semimodal_bg-color" data-name="semimodal_image" data-bg="{{ site.data.semimodal_image | json | escape }}"></button>

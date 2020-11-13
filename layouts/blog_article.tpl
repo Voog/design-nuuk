@@ -22,7 +22,7 @@
     <div class="container">
       {% if editmode %}
         <div class="mar_b-32">
-          <button disabled class="js-article-settings-btn">Article settings</button>
+          <button disabled class="js-article-settings-btn js-settings-editor-btn">Article settings</button>
         </div>
       {% endif %}
       {% include "tags-post" %}

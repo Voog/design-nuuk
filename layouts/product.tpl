@@ -4,7 +4,8 @@
 <head prefix="og: http://ogp.me/ns#">
   {% include "html-head" %}
   {% include "template-styles" %}
-  {%- assign productPageSettings = 'product_page_settings_' | append: page.id -%}
+  {%- assign product_page = true -%}
+  {%- assign productPageSettingsKey = 'product_page_settings_' | append: page.id -%}
 </head>
 
 <body class="product-page js-bg-picker-area{% include 'semimodal-class-names' %}">
@@ -26,15 +27,15 @@
       <main class="content" role="main" data-search-indexing-allowed="true">
         {% if editmode %}
           <div class="mar_b-32">
-            <button disabled class="js-product-page-settings-btn">Product page settings</button>
+            <button disabled class="js-product-page-settings-btn js-settings-editor-btn">Product page settings</button>
           </div>
         {% endif %}
         <div class="flex_row flex_row-2 mar_0-24-neg mar_b-32">
           <div class="flex_row-2--item">
             <div class="mar_0-24 p-rel">
-              {%- if page.data[productPageSettings].product_label != blank -%}
+              {%- if page.data[productPageSettingsKey].product_label != blank -%}
                 <div class="product_label">
-                  {{page.data[productPageSettings].product_label}}
+                  {{page.data[productPageSettingsKey].product_label}}
                 </div>
               {%- endif -%}
               {%- if page.data.item_image != blank or editmode -%}
@@ -61,7 +62,7 @@
           {%- assign pageIdsArr = "" | split: ',' -%}
           {%- for i in (1..3) -%}
             {%- assign relatedProductKey = 'related_product_' | append: i -%}
-            {%- assign relatedProductPageId = page.data[productPageSettings][relatedProductKey] -%}
+            {%- assign relatedProductPageId = page.data[productPageSettingsKey][relatedProductKey] -%}
             {%- assign pageIdsArr = pageIdsArr | push: relatedProductPageId -%}
             {%- assign pageIdCompactArr = pageIdsArr | compact -%}
           {%- endfor -%}

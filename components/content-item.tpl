@@ -17,19 +17,21 @@
 
 {% if editmode %}
   <div class="content-item-box {{ item_image_state }} js-content-item-box not-loaded" data-item-type="{{_itemType}}" data-item-id="{{ _id }}">
-    <div class="flex_box" style="position: absolute;bottom: 64px;left: 8px;z-index: 1;">
-      <label for="item-image-alt"></label>
-      <input
-        class="js-data-item mar_l-16"
-        value="{{_entityData.data.item_image_alt_attr}}"
-        data-name="item_image_alt_attr"
-        data-entity="{{_itemType}}"
-        {%- if _entityData.page_id -%}
-          data-menu-item="{{ _entityData | json | escape}}"
-        {%- endif -%}
-        placeholder="Add image alt attribute"
-        id="item-image-alt"
-      >
+    <div class="content-formatted">
+      <div class="form_field">
+        <label for="item-image-alt" class="form_field_label">Add image alt attribute</label>
+        <input
+          placeholder="Add image alt attribute"
+          id="item-image-alt"
+          class="form_field_textfield js-data-item mar_l-16"
+          value="{{_entityData.data.item_image_alt_attr}}"
+          data-name="item_image_alt_attr"
+          data-entity="{{_itemType}}"
+          {%- if _entityData.page_id -%}
+            data-menu-item="{{ _entityData | json | escape}}"
+          {%- endif -%}
+        >
+      </div>
     </div>
 
     <div class="item-top{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">

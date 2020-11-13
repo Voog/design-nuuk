@@ -72,7 +72,7 @@
         <header class="content-header content-formatted" {{ edy_intro_edit_text }}>{% content name="slogan" %}</header>
         {%- if editmode -%}
           <div>
-            <button disabled class="js-content-area-settings-btn">Content area settings</button>
+            <button disabled class="js-content-area-settings-btn js-settings-editor-btn">Content area settings</button>
           </div>
         {%- endif -%}
 

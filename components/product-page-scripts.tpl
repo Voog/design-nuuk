@@ -1,11 +1,17 @@
+{%- assign productNoteInputCount = 1 -%}
+{%- assign productPageSettings = page.data[productPageSettingsKey] -%}
+{%- if productPageSettings != blank -%}
+  {%- assign productNoteInputCount = productPageSettings.product_note_input_count | to_num -%}
+{%- endif -%}
+
 <script>
   site.initCommonPage();
   {% if editmode %}
     window.addEventListener('DOMContentLoaded', (event) => {
-      {% if page.data[productPageSettings] %}
-        var valuesObj = {{ page.data[productPageSettings] | json }};
+      {% if productPageSettings %}
+        var valuesObj = {{ productPageSettings | json }};
       {% else %}
-        var valuesObj = {};
+        var valuesObj = {product_note_input_count: "1"};
       {% endif %}
 
       var productsPageList = [];
@@ -55,22 +61,34 @@
                 "placeholder": "Add product label"
               },
               {
-                "title": "Add product note input",
-                "type": "checkbox",
-                "key": "is_product_note_input",
-                "states": {
-                  "on": true,
-                  "off": false
-                }
+                "title": "Select note input area count",
+                "type": "select",
+                "key": "product_note_input_count",
+                "list": [
+                  {"title": "1", "value": "1"},
+                  {"title": "2", "value": "2"},
+                  {"title": "3", "value": "3"}
+                ]
               },
-              {
-                "title": "Add product note input label",
-                "type": "text",
-                "key": "product_note_input_label",
-                "placeholder": "Add product note input label"
-              }
+              {%- for i in (1..productNoteInputCount) -%}
+                {
+                  "title": "Publish {{i}} product note input",
+                  "type": "checkbox",
+                  "key": "is_product_note_input_{{i}}",
+                  "states": {
+                    "on": true,
+                    "off": false
+                  }
+                },
+                {
+                  "title": "Add {{i}} product note input label",
+                  "type": "text",
+                  "key": "product_note_input_label_{{i}}",
+                  "placeholder": "Add product note input label"
+                },
+              {%- endfor -%}
             ],
-            dataKey: '{{productPageSettings}}',
+            dataKey: '{{productPageSettingsKey}}',
             values: valuesObj
           }
         )
@@ -79,7 +97,7 @@
   {% endif %}
 </script>
 
-{% if page.data[productPageSettings].is_product_note_input == true %}
+
   <script>
     // Append polyfill for IE. Source: https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/append()/append().md
     (function (arr) {
@@ -105,46 +123,61 @@
         });
       });
     })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
-
-    var $productTypeSelect = $('.edy-buy-button-container').find('.edy-buy-button'),
-      productTypeTextContainer,
-      productTypeTextInput,
-      productTypeTextLabel
-
-    // Builds input note field
-    productTypeTextContainer = document.createElement('div');
-    productTypeTextContainer.className = 'form_field js-product-note-text-container';
-
-    productTypeTextLabel = document.createElement('label');
-    productTypeTextLabel.setAttribute('for', 'product-note');
-    productTypeTextLabel.className = 'form_field_label';
-    {%- assign productNoteLabel = '' -%}
-    {%- if page.data[productPageSettings].product_note_input_label != blank -%}
-      {%- assign productNoteLabel = page.data[productPageSettings].product_note_input_label -%}
-      productTypeTextLabel.innerHTML = "{{productNoteLabel}}";
-    {%- endif -%}
-
-    productTypeTextInput = document.createElement('input');
-    productTypeTextInput.setAttribute('id', 'product-note');
-    productTypeTextInput.className = 'form_field_textfield input_option';
-
-    productTypeTextContainer.append(productTypeTextLabel);
-    productTypeTextContainer.append(productTypeTextInput);
-
-    $productTypeSelect.parent().before(productTypeTextContainer);
-
-    // Updates product note on changing the note input.
-    var setTextNote = function(labelTitle) {
-      var textValue = $('.js-product-note-text-container').find('.form_field_textfield').val();
-      $('.edy-buy-button').attr('data-note', labelTitle + ': "' + textValue + '"');
-    };
-
-    $('.js-product-note-text-container').find('.form_field_textfield').on('input', function() {
-    setTextNote("{{productNoteLabel}}");
-
-    });
   </script>
-{% endif %}
+
+<script>
+  {%- for i in (1..productNoteInputCount) -%}
+    var inputElement = '.product_note-input-{{i}}';
+    var inputElements = inputElement.concat(inputElement);
+
+    {%- assign isProductNoteKey = 'is_product_note_input_' | append: i -%}
+    {% if editmode or productPageSettings[isProductNoteKey] == true %}
+      var $productTypeSelect = $('.edy-buy-button-container').find('.edy-buy-button'),
+        productTypeTextContainer,
+        productTypeTextInput,
+        productTypeTextLabel
+
+      // Builds input note field
+      productTypeTextContainer = document.createElement('div');
+      productTypeTextContainer.className = 'form_field js-product-note-text-container';
+
+      productTypeTextLabel = document.createElement('label');
+      productTypeTextLabel.setAttribute('for', 'product-note-{{i}}');
+      productTypeTextLabel.className = 'form_field_label product_note-label-{{i}}';
+      {%- assign productNoteLabel = '' -%}
+      {%- assign productNoteLabelKey = 'product_note_input_label_' | append: i -%}
+      {%- if productPageSettings[productNoteLabelKey] != blank -%}
+        {%- assign productNoteLabel = productPageSettings[productNoteLabelKey] -%}
+        productTypeTextLabel.innerHTML = "{{productNoteLabel}}";
+      {%- endif -%}
+
+      productTypeTextInput = document.createElement('input');
+      productTypeTextInput.setAttribute('id', 'product-note-{{i}}');
+      productTypeTextInput.className = 'form_field_textfield product_note-input-{{i}} product_note';
+
+      productTypeTextContainer.append(productTypeTextLabel);
+      productTypeTextContainer.append(productTypeTextInput);
+
+      $productTypeSelect.parent().before(productTypeTextContainer);
+    {% endif %}
+  {%- endfor -%}
+
+  $('.edy-buy-button').on('click', function() {
+    var noteString = '';
+    {%- for i in (1..productNoteInputCount) -%}
+      var noteLabel = $('.product_note-label-{{i}}').text()
+      var noteValue = $('.js-product-note-text-container').find('.product_note-input-{{i}}').val();
+      if (noteValue.length >= 1) {
+        noteString = noteString.concat(noteLabel + ': ' + noteValue{% if forloop.last != true %} + ', '{% endif %});
+      }
+    {%- endfor -%}
+    $('.edy-buy-button').attr('data-note', noteString);
+    $(".product_note").each(function() {
+      $(this).val("");
+    });
+  });
+</script>
+
 
 <script>
   $('.top-inner.js-zoom').click(function() {

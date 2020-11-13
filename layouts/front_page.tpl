@@ -107,7 +107,7 @@
 
       {%- if editmode -%}
         <div class="swiper-settings">
-          <button disabled class="js-front-page-settings-btn">Front page settings</button>
+          <button disabled class="js-front-page-settings-btn js-settings-editor-btn">Front page settings</button>
         </div>
       {%- endif -%}
 

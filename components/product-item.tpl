@@ -3,9 +3,9 @@
 
 <a class="content-item-box" href="{{ buy_button.content.parent.url }}">
   <div class="item-top p-rel">
-    {%- if _entityData.data[productPageSettings].product_label != blank -%}
+    {%- if _entityData.data[productPageSettingsKey].product_label != blank -%}
       <div class="product_label">
-        {{_entityData.data[productPageSettings].product_label}}
+        {{_entityData.data[productPageSettingsKey].product_label}}
       </div>
     {%- endif -%}
     <div class="top-inner of-hidden js-zoom">

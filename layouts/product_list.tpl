@@ -6,7 +6,7 @@
   {%- include "template-styles" -%}
 </head>
 
-<body class="product-list-page js-bg-picker-area{% include 'semimodal-class-names' %}">
+<body class="product_list-page js-bg-picker-area{% include 'semimodal-class-names' %}">
   {% include "template-svg-spritesheet" %}
   <div class="background-color js-background-color"></div>
   {%- if editmode -%}
