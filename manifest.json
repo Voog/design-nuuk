@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-tools.tpl",
-      "layout_name": "template-tools",
-      "title": "template-tools"
+      "file": "components/footer.tpl",
+      "layout_name": "footer",
+      "title": "footer"
     },
     {
       "content_type": "component",
@@ -197,6 +197,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/template-tools.tpl",
+      "layout_name": "template-tools",
+      "title": "template-tools"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-cs-content.tpl",
       "layout_name": "template-cs-content",
       "title": "template-cs-content"
@@ -204,9 +211,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/footer.tpl",
-      "layout_name": "footer",
-      "title": "footer"
+      "file": "components/article-settings-variables.tpl",
+      "layout_name": "article-settings-variables",
+      "title": "article-settings-variables"
     },
     {
       "content_type": "component",

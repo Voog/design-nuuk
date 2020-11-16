@@ -57,6 +57,8 @@ body .edy-bgpicker-toggle-button {
   left: 72px;
   background-color: $voog-blue;
   opacity: 1;
+  height: 40px;
+  border-radius: 4px;
 
   &:hover {
     opacity: .8;

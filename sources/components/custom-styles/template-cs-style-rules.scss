@@ -58,7 +58,7 @@ header {
   .post-title {
     // scss-lint:disable SingleLinePerSelector
     &, a {
-      color: var(--secondary-color);
+      color: var(--primary-color);
 
       // scss-lint:disable NestingDepth, SelectorDepth
       .dark-background & {
@@ -83,6 +83,7 @@ header {
     }
   }
 
+  .post-author,
   .post-date {
     color: var(--secondary-color);
 

@@ -246,18 +246,25 @@ body.dark-background {
 
 body .edy-cbtn .edy-cbtn-ico {
   margin-right: 4px !important;
+  margin-left: 8px !important;
+}
+body .edy-cbtn-content span:last-child {
+  margin-right: -8px;
 }
 body .edy-cbtn > span:before, body body .edy-cbtn > div:before {
   height: 24px !important;
   padding: 2px 8px 2px 8px !important;
   margin-top: -8px !important;
-  margin-left: -8px !important;
+  margin-left: 0px !important;
   background-color: #443df6 !important;
   border-radius: 4px !important;
 }
 body .edy-cbtn > span:hover:before, body body .edy-cbtn > div:hover:before {
   background-color: #443df6 !important;
-  opacity: .9;
+  opacity: .8 !important;
+}
+body .edy-cbtn > span > span, body .edy-cbtn > span > div, body .edy-cbtn > div > span, body .edy-cbtn > div > div {
+  padding-right: 0 !important;
 }
 
 .content-formatted {
@@ -1025,9 +1032,17 @@ body .edy-cbtn > span:hover:before, body body .edy-cbtn > div:hover:before {
 .blog_listing-item:nth-last-child(-n+2) .post {
   border-bottom: none;
 }
+.blog_listing-item:nth-last-child(-n+2) .post h3 {
+  font-size: 18px;
+  line-height: 24px;
+}
 @media screen and (max-width: 900px) {
   .blog_listing-item {
     width: 100%;
+  }
+  .blog_listing-item h3 {
+    font-size: 18px;
+    line-height: 24px;
   }
   .blog_listing-item:nth-last-child(2) .post {
     border-bottom: 1px solid black;
@@ -1050,19 +1065,22 @@ body .edy-cbtn > span:hover:before, body body .edy-cbtn > div:hover:before {
   overflow: hidden;
 }
 .post .post-title {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 24px;
+  margin-bottom: 8px;
   line-height: 1.1;
 }
 .post .post-title, .post .post-title a {
-  font-size: 50px;
-  color: #8d9091;
+  color: black;
+}
+.related_posts .post .post-title, .related_posts .post .post-title a {
+  font-size: 18px;
+  line-height: 24px;
 }
 .dark-background .post .post-title, .dark-background .post .post-title a {
   color: white;
 }
 .post .post-title a:hover {
-  color: #8d9091;
+  color: black;
   opacity: .8;
 }
 .dark-background .post .post-title a:hover {
@@ -1073,22 +1091,25 @@ body .edy-cbtn > span:hover:before, body body .edy-cbtn > div:hover:before {
     font-size: 30px;
   }
 }
-.post .post-date {
-  font-size: 14px;
-  color: #8d9091;
+.post .post-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+.post .post-author, .post .post-date {
+  font-size: 16px;
+  line-height: 194%;
+  color: #8D9091;
+}
+.dark-background .post .post-author,
 .dark-background .post .post-date {
   color: white;
 }
-.post .post-author {
-  font-size: 12px;
-}
-.dark-background .post .post-author {
-  color: white;
-  opacity: .8;
-}
 .post .post-content {
-  margin-top: 20px;
+  margin-top: 8px;
 }
 .post .post-content .post-body {
   margin-top: 20px;
@@ -1192,6 +1213,23 @@ body .edy-cbtn > span:hover:before, body body .edy-cbtn > div:hover:before {
 }
 .blog-page .post-read-more-btn:hover {
   opacity: .8;
+}
+
+.comments.hide-post-comments {
+  display: none;
+}
+
+article.post .post-date.hide-post-date {
+  display: none;
+}
+article.post .post-author.hide-post-author {
+  display: none;
+}
+article.post .date-separator {
+  padding: 0 8px;
+}
+article.post .date-separator.hide-separator {
+  display: none;
 }
 
 .site-search {
@@ -2366,6 +2404,8 @@ body .edy-bgpicker-toggle-button {
   left: 72px;
   background-color: #443df6;
   opacity: 1;
+  height: 40px;
+  border-radius: 4px;
 }
 body .edy-bgpicker-toggle-button:hover {
   opacity: .8;
@@ -2879,6 +2919,9 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-b
   padding: 11px 16px;
   border-radius: 6px;
 }
+body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-settings-editor-item {
+  padding: 8px 0;
+}
 
 .swiper-container {
   width: 100%;
@@ -2956,6 +2999,11 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-b
   right: 39px;
   z-index: 100;
 }
+.front-page .swiper-container .edy-bgpicker-toggle-button {
+  right: 32px;
+  left: unset;
+  top: 128px;
+}
 
 .item-top {
   position: relative;
@@ -3022,8 +3070,9 @@ article .item-top > .aspect-ratio-inner {
   opacity: .8;
 }
 .item-top .bg-crop-btn {
-  height: 45px;
+  height: 40px;
   width: 45px;
+  border-radius: 4px;
   position: absolute;
   top: 0;
   left: 0;
@@ -3031,7 +3080,6 @@ article .item-top > .aspect-ratio-inner {
   margin-top: 10px;
   margin-left: 10px;
   cursor: pointer;
-  border-radius: 100%;
   color: white;
 }
 .item-top .bg-crop-btn.is-visible {
@@ -3124,8 +3172,9 @@ article .item-top > .aspect-ratio-inner {
   opacity: 1;
 }
 .item-top .image-drop-area .edy-img-drop-area-remove-image {
-  height: 45px;
+  height: 40px;
   width: 45px;
+  border-radius: 4px;
   top: 10px;
   right: 10px;
   z-index: 9;

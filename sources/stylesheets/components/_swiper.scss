@@ -65,4 +65,10 @@
     right: 39px;
     z-index: $zindex-header-fixed - 1;
   }
+
+  .swiper-container .edy-bgpicker-toggle-button {
+    right: 32px;
+    left: unset;
+    top: 128px;
+  }
 }

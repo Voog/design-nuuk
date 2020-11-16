@@ -16,7 +16,7 @@
 {%- endif -%}
 
 {% if editmode %}
-  <div class="content-item-box {{ item_image_state }} js-content-item-box not-loaded" data-item-type="{{_itemType}}" data-item-id="{{ _id }}">
+  <div class="content-item-box p-rel {{ item_image_state }} js-content-item-box not-loaded" data-item-type="{{_itemType}}" data-item-id="{{ _id }}">
     <div class="content-formatted">
       <div class="form_field">
         <label for="item-image-alt" class="form_field_label">Add image alt attribute</label>

@@ -1,17 +1,7 @@
 <article class="post{% if blog_listing_page %} translated-y--100{% endif %}">
   <header class="post-header">
     {% include 'content-item', _entityData: article, _itemType: 'article', _id: article.id %}
-    <h2 class="post-title">{% if post-box == "article" %}{% editable article.title %}{% else %}<a href="{{ article.url }}">{{ article.title }}</a>{% endif %}</h2>
-    {% assign article_year = article.created_at | format_date: "%Y" | to_num %}
-
-    {% if article_year == current_year %}
-      {% assign article_date_format = "long_without_year" %}
-    {% else %}
-      {% assign article_date_format = "long" %}
-    {% endif %}
-
-    <time class="post-date" datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}</time>
-    <div class="post-author">{{ article.author.name }}</div>
+    <h3 class="post-title">{% if post-box == "article" %}{% editable article.title %}{% else %}<a href="{{ article.url }}">{{ article.title }}</a>{% endif %}</h3>
   </header>
 
   <div class="post-content">
@@ -25,13 +15,23 @@
       <div class="post-body content-formatted">{% editable article.body %}</div>
       <div class="post-body content-formatted">{% content name="additional_body" bind="Article" %}</div>
     {% endif %}
-  </div>
 
-  <footer class="post-footer">
-    {% unless post-box == "article" %}
-      <div class="post-comments-count">
-        <a href="{{ article.url }}#comments">{% case article.comments_count %}{% when 0 %}{{ "no_comments" | lc }}{% else %}{{ "comments_for_count" | lc}}: <span class="edy-site-blog-comments-count">{{ article.comments_count }}</span>{% endcase %}</a>
+    {% assign article_year = article.created_at | format_date: "%Y" | to_num %}
+
+    {% if article_year == current_year %}
+      {% assign article_date_format = "long_without_year" %}
+    {% else %}
+      {% assign article_date_format = "long" %}
+    {% endif %}
+
+    <div class="post-details">
+      <time class="post-date{% if show_article_date == false %} hide-post-date{% endif %}{% if article_data_show_date_defined != true %} site-data{% endif %}"
+        datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}
+      </time>
+      <span class="date-separator{% if show_article_author == false or show_article_date == false %} hide-separator{% endif %}"> - </span>
+      <div class="post-author{% if show_article_author == false %} hide-post-author{% endif %}{% if article_data_show_author_defined != true %} site-data{% endif %}">
+        {{ article.author.name }}
       </div>
-    {% endunless %}
-  </footer>
+    </div>
+  </div>
 </article>

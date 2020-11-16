@@ -34,11 +34,20 @@
       &:nth-last-child(-n+2) {
         .post {
           border-bottom: none;
+          h3 {
+            font-size: 18px;
+            line-height: 24px;
+          }
         }
       }
 
       @media screen and (max-width: $tablet-1) {
         width: 100%;
+
+        h3 {
+          font-size: 18px;
+          line-height: 24px;
+        }
 
         &:nth-last-child(2) {
           .post {
@@ -60,13 +69,17 @@
   }
 
   .post-title {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 24px;
+    margin-bottom: 8px;
     line-height: 1.1;
 
     &, a {
-      font-size: 50px;
-      color: $secondary-color;
+      color: $primary-color;
+
+      .related_posts & {
+        font-size: 18px;
+        line-height: 24px;
+      }
 
       .dark-background & {
         @include color($white, 1);
@@ -75,7 +88,7 @@
 
     a {
       &:hover {
-        color: $secondary-color;
+        color: $primary-color;
         opacity: .8;
 
         .dark-background & {
@@ -91,26 +104,24 @@
     }
   }
 
-  .post-date {
-    font-size: 14px;
-    color: $secondary-color;
-
-    .dark-background & {
-      @include color($white, 1);
-    }
+  .post-details {
+    display: flex;
+    align-items: center;
   }
 
-  .post-author {
-    font-size: 12px;
+  .post-author,
+  .post-date {
+    font-size: 16px;
+    line-height: 194%;
+    color: $grey-1;
 
     .dark-background & {
       @include color($white, 1);
-      opacity: .8;
     }
   }
 
   .post-content {
-    margin-top: 20px;
+    margin-top: 8px;
 
     .post-excerpt {
     }
@@ -236,8 +247,30 @@
   }
 }
 
-// Style rules for the blog single article view only
-.post-page {
-  .post {
+.comments.hide-post-comments {
+  display: none;
+}
+
+article.post {
+
+
+  .post-date {
+    &.hide-post-date {
+      display: none;
+    }
+  }
+
+  .post-author {
+    &.hide-post-author {
+      display: none;
+    }
+  }
+
+  .date-separator {
+    padding: 0 8px;
+
+    &.hide-separator {
+      display: none
+    }
   }
 }

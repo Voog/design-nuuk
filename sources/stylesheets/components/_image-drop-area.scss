@@ -34,7 +34,8 @@
   }
 
   .bg-crop-btn {
-    @include size(45px);
+    @include size(45px 40px);
+    border-radius: 4px;
     position: absolute;
     top: 0;
     left: 0;
@@ -42,7 +43,6 @@
     margin-top: 10px;
     margin-left: 10px;
     cursor: pointer;
-    border-radius: 100%;
     color: rgba($white, 1);
 
     &.is-visible {
@@ -142,7 +142,8 @@
     }
 
     .edy-img-drop-area-remove-image {
-      @include size(45px);
+      @include size(45px 40px);
+      border-radius: 4px;
       top: 10px;
       right: 10px;
       z-index: 9;

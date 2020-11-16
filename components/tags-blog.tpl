@@ -1,6 +1,6 @@
 {% if blog.has_tags? %}
   {% include "tags-variables" %}
-  <nav class="menu-tags menu-sub">
+  <nav class="menu-tags menu-sub mar_t-32">
     <ul class="menu">
       <li class="menu-item">
         <a class="menu-link js-tags-all" href="/{{ blog.page.path_with_lang }}">{{ tags_all }}</a>

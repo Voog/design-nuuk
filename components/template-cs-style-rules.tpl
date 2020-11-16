@@ -21,7 +21,7 @@ header .header_title {
 }
 
 .post .post-title, .post .post-title a {
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 .dark-background .post .post-title, .dark-background .post .post-title a {
   color: var(--fourth-color);
@@ -32,9 +32,10 @@ header .header_title {
 .dark-background .post .post-title a:hover {
   color: var(--fourth-color);
 }
-.post .post-date {
+.post .post-author, .post .post-date {
   color: var(--secondary-color);
 }
+.dark-background .post .post-author,
 .dark-background .post .post-date {
   color: var(--fourth-color);
 }
