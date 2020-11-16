@@ -713,7 +713,7 @@ body .edy-cbtn > span > span, body .edy-cbtn > span > div, body .edy-cbtn > div 
 .menu-main .edit-btn {
   margin-right: 20px;
   position: relative;
-  left: 32px;
+  left: 24px;
 }
 @media screen and (max-width: 752px) {
   .menu-main .edit-btn {
@@ -837,7 +837,7 @@ body .edy-cbtn > span > span, body .edy-cbtn > span > div, body .edy-cbtn > div 
 }
 .menu-main .menu-sub .edit-btn {
   position: relative;
-  left: 32px;
+  left: 16px;
   font-size: 16px;
   line-height: 194%;
 }
@@ -1634,7 +1634,7 @@ article.post .date-separator.hide-separator {
   transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
 }
 .content-formatted .form_field_select {
-  padding: 8px 0 16px;
+  padding: 8px 0 8px;
   margin-top: -8px;
   border-bottom: 1px solid #8d9091;
   padding-right: 32px;
@@ -1651,7 +1651,7 @@ article.post .date-separator.hide-separator {
 .content-formatted .form_field_textarea {
   width: 280px;
   margin: 0;
-  padding: 8px 0 16px;
+  padding: 8px 0 8px;
   margin-top: -8px;
   border-bottom: 1px solid #8d9091;
   -webkit-box-sizing: border-box;
@@ -2002,9 +2002,9 @@ article.post .date-separator.hide-separator {
 .content-item-box .form_field {
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: opacity 200ms;
-  -o-transition: opacity 200ms;
-  transition: opacity 200ms;
+  -webkit-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -2017,15 +2017,15 @@ article.post .date-separator.hide-separator {
   position: absolute;
   left: 8px;
   z-index: 1;
-  bottom: 0px;
-}
-.product_list-page .content-item-box .form_field {
-  bottom: 64px;
+  bottom: 8px;
 }
 .content-item-box:hover .form_field {
   opacity: 1;
   pointer-events: all;
   cursor: text;
+  background: #ffffffb5;
+  padding: 8px 0px 8px 16px;
+  border-radius: 8px;
 }
 
 .bg_img-contain {
@@ -2840,7 +2840,7 @@ body:not(.semimodal-relative) .semimodal {
   z-index: 100;
   position: absolute;
   top: 32px;
-  left: 32px;
+  left: 24px;
 }
 .semimodal_picker-btn {
   z-index: 100;

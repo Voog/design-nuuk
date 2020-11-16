@@ -85,7 +85,7 @@
   }
 
   .form_field_select {
-    padding: 8px 0 16px;
+    padding: 8px 0 8px;
     margin-top: -8px;
     @include border(bottom, 1px, solid, $grey-1);
     padding-right: 32px;
@@ -103,7 +103,7 @@
   .form_field_textarea {
     width: 280px;
     margin: 0;
-    padding: 8px 0 16px;
+    padding: 8px 0 8px;
     margin-top: -8px;
     @include border(bottom, 1px, solid, $grey-1);
     box-sizing: border-box;

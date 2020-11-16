@@ -7,7 +7,6 @@
   <div class="post-content">
     {% unless post-box == "article" %}
       <div class="post-excerpt content-formatted">{{ article.excerpt }}</div>
-      <a class="post-read-more-btn" href="{{ article.url }}">{{ "read_more" | lc }}</a>
     {% endunless %}
 
     {% if post-box == "article" %}

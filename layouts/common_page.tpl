@@ -71,16 +71,16 @@
         </div>
         <header class="content-header content-formatted" {{ edy_intro_edit_text }}>{% content name="slogan" %}</header>
         {%- if editmode -%}
-          <div class="flex_box flex_j-center mar_t-16 mar_b-16">
-            <button disabled class="js-content-area-settings-btn js-settings-editor-btn">Content area settings</button>
+          <div class="flex_box mar_t-16 mar_b-16">
+            <button disabled class="js-content-area-settings-btn js-settings-editor-btn">Content columns settings</button>
           </div>
         {%- endif -%}
 
         {%- for id in (1..contentAreaCount) -%}
           <section class="content-body content-formatted">
           {%- if editmode -%}
-            <div class="flex_box flex_j-center mar_b-16">
-              <button disabled class="js-column-settings-btn-{{ id }} js-settings-editor-btn">{{ id }}. columns settings</button>
+            <div class="flex_box mar_b-16">
+              <button disabled class="js-column-settings-btn-{{ id }} js-settings-editor-btn">{{ id }}. column settings</button>
             </div>
           {%- endif -%}
 

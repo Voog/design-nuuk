@@ -104,17 +104,13 @@
   .form_field {
     opacity: 0;
     pointer-events: none;
-    @include transition(opacity 200ms);
+    @include transition(all 200ms);
     width: calc(100% - 32px);
     max-width: 300px;
     position: absolute;
     left: 8px;
     z-index: 1;
-    bottom: 0px;
-
-    .product_list-page & {
-      bottom: 64px;
-    }
+    bottom: 8px;
   }
 
   &:hover {
@@ -122,6 +118,9 @@
       opacity: 1;
       pointer-events: all;
       cursor: text;
+      background: #ffffffb5;
+      padding: 8px 0px 8px 16px;
+      border-radius: 8px;
     }
   }
 }
