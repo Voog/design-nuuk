@@ -16,20 +16,21 @@
 {%- endif -%}
 
 {% if editmode %}
-  <div class="content-item-box p-rel {{ item_image_state }} js-content-item-box not-loaded" data-item-type="{{_itemType}}" data-item-id="{{ _id }}">
-    <div class="content-formatted">
+  <div class="content-item-box p-rel {{ item_image_state }} js-content-item-box not-loaded"
+    data-item-type="{{_itemType}}"
+    data-item-id="{{ _id }}"
+  >
+    <div class="product_alt-attr content-formatted {{ item_image_state }}">
       <div class="form_field">
-        <label for="item-image-alt" class="form_field_label">Add image alt attribute</label>
+        <label for="item-image-alt-{{_id}}" class="form_field_label">Add image alt attribute</label>
         <input
           placeholder="Add image alt attribute"
-          id="item-image-alt"
+          id="item-image-alt-{{_id}}"
           class="form_field_textfield js-data-item mar_l-16"
           value="{{_entityData.data.item_image_alt_attr}}"
           data-name="item_image_alt_attr"
           data-entity="{{_itemType}}"
-          {%- if _entityData.page_id -%}
-            data-menu-item="{{ _entityData | json | escape}}"
-          {%- endif -%}
+          data-id="{{_id}}"
         >
       </div>
     </div>

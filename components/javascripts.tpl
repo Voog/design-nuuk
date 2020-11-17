@@ -21,20 +21,6 @@
       //==========================================================================
       // Sets site custom data saving fanction variable.
       //==========================================================================
-      var siteData = new Edicy.CustomData({
-        type: 'site'
-      });
-
-      var pageData = new Edicy.CustomData({
-        type: 'page',
-        id: '{{ page.id }}'
-      });
-
-      var articleData = new Edicy.CustomData({
-        type: "article",
-        id: '{{ article.id }}'
-      });
-
       $('.js-data-item').each(function() {
         $(this).on('change', function(e) {
           if (e.target.type === 'checkbox') {
@@ -43,22 +29,19 @@
             var val = e.target.value;
           }
           var dataKey = e.target.dataset.name;
+          var dataId = e.target.dataset.id;
           var dataEntity = e.target.dataset.entity;
           var dataReload = e.target.dataset.reload;
-          var dataMenuItem = e.target.dataset.menuItem;
-          var dataMenuItemObj = dataMenuItem && JSON.parse(dataMenuItem);
 
           if (dataEntity == 'site') {
-            var entityData = siteData;
-          } else if (dataEntity === 'article') {
-            var entityData = 'article';
-          } else if (dataEntity === 'menuItem' && dataMenuItemObj) {
             var entityData = new Edicy.CustomData({
-              type: dataMenuItemObj.content_type,
-              id: dataMenuItemObj.page_id
-            });
+              type: 'site'
+            });;
           } else {
-            var entityData = pageData;
+            var entityData = new Edicy.CustomData({
+              type: dataEntity,
+              id: dataId
+            });
           }
 
           entityData.set({ [dataKey] : val }, { success: function() {

@@ -1011,13 +1011,15 @@ body .edy-cbtn > span > span, body .edy-cbtn > span > div, body .edy-cbtn > div 
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: 0 -16px;
 }
-.blog_listing-wrapper article {
-  padding: 0 16px;
+@media screen and (max-width: 900px) {
+  .blog_listing-wrapper {
+    margin: 0;
+  }
 }
 .blog_listing-item {
-  margin: 0 -16px;
-  width: 50%;
+  width: calc(50% - 32px);
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
@@ -1027,10 +1029,16 @@ body .edy-cbtn > span > span, body .edy-cbtn > span > div, body .edy-cbtn > div 
   width: 100%;
 }
 .blog_listing-item .post {
-  margin-bottom: 50px;
-  padding-bottom: 50px;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
   border-bottom: 1px solid black;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width: 900px) {
+  .blog_listing-item .post {
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+  }
 }
 .blog_listing-item .post .post-excerpt {
   margin-bottom: 10px;
@@ -1045,6 +1053,7 @@ body .edy-cbtn > span > span, body .edy-cbtn > span > div, body .edy-cbtn > div 
 @media screen and (max-width: 900px) {
   .blog_listing-item {
     width: 100%;
+    padding: 0;
   }
   .blog_listing-item h3 {
     font-size: 18px;
@@ -2716,6 +2725,12 @@ body .animate_translated-x--0 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+.product_alt-attr {
+  display: none;
+}
+.with-image .product_alt-attr {
+  display: block;
 }
 .product_label {
   padding: 8px 16px;

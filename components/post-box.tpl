@@ -1,4 +1,4 @@
-<article class="post{% if blog_listing_page %} translated-y--100{% endif %}">
+<article class="post">
   <header class="post-header">
     {% include 'content-item', _entityData: article, _itemType: 'article', _id: article.id %}
     <h3 class="post-title">{% if post-box == "article" %}{% editable article.title %}{% else %}<a href="{{ article.url }}">{{ article.title }}</a>{% endif %}</h3>

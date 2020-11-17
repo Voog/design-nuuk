@@ -23,7 +23,7 @@
                   </div>
                 {%- endif -%}
                 {%- if item_child.layout_title == product_list_layout -%}
-                  {% include 'content-item', _entityData: item_child, _itemType: 'menuItem', _id: item_child.page_id %}
+                  {% include 'content-item', _entityData: item_child, _itemType: 'page', _id: item_child.page_id %}
                   <a class="p14 mar_t-16" href="{{ item_child.url }}">
                     <div class="p14 mar_t-16 bold product_item-title">
                       {{ item_child.title }}

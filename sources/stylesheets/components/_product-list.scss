@@ -66,6 +66,14 @@
     }
   }
 
+  &alt-attr {
+    display: none;
+
+    .with-image & {
+      display: block;
+    }
+  }
+
   &label {
     padding: 8px 16px;
     background: pink;
