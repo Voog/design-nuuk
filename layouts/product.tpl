@@ -75,8 +75,11 @@
             {%- for id in pageIdCompactArr -%}
               <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{page.path}}">
                 <div class="mar_0-8 mar_b-32">
-                  <div class="product_item-wrap" href="{{ buy_button.content.parent.url }}">
-                    {% include 'product-item', _parentId: id, _parentType: "page", _entityData: page %}
+                  <div class="product_item-wrap">
+                    {%- load buy_button to "buy_button" q.content.parent_id=id q.content.parent_type="page" -%}
+                    {%- assign product = buy_button.product -%}
+                    {% include 'product-item', _buyButton: buy_button, _entityData: page %}
+                    {%- assign product = null -%}
                   </div>
                 </div>
               </div>

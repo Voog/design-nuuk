@@ -1,7 +1,4 @@
-{%- load buy_button to "buy_button" q.content.parent_id=_parentId q.content.parent_type=_parentType -%}
-{%- assign product = buy_button.product -%}
-
-<a class="content-item-box" href="{{ buy_button.content.parent.url }}">
+<a class="content-item-box" href="{{ _buyButton.content.parent.url }}">
   <div class="item-top p-rel">
     {%- if _entityData.data[productPageSettingsKey].product_label != blank -%}
       <div class="product_label">
@@ -9,7 +6,7 @@
       </div>
     {%- endif -%}
     <div class="top-inner of-hidden js-zoom">
-      {% include "lazy-image", _altAttr: _entityData.data.item_image_alt_attr, _data: buy_button.content.parent.data.item_image, _targetWidth: '300', _className: "item-image is-cropped" %}
+      {% include "lazy-image", _altAttr: _entityData.data.item_image_alt_attr, _data: _buyButton.content.parent.data.item_image, _targetWidth: '300', _className: "item-image is-cropped" %}
     </div>
   </div>
   <div class="p14 mar_t-16 bold product_item-title" class="bold">

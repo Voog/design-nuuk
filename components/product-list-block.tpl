@@ -1,12 +1,15 @@
 <div class="product_list flex_row flex_row-3 mar_0-8-neg pad_40-0">
   {%- assign level_str = 'menuitems_on_level_' | append: page.level -%}
+
   {%- for item in site[level_str] -%}
     {%- if item.current? -%}
       {%- for item_child in item.visible_children_with_data -%}
         {%- if item_child.layout_title == product_list_layout or item_child.layout_title == product_layout -%}
+          {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}
+          {%- assign product = buy_button.product -%}
           <div class="product_item js-product-item flex_row-3--item scale-up"
             data-title="{{item_child.title | escape }}"
-            {%- if item_child.layout_title != product_list_layout -%}
+            {%- if product != blank -%}
               data-price="{{product.price}}"
             {% endif %}
           >
@@ -30,11 +33,12 @@
                     <a class="product_item-btn p-abs" href="{{ item_child.url }}">LOOK CLOSER</a>
                   </div>
                 {%- else -%}
-                  {% include 'product-item', _parentId: item_child.page_id, _parentType: "page", _entityData: item_child %}
+                  {% include 'product-item', _buyButton: buy_button, _entityData: item_child %}
                 {%- endif -%}
               </div>
             </div>
           </div>
+          {%- assign product = null -%}
         {%- endif -%}
       {%- endfor -%}
     {%- endif -%}
