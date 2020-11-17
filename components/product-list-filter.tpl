@@ -1,4 +1,4 @@
-<div class="flex_row flex_row-3 mar_0-8-neg pad_40-0 content-formatted">
+<div class="product_filters flex_row flex_row-3 mar_0-8-neg pad_40-0 content-formatted">
   <div class="form_field mar_r-32">
     <label class="form_field_label" for="field_field_filter">Filter</label>
     <select class="form_field_select product_list-filter" id="field_field_filter">

@@ -58,6 +58,14 @@
     }
   }
 
+  &filters {
+    display: none;
+
+    &.visible {
+      display: flex;
+    }
+  }
+
   &label {
     padding: 8px 16px;
     background: pink;

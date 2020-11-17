@@ -2709,6 +2709,14 @@ body .animate_translated-x--0 {
 .product_item-btn:hover {
   opacity: .6;
 }
+.product_filters {
+  display: none;
+}
+.product_filters.visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .product_label {
   padding: 8px 16px;
   background: pink;

@@ -7,11 +7,11 @@
         {%- if item_child.layout_title == product_list_layout or item_child.layout_title == product_layout -%}
           {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}
           {%- assign product = buy_button.product -%}
-          <div class="product_item js-product-item flex_row-3--item scale-up"
+          <div class="product_item js-product-item flex_row-3--item scale-up{% if product != blank %} js-product-whith-data{% endif %}"
             data-title="{{item_child.title | escape }}"
             {%- if product != blank -%}
               data-price="{{product.price}}"
-            {% endif %}
+            {%- endif -%}
           >
             <div class="mar_0-8">
               {%- assign productPageSettings = 'product_page_settings_' | append: item_child.page_id -%}

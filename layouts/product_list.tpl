@@ -41,6 +41,11 @@
   {%- include "template-tools" -%}
   <script>
     site.initCommonPage();
+
+    if ($(".js-product-whith-data").length >= 2) {
+      $(".product_filters").addClass('visible');
+    }
+
     function fadeAnimation(wrapper) {
       wrapper.find('.js-product-item').each(function() {
         var item = $(this);
