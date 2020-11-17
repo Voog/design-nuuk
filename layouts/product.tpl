@@ -20,9 +20,11 @@
   <div class="flex_box js-background-type {{ body_bg_type }}">
     {% include "header" %}
     <div class="container js-bg-picker-area">
-      <div class="mar_b-16 mar_t-32">
-        <button disabled class="js-product-page-settings-btn js-settings-editor-btn">Product page settings</button>
-      </div>
+      {% if editmode %}
+        <div class="mar_b-16 mar_t-32">
+          <button disabled class="js-product-page-settings-btn js-settings-editor-btn">Product page settings</button>
+        </div>
+      {% endif %}
       <div class="mar_t-32">
         {% include 'menu-breadcrumbs' %}
       </div>

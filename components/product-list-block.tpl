@@ -4,7 +4,12 @@
     {%- if item.current? -%}
       {%- for item_child in item.visible_children_with_data -%}
         {%- if item_child.layout_title == product_list_layout or item_child.layout_title == product_layout -%}
-          <div class="product_item js-product-item flex_row-3--item scale-up" data-title="{{item_child.title | escape }}" data-price="{{product.price}}">
+          <div class="product_item js-product-item flex_row-3--item scale-up"
+            data-title="{{item_child.title | escape }}"
+            {%- if item_child.layout_title != product_list_layout -%}
+              data-price="{{product.price}}"
+            {% endif %}
+          >
             <div class="mar_0-8">
               {%- assign productPageSettings = 'product_page_settings_' | append: item_child.page_id -%}
 
