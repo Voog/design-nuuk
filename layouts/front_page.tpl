@@ -73,7 +73,7 @@
           {%- if swiperSettingsData.are_navigation_bullets == true -%}
             <div class="swiper-pagination"></div>
           {%- endif -%}
-          {%- if swiperSettingsData.are_navigation_arrows == true -%}
+          {%- if swiperSettingsData.are_navigation_arrows == true or editmode -%}
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
@@ -173,7 +173,7 @@
                 }
               },
               {
-                "title": "Add swiper navigation arrows",
+                "title": "Add swiper navigation arrows in live view",
                 "type": "checkbox",
                 "key": "are_navigation_arrows",
                 "states": {

@@ -192,6 +192,11 @@
         &:hover {
           color: #C4C4C4;
         }
+
+        @include query($tablet-3) {
+          font-size: 36px;
+          line-height: 114.8%;
+        }
       }
     }
   }

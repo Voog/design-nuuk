@@ -811,6 +811,12 @@ body .edy-cbtn > span > span, body .edy-cbtn > span > div, body .edy-cbtn > div 
 .menu-main .menu .menu-item a:hover {
   color: #C4C4C4;
 }
+@media screen and (max-width: 506px) {
+  .menu-main .menu .menu-item a {
+    font-size: 36px;
+    line-height: 114.8%;
+  }
+}
 .menu-main .menu-sub {
   display: none;
 }
