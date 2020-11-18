@@ -2033,6 +2033,11 @@ article.post .date-separator.hide-separator {
   left: 8px;
   z-index: 1;
   bottom: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.content-item-box .form_field input {
+  width: calc(100% - 16px);
 }
 .content-item-box:hover .form_field {
   opacity: 1;
@@ -2874,7 +2879,7 @@ body:not(.semimodal-relative) .semimodal {
 .semimodal_picker-btn {
   z-index: 100;
   position: relative;
-  top: 56px;
+  top: 104px;
   left: -89px;
 }
 

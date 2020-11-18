@@ -15,7 +15,7 @@
       values: options.values || options.defaultValues,
       buttonTitleI18n: options.buttonTitleI18n,
       preview: function(data) {
-        options.prevFunc(data);
+        options.prevFunc && options.prevFunc(data);
       },
       commit: function(data) {
         entityData.set(options.dataKey, data, {
