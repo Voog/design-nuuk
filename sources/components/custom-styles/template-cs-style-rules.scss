@@ -38,7 +38,7 @@ body {
 // HEADER
 // =============================================================================
 // Styling rules for the site's header. These rules affect the entire site.
-header {
+.header_fixed {
   .header_title {
     font-size: var(--header-site-title-font-size);
     font-weight: var(--header-site-title-font-weight);
@@ -427,8 +427,7 @@ header {
 //==============================================================================
 // "FORM" TYPE CONTENT AREA
 //==============================================================================
-.content-area {
-
+.content-formatted {
   .form_field {
     .form_field_label,
     .edy-fe-label {

@@ -7,11 +7,6 @@
     clear: both;
   }
 
-  .form_field,
-  .edy-fe-label {
-    font-size: 14px;
-  }
-
   .form_field {
     padding-bottom: 16px;
     position: relative;
@@ -28,12 +23,8 @@
     label,
     .edy-fe-label,
     .form_field_label {
-      font-size: 16px;
       position: relative;
       display: block;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 18px;
       margin-bottom: 16px;
     }
   }

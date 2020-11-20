@@ -9,7 +9,7 @@
     "scope": "global",
     "featured": true
   */
-  --header-site-title-font-size: 56px;
+  --header-site-title-font-size: 30px;
   /* VoogStyle
     "pathI18n": ["header", "title"],
     "titleI18n": "font_weight",
