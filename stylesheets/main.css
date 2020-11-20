@@ -1614,7 +1614,6 @@ article.post .date-separator.hide-separator {
 .content-formatted .form_field_file,
 .content-formatted .form_submit input {
   font-family: inherit;
-  font-size: 16px;
   cursor: pointer;
   -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
   -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
@@ -1622,7 +1621,7 @@ article.post .date-separator.hide-separator {
 }
 .content-formatted .form_submit input {
   border: none;
-  line-height: 194%;
+  line-height: 1.7;
   padding: 4px 16px;
   outline: none;
   position: relative;

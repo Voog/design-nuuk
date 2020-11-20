@@ -52,14 +52,12 @@
   .form_field_file,
   .form_submit input {
     font-family: inherit;
-    font-size: 16px;
     cursor: pointer;
     transition: all  0.3s $bezier-default;
   }
   .form_submit input {
     border: none;
-    line-height: 194%;
-    padding: 4px 16px;
+    line-height: 1.7;
     outline: none;
     position: relative;
 

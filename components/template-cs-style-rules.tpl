@@ -226,30 +226,9 @@ body.dark-background {
 .dark-background .content-formatted a:not(.custom-btn):hover {
   color: var(--fourth-color);
 }
-.content-formatted .custom-btn {
-  color: var(--button-color);
-  font-size: var(--button-font-size);
-  font-style: var(--button-font-style);
-  font-weight: var(--button-font-weight);
-  -webkit-text-decoration: var(--button-text-decoration);
-          text-decoration: var(--button-text-decoration);
-  text-transform: var(--button-text-transform);
-  background-color: var(--button-background-color);
-}
-.content-formatted .custom-btn:hover {
-  color: var(--button-hover-color);
-  font-size: var(--button-hover-font-size);
-  font-style: var(--button-hover-font-style);
-  font-weight: var(--button-hover-font-weight);
-  -webkit-hyphens: var(--button-hover-hyphens);
-      -ms-hyphens: var(--button-hover-hyphens);
-          hyphens: var(--button-hover-hyphens);
-  -webkit-text-decoration: var(--button-hover-text-decoration);
-          text-decoration: var(--button-hover-text-decoration);
-  text-transform: var(--button-hover-text-transform);
-  background-color: var(--button-hover-background-color);
-}
+.content-formatted .custom-btn,
 .content-formatted .form_submit input {
+  padding: calc(var(--button-padding) - 8px) var(--button-padding) calc(var(--button-padding) - 7px);
   color: var(--button-color);
   font-size: var(--button-font-size);
   font-style: var(--button-font-style);
@@ -258,10 +237,10 @@ body.dark-background {
           text-decoration: var(--button-text-decoration);
   text-transform: var(--button-text-transform);
   background-color: var(--button-background-color);
-  white-space: normal;
-  word-break: break-word;
 }
+.content-formatted .custom-btn:hover,
 .content-formatted .form_submit input:hover {
+  padding: calc(var(--button-hover-padding) - 8px) var(--button-hover-padding) calc(var(--button-hover-padding) - 7px);
   color: var(--button-hover-color);
   font-size: var(--button-hover-font-size);
   font-style: var(--button-hover-font-style);
@@ -352,21 +331,4 @@ body.dark-background {
 .light-background .content-formatted .form_field_textarea::placeholder,
 .light-background .content-formatted .form_field_select::placeholder {
   color: var(--primary-color);
-}
-.content-formatted .form_submit input {
-  padding: calc(var(--button-padding) - 18px) var(--button-padding) calc(var(--button-padding) - 17px);
-  font-size: var(--button-font-size);
-  font-style: var(--button-font-style);
-  font-weight: var(--button-font-weight);
-  -webkit-text-decoration: var(--button-text-decoration);
-          text-decoration: var(--button-text-decoration);
-  text-transform: var(--button-text-transform);
-}
-.dark-background .content-formatted .form_submit input {
-  color: var(--secondary-color);
-  background-color: var(--third-color);
-}
-.light-background .content-formatted .form_submit input {
-  color: var(--third-color);
-  background-color: var(--secondary-color);
 }
