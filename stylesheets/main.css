@@ -1622,7 +1622,6 @@ article.post .date-separator.hide-separator {
 .content-formatted .form_submit input {
   border: none;
   line-height: 1.7;
-  padding: 4px 16px;
   outline: none;
   position: relative;
 }
@@ -2188,10 +2187,14 @@ article.post .date-separator.hide-separator {
   .semimodal-open .flex_row-3--item, .semimodal-open-state .flex_row-3--item {
     width: 50%;
   }
+  .semimodal-open .flex_row-3--item:nth-child(n+3), .semimodal-open-state .flex_row-3--item:nth-child(n+3) {
+    margin-top: 32px;
+  }
 }
 @media screen and (max-width: 900px) {
   .semimodal-open .flex_row-3--item, .semimodal-open-state .flex_row-3--item {
     width: 100%;
+    margin-top: 32px;
   }
 }
 .flex_row-2 {

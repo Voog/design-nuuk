@@ -31,7 +31,7 @@
           margin-top: 32px;
         }
 
-        @media screen and (max-width: $tablet-1) {
+        @include query($tablet-1) {
           width: 50%;
 
           &:nth-child(n+3) {
@@ -39,7 +39,7 @@
           }
         }
 
-        @media screen and (max-width: $mobile-1) {
+        @include query($mobile-1) {
           width: 100%;
           margin-top: 32px;
         }
@@ -47,12 +47,17 @@
 
         .semimodal-open &,
         .semimodal-open-state & {
-          @media screen and (max-width: $desktop-3) {
+          @include query($desktop-3) {
             width: 50%;
+
+            &:nth-child(n+3) {
+              margin-top: 32px;
+            }
           }
 
-          @media screen and (max-width: $tablet-1) {
+          @include query($tablet-1) {
             width: 100%;
+            margin-top: 32px;
           }
         }
       }
@@ -66,12 +71,12 @@
 
         .semimodal-open &,
         .semimodal-open-state & {
-          @media screen and (max-width: $desktop-3) {
+          @include query($desktop-3) {
             width: 100%;
           }
         }
 
-        @media screen and (max-width: $tablet-2) {
+        @include query($tablet-2) {
           width: 100%;
         }
       }
@@ -86,7 +91,7 @@
     justify-content: center;
 
     &-mobile {
-      @media screen and (max-width: $mobile-1) {
+      @include query($mobile-1) {
         justify-content: center;
       }
     }
