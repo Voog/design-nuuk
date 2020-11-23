@@ -4,36 +4,36 @@
 @import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import 'mixins';
 @import 'frameworks';
-@import 'mixins-flexbox';
 @import 'variables';
 // @import 'fonts';
 @import 'general';
-@import 'content-formatted';
+@import 'typography';
 
-@import 'menus';
-@import 'header';
-// @import 'topbar';
-// @import 'sidebar';
-@import 'blog-and-article';
-@import 'search';
-@import 'forms';
-@import 'comments';
-@import 'footer';
-@import 'site-signout';
+@import 'content/forms';
+@import 'content/comments';
 @import 'content/buy-button';
 @import 'content/content';
 @import 'content/background-image';
 @import 'content/images';
-@import 'content/flex';
-@import 'content/margins';
-@import 'content/typography';
 @import 'content/buttons';
-@import 'content/paddings';
-@import 'content/animations';
-@import 'content/utils';
+@import 'content/content-formatted';
 
-@import 'components/product-list';
 @import 'components/semimodal';
 @import 'components/swiper';
 @import 'components/image-drop-area';
-@import 'components/language';
+@import 'components/footer';
+@import 'components/site-signout';
+@import 'components/header';
+@import 'components/search';
+
+@import 'layouts/blog-and-article';
+@import 'layouts/product-list';
+
+@import 'menus/language';
+@import 'menus/menus';
+
+@import 'utils/utils';
+@import 'utils/paddings';
+@import 'utils/animations';
+@import 'utils/margins';
+@import 'utils/flex';
