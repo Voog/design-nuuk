@@ -3,11 +3,19 @@
     var entityData;
 
     if (options.entityData === 'siteData') {
-      var entityData = siteData;
+      var entityData = new Edicy.CustomData({
+        type: 'site'
+      });;
     } else if (options.entityData === 'articleData') {
-      var entityData = articleData;
+      var entityData = new Edicy.CustomData({
+        type: 'article',
+        id: '{{article.id}}'
+      });
     } else {
-      var entityData = pageData;
+      var entityData = new Edicy.CustomData({
+        type: 'page',
+        id: '{{page.id}}'
+      });
     }
 
     var SettingsEditor = new Edicy.SettingsEditor(options.settingsBtn, {

@@ -9,10 +9,10 @@
       var pageType = 'articlePage';
     {% else %}
       var pageType = 'contentPage',
-          pageData = new Edicy.CustomData({
-            type: 'page',
-            id: '{{ page.id }}'
-          });
+        pageData = new Edicy.CustomData({
+          type: 'page',
+          id: '{{ page.id }}'
+        });
     {% endif %}
 
     $('.js-bg-picker-area').each(function(index, bgPickerArea) {
