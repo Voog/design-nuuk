@@ -5,7 +5,7 @@
   {% include "html-head" %}
   {% include "template-styles" %}
   {%- assign product_page = true -%}
-  {%- assign productPageSettingsKey = 'product_page_settings_' | append: page.id -%}
+  {%- assign productPageSettingsKey = 'product_page_settings' -%}
 </head>
 
 <body class="product-page js-bg-picker-area{% include 'semimodal-class-names' %}">

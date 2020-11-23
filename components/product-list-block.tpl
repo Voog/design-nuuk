@@ -14,8 +14,7 @@
             {%- endif -%}
           >
             <div class="mar_0-8">
-              {%- assign productPageSettings = 'product_page_settings_' | append: item_child.page_id -%}
-
+              {%- assign productPageSettingsKey = 'product_page_settings' -%}
               <div class="product_item-wrap p-rel">
                 {%- if item_child.data[productPageSettingsKey].product_label != blank -%}
                   <div class="product_label">
