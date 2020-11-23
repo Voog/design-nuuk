@@ -1,6 +1,7 @@
 body {
   font-family: var(--main-font-family);
   color: var(--primary-color);
+  background-color: var(--body-background-color);
 }
 body.dark-background {
   color: var(--fourth-color);

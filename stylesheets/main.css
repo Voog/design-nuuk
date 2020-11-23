@@ -442,7 +442,7 @@ body .edy-cbtn > span > span, body .edy-cbtn > span > div, body .edy-cbtn > div 
 }
 .content-formatted pre, .content-formatted code {
   font-size: 14px;
-  background-color: #f2f2f2;
+  background-color: #fbfbfb;
 }
 .dark-background .content-formatted pre,
 .dark-background .content-formatted code {

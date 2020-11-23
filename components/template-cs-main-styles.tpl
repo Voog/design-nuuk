@@ -66,4 +66,12 @@
     ]
   */
   --fourth-color: white;
+  /* VoogStyle
+  "pathI18n": ["main_styles"],
+  "titleI18n": "background_color",
+  "editor": "colorPicker",
+  "featured": true,
+  "scope": "page"
+*/
+  --body-background-color: #FBFBFB;
 }

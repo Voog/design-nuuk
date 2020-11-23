@@ -7,7 +7,7 @@
   {% include "template-styles" %}
 </head>
 
-<body class="front-page js-bg-picker-area {% include 'semimodal-class-names' %}">
+<body class="front-page{% include 'semimodal-class-names' %}">
   {% if editmode %}
     <div class="bg-picker-top"
       {%- if page.data.front_header_bg_1.image != blank %}
