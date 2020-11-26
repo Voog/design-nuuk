@@ -123,11 +123,7 @@
   {% endif %}
 
   {% comment %}Detects language menu mode setting.{% endcomment %}
-  {% if site.data.settings_language_menu.type == "list" %}
-    {% assign language_menu_mode = "language-menu-mode-list" %}
-  {% else %}
-    {% assign language_menu_mode = "language-menu-mode-popover" %}
-  {% endif %}
+  {% assign language_menu_mode = "language-menu-mode-popover" %}
 
   {% if editmode %}
     {% assign show_language_menu_popover = true %}

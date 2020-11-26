@@ -986,27 +986,12 @@ MMCQ = (function() {
     }
 
     if (!('item_state' in languageMenuValuesObj)) {
-      languageMenuValuesObj.item_state = 'flags_and_names';
+      languageMenuValuesObj.item_state = 'names_only';
     }
 
     $('.js-menu-language-settings-toggle').each(function(index, languageMenuSettingsButton) {
       var langSettingsEditor = new Edicy.SettingsEditor(languageMenuSettingsButton, {
         menuItems: [
-          {
-            "titleI18n": "format",
-            "type": "radio",
-            "key": "type",
-            "list": [
-              {
-                "titleI18n": "dropdown_menu",
-                "value": "popover"
-              },
-              {
-                "titleI18n": "expanded_menu",
-                "value": "list"
-              },
-            ]
-          },
           {
             "titleI18n": "show",
             "type": "radio",
@@ -1019,10 +1004,6 @@ MMCQ = (function() {
               {
                 "titleI18n": "names_only",
                 "value": "names_only"
-              },
-              {
-                "titleI18n": "flags_and_names",
-                "value": "flags_and_names"
               }
             ]
           }
@@ -1036,21 +1017,7 @@ MMCQ = (function() {
 
         preview: function(data) {
           var $html = $('html'),
-              $languageSettingsMenuElement = $('.js-menu-language-settings');
-
-          if (data.type === 'list') {
-            $html.removeClass('language-menu-mode-popover');
-            $html.removeClass('menu-language-popover-open');
-            $html.addClass('language-menu-mode-list');
-
-            $languageSettingsMenuElement.appendTo('.js-menu-language-list-setting-parent');
-          } else {
-            $html.removeClass('language-menu-mode-list');
-            $html.addClass('language-menu-mode-popover');
-            $html.addClass('menu-language-popover-open');
-
-            $languageSettingsMenuElement.appendTo('.js-menu-language-popover-setting-parent');
-          }
+            $languageSettingsMenuElement = $('.js-menu-language-settings');
 
           if (data.item_state === 'flags_only') {
             $html.removeClass('language-flags-disabled');
@@ -1061,11 +1028,6 @@ MMCQ = (function() {
             $html.removeClass('language-flags-enabled');
             $html.removeClass('language-names-disabled');
             $html.addClass('language-flags-disabled');
-            $html.addClass('language-names-enabled');
-          } else if (data.item_state === 'flags_and_names') {
-            $html.removeClass('language-flags-disabled');
-            $html.removeClass('language-names-disabled');
-            $html.addClass('language-flags-enabled');
             $html.addClass('language-names-enabled');
           }
 

@@ -230,7 +230,7 @@ body {
   }
 
   .edy-cbtn-content span:last-child {
-    margin-right: -8px;
+    margin-right: 8px;
   }
 
   .edy-cbtn>span:before, body .edy-cbtn>div:before {
@@ -240,6 +240,7 @@ body {
     margin-left: 0px !important;
     background-color: $voog-blue !important;
     border-radius: 4px !important;
+    left: -8px !important;
   }
 
   .edy-cbtn>span:hover:before, body .edy-cbtn>div:hover:before {
