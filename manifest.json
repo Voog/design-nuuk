@@ -204,6 +204,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/ico-ellipsis.tpl",
+      "layout_name": "ico-ellipsis",
+      "title": "ico-ellipsis"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-cs-content.tpl",
       "layout_name": "template-cs-content",
       "title": "template-cs-content"
@@ -447,6 +454,12 @@
       "file": "assets/ico-close.svg",
       "kind": "assets",
       "filename": "ico-close.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-ellipsis.svg",
+      "kind": "assets",
+      "filename": "ico-ellipsis.svg"
     },
     {
       "content_type": "image/svg+xml",

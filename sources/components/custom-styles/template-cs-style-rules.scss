@@ -138,28 +138,11 @@ body {
   }
 }
 
-// General rules for all navigation menus.
-.menu {
-  .menu-item a {
-    color: var(--secondary-color);
+.menu_popover-btn svg path {
+  fill: var(--header-mainmenu-color);
 
-    .dark-background & {
-      @include query($tablet-2, 'min-width') {
-        color: var(--fourth-color);
-      }
-    }
-
-    &:hover {
-      color: var(--primary-color);
-
-      // scss-lint:disable NestingDepth
-      .dark-background & {
-        @include query($tablet-2, 'min-width') {
-          color: var(--fourth-color);
-        }
-      }
-      // scss-lint:enable NestingDepth
-    }
+  &:hover {
+    fill: var(--header-mainmenu-hover-color);
   }
 }
 

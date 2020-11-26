@@ -50,7 +50,7 @@
         $('.js-semimodal-toggle').removeClass('semimodal-open');
         $('.js-popover').removeClass('expanded');
         $('html').removeClass('search-open');
-        $('.js-search').removeClass('active');
+        $('.js-search, .menu_popover').removeClass('active');
         $('.search-btn').removeClass('open');
         $('html').removeClass('menu-language-popover-open');
       };
@@ -385,6 +385,16 @@
       $('html').removeClass('menu-language-popover-open');
     }
 
+    var toggleMenuPopover = function() {
+      $('.menu_popover').toggleClass('active');
+    }
+
+    $('.js-menu-popover').click(function() {
+      toggleMenuPopover();
+    });
+
+    handleFocus($('.js-menu-popover'), toggleMenuPopover);
+
     handleFocus($('.js-search-toggle-btn'), toggleSearch);
 
     $('.js-search-toggle-btn').click(function() {
@@ -561,8 +571,6 @@
 
   var handleMenuPos = function() {
     $('.header_bottom').css('top', $('.header_fixed').innerHeight() + 60);
-    $('.semimodal_settings-btn').css('top', $('.header_fixed').innerHeight());
-    $('.semimodal_picker-btn').css('top', $('.header_fixed').innerHeight() + 40);
   };
 
   var handleWindowScroll = function() {

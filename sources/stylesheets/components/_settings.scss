@@ -1,0 +1,22 @@
+.semimodal_ {
+  &settings-btn {
+    z-index: $zindex-semimodal;
+    position: absolute;
+    top: 64px;
+    left: 24px;
+  }
+
+  &picker-btn {
+    z-index: $zindex-semimodal;
+    position: relative;
+    top: 104px;
+    left: -89px;
+  }
+}
+
+.cart_settings-btn {
+  z-index: $zindex-semimodal;
+  position: absolute;
+  top: 104px;
+  left: 24px;
+}

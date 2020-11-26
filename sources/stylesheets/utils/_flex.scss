@@ -47,7 +47,7 @@
 
         .semimodal-open &,
         .semimodal-open-state & {
-          @include query($desktop-3) {
+          @include query($desktop-1) {
             width: 50%;
 
             &:nth-child(n+3) {
@@ -71,7 +71,7 @@
 
         .semimodal-open &,
         .semimodal-open-state & {
-          @include query($desktop-3) {
+          @include query($desktop-1) {
             width: 100%;
           }
         }

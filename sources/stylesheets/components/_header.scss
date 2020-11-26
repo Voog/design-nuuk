@@ -15,7 +15,7 @@
     box-sizing: border-box;
     @include transition(all 200ms);
 
-    @include query($tablet-3) {
+    @include query($desktop-1) {
       padding: 16px;
     }
 
@@ -25,7 +25,7 @@
 
     .semimodal-open &,
     .semimodal-open-state & {
-      @include query($tablet-3) {
+      @include query($desktop-1) {
         width: 100%;
         background: $white;
         box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
@@ -54,6 +54,11 @@
   &components {
     display: flex;
     align-items: center;
+    margin-left: 32px;
+
+    @include query($desktop-1) {
+      margin-left: 0;
+    }
   }
 
   &bottom {
@@ -68,7 +73,11 @@
   }
 
   &title {
-    width: 100%;
-    margin: 0 16px;
+    margin-right: 32px;
+
+    @include query($desktop-1) {
+      margin-right: 16px;
+      margin-left: 16px;
+    }
   }
 }

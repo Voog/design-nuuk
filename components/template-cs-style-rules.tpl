@@ -63,21 +63,11 @@ body.dark-background {
   background-color: var(--fourth-color);
 }
 
-.menu .menu-item a {
-  color: var(--secondary-color);
+.menu_popover-btn svg path {
+  fill: var(--header-mainmenu-color);
 }
-@media screen and (min-width: 752px) {
-  .dark-background .menu .menu-item a {
-    color: var(--fourth-color);
-  }
-}
-.menu .menu-item a:hover {
-  color: var(--primary-color);
-}
-@media screen and (min-width: 752px) {
-  .dark-background .menu .menu-item a:hover {
-    color: var(--fourth-color);
-  }
+.menu_popover-btn svg path:hover {
+  fill: var(--header-mainmenu-hover-color);
 }
 
 .menu-main .menu .menu-item a {

@@ -3,7 +3,12 @@
 {% include 'header-fixed' %}
 
 {%- include 'image_src_variable', _data: site.data.semimodal_image, _targetWidth: "1000" -%}
-<div class="semimodal js-prevent-sideclick{% if isSemimodalBorder %} semimodal-border{% endif %}">
+<div class="
+  semimodal js-prevent-sideclick
+  {% if isSemimodalBorder %} semimodal-border{% endif %}
+  {% if site.data.semimodal_settings.is_top_menu == true %} hidden-desktop{% endif %}
+  "
+>
   {%- assign imageClass = "image_fit-cover semimodal_bg-image image_abs" -%}
   {%- include "lazy-image", _data: site.data.semimodal_image, _targetWidth: '600', _className: imageClass -%}
   <div class="semimodal_bg-color bg_color-absolute"
@@ -14,23 +19,24 @@
 
   <header class="header_wrapper">
     {%- if editmode -%}
-      <div class="semimodal_settings-btn">
-        <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">Semimodal settings</button>
-      </div>
-    {%- endif -%}
-    {% include 'shopping-cart-editor' %}
-    {%- if editmode -%}
-      <div class="semimodal_picker-btn js-prevent-sideclick">
+      <div class="semimodal_picker-btn js-prevent-sideclick hidden-mobile">
         <button class="bg-picker" data-type="img" data-entity="siteData" data-picture="true" data-color="true" data-image_elem=".semimodal_bg-image" data-color_elem=".semimodal_bg-color" data-name="semimodal_image" data-bg="{{ site.data.semimodal_image | json | escape }}"></button>
       </div>
     {%- endif -%}
     <div class="header_bottom">
-      <nav class="menu-main js-menu-main js-popover js-prevent-sideclick">
-        {%- include "menu-main" -%}
-      </nav>
+      {%- include "menu-main" -%}
     </div>
   </header>
 </div>
+
+{%- if editmode -%}
+  <div class="semimodal_settings-btn hidden-mobile">
+    <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">Semimodal settings</button>
+  </div>
+  <div class="cart_settings-btn hidden-mobile">
+    {% include 'shopping-cart-editor' %}
+  </div>
+{%- endif -%}
 
 <script>
   {%- if editmode -%}
@@ -46,6 +52,15 @@
         {
           settingsBtn: document.querySelector('.js-semimodal-settings-btn'),
           menuItems: [
+            {
+              "title": "Use top menu",
+              "type": "checkbox",
+              "key": "is_top_menu",
+              "states": {
+                "on": true,
+                "off": false
+              }
+            },
             {
               "title": "Use ralative position for semimodal",
               "type": "checkbox",
