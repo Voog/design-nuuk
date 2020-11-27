@@ -59,13 +59,6 @@
     }
   }
 
-  .swiper-settings {
-    position: absolute;
-    top: 96px;
-    right: 39px;
-    z-index: $zindex-header-fixed - 1;
-  }
-
   .swiper-container .edy-bgpicker-toggle-button {
     right: 32px;
     left: unset;

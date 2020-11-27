@@ -861,25 +861,6 @@ p {
   padding: 0px 8px;
 }
 
-.body_bg-picker--btn.edy-bgpicker-toggle-button {
-  left: 72px;
-}
-
-body .edy-bgpicker-toggle-button {
-  left: 72px;
-  background-color: #443df6;
-  opacity: 1;
-  height: 40px;
-  border-radius: 4px;
-}
-body .edy-bgpicker-toggle-button:hover {
-  opacity: .8;
-}
-
-.front-page .edy-bgpicker-toggle-button {
-  z-index: 102;
-}
-
 .edy-content-social-button svg {
   border: 1px solid var(--secondary-color);
   -webkit-box-sizing: border-box;
@@ -1372,6 +1353,8 @@ body:not(.semimodal-relative) .semimodal {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
+  position: relative;
+  margin-top: 72px;
 }
 
 body .edy-settings-editor {
@@ -1441,10 +1424,56 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
   padding: 8px 0;
 }
 
+.layout_settings-btn {
+  -webkit-transform: translateY(300px);
+      -ms-transform: translateY(300px);
+          transform: translateY(300px);
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  -o-transition: transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.layout_settings-btn--container {
+  position: fixed;
+  bottom: 88px;
+  left: 16px;
+  z-index: 104;
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  -o-transition: transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.layout_settings-visible .layout_settings-btn--container {
+  -webkit-transform: translateY(300px);
+      -ms-transform: translateY(300px);
+          transform: translateY(300px);
+}
+.layout_settings-visible .layout_settings-btn {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
 .semimodal_settings-btn {
   z-index: 100;
-  position: absolute;
-  top: 64px;
+  position: fixed;
+  bottom: 96px;
   left: 24px;
 }
 .semimodal_picker-btn {
@@ -1456,9 +1485,65 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
 
 .cart_settings-btn {
   z-index: 100;
-  position: absolute;
-  top: 104px;
+  position: fixed;
+  bottom: 142px;
   left: 24px;
+}
+
+.content_settings-btn {
+  position: fixed;
+  bottom: 184px;
+  left: 24px;
+  z-index: 100;
+}
+
+.body_bg-picker--btn.edy-bgpicker-toggle-button {
+  left: 72px;
+}
+
+body .edy-bgpicker-toggle-button {
+  left: 32px;
+  background-color: #443df6;
+  opacity: 1;
+  height: 40px;
+  border-radius: 4px;
+}
+body .edy-bgpicker-toggle-button:hover {
+  opacity: .8;
+}
+
+.front-page .edy-bgpicker-toggle-button {
+  z-index: 99;
+}
+
+.admin_btn {
+  cursor: pointer;
+  background: #443df6;
+  color: #fff;
+  padding: 8px 16px;
+  font-weight: 600;
+  line-height: 24px;
+  position: relative;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+}
+.admin_btn:hover {
+  opacity: .9;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.admin_btn:active {
+  opacity: 1;
+  background-color: #3a34d1;
+  top: 1px;
 }
 
 .swiper-container {
@@ -1530,12 +1615,6 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
   z-index: 49;
   position: absolute;
   top: 0;
-}
-.front-page .swiper-settings {
-  position: absolute;
-  top: 96px;
-  right: 39px;
-  z-index: 100;
 }
 .front-page .swiper-container .edy-bgpicker-toggle-button {
   right: 32px;
@@ -2135,19 +2214,7 @@ article .item-top > .aspect-ratio-inner {
   width: 26px;
   height: 26px;
   font-size: 0;
-}
-@media screen and (min-width: 901px) {
-  .search-btn {
-    margin-left: 28px;
-  }
-}
-@media screen and (max-width: 900px) {
-  .search-btn {
-    position: relative;
-  }
-  .search-active .search-btn {
-    position: static;
-  }
+  margin-left: 28px;
 }
 .header-options .search-btn svg {
   fill: rgba(0, 0, 0, 0.7);

@@ -5,7 +5,7 @@
   {% include "html-head" %}
   {% include "template-styles" %}
   {%- assign product_page = true -%}
-  {%- assign productPageSettingsKey = 'product_page_settings' -%}
+  {%- assign productPageSettingsKey = 'product_layout_settings' -%}
 </head>
 
 <body class="product-page js-bg-picker-area{% include 'semimodal-class-names' %}">
@@ -19,12 +19,12 @@
 
   <div class="flex_box js-background-type {{ body_bg_type }}">
     {% include "header" %}
+    {% if editmode %}
+      <div class="js-prevent-sideclick content_settings-btn layout_settings-btn">
+        <button disabled class="js-product-page-settings-btn js-settings-editor-btn">Product page settings</button>
+      </div>
+    {% endif %}
     <div class="container js-bg-picker-area">
-      {% if editmode %}
-        <div class="mar_b-16 mar_t-32">
-          <button disabled class="js-product-page-settings-btn js-settings-editor-btn">Product page settings</button>
-        </div>
-      {% endif %}
       <div class="mar_t-32">
         {% include 'menu-breadcrumbs' %}
       </div>

@@ -1,8 +1,28 @@
+.layout_settings-btn {
+  transform: translateY(300px);
+  @include transition(transform 200ms);
+  &--container {
+    position: fixed;
+    bottom: 88px;
+    left: 16px;
+    z-index: $zindex-settings-btn;
+    @include transition(transform 200ms);
+
+    .layout_settings-visible & {
+      transform: translateY(300px);
+    }
+  }
+
+  .layout_settings-visible & {
+    transform: translateY(0);
+  }
+}
+
 .semimodal_ {
   &settings-btn {
     z-index: $zindex-semimodal;
-    position: absolute;
-    top: 64px;
+    position: fixed;
+    bottom: 96px;
     left: 24px;
   }
 
@@ -16,7 +36,61 @@
 
 .cart_settings-btn {
   z-index: $zindex-semimodal;
-  position: absolute;
-  top: 104px;
+  position: fixed;
+  bottom: 142px;
   left: 24px;
+}
+
+.content_settings-btn {
+  position: fixed;
+  bottom: 184px;
+  left: 24px;
+  z-index: $zindex-header-fixed - 1;
+}
+
+.body_bg-picker--btn.edy-bgpicker-toggle-button {
+  left: 72px;
+}
+
+body .edy-bgpicker-toggle-button {
+  left: 32px;
+  background-color: $voog-blue;
+  opacity: 1;
+  height: 40px;
+  border-radius: 4px;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.front-page .edy-bgpicker-toggle-button {
+  z-index: $zindex-semimodal - 1;
+}
+
+.admin_btn {
+  cursor: pointer;
+  background: #443df6;
+  color: #fff;
+  padding: 8px 16px;
+  font-weight: $bold;
+  line-height: 24px;
+  position: relative;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+
+  &:hover {
+    opacity: .9;
+    box-shadow: none;
+  }
+
+  &:active {
+    opacity: 1;
+    background-color: #3a34d1;
+    top: 1px;
+  }
 }

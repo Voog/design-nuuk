@@ -594,6 +594,7 @@ MMCQ = (function() {
         $('.js-search, .menu_popover').removeClass('active');
         $('.search-btn').removeClass('open');
         $('html').removeClass('menu-language-popover-open');
+        $('body').removeClass('layout_settings-visible');
       };
     });
   };
@@ -917,6 +918,10 @@ MMCQ = (function() {
       $('.js-search').removeClass('active');
       $('.search-btn').removeClass('open');
     }
+
+    $('.js-layout_settings-btn').click(function() {
+      $('body').toggleClass('layout_settings-visible');
+    });
 
     var toggleSearch = function() {
       $('html').removeClass('mobilemenu-open');

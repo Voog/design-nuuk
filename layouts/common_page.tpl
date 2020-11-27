@@ -62,6 +62,11 @@
 
   <div class="flex_box js-background-type {{ body_bg_type }}">
     {%- include "header" -%}
+    {%- if editmode -%}
+      <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
+        <button disabled class="js-content-area-settings-btn js-settings-editor-btn">Content columns settings</button>
+      </div>
+    {%- endif -%}
     <div class="container">
       <main class="content" role="main" data-search-indexing-allowed="true">
         <div class="content-body content-formatted mar_b-32">
@@ -70,11 +75,6 @@
           {% endcontentblock %}
         </div>
         <header class="content-header content-formatted" {{ edy_intro_edit_text }}>{% content name="slogan" %}</header>
-        {%- if editmode -%}
-          <div class="flex_box mar_t-16 mar_b-16">
-            <button disabled class="js-content-area-settings-btn js-settings-editor-btn">Content columns settings</button>
-          </div>
-        {%- endif -%}
 
         {%- for id in (1..contentAreaCount) -%}
           <section class="content-body content-formatted">

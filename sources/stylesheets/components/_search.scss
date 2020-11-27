@@ -154,18 +154,7 @@
   width: 26px;
   height: 26px;
   font-size: 0;
-
-  @media screen and (min-width: $tablet-1 + 1) {
-    margin-left: 28px;
-  }
-
-  @media screen and (max-width: $tablet-1) {
-    position: relative;
-
-    .search-active & {
-      position: static;
-    }
-  }
+  margin-left: 28px;
 
   svg {
     .header-options & {

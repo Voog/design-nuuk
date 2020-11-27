@@ -19,12 +19,12 @@
 
   <div class="flex_box js-background-type {{ body_bg_type }}">
     {% include "header" %}
+    {% if editmode %}
+      <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
+        <button disabled class="js-article-settings-btn js-settings-editor-btn">Article settings</button>
+      </div>
+    {% endif %}
     <div class="container">
-      {% if editmode %}
-        <div class="article-settings-wrap mar_b-16 mar_t-32">
-          <button disabled class="js-article-settings-btn js-settings-editor-btn">Article settings</button>
-        </div>
-      {% endif %}
       {% include "tags-post" %}
 
       <main class="content" role="main" data-search-indexing-allowed="true">

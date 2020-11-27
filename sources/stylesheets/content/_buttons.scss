@@ -49,26 +49,6 @@
   }
 }
 
-.body_bg-picker--btn.edy-bgpicker-toggle-button {
-  left: 72px;
-}
-
-body .edy-bgpicker-toggle-button {
-  left: 72px;
-  background-color: $voog-blue;
-  opacity: 1;
-  height: 40px;
-  border-radius: 4px;
-
-  &:hover {
-    opacity: .8;
-  }
-}
-
-.front-page .edy-bgpicker-toggle-button {
-  z-index: $zindex-header-fixed + 1;
-}
-
 .edy-content-social-button svg {
   border: 1px solid var(--secondary-color);
   box-sizing: border-box;

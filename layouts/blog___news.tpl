@@ -13,6 +13,9 @@
   {% include "template-svg-spritesheet" %}
   {% if editmode %}
     <div class="bg-picker-top"><button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button></div>
+    <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
+      <button class="js-blog-settings-editor js-settings-editor-btn"></button>
+    </div>
   {% endif %}
   <div class="background-color js-background-color"></div>
 
@@ -20,11 +23,6 @@
     {% include "header" %}
 
     <div class="container">
-      {% if editmode %}
-        <div class="blog-settings-wrap  mar_b-16 mar_t-32">
-          <button class="js-blog-settings-editor  js-settings-editor-btn"></button>
-        </div>
-      {% endif %}
       {% include "tags-blog" %}
 
       <main class="content" role="main" data-search-indexing-allowed="true">
