@@ -4,7 +4,7 @@
   &--container {
     position: fixed;
     bottom: 88px;
-    left: 16px;
+    right: 88px;
     z-index: $zindex-settings-btn;
     @include transition(transform 200ms);
 
@@ -18,12 +18,21 @@
   }
 }
 
+#fc_frame {
+  transform: translateY(0);
+  @include transition(transform 200ms);
+
+  .layout_settings-visible & {
+    transform: translateY(300px);
+  }
+}
+
 .semimodal_ {
   &settings-btn {
     z-index: $zindex-semimodal;
     position: fixed;
     bottom: 96px;
-    left: 24px;
+    right: 32px;
   }
 
   &picker-btn {
@@ -38,13 +47,13 @@
   z-index: $zindex-semimodal;
   position: fixed;
   bottom: 142px;
-  left: 24px;
+  right: 32px;
 }
 
 .content_settings-btn {
   position: fixed;
   bottom: 184px;
-  left: 24px;
+  right: 32px;
   z-index: $zindex-header-fixed - 1;
 }
 

@@ -1359,8 +1359,7 @@ body:not(.semimodal-relative) .semimodal {
 
 body .edy-settings-editor {
   position: fixed !important;
-  right: 0;
-  left: unset !important;
+  left: 0 !important;
   top: 0 !important;
   bottom: 0;
   height: 100%;
@@ -1444,7 +1443,7 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
 .layout_settings-btn--container {
   position: fixed;
   bottom: 88px;
-  left: 16px;
+  right: 88px;
   z-index: 104;
   -webkit-transition: -webkit-transform 200ms;
   transition: -webkit-transform 200ms;
@@ -1470,11 +1469,34 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
           transform: translateY(0);
 }
 
+#fc_frame {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  -o-transition: transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.layout_settings-visible #fc_frame {
+  -webkit-transform: translateY(300px);
+      -ms-transform: translateY(300px);
+          transform: translateY(300px);
+}
+
 .semimodal_settings-btn {
   z-index: 100;
   position: fixed;
   bottom: 96px;
-  left: 24px;
+  right: 32px;
 }
 .semimodal_picker-btn {
   z-index: 100;
@@ -1487,13 +1509,13 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
   z-index: 100;
   position: fixed;
   bottom: 142px;
-  left: 24px;
+  right: 32px;
 }
 
 .content_settings-btn {
   position: fixed;
   bottom: 184px;
-  left: 24px;
+  right: 32px;
   z-index: 100;
 }
 
