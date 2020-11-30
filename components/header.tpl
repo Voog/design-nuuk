@@ -31,7 +31,7 @@
 
 {%- if editmode -%}
   <div class="semimodal_settings-btn layout_settings-btn js-prevent-sideclick">
-    <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">Semimodal settings</button>
+    <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">Header settings</button>
   </div>
   <div class="cart_settings-btn js-prevent-sideclick layout_settings-btn">
     {% include 'shopping-cart-editor' %}

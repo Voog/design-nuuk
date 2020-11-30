@@ -1,15 +1,16 @@
 .layout_settings-btn {
   transform: translateY(300px);
-  @include transition(transform 200ms);
+  @include transition(transform 300ms);
   &--container {
     position: fixed;
     bottom: 88px;
     right: 88px;
     z-index: $zindex-settings-btn;
-    @include transition(transform 200ms);
+    transform: scale(0);
+    @include transition(transform 300ms);
 
     .layout_settings-visible & {
-      transform: translateY(300px);
+      transform: translateY(300px) scale(1) !important;
     }
   }
 
@@ -20,7 +21,7 @@
 
 #fc_frame {
   transform: translateY(0);
-  @include transition(transform 200ms);
+  @include transition(transform 300ms);
 
   .layout_settings-visible & {
     transform: translateY(300px);
@@ -52,7 +53,7 @@
 
 .content_settings-btn {
   position: fixed;
-  bottom: 184px;
+  bottom: 186px;
   right: 32px;
   z-index: $zindex-header-fixed - 1;
 }
@@ -102,4 +103,16 @@ body .edy-bgpicker-toggle-button {
     background-color: #3a34d1;
     top: 1px;
   }
+}
+
+.menu-item-cms-settings {
+  margin: 8px;
+}
+
+.menu-item-cms-add {
+  margin: 0 8px;
+}
+
+.lang_menu-popover .menu.menu-cms {
+  padding: 0 0 8px 0;
 }

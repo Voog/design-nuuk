@@ -253,8 +253,8 @@ body .edy-cbtn-content span:last-child {
 }
 body .edy-cbtn > span:before, body body .edy-cbtn > div:before {
   height: 24px !important;
-  padding: 2px 8px 2px 8px !important;
-  margin-top: -8px !important;
+  padding: 4px 8px 4px 8px !important;
+  margin-top: -9px !important;
   margin-left: 0px !important;
   background-color: #443df6 !important;
   border-radius: 4px !important;
@@ -1354,7 +1354,6 @@ body:not(.semimodal-relative) .semimodal {
           box-sizing: border-box;
   overflow: hidden;
   position: relative;
-  margin-top: 72px;
 }
 
 body .edy-settings-editor {
@@ -1427,11 +1426,11 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
   -webkit-transform: translateY(300px);
       -ms-transform: translateY(300px);
           transform: translateY(300px);
-  -webkit-transition: -webkit-transform 200ms;
-  transition: -webkit-transform 200ms;
-  -o-transition: transform 200ms;
-  transition: transform 200ms;
-  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  -o-transition: transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -1445,11 +1444,14 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
   bottom: 88px;
   right: 88px;
   z-index: 104;
-  -webkit-transition: -webkit-transform 200ms;
-  transition: -webkit-transform 200ms;
-  -o-transition: transform 200ms;
-  transition: transform 200ms;
-  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  -o-transition: transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -1459,9 +1461,9 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
           backface-visibility: hidden;
 }
 .layout_settings-visible .layout_settings-btn--container {
-  -webkit-transform: translateY(300px);
-      -ms-transform: translateY(300px);
-          transform: translateY(300px);
+  -webkit-transform: translateY(300px) scale(1) !important;
+      -ms-transform: translateY(300px) scale(1) !important;
+          transform: translateY(300px) scale(1) !important;
 }
 .layout_settings-visible .layout_settings-btn {
   -webkit-transform: translateY(0);
@@ -1473,11 +1475,11 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
-  -webkit-transition: -webkit-transform 200ms;
-  transition: -webkit-transform 200ms;
-  -o-transition: transform 200ms;
-  transition: transform 200ms;
-  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  -o-transition: transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -1514,7 +1516,7 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
 
 .content_settings-btn {
   position: fixed;
-  bottom: 184px;
+  bottom: 186px;
   right: 32px;
   z-index: 100;
 }
@@ -1566,6 +1568,18 @@ body .edy-bgpicker-toggle-button:hover {
   opacity: 1;
   background-color: #3a34d1;
   top: 1px;
+}
+
+.menu-item-cms-settings {
+  margin: 8px;
+}
+
+.menu-item-cms-add {
+  margin: 0 8px;
+}
+
+.lang_menu-popover .menu.menu-cms {
+  padding: 0 0 8px 0;
 }
 
 .swiper-container {
