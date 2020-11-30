@@ -156,10 +156,10 @@ body.dark-background {
 .dark-background .content-formatted {
   color: var(--fourth-color);
 }
-.content-formatted h1, .content-formatted h2:not(.comment-title), .content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6 {
+.content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6 {
   color: var(--secondary-color);
 }
-.dark-background .content-formatted h1, .dark-background .content-formatted h2:not(.comment-title), .dark-background .content-formatted h3, .dark-background .content-formatted h4, .dark-background .content-formatted h5, .dark-background .content-formatted h6 {
+.dark-background .content-formatted h1, .dark-background .content-formatted h2, .dark-background .content-formatted h3, .dark-background .content-formatted h4, .dark-background .content-formatted h5, .dark-background .content-formatted h6 {
   color: var(--fourth-color);
 }
 .content-formatted h1 {
@@ -173,7 +173,7 @@ body.dark-background {
           text-decoration: var(--headings-title-text-decoration);
   text-transform: var(--headings-title-text-transform);
 }
-.content-formatted h2:not(.comment-title) {
+.content-formatted h2 {
   font-size: var(--headings-heading-font-size);
   font-style: var(--headings-heading-font-style);
   font-weight: var(--headings-heading-font-weight);
@@ -184,7 +184,7 @@ body.dark-background {
           text-decoration: var(--headings-heading-text-decoration);
   text-transform: var(--headings-heading-text-transform);
 }
-.content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6 {
+.content-formatted h3 {
   font-size: var(--headings-subheading-font-size);
   font-style: var(--headings-subheading-font-style);
   font-weight: var(--headings-subheading-font-weight);

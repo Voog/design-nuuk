@@ -275,7 +275,7 @@ body {
 
   // Styling rules for the editable content area headings.
   // scss-lint:disable SingleLinePerSelector
-  h1, h2:not(.comment-title), h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
     color: var(--secondary-color);
 
     .dark-background & {
@@ -295,7 +295,7 @@ body {
     text-transform: var(--headings-title-text-transform);
   }
 
-  h2:not(.comment-title) {
+  h2 {
     font-size: var(--headings-heading-font-size);
     font-style: var(--headings-heading-font-style);
     font-weight: var(--headings-heading-font-weight);
@@ -307,7 +307,7 @@ body {
   }
 
   // scss-lint:disable SingleLinePerSelector
-  h3, h4, h5, h6 {
+  h3 {
     font-size: var(--headings-subheading-font-size);
     font-style: var(--headings-subheading-font-style);
     font-weight: var(--headings-subheading-font-weight);

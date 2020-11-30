@@ -573,10 +573,109 @@ p {
 .comments {
   margin-top: 50px;
 }
-.comments .comment-title,
+.comments .comment_title,
 .comments .comment,
-.comments .comment-form {
+.comments .comment_form {
   margin-top: 25px;
+}
+.comments .comment_title {
+  cursor: pointer;
+  -webkit-transition: opacity 300ms;
+  -o-transition: opacity 300ms;
+  transition: opacity 300ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.comments .comment_title:hover {
+  opacity: .7;
+}
+.comments .comment_messages {
+  opacity: 0;
+  max-height: 0;
+  pointer-events: none;
+  -webkit-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.comments .comment_messages.active {
+  opacity: 1;
+  max-height: 800px;
+  overflow: auto;
+  pointer-events: all;
+}
+.comments .comment_form .form_area {
+  opacity: 0;
+  max-height: 0;
+  background: #ffffff;
+  pointer-events: none;
+  -webkit-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+@media screen and (max-width: 480px) {
+  .comments .comment_form .form_area {
+    padding: 16px;
+  }
+}
+.comments .comment_form .form_area.active {
+  opacity: 1;
+  padding: 32px;
+  max-height: 400px;
+  overflow: hidden;
+  pointer-events: all;
+}
+.comments .comment_form .form_area .form_fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.comments .comment_form .form_area .form_fields .form_field {
+  width: 50%;
+  padding: 0 0 16px 0;
+  max-width: 280px;
+}
+@media screen and (max-width: 752px) {
+  .comments .comment_form .form_area .form_fields .form_field {
+    width: 100%;
+  }
+}
+.comments .comment_form .form_area .form_fields .form_field:first-child {
+  margin-right: 32px;
+  width: calc(50% - 32px);
+}
+@media screen and (max-width: 752px) {
+  .comments .comment_form .form_area .form_fields .form_field:first-child {
+    width: 100%;
+    margin-right: 0px;
+  }
+}
+.comments .comment_form .form_area .form_fields .form_field:last-child {
+  width: 100%;
+  max-width: 100%;
+}
+.comments .comment_form .form_area .form_fields .form_field:last-child textarea {
+  width: 100%;
 }
 
 .content-formatted .edy-buy-button {
@@ -1523,6 +1622,11 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
 
 .body_bg-picker--btn.edy-bgpicker-toggle-button {
   left: 72px;
+}
+@media screen and (max-width: 1024px) {
+  .body_bg-picker--btn.edy-bgpicker-toggle-button {
+    display: none;
+  }
 }
 
 body .edy-bgpicker-toggle-button {
@@ -2552,14 +2656,83 @@ article .item-top > .aspect-ratio-inner {
 
 .post-nav {
   margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 192px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-
 @media screen and (min-width: 481px) {
   .post-nav-inner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
+}
+.post-nav-link.post-nav-link-older .post-nav-link-inner {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.post-nav-link.post-nav-link-older .post-nav-image {
+  margin-right: 32px;
+}
+.post-nav-link.post-nav-link-newer .post-nav-image {
+  margin-left: 32px;
+}
+.post-nav-link-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.post-nav-link-inner .post-nav-direction {
+  position: absolute;
+}
+.post-nav-link-inner .post-nav-image {
+  opacity: 0;
+  width: 100%;
+  -webkit-transition: opacity 300ms;
+  -o-transition: opacity 300ms;
+  transition: opacity 300ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.post-nav-link-inner .post-nav-image .post-nav-title {
+  font-size: 18px;
+  margin-top: 16px;
+}
+.post-nav-link-inner .content-item-box {
+  height: 192px;
+  width: 100%;
+}
+.post-nav-link-inner .content-item-box .item-top {
+  max-height: 192px;
+}
+.post-nav-link-inner:hover .post-nav-image {
+  opacity: 1;
+}
+.post-nav-separator {
+  border-bottom: 1px solid;
+  width: 168px;
 }
 
 .post-nav-link {
@@ -2574,9 +2747,6 @@ article .item-top > .aspect-ratio-inner {
   text-decoration: none;
 }
 .post-nav-link:hover .post-nav-direction {
-  opacity: 1;
-}
-.post-nav-link:hover .post-nav-title {
   opacity: 1;
 }
 @media screen and (max-width: 480px) {
@@ -2614,16 +2784,8 @@ article .item-top > .aspect-ratio-inner {
 }
 
 .post-nav-direction {
-  font-size: 13px;
-  letter-spacing: .2em;
   text-transform: uppercase;
-  opacity: .3;
-}
-
-.post-nav-title {
-  margin-top: 6px;
-  font-size: 18px;
-  opacity: .7;
+  z-index: 1;
 }
 
 .blog-page .post-read-more-btn {

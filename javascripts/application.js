@@ -625,11 +625,11 @@ MMCQ = (function() {
     });
   };
 
-  // Scrolls to the comment-form if comment submit failed (to show the error messages to the user)
+  // Scrolls to the comment_form if comment submit failed (to show the error messages to the user)
   var focusFormWithErrors = function() {
     $(document).ready(function() {
-      if ($('.comment-form').hasClass('form_with_errors')) {
-        $('html, body').scrollTop($('.comment-form').offset().top);
+      if ($('.comment_form').hasClass('form_with_errors')) {
+        $('html, body').scrollTop($('.comment_form').offset().top);
       } else if ($('form').find('.form_error, .form_notice').length > 0) {
         $('html, body').scrollTop($('.form_error, .form_notice').closest('form').offset().top);
       }
@@ -931,6 +931,14 @@ MMCQ = (function() {
       $('html').removeClass('menu-language-popover-open');
     }
 
+    var toggleAddComment = function() {
+      $('.comment_form .form_area').toggleClass('active');
+    }
+
+    var toggleComments = function() {
+      $('.comment_messages').toggleClass('active');
+    }
+
     var toggleMenuPopover = function() {
       $('.menu_popover').toggleClass('active');
     }
@@ -938,6 +946,18 @@ MMCQ = (function() {
     $('.js-menu-popover').click(function() {
       toggleMenuPopover();
     });
+
+    $('.js-add-comment').click(function() {
+      toggleAddComment();
+    });
+
+    handleFocus($('.js-add-comment'), toggleAddComment);
+
+    $('.js-comments').click(function() {
+      toggleComments();
+    });
+
+    handleFocus($('.js-add-comment'), toggleComments);
 
     handleFocus($('.js-menu-popover'), toggleMenuPopover);
 

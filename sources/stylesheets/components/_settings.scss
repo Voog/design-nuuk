@@ -60,6 +60,10 @@
 
 .body_bg-picker--btn.edy-bgpicker-toggle-button {
   left: 72px;
+
+  @include query($desktop-1) {
+    display: none;
+  }
 }
 
 body .edy-bgpicker-toggle-button {

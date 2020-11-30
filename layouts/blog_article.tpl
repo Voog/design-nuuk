@@ -31,41 +31,17 @@
 
         {% include "post-box" with "article" %}
 
-        {% if article.older or article.newer %}
-          <div class="post-nav">
-            <div class="post-nav-inner">
-              {% if article.older %}
-                <a class="post-nav-link post-nav-link-older" href="{{ article.older.url }}">
-                  <div class="post-nav-link-inner">
-                    <div class="post-nav-direction">{{ "previous" | lc }}</div>
-                    <div class="post-nav-title">{{ article.older.title }}</div>
-                  </div>
-                </a>
-              {% endif %}
-
-              {% if article.newer %}
-                <a class="post-nav-link post-nav-link-newer" href="{{ article.newer.url }}">
-                  <div class="post-nav-link-inner">
-                    <div class="post-nav-direction">{{ "next" | lc }}</div>
-                    <div class="post-nav-title">{{ article.newer.title }}</div>
-                  </div>
-                </a>
-              {% endif %}
-            </div>
-          </div>
-        {% endif %}
-
         <section id="comments" class="comments content-formatted{% if show_article_comments == false %} hide-post-comments{% endif %}" data-search-indexing-allowed="false">
           {% if article.comments_count > 0 %}
-            <h2 class="comments-title">{{ "comments_for_count" | lc }}: <span class="edy-site-blog-comments-count">{{ article.comments_count }}</span></h2>
+            <h4 class="comment_title js-comments">{{ "comments_for_count" | lc }}: <span class="edy-site-blog-comments-count">{{ article.comments_count }}</span></h4>
 
-            <div class="comment-messages content-formatted">
+            <div class="comment_messages content-formatted">
               {% for comment in article.comments reversed %}
                 <div class="comment edy-site-blog-comment">
-                  <span class="comment-body">{{ comment.body_html }}</span>
-                  <span class="comment-author">({{ comment.author }},</span>
-                  <span class="comment-date">{{ comment.created_at | format_date: "long" }})</span>
-                  <span class="comment-delete">{% removebutton %}</span>
+                  <span class="comment_body">{{ comment.body_html }}</span>
+                  <span class="comment_author">({{ comment.author }},</span>
+                  <span class="comment_date">{{ comment.created_at | format_date: "long" }})</span>
+                  <span class="comment_delete">{% removebutton %}</span>
                 </div>
               {% endfor %}
             </div>
@@ -74,26 +50,61 @@
           {% include "comment-form" %}
         </section>
 
-        {%- if articleSettingsData.show_related_articles -%}
-          {% assign current_article_id = article.id %}
-          <h3>Continue reading</h3>
+        <div class="content-formatted">
+          {%- if articleSettingsData.show_related_articles -%}
+            {% assign current_article_id = article.id %}
+            <h4>Continue reading</h4>
 
-          <div class="flex_row flex_row-3 mar_0-16-neg related_posts">
-            {%- load articles to "articles" q.article.tag$in=article.tags -%}
-            {% for article in articles %}
-              {%- if article.id != current_article_id -%}
-                <div class="flex_row-3--item">
-                  <div class="mar_0-16">
-                    {% include "post-box" %}
+            <div class="flex_row flex_row-3 mar_0-16-neg related_posts mar_t-32">
+              {%- load articles to "articles" q.article.tag$in=article.tags -%}
+              {% for article in articles %}
+                {%- if article.id != current_article_id -%}
+                  <div class="flex_row-3--item">
+                    <div class="mar_0-16">
+                      {% include "post-box" %}
+                    </div>
                   </div>
-                </div>
-                {%- if forloop.index == 3 -%}
-                  {% break %}
+                  {%- if forloop.index == 3 -%}
+                    {% break %}
+                  {%- endif -%}
                 {%- endif -%}
-              {%- endif -%}
-            {% endfor %}
+              {% endfor %}
+            </div>
+          {%- endif -%}
+        </div>
+
+        {% if article.older or article.newer %}
+          <div class="post-nav">
+            <div class="post-nav-inner">
+              {% if article.older %}
+                <a class="post-nav-link post-nav-link-older" href="{{ article.older.url }}">
+                  <div class="post-nav-link-inner">
+                    <h4 class="post-nav-direction">{{ "previous" | lc }}</h4>
+                    <div class="post-nav-image">
+                      {% include 'content-item', _staticItem: true, _entityData: article.older, _itemType: 'article', _id: article.older.id %}
+                      <h4 class="post-nav-title">{{ article.older.title }}</h4>
+                    </div>
+                  </div>
+                </a>
+              {% endif %}
+              {% if article.newer and article.older %}
+                <div class="post-nav-separator"></div>
+              {% endif %}
+              {% if article.newer %}
+                <a class="post-nav-link post-nav-link-newer" href="{{ article.newer.url }}">
+                  <div class="post-nav-link-inner">
+                    <h4 class="post-nav-direction">{{ "next" | lc }}</h4>
+
+                    <div class="post-nav-image">
+                      {% include 'content-item', _staticItem: true, _entityData: article.newer, _itemType: 'article', _id: article.newer.id %}
+                      <h4 class="post-nav-title">{{ article.newer.title }}</h4>
+                    </div>
+                  </div>
+                </a>
+              {% endif %}
+            </div>
           </div>
-        {%- endif -%}
+        {% endif %}
 
         {%- unless editmode -%}
           {%- if articleSettingsData.is_settings_published or previewmode -%}
