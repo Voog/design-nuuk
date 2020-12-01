@@ -575,7 +575,7 @@ p {
 
 /* COMMENTS */
 .comments {
-  margin-top: 50px;
+  margin-top: 48px;
 }
 .comments .comment_title,
 .comments .comment,
@@ -2497,25 +2497,25 @@ article .item-top > .aspect-ratio-inner {
 .blog_listing-item:first-child {
   width: 100%;
 }
-.blog_listing-item .post {
+.blog_listing-item .post_wrapper {
   margin-bottom: 48px;
   padding-bottom: 32px;
   border-bottom: 1px solid black;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 @media screen and (max-width: 900px) {
-  .blog_listing-item .post {
+  .blog_listing-item .post_wrapper {
     margin-bottom: 32px;
     padding-bottom: 16px;
   }
 }
-.blog_listing-item .post .post_excerpt {
+.blog_listing-item .post_wrapper .post_excerpt {
   margin-bottom: 10px;
 }
-.blog_listing-item:nth-last-child(-n+2) .post {
+.blog_listing-item:nth-last-child(-n+2) .post_wrapper {
   border-bottom: none;
 }
-.blog_listing-item:nth-last-child(-n+2) .post h3 {
+.blog_listing-item:nth-last-child(-n+2) .post_wrapper h3 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -2547,6 +2547,21 @@ article .item-top > .aspect-ratio-inner {
 }
 .post_header {
   overflow: hidden;
+}
+.post_tags {
+  padding: 24px 0;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  margin-top: 48px;
+}
+.post_page .post_narrow {
+  margin-left: 48px;
+  margin-right: 48px;
+}
+@media screen and (max-width: 1024px) {
+  .post_page .post_narrow {
+    margin: 0;
+  }
 }
 .post_title {
   margin-top: 24px;
@@ -3692,6 +3707,9 @@ article.post_wrapper .date-separator.hide-separator {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 8px;
   font-size: 14px;
 }
@@ -3958,14 +3976,35 @@ body .animate_translated-x--0 {
 .mar_b-32 {
   margin-bottom: 32px;
 }
+@media screen and (max-width: 1024px) {
+  .mar_b-32 {
+    margin-bottom: 24px;
+  }
+}
+.mar_b-48 {
+  margin-bottom: 48px;
+}
+@media screen and (max-width: 1024px) {
+  .mar_b-48 {
+    margin-bottom: 32px;
+  }
+}
 .mar_b-56 {
   margin-bottom: 56px;
+}
+@media screen and (max-width: 1024px) {
+  .mar_b-56 {
+    margin-bottom: 40px;
+  }
 }
 .mar_t-16 {
   margin-top: 16px;
 }
 .mar_t-32 {
   margin-top: 32px;
+}
+.mar_t-48 {
+  margin-top: 48px;
 }
 .mar_t-96 {
   margin-top: 96px;

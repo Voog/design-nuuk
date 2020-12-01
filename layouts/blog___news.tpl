@@ -23,8 +23,6 @@
     {% include "header" %}
 
     <div class="container">
-      {% include "tags-blog" %}
-
       <main class="content" role="main" data-search-indexing-allowed="true">
         <section class="content-body content-formatted post_intro-content" {{ edy_intro_edit_text }}>{% content %}</section>
 

@@ -21,7 +21,7 @@
         width: 100%;
       }
 
-      .post {
+      .post_wrapper {
         margin-bottom: 48px;
         padding-bottom: 32px;
         @include border(bottom, 1px, solid, $primary-color, 0.3);
@@ -37,7 +37,7 @@
       }
 
       &:nth-last-child(-n+2) {
-        .post {
+        .post_wrapper {
           border-bottom: none;
           h3 {
             font-size: 18px;
@@ -77,6 +77,23 @@
 
   &header {
     overflow: hidden;
+  }
+
+  &tags {
+    padding: 24px 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    margin-top: 48px;
+  }
+
+  &narrow {
+    .post_page & {
+      margin-left: 48px;
+      margin-right: 48px;
+      @include query($desktop-1) {
+        margin: 0;
+      }
+    }
   }
 
   &title {

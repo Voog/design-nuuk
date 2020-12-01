@@ -1,6 +1,4 @@
 <div class="comment_form{% unless comment.valid? %} form_with_errors{% endunless %}">
-  <h4 class="js-add-comment comment_title">{{"add_a_comment"|lc}}</h4>
-
   {% commentform %}
     {% assign comment_name_error = false %}
     {% assign comment_email_error = false %}

@@ -264,7 +264,8 @@ body {
 // TEXT TYPE CONTENT AREA
 // =============================================================================
 // Styling rules for the site's editable content area and its elements.
-.content-formatted {
+.content-formatted,
+.content-formatted p {
   font-size: var(--content-body-font-size);
   line-height: var(--content-body-line-height);
   color: var(--content-body-color);

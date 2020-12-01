@@ -25,37 +25,40 @@
       </div>
     {% endif %}
     <div class="container">
-      {% include "tags-post" %}
+
 
       <main class="content" role="main" data-search-indexing-allowed="true">
 
         {% include "post-box" with "article" %}
 
-        <section id="comments" class="comments content-formatted{% if show_article_comments == false %} hide-post-comments{% endif %}" data-search-indexing-allowed="false">
-          {% if article.comments_count > 0 %}
-            <h4 class="comment_title js-comments">{{ "comments_for_count" | lc }}: <span class="edy-site-blog-comments-count">{{ article.comments_count }}</span></h4>
+        <div class="post_narrow">
+          {% include "tags-post" %}
+          <div id="comments" class="comments content-formatted{% if show_article_comments == false %} hide-post-comments{% endif %}" data-search-indexing-allowed="false">
+            {% if article.comments_count > 0 %}
+              <h4 class="comment_title js-comments">{{ "comments_for_count" | lc }}: <span class="edy-site-blog-comments-count">{{ article.comments_count }}</span></h4>
 
-            <div class="comment_messages content-formatted">
-              {% for comment in article.comments reversed %}
-                <div class="comment edy-site-blog-comment">
-                  <div class="flex_box">
-                    <span class="p16 comment_author bold">{{ comment.author }}</span>
-                    <span class="p16 comment_date mar_l-8 grey">{{ comment.created_at | format_date: "long" }}</span>
+              <div class="comment_messages content-formatted">
+                {% for comment in article.comments reversed %}
+                  <div class="comment edy-site-blog-comment">
+                    <div class="flex_box">
+                      <span class="p16 comment_author bold">{{ comment.author }}</span>
+                      <span class="p16 comment_date mar_l-8 grey">{{ comment.created_at | format_date: "long" }}</span>
+                    </div>
+                    <span class="p16 comment_body">{{ comment.body_html }}</span>
+                    <span class="comment_delete">{% removebutton %}</span>
                   </div>
-                  <span class="p16 comment_body">{{ comment.body_html }}</span>
-                  <span class="comment_delete">{% removebutton %}</span>
-                </div>
-              {% endfor %}
-            </div>
-          {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
 
-          {% include "comment-form" %}
-        </section>
+            {% include "comment-form" %}
+          </div>
+        </div>
 
-        <div class="content-formatted">
+        <div class="content-formatted mar_t-48">
           {%- if articleSettingsData.show_related_articles -%}
             {% assign current_article_id = article.id %}
-            <h4>Continue reading</h4>
+            <h4 class="post_narrow">Continue reading</h4>
 
             <div class="flex_row flex_row-3 mar_0-16-neg related_posts mar_t-32">
               {%- load articles to "articles" q.article.tag$in=article.tags -%}

@@ -113,13 +113,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/tags-blog.tpl",
-      "layout_name": "tags-blog",
-      "title": "tags-blog"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/language-menu-class-names.tpl",
       "layout_name": "language-menu-class-names",
       "title": "language-menu-class-names"

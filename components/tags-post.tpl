@@ -4,11 +4,17 @@
     <div class="tags-editor">{% editable article.tags %}</div>
   {% else %}
     {% unless article.tags == empty %}
-      <nav class="menu-tags menu-sub">
+      <nav class="post_tags menu-sub">
         <ul class="menu">
-          <li class="tags-title">{{ tags_title }}:</li>
           {% for tag in article.tags %}
-            <li class="menu-item"><a class="menu-link" href="/{{ article.page.path_with_lang }}/tagged/{{ tag.path }}">{{ tag.name }}</a></li>
+            <li class="menu-item">
+              <a class="menu-link" href="/{{ article.page.path_with_lang }}/tagged/{{ tag.path }}">
+              {{ tag.name }}
+              </a>
+              {%- if forloop.last != true -%}
+                <span class="mar_l-8">&bull;</span>
+              {%- endif -%}
+            </li>
           {% endfor %}
         </ul>
       </nav>

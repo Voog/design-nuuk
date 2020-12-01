@@ -148,21 +148,22 @@ body.dark-background {
   color: var(--primary-color);
 }
 
-.content-formatted {
+.content-formatted, .content-formatted p {
   font-size: var(--content-body-font-size);
   line-height: var(--content-body-line-height);
   color: var(--content-body-color);
 }
-.dark-background .content-formatted {
+.dark-background .content-formatted,
+.dark-background .content-formatted p {
   color: var(--fourth-color);
 }
-.content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6 {
+.content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6, .content-formatted p h1, .content-formatted p h2, .content-formatted p h3, .content-formatted p h4, .content-formatted p h5, .content-formatted p h6 {
   color: var(--secondary-color);
 }
-.dark-background .content-formatted h1, .dark-background .content-formatted h2, .dark-background .content-formatted h3, .dark-background .content-formatted h4, .dark-background .content-formatted h5, .dark-background .content-formatted h6 {
+.dark-background .content-formatted h1, .dark-background .content-formatted h2, .dark-background .content-formatted h3, .dark-background .content-formatted h4, .dark-background .content-formatted h5, .dark-background .content-formatted h6, .dark-background .content-formatted p h1, .dark-background .content-formatted p h2, .dark-background .content-formatted p h3, .dark-background .content-formatted p h4, .dark-background .content-formatted p h5, .dark-background .content-formatted p h6 {
   color: var(--fourth-color);
 }
-.content-formatted h1 {
+.content-formatted h1, .content-formatted p h1 {
   font-size: var(--headings-title-font-size);
   font-style: var(--headings-title-font-style);
   font-weight: var(--headings-title-font-weight);
@@ -173,7 +174,7 @@ body.dark-background {
           text-decoration: var(--headings-title-text-decoration);
   text-transform: var(--headings-title-text-transform);
 }
-.content-formatted h2 {
+.content-formatted h2, .content-formatted p h2 {
   font-size: var(--headings-heading-font-size);
   font-style: var(--headings-heading-font-style);
   font-weight: var(--headings-heading-font-weight);
@@ -184,7 +185,7 @@ body.dark-background {
           text-decoration: var(--headings-heading-text-decoration);
   text-transform: var(--headings-heading-text-transform);
 }
-.content-formatted h3 {
+.content-formatted h3, .content-formatted p h3 {
   font-size: var(--headings-subheading-font-size);
   font-style: var(--headings-subheading-font-style);
   font-weight: var(--headings-subheading-font-weight);
@@ -195,7 +196,7 @@ body.dark-background {
           text-decoration: var(--headings-subheading-text-decoration);
   text-transform: var(--headings-subheading-text-transform);
 }
-.content-formatted a:not(.custom-btn) {
+.content-formatted a:not(.custom-btn), .content-formatted p a:not(.custom-btn) {
   font-style: var(--content-link-font-style);
   font-weight: var(--content-link-font-weight);
   color: var(--content-link-color);
@@ -203,10 +204,10 @@ body.dark-background {
           text-decoration: var(--content-link-text-decoration);
   text-transform: var(--content-link-text-transform);
 }
-.dark-background .content-formatted a:not(.custom-btn) {
+.dark-background .content-formatted a:not(.custom-btn), .dark-background .content-formatted p a:not(.custom-btn) {
   color: var(--fourth-color);
 }
-.content-formatted a:not(.custom-btn):hover {
+.content-formatted a:not(.custom-btn):hover, .content-formatted p a:not(.custom-btn):hover {
   font-style: var(--content-link-hover-font-style);
   font-weight: var(--content-link-hover-font-weight);
   color: var(--content-link-hover-color);
@@ -214,11 +215,12 @@ body.dark-background {
           text-decoration: var(--content-link-hover-text-decoration);
   text-transform: var(--content-link-hover-text-transform);
 }
-.dark-background .content-formatted a:not(.custom-btn):hover {
+.dark-background .content-formatted a:not(.custom-btn):hover, .dark-background .content-formatted p a:not(.custom-btn):hover {
   color: var(--fourth-color);
 }
 .content-formatted .custom-btn,
-.content-formatted .form_submit input {
+.content-formatted .form_submit input, .content-formatted p .custom-btn,
+.content-formatted p .form_submit input {
   padding: calc(var(--button-padding) - 8px) var(--button-padding) calc(var(--button-padding) - 7px);
   color: var(--button-color);
   font-size: var(--button-font-size);
@@ -230,7 +232,8 @@ body.dark-background {
   background-color: var(--button-background-color);
 }
 .content-formatted .custom-btn:hover,
-.content-formatted .form_submit input:hover {
+.content-formatted .form_submit input:hover, .content-formatted p .custom-btn:hover,
+.content-formatted p .form_submit input:hover {
   padding: calc(var(--button-hover-padding) - 8px) var(--button-hover-padding) calc(var(--button-hover-padding) - 7px);
   color: var(--button-hover-color);
   font-size: var(--button-hover-font-size);
