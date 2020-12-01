@@ -38,9 +38,11 @@
             <div class="comment_messages content-formatted">
               {% for comment in article.comments reversed %}
                 <div class="comment edy-site-blog-comment">
-                  <span class="comment_body">{{ comment.body_html }}</span>
-                  <span class="comment_author">({{ comment.author }},</span>
-                  <span class="comment_date">{{ comment.created_at | format_date: "long" }})</span>
+                  <div class="flex_box">
+                    <span class="p16 comment_author bold">{{ comment.author }}</span>
+                    <span class="p16 comment_date mar_l-8 grey">{{ comment.created_at | format_date: "long" }}</span>
+                  </div>
+                  <span class="p16 comment_body">{{ comment.body_html }}</span>
                   <span class="comment_delete">{% removebutton %}</span>
                 </div>
               {% endfor %}
@@ -263,7 +265,7 @@
               var $articleComment = $('.comments'),
                 $articleDate = $('.post_date'),
                 $articleAuthor = $('.post_author'),
-                $dateSeparator = $('.date_separator');
+                $dateSeparator = $('.date-separator');
 
               if (data.show_date == true) {
                 $articleDate.removeClass('hide-post-date');

@@ -10,84 +10,57 @@
     margin-top: 25px;
   }
 
-  .comment_title {
-    cursor: pointer;
-    @include transition(opacity 300ms);
-
-    &:hover {
-      opacity: .7;
+  .comment_ {
+    &author,
+    &date,
+    &body {
     }
-  }
 
-  .comment_messages {
-    opacity: 0;
-    max-height: 0;
-    pointer-events: none;
-    @include transition(all 300ms);
-
-    &.active {
-      opacity: 1;
-      max-height: 800px;
-      overflow: auto;
-      pointer-events: all;
-    }
-  }
-
-  .comment_form {
-    .form_area {
-      opacity: 0;
-      max-height: 0;
-      background: $white;
-      pointer-events: none;
-      @include transition(all 300ms);
-
-      @include query($mobile-1) {
-        padding: 16px;
-      }
-
-      &.active {
-        opacity: 1;
+    &form {
+      .form_area {
         padding: 32px;
-        max-height: 400px;
-        overflow: hidden;
-        pointer-events: all;
-      }
+        background: $white;
+        @include transition(all 300ms);
 
-      .form_fields {
-        display: flex;
-        flex-wrap: wrap;
+        @include query($mobile-1) {
+          padding: 16px;
+        }
 
-        .form_field {
-          width: 50%;
-          padding: 0 0 16px 0;
-          max-width: 280px;
+        .form_fields {
+          display: flex;
+          flex-wrap: wrap;
 
-          @include query($tablet-2) {
-            width: 100%;
-          }
-
-          &:first-child {
-            margin-right: 32px;
-            width: calc(50% - 32px);
+          .form_field {
+            width: 50%;
+            padding: 0 0 16px 0;
+            max-width: 280px;
 
             @include query($tablet-2) {
               width: 100%;
-              margin-right: 0px;
             }
-          }
 
-          &:last-child {
-            width: 100%;
-            max-width: 100%;
+            &:first-child {
+              margin-right: 32px;
+              width: calc(50% - 32px);
 
-            textarea {
+              @include query($tablet-2) {
+                width: 100%;
+                margin-right: 0px;
+              }
+            }
+
+            &:last-child {
               width: 100%;
+              max-width: 100%;
+
+              textarea {
+                width: 100%;
+              }
             }
           }
+
         }
-
       }
-
     }
   }
 }

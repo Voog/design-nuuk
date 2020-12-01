@@ -167,11 +167,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
     &-inner {
       display: flex;
       align-items: center;
       flex-direction: row;
+      width: 100%;
 
       @include query($mobile-1) {
         flex-direction: column;
@@ -179,6 +181,8 @@
     }
 
     &-link {
+      width: 100%;
+
       &.post_nav-link--older {
         .post_nav-link--inner {
           justify-content: flex-end;
@@ -272,19 +276,19 @@
   }
 }
 
-.comments.hide-post_comments {
+.comments.hide-post-comments {
   display: none;
 }
 
-article.post {
+article.post_wrapper {
   .post_date {
-    &.hide-post_date {
+    &.hide-post-date {
       display: none;
     }
   }
 
   .post_author {
-    &.hide-post_author {
+    &.hide-post-author {
       display: none;
     }
   }

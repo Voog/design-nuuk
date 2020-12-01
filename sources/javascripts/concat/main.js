@@ -390,14 +390,6 @@
       $('html').removeClass('menu-language-popover-open');
     }
 
-    var toggleAddComment = function() {
-      $('.comment_form .form_area').toggleClass('active');
-    }
-
-    var toggleComments = function() {
-      $('.comment_messages').toggleClass('active');
-    }
-
     var toggleMenuPopover = function() {
       $('.menu_popover').toggleClass('active');
     }
@@ -405,18 +397,6 @@
     $('.js-menu-popover').click(function() {
       toggleMenuPopover();
     });
-
-    $('.js-add-comment').click(function() {
-      toggleAddComment();
-    });
-
-    handleFocus($('.js-add-comment'), toggleAddComment);
-
-    $('.js-comments').click(function() {
-      toggleComments();
-    });
-
-    handleFocus($('.js-add-comment'), toggleComments);
 
     handleFocus($('.js-menu-popover'), toggleMenuPopover);
 
