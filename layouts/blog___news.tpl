@@ -26,7 +26,7 @@
       {% include "tags-blog" %}
 
       <main class="content" role="main" data-search-indexing-allowed="true">
-        <section class="content-body content-formatted post-intro-content" {{ edy_intro_edit_text }}>{% content %}</section>
+        <section class="content-body content-formatted post_intro-content" {{ edy_intro_edit_text }}>{% content %}</section>
 
         <div class="mar_b-16">{% addbutton %}</div>
         <div class="blog_listing-wrapper">
@@ -126,9 +126,9 @@
             values: valuesObj,
             entityData: 'siteData',
             prevFunc: function(data) {
-              var $articleDate = $('.post-date.site-data'),
-                $dateSeparator = $('.post-date.site-data + .date-separator'),
-                $articleAuthor = $('.post-author.site-data');
+              var $articleDate = $('.post_date.site-data'),
+                $dateSeparator = $('.post_date.site-data + .date-separator'),
+                $articleAuthor = $('.post_author.site-data');
 
               if (data.show_dates == true) {
                 $articleDate.removeClass('hide-post-date');

@@ -10,7 +10,7 @@
   {%- assign articleSettingsData = article.data.article_settings -%}
 </head>
 
-<body class="post-page js-bg-picker-area {% include 'semimodal-class-names' %}">
+<body class="post_page js-bg-picker-area {% include 'semimodal-class-names' %}">
   {% include "template-svg-spritesheet" %}
   {% if editmode %}
     <div class="bg-picker-top"><button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button></div>
@@ -74,30 +74,30 @@
         </div>
 
         {% if article.older or article.newer %}
-          <div class="post-nav">
-            <div class="post-nav-inner">
+          <div class="post_nav">
+            <div class="post_nav-inner">
               {% if article.older %}
-                <a class="post-nav-link post-nav-link-older" href="{{ article.older.url }}">
-                  <div class="post-nav-link-inner">
-                    <h4 class="post-nav-direction">{{ "previous" | lc }}</h4>
-                    <div class="post-nav-image">
+                <a class="post_nav-link{% if article.newer %} post_nav-link--older{% endif %}" href="{{ article.older.url }}">
+                  <div class="post_nav-link--inner">
+                    <h4 class="post_nav-direction">{{ "previous" | lc }}</h4>
+                    <div class="post_nav-image">
                       {% include 'content-item', _staticItem: true, _entityData: article.older, _itemType: 'article', _id: article.older.id %}
-                      <h4 class="post-nav-title">{{ article.older.title }}</h4>
+                      <h4 class="post_nav-title">{{ article.older.title }}</h4>
                     </div>
                   </div>
                 </a>
               {% endif %}
               {% if article.newer and article.older %}
-                <div class="post-nav-separator"></div>
+                <div class="post_nav-separator"></div>
               {% endif %}
               {% if article.newer %}
-                <a class="post-nav-link post-nav-link-newer" href="{{ article.newer.url }}">
-                  <div class="post-nav-link-inner">
-                    <h4 class="post-nav-direction">{{ "next" | lc }}</h4>
+                <a class="post_nav-link{% if article.older %} post_nav-link--newer{% endif %}" href="{{ article.newer.url }}">
+                  <div class="post_nav-link--inner">
+                    <h4 class="post_nav-direction">{{ "next" | lc }}</h4>
 
-                    <div class="post-nav-image">
+                    <div class="post_nav-image">
                       {% include 'content-item', _staticItem: true, _entityData: article.newer, _itemType: 'article', _id: article.newer.id %}
-                      <h4 class="post-nav-title">{{ article.newer.title }}</h4>
+                      <h4 class="post_nav-title">{{ article.newer.title }}</h4>
                     </div>
                   </div>
                 </a>
@@ -261,9 +261,9 @@
             entityData: 'articleData',
             prevFunc: function(data) {
               var $articleComment = $('.comments'),
-                $articleDate = $('.post-date'),
-                $articleAuthor = $('.post-author'),
-                $dateSeparator = $('.date-separator');
+                $articleDate = $('.post_date'),
+                $articleAuthor = $('.post_author'),
+                $dateSeparator = $('.date_separator');
 
               if (data.show_date == true) {
                 $articleDate.removeClass('hide-post-date');

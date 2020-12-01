@@ -15,7 +15,7 @@
   {%- assign wrapperTag = 'a' -%}
 {%- endif -%}
 
-{% if editmode %}
+{% if editmode and _staticItem != true %}
   <div class="content-item-box p-rel {{ item_image_state }} js-content-item-box not-loaded"
     data-item-type="{{_itemType}}"
     data-item-id="{{ _id }}"

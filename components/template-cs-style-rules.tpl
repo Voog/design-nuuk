@@ -21,38 +21,38 @@ body.dark-background {
   color: var(--header-site-title-color);
 }
 
-.post .post-title, .post .post-title a {
+.post .post_title, .post .post_title a {
   color: var(--primary-color);
 }
-.dark-background .post .post-title, .dark-background .post .post-title a {
+.dark-background .post .post_title, .dark-background .post .post_title a {
   color: var(--fourth-color);
 }
-.post .post-title a:hover {
+.post .post_title a:hover {
   color: var(--secondary-color);
 }
-.dark-background .post .post-title a:hover {
+.dark-background .post .post_title a:hover {
   color: var(--fourth-color);
 }
-.post .post-author, .post .post-date {
+.post .post_author, .post .post_date {
   color: var(--secondary-color);
 }
-.dark-background .post .post-author,
-.dark-background .post .post-date {
+.dark-background .post .post_author,
+.dark-background .post .post_date {
   color: var(--fourth-color);
 }
-.dark-background .post .post-author {
+.dark-background .post .post_author {
   color: var(--fourth-color);
 }
-.post .post-comments-count a {
+.post .post_comments-count a {
   color: var(--secondary-color);
 }
-.dark-background .post .post-comments-count a {
+.dark-background .post .post_comments-count a {
   color: var(--fourth-color);
 }
-.post .post-comments-count a:hover {
+.post .post_comments-count a:hover {
   color: var(--secondary-color);
 }
-.dark-background .post .post-comments-count a:hover {
+.dark-background .post .post_comments-count a:hover {
   color: var(--fourth-color);
 }
 
@@ -245,7 +245,7 @@ body.dark-background {
   background-color: var(--button-hover-background-color);
 }
 
-.blog-page .post-read-more-btn {
+.blog-page .post_read-more-btn {
   font-style: var(--content-link-font-style);
   font-weight: var(--content-link-font-weight);
   color: var(--content-link-color);

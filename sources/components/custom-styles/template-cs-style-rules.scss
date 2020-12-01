@@ -56,7 +56,7 @@ body {
 // =============================================================================
 // Styling rules for both - the blog listing view and the blog single article view
 .post {
-  .post-title {
+  .post_title {
     // scss-lint:disable SingleLinePerSelector
     &, a {
       color: var(--primary-color);
@@ -84,8 +84,8 @@ body {
     }
   }
 
-  .post-author,
-  .post-date {
+  .post_author,
+  .post_date {
     color: var(--secondary-color);
 
     .dark-background & {
@@ -93,13 +93,13 @@ body {
     }
   }
 
-  .post-author {
+  .post_author {
     .dark-background & {
       color: var(--fourth-color);
     }
   }
 
-  .post-comments-count {
+  .post_comments-count {
     a {
       color: var(--secondary-color);
 
@@ -371,7 +371,7 @@ body {
   }
 }
 
-.blog-page .post-read-more-btn {
+.blog-page .post_read-more-btn {
   font-style: var(--content-link-font-style);
   font-weight: var(--content-link-font-weight);
   color: var(--content-link-color);
