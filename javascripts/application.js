@@ -1155,23 +1155,14 @@ MMCQ = (function() {
     // Add single post layout specific functions here.
   };
 
-  var handleSettingsElements = function() {
+  var handleDocumentReady = function() {
     $(document).ready(function() {
-      if ($('.edy-toolbar-ico-help').length == 1) {
-        $('.js-layout_settings-btn').css({'left': $('.edy-toolbar-ico-help').offset().left - 40, 'opacity': '1'});
-        var maxWidth = Math.max.apply( null, $('.layout_settings-btn').map( function () {
-          return $( this ).outerWidth( true );
-        }).get() );
-
-        $('.layout_settings-btn').css({'width': maxWidth - 32, 'left': $('.edy-toolbar-ico-help').offset().left - 112});
-        $('.layout_settings-popover').css({'width': maxWidth, 'left': $('.edy-toolbar-ico-help').offset().left - 128});
-      }
+      $('.js-layout_settings-btn').css({'opacity': '1', 'transform': 'scale(1)'});
     });
   };
 
   var handleWindowRezise = function() {
     $( window ).resize(function() {
-      handleSettingsElements();
     });
   };
 
@@ -1188,7 +1179,7 @@ MMCQ = (function() {
     handleWindowScroll();
     handleMenuPos();
     bindLanguageMenuButttons();
-    handleSettingsElements();
+    handleDocumentReady();
     handleWindowRezise();
 
     if (editmode()) {

@@ -2,16 +2,10 @@
   &settings {
     &-btn {
       z-index: $zindex-settings-btn + 1;
-      margin-left: -16px;
       padding: 8px 16px;
       opacity: 0;
       pointer-events: none;
       @include transition(opacity 300ms);
-
-      @include query('768px') {
-        left: unset !important;
-        right: 56px;
-      }
 
       &:hover {
         background-color: rgba(68,61,246,.1);
@@ -48,13 +42,21 @@
 
       &--container {
         position: fixed;
-        opacity: 0;
-        bottom: 24px;
         z-index: $zindex-settings-btn;
-        width: 24px;
-        height: 24px;
+        box-shadow: 0 5px 4px 0 rgba(0,0,0,.26);
+        transform: scale(0);
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        bottom: 144px;
+        right: 8px;
+        border-radius: 34px 8px 34px 34px;
+        background-color: $white;
         cursor: pointer;
-        @include transition(opacity 200ms);
+        @include transition(all 200ms);
 
         @include query('768px') {
           left: unset !important;
@@ -76,20 +78,18 @@
 
     &-popover {
       position: fixed;
-      height: 192px;
       background: $white;
-      bottom: 72px;
-      opacity: 0;
+      transform: scale(0);
+      transform-origin: 100% 90%;
+      bottom: 144px;
+      padding: 8px 0;
+      right: 8px;
+      border-radius: 0 0 16px;
       z-index: $zindex-settings-btn;
-      @include transition(opacity 200ms);
-
-      @include query('768px') {
-        left: unset !important;
-        right: 56px;
-      }
+      @include transition(transform 300ms);
 
       .layout_settings-visible & {
-        opacity: 1;
+        transform: scale(1);
         box-shadow: 0 25px 35px rgba(0,0,0,.03), 0 0 5px rgba(0,0,0,.05);
       }
     }
@@ -98,12 +98,7 @@
       position: absolute;
       pointer-events: none;
       bottom: 0;
-      left: 99px;
-
-      @include query('768px') {
-        left: unset !important;
-        right: 16px;
-      }
+      right: 100px;
 
       &:after {
         position: absolute;
@@ -127,27 +122,12 @@
 }
 
 .semimodal_ {
-  &settings-btn {
-    position: fixed;
-    bottom: 140px;
-  }
-
   &picker-btn {
     z-index: $zindex-semimodal;
     position: relative;
     top: 104px;
     left: -89px;
   }
-}
-
-.cart_settings-btn {
-  position: fixed;
-  bottom: 84px;
-}
-
-.content_settings-btn {
-  position: fixed;
-  bottom: 196px;
 }
 
 .body_bg-picker--btn.edy-bgpicker-toggle-button {

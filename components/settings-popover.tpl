@@ -1,14 +1,31 @@
 {%- if editmode -%}
-  <div class="semimodal_settings-btn layout_settings-btn js-prevent-sideclick">
-    <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">
-      <div class="p14 bold">Header settings</div><div class="p14 grey">Change Header & slider settings</div>
-    </button>
-  </div>
-  <div class="cart_settings-btn js-prevent-sideclick layout_settings-btn">
-    {% include 'shopping-cart-editor' %}
+  <div class="layout_settings-popover">
+    {%- if _frontPage == true -%}
+      {% include 'settings-front-page' %}
+    {%- endif -%}
+    {%- if _commonPage == true -%}
+      {% include 'settings-common-page', _contentAreaCount: contentAreaCount %}
+    {%- endif -%}
+    {%- if _blogPage == true -%}
+      {% include 'settings-blog-page' %}
+    {%- endif -%}
+    {%- if _articlePage == true -%}
+      {% include 'settings-article-page' %}
+    {%- endif -%}
+    {%- if _productPage == true -%}
+      {% include 'settings-product-page' %}
+    {%- endif -%}
+
+    <div class="semimodal_settings-btn layout_settings-btn js-prevent-sideclick">
+      <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">
+        <div class="p14 bold">Header settings</div><div class="p14 grey">Change Header & slider settings</div>
+      </button>
+    </div>
+    <div class="cart_settings-btn js-prevent-sideclick layout_settings-btn">
+      {% include 'shopping-cart-editor' %}
+    </div>
   </div>
 
-  <div class="layout_settings-popover"><div class="layout_settings-arrow"></div></div>
   <div class="js-layout_settings-btn js-prevent-sideclick bg_img-contain layout_settings-btn--container">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0)">

@@ -87,14 +87,7 @@
 
   {% include 'site-components' %}
   {% include "site-signout" %}
-  {% if editmode %}
-    <div class="js-prevent-sideclick content_settings-btn layout_settings-btn">
-      <button disabled class="js-product-page-settings-btn js-settings-editor-btn">
-        <div class="p14 bold">Product page</div><div class="p14 grey">Edit product page</div>
-      </button>
-    </div>
-  {% endif %}
-  {% include 'layout-settings' %}
+  {% include 'settings-popover', _productPage: true %}
   {% include "javascripts" %}
   {% include "template-tools" %}
   {% include 'product-page-scripts' %}

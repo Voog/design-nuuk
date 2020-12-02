@@ -1,0 +1,169 @@
+<div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
+  <button disabled class="js-article-settings-btn js-settings-editor-btn">
+    <div class="p14 bold">Article</div><div class="p14 grey">Edit article settings</div>
+  </button>
+</div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    {% if articleSettingsData %}
+      var articleDataValues = {{ articleSettingsData | json }};
+    {% else %}
+      var articleDataValues = {}
+    {% endif %};
+    {% if site.data.article_settings %}
+      var globalDataValues = {{ site.data.article_settings | json }};
+    {% else %}
+      var globalDataValues = {}
+    {% endif %};
+
+    var show_comments, show_date, show_author;
+    if (articleDataValues.show_comments != null && articleDataValues.show_comments !== '') {
+      show_comments = Boolean(articleDataValues.show_comments)
+    } else if (globalDataValues.show_comments != null && globalDataValues.show_comments !== '') {
+      show_comments = Boolean(globalDataValues.show_comments)
+    } else {
+      show_comments = true;
+    }
+    if (articleDataValues.show_date != null && articleDataValues.show_date !== '') {
+      show_date = Boolean(articleDataValues.show_date)
+    } else if (globalDataValues.show_dates != null && globalDataValues.show_dates !== '') {
+      show_date = Boolean(globalDataValues.show_dates)
+    } else {
+      show_date = true;
+    }
+
+    if (articleDataValues.show_author != null && articleDataValues.show_author !== '') {
+      show_author = Boolean(articleDataValues.show_author)
+    } else if (globalDataValues.show_authors != null && globalDataValues.show_authors !== '') {
+      show_author = Boolean(globalDataValues.show_authors)
+    } else {
+      show_author = true;
+    }
+    var valuesObj = {
+      show_comments: show_comments,
+      show_date: show_date,
+      show_author: show_author,
+      has_share_on_facebook_btn: {%- if articleSettingsData.has_share_on_facebook_btn == true -%}true{%- else -%}false{%- endif -%},
+      has_share_on_twitter_btn: {%- if articleSettingsData.has_share_on_twitter_btn == true -%}true{%- else -%}false{%- endif -%},
+      has_share_on_linkedin_btn: {%- if articleSettingsData.has_share_on_linkedin_btn == true -%}true{%- else -%}false{%- endif -%},
+      show_related_articles: {%- if articleSettingsData.show_related_articles == true -%}true{%- else -%}false{%- endif -%}
+    }
+
+    initSettingsEditor(
+      {
+        settingsBtn: document.querySelector('.js-article-settings-btn'),
+        menuItems: [
+          {
+            "title": "Add share on Facebook button",
+            "tooltip": "Visible in live & preview mode.",
+            "type": "checkbox",
+            "key": "has_share_on_facebook_btn",
+            "states": {
+              "on": true,
+              "off": false
+            }
+          },
+          {
+            "title": "Add share on Twitter button",
+            "tooltip": "Visible in live & preview mode.",
+            "type": "checkbox",
+            "key": "has_share_on_twitter_btn",
+            "states": {
+              "on": true,
+              "off": false
+            }
+          },
+          {
+            "title": "Add share on LinkedIn button",
+            "tooltip": "Visible in live & preview mode.",
+            "type": "checkbox",
+            "key": "has_share_on_linkedin_btn",
+            "states": {
+              "on": true,
+              "off": false
+            }
+          },
+          {
+            "title": "Show related articles by tags",
+            "type": "checkbox",
+            "key": "show_related_articles",
+            "states": {
+              "on": true,
+              "off": false
+            }
+          },
+          {
+            "titleI18n": "comments",
+            "type": "toggle",
+            "key": "show_comments",
+            "tooltipI18n": "toggle_current_article_comments",
+            "states": {
+              "on": true,
+              "off": false
+            },
+          },
+          {
+            "titleI18n": "publishing_date",
+            "type": "toggle",
+            "key": "show_date",
+            "tooltipI18n": "toggle_current_article_date",
+            "states": {
+              "on": true,
+              "off": false
+            },
+          },
+          {
+            "titleI18n": "article_author",
+            "type": "toggle",
+            "key": "show_author",
+            "tooltipI18n": "toggle_all_authors",
+            "states": {
+              "on": true,
+              "off": false
+            },
+          }
+        ],
+        dataKey: 'article_settings',
+        values: valuesObj,
+        entityData: 'articleData',
+        prevFunc: function(data) {
+          var $articleComment = $('.comments'),
+            $articleDate = $('.post_date'),
+            $articleAuthor = $('.post_author'),
+            $dateSeparator = $('.date-separator');
+
+          if (data.show_date == true) {
+            $articleDate.removeClass('hide-post-date');
+            $articleDate.addClass('show-post-date');
+          } else if (data.show_date == false) {
+            $articleDate.removeClass('show-post-date');
+            $articleDate.addClass('hide-post-date');
+            $dateSeparator.addClass('hide-separator');
+          }
+
+          if (data.show_author == true) {
+            $articleAuthor.removeClass('hide-post-author');
+            $articleAuthor.addClass('show-post-author');
+          } else if (data.show_author == false) {
+            $articleAuthor.removeClass('show-post-author');
+            $articleAuthor.addClass('hide-post-author');
+            $dateSeparator.addClass('hide-separator');
+          }
+
+          if (data.show_comments == true) {
+            $articleComment.removeClass('hide-post-comments');
+            $articleComment.addClass('show-post-comments');
+          } else if (data.show_comments == false) {
+            $articleComment.removeClass('show-post-comments');
+            $articleComment.addClass('hide-post-comments');
+          }
+
+          if (data.show_author == true && data.show_date == true) {
+            $dateSeparator.removeClass('hide-separator');
+          }
+        }
+      }
+    );
+  });
+</script>

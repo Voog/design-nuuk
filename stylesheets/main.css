@@ -1483,7 +1483,6 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
 
 .layout_settings-btn {
   z-index: 56502;
-  margin-left: -16px;
   padding: 8px 16px;
   opacity: 0;
   pointer-events: none;
@@ -1497,12 +1496,6 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-}
-@media screen and (max-width: 768px) {
-  .layout_settings-btn {
-    left: unset !important;
-    right: 56px;
-  }
 }
 .layout_settings-btn:hover {
   background-color: rgba(68, 61, 246, 0.1);
@@ -1534,15 +1527,32 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
 }
 .layout_settings-btn--container {
   position: fixed;
-  opacity: 0;
-  bottom: 24px;
   z-index: 56501;
-  width: 24px;
-  height: 24px;
+  -webkit-box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.26);
+          box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.26);
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+  height: 40px;
+  bottom: 144px;
+  right: 8px;
+  border-radius: 34px 8px 34px 34px;
+  background-color: #ffffff;
   cursor: pointer;
-  -webkit-transition: opacity 200ms;
-  -o-transition: opacity 200ms;
-  transition: opacity 200ms;
+  -webkit-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -1566,14 +1576,23 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
 }
 .layout_settings-popover {
   position: fixed;
-  height: 192px;
   background: #ffffff;
-  bottom: 72px;
-  opacity: 0;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: 100% 90%;
+      -ms-transform-origin: 100% 90%;
+          transform-origin: 100% 90%;
+  bottom: 144px;
+  padding: 8px 0;
+  right: 8px;
+  border-radius: 0 0 16px;
   z-index: 56501;
-  -webkit-transition: opacity 200ms;
-  -o-transition: opacity 200ms;
-  transition: opacity 200ms;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  -o-transition: transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -1582,14 +1601,10 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-@media screen and (max-width: 768px) {
-  .layout_settings-popover {
-    left: unset !important;
-    right: 56px;
-  }
-}
 .layout_settings-visible .layout_settings-popover {
-  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
   -webkit-box-shadow: 0 25px 35px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.05);
           box-shadow: 0 25px 35px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.05);
 }
@@ -1597,13 +1612,7 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
   position: absolute;
   pointer-events: none;
   bottom: 0;
-  left: 99px;
-}
-@media screen and (max-width: 768px) {
-  .layout_settings-arrow {
-    left: unset !important;
-    right: 16px;
-  }
+  right: 100px;
 }
 .layout_settings-arrow:after {
   position: absolute;
@@ -1623,25 +1632,11 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
           filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.05));
 }
 
-.semimodal_settings-btn {
-  position: fixed;
-  bottom: 140px;
-}
 .semimodal_picker-btn {
   z-index: 100;
   position: relative;
   top: 104px;
   left: -89px;
-}
-
-.cart_settings-btn {
-  position: fixed;
-  bottom: 84px;
-}
-
-.content_settings-btn {
-  position: fixed;
-  bottom: 196px;
 }
 
 .body_bg-picker--btn.edy-bgpicker-toggle-button {
