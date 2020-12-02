@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/footer.tpl",
-      "layout_name": "footer",
-      "title": "footer"
+      "file": "components/layout-settings.tpl",
+      "layout_name": "layout-settings",
+      "title": "layout-settings"
     },
     {
       "content_type": "component",
@@ -200,6 +200,13 @@
       "file": "components/ico-ellipsis.tpl",
       "layout_name": "ico-ellipsis",
       "title": "ico-ellipsis"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/footer.tpl",
+      "layout_name": "footer",
+      "title": "footer"
     },
     {
       "content_type": "component",
@@ -447,6 +454,12 @@
       "file": "assets/ico-close.svg",
       "kind": "assets",
       "filename": "ico-close.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-bucket.svg",
+      "kind": "assets",
+      "filename": "ico-bucket.svg"
     },
     {
       "content_type": "image/svg+xml",

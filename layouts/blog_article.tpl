@@ -19,11 +19,6 @@
 
   <div class="flex_box js-background-type {{ body_bg_type }}">
     {% include "header" %}
-    {% if editmode %}
-      <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
-        <button disabled class="js-article-settings-btn js-settings-editor-btn">Article settings</button>
-      </div>
-    {% endif %}
     <div class="container">
 
 
@@ -136,6 +131,14 @@
   </div>
   {% include 'site-components' %}
   {% include "site-signout" %}
+  {%- if editmode -%}
+    <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
+      <button disabled class="js-article-settings-btn js-settings-editor-btn">
+        <div class="p14 bold">Article</div><div class="p14 grey">Edit article settings</div>
+      </button>
+    </div>
+  {%- endif -%}
+  {% include 'layout-settings' %}
   {% include "javascripts" %}
   {% include "template-tools" with 'article' %}
   <script>
@@ -260,7 +263,6 @@
                 },
               }
             ],
-            buttonTitleI18n: "article_settings",
             dataKey: 'article_settings',
             values: valuesObj,
             entityData: 'articleData',

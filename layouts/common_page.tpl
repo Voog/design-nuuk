@@ -62,11 +62,6 @@
 
   <div class="flex_box js-background-type {{ body_bg_type }}">
     {%- include "header" -%}
-    {%- if editmode -%}
-      <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
-        <button disabled class="js-content-area-settings-btn js-settings-editor-btn">Content columns settings</button>
-      </div>
-    {%- endif -%}
     <div class="container">
       <main class="content" role="main" data-search-indexing-allowed="true">
         <div class="content-body content-formatted mar_b-32">
@@ -107,6 +102,14 @@
   </div>
 
   {%- include "site-signout" -%}
+  {%- if editmode -%}
+    <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
+      <button disabled class="js-content-area-settings-btn js-settings-editor-btn">
+        <div class="p14 bold">Content columns</div><div class="p14 grey">Change content columns count</div>
+      </button>
+    </div>
+  {%- endif -%}
+  {% include 'layout-settings' %}
   {%- include "javascripts" -%}
   {%- include "template-tools" -%}
   <script>

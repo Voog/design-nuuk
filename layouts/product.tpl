@@ -19,11 +19,6 @@
 
   <div class="flex_box js-background-type {{ body_bg_type }}">
     {% include "header" %}
-    {% if editmode %}
-      <div class="js-prevent-sideclick content_settings-btn layout_settings-btn">
-        <button disabled class="js-product-page-settings-btn js-settings-editor-btn">Product page settings</button>
-      </div>
-    {% endif %}
     <div class="container">
       <div class="mar_t-32">
         {% include 'menu-breadcrumbs' %}
@@ -92,6 +87,14 @@
 
   {% include 'site-components' %}
   {% include "site-signout" %}
+  {% if editmode %}
+    <div class="js-prevent-sideclick content_settings-btn layout_settings-btn">
+      <button disabled class="js-product-page-settings-btn js-settings-editor-btn">
+        <div class="p14 bold">Product page</div><div class="p14 grey">Edit product page</div>
+      </button>
+    </div>
+  {% endif %}
+  {% include 'layout-settings' %}
   {% include "javascripts" %}
   {% include "template-tools" %}
   {% include 'product-page-scripts' %}

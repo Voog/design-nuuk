@@ -56,6 +56,14 @@
         $('body').removeClass('layout_settings-visible');
       };
     });
+
+    $('body').click(function(event) {
+      if (
+        !$(event.target).closest('.layout_settings-btn, .edy-settings-editor, .layout_settings-btn--container').length
+      ) {
+        $('body').removeClass('layout_settings-visible');
+      }
+    });
   };
 
   // Switches the site language to the selected value from the language menu.
@@ -606,6 +614,28 @@
     // Add single post layout specific functions here.
   };
 
+  var handleSettingsElements = function() {
+    $(document).ready(function() {
+      if ($('.edy-toolbar-ico-help').length == 1) {
+        $('.js-layout_settings-btn').css({'left': $('.edy-toolbar-ico-help').offset().left - 40, 'opacity': '1'});
+        var maxWidth = Math.max.apply( null, $('.layout_settings-btn').map( function () {
+          return $( this ).outerWidth( true );
+        }).get() );
+
+        $('.layout_settings-btn').css({'width': maxWidth - 32, 'left': $('.edy-toolbar-ico-help').offset().left - 112});
+        $('.layout_settings-popover').css({'width': maxWidth, 'left': $('.edy-toolbar-ico-help').offset().left - 128});
+      }
+    });
+  };
+
+  var handleWindowRezise = function() {
+    $( window ).resize(function() {
+      handleSettingsElements();
+    });
+  };
+
+
+
   var init = function() {
     // Add site wide functions here.
     bindSideClicks();
@@ -617,6 +647,8 @@
     handleWindowScroll();
     handleMenuPos();
     bindLanguageMenuButttons();
+    handleSettingsElements();
+    handleWindowRezise();
 
     if (editmode()) {
       bindCustomTexteditorStyles();

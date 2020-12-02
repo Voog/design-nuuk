@@ -13,9 +13,6 @@
   {% include "template-svg-spritesheet" %}
   {% if editmode %}
     <div class="bg-picker-top"><button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button></div>
-    <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
-      <button class="js-blog-settings-editor js-settings-editor-btn"></button>
-    </div>
   {% endif %}
   <div class="background-color js-background-color"></div>
 
@@ -42,6 +39,14 @@
   </div>
   {% include 'site-components' %}
   {% include "site-signout" %}
+  {%- if editmode -%}
+    <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
+      <button class="js-blog-settings-editor js-settings-editor-btn">
+        <div class="p14 bold">Blog</div><div class="p14 grey">Edit blog settings</div>
+      </button>
+    </div>
+  {%- endif -%}
+  {% include 'layout-settings' %}
   {% include "javascripts" %}
   {% include "template-tools" %}
   <script>
@@ -119,7 +124,6 @@
                 },
               },
             ],
-            buttonTitleI18n: "blog_settings",
             dataKey: 'article_settings',
             values: valuesObj,
             entityData: 'siteData',

@@ -1,5 +1,7 @@
 {%- if editmode -%}
-  <button disabled class="js-cart-settings-btn js-settings-editor-btn">Shopping cart settings</button>
+  <button disabled class="js-cart-settings-btn js-settings-editor-btn">
+    <div class="p14 bold">Shopping cart</div><div class="p14 grey">Edit shopping cart fields</div>
+  </button>
 {%- endif -%}
 
 <script>

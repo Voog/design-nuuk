@@ -1,6 +1,5 @@
 <script>
   $(document).ready(function() {
-    $('.layout_settings-btn--container').css('transform', 'scale(1)');
     $('.product_item.scale-up').each(function() {
       var item = $(this);
       var delay = item.index();

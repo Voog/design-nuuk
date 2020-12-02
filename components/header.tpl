@@ -29,18 +29,6 @@
   </header>
 </div>
 
-{%- if editmode -%}
-  <div class="semimodal_settings-btn layout_settings-btn js-prevent-sideclick">
-    <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">Header settings</button>
-  </div>
-  <div class="cart_settings-btn js-prevent-sideclick layout_settings-btn">
-    {% include 'shopping-cart-editor' %}
-  </div>
-  <div class="js-layout_settings-btn js-prevent-sideclick layout_settings-btn--container">
-    <button class="admin_btn">Layout Settings</button>
-  </div>
-{%- endif -%}
-
 <script>
   {%- if editmode -%}
     window.addEventListener('DOMContentLoaded', (event) => {

@@ -1,39 +1,135 @@
-.layout_settings-btn {
-  transform: translateY(300px);
-  @include transition(transform 300ms);
-  &--container {
-    position: fixed;
-    bottom: 88px;
-    right: 88px;
-    z-index: $zindex-settings-btn;
-    transform: scale(0);
-    @include transition(transform 300ms);
+.layout_ {
+  &settings {
+    &-btn {
+      z-index: $zindex-settings-btn + 1;
+      margin-left: -16px;
+      padding: 8px 16px;
+      opacity: 0;
+      pointer-events: none;
+      @include transition(opacity 300ms);
 
-    .layout_settings-visible & {
-      transform: translateY(300px) scale(1) !important;
+      @include query('768px') {
+        left: unset !important;
+        right: 56px;
+      }
+
+      &:hover {
+        background-color: rgba(68,61,246,.1);
+        .edy-cbtn>span>span {
+          color: $voog-blue !important;
+
+          .grey {
+            color: $voog-blue !important;
+          }
+        }
+      }
+
+      .edy-cbtn {
+        display: flex !important;
+        width: 100%;
+      }
+
+      .edy-cbtn>span:before,
+      .edy-cbtn>div:before {
+        content: none !important;
+      }
+
+      .edy-cbtn>span>span {
+        color: black !important;
+      }
+
+      .edy-cbtn-content span:last-child {
+        margin-right: 0;
+      }
+
+      .edy-cbtn .edy-cbtn-ico {
+        display: none;
+      }
+
+      &--container {
+        position: fixed;
+        opacity: 0;
+        bottom: 24px;
+        z-index: $zindex-settings-btn;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        @include transition(opacity 200ms);
+
+        @include query('768px') {
+          left: unset !important;
+          right: 56px;
+        }
+
+        &:hover {
+          svg path {
+            fill: $voog-blue;
+          }
+        }
+      }
+
+      .layout_settings-visible & {
+        opacity: 1;
+        pointer-events: all;
+      }
     }
-  }
 
-  .layout_settings-visible & {
-    transform: translateY(0);
-  }
-}
+    &-popover {
+      position: fixed;
+      height: 192px;
+      background: $white;
+      bottom: 72px;
+      opacity: 0;
+      z-index: $zindex-settings-btn;
+      @include transition(opacity 200ms);
 
-#fc_frame {
-  transform: translateY(0);
-  @include transition(transform 300ms);
+      @include query('768px') {
+        left: unset !important;
+        right: 56px;
+      }
 
-  .layout_settings-visible & {
-    transform: translateY(300px);
+      .layout_settings-visible & {
+        opacity: 1;
+        box-shadow: 0 25px 35px rgba(0,0,0,.03), 0 0 5px rgba(0,0,0,.05);
+      }
+    }
+
+    &-arrow {
+      position: absolute;
+      pointer-events: none;
+      bottom: 0;
+      left: 99px;
+
+      @include query('768px') {
+        left: unset !important;
+        right: 16px;
+      }
+
+      &:after {
+        position: absolute;
+        z-index: $zindex-settings-btn;
+        width: 0;
+        height: 0;
+        margin-left: -16px;
+        pointer-events: none;
+        border: solid transparent;
+        border-color: transparent;
+        border-width: 16px;
+        content: '';
+      }
+
+      &:after {
+        border-top-color: $white;
+        filter: drop-shadow(0 2px 1px rgba(0,0,0,0.05));
+      }
+    }
   }
 }
 
 .semimodal_ {
   &settings-btn {
-    z-index: $zindex-semimodal;
     position: fixed;
-    bottom: 96px;
-    right: 32px;
+    bottom: 140px;
   }
 
   &picker-btn {
@@ -45,17 +141,13 @@
 }
 
 .cart_settings-btn {
-  z-index: $zindex-semimodal;
   position: fixed;
-  bottom: 142px;
-  right: 32px;
+  bottom: 84px;
 }
 
 .content_settings-btn {
   position: fixed;
-  bottom: 186px;
-  right: 32px;
-  z-index: $zindex-header-fixed - 1;
+  bottom: 196px;
 }
 
 .body_bg-picker--btn.edy-bgpicker-toggle-button {

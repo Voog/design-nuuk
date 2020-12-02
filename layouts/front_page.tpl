@@ -108,12 +108,6 @@
         </div>
       {%- endif -%}
 
-      {%- if editmode -%}
-        <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
-          <button disabled class="js-front-page-settings-btn js-settings-editor-btn">Front page settings</button>
-        </div>
-      {%- endif -%}
-
       <div class="container flex_col flex_j-space-between h-100p">
         <main class="content" role="main" data-search-indexing-allowed="true">
           <div class="content-slogan content-formatted js-content-optional">{% content name="slogan" %}</div>
@@ -127,6 +121,14 @@
   </div>
   {% include 'site-components' %}
   {% include "site-signout" %}
+  {%- if editmode -%}
+    <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
+      <button disabled class="js-front-page-settings-btn js-settings-editor-btn">
+        <div class="p14 bold">Front page</div><div class="p14 grey">Edit front page</div>
+      </button>
+    </div>
+  {%- endif -%}
+  {% include 'layout-settings' %}
   {% include "javascripts" %}
   {% include 'swiper-js' %}
   {% include "template-tools" %}
