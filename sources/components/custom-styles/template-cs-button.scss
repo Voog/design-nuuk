@@ -118,6 +118,15 @@
   #{--button-text-transform}: uppercase;
 
   /* VoogStyle
+    "pathI18n": ["button", "normal"],
+    "titleI18n": "hyphens",
+    "editor": "listPicker",
+    "list": {{ base_hyphens_toggle_set }},
+    "scope": "global"
+  */
+  #{--button-hyphens}: none;
+
+  /* VoogStyle
     "pathI18n": ["button", "hover"],
     "titleI18n": "padding",
     "editor": "rangePicker",

@@ -19,6 +19,9 @@ body.dark-background {
           text-decoration: var(--header-site-title-text-decoration);
   text-transform: var(--header-site-title-text-transform);
   color: var(--header-site-title-color);
+  -webkit-hyphens: var(--header-site-title-hyphens);
+      -ms-hyphens: var(--header-site-title-hyphens);
+          hyphens: var(--header-site-title-hyphens);
 }
 
 .post .post_title, .post .post_title a {
@@ -83,18 +86,28 @@ body.dark-background {
   color: var(--header-mainmenu-color);
   -webkit-text-decoration: var(--header-mainmenu-decoration);
           text-decoration: var(--header-mainmenu-decoration);
+  font-weight: var(--header-mainmenu-font-weight);
+  font-style: var(--header-mainmenu-font-style);
+  -webkit-hyphens: var(--header-mainmenu-hyphens);
+      -ms-hyphens: var(--header-mainmenu-hyphens);
+          hyphens: var(--header-mainmenu-hyphens);
 }
 .menu-main .menu .menu-item a::before {
   background-color: var(--header-mainmenu-color);
 }
 .menu-main .menu .menu-item a:hover {
   color: var(--header-mainmenu-hover-color);
+  -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
+          text-decoration: var(--header-mainmenu-hover-decoration);
+  font-weight: var(--header-mainmenu-hover-font-weight);
+  font-style: var(--header-mainmenu-hover-font-style);
 }
 .menu-main .menu .menu-item.active a {
   color: var(--header-mainmenu-active-color);
   font-weight: var(--header-mainmenu-active-font-weight);
   -webkit-text-decoration: var(--header-mainmenu-active-decoration);
           text-decoration: var(--header-mainmenu-active-decoration);
+  font-style: var(--header-mainmenu-active-font-style);
 }
 .menu-main .menu .menu-item.active a::before {
   background-color: var(--header-mainmenu-active-color);
@@ -161,6 +174,9 @@ body.dark-background {
   font-size: var(--content-body-font-size);
   line-height: var(--content-body-line-height);
   color: var(--content-body-color);
+  -webkit-hyphens: var(--content-body-hyphens);
+      -ms-hyphens: var(--content-body-hyphens);
+          hyphens: var(--content-body-hyphens);
 }
 .dark-background .content-formatted,
 .dark-background .content-formatted p {
@@ -182,6 +198,9 @@ body.dark-background {
   -webkit-text-decoration: var(--headings-title-text-decoration);
           text-decoration: var(--headings-title-text-decoration);
   text-transform: var(--headings-title-text-transform);
+  -webkit-hyphens: var(--headings-title-hyphens);
+      -ms-hyphens: var(--headings-title-hyphens);
+          hyphens: var(--headings-title-hyphens);
 }
 .content-formatted h2, .content-formatted p h2 {
   font-size: var(--headings-heading-font-size);
@@ -193,6 +212,9 @@ body.dark-background {
   -webkit-text-decoration: var(--headings-heading-text-decoration);
           text-decoration: var(--headings-heading-text-decoration);
   text-transform: var(--headings-heading-text-transform);
+  -webkit-hyphens: var(--headings-heading-hyphens);
+      -ms-hyphens: var(--headings-heading-hyphens);
+          hyphens: var(--headings-heading-hyphens);
 }
 .content-formatted h3, .content-formatted p h3 {
   font-size: var(--headings-subheading-font-size);
@@ -204,6 +226,9 @@ body.dark-background {
   -webkit-text-decoration: var(--headings-subheading-text-decoration);
           text-decoration: var(--headings-subheading-text-decoration);
   text-transform: var(--headings-subheading-text-transform);
+  -webkit-hyphens: var(--headings-subheading-hyphens);
+      -ms-hyphens: var(--headings-subheading-hyphens);
+          hyphens: var(--headings-subheading-hyphens);
 }
 .content-formatted a:not(.custom-btn), .content-formatted p a:not(.custom-btn) {
   font-style: var(--content-link-font-style);
@@ -238,6 +263,9 @@ body.dark-background {
   -webkit-text-decoration: var(--button-text-decoration);
           text-decoration: var(--button-text-decoration);
   text-transform: var(--button-text-transform);
+  -webkit-hyphens: var(--button-hyphens);
+      -ms-hyphens: var(--button-hyphens);
+          hyphens: var(--button-hyphens);
   background-color: var(--button-background-color);
 }
 .content-formatted .custom-btn:hover,
@@ -248,9 +276,6 @@ body.dark-background {
   font-size: var(--button-hover-font-size);
   font-style: var(--button-hover-font-style);
   font-weight: var(--button-hover-font-weight);
-  -webkit-hyphens: var(--button-hover-hyphens);
-      -ms-hyphens: var(--button-hover-hyphens);
-          hyphens: var(--button-hover-hyphens);
   -webkit-text-decoration: var(--button-hover-text-decoration);
           text-decoration: var(--button-hover-text-decoration);
   text-transform: var(--button-hover-text-transform);

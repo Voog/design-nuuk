@@ -90,6 +90,14 @@
   */
   --headings-title-color: black;
   /* VoogStyle
+    "pathI18n": ["headings", "title"],
+    "titleI18n": "hyphens",
+    "editor": "listPicker",
+    "list": {{ base_hyphens_toggle_set }},
+    "scope": "global"
+  */
+  --headings-title-hyphens: none;
+  /* VoogStyle
     "pathI18n": ["headings", "heading"],
     "titleI18n": "alignment",
     "editor": "listPicker",
@@ -180,6 +188,14 @@
   */
   --headings-heading-color: black;
   /* VoogStyle
+    "pathI18n": ["headings", "heading"],
+    "titleI18n": "hyphens",
+    "editor": "listPicker",
+    "list": {{ base_hyphens_toggle_set }},
+    "scope": "global"
+  */
+  --headings-heading-hyphens: none;
+  /* VoogStyle
     "pathI18n": ["headings", "subheading"],
     "titleI18n": "alignment",
     "editor": "listPicker",
@@ -269,4 +285,12 @@
     "scope": "global"
   */
   --headings-subheading-color: black;
+  /* VoogStyle
+    "pathI18n": ["headings", "subheading"],
+    "titleI18n": "hyphens",
+    "editor": "listPicker",
+    "list": {{ base_hyphens_toggle_set }},
+    "scope": "global"
+  */
+  --headings-subheading-hyphens: none;
 }

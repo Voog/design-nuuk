@@ -71,10 +71,6 @@
 
 
 .post_ {
-  &wrapper {
-    @include hyphenate(true);
-  }
-
   &header {
     overflow: hidden;
   }

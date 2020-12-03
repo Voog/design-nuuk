@@ -909,13 +909,6 @@ p {
   margin-right: 0;
 }
 
-.content-formatted {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  word-break: break-word;
-  word-wrap: break-word;
-}
 .content-formatted:empty {
   display: none;
 }
@@ -976,11 +969,6 @@ p {
 }
 .content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6 {
   color: #8d9091;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  word-break: break-word;
-  word-wrap: break-word;
 }
 .dark-background .content-formatted h1, .dark-background .content-formatted h2, .dark-background .content-formatted h3, .dark-background .content-formatted h4, .dark-background .content-formatted h5, .dark-background .content-formatted h6 {
   color: white;
@@ -1867,11 +1855,6 @@ article .item-top > .aspect-ratio-inner {
   display: none;
 }
 .item-top .top-inner {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  word-break: break-word;
-  word-wrap: break-word;
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -2092,6 +2075,10 @@ body .edy-ecommerce-shopping-cart-button .edy-ecommerce-total-price {
 .edy-checkout-button-visible .cart_btn-container {
   max-width: 40px;
   overflow: unset;
+}
+
+body.edy-checkout-button-visible {
+  padding-top: 0;
 }
 
 /* FOOTER */
@@ -2665,13 +2652,6 @@ body .edy-ecommerce-shopping-cart-button .edy-ecommerce-total-price {
   padding-bottom: 25px;
 }
 
-.post_wrapper {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  word-break: break-word;
-  word-wrap: break-word;
-}
 .post_header {
   overflow: hidden;
 }
@@ -3608,16 +3588,11 @@ article.post_wrapper .date-separator.hide-separator {
 .menu_top.menu-main .menu .menu-item a {
   font-size: 16px;
   line-height: 194%;
-}
-.menu .menu-item {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  word-break: break-word;
-  word-wrap: break-word;
+  max-width: 160px;
 }
 .menu .menu-item a {
   display: block;
+  word-break: break-word;
   color: #0066bb;
 }
 @media screen and (min-width: 752px) {

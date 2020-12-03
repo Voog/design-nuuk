@@ -1,43 +1,6 @@
 // CUSTOM MIXINS
 // Comment out the "_mixins.scss" partial in the "main.scss" file if not used.
 
-// HYPHENATE
-@mixin hyphenate($boolean) {
-  @if $boolean == true {
-    word-break: break-word;
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-  } @else {
-    word-break: normal;
-    word-wrap: normal;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-  }
-}
-
-// GENERAL
-@mixin calc($property, $expression) {
-  #{$property}: -webkit-calc(#{$expression});
-  #{$property}: calc(#{$expression});
-}
-
-// BOXES
-@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
-  -webkit-box-shadow: $top $left $blur $color #{$inset};
-     -moz-box-shadow: $top $left $blur $color #{$inset};
-          box-shadow: $top $left $blur $color #{$inset};
-}
-@mixin no-box-shadow($value: none) {
-  -webkit-box-shadow: $value;
-     -moz-box-shadow: $value;
-          box-shadow: $value;
-}
-
 // COLORS
 @mixin bg($color, $opacity: 1) {
   @if $opacity == 1 {
@@ -85,19 +48,6 @@
   }
 }
 
-// PERSPECTIVE
-@mixin perspective($value: 1000) {
-  -webkit-perspective: $value;
-  -webkit-backface-visibility: hidden;
-}
-
-// WEBKIT INPUT BUTTON STYLE RESET
-@mixin inputiosreset {
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
-          border-radius: 0;
-}
-
 // OPACITY
 @mixin opacity($value){
   $IEValue: $value*100;
@@ -129,18 +79,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-  }
-}
-
-@mixin hyphenate($boolean: true) {
-  @if $boolean == true {
-    hyphens: auto;
-    word-break: break-word;
-    word-wrap: break-word;
-  } @else {
-    hyphens: none;
-    word-break: normal;
-    word-wrap: normal;
   }
 }
 

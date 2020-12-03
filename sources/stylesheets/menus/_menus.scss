@@ -122,14 +122,14 @@
     .menu-item a {
       font-size: 16px;
       line-height: 194%;
+      max-width: 160px;
     }
   }
 
   .menu-item {
-    @include hyphenate(true);
-
     a {
       display: block;
+      word-break: break-word;
 
       @include color($blue-1);
 

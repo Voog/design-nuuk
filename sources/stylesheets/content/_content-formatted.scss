@@ -7,7 +7,6 @@
   }
 
   @extend %clearfix;
-  @include hyphenate(true);
 
   .dark-background & {
     @include color($white, 1);
@@ -50,7 +49,6 @@
   // Styling rules for the editable content area headings.
   h1, h2, h3, h4, h5, h6 {
     color: $secondary-color;
-    @include hyphenate(true);
 
     .dark-background & {
       @include color($white, 1);

@@ -57,7 +57,6 @@
   }
 
   .top-inner {
-    @include hyphenate;
     // scss-lint:disable ImportantRule
     display: flex !important;
     // scss-lint:enable ImportantRule

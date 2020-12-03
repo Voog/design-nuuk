@@ -92,7 +92,7 @@
   */
   #{--fourth-color}: rgba($white, 1);
 
-    /* VoogStyle
+  /* VoogStyle
     "pathI18n": ["main_styles"],
     "titleI18n": "background_color",
     "editor": "colorPicker",
@@ -100,6 +100,5 @@
     "scope": "page"
   */
   #{--body-background-color}: $grey-3;
-
   // scss-lint:enable Comment, Indentation
 }
