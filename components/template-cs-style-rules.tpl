@@ -320,9 +320,9 @@ body.dark-background {
 .dark-background .content-formatted .form_field_select::-webkit-input-placeholder {
   color: var(--third-color);
 }
-.dark-background .content-formatted .form_field_textfield:-ms-input-placeholder,
-.dark-background .content-formatted .form_field_textarea:-ms-input-placeholder,
-.dark-background .content-formatted .form_field_select:-ms-input-placeholder {
+.dark-background .content-formatted .form_field_textfield::-moz-placeholder,
+.dark-background .content-formatted .form_field_textarea::-moz-placeholder,
+.dark-background .content-formatted .form_field_select::-moz-placeholder {
   color: var(--third-color);
 }
 .dark-background .content-formatted .form_field_textfield::-ms-input-placeholder,
@@ -345,9 +345,9 @@ body.dark-background {
 .light-background .content-formatted .form_field_select::-webkit-input-placeholder {
   color: var(--primary-color);
 }
-.light-background .content-formatted .form_field_textfield:-ms-input-placeholder,
-.light-background .content-formatted .form_field_textarea:-ms-input-placeholder,
-.light-background .content-formatted .form_field_select:-ms-input-placeholder {
+.light-background .content-formatted .form_field_textfield::-moz-placeholder,
+.light-background .content-formatted .form_field_textarea::-moz-placeholder,
+.light-background .content-formatted .form_field_select::-moz-placeholder {
   color: var(--primary-color);
 }
 .light-background .content-formatted .form_field_textfield::-ms-input-placeholder,
