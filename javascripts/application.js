@@ -1137,6 +1137,18 @@ MMCQ = (function() {
     }
   };
 
+  // ===========================================================================
+  // Builds an inline svg icon for custom shopping cart button.
+  // ===========================================================================
+  var buildCustomShoppingCartIcon = function() {
+    var icoElement = document.createElement('div');
+
+    icoElement.classList.add('edy-ecommerce-custom-ico')
+    icoElement.innerHTML = '<svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="#000" fill-rule="evenodd"><path d="m18.1446 11.8439-.6974 4.1848c-.0008.0049-.0017.0097-.0026.0145-.0988.5434-.6193.9038-1.1627.805l-11.36887-2.0671c-.37461-.0681-.67804-.343-.78264-.7091l-1.82479-6.3868c-.02553-.08934-.03848-.1818-.03848-.27472 0-.55228.44772-1 1-1h13.72588l.6132-2.62795c.1246-.53401.6007-.9118 1.149-.9118h2.0649c.6516 0 1.1799.52826 1.1799 1.17992 0 .65165-.5283 1.17991-1.1799 1.17991h-1.1286z"/><path d="m6.5 21c-.82843 0-1.5-.6716-1.5-1.5s.67157-1.5 1.5-1.5 1.5.6716 1.5 1.5-.67157 1.5-1.5 1.5zm9 0c-.8284 0-1.5-.6716-1.5-1.5s.6716-1.5 1.5-1.5 1.5.6716 1.5 1.5-.6716 1.5-1.5 1.5z" opacity=".2"/></g></svg>';
+
+    $('.cart_btn-container').append($('.edy-ecommerce-shopping-cart-button').append(icoElement));
+  };
+
   // FUNCTIONS INITIATIONS
   var initFrontPage = function() {
     // Add front page layout specific functions here.
@@ -1181,6 +1193,10 @@ MMCQ = (function() {
     bindLanguageMenuButttons();
     handleDocumentReady();
     handleWindowRezise();
+
+    $(document).on('voog:shoppingcart:button:created', function() {
+      buildCustomShoppingCartIcon();
+    });
 
     if (editmode()) {
       bindCustomTexteditorStyles();

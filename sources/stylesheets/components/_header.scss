@@ -19,10 +19,6 @@
       padding: 16px;
     }
 
-    .edy-checkout-button-visible & {
-      top: 41px;
-    }
-
     .semimodal-open &,
     .semimodal-open-state & {
       @include query($desktop-1) {
@@ -55,6 +51,7 @@
     display: flex;
     align-items: center;
     margin-left: 32px;
+    position: relative;
 
     @include query($desktop-1) {
       margin-left: 0;

@@ -54,19 +54,20 @@
         bottom: 144px;
         right: 8px;
         border-radius: 34px 8px 34px 34px;
-        background-color: $white;
+        background-color: $editor-grey;
         cursor: pointer;
         @include transition(all 200ms);
 
-        @include query('768px') {
-          left: unset !important;
-          right: 56px;
+        svg path {
+          fill: $white;
         }
 
-        &:hover {
-          svg path {
-            fill: $voog-blue;
-          }
+        &:hover svg {
+          opacity: .7;
+        }
+
+        .layout_settings-visible & {
+          box-shadow: none;
         }
       }
 
@@ -84,7 +85,8 @@
       bottom: 144px;
       padding: 8px 0;
       right: 8px;
-      border-radius: 0 0 16px;
+      overflow: hidden;
+      border-radius: 0 0 24px;
       z-index: $zindex-settings-btn;
       @include transition(transform 300ms);
 
@@ -140,13 +142,13 @@
 
 body .edy-bgpicker-toggle-button {
   left: 32px;
-  background-color: $voog-blue;
+  background-color: $editor-grey;
   opacity: 1;
   height: 40px;
   border-radius: 4px;
 
   &:hover {
-    opacity: .8;
+    opacity: .7;
   }
 }
 
@@ -156,8 +158,8 @@ body .edy-bgpicker-toggle-button {
 
 .admin_btn {
   cursor: pointer;
-  background: #443df6;
-  color: #fff;
+  background: $editor-grey;
+  color: $white;
   padding: 8px 16px;
   font-weight: $bold;
   line-height: 24px;
@@ -170,13 +172,12 @@ body .edy-bgpicker-toggle-button {
   border-radius: 8px;
 
   &:hover {
-    opacity: .9;
+    opacity: .7;
     box-shadow: none;
   }
 
   &:active {
-    opacity: 1;
-    background-color: #3a34d1;
+    opacity: .7;
     top: 1px;
   }
 }
@@ -191,4 +192,34 @@ body .edy-bgpicker-toggle-button {
 
 .lang_menu-popover .menu.menu-cms {
   padding: 0 0 8px 0;
+}
+
+body {
+  .edy-cbtn .edy-cbtn-ico {
+    margin-right: 4px !important;
+    margin-left: 8px !important;
+  }
+
+  .edy-cbtn-content span:last-child {
+    margin-right: 8px;
+  }
+
+  .edy-cbtn>span:before, body .edy-cbtn>div:before {
+    height: 24px !important;
+    padding: 4px 8px 4px 8px!important;
+    margin-top: -9px!important;
+    margin-left: 0px !important;
+    background-color: $editor-grey !important;
+    border-radius: 4px !important;
+    left: -8px !important;
+  }
+
+  .edy-cbtn>span:hover:before, body .edy-cbtn>div:hover:before {
+    background-color: $editor-grey !important;
+    opacity: .8 !important;
+  }
+
+  .edy-cbtn>span>span, .edy-cbtn>span>div, .edy-cbtn>div>span, .edy-cbtn>div>div {
+    padding-right: 0 !important;
+  }
 }

@@ -1,7 +1,5 @@
 {% if site.search.enabled %}
   <button class="search-btn search-open-btn js-search-toggle-btn js-prevent-sideclick">
-    <svg width="18px" height="18px" viewBox="0 0 18 18"  xmlns="http://www.w3.org/2000/svg">
-      <path d="M13,11 L12,11 L12,11 C13,10 13,8 13,7 C13,3 10,0 7,0 C3,0 0,3 0,7 C0,10 3,13 7,13 C8,13 10,13 11,12 L11,12 L11,13 L16,18 L18,16 L13,11 ZM7,11 C4,11 2,9 2,7 C2,4 4,2 7,2 C9,2 11,4 11,7 C11,9 9,11 7,11 Z"></path>
-    </svg>
+    <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g fill="#000"><path d="m14.2929 16.7071c-.3905-.3905-.3905-1.0237 0-1.4142s1.0237-.3905 1.4142 0l4 4c.3905.3905.3905 1.0237 0 1.4142s-1.0237.3905-1.4142 0z"/><path d="m11 16c2.7614 0 5-2.2386 5-5 0-2.76142-2.2386-5-5-5-2.76142 0-5 2.23858-5 5 0 2.7614 2.23858 5 5 5zm0 2c-3.86599 0-7-3.134-7-7 0-3.86599 3.13401-7 7-7 3.866 0 7 3.13401 7 7 0 3.866-3.134 7-7 7z"/></g></svg>
   </button>
 {% endif %}

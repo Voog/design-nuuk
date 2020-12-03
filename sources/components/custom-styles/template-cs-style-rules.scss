@@ -146,6 +146,15 @@ body {
   }
 }
 
+.menu-language-btn,
+.menu-language-name {
+  color: var(--header-mainmenu-color);
+
+  &:hover {
+    color: var(--header-mainmenu-hover-color);
+  }
+}
+
 // Styling rules for the site's main menu.
 .menu-main {
   .menu {

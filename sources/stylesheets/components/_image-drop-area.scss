@@ -26,11 +26,11 @@
 
   .btn {
     padding: 0;
-    background-color: $voog-blue;
+    background-color: $editor-grey;
     border: 0;
 
-    &:hover {
-      opacity: .8;;
+    &:hover svg {
+      opacity: .7;
     }
   }
 
@@ -149,13 +149,13 @@
       right: 10px;
       z-index: 9;
       color: rgba($white, 1);
-      background-color: $voog-blue;
+      background-color: $editor-grey;
       border: 0;
       opacity: 0;
       transition: background-color .5s, opacity .5s;
 
-      &:hover {
-        opacity: .8;
+      &:hover svg {
+        opacity: .7;
       }
     }
 

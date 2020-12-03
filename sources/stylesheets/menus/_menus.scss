@@ -12,10 +12,6 @@
   cursor: pointer;
   transition: top .6s ease-in;
 
-  .edy-checkout-button-visible & {
-    top: 64px;
-  }
-
   .semimodal-open-state & {
     pointer-events: none;
     opacity: 0;

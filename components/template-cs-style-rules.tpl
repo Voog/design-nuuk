@@ -70,6 +70,15 @@ body.dark-background {
   fill: var(--header-mainmenu-hover-color);
 }
 
+.menu-language-btn,
+.menu-language-name {
+  color: var(--header-mainmenu-color);
+}
+.menu-language-btn:hover,
+.menu-language-name:hover {
+  color: var(--header-mainmenu-hover-color);
+}
+
 .menu-main .menu .menu-item a {
   color: var(--header-mainmenu-color);
   -webkit-text-decoration: var(--header-mainmenu-decoration);
