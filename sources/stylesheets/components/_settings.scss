@@ -133,7 +133,7 @@
 }
 
 .body_bg-picker--btn.edy-bgpicker-toggle-button {
-  left: 72px;
+  left: 32px;
 
   @include query($desktop-1) {
     display: none;
@@ -146,6 +146,7 @@ body .edy-bgpicker-toggle-button {
   opacity: 1;
   height: 40px;
   border-radius: 4px;
+  margin: 16px 0 0 0;
 
   &:hover {
     opacity: .7;

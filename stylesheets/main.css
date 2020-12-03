@@ -120,7 +120,7 @@ body.dark-background {
 .container {
   position: relative;
   max-width: 960px;
-  padding: 96px 40px 40px;
+  padding: 96px 32px 32px;
   margin: 0 auto;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -1606,7 +1606,7 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-s
 }
 
 .body_bg-picker--btn.edy-bgpicker-toggle-button {
-  left: 72px;
+  left: 32px;
 }
 @media screen and (max-width: 1024px) {
   .body_bg-picker--btn.edy-bgpicker-toggle-button {
@@ -1620,6 +1620,7 @@ body .edy-bgpicker-toggle-button {
   opacity: 1;
   height: 40px;
   border-radius: 4px;
+  margin: 16px 0 0 0;
 }
 body .edy-bgpicker-toggle-button:hover {
   opacity: .7;

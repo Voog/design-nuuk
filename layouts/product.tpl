@@ -36,7 +36,7 @@
                 </div>
               {%- endif -%}
               {%- if page.data.item_image != blank or editmode -%}
-                {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id, _staticItem: true %}
+                {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id %}
               {%- endif -%}
             </div>
           </div>
