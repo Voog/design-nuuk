@@ -15,12 +15,18 @@ module.exports = function(grunt) {
       }
     },
 
-    modernizr_builder: {
-      build: {
-        options: {
-          config: 'modernizr-config.json',
-          dest: 'javascripts/modernizr-custom.min.js',
-          uglify: true
+    modernizr: {
+      dist: {
+        "devFile": false,
+        "parseFiles": true,
+        "dest": "javascripts/modernizr-custom.min.js",
+        "options": [
+          "html5shiv",
+          "setClasses",
+        ],
+        "uglify": true,
+        "files": {
+          "src": ['sources/javascripts/**/*.js', 'sources/javascripts/*.js']
         }
       }
     },
@@ -276,10 +282,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-modernizr-builder');
+  grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-postcss');
 
-  grunt.registerTask('default', ['clean:reset', 'modernizr_builder', 'concat', 'copy:assets', 'copy:images', 'copy:javascripts', 'uglify', 'sass', 'postcss:main_styles', 'cssmin', 'imagemin', 'postcss:custom_styles', 'copy:custom_styles', 'clean:remove']);
+  grunt.registerTask('default', ['clean:reset', 'modernizr', 'concat', 'copy:assets', 'copy:images', 'copy:javascripts', 'uglify', 'sass', 'postcss:main_styles', 'cssmin', 'imagemin', 'postcss:custom_styles', 'copy:custom_styles', 'clean:remove']);
 
   grunt.event.on('watch', function(action, filepath, target) {
     if (target == 'voog') {
