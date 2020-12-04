@@ -6,11 +6,16 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
+    console.log({{page.data.content_area_settings}});
     {%- if page.data.content_area_settings %}
       var valuesObj = {{ page.data.content_area_settings | json }};
     {%- else %}
-      var valuesObj = {items_count: 1};
+      var valuesObj = {};
     {%- endif %}
+
+    if (!('items_count' in valuesObj)) {
+      valuesObj.items_count = 3;
+    }
 
     initSettingsEditor(
       {
@@ -34,15 +39,24 @@
       }
     )
 
+    {% if _contentAreaCount <= 0 %}
+      {%- assign areaCount = 1 -%}
+    {% else %}
+      {%- assign areaCount = _contentAreaCount -%}
+    {% endif %}
 
-    {% for id in (1.._contentAreaCount) %}
+    {% for id in (1..areaCount) %}
       {%- assign columnSettingsKey = 'column_settings' | append: id -%}
 
       {%- if page.data[columnSettingsKey] %}
         var valuesObj = {{ page.data[columnSettingsKey] | json }};
       {%- else %}
-        var valuesObj = {items_count: 1};
+        var valuesObj = {};
       {%- endif %}
+
+      if (!('items_count' in valuesObj)) {
+        valuesObj.items_count = 1;
+      }
 
       initSettingsEditor(
         {

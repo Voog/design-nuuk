@@ -81,7 +81,7 @@
 
           {%- assign columnSettingsKey = 'column_settings' | append: id -%}
           {%- assign columnCount = page.data[columnSettingsKey].items_count -%}
-          {%- assign count = 1 -%}
+          {%- assign count = 3 -%}
           {%- if columnCount -%}
             {%- assign count = columnCount | to_num -%}
           {%- endif -%}
