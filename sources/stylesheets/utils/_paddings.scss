@@ -1,8 +1,17 @@
 .pad_ {
   &40-0 {
     padding: 40px 0;
+
+    @include query($desktop-1) {
+      padding: 24px 0;
+    }
   }
+
   &32-0 {
     padding: 32px 0;
+
+    @include query($desktop-1) {
+      padding: 16px 0;
+    }
   }
 }

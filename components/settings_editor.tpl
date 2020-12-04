@@ -22,6 +22,7 @@
       menuItems: options.menuItems,
       values: options.values || options.defaultValues,
       buttonTitleI18n: options.buttonTitleI18n,
+      buttonActiveClass: 'active',
       preview: function(data) {
         options.prevFunc && options.prevFunc(data);
       },

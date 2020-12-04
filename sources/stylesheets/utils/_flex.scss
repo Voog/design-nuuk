@@ -58,6 +58,10 @@
           @include query($tablet-1) {
             width: 100%;
             margin-top: 32px;
+
+            &:first-child {
+              margin-top: 0;
+            }
           }
         }
       }
@@ -73,11 +77,21 @@
         .semimodal-open-state & {
           @include query($desktop-1) {
             width: 100%;
+            margin-top: 32px;
+
+            &:first-child {
+              margin-top: 0;
+            }
           }
         }
 
         @include query($tablet-2) {
           width: 100%;
+          margin-top: 32px;
+
+          &:first-child {
+            margin-top: 0;
+          }
         }
       }
     }

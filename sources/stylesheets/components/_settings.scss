@@ -1,43 +1,51 @@
 .layout_ {
   &settings {
     &-btn {
-      z-index: $zindex-settings-btn + 1;
-      padding: 8px 16px;
-      opacity: 0;
-      pointer-events: none;
-      @include transition(opacity 300ms);
+      button {
+        z-index: $zindex-settings-btn + 1;
+        padding: 8px 16px !important;
+        opacity: 0;
+        pointer-events: none;
+        @include transition(opacity 300ms);
 
-      &:hover {
-        background-color: rgba(68,61,246,.1);
-        .edy-cbtn>span>span {
-          color: $voog-blue !important;
-
-          .grey {
+        &:hover,
+        &.active {
+          background-color: rgba(68,61,246,.1) !important;
+          .edy-cbtn>span>span {
             color: $voog-blue !important;
+
+            .grey {
+              color: $voog-blue !important;
+            }
           }
         }
-      }
 
-      .edy-cbtn {
-        display: flex !important;
-        width: 100%;
-      }
+        .layout_settings-visible & {
+          opacity: 1;
+          pointer-events: all;
+        }
 
-      .edy-cbtn>span:before,
-      .edy-cbtn>div:before {
-        content: none !important;
-      }
+        &.edy-cbtn {
+          display: flex !important;
+          width: 100%;
+        }
 
-      .edy-cbtn>span>span {
-        color: black !important;
-      }
+        &.edy-cbtn>span:before,
+        &.edy-cbtn>div:before {
+          content: none !important;
+        }
 
-      .edy-cbtn-content span:last-child {
-        margin-right: 0;
-      }
+        &.edy-cbtn>span>span {
+          color: black !important;
+        }
 
-      .edy-cbtn .edy-cbtn-ico {
-        display: none;
+        .edy-cbtn-content span:last-child {
+          margin-right: 0;
+        }
+
+        &.edy-cbtn .edy-cbtn-ico {
+          display: none;
+        }
       }
 
       &--container {
@@ -69,11 +77,6 @@
         .layout_settings-visible & {
           box-shadow: none;
         }
-      }
-
-      .layout_settings-visible & {
-        opacity: 1;
-        pointer-events: all;
       }
     }
 
@@ -207,12 +210,12 @@ body {
 
   .edy-cbtn>span:before, body .edy-cbtn>div:before {
     height: 24px !important;
-    padding: 4px 8px 4px 8px!important;
+    padding: 0 0 8px!important;
     margin-top: -9px!important;
     margin-left: 0px !important;
     background-color: $editor-grey !important;
     border-radius: 4px !important;
-    left: -8px !important;
+    left: 0px !important;
   }
 
   .edy-cbtn>span:hover:before, body .edy-cbtn>div:hover:before {

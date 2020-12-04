@@ -82,6 +82,10 @@ body.dark-background {
   color: var(--header-mainmenu-hover-color);
 }
 
+.edy-ecommerce-product-count {
+  color: var(--header-mainmenu-color);
+}
+
 .menu-main .menu .menu-item a {
   color: var(--header-mainmenu-color);
   -webkit-text-decoration: var(--header-mainmenu-decoration);

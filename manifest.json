@@ -455,6 +455,66 @@
       "filename": "ico-flags-medium-up.svg"
     },
     {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-arrow-right-small.svg",
+      "kind": "assets",
+      "filename": "ico-arrow-right-small.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-search.svg",
+      "kind": "assets",
+      "filename": "ico-search.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/chevron-down-black.svg",
+      "kind": "assets",
+      "filename": "chevron-down-black.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-flags.svg",
+      "kind": "assets",
+      "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-flags-medium.svg",
+      "kind": "assets",
+      "filename": "ico-flags-medium.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-close.svg",
+      "kind": "assets",
+      "filename": "ico-close.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-bucket.svg",
+      "kind": "assets",
+      "filename": "ico-bucket.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-ellipsis.svg",
+      "kind": "assets",
+      "filename": "ico-ellipsis.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-cart.svg",
+      "kind": "assets",
+      "filename": "ico-cart.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/chevron-down-white.svg",
+      "kind": "assets",
+      "filename": "chevron-down-white.svg"
+    },
+    {
       "content_type": "image/png",
       "file": "images/ico-check.png",
       "kind": "images",
@@ -495,66 +555,6 @@
       "file": "stylesheets/main.css",
       "kind": "stylesheets",
       "filename": "main.css"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/chevron-down-black.svg",
-      "filename": "chevron-down-black.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/chevron-down-white.svg",
-      "filename": "chevron-down-white.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/ico-arrow-right-small.svg",
-      "filename": "ico-arrow-right-small.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/ico-bucket.svg",
-      "filename": "ico-bucket.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/ico-cart.svg",
-      "filename": "ico-cart.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/ico-close.svg",
-      "filename": "ico-close.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/ico-ellipsis.svg",
-      "filename": "ico-ellipsis.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/ico-flags-medium.svg",
-      "filename": "ico-flags-medium.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/ico-flags.svg",
-      "filename": "ico-flags.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/ico-search.svg",
-      "filename": "ico-search.svg"
     }
   ]
 }

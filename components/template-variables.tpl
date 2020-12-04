@@ -11,7 +11,7 @@
     {% assign isSemimodalRelative = true %}
   {% endif %}
 
-  {% if site.data.semimodal_settings.is_open == true %}
+  {% if site.data.semimodal_settings.is_open == true and site.data.semimodal_settings.is_top_menu != true %}
     {% assign isSemimodalOpen = true %}
   {% endif %}
 
