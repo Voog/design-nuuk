@@ -6,7 +6,6 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
-    console.log({{page.data.content_area_settings}});
     {%- if page.data.content_area_settings %}
       var valuesObj = {{ page.data.content_area_settings | json }};
     {%- else %}

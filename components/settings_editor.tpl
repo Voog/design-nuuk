@@ -36,6 +36,18 @@
         });
       }
     });
+
     options.settingsBtn.removeAttribute('disabled');
+
+    $('.edy-settings-editor').each(function() {
+      if ($(this).find('.layout_settings-close').length <= 0) {
+        $(this).prepend('<div class="layout_settings-close"></div>');
+      }
+    });
+
+    $('.layout_settings-close').click(function() {
+      $('body').trigger('click');
+    });
   }
+
 </script>
