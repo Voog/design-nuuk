@@ -2995,17 +2995,6 @@ article.post_wrapper .date-separator.hide-separator {
 .with-image .product_alt-attr {
   display: block;
 }
-.product_label {
-  padding: 8px 16px;
-  background: pink;
-  color: #fff;
-  display: inline-block;
-  border-radius: 5%;
-  position: absolute;
-  top: 16px;
-  right: -4px;
-  z-index: 1;
-}
 
 .language-menu-mode-popover .menu-language-btn {
   display: inline-block;
@@ -3920,6 +3909,10 @@ article.post_wrapper .date-separator.hide-separator {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.td-lt {
+  text-decoration: line-through;
 }
 
 .max-h-344 {

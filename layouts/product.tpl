@@ -30,11 +30,6 @@
         <div class="flex_row flex_row-2 mar_0-24-neg mar_b-32">
           <div class="flex_row-2--item">
             <div class="mar_0-24 p-rel">
-              {%- if page.data[productPageSettingsKey].product_label != blank -%}
-                <div class="product_label">
-                  {{page.data[productPageSettingsKey].product_label}}
-                </div>
-              {%- endif -%}
               {%- if page.data.item_image != blank or editmode -%}
                 {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id %}
               {%- endif -%}

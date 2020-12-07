@@ -61,6 +61,15 @@
                 "placeholder": "Add product label"
               },
               {
+                "title": "Line through label text",
+                "type": "checkbox",
+                "key": "product_label_line_through",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
+              },
+              {
                 "title": "Select note input area count",
                 "type": "select",
                 "key": "product_note_input_count",
