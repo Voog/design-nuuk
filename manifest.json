@@ -379,13 +379,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/visited-products.tpl",
-      "layout_name": "visited-products",
-      "title": "visited-products"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/blog-article-variables.tpl",
       "layout_name": "blog-article-variables",
       "title": "blog-article-variables"
