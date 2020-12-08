@@ -20,7 +20,7 @@
   {%- endif -%}
   <div class="flex_box js-background-type {{ body_bg_type }}">
     {%- include "header" -%}
-    <div class="container js-bg-picker-area flex_col flex_j-space-between">
+    <div class="container flex_col flex_j-space-between">
       <main class="content" role="main" data-search-indexing-allowed="true">
         <div class="content-body content-formatted">
           {% contentblock name="page-title" publish_default_content="true" %}

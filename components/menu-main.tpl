@@ -1,18 +1,14 @@
 <nav class="menu-main js-menu-main js-popover js-prevent-sideclick{% if _menuTop %} menu_top{% endif %}">
   <ul class="menu">
     {% unless site.root_item.hidden? %}
-      {% menulink site.root_item wrapper-tag="li" wrapper-class="menu-item" current-class="active" %}
+      {% menulink site.root_item wrapper-tag="li" wrapper-class="menu-item lvl-1" current-class="active" %}
     {% endunless %}
 
     {% for item in site.visible_menuitems %}
-      {%- if _menuTop == true and forloop.index == 5 -%}
-        {% break %}
-      {%- endif -%}
+      {% menulink item wrapper-tag="li" wrapper-class="menu-item lvl-1" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
 
-      {% menulink item wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
-
-      {% if item.children? and _menuTop != true %}
-        <div class="menu-sub{% if item.selected? %} active{% endif %}">
+      {% if item.children? %}
+        <div class="menu-sub js-menu-sub{% if item.selected? %} active{% endif %}{% if _menuTop %} d-none{% endif %}">
           <ul class="menu">
             {% for subitem in item.visible_children %}
               {% menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
@@ -27,20 +23,18 @@
         </div>
       {% endif %}
     {% endfor %}
-    {%- if _menuTop -%}
-      <div class="js-menu-popover menu_popover-btn">
+
+      <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true %} d-none{% endif %}">
         {% include 'ico-ellipsis' %}
       </div>
-      <li class="menu_popover">
+      <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
         <ul class="menu">
           {% for item in site.visible_menuitems %}
-            {%- if forloop.index > 4 -%}
-              {% menulink item wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
-            {%- endif -%}
+            {% menulink item wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
           {% endfor %}
         </ul>
       </li>
-    {%- endif -%}
+
     {% if editmode %}
       {% if site.hidden_menuitems.size > 0 %}
         <li class="edit-btn">{% menubtn site.hidden_menuitems %}</li>

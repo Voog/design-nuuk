@@ -82,7 +82,49 @@
           ],
           dataKey: 'semimodal_settings',
           values: valuesObj,
-          entityData: 'siteData'
+          entityData: 'siteData',
+          noReload: true,
+          prevFunc: function(data) {
+            if (data.is_top_menu == true) {
+              $('.js-menu-btn, .semimodal').addClass('hidden-desktop');
+              $('.js-menu-main-wrapper').addClass('hidden-mobile');
+              $('.js-menu-main-wrapper').removeClass('hidden-desktop');
+              $('.js-menu-main').addClass('menu_top');
+              $('.js-menu-popover, .js-menu-popover').removeClass('d-none');
+              $('.js-menu-sub').addClass('d-none');
+            } else {
+              $('.js-menu-btn, .semimodal').removeClass('hidden-desktop');
+              $('.js-menu-main-wrapper').removeClass('hidden-mobile');
+              $('.js-menu-main-wrapper').addClass('hidden-desktop');
+              $('.js-menu-main').removeClass('menu_top');
+              $('.js-menu-popover, .js-menu-popover').addClass('d-none');
+              $('.js-menu-sub').removeClass('d-none');
+            }
+
+            if (data.is_relative_position == true) {
+              $('.js-semimodal-toggle').addClass('semimodal-relative');
+              $('.js-semimodal-toggle').removeClass('semimodal-open-state');
+            }
+
+            if (data.is_open == true) {
+              $('.js-semimodal-toggle').addClass('semimodal-open-state semimodal-relative');
+            }
+
+            if (data.is_relative_position == false && data.is_open == false) {
+              $('.js-semimodal-toggle').removeClass('semimodal-relative');
+              $('.js-semimodal-toggle').addClass('semimodal-open-state');
+            }
+
+            if (data.is_open == false && data.is_relative_position == false) {
+              $('.js-semimodal-toggle').removeClass('semimodal-open-state semimodal-relative');
+            }
+
+            if (data.is_border == true) {
+              $('.semimodal').addClass('semimodal-border');
+            } else {
+              $('.semimodal').removeClass('semimodal-border');
+            }
+          }
         }
       );
     });

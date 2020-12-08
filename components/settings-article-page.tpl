@@ -127,6 +127,7 @@
         dataKey: 'article_settings',
         values: valuesObj,
         entityData: 'articleData',
+        noReload: true,
         prevFunc: function(data) {
           var $articleComment = $('.comments'),
             $articleDate = $('.post_date'),

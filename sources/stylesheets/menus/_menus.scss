@@ -119,10 +119,22 @@
     flex-direction: row;
     align-items: center;
 
+    .menu-item.lvl-1:nth-of-type(n+5) {
+      display: none;
+    }
+
     .menu-item a {
       font-size: 16px;
       line-height: 194%;
       max-width: 160px;
+    }
+
+    @include query($desktop-1) {
+      flex-direction: column;
+
+      .menu-item.lvl-1:nth-of-type(n+5) {
+        display: initial;
+      }
     }
   }
 
@@ -208,6 +220,15 @@
           .menu-item {
             margin: 0;
             width: 100%;
+            display: none;
+
+            &:nth-child(n+5) {
+              display: block;
+
+              @include query($desktop-1) {
+                display: none;
+              }
+            }
 
             a {
               padding: 8px 24px;

@@ -72,6 +72,7 @@
         dataKey: 'article_settings',
         values: valuesObj,
         entityData: 'siteData',
+        noReload: true,
         prevFunc: function(data) {
           var $articleDate = $('.post_date.site-data'),
             $dateSeparator = $('.post_date.site-data + .date-separator'),

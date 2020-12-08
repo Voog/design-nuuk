@@ -1544,8 +1544,8 @@ body:not(.semimodal-relative) .semimodal {
 .semimodal_picker-btn {
   z-index: 100;
   position: relative;
-  top: 104px;
-  left: -89px;
+  top: 32px;
+  left: -32px;
 }
 
 body .edy-settings-editor {
@@ -3596,10 +3596,24 @@ article.post_wrapper .date-separator.hide-separator {
       -ms-flex-align: center;
           align-items: center;
 }
+.menu_top.menu-main .menu .menu-item.lvl-1:nth-of-type(n+5) {
+  display: none;
+}
 .menu_top.menu-main .menu .menu-item a {
   font-size: 16px;
   line-height: 194%;
   max-width: 160px;
+}
+@media screen and (max-width: 1024px) {
+  .menu_top.menu-main .menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .menu_top.menu-main .menu .menu-item.lvl-1:nth-of-type(n+5) {
+    display: initial;
+  }
 }
 .menu .menu-item a {
   display: block;
@@ -3690,6 +3704,15 @@ article.post_wrapper .date-separator.hide-separator {
 .menu-main .menu .menu_popover .menu .menu-item {
   margin: 0;
   width: 100%;
+  display: none;
+}
+.menu-main .menu .menu_popover .menu .menu-item:nth-child(n+5) {
+  display: block;
+}
+@media screen and (max-width: 1024px) {
+  .menu-main .menu .menu_popover .menu .menu-item:nth-child(n+5) {
+    display: none;
+  }
 }
 .menu-main .menu .menu_popover .menu .menu-item a {
   padding: 8px 24px;
@@ -3898,6 +3921,10 @@ article.post_wrapper .date-separator.hide-separator {
 .b-box {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.d-none {
+  display: none !important;
 }
 
 .d-blk {

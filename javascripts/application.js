@@ -942,11 +942,11 @@ MMCQ = (function() {
       $('.menu_popover').toggleClass('active');
     }
 
-    $('.js-menu-popover').click(function() {
+    $('.js-menu-popover-btn').click(function() {
       toggleMenuPopover();
     });
 
-    handleFocus($('.js-menu-popover'), toggleMenuPopover);
+    handleFocus($('.js-menu-popover-btn'), toggleMenuPopover);
 
     handleFocus($('.js-search-toggle-btn'), toggleSearch);
 

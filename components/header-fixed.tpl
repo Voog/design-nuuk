@@ -20,7 +20,7 @@
     {%- endunless -%}
   </div>
 
-  <div class="{% if menuTop == true %} hidden-mobile{% else %}hidden-mobile hidden-desktop{% endif %}">
+  <div class="js-menu-main-wrapper{% if menuTop == true %} hidden-mobile{% else %} hidden-mobile hidden-desktop{% endif %}">
     {%- include "menu-main", _menuTop: menuTop -%}
   </div>
 
