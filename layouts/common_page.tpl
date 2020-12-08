@@ -14,38 +14,41 @@
   {%- endif -%}
 
   {%- for id in (1..contentAreaCount) -%}
-    {%- assign columnSettingsKey = 'column_settings' | append: id -%}
-    {%- assign columnSettings = page.data[columnSettingsKey] -%}
+    {%- assign rowSettingsKey = 'column_settings' | append: id -%}
+    {%- assign rowSettings = page.data[rowSettingsKey] -%}
 
-    {%- if columnSettings.items_count != blank -%}
-      {%- assign columnCount = columnSettings.items_count -%}
+    {%- assign rowCountKey = id | append: '_row_items_count' -%}
+    {%- assign rowCount = contentAreaSettings[rowCountKey] -%}
+
+    {%- if rowCount != blank -%}
+      {%- assign rowCount = rowCount -%}
     {%- else -%}
-      {%- assign columnCount = 1 -%}
+      {%- assign rowCount = 1 -%}
     {%- endif -%}
 
     <style>
       .column-container-{{ id }} {
-        {%- if columnSettings.padding != blank -%}
-          margin: 0 -{{columnSettings.padding}}px;
+        {%- if rowSettings.padding != blank -%}
+          margin: 0 -{{rowSettings.padding}}px;
         {%- endif -%}
       }
       .column-container-{{ id }} .col-item {
-        {%- if columnSettings.min_width >= 1 -%}
-          min-width: {{columnSettings.min_width}}px;
+        {%- if rowSettings.min_width >= 1 -%}
+          min-width: {{rowSettings.min_width}}px;
         {%- endif -%}
-        {%- if columnSettings.padding -%}
-          padding: 0 {{columnSettings.padding}}px {{columnSettings.padding}}px;
+        {%- if rowSettings.padding -%}
+          padding: 0 {{rowSettings.padding}}px {{rowSettings.padding}}px;
         {%- endif -%}
       }
 
-      .column-container-{{columnCount}}-{{ id }} .col-item {
-        {%- if columnSettings.padding != blank -%}
-          width: calc(100%/{{columnCount}} - {{columnSettings.padding}}*2px);
+      .column-container-{{rowCount}}-{{ id }} .col-item {
+        {%- if rowSettings.padding != blank -%}
+          width: calc(100%/{{rowCount}} - {{rowSettings.padding}}*2px);
         {%- else -%}
-          width: calc(100%/{{columnCount}});
+          width: calc(100%/{{rowCount}});
         {%- endif -%}
-        {%- if columnSettings.max_width >= 1 -%}
-          max-width: {{columnSettings.max_width}}px;
+        {%- if rowSettings.max_width >= 1 -%}
+          max-width: {{rowSettings.max_width}}px;
         {%- endif -%}
       }
     </style>
@@ -78,15 +81,15 @@
               <button disabled class="js-column-settings-btn-{{ id }} js-settings-editor-btn">{{ id }}. column settings</button>
             </div>
           {%- endif -%}
+          {%- assign rowCountKey = id | append: '_row_items_count' -%}
+          {%- assign rowCount = page.data.content_area_settings[rowCountKey] -%}
 
-          {%- assign columnSettingsKey = 'column_settings' | append: id -%}
-          {%- assign columnCount = page.data[columnSettingsKey].items_count -%}
           {%- assign count = 3 -%}
-          {%- if columnCount -%}
-            {%- assign count = columnCount | to_num -%}
+          {%- if rowCount -%}
+            {%- assign count = rowCount | to_num -%}
           {%- endif -%}
 
-          <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap flex_j-center-mobile">
+          <div class="column-container-{{ id }} column-container-{{ rowCount }}-{{ id }} flex_wrap flex_j-center-mobile">
             {%- for i in (1..count) -%}
               {%- assign name = "col-" | append: i | append: id -%}
               <div class="col-item flex_auto b-box" data-search-indexing-allowed="true">

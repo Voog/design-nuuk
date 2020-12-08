@@ -16,6 +16,12 @@
       valuesObj.items_count = 3;
     }
 
+    {% if _contentAreaCount <= 0 %}
+      {%- assign areaCount = 1 -%}
+    {% else %}
+      {%- assign areaCount = _contentAreaCount -%}
+    {% endif %}
+
     initSettingsEditor(
       {
         settingsBtn: document.querySelector('.js-content-area-settings-btn'),
@@ -31,18 +37,28 @@
               {"title": "4", "value": "4"},
               {"title": "5", "value": "5"}
             ]
-          }
+          },
+          {% for id in (1..areaCount) %}
+          {
+            "title": "Select {{id}}. row content area count",
+            "type": "select",
+            "key": "{{id}}_row_items_count",
+            "list": [
+              {"title": "1", "value": "1"},
+              {"title": "2", "value": "2"},
+              {"title": "3", "value": "3"},
+              {"title": "4", "value": "4"},
+              {"title": "5", "value": "5"}
+            ]
+          },
+          {% endfor %}
         ],
         dataKey: 'content_area_settings',
         values: valuesObj
       }
     )
 
-    {% if _contentAreaCount <= 0 %}
-      {%- assign areaCount = 1 -%}
-    {% else %}
-      {%- assign areaCount = _contentAreaCount -%}
-    {% endif %}
+
 
     {% for id in (1..areaCount) %}
       {%- assign columnSettingsKey = 'column_settings' | append: id -%}
@@ -61,18 +77,6 @@
         {
           settingsBtn: document.querySelector('.js-column-settings-btn-{{ id }}'),
           menuItems: [
-            {
-              "title": "Select content area row count",
-              "type": "select",
-              "key": "items_count",
-              "list": [
-                {"title": "1", "value": "1"},
-                {"title": "2", "value": "2"},
-                {"title": "3", "value": "3"},
-                {"title": "4", "value": "4"},
-                {"title": "5", "value": "5"}
-              ]
-            },
             {
               "title": "Min column item width in px",
               "type": "number",
@@ -97,12 +101,16 @@
           ],
           dataKey: '{{columnSettingsKey}}',
           values: valuesObj,
+          noReload: true,
           prevFunc: function(data) {
+            {%- assign rowSettingsKey = id | append: '_row_items_count' -%}
+            {%- assign rowSettings = page.data.content_area_settings[rowSettingsKey] -%}
+
             if (data.padding) {
               var padding = '0 ' + data.padding + 'px ' + data.padding + 'px';
 
               $('.column-container-{{ id }} .col-item').css({
-                padding: padding, width: 'calc(100% / {{page.data[columnSettingsKey].items_count}} - ' + data.padding * 2 + 'px)'
+                padding: padding, width: 'calc(100% / {{rowSettings.items_count}} - ' + data.padding * 2 + 'px)'
               });
 
               $('.column-container-{{ id }}').css({
@@ -110,7 +118,7 @@
               });
             } else {
               $('.column-container-{{ id }} .col-item').css({
-                padding: 'initial', width: 'calc(100% / {{page.data[columnSettingsKey].items_count}})'
+                padding: 'initial', width: 'calc(100% / {{rowSettings.items_count}})'
               });
 
               $('.column-container-{{ id }}').css({
