@@ -51,9 +51,17 @@
     }
 
     &.is-hidden,
-    .without-image & {
+    .without-image .editmode & {
       display: none;
     }
+  }
+
+  .publicmode .without-image & {
+    background-color: $-grey-bg;
+    background-image: url('../assets/ico-placeholder.svg');
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .top-inner {
@@ -74,7 +82,7 @@
       background-color: rgba($white, 1);
     }
 
-    .without-image & {
+    .without-image .editmode & {
       border-color: rgba($black, .1);
       border-style: solid;
       border-width: 1px;

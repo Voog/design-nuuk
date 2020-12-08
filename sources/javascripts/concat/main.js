@@ -298,7 +298,6 @@
 
           if (image) {
             imageId = image.original_id;
-            itemData.set('item_image', image);
 
             $contentItemBox
               .removeClass('without-image is-loaded with-error')
@@ -324,7 +323,7 @@
             $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 0);
           }
 
-          itemData.set('image_crop_state', 'not-cropped');
+          itemData.set({image_crop_state: 'not-cropped', item_image: image});
           $contentItemBox.removeClass('not-loaded with-error').addClass('is-loaded');
           $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 1);
           $imgDropAreaTarget.css('opacity', 1);

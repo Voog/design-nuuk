@@ -53,7 +53,7 @@
           {%- assign imageClass = "item-image " | append: item_image_crop_state -%}
           {% include "lazy-image", _altAttr: _entityData.data.item_image_alt_attr, _data: _entityData.data.item_image, _targetWidth: '1400', _className: imageClass  %}
         {% else %}
-          <div class="item-placeholder">{{ _entityData.title | truncate: 50 }}</div>
+          <div class="item-image-placeholder"></div>
         {% endif %}
       </div>
     </div>
