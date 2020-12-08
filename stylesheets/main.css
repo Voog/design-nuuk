@@ -3596,7 +3596,7 @@ article.post_wrapper .date-separator.hide-separator {
       -ms-flex-align: center;
           align-items: center;
 }
-.menu_top.menu-main .menu .menu-item.lvl-1:nth-of-type(n+5) {
+.menu_top.menu-main .menu .menu-item.lvl-1:nth-of-type(n+6) {
   display: none;
 }
 .menu_top.menu-main .menu .menu-item a {
@@ -3611,7 +3611,7 @@ article.post_wrapper .date-separator.hide-separator {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .menu_top.menu-main .menu .menu-item.lvl-1:nth-of-type(n+5) {
+  .menu_top.menu-main .menu .menu-item.lvl-1:nth-of-type(n+6) {
     display: initial;
   }
 }

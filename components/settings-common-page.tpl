@@ -96,7 +96,48 @@
             }
           ],
           dataKey: '{{columnSettingsKey}}',
-          values: valuesObj
+          values: valuesObj,
+          prevFunc: function(data) {
+            if (data.padding) {
+              var padding = '0 ' + data.padding + 'px ' + data.padding + 'px';
+
+              $('.column-container-{{ id }} .col-item').css({
+                padding: padding, width: 'calc(100% / {{page.data[columnSettingsKey].items_count}} - ' + data.padding * 2 + 'px)'
+              });
+
+              $('.column-container-{{ id }}').css({
+                margin: '0 -' + data.padding + 'px'
+              });
+            } else {
+              $('.column-container-{{ id }} .col-item').css({
+                padding: 'initial', width: 'calc(100% / {{page.data[columnSettingsKey].items_count}})'
+              });
+
+              $('.column-container-{{ id }}').css({
+                margin: 'initial'
+              });
+            }
+
+            if (data.max_width) {
+              $('.column-container-{{ id }} .col-item').css({
+                'max-width': data.max_width + 'px'
+              });
+            } else {
+              $('.column-container-{{ id }} .col-item').css({
+                'max-width': 'initial'
+              });
+            }
+
+            if (data.min_width) {
+              $('.column-container-{{ id }} .col-item').css({
+                'min-width': data.min_width + 'px'
+              });
+            } else {
+              $('.column-container-{{ id }} .col-item').css({
+                'min-width': 'initial'
+              });
+            }
+          }
         }
       );
     {%- endfor -%}

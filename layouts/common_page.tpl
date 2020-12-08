@@ -30,7 +30,7 @@
         {%- endif -%}
       }
       .column-container-{{ id }} .col-item {
-        {%- if columnSettings.min_width != blank -%}
+        {%- if columnSettings.min_width >= 1 -%}
           min-width: {{columnSettings.min_width}}px;
         {%- endif -%}
         {%- if columnSettings.padding -%}
@@ -44,7 +44,7 @@
         {%- else -%}
           width: calc(100%/{{columnCount}});
         {%- endif -%}
-        {%- if columnSettings.max_width != blank -%}
+        {%- if columnSettings.max_width >= 1 -%}
           max-width: {{columnSettings.max_width}}px;
         {%- endif -%}
       }
