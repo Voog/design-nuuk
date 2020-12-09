@@ -151,7 +151,7 @@
   }
 }
 
-body .edy-settings-editor {
+body .edy-settings-editor:not(.editor_default) {
   position: fixed !important;
   left: 0 !important;
   top: 0 !important;
@@ -209,6 +209,31 @@ body .edy-settings-editor {
         padding: 8px 0;
       }
     }
+  }
+}
+
+.editor_default-container {
+  position: relative;
+
+  .editor_default-btn {
+    opacity: 0 !important;
+    top: -28px!important;
+    left: -1px!important;
+    position: absolute !important;
+    z-index: 10699 !important;
+    @include transition(all 300ms);
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 1px $black;
+
+    .editor_default-btn {
+      opacity: 1 !important;
+    }
+  }
+
+  .editor_default-btn.active {
+    opacity: 1 !important;
   }
 }
 

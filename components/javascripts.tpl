@@ -98,14 +98,4 @@
       Voog.ShoppingCart.addProductById($(this).data('product-id'))
     }
   });
-
-  $('.js-settings-editor-btn').click(function() {
-    if ($('.edy-settings-editor-inner-title').length >= 1) {
-      $('.edy-settings-editor-inner-title').text($(this).find('.edy-cbtn-content .p14.bold').text())
-    } else {
-      $('.edy-settings-editor .edy-settings-editor-inner').prepend(
-        '<h3 class="edy-settings-editor-inner-title" style="padding: 0 32px;margin-bottom: 0;">' + $(this).find('.edy-cbtn-content .p14.bold').text() + '</h3>'
-      );
-    }
-  });
 </script>

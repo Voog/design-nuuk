@@ -1022,11 +1022,8 @@ MMCQ = (function() {
         ],
 
         buttonTitleI18n: "settings",
-
         values: languageMenuValuesObj,
-
-        containerClass: ['js-menu-language-settings-popover', 'js-prevent-sideclick'],
-
+        containerClass: ['editor_default', 'js-prevent-sideclick'],
         preview: function(data) {
           var $html = $('html'),
             $languageSettingsMenuElement = $('.js-menu-language-settings');

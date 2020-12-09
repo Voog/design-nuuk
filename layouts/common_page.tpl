@@ -75,11 +75,9 @@
         <header class="content-header content-formatted" {{ edy_intro_edit_text }}>{% content name="slogan" %}</header>
 
         {%- for id in (1..contentAreaCount) -%}
-          <section class="content-body content-formatted">
+          <section class="content-body content-formatted editor_default-container">
           {%- if editmode -%}
-            <div class="flex_box mar_b-16">
-              <button disabled class="js-column-settings-btn-{{ id }} js-settings-editor-btn">{{ id }}. column settings</button>
-            </div>
+            <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">Row {{ id }}</button>
           {%- endif -%}
           {%- assign rowCountKey = id | append: '_row_items_count' -%}
           {%- assign rowCount = page.data.content_area_settings[rowCountKey] -%}

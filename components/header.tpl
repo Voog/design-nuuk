@@ -94,7 +94,7 @@
               $('.js-menu-sub').addClass('d-none');
             } else {
               $('.js-menu-btn, .semimodal').removeClass('hidden-desktop');
-              $('.js-menu-main-wrapper').removeClass('hidden-mobile');
+              $('.js-menu-main-wrapper').addClass('hidden-mobile');
               $('.js-menu-main-wrapper').addClass('hidden-desktop');
               $('.js-menu-main').removeClass('menu_top');
               $('.js-menu-popover, .js-menu-popover').addClass('d-none');

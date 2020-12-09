@@ -1548,7 +1548,7 @@ body:not(.semimodal-relative) .semimodal {
   left: -32px;
 }
 
-body .edy-settings-editor {
+body .edy-settings-editor:not(.editor_default) {
   position: fixed !important;
   left: 0 !important;
   top: 0 !important;
@@ -1574,21 +1574,21 @@ body .edy-settings-editor {
   overflow: hidden;
 }
 @media screen and (max-width: 420px) {
-  body .edy-settings-editor {
+  body .edy-settings-editor:not(.editor_default) {
     max-width: 100vw;
   }
 }
-body .edy-settings-editor h3 {
+body .edy-settings-editor:not(.editor_default) h3 {
   font-size: 24px;
   line-height: 32px;
 }
-body .edy-settings-editor .edy-popover-content {
+body .edy-settings-editor:not(.editor_default) .edy-popover-content {
   height: 100%;
   overflow: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner {
+body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-settings-editor-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1598,25 +1598,56 @@ body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner {
           flex-direction: column;
   height: 100%;
 }
-body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner label,
-body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner select,
-body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner input,
-body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner textarea {
+body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-settings-editor-inner label,
+body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-settings-editor-inner select,
+body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-settings-editor-inner input,
+body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-settings-editor-inner textarea {
   font-size: 14px !important;
 }
-body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-settings-editor-list {
+body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-settings-editor-inner .edy-settings-editor-list {
   padding: 32px 32px 0;
 }
-body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-bubble-row-padded {
+body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-settings-editor-inner .edy-bubble-row-padded {
   padding: 17px 32px;
   margin-top: auto;
 }
-body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-bubble-row-padded .edy-btn {
+body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-settings-editor-inner .edy-bubble-row-padded .edy-btn {
   padding: 11px 16px;
   border-radius: 6px;
 }
-body .edy-settings-editor .edy-popover-content .edy-settings-editor-inner .edy-settings-editor-item {
+body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-settings-editor-inner .edy-settings-editor-item {
   padding: 8px 0;
+}
+
+.editor_default-container {
+  position: relative;
+}
+.editor_default-container .editor_default-btn {
+  opacity: 0 !important;
+  top: -28px !important;
+  left: -1px !important;
+  position: absolute !important;
+  z-index: 10699 !important;
+  -webkit-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.editor_default-container:hover {
+  -webkit-box-shadow: 0 0 0 1px #000000;
+          box-shadow: 0 0 0 1px #000000;
+}
+.editor_default-container:hover .editor_default-btn {
+  opacity: 1 !important;
+}
+.editor_default-container .editor_default-btn.active {
+  opacity: 1 !important;
 }
 
 .body_bg-picker--btn.edy-bgpicker-toggle-button {
