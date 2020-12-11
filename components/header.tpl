@@ -37,10 +37,11 @@
     {%- endif -%}
     <div class="semimodal_bottom">
       {%- include "menu-main" -%}
+      <div class="mar_t-32 content-body content-formatted">
+        {% xcontent name="header-inner-content" %}
+      </div>
     </div>
-    <div class="content-body content-formatted">
-      {% xcontent name="header-inner-content" %}
-    </div>
+
   </header>
 </div>
 
