@@ -71,14 +71,13 @@
         var settingsBtn = document.querySelector(".js-layout_settings-btn");
         var toolbarItem = shadowDom.querySelector('div[class^="toolbar-content-item__"]');
 
-        settingsBtn.className = toolbarItem.className + ' js-layout_settings-btn';
+        settingsBtn.className = toolbarItem.className + ' ' + settingsBtn.className;
 
         toolbar.insertBefore(settingsBtn, toolbarExpandBtn);
 
         shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
           "click", function(e){
             document.querySelector('body').classList.toggle('layout_settings-visible');
-            console.log($('body'));
             e.stopImmediatePropagation();
           }
         );

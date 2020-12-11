@@ -1447,52 +1447,6 @@ body:not(.semimodal-relative) .semimodal {
 .layout_settings-btn button.edy-cbtn .edy-cbtn-ico {
   display: none;
 }
-.layout_settings-btn--container {
-  position: fixed;
-  z-index: 104;
-  -webkit-box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.26);
-          box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.26);
-  -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
-  opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 40px;
-  height: 40px;
-  bottom: 144px;
-  right: 8px;
-  border-radius: 34px 8px 34px 34px;
-  background-color: #1B2124;
-  cursor: pointer;
-  -webkit-transition: all 200ms;
-  -o-transition: all 200ms;
-  transition: all 200ms;
-  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
-       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
-          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
-  -webkit-perspective: 1000;
-          perspective: 1000;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-.layout_settings-btn--container svg path {
-  fill: #ffffff;
-}
-.layout_settings-btn--container:hover svg {
-  opacity: .7;
-}
-.layout_settings-visible .layout_settings-btn--container {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
 .layout_settings-popover {
   position: fixed;
   background: #ffffff;
