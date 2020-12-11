@@ -1,19 +1,20 @@
 
 {% include "site-search" %}
 {% include 'header-fixed' %}
+{%- assign semimodalSettings = site.data.semimodal_settings -%}
 {%- if semimodalSettings.max_width >= 1 -%}
   <style>
-    body .semimodal-open:not(.semimodal-relative) .semimodal,
-    .semimodal_inner,
-    body .semimodal-open .semimodal,
-    .semimodal-open-state .semimodal {
-      min-width: {{semimodalSettings.max_width}};
-      max-width: {{semimodalSettings.max_width}};
+    body.semimodal-open:not(.semimodal-relative) .semimodal,
+    body .semimodal_inner,
+    body.semimodal-open .semimodal,
+    body.semimodal-open-state .semimodal {
+      min-width: {{semimodalSettings.max_width}}px;
+      max-width: {{semimodalSettings.max_width}}px;
     }
-  <style>
+  </style>
 {%- endif -%}
+
 {%- include 'image_src_variable', _data: site.data.semimodal_image, _targetWidth: "1000" -%}
-  {%- assign semimodalSettings = site.data.semimodal_settings -%}
 <div class="
   semimodal js-prevent-sideclick
   {% if isSemimodalBorder %} semimodal-border{% endif %}
@@ -36,6 +37,9 @@
     {%- endif -%}
     <div class="semimodal_bottom">
       {%- include "menu-main" -%}
+    </div>
+    <div class="content-body content-formatted">
+      {% xcontent name="header-inner-content" %}
     </div>
   </header>
 </div>
