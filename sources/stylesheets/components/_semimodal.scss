@@ -9,8 +9,28 @@
   z-index: $zindex-semimodal;
   display: flex;
   @include transition(all 200ms);
+  min-width: 320px;
+  max-width: 320px;
+  overflow: auto;
 
-  .header_wrapper {
+  .semimodal_inner {
+    padding-bottom: 30px;
+    opacity: 1;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 32px;
+    min-height: 100vh;
+
+    @include query($desktop-1) {
+      overflow: auto;
+    }
+
+    @include query($mobile-1) {
+      min-width: 100% !important;
+      max-width: 100% !important;
+      overflow: auto;
+    }
+
     transform: translateX(-320px);
     @include transition(transform 200ms);
 
@@ -20,19 +40,15 @@
     }
   }
 
-  .header_wrapper {
-    min-width: 320px;
-    max-width: 320px;
-
-    @include query($desktop-1) {
-      overflow: auto;
-    }
-
-    @include query($mobile-1) {
-      min-width: 100%;
-      max-width: 100%;
-      overflow: auto;
-    }
+  .semimodal_bottom {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+    margin-top: 160px;
+    align-items: center;
+    position: sticky;
+    top: 64px;
   }
 
 
@@ -43,6 +59,7 @@
   .semimodal-relative & {
     position: relative;
     max-width: 0;
+    min-width: 0;
     width: 0;
 
     @include query($desktop-1) {

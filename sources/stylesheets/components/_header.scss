@@ -39,14 +39,6 @@
     }
   }
 
-  &wrapper {
-    padding-bottom: 30px;
-    opacity: 1;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 32px;
-  }
-
   &components {
     display: flex;
     align-items: center;
@@ -56,17 +48,6 @@
     @include query($desktop-1) {
       margin-left: 0;
     }
-  }
-
-  &bottom {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    box-sizing: border-box;
-    margin-top: 160px;
-    align-items: center;
-    position: sticky;
-    top: 64px;
   }
 
   &title {

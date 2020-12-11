@@ -1,29 +1,40 @@
 
 {% include "site-search" %}
 {% include 'header-fixed' %}
-
+{%- if semimodalSettings.max_width >= 1 -%}
+  <style>
+    body .semimodal-open:not(.semimodal-relative) .semimodal,
+    .semimodal_inner,
+    body .semimodal-open .semimodal,
+    .semimodal-open-state .semimodal {
+      min-width: {{semimodalSettings.max_width}};
+      max-width: {{semimodalSettings.max_width}};
+    }
+  <style>
+{%- endif -%}
 {%- include 'image_src_variable', _data: site.data.semimodal_image, _targetWidth: "1000" -%}
+  {%- assign semimodalSettings = site.data.semimodal_settings -%}
 <div class="
   semimodal js-prevent-sideclick
   {% if isSemimodalBorder %} semimodal-border{% endif %}
-  {% if site.data.semimodal_settings.is_top_menu == true %} hidden-desktop{% endif %}
+  {% if semimodalSettings.is_top_menu == true %} hidden-desktop{% endif %}
   "
 >
   {%- assign imageClass = "image_fit-cover semimodal_bg-image image_abs" -%}
   {%- include "lazy-image", _data: site.data.semimodal_image, _targetWidth: '600', _className: imageClass -%}
   <div class="semimodal_bg-color bg_color-absolute"
-      {%- if site.data.semimodal_image.color != blank -%}
-        style="background-color: {{ site.data.semimodal_image.color }};"
+    {%- if site.data.semimodal_image.color != blank -%}
+      style="background-color: {{ site.data.semimodal_image.color }};"
     {%- endif -%}
   ></div>
 
-  <header class="header_wrapper">
+  <header class="semimodal_inner">
     {%- if editmode -%}
       <div class="semimodal_picker-btn js-prevent-sideclick hidden-mobile">
         <button class="bg-picker" data-type="img" data-entity="siteData" data-picture="true" data-color="true" data-image_elem=".semimodal_bg-image" data-color_elem=".semimodal_bg-color" data-name="semimodal_image" data-bg="{{ site.data.semimodal_image | json | escape }}"></button>
       </div>
     {%- endif -%}
-    <div class="header_bottom">
+    <div class="semimodal_bottom">
       {%- include "menu-main" -%}
     </div>
   </header>
@@ -32,8 +43,8 @@
 <script>
   {%- if editmode -%}
     window.addEventListener('DOMContentLoaded', (event) => {
-      {%- if site.data.semimodal_settings -%}
-        var valuesObj = {{ site.data.semimodal_settings | json }};
+      {%- if semimodalSettings -%}
+        var valuesObj = {{ semimodalSettings | json }};
       {%- else -%}
         var valuesObj = {};
       {%- endif -%}
@@ -78,7 +89,14 @@
                 "on": true,
                 "off": false
               }
-            }
+            },
+            {
+              "title": "Max semimodal width in px",
+              "type": "number",
+              "min": 1,
+              "key": "max_width",
+              "placeholder": "Max semimodal width in px"
+            },
           ],
           dataKey: 'semimodal_settings',
           values: valuesObj,
@@ -123,6 +141,12 @@
               $('.semimodal').addClass('semimodal-border');
             } else {
               $('.semimodal').removeClass('semimodal-border');
+            }
+
+            if (data.max_width >= 1) {
+              $('.semimodal-open:not(.semimodal-relative) .semimodal,.semimodal_inner,.semimodal-open .semimodal,.semimodal-open-state .semimodal').css(
+                {'max-width': data.max_width + 'px', 'min-width': data.max_width + 'px'}
+              );
             }
           }
         }
