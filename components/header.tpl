@@ -125,7 +125,7 @@
             }
 
             if (data.is_relative_position == true) {
-              $('.js-semimodal-toggle').addClass('semimodal-relative');
+              $('.js-semimodal-toggle').addClass('semimodal-relative semimodal-open');
               $('.js-semimodal-toggle').removeClass('semimodal-open-state');
             }
 
@@ -148,7 +148,7 @@
               $('.semimodal').removeClass('semimodal-border');
             }
 
-            if (data.max_width >= 1) {
+            if (data.max_width >= 1 && data.max_width != {{semimodalSettings.max_width}}) {
               $('.semimodal-open:not(.semimodal-relative) .semimodal,.semimodal_inner,.semimodal-open .semimodal,.semimodal-open-state .semimodal').css(
                 {'max-width': data.max_width + 'px', 'min-width': data.max_width + 'px'}
               );

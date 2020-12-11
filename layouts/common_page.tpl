@@ -72,7 +72,6 @@
             <h1>{{page.title}}</h1>
           {% endcontentblock %}
         </div>
-        <header class="content-header content-formatted" {{ edy_intro_edit_text }}>{% content name="slogan" %}</header>
 
         {%- for id in (1..contentAreaCount) -%}
           <section class="content-body content-formatted editor_default-container">

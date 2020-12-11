@@ -1318,11 +1318,13 @@ body:not(.semimodal-relative) .semimodal {
       -ms-transform: translateX(-320px);
           transform: translateX(-320px);
 }
+.semimodal-relative:not(.semimodal-open) .semimodal {
+  max-width: 0 !important;
+  min-width: 0 !important;
+  width: 0;
+}
 .semimodal-relative .semimodal {
   position: relative;
-  max-width: 0;
-  min-width: 0;
-  width: 0;
 }
 @media screen and (max-width: 1024px) {
   .semimodal-relative .semimodal {
