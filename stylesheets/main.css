@@ -1496,23 +1496,17 @@ body:not(.semimodal-relative) .semimodal {
 .layout_settings-popover {
   position: fixed;
   background: #ffffff;
-  -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
   -webkit-transform-origin: 100% 90%;
       -ms-transform-origin: 100% 90%;
           transform-origin: 100% 90%;
-  bottom: 144px;
+  bottom: 72px;
   padding: 8px 0;
-  right: 8px;
-  overflow: hidden;
-  border-radius: 0 0 24px;
-  z-index: 104;
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  -o-transition: transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
+  right: 224px;
+  z-index: 56501;
+  opacity: 0;
+  -webkit-transition: opacity 300ms;
+  -o-transition: opacity 300ms;
+  transition: opacity 300ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -1522,21 +1516,29 @@ body:not(.semimodal-relative) .semimodal {
           backface-visibility: hidden;
 }
 .layout_settings-visible .layout_settings-popover {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  opacity: 1;
   -webkit-box-shadow: 0 25px 35px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.05);
           box-shadow: 0 25px 35px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.05);
+}
+@media screen and (max-width: 768px) {
+  .layout_settings-popover {
+    right: 0;
+  }
 }
 .layout_settings-arrow {
   position: absolute;
   pointer-events: none;
   bottom: 0;
-  right: 100px;
+  right: 126px;
+}
+@media screen and (max-width: 768px) {
+  .layout_settings-arrow {
+    right: 72px;
+  }
 }
 .layout_settings-arrow:after {
   position: absolute;
-  z-index: 104;
+  z-index: 56501;
   width: 0;
   height: 0;
   margin-left: -16px;
@@ -1571,6 +1573,10 @@ body:not(.semimodal-relative) .semimodal {
   position: relative;
   top: 32px;
   left: -32px;
+}
+
+body .edy-popover {
+  z-index: 56501 !important;
 }
 
 body .edy-settings-editor:not(.editor_default) {

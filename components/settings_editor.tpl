@@ -62,4 +62,28 @@
     });
   }
 
+  window.addEventListener('DOMContentLoaded', (event) => {
+    var shadowDom = document.querySelector(".edy-next-shadowdom").shadowRoot;
+    var setSettingsBtn = setInterval(function() {
+      if (shadowDom.querySelectorAll('div[class^="toolbar__"]').length) {
+        var toolbarExpandBtn = shadowDom.querySelector('div[class^="toolbar-expand"]');
+        var toolbar = shadowDom.querySelector('div[class^="toolbar__"]');
+        var settingsBtn = document.querySelector(".js-layout_settings-btn");
+        var toolbarItem = shadowDom.querySelector('div[class^="toolbar-content-item__"]');
+
+        settingsBtn.className = toolbarItem.className + ' js-layout_settings-btn';
+
+        toolbar.insertBefore(settingsBtn, toolbarExpandBtn);
+
+        shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
+          "click", function(e){
+            document.querySelector('body').classList.toggle('layout_settings-visible');
+            console.log($('body'));
+            e.stopImmediatePropagation();
+          }
+        );
+        clearInterval(setSettingsBtn);
+      }
+    }, 500);
+  });
 </script>

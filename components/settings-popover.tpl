@@ -24,6 +24,7 @@
     <div class="cart_settings-btn js-prevent-sideclick layout_settings-btn">
       {% include 'shopping-cart-editor' %}
     </div>
+    <div class="layout_settings-arrow"></div>
   </div>
 
   <div class="js-layout_settings-btn js-prevent-sideclick bg_img-contain layout_settings-btn--container">
