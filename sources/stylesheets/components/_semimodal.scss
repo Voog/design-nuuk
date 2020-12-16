@@ -55,7 +55,7 @@
     transform: translateX(-320px);
   }
 
-  .semimodal-relative:not(.semimodal-open) & {
+  .semimodal-relative:not(.semimodal-open-state) & {
     max-width: 0 !important;
     min-width: 0 !important;
     width: 0;

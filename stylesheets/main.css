@@ -1318,7 +1318,7 @@ body:not(.semimodal-relative) .semimodal {
       -ms-transform: translateX(-320px);
           transform: translateX(-320px);
 }
-.semimodal-relative:not(.semimodal-open) .semimodal {
+.semimodal-relative:not(.semimodal-open-state) .semimodal {
   max-width: 0 !important;
   min-width: 0 !important;
   width: 0;
@@ -1705,19 +1705,19 @@ body .edy-bgpicker-toggle-button:hover {
 
 body .edy-cbtn .edy-cbtn-ico {
   margin-right: 4px !important;
-  margin-left: 8px !important;
 }
 body .edy-cbtn-content span:last-child {
   margin-right: 8px;
 }
 body .edy-cbtn > span:before, body body .edy-cbtn > div:before {
   height: 24px !important;
-  padding: 0 0 8px !important;
+  padding: 8px 0 0 !important;
   margin-top: -9px !important;
   margin-left: 0px !important;
   background-color: #1B2124 !important;
   border-radius: 4px !important;
   left: 0px !important;
+  top: 8px !important;
 }
 body .edy-cbtn > span:hover:before, body body .edy-cbtn > div:hover:before {
   background-color: #1B2124 !important;
@@ -1725,6 +1725,8 @@ body .edy-cbtn > span:hover:before, body body .edy-cbtn > div:hover:before {
 }
 body .edy-cbtn > span > span, body .edy-cbtn > span > div, body .edy-cbtn > div > span, body .edy-cbtn > div > div {
   padding-right: 0 !important;
+  padding-top: 8px !important;
+  padding-left: 8px !important;
 }
 
 .swiper-container {
@@ -3558,6 +3560,10 @@ article.post_wrapper .date-separator.hide-separator {
   margin-right: 20px;
   position: relative;
   left: 24px;
+  height: 32px;
+}
+.semimodal_inner .menu-main .edit-btn {
+  margin-top: 16px;
 }
 @media screen and (max-width: 752px) {
   .menu-main .edit-btn {

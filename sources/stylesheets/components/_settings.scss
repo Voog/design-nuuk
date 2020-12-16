@@ -283,7 +283,6 @@ body .edy-bgpicker-toggle-button {
 body {
   .edy-cbtn .edy-cbtn-ico {
     margin-right: 4px !important;
-    margin-left: 8px !important;
   }
 
   .edy-cbtn-content span:last-child {
@@ -292,12 +291,13 @@ body {
 
   .edy-cbtn>span:before, body .edy-cbtn>div:before {
     height: 24px !important;
-    padding: 0 0 8px!important;
+    padding: 8px 0 0!important;
     margin-top: -9px!important;
     margin-left: 0px !important;
     background-color: $editor-grey !important;
     border-radius: 4px !important;
     left: 0px !important;
+    top: 8px !important;
   }
 
   .edy-cbtn>span:hover:before, body .edy-cbtn>div:hover:before {
@@ -307,5 +307,7 @@ body {
 
   .edy-cbtn>span>span, .edy-cbtn>span>div, .edy-cbtn>div>span, .edy-cbtn>div>div {
     padding-right: 0 !important;
+    padding-top: 8px !important;
+    padding-left: 8px !important;
   }
 }

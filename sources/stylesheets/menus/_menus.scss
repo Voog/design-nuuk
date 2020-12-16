@@ -99,12 +99,19 @@
     margin-right: 20px;
     position: relative;
     left: 24px;
+    height: 32px;
+
+    .semimodal_inner & {
+      margin-top: 16px;
+    }
 
     @include query($tablet-2) {
       margin-right: 0;
     }
   }
 }
+
+
 
 // General rules for all navigation menus.
 .menu {

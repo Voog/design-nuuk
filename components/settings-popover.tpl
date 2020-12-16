@@ -16,7 +16,7 @@
       {% include 'settings-product-page' %}
     {%- endif -%}
 
-    <div class="semimodal_settings-btn layout_settings-btn js-prevent-sideclick">
+    <div class="menu_settings-btn layout_settings-btn js-prevent-sideclick">
       <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">
         <div class="p14 bold">Header settings</div><div class="p14 grey">Change Header & slider settings</div>
       </button>

@@ -1,7 +1,9 @@
-{% if site.data.semimodal_settings.is_top_menu == true %}
+{%- assign menuPos = site.data.menu_settings.positioning -%}
+{% if menuPos == 'is_top' or menuPos == 'is_top_fixed'%}
   {%- assign menuTop = true -%}
 {% endif %}
-<header class="header_fixed">
+
+<header class="header_fixed{% if menuPos == 'is_top_fixed'%}{% endif %}">
   <button class="menu-btn js-menu-btn js-prevent-sideclick{% if menuTop == true %} hidden-desktop{% endif %}">
     <div>
       <span class="menu-stripe"></span>

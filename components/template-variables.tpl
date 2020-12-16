@@ -7,15 +7,11 @@
     {% assign body_bg = page.data.body_bg %}
   {% endif %}
 
-  {% if site.data.semimodal_settings.is_relative_position == true %}
-    {% assign isSemimodalRelative = true %}
-  {% endif %}
-
-  {% if site.data.semimodal_settings.is_open == true and site.data.semimodal_settings.is_top_menu != true %}
+  {% if site.data.menu_settings.positioning == 'is_side_always_open' %}
     {% assign isSemimodalOpen = true %}
   {% endif %}
 
-  {% if site.data.semimodal_settings.is_border == true %}
+  {% if site.data.menu_settings.is_side_absolute == true %}
     {% assign isSemimodalBorder = true %}
   {% endif %}
 
