@@ -324,4 +324,14 @@ body {
       }
     }
   }
+  .edy-square-radio-btn .edy-square-radio-label-padded,
+  .edy-square-radio-btn .edy-tick-checkbox-label-padded,
+  .edy-tick-checkbox-btn .edy-square-radio-label-padded,
+  .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded {
+    width: 100% !important;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
 }

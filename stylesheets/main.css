@@ -1741,6 +1741,24 @@ body .layout_settings-popover .edy-cbtn > div > span .p14,
 body .layout_settings-popover .edy-cbtn > div > div .p14 {
   line-height: 24px;
 }
+body .edy-square-radio-btn .edy-square-radio-label-padded,
+body .edy-square-radio-btn .edy-tick-checkbox-label-padded,
+body .edy-tick-checkbox-btn .edy-square-radio-label-padded,
+body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded {
+  width: 100% !important;
+}
+body .edy-square-radio-btn .edy-square-radio-label-padded:hover,
+body .edy-square-radio-btn .edy-tick-checkbox-label-padded:hover,
+body .edy-tick-checkbox-btn .edy-square-radio-label-padded:hover,
+body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
+  opacity: .7;
+}
+body .edy-square-radio-btn .edy-square-radio-label-padded,
+body .edy-square-radio-btn .edy-tick-checkbox-label-padded,
+body .edy-tick-checkbox-btn .edy-square-radio-label-padded,
+body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded {
+  width: 100% !important;
+}
 
 .swiper-container {
   width: 100%;
