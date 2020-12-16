@@ -1728,6 +1728,19 @@ body .edy-cbtn > span > span, body .edy-cbtn > span > div, body .edy-cbtn > div 
   padding-top: 8px !important;
   padding-left: 8px !important;
 }
+body .layout_settings-popover .edy-cbtn > span > span,
+body .layout_settings-popover .edy-cbtn > span > div,
+body .layout_settings-popover .edy-cbtn > div > span,
+body .layout_settings-popover .edy-cbtn > div > div {
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+}
+body .layout_settings-popover .edy-cbtn > span > span .p14,
+body .layout_settings-popover .edy-cbtn > span > div .p14,
+body .layout_settings-popover .edy-cbtn > div > span .p14,
+body .layout_settings-popover .edy-cbtn > div > div .p14 {
+  line-height: 24px;
+}
 
 .swiper-container {
   width: 100%;

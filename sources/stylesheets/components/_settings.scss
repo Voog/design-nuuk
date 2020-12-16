@@ -310,4 +310,18 @@ body {
     padding-top: 8px !important;
     padding-left: 8px !important;
   }
+
+  .layout_settings-popover {
+    .edy-cbtn>span>span,
+    .edy-cbtn>span>div,
+    .edy-cbtn>div>span,
+    .edy-cbtn>div>div {
+      padding-top: 0 !important;
+      padding-left: 0 !important;
+
+      .p14 {
+        line-height: 24px;
+      }
+    }
+  }
 }

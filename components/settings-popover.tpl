@@ -16,14 +16,12 @@
       {% include 'settings-product-page' %}
     {%- endif -%}
 
-    <div class="menu_settings-btn layout_settings-btn js-prevent-sideclick">
-      <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">
-        <div class="p14 bold">Header settings</div><div class="p14 grey">Change Header & slider settings</div>
-      </button>
-    </div>
-    <div class="cart_settings-btn js-prevent-sideclick layout_settings-btn">
-      {% include 'shopping-cart-editor' %}
-    </div>
+    {% include 'settings-menu' %}
+    {%- comment -%}
+      <div class="cart_settings-btn js-prevent-sideclick layout_settings-btn">
+        {% include 'shopping-cart-editor' %}
+      </div>
+    {%- endcomment -%}
     <div class="layout_settings-arrow"></div>
   </div>
 

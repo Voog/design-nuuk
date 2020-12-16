@@ -44,5 +44,3 @@
 
   </header>
 </div>
-
-{% include 'settings-menu' %}

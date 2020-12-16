@@ -1,5 +1,10 @@
 {%- assign semimodalSettings = site.data.menu_settings -%}
 
+<div class="menu_settings-btn layout_settings-btn js-prevent-sideclick">
+  <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">
+    <div class="p14 bold">Menu</div><div class="p14 grey">Change menu position & width</div>
+  </button>
+</div>
 <script>
   {%- if editmode -%}
     window.addEventListener('DOMContentLoaded', (event) => {
@@ -45,11 +50,11 @@
               ]
             },
             {
-              "title": "Max semimodal width in px",
+              "title": "Side menu width (px)",
               "type": "number",
               "min": 1,
               "key": "max_width",
-              "placeholder": "Max semimodal width in px"
+              "placeholder": "Side menu width (px)"
             },
           ],
           dataKey: 'menu_settings',
