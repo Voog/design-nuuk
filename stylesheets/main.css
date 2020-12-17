@@ -1611,7 +1611,7 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
 }
 .editor_default-container .editor_default-btn {
   opacity: 0 !important;
-  top: -28px !important;
+  top: -34px !important;
   left: -1px !important;
   position: absolute !important;
   z-index: 10699 !important;
@@ -1752,12 +1752,6 @@ body .edy-square-radio-btn .edy-tick-checkbox-label-padded:hover,
 body .edy-tick-checkbox-btn .edy-square-radio-label-padded:hover,
 body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   opacity: .7;
-}
-body .edy-square-radio-btn .edy-square-radio-label-padded,
-body .edy-square-radio-btn .edy-tick-checkbox-label-padded,
-body .edy-tick-checkbox-btn .edy-square-radio-label-padded,
-body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded {
-  width: 100% !important;
 }
 
 .swiper-container {

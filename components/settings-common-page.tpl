@@ -1,25 +1,33 @@
 <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
   <button disabled class="js-content-area-settings-btn js-settings-editor-btn">
-    <div class="p14 bold">Content columns</div><div class="p14 grey">Change content columns count</div>
+    <div class="p14 bold">Block settings</div><div class="p14 grey">Edit the number of blocks</div>
   </button>
 </div>
 
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
-    {%- if page.data.content_area_settings %}
-      var valuesObj = {{ page.data.content_area_settings | json }};
+    {%- if page.data.block_settings %}
+      var valuesObj = {{ page.data.block_settings | json }};
     {%- else %}
       var valuesObj = {};
     {%- endif %}
 
-    if (!('items_count' in valuesObj)) {
-      valuesObj.items_count = 3;
+    if (!('block_count' in valuesObj)) {
+      valuesObj.block_count = 3;
     }
 
-    {% if _contentAreaCount <= 0 %}
-      {%- assign areaCount = 1 -%}
+    {% for id in (1..blockCount) %}
+      {%- assign columnKey = id | append: '_block_columns' -%}
+
+      if (!('{{columnKey}}' in valuesObj)) {
+        valuesObj['{{columnKey}}'] = {{id}};
+      }
+    {% endfor %}
+
+    {% if _blockCount <= 0 %}
+      {%- assign blockCount = 1 -%}
     {% else %}
-      {%- assign areaCount = _contentAreaCount -%}
+      {%- assign blockCount = _blockCount -%}
     {% endif %}
 
     initSettingsEditor(
@@ -27,50 +35,50 @@
         settingsBtn: document.querySelector('.js-content-area-settings-btn'),
         menuItems: [
           {
-            "title": "Select content area column count",
+            "title": "Number of block",
             "type": "select",
-            "key": "items_count",
+            "key": "block_count",
             "list": [
-              {"title": "1", "value": "1"},
-              {"title": "2", "value": "2"},
-              {"title": "3", "value": "3"},
-              {"title": "4", "value": "4"},
-              {"title": "5", "value": "5"}
+              {"title": "1", "value": 1},
+              {"title": "2", "value": 2},
+              {"title": "3", "value": 3},
+              {"title": "4", "value": 4},
+              {"title": "5", "value": 5}
             ]
           },
-          {% for id in (1..areaCount) %}
+          {% for id in (1..blockCount) %}
           {
-            "title": "Select {{id}}. row content area count",
+            "title": "Number of columns in block {{id}}",
             "type": "select",
-            "key": "{{id}}_row_items_count",
+            "key": "{{id}}_block_columns",
             "list": [
-              {"title": "1", "value": "1"},
-              {"title": "2", "value": "2"},
-              {"title": "3", "value": "3"},
-              {"title": "4", "value": "4"},
-              {"title": "5", "value": "5"}
+              {"title": "1", "value": 1},
+              {"title": "2", "value": 2},
+              {"title": "3", "value": 3},
+              {"title": "4", "value": 4},
+              {"title": "5", "value": 5}
             ]
           },
           {% endfor %}
         ],
-        dataKey: 'content_area_settings',
+        dataKey: 'block_settings',
         values: valuesObj
       }
     )
 
 
 
-    {% for id in (1..areaCount) %}
-      {%- assign columnSettingsKey = 'column_settings' | append: id -%}
+    {% for id in (1..blockCount) %}
+      {%- assign blockColumnsSettingsKey = 'block_columns_settings' | append: id -%}
 
-      {%- if page.data[columnSettingsKey] %}
-        var valuesObj = {{ page.data[columnSettingsKey] | json }};
+      {%- if page.data[blockColumnsSettingsKey] %}
+        var valuesObj = {{ page.data[blockColumnsSettingsKey] | json }};
       {%- else %}
         var valuesObj = {};
       {%- endif %}
 
-      if (!('items_count' in valuesObj)) {
-        valuesObj.items_count = 1;
+      if (!('block_count' in valuesObj)) {
+        valuesObj.padding = 16;
       }
 
       initSettingsEditor(
@@ -99,18 +107,18 @@
               "placeholder": "Set item padding in px"
             }
           ],
-          dataKey: '{{columnSettingsKey}}',
+          dataKey: '{{blockColumnsSettingsKey}}',
           values: valuesObj,
           noReload: true,
           prevFunc: function(data) {
-            {%- assign rowSettingsKey = id | append: '_row_items_count' -%}
-            {%- assign rowSettings = page.data.content_area_settings[rowSettingsKey] -%}
+            {%- assign rowSettingsKey = id | append: '_block_columns' -%}
+            {%- assign rowSettings = page.data.block_settings[rowSettingsKey] -%}
 
             if (data.padding) {
               var padding = '0 ' + data.padding + 'px ' + data.padding + 'px';
 
               $('.column-container-{{ id }} .col-item').css({
-                padding: padding, width: 'calc(100% / {{rowSettings.items_count}} - ' + data.padding * 2 + 'px)'
+                padding: padding, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.padding * 2 + 'px)'
               });
 
               $('.column-container-{{ id }}').css({
@@ -118,7 +126,7 @@
               });
             } else {
               $('.column-container-{{ id }} .col-item').css({
-                padding: 'initial', width: 'calc(100% / {{rowSettings.items_count}})'
+                padding: 'initial', width: 'calc(100% / {{rowSettings.block_count}})'
               });
 
               $('.column-container-{{ id }}').css({

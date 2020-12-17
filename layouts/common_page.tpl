@@ -6,49 +6,47 @@
   {% include "html-head" %}
   {% include "template-styles" %}
 
-  {%- assign contentAreaCount = 1 -%}
-  {%- assign contentAreaSettings = page.data.content_area_settings -%}
+  {%- assign blockCount = 3 -%}
+  {%- assign blockSettings = page.data.block_settings -%}
 
-  {%- if contentAreaSettings != blank -%}
-    {%- assign contentAreaCount = contentAreaSettings.items_count | to_num -%}
+  {%- if blockSettings != blank -%}
+    {%- assign blockCount = blockSettings.block_count | to_num -%}
   {%- endif -%}
 
-  {%- for id in (1..contentAreaCount) -%}
-    {%- assign rowSettingsKey = 'column_settings' | append: id -%}
-    {%- assign rowSettings = page.data[rowSettingsKey] -%}
+  {%- for id in (1..blockCount) -%}
+    {%- assign blockColumnsSettingsKey = 'block_columns_settings' | append: id -%}
+    {%- assign blockColumnsSettings = page.data[blockColumnsSettingsKey] -%}
 
-    {%- assign rowCountKey = id | append: '_row_items_count' -%}
-    {%- assign rowCount = contentAreaSettings[rowCountKey] -%}
+    {%- assign blockColumnsCountKey = id | append: '_block_columns' -%}
+    {%- assign blockColumnsCount = blockSettings[blockColumnsCountKey] -%}
 
-    {%- if rowCount != blank -%}
-      {%- assign rowCount = rowCount -%}
+    {%- if blockColumnsCount != blank -%}
+      {%- assign blockColumnsCount = blockColumnsCount -%}
     {%- else -%}
-      {%- assign rowCount = 1 -%}
+      {%- assign blockColumnsCount = id -%}
+    {%- endif -%}
+
+    {%- if blockColumnsSettings.padding != blank -%}
+      {%- assign padding = blockColumnsSettings.padding -%}
+    {%- else -%}
+      {%- assign padding = 16 -%}
     {%- endif -%}
 
     <style>
       .column-container-{{ id }} {
-        {%- if rowSettings.padding != blank -%}
-          margin: 0 -{{rowSettings.padding}}px;
-        {%- endif -%}
+        margin: 0 -{{padding}}px;
       }
       .column-container-{{ id }} .col-item {
-        {%- if rowSettings.min_width >= 1 -%}
-          min-width: {{rowSettings.min_width}}px;
+        {%- if blockColumnsSettings.min_width >= 1 -%}
+          min-width: {{blockColumnsSettings.min_width}}px;
         {%- endif -%}
-        {%- if rowSettings.padding -%}
-          padding: 0 {{rowSettings.padding}}px {{rowSettings.padding}}px;
-        {%- endif -%}
+        padding: 0 {{padding}}px {{padding}}px;
       }
 
-      .column-container-{{rowCount}}-{{ id }} .col-item {
-        {%- if rowSettings.padding != blank -%}
-          width: calc(100%/{{rowCount}} - {{rowSettings.padding}}*2px);
-        {%- else -%}
-          width: calc(100%/{{rowCount}});
-        {%- endif -%}
-        {%- if rowSettings.max_width >= 1 -%}
-          max-width: {{rowSettings.max_width}}px;
+      .column-container-{{blockColumnsCount}}-{{ id }} .col-item {
+        width: calc(100% / {{blockColumnsCount}} - {{padding}}*2px);
+        {%- if blockColumnsSettings.max_width >= 1 -%}
+          max-width: {{blockColumnsSettings.max_width}}px;
         {%- endif -%}
       }
     </style>
@@ -73,20 +71,20 @@
           {% endcontentblock %}
         </div>
 
-        {%- for id in (1..contentAreaCount) -%}
+        {%- for id in (1..blockCount) -%}
           <section class="content-body content-formatted editor_default-container">
           {%- if editmode -%}
             <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">Row {{ id }}</button>
           {%- endif -%}
-          {%- assign rowCountKey = id | append: '_row_items_count' -%}
-          {%- assign rowCount = page.data.content_area_settings[rowCountKey] -%}
+          {%- assign blockColumnsCountKey = id | append: '_block_columns' -%}
+          {%- assign blockColumnsCount = page.data.block_settings[blockColumnsCountKey] -%}
 
-          {%- assign count = 3 -%}
-          {%- if rowCount -%}
-            {%- assign count = rowCount | to_num -%}
+          {%- assign count = id -%}
+          {%- if blockColumnsCount -%}
+            {%- assign count = blockColumnsCount | to_num -%}
           {%- endif -%}
 
-          <div class="column-container-{{ id }} column-container-{{ rowCount }}-{{ id }} flex_wrap flex_j-center-mobile">
+          <div class="column-container-{{ id }} column-container-{{ count }}-{{ id }} flex_wrap flex_j-center-mobile">
             {%- for i in (1..count) -%}
               {%- assign name = "col-" | append: i | append: id -%}
               <div class="col-item flex_auto b-box" data-search-indexing-allowed="true">
@@ -102,7 +100,7 @@
   </div>
 
   {%- include "site-signout" -%}
-  {% include 'settings-popover', _commonPage: true, _contentAreaCount: contentAreaCount %}
+  {% include 'settings-popover', _commonPage: true, _blockCount: blockCount %}
   {%- include "javascripts" -%}
   {%- include "template-tools" -%}
   <script>
@@ -110,7 +108,7 @@
   </script>
   <script>
     $( ".col-item" ).each(function( index ) {
-      if  ($( this ).width() >= $( ".content-body" ).width()) {
+      if  ($( this ).width() >= $( this ).closest( ".content-body" ).width()) {
         $( this ).css('min-width', '100%');
       }
     });

@@ -620,7 +620,8 @@
 
   var handleDocumentReady = function() {
     $(document).ready(function() {
-      // handle ready events
+      var topPos = $('.header_fixed').height() + 56;
+      $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
     });
   };
 

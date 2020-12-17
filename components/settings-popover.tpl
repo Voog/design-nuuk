@@ -4,7 +4,7 @@
       {% include 'settings-front-page' %}
     {%- endif -%}
     {%- if _commonPage == true -%}
-      {% include 'settings-common-page', _contentAreaCount: contentAreaCount %}
+      {% include 'settings-common-page', _blockCount: blockCount %}
     {%- endif -%}
     {%- if _blogPage == true -%}
       {% include 'settings-blog-page' %}
