@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-style-rules.tpl",
-      "layout_name": "template-cs-style-rules",
-      "title": "template-cs-style-rules"
+      "file": "components/tags-post.tpl",
+      "layout_name": "tags-post",
+      "title": "tags-post"
     },
     {
       "content_type": "component",
@@ -78,6 +78,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/modular-content-2-1.tpl",
+      "layout_name": "modular-content-2-1",
+      "title": "modular-content-2-1"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-meta.tpl",
       "layout_name": "template-meta",
       "title": "template-meta"
@@ -95,6 +102,13 @@
       "file": "components/content-item.tpl",
       "layout_name": "content-item",
       "title": "content-item"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/modular-content-2-2.tpl",
+      "layout_name": "modular-content-2-2",
+      "title": "modular-content-2-2"
     },
     {
       "content_type": "component",
@@ -141,9 +155,44 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/modular-blocks.tpl",
+      "layout_name": "modular-blocks",
+      "title": "modular-blocks"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/modular-content-1-1.tpl",
+      "layout_name": "modular-content-1-1",
+      "title": "modular-content-1-1"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/modular-content-3-3.tpl",
+      "layout_name": "modular-content-3-3",
+      "title": "modular-content-3-3"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/menu-language-list.tpl",
       "layout_name": "menu-language-list",
       "title": "menu-language-list"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/modular-content-3-2.tpl",
+      "layout_name": "modular-content-3-2",
+      "title": "modular-content-3-2"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/modular-content-3-1.tpl",
+      "layout_name": "modular-content-3-1",
+      "title": "modular-content-3-1"
     },
     {
       "content_type": "component",
@@ -214,13 +263,6 @@
       "file": "components/settings-popover.tpl",
       "layout_name": "settings-popover",
       "title": "settings-popover"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/modular-content.tpl",
-      "layout_name": "modular-content",
-      "title": "modular-content"
     },
     {
       "content_type": "component",
@@ -330,9 +372,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/tags-post.tpl",
-      "layout_name": "tags-post",
-      "title": "tags-post"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
@@ -344,9 +386,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/template-cs-style-rules.tpl",
+      "layout_name": "template-cs-style-rules",
+      "title": "template-cs-style-rules"
     },
     {
       "content_type": "component",

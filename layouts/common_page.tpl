@@ -24,7 +24,7 @@
             <h1>{{page.title}}</h1>
           {% endcontentblock %}
         </div>
-        {% include 'modular-content',
+        {% include 'modular-blocks',
           _blockSettings: page.data.block_settings, _defaultBlockCount: 3, _commonPage: true,
           _defaultcolumnCount: 3, _defaultPadding: 16, _defaultMinWidth: 240
         %}

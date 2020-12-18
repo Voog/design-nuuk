@@ -118,7 +118,7 @@
             {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
 
             if (data.padding) {
-              var padding = '0 ' + data.padding + 'px ' + data.padding + 'px';
+              var padding = '0 ' + data.padding + 'px ';
 
               $('.column-container-{{ id }} .col-item').css({
                 padding: padding, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.padding * 2 + 'px)'
