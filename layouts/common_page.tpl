@@ -5,52 +5,6 @@
   {% include "template-variables" %}
   {% include "html-head" %}
   {% include "template-styles" %}
-
-  {%- assign blockCount = 3 -%}
-  {%- assign blockSettings = page.data.block_settings -%}
-
-  {%- if blockSettings != blank -%}
-    {%- assign blockCount = blockSettings.block_count | to_num -%}
-  {%- endif -%}
-
-  {%- for id in (1..blockCount) -%}
-    {%- assign blockColumnsSettingsKey = 'block_columns_settings' | append: id -%}
-    {%- assign blockColumnsSettings = page.data[blockColumnsSettingsKey] -%}
-
-    {%- assign blockColumnsCountKey = id | append: '_block_columns' -%}
-    {%- assign blockColumnsCount = blockSettings[blockColumnsCountKey] -%}
-
-    {%- if blockColumnsCount != blank -%}
-      {%- assign blockColumnsCount = blockColumnsCount -%}
-    {%- else -%}
-      {%- assign blockColumnsCount = id -%}
-    {%- endif -%}
-
-    {%- if blockColumnsSettings.padding != blank -%}
-      {%- assign padding = blockColumnsSettings.padding -%}
-    {%- else -%}
-      {%- assign padding = 16 -%}
-    {%- endif -%}
-
-    <style>
-      .column-container-{{ id }} {
-        margin: 0 -{{padding}}px;
-      }
-      .column-container-{{ id }} .col-item {
-        {%- if blockColumnsSettings.min_width >= 1 -%}
-          min-width: {{blockColumnsSettings.min_width}}px;
-        {%- endif -%}
-        padding: 0 {{padding}}px {{padding}}px;
-      }
-
-      .column-container-{{blockColumnsCount}}-{{ id }} .col-item {
-        width: calc(100% / {{blockColumnsCount}} - {{padding}}*2px);
-        {%- if blockColumnsSettings.max_width >= 1 -%}
-          max-width: {{blockColumnsSettings.max_width}}px;
-        {%- endif -%}
-      }
-    </style>
-  {%- endfor -%}
 </head>
 
 <body class="common-page js-bg-picker-area {% include 'semimodal-class-names' %}">
@@ -70,29 +24,10 @@
             <h1>{{page.title}}</h1>
           {% endcontentblock %}
         </div>
-
-        {%- for id in (1..blockCount) -%}
-          <section class="content-body content-formatted editor_default-container">
-          {%- if editmode -%}
-            <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">Row {{ id }}</button>
-          {%- endif -%}
-          {%- assign blockColumnsCountKey = id | append: '_block_columns' -%}
-          {%- assign blockColumnsCount = page.data.block_settings[blockColumnsCountKey] -%}
-
-          {%- assign count = id -%}
-          {%- if blockColumnsCount -%}
-            {%- assign count = blockColumnsCount | to_num -%}
-          {%- endif -%}
-
-          <div class="column-container-{{ id }} column-container-{{ count }}-{{ id }} flex_wrap flex_j-center-mobile">
-            {%- for i in (1..count) -%}
-              {%- assign name = "col-" | append: i | append: id -%}
-              <div class="col-item flex_auto b-box" data-search-indexing-allowed="true">
-                {%- content name=name -%}
-              </div>
-            {%- endfor -%}
-          </section>
-        {%- endfor -%}
+        {% include 'modular-content',
+          _blockSettings: page.data.block_settings, _defaultBlockCount: 3, _commonPage: true,
+          _defaultcolumnCount: 3, _defaultPadding: 16, _defaultMinWidth: 240
+        %}
       </main>
       {%- include 'site-components' -%}
       {%- include "footer" -%}
@@ -100,18 +35,10 @@
   </div>
 
   {%- include "site-signout" -%}
-  {% include 'settings-popover', _commonPage: true, _blockCount: blockCount %}
   {%- include "javascripts" -%}
   {%- include "template-tools" -%}
   <script>
     site.initCommonPage();
-  </script>
-  <script>
-    $( ".col-item" ).each(function( index ) {
-      if  ($( this ).width() >= $( this ).closest( ".content-body" ).width()) {
-        $( this ).css('min-width', '100%');
-      }
-    });
   </script>
 </body>
 </html>

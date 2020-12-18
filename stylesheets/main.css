@@ -1470,8 +1470,10 @@ body:not(.semimodal-relative) .semimodal {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  pointer-events: none;
 }
 .layout_settings-visible .layout_settings-popover {
+  pointer-events: all;
   opacity: 1;
   -webkit-box-shadow: 0 25px 35px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.05);
           box-shadow: 0 25px 35px rgba(0, 0, 0, 0.03), 0 0 5px rgba(0, 0, 0, 0.05);
@@ -1606,10 +1608,10 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   padding: 8px 0;
 }
 
-.editor_default-container {
+.editmode .editor_default-container {
   position: relative;
 }
-.editor_default-container .editor_default-btn {
+.editmode .editor_default-container .editor_default-btn {
   opacity: 0 !important;
   top: -34px !important;
   left: -1px !important;
@@ -1626,14 +1628,14 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.editor_default-container:hover {
+.editmode .editor_default-container:hover {
   -webkit-box-shadow: 0 0 0 1px #000000;
           box-shadow: 0 0 0 1px #000000;
 }
-.editor_default-container:hover .editor_default-btn {
+.editmode .editor_default-container:hover .editor_default-btn {
   opacity: 1 !important;
 }
-.editor_default-container .editor_default-btn.active {
+.editmode .editor_default-container .editor_default-btn.active {
   opacity: 1 !important;
 }
 

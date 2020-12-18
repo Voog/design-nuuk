@@ -6,29 +6,28 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
-    {%- if page.data.block_settings %}
-      var valuesObj = {{ page.data.block_settings | json }};
+    {%- if _blockSettings %}
+      var valuesObj = {{ _blockSettings | json }};
     {%- else %}
       var valuesObj = {};
     {%- endif %}
 
     if (!('block_count' in valuesObj)) {
-      valuesObj.block_count = 3;
+      valuesObj.block_count = {{_blockCount}};
     }
 
-    {% for id in (1..blockCount) %}
+    {% for id in (1.._blockCount) %}
       {%- assign columnKey = id | append: '_block_columns' -%}
+      {%- if id >= 3 -%}
+        {%- assign columnCount = _defaultcolumnCount -%}
+      {%- else -%}
+        {%- assign columnCount = id -%}
+      {%- endif -%}
 
       if (!('{{columnKey}}' in valuesObj)) {
         valuesObj['{{columnKey}}'] = {{id}};
       }
     {% endfor %}
-
-    {% if _blockCount <= 0 %}
-      {%- assign blockCount = 1 -%}
-    {% else %}
-      {%- assign blockCount = _blockCount -%}
-    {% endif %}
 
     initSettingsEditor(
       {
@@ -46,7 +45,7 @@
               {"title": "5", "value": 5}
             ]
           },
-          {% for id in (1..blockCount) %}
+          {% for id in (1.._blockCount) %}
           {
             "title": "Number of columns in block {{id}}",
             "type": "select",
@@ -68,8 +67,8 @@
 
 
 
-    {% for id in (1..blockCount) %}
-      {%- assign blockColumnsSettingsKey = 'block_columns_settings' | append: id -%}
+    {% for id in (1.._blockCount) %}
+      {%- assign blockColumnsSettingsKey = 'block_columns_settings' | append: id | append: _blockId -%}
 
       {%- if page.data[blockColumnsSettingsKey] %}
         var valuesObj = {{ page.data[blockColumnsSettingsKey] | json }};
@@ -78,7 +77,11 @@
       {%- endif %}
 
       if (!('block_count' in valuesObj)) {
-        valuesObj.padding = 16;
+        valuesObj.padding = {{_padding}};
+      }
+
+      if (!('min_width' in valuesObj)) {
+        valuesObj.min_width = {{_minWidth}};
       }
 
       initSettingsEditor(
@@ -112,7 +115,7 @@
           noReload: true,
           prevFunc: function(data) {
             {%- assign rowSettingsKey = id | append: '_block_columns' -%}
-            {%- assign rowSettings = page.data.block_settings[rowSettingsKey] -%}
+            {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
 
             if (data.padding) {
               var padding = '0 ' + data.padding + 'px ' + data.padding + 'px';
@@ -157,5 +160,15 @@
         }
       );
     {%- endfor -%}
+
+    $(window).resize(function() {
+      $(".col-item").each(function() {
+        if  ({{_minWidth}} >= $(this).closest(".content-body").width()) {
+          $(this).css('min-width', '100%');
+        } else {
+          $(this).css('min-width', {{_minWidth}});
+        }
+      });
+    });
   });
 </script>

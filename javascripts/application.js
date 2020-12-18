@@ -1149,7 +1149,6 @@ MMCQ = (function() {
 
   var initCommonPage = function() {
     // Add common page specific functions here.
-
   };
 
   var initBlogPage = function() {

@@ -59,8 +59,10 @@
       z-index: $zindex-settings-popover;
       opacity: 0;
       @include transition(opacity 300ms);
+      pointer-events: none;
 
       .layout_settings-visible & {
+        pointer-events: all;
         opacity: 1;
         box-shadow: 0 25px 35px rgba(0,0,0,.03), 0 0 5px rgba(0,0,0,.05);
       }
@@ -191,7 +193,7 @@ body .edy-settings-editor:not(.editor_default) {
   }
 }
 
-.editor_default-container {
+.editmode .editor_default-container {
   position: relative;
 
   .editor_default-btn {
