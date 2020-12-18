@@ -26,7 +26,8 @@
         </div>
         {% include 'modular-blocks',
           _blockSettings: page.data.block_settings, _defaultBlockCount: 3, _commonPage: true,
-          _defaultcolumnCount: 3, _defaultPadding: 16, _defaultMinWidth: 240
+          _defaultcolumnCount: 3, _defaultHPadding: 16, _defaultVPadding: 16,
+          _defaultMinWidth: 240, _defaultJustify: 'between'
         %}
       </main>
       {%- include 'site-components' -%}

@@ -68,7 +68,7 @@
 
 
     {% for id in (1.._blockCount) %}
-      {%- assign blockColumnsSettingsKey = 'block_columns_settings' | append: id | append: _blockId -%}
+      {%- assign blockColumnsSettingsKey = 'block_columns_settings' | append: id -%}
 
       {%- if page.data[blockColumnsSettingsKey] %}
         var valuesObj = {{ page.data[blockColumnsSettingsKey] | json }};
@@ -76,12 +76,20 @@
         var valuesObj = {};
       {%- endif %}
 
-      if (!('block_count' in valuesObj)) {
-        valuesObj.padding = {{_padding}};
+      if (!('h_padding' in valuesObj)) {
+        valuesObj.h_padding = {{_hPadding}};
+      }
+
+      if (!('v_padding' in valuesObj)) {
+        valuesObj.v_padding = {{_vPadding}};
       }
 
       if (!('min_width' in valuesObj)) {
         valuesObj.min_width = {{_minWidth}};
+      }
+
+      if (!('justify' in valuesObj)) {
+        valuesObj.justify = "{{_justify}}";
       }
 
       initSettingsEditor(
@@ -89,25 +97,51 @@
           settingsBtn: document.querySelector('.js-column-settings-btn-{{ id }}'),
           menuItems: [
             {
-              "title": "Min column item width in px",
+              "title": "Minimum width of column (px)",
               "type": "number",
               "min": 1,
               "key": "min_width",
-              "placeholder": "Set min row item width in px"
+              "placeholder": "Minimum width of column (px)"
             },
             {
-              "title": "Max column item width in px",
+              "title": "Maximum width of column (px)",
               "type": "number",
               "min": 1,
               "key": "max_width",
-              "placeholder": "Set max row item width in px"
+              "placeholder": "Maximum width of column (px)"
             },
             {
-              "title": "Column item padding in px",
+              "title": "Space between columns (px)",
               "type": "number",
               "min": 1,
-              "key": "padding",
-              "placeholder": "Set item padding in px"
+              "key": "h_padding",
+              "placeholder": "Space between columns (px)"
+            },
+            {
+              "title": "Block top & bottom spacing (px)",
+              "type": "number",
+              "min": 1,
+              "key": "v_padding",
+              "placeholder": "Block top & bottom spacing (px)"
+            },
+            {
+              "title": "Justification of columns",
+              "type": "select",
+              "key": "justify",
+              "list": [
+                {
+                  "title": "Space between columns",
+                  "value": "between"
+                },
+                {
+                  "title": "Space around columns",
+                  "value": "around"
+                },
+                {
+                  "title": "Columns are evenly distributed",
+                  "value": "evenly"
+                }
+              ]
             }
           ],
           dataKey: '{{blockColumnsSettingsKey}}',
@@ -117,15 +151,15 @@
             {%- assign rowSettingsKey = id | append: '_block_columns' -%}
             {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
 
-            if (data.padding) {
-              var padding = '0 ' + data.padding + 'px ';
+            if (data.h_padding) {
+              var h_padding = '0 ' + data.h_padding + 'px ';
 
               $('.column-container-{{ id }} .col-item').css({
-                padding: padding, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.padding * 2 + 'px)'
+                padding: h_padding, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.h_padding * 2 + 'px)'
               });
 
               $('.column-container-{{ id }}').css({
-                margin: '0 -' + data.padding + 'px'
+                margin: '0 -' + data.h_padding + 'px'
               });
             } else {
               $('.column-container-{{ id }} .col-item').css({
@@ -134,6 +168,19 @@
 
               $('.column-container-{{ id }}').css({
                 margin: 'initial'
+              });
+            }
+
+            if (data.v_padding) {
+              $('.column-container-{{ id }}').css({
+                padding: data.v_padding + 'px 0'
+              });
+            }
+            console.log(data);
+            if (data.justify) {
+              console.log(data.justify);
+              $('.column-container-{{ id }}').css({
+                "justify-content": 'space-' + data.justify
               });
             }
 

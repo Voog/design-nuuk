@@ -17,10 +17,16 @@
     {%- assign blockColumnsCount = id -%}
   {%- endif -%}
 
-  {%- if blockColumnsSettings.padding != blank -%}
-    {%- assign padding = blockColumnsSettings.padding -%}
+  {%- if blockColumnsSettings.h_padding != blank -%}
+    {%- assign hPadding = blockColumnsSettings.h_padding -%}
   {%- else -%}
-    {%- assign padding = _defaultPadding -%}
+    {%- assign hPadding = _defaultHPadding -%}
+  {%- endif -%}
+
+  {%- if blockColumnsSettings.v_padding != blank -%}
+    {%- assign vPadding = blockColumnsSettings.v_padding -%}
+  {%- else -%}
+    {%- assign vPadding = _defaultVPadding -%}
   {%- endif -%}
 
   {%- if blockColumnsSettings.min_width != blank -%}
@@ -29,18 +35,27 @@
     {%- assign minWidth = _defaultMinWidth -%}
   {%- endif -%}
 
+  {%- if blockColumnsSettings.justify != blank -%}
+    {%- assign justify = blockColumnsSettings.justify -%}
+  {%- else -%}
+    {%- assign justify = _defaultJustify -%}
+  {%- endif -%}
+
   <style>
     .column-container-{{ id }} {
-      margin: 0 -{{padding}}px;
+      margin: 0 -{{hPadding}}px;
+      padding: {{vPadding}}px 0;
+      justify-content: space-{{justify}};
     }
+
     .column-container-{{ id }} .col-item {
       min-width: {{minWidth}}px;
 
-      padding: 0 {{padding}}px;
+      padding: 0 {{hPadding}}px;
     }
 
     .column-container-{{blockColumnsCount}}-{{ id }} .col-item {
-      width: calc(100% / {{blockColumnsCount}} - {{padding}}*2px);
+      width: calc(100% / {{blockColumnsCount}} - {{hPadding}}*2px);
       {%- if blockColumnsSettings.max_width >= 1 -%}
         max-width: {{blockColumnsSettings.max_width}}px;
       {%- endif -%}
@@ -51,7 +66,7 @@
 {%- for id in (1..blockCount) -%}
   <section class="content-body content-formatted editor_default-container">
   {%- if editmode -%}
-    <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">Row {{ id }}</button>
+    <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">Block {{ id }}</button>
   {%- endif -%}
   {%- assign blockColumnsCountKey = id | append: '_block_columns' -%}
   {%- assign blockColumnsCount = page.data.block_settings[blockColumnsCountKey] -%}
@@ -104,5 +119,6 @@
 
 {% include 'settings-popover',
   _blockSettings: blockSettings, _commonPage: _commonPage, _blockCount: blockCount,
-  _columnCount: columnCount, _minWidth: minWidth, _padding: padding
+  _columnCount: columnCount, _minWidth: minWidth, _hPadding: hPadding,
+  _vPadding: vPadding, _justify: justify
 %}
