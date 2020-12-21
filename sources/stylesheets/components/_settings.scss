@@ -129,7 +129,7 @@
 }
 
 body .edy-popover {
-  z-index: $zindex-settings-popover !important;
+  z-index: $zindex-settings-popover + 1 !important;
 }
 
 body .edy-settings-editor:not(.editor_default) {

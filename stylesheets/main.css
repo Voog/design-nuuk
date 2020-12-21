@@ -1534,7 +1534,7 @@ body:not(.semimodal-relative) .semimodal {
 }
 
 body .edy-popover {
-  z-index: 56501 !important;
+  z-index: 56502 !important;
 }
 
 body .edy-settings-editor:not(.editor_default) {

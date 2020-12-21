@@ -13,19 +13,15 @@
     {%- endif %}
 
     if (!('block_count' in valuesObj)) {
-      valuesObj.block_count = {{_blockCount}};
+      valuesObj.block_count = {{_defaultBlockObj.size}};
     }
 
     {% for id in (1.._blockCount) %}
       {%- assign columnKey = id | append: '_block_columns' -%}
-      {%- if id >= 3 -%}
-        {%- assign columnCount = _defaultcolumnCount -%}
-      {%- else -%}
-        {%- assign columnCount = id -%}
-      {%- endif -%}
+      {%- assign blockObjKey = 'block_' | append: id -%}
 
       if (!('{{columnKey}}' in valuesObj)) {
-        valuesObj['{{columnKey}}'] = {{id}};
+        valuesObj['{{columnKey}}'] = {{_defaultBlockObj[blockObjKey].col_count}};
       }
     {% endfor %}
 
@@ -69,6 +65,7 @@
 
     {% for id in (1.._blockCount) %}
       {%- assign blockColumnsSettingsKey = 'block_columns_settings' | append: id -%}
+      {%- assign blockObjKey = 'block_' | append: id -%}
 
       {%- if page.data[blockColumnsSettingsKey] %}
         var valuesObj = {{ page.data[blockColumnsSettingsKey] | json }};
@@ -76,58 +73,126 @@
         var valuesObj = {};
       {%- endif %}
 
-      if (!('h_padding' in valuesObj)) {
-        valuesObj.h_padding = {{_hPadding}};
+      {%- if _defaultBlockObj[blockObjKey].col_h_padding -%}
+        if (!('col_h_padding' in valuesObj)) {
+          valuesObj.col_h_padding = "{{_defaultBlockObj[blockObjKey].col_h_padding}}";
+        }
+      {%- endif -%}
+
+      {%- if _defaultBlockObj[blockObjKey].col_min_width -%}
+        if (!('col_min_width' in valuesObj)) {
+          valuesObj.col_min_width = "{{_defaultBlockObj[blockObjKey].col_min_width}}";
+        }
+      {%- endif -%}
+
+      {%- if _defaultBlockObj[blockObjKey].col_max_width -%}
+        if (!('col_max_width' in valuesObj)) {
+          valuesObj.col_max_width = "{{_defaultBlockObj[blockObjKey].col_max_width}}";
+        }
+      {%- endif -%}
+
+      {%- if _defaultBlockObj[blockObjKey].col_justification -%}
+        if (!('col_justification' in valuesObj)) {
+          valuesObj.col_justification = "{{_defaultBlockObj[blockObjKey].col_justification}}";
+        }
+      {%- endif -%}
+
+      {%- if _defaultBlockObj[blockObjKey].block_v_padding -%}
+        if (!('block_v_padding' in valuesObj)) {
+          valuesObj.block_v_padding = "{{_defaultBlockObj[blockObjKey].block_v_padding}}";
+        }
+      {%- endif -%}
+
+      {%- if _defaultBlockObj[blockObjKey].block_max_width -%}
+        if (!('block_max_width' in valuesObj)) {
+          valuesObj.block_max_width = "{{_defaultBlockObj[blockObjKey].block_max_width}}";
+        }
+      {%- endif -%}
+
+      {%- if _defaultBlockObj[blockObjKey].block_justification -%}
+        if (!('block_justification' in valuesObj)) {
+          valuesObj.block_justification = "{{_defaultBlockObj[blockObjKey].block_justification}}";
+        }
+      {%- endif -%}
+
+      var setMinWidth = function() {
+        var colItem = $(".column-container-{{id}} .col-item");
+
+        if (parseFloat(colItem.css('min-width')) >= colItem.closest(".container").width()) {
+          colItem.css('min-width', '100%');
+        } else {
+          colItem.css('min-width', valuesObj.col_min_width);
+        }
       }
 
-      if (!('v_padding' in valuesObj)) {
-        valuesObj.v_padding = {{_vPadding}};
-      }
+      setMinWidth();
 
-      if (!('min_width' in valuesObj)) {
-        valuesObj.min_width = {{_minWidth}};
-      }
-
-      if (!('justify' in valuesObj)) {
-        valuesObj.justify = "{{_justify}}";
-      }
+      $(window).resize(function() {
+        setMinWidth();
+      });
 
       initSettingsEditor(
         {
           settingsBtn: document.querySelector('.js-column-settings-btn-{{ id }}'),
           menuItems: [
             {
-              "title": "Minimum width of column (px)",
+              "title": "Block maximum width (%)",
               "type": "number",
               "min": 1,
-              "key": "min_width",
-              "placeholder": "Minimum width of column (px)"
-            },
-            {
-              "title": "Maximum width of column (px)",
-              "type": "number",
-              "min": 1,
-              "key": "max_width",
-              "placeholder": "Maximum width of column (px)"
-            },
-            {
-              "title": "Space between columns (px)",
-              "type": "number",
-              "min": 1,
-              "key": "h_padding",
-              "placeholder": "Space between columns (px)"
+              "key": "block_max_width",
+              "placeholder": "Maximum block width (%)"
             },
             {
               "title": "Block top & bottom spacing (px)",
               "type": "number",
               "min": 1,
-              "key": "v_padding",
+              "key": "block_v_padding",
               "placeholder": "Block top & bottom spacing (px)"
             },
             {
-              "title": "Justification of columns",
+              "title": "Block justification",
               "type": "select",
-              "key": "justify",
+              "key": "block_justification",
+              "list": [
+                {
+                  "title": "Left",
+                  "value": "flex-start"
+                },
+                {
+                  "title": "Center",
+                  "value": "center"
+                },
+                {
+                  "title": "Right",
+                  "value": "flex-end"
+                }
+              ]
+            },
+            {
+              "title": "Column maximum width (px)",
+              "type": "number",
+              "min": 1,
+              "key": "col_max_width",
+              "placeholder": "Maximum column width (px)"
+            },
+            {
+              "title": "Column minimum width (px)",
+              "type": "number",
+              "min": 1,
+              "key": "col_min_width",
+              "placeholder": "Minimum width of column (px)"
+            },
+            {
+              "title": "Space between columns (px)",
+              "type": "number",
+              "min": 1,
+              "key": "col_h_padding",
+              "placeholder": "Space between columns (px)"
+            },
+            {
+              "title": "Column justification",
+              "type": "select",
+              "key": "col_justification",
               "list": [
                 {
                   "title": "Space between columns",
@@ -151,42 +216,53 @@
             {%- assign rowSettingsKey = id | append: '_block_columns' -%}
             {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
 
-            if (data.h_padding) {
-              var h_padding = '0 ' + data.h_padding + 'px ';
+            if (data.block_max_width) {
+              $('.block-{{ id }}').css({
+                width: 'calc(' + data.block_max_width + '% - ' + data.col_h_padding * 2 + 'px)'
+              });
+            }
+
+            if (data.block_justification) {
+              $('.block-container-{{ id }}').css({
+                'justify-content': data.block_justification
+              });
+            }
+
+            if (data.col_h_padding) {
+              var col_h_padding = '0 ' + data.col_h_padding + 'px ';
 
               $('.column-container-{{ id }} .col-item').css({
-                padding: h_padding, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.h_padding * 2 + 'px)'
+                padding: col_h_padding, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.col_h_padding * 2 + 'px)'
               });
 
-              $('.column-container-{{ id }}').css({
-                margin: '0 -' + data.h_padding + 'px'
+              $('.block-container-{{ id }}, .column-container-{{ id }}').css({
+                'margin-left': '0 -' + data.col_h_padding + 'px', 'margin-right': '0 -' + data.col_h_padding + 'px'
               });
             } else {
               $('.column-container-{{ id }} .col-item').css({
                 padding: 'initial', width: 'calc(100% / {{rowSettings.block_count}})'
               });
 
-              $('.column-container-{{ id }}').css({
-                margin: 'initial'
+              $('.block-container-{{ id }}, .column-container-{{ id }}').css({
+                'margin-left': 'initial', 'margin-right': 'initial'
               });
             }
 
-            if (data.v_padding) {
+            if (data.block_v_padding) {
               $('.column-container-{{ id }}').css({
-                padding: data.v_padding + 'px 0'
-              });
-            }
-            console.log(data);
-            if (data.justify) {
-              console.log(data.justify);
-              $('.column-container-{{ id }}').css({
-                "justify-content": 'space-' + data.justify
+                padding: data.block_v_padding + 'px 0'
               });
             }
 
-            if (data.max_width) {
+            if (data.col_justification) {
+              $('.column-container-{{ id }}').css({
+                'justify-content': 'space-' + data.col_justification
+              });
+            }
+
+            if (data.col_max_width) {
               $('.column-container-{{ id }} .col-item').css({
-                'max-width': data.max_width + 'px'
+                'max-width': data.col_max_width + 'px'
               });
             } else {
               $('.column-container-{{ id }} .col-item').css({
@@ -194,9 +270,9 @@
               });
             }
 
-            if (data.min_width) {
+            if (data.col_min_width) {
               $('.column-container-{{ id }} .col-item').css({
-                'min-width': data.min_width + 'px'
+                'min-width': data.col_min_width + 'px'
               });
             } else {
               $('.column-container-{{ id }} .col-item').css({
@@ -207,15 +283,5 @@
         }
       );
     {%- endfor -%}
-
-    $(window).resize(function() {
-      $(".col-item").each(function() {
-        if  ({{_minWidth}} >= $(this).closest(".content-body").width()) {
-          $(this).css('min-width', '100%');
-        } else {
-          $(this).css('min-width', {{_minWidth}});
-        }
-      });
-    });
   });
 </script>

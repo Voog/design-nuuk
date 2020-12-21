@@ -84,5 +84,7 @@
         clearInterval(setSettingsBtn);
       }
     }, 500);
+
+    $('body').append($('.js-layout_settings-popover'));
   });
 </script>

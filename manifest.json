@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/tags-post.tpl",
-      "layout_name": "tags-post",
-      "title": "tags-post"
+      "file": "components/menu-main.tpl",
+      "layout_name": "menu-main",
+      "title": "menu-main"
     },
     {
       "content_type": "component",
@@ -130,6 +130,13 @@
       "file": "components/settings-article-page.tpl",
       "layout_name": "settings-article-page",
       "title": "settings-article-page"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/modular-content-4-1.tpl",
+      "layout_name": "modular-content-4-1",
+      "title": "modular-content-4-1"
     },
     {
       "content_type": "component",
@@ -365,16 +372,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/menu-main.tpl",
-      "layout_name": "menu-main",
-      "title": "menu-main"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/tags-post.tpl",
+      "layout_name": "tags-post",
+      "title": "tags-post"
     },
     {
       "content_type": "component",
