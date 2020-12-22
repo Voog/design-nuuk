@@ -152,6 +152,16 @@
 
       $(window).resize(function() {
         setMinWidth();
+
+        if ($(window).width() >= 540) {
+          $('.block-{{ id }}').css({
+            width: valuesObj.block_max_width + '%'
+          });
+        } else {
+          $('.block-{{ id }}').css({
+            width: '100%'
+          });
+        }
       });
 
       initSettingsEditor(
