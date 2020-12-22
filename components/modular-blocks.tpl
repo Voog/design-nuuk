@@ -101,9 +101,10 @@
 
     .block-{{ id }} {
       width: 100%;
+      overflow: hidden;
     }
 
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: 540px) {
       .block-{{ id }} {
         width: {{maxBlockWidth}}%;
       }

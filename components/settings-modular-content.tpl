@@ -135,7 +135,7 @@
       var setMinWidth = function() {
         var colItem = $(".column-container-{{id}} .col-item");
 
-        if (parseFloat(colItem.css('min-width')) >= colItem.closest(".container").width()) {
+        if (parseFloat(colItem.css('min-width')) >= colItem.closest(".editor_default-container").width()) {
           colItem.css('min-width', '100%');
         } else {
           colItem.css('min-width', valuesObj.col_min_width);
@@ -234,7 +234,7 @@
             {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
 
             if (data.block_max_width) {
-              if ($(window).width() >= 480) {
+              if ($(window).width() >= 540) {
                 $('.block-{{ id }}').css({
                   width: data.block_max_width + '%'
                 });
