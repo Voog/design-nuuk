@@ -66,6 +66,16 @@
               "col_justification": "between",
               "col_min_width": 240,
               "col_h_padding": 16
+            },
+            "default": {
+              "col_count": 3,
+              "block_max_width": 100,
+              "block_justification": "center",
+              "block_v_padding": 16,
+              "col_max_width": "unset",
+              "col_justification": "between",
+              "col_min_width": 240,
+              "col_h_padding": 16
             }
           }
         {%- endcapture -%}
@@ -73,7 +83,9 @@
         {%- assign defaultBlockObj = default_block_obj_json | json_parse -%}
 
         {% include 'modular-blocks',
-          _blockSettings: page.data.block_settings, _commonPage: true, _defaultBlockObj: defaultBlockObj
+          _blockSettings: page.data.block_settings,
+          _commonPage: true,
+          _defaultBlockObj: defaultBlockObj
         %}
       </main>
       {%- include 'site-components' -%}

@@ -54,6 +54,7 @@
         $('.search-btn').removeClass('open');
         $('html').removeClass('menu-language-popover-open');
         $('body').removeClass('layout_settings-visible');
+        $('.editor_default-container').removeClass('active');
       };
     });
 
@@ -399,6 +400,10 @@
 
     $('.js-menu-popover-btn').click(function() {
       toggleMenuPopover();
+    });
+
+    $('.editor_default-btn').click(function() {
+      $(this).closest('.editor_default-container').addClass('active');
     });
 
     handleFocus($('.js-menu-popover-btn'), toggleMenuPopover);

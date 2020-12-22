@@ -1628,11 +1628,11 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.editmode .editor_default-container:hover {
+.editmode .editor_default-container:hover, .editmode .editor_default-container.active {
   -webkit-box-shadow: 0 0 0 1px #000000;
           box-shadow: 0 0 0 1px #000000;
 }
-.editmode .editor_default-container:hover .editor_default-btn {
+.editmode .editor_default-container:hover .editor_default-btn, .editmode .editor_default-container.active .editor_default-btn {
   opacity: 1 !important;
 }
 .editmode .editor_default-container .editor_default-btn.active {

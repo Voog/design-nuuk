@@ -13,7 +13,7 @@
     {%- endif %}
 
     if (!('block_count' in valuesObj)) {
-      valuesObj.block_count = {{_defaultBlockObj.size}};
+      valuesObj.block_count = {{_blockCount}};
     }
 
     {% for id in (1.._blockCount) %}
@@ -21,7 +21,11 @@
       {%- assign blockObjKey = 'block_' | append: id -%}
 
       if (!('{{columnKey}}' in valuesObj)) {
-        valuesObj['{{columnKey}}'] = {{_defaultBlockObj[blockObjKey].col_count}};
+        {%- if _defaultBlockObj[blockObjKey].col_count %}
+          valuesObj['{{columnKey}}'] = {{_defaultBlockObj[blockObjKey].col_count}};
+        {%- else %}
+          valuesObj['{{columnKey}}'] = 3;
+        {%- endif %}
       }
     {% endfor %}
 
@@ -73,47 +77,60 @@
         var valuesObj = {};
       {%- endif %}
 
-      {%- if _defaultBlockObj[blockObjKey].col_h_padding -%}
-        if (!('col_h_padding' in valuesObj)) {
+      if (!('col_h_padding' in valuesObj)) {
+        {%- if _defaultBlockObj[blockObjKey].col_h_padding -%}
           valuesObj.col_h_padding = "{{_defaultBlockObj[blockObjKey].col_h_padding}}";
-        }
-      {%- endif -%}
-
-      {%- if _defaultBlockObj[blockObjKey].col_min_width -%}
-        if (!('col_min_width' in valuesObj)) {
+        {%- else -%}
+          valuesObj.col_h_padding = "{{_defaultBlockObj.default.col_h_padding}}";
+        {%- endif -%}
+      }
+      if (!('col_min_width' in valuesObj)) {
+        {%- if _defaultBlockObj[blockObjKey].col_min_width -%}
           valuesObj.col_min_width = "{{_defaultBlockObj[blockObjKey].col_min_width}}";
-        }
-      {%- endif -%}
+        {%- else -%}
+          valuesObj.col_min_width = "{{_defaultBlockObj.default.col_min_width}}";
+        {%- endif -%}
+      }
 
-      {%- if _defaultBlockObj[blockObjKey].col_max_width -%}
-        if (!('col_max_width' in valuesObj)) {
+      if (!('col_max_width' in valuesObj)) {
+        {%- if _defaultBlockObj[blockObjKey].col_max_width -%}
           valuesObj.col_max_width = "{{_defaultBlockObj[blockObjKey].col_max_width}}";
-        }
-      {%- endif -%}
+        {%- else -%}
+          valuesObj.col_max_width = "{{_defaultBlockObj.default.col_max_width}}";
+        {%- endif -%}
+      }
 
-      {%- if _defaultBlockObj[blockObjKey].col_justification -%}
-        if (!('col_justification' in valuesObj)) {
+      if (!('col_justification' in valuesObj)) {
+        {%- if _defaultBlockObj[blockObjKey].col_justification -%}
           valuesObj.col_justification = "{{_defaultBlockObj[blockObjKey].col_justification}}";
-        }
-      {%- endif -%}
+        {%- else -%}
+          valuesObj.col_justification = "{{_defaultBlockObj.default.col_justification}}";
+        {%- endif -%}
+      }
 
+      if (!('block_v_padding' in valuesObj)) {
       {%- if _defaultBlockObj[blockObjKey].block_v_padding -%}
-        if (!('block_v_padding' in valuesObj)) {
-          valuesObj.block_v_padding = "{{_defaultBlockObj[blockObjKey].block_v_padding}}";
-        }
+        valuesObj.block_v_padding = "{{_defaultBlockObj[blockObjKey].block_v_padding}}";
+      {%- else -%}
+        valuesObj.block_v_padding = "{{_defaultBlockObj.default.block_v_padding}}";
       {%- endif -%}
+      }
 
-      {%- if _defaultBlockObj[blockObjKey].block_max_width -%}
-        if (!('block_max_width' in valuesObj)) {
+      if (!('block_max_width' in valuesObj)) {
+        {%- if _defaultBlockObj[blockObjKey].block_max_width -%}
           valuesObj.block_max_width = "{{_defaultBlockObj[blockObjKey].block_max_width}}";
-        }
-      {%- endif -%}
+        {%- else -%}
+          valuesObj.block_max_width = "{{_defaultBlockObj.default.block_max_width}}";
+        {%- endif -%}
+      }
 
-      {%- if _defaultBlockObj[blockObjKey].block_justification -%}
-        if (!('block_justification' in valuesObj)) {
-          valuesObj.block_justification = "{{_defaultBlockObj[blockObjKey].block_justification}}";
-        }
-      {%- endif -%}
+      if (!('block_justification' in valuesObj)) {
+        {%- if _defaultBlockObj[blockObjKey].block_justification -%}
+            valuesObj.block_justification = "{{_defaultBlockObj[blockObjKey].block_justification}}";
+        {%- else -%}
+          valuesObj.block_justification = "{{_defaultBlockObj.default.block_justification}}";
+        {%- endif -%}
+      }
 
       var setMinWidth = function() {
         var colItem = $(".column-container-{{id}} .col-item");
@@ -217,9 +234,15 @@
             {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
 
             if (data.block_max_width) {
-              $('.block-{{ id }}').css({
-                width: 'calc(' + data.block_max_width + '% - ' + data.col_h_padding * 2 + 'px)'
-              });
+              if ($(window).width() >= 480) {
+                $('.block-{{ id }}').css({
+                  width: data.block_max_width + '%'
+                });
+              } else {
+                $('.block-{{ id }}').css({
+                  width: '100%'
+                });
+              }
             }
 
             if (data.block_justification) {
@@ -229,22 +252,22 @@
             }
 
             if (data.col_h_padding) {
-              var col_h_padding = '0 ' + data.col_h_padding + 'px ';
+              var col_h_padding = '0 ' + data.col_h_padding + 'px 32px';
 
               $('.column-container-{{ id }} .col-item').css({
                 padding: col_h_padding, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.col_h_padding * 2 + 'px)'
               });
 
-              $('.block-container-{{ id }}, .column-container-{{ id }}').css({
-                'margin-left': '0 -' + data.col_h_padding + 'px', 'margin-right': '0 -' + data.col_h_padding + 'px'
+              $('.column-container-{{ id }}').css({
+                'margin': '0 -' + data.col_h_padding + 'px -32px'
               });
             } else {
               $('.column-container-{{ id }} .col-item').css({
-                padding: 'initial', width: 'calc(100% / {{rowSettings.block_count}})'
+                padding: '0 0 32px', width: 'calc(100% / {{rowSettings.block_count}})'
               });
 
-              $('.block-container-{{ id }}, .column-container-{{ id }}').css({
-                'margin-left': 'initial', 'margin-right': 'initial'
+              $('.column-container-{{ id }}').css({
+                'margin': '0 0 -32px'
               });
             }
 

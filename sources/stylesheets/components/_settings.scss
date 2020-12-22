@@ -205,7 +205,8 @@ body .edy-settings-editor:not(.editor_default) {
     @include transition(all 300ms);
   }
 
-  &:hover {
+  &:hover,
+  &.active {
     box-shadow: 0 0 0 1px $black;
 
     .editor_default-btn {

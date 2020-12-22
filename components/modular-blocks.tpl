@@ -2,7 +2,7 @@
 {%- if _blockSettings.block_count != blank -%}
   {%- assign blockCount = _blockSettings.block_count | to_num -%}
 {%- else -%}
-  {%- assign blockCount = _defaultBlockObj.size -%}
+  {%- assign blockCount = _defaultBlockObj.size | minus: 1 -%}
 {%- endif -%}
 
 {%- for id in (1..blockCount) -%}
@@ -16,31 +16,51 @@
   {%- if blockColumnsCount != blank -%}
     {%- assign blockColumnsCount = blockColumnsCount -%}
   {%- else -%}
-    {%- assign blockColumnsCount = _defaultBlockObj[blockObjKey].col_count -%}
+    {%- if _defaultBlockObj[blockObjKey].col_count -%}
+      {%- assign blockColumnsCount = _defaultBlockObj[blockObjKey].col_count -%}
+    {%- else -%}
+      {%- assign blockColumnsCount = _defaultBlockObj.default.col_count -%}
+    {%- endif -%}
   {%- endif -%}
 
   {%- if blockColumnsSettings.col_h_padding != blank -%}
     {%- assign hPadding = blockColumnsSettings.col_h_padding -%}
   {%- else -%}
-    {%- assign hPadding = _defaultBlockObj[blockObjKey].col_h_padding -%}
+    {%- if _defaultBlockObj[blockObjKey].col_h_padding -%}
+      {%- assign hPadding = _defaultBlockObj[blockObjKey].col_h_padding -%}
+    {%- else -%}
+      {%- assign hPadding = _defaultBlockObj.default.col_h_padding -%}
+    {%- endif -%}
   {%- endif -%}
 
   {%- if blockColumnsSettings.block_v_padding != blank -%}
     {%- assign vPadding = blockColumnsSettings.block_v_padding -%}
   {%- else -%}
-    {%- assign vPadding = _defaultBlockObj[blockObjKey].block_v_padding -%}
+    {%- if _defaultBlockObj[blockObjKey].block_v_padding -%}
+      {%- assign vPadding = _defaultBlockObj[blockObjKey].block_v_padding -%}
+    {%- else -%}
+      {%- assign vPadding = _defaultBlockObj.default.block_v_padding -%}
+    {%- endif -%}
   {%- endif -%}
 
   {%- if blockColumnsSettings.col_min_width != blank -%}
     {%- assign minWidth = blockColumnsSettings.col_min_width -%}
   {%- else -%}
-    {%- assign minWidth = _defaultBlockObj[blockObjKey].col_min_width -%}
+    {%- if _defaultBlockObj[blockObjKey].col_min_width -%}
+      {%- assign minWidth = _defaultBlockObj[blockObjKey].col_min_width -%}
+    {%- else -%}
+      {%- assign minWidth = _defaultBlockObj.default.col_min_width -%}
+    {%- endif -%}
   {%- endif -%}
 
   {%- if blockColumnsSettings.col_justification != blank -%}
     {%- assign colJustification = blockColumnsSettings.col_justification -%}
   {%- else -%}
-    {%- assign colJustification = _defaultBlockObj[blockObjKey].col_justification -%}
+    {%- if _defaultBlockObj[blockObjKey].col_justification -%}
+      {%- assign colJustification = _defaultBlockObj[blockObjKey].col_justification -%}
+    {%- else -%}
+      {%- assign colJustification = _defaultBlockObj.default.col_justification -%}
+    {%- endif -%}
   {%- endif -%}
 
   {%- if blockColumnsSettings.col_max_width != blank and blockColumnsSettings.col_max_width != 0 -%}
@@ -52,38 +72,52 @@
   {%- if blockColumnsSettings.block_max_width != blank -%}
     {%- assign maxBlockWidth = blockColumnsSettings.block_max_width -%}
   {%- else -%}
-    {%- assign maxBlockWidth = _defaultBlockObj[blockObjKey].block_max_width -%}
+    {%- if _defaultBlockObj[blockObjKey].block_max_width -%}
+      {%- assign maxBlockWidth = _defaultBlockObj[blockObjKey].block_max_width -%}
+    {%- else -%}
+      {%- assign maxBlockWidth = _defaultBlockObj.default.block_max_width -%}
+    {%- endif -%}
   {%- endif -%}
 
   {%- if blockColumnsSettings.block_justification != blank -%}
     {%- assign blockJustification = blockColumnsSettings.block_justification -%}
   {%- else -%}
-    {%- assign blockJustification = _defaultBlockObj[blockObjKey].block_justification -%}
+    {%- if _defaultBlockObj[blockObjKey].block_justification -%}
+      {%- assign blockJustification = _defaultBlockObj.default.block_justification -%}
+    {%- else -%}
+      {%- assign blockJustification = _defaultBlockObj.default.block_justification -%}
+    {%- endif -%}
   {%- endif -%}
 
   <style>
     .block-container-{{ id }} {
       display: flex;
       justify-content: {{blockJustification}};
-      margin-left: -{{hPadding}}px;
-      margin-right: -{{hPadding}}px;
+    }
+
+    .block-{{ id }} {
+      width: 100%;
     }
 
     @media screen and (min-width: 480px) {
       .block-{{ id }} {
-        width: calc({{maxBlockWidth}}% - {{hPadding}}*2px);
+        width: {{maxBlockWidth}}%;
       }
     }
 
+    {%- comment -%}
+      Remove col-item bottom padding on last row
+      and add margin subtraction to v-pad
+    {%- endcomment -%}
     .column-container-{{ id }} {
-      margin: 0 -{{hPadding}}px;
+      margin: 0 -{{hPadding}}px -32px;
       padding: {{vPadding}}px 0;
       justify-content: space-{{colJustification}};
     }
 
     .column-container-{{ id }} .col-item {
       min-width: {{minWidth}}px;
-      padding: 0 {{hPadding}}px;
+      padding: 0 {{hPadding}}px 32px;
     }
 
     .column-container-{{blockColumnsCount}}-{{ id }} .col-item {
@@ -107,7 +141,12 @@
       {%- if blockColumnsCount -%}
         {%- assign columnCount = blockColumnsCount | to_num -%}
       {%- else -%}
-        {%- assign columnCount = _defaultBlockObj[blockObjKey].col_count -%}
+        {%- if _defaultBlockObj[blockObjKey].col_count %}
+          {%- assign columnCount = _defaultBlockObj[blockObjKey].col_count -%}
+        {%- else %}
+          {%- assign columnCount = 3 -%}
+        {%- endif %}
+
       {%- endif -%}
 
       <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap flex_j-center-mobile">
@@ -154,5 +193,5 @@
 
 {% include 'settings-popover',
   _blockSettings: _blockSettings, _commonPage: _commonPage,
-  _blockCount: blockCount, _defaultBlockObj: _defaultBlockObj
+  _defaultBlockObj: _defaultBlockObj, _blockCount: blockCount
 %}

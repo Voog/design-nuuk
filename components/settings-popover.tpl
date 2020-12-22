@@ -5,8 +5,7 @@
     {%- endif -%}
     {%- if _commonPage == true -%}
       {% include 'settings-modular-content',
-        _blockSettings: _blockSettings, _blockCount: _blockCount,
-        _columnCount: _columnCount, _minWidth: _minWidth, _padding: _padding
+        _blockSettings: _blockSettings, _defaultBlockObj: _defaultBlockObj
       %}
     {%- endif -%}
     {%- if _blogPage == true -%}
