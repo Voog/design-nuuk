@@ -2,7 +2,11 @@
 {%- if _blockSettings.block_count != blank -%}
   {%- assign blockCount = _blockSettings.block_count | to_num -%}
 {%- else -%}
-  {%- assign blockCount = _defaultBlockObj.size | minus: 1 -%}
+  {%- if _defaultBlockObj.default -%}
+    {%- assign blockCount = _defaultBlockObj.size | minus: 1 -%}
+  {%- else -%}
+    {%- assign blockCount = _defaultBlockObj.size -%}
+  {%- endif -%}
 {%- endif -%}
 
 {%- for id in (1..blockCount) -%}
