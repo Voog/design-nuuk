@@ -283,7 +283,7 @@
               });
             }
 
-            if (data.col_max_width >= 0) {
+            if (data.col_max_width >= 1) {
               $('.column-container-{{ id }} .col-item').css({
                 'max-width': data.col_max_width + 'px'
               });
@@ -293,7 +293,7 @@
               });
             }
 
-            if (data.col_min_width >= 0) {
+            if (data.col_min_width >= 1) {
               $('.column-container-{{ id }} .col-item').css({
                 'min-width': data.col_min_width + 'px'
               });
