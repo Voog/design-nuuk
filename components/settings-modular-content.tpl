@@ -233,7 +233,7 @@
             {%- assign rowSettingsKey = id | append: '_block_columns' -%}
             {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
 
-            if (data.block_max_width) {
+            if (data.block_max_width >= 0) {
               if ($(window).width() >= 540) {
                 $('.block-{{ id }}').css({
                   width: data.block_max_width + '%'
@@ -251,7 +251,7 @@
               });
             }
 
-            if (data.col_h_padding) {
+            if (data.col_h_padding >= 0) {
               var col_h_padding = '0 ' + data.col_h_padding + 'px 32px';
 
               $('.column-container-{{ id }} .col-item').css({
@@ -271,7 +271,7 @@
               });
             }
 
-            if (data.block_v_padding) {
+            if (data.block_v_padding >= 0) {
               $('.column-container-{{ id }}').css({
                 padding: data.block_v_padding + 'px 0'
               });
@@ -283,7 +283,7 @@
               });
             }
 
-            if (data.col_max_width) {
+            if (data.col_max_width >= 0) {
               $('.column-container-{{ id }} .col-item').css({
                 'max-width': data.col_max_width + 'px'
               });
@@ -293,7 +293,7 @@
               });
             }
 
-            if (data.col_min_width) {
+            if (data.col_min_width >= 0) {
               $('.column-container-{{ id }} .col-item').css({
                 'min-width': data.col_min_width + 'px'
               });

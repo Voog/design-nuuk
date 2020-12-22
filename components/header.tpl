@@ -24,7 +24,7 @@
   {%- assign imageClass = "image_fit-cover semimodal_bg-image image_abs" -%}
   {%- include "lazy-image", _data: site.data.semimodal_image, _targetWidth: '600', _className: imageClass -%}
   <div class="semimodal_bg-color bg_color-absolute"
-    {%- if site.data.semimodal_image.color != blank -%}
+    {%- if site.data.semimodal_image.color != blank %}
       style="background-color: {{ site.data.semimodal_image.color }};"
     {%- endif -%}
   ></div>
