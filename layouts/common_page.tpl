@@ -32,7 +32,7 @@
               "block_max_width": 100,
               "block_justification": "center",
               "block_v_padding": 16,
-              "col_max_width": "unset",
+              "col_max_width": "none",
               "col_justification": "between",
               "col_min_width": 240,
               "col_h_padding": 16
@@ -52,7 +52,7 @@
               "block_max_width": 100,
               "block_justification": "center",
               "block_v_padding": 16,
-              "col_max_width": "unset",
+              "col_max_width": "none",
               "col_justification": "between",
               "col_min_width": 240,
               "col_h_padding": 16
@@ -62,7 +62,7 @@
               "block_max_width": 85,
               "block_justification": "center",
               "block_v_padding": 32,
-              "col_max_width": "unset",
+              "col_max_width": "none",
               "col_justification": "between",
               "col_min_width": 240,
               "col_h_padding": 16
@@ -72,7 +72,7 @@
               "block_max_width": 100,
               "block_justification": "center",
               "block_v_padding": 16,
-              "col_max_width": "unset",
+              "col_max_width": "none",
               "col_justification": "between",
               "col_min_width": 240,
               "col_h_padding": 16

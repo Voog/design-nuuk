@@ -132,6 +132,12 @@
         {%- endif -%}
       }
 
+      if (valuesObj.block_max_width < 100) {
+        $('.block_justification').show();
+      } else {
+        $('.block_justification').hide();
+      }
+
       var setMinWidth = function() {
         var colItem = $(".column-container-{{id}} .col-item");
 
@@ -183,6 +189,9 @@
                   "title": "Right",
                   "value": "flex-end"
                 }
+              ],
+              "class": [
+                'block_justification'
               ]
             },
             {
@@ -301,6 +310,12 @@
               $('.column-container-{{ id }} .col-item').css({
                 'min-width': 'initial'
               });
+            }
+
+            if (data.block_max_width < 100) {
+              $('.block_justification').show();
+            } else {
+              $('.block_justification').hide();
             }
           }
         }

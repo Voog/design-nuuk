@@ -126,7 +126,7 @@
 
     .column-container-{{blockColumnsCount}}-{{ id }} .col-item {
       width: calc(100% / {{blockColumnsCount}} - {{hPadding}}*2px);
-      max-width: {{col_max_width}}px;
+      max-width: {%- if col_max_width == "none" -%}none{%- else -%}{{col_max_width}}px{%- endif -%};
     }
   </style>
 {%- endfor -%}
