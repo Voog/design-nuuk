@@ -31,7 +31,7 @@
         </div>
       {% endcapture %}
 
-      {%- if swiperSettingsData.is_slider == true -%}
+      {%- if swiperSettingsData.slides_count >= 2 -%}
         <div class="swiper-container">
           <div class="swiper-wrapper">
             {%- for i in (1..swiperSettingsData.slides_count) -%}
@@ -70,15 +70,11 @@
             {%- endfor -%}
           </div>
         <!-- If we need pagination -->
-          {%- if swiperSettingsData.are_navigation_bullets == true -%}
-            <div class="swiper-pagination"></div>
-          {%- endif -%}
-          {%- if swiperSettingsData.are_navigation_arrows == true or editmode -%}
+          {%- if editmode -%}
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           {%- endif -%}
-
           {%- if swiperSettingsData.is_content_by_slide != true -%}
             {{header_content}}
           {%- endif -%}

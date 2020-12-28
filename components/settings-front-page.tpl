@@ -1,6 +1,6 @@
 <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
   <button disabled class="js-front-page-settings-btn js-settings-editor-btn">
-    <div class="p14 bold">Front page</div><div class="p14 grey">Edit front page</div>
+    <div class="p14 bold">Front page header</div><div class="p14 grey">Change slider settings</div>
   </button>
 </div>
 
@@ -18,16 +18,7 @@
         settingsBtn: document.querySelector('.js-front-page-settings-btn'),
         menuItems: [
           {
-            "title": "Use slider for header images",
-            "type": "checkbox",
-            "key": "is_slider",
-            "states": {
-              "on": true,
-              "off": false
-            }
-          },
-          {
-            "title": "Use different content areas for every slide",
+            "title": "Different title on every slide",
             "type": "checkbox",
             "key": "is_content_by_slide",
             "states": {
@@ -36,27 +27,9 @@
             }
           },
           {
-            "title": "Use fade effect in slider",
+            "title": "Use fade effect on changing slides",
             "type": "checkbox",
             "key": "is_fade_effect",
-            "states": {
-              "on": true,
-              "off": false
-            }
-          },
-          {
-            "title": "Add swiper navigation arrows in live view",
-            "type": "checkbox",
-            "key": "are_navigation_arrows",
-            "states": {
-              "on": true,
-              "off": false
-            }
-          },
-          {
-            "title": "Add swiper navigation bullets",
-            "type": "checkbox",
-            "key": "are_navigation_bullets",
             "states": {
               "on": true,
               "off": false

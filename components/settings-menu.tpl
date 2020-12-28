@@ -2,7 +2,7 @@
 
 <div class="menu_settings-btn layout_settings-btn js-prevent-sideclick">
   <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">
-    <div class="p14 bold">Menu</div><div class="p14 grey">Change menu position & width</div>
+    <div class="p14 bold">Navigation</div><div class="p14 grey">Change menu settings</div>
   </button>
 </div>
 <script>

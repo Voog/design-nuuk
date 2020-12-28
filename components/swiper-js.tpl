@@ -1,4 +1,4 @@
-{%- if swiperSettingsData.is_slider == true -%}
+{%- if swiperSettingsData.slides_count >= 2 -%}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js" integrity="sha512-VHsNaV1C4XbgKSc2O0rZDmkUOhMKPg/rIi8abX9qTaVDzVJnrDGHFnLnCnuPmZ3cNi1nQJm+fzJtBbZU9yRCww==" crossorigin="anonymous"></script>
   <script>
     initSwiper();
@@ -6,8 +6,6 @@
     $( window ).resize(function() {
       initSwiper();
     });
-
-
 
     function initSwiper() {
       {%- if editmode -%}
@@ -32,10 +30,6 @@
           loop: true,
           centeredSlides: true,
           autoplay: autoPlay,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-          },
           navigation: {nextEl: '.swiper-button-next',prevEl: '.swiper-button-prev'},
           keyboard: {
             enabled: true,
