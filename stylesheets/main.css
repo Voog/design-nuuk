@@ -2337,8 +2337,8 @@ body.edy-checkout-button-visible {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   top: 0;
+  bottom: 0;
   right: 0;
-  max-width: 600px;
   width: 100%;
   opacity: 0;
   -webkit-transform: translateX(100%);
@@ -2347,11 +2347,9 @@ body.edy-checkout-button-visible {
   pointer-events: none;
   z-index: 102;
   background-color: #ffffff;
-  -webkit-transition: -webkit-transform 200ms;
-  transition: -webkit-transform 200ms;
-  -o-transition: transform 200ms;
-  transition: transform 200ms;
-  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -2361,19 +2359,12 @@ body.edy-checkout-button-visible {
           backface-visibility: hidden;
 }
 .search.active {
-  margin: 32px;
   opacity: 1;
   display: block;
   pointer-events: all;
   -webkit-transform: translateX(0px);
       -ms-transform: translateX(0px);
           transform: translateX(0px);
-}
-@media screen and (max-width: 506px) {
-  .search.active {
-    width: 100vw;
-    margin: 0;
-  }
 }
 
 .search-middle {
@@ -2387,14 +2378,13 @@ body.edy-checkout-button-visible {
 .search-inner {
   position: relative;
   height: 100%;
-  width: 100%;
+  margin: 32px;
 }
 
 .search-form {
-  position: fixed;
+  border-bottom: 1px solid black;
   z-index: 20;
   background-color: white;
-  width: 100%;
   padding: 16px 40px 16px 16px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -2405,9 +2395,6 @@ body.edy-checkout-button-visible {
     padding-bottom: 6px;
     padding: 16px 40px 16px 16px;
   }
-}
-.search-form, .search-form.selected {
-  border: none;
 }
 
 .search-input {
@@ -2505,8 +2492,8 @@ body.edy-checkout-button-visible {
 .search-close-btn {
   z-index: 103;
   position: absolute;
-  right: 0;
-  top: 16px;
+  right: 16px;
+  top: 48px;
   width: auto;
   height: auto;
 }
@@ -2577,7 +2564,7 @@ body.edy-checkout-button-visible {
   color: black;
 }
 .voog-search-modal.search-results-active {
-  padding-top: 64px;
+  padding-top: 16px;
   padding-bottom: 16px;
   overflow: auto;
   max-height: calc(100vh - 64px);
