@@ -187,6 +187,7 @@
       align-items: center;
       flex-direction: row;
       width: 100%;
+      justify-content: center;
 
       @include query($mobile-1) {
         flex-direction: column;
@@ -195,6 +196,7 @@
 
     &-link {
       width: 100%;
+      max-width: 400px;
 
       &.post_nav-link--older {
         .post_nav-link--inner {
@@ -219,6 +221,15 @@
           }
         }
 
+        .post_nav-image {
+          margin-left: 32px;
+          @include query($mobile-1) {
+            margin-left: 0;
+          }
+        }
+      }
+
+      &.post_nav-link--one {
         .post_nav-image {
           margin-left: 32px;
           @include query($mobile-1) {

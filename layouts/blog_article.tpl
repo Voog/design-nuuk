@@ -77,7 +77,7 @@
           <div class="post_nav">
             <div class="post_nav-inner">
               {% if article.older %}
-                <a class="post_nav-link{% if article.newer %} post_nav-link--older{% endif %}" href="{{ article.older.url }}">
+                <a class="post_nav-link{% if article.newer %} post_nav-link--older{% else %} post_nav-link--one{% endif %}" href="{{ article.older.url }}">
                   <div class="post_nav-link--inner">
                     <h4 class="post_nav-direction">{{ "previous" | lc }}</h4>
                     <div class="post_nav-image">
@@ -91,7 +91,7 @@
                 <div class="post_nav-separator"></div>
               {% endif %}
               {% if article.newer %}
-                <a class="post_nav-link{% if article.older %} post_nav-link--newer{% endif %}" href="{{ article.newer.url }}">
+                <a class="post_nav-link{% if article.older %} post_nav-link--newer{% else %} post_nav-link--one{% endif %}" href="{{ article.newer.url }}">
                   <div class="post_nav-link--inner">
                     <h4 class="post_nav-direction">{{ "next" | lc }}</h4>
 
