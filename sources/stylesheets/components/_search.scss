@@ -33,15 +33,14 @@
   bottom: 0;
   right: 0;
   width: 100%;
-  opacity: 0;
   transform: translateX(100%);
   pointer-events: none;
   z-index: $zindex-search;
-  background-color: $white;
-  @include transition(all 200ms);
+  max-width: 472px;
+  background-color: rgba($white, .9);
+  @include transition(transform 300ms);
 
   &.active {
-    opacity: 1;
     display: block;
     pointer-events: all;
     transform: translateX(0px);
@@ -58,26 +57,23 @@
 .search-inner {
   position: relative;
   height: 100%;
-  margin: 32px;
+
 }
 
 .search-form {
   border-bottom: 1px solid black;
   z-index: 20;
-  background-color: rgba($white, 1);
-  padding: 16px 40px 16px 16px;
+  padding: 16px 40px 16px 0;
   box-sizing: border-box;
+  margin: 32px 32px 0;
 
   @media screen and (max-width: $tablet-3) {
-    padding-top: 10px;
-    padding-bottom: 6px;
-    padding: 16px 40px 16px 16px;
+    margin: 16px 16px 0;
   }
 }
 
 .search-input {
   vertical-align: middle;
-  width: 100%;
   margin: 0;
   font-family: inherit;
   font-size: 16px;
@@ -193,19 +189,14 @@
 .search-close-btn {
   z-index: $zindex-search-btn;
   position: absolute;
-  right: 16px;
+  right: 32px;
   top: 48px;
   width: auto;
   height: auto;
 
-  @media screen and (min-width: $tablet-3 + 1) {
-    padding: 8px 15px;
-  }
-
   @media screen and (max-width: $tablet-3) {
-    top: 10px;
-    z-index: 1000;
-    padding: 12px 20px;
+    right: 16px;
+    top: 32px;
   }
 
   .menu-stripe {
@@ -235,12 +226,16 @@
   z-index: 999;
   width: 100%;
   max-height: 0;
-  background-color: rgba($white, 1);
   box-shadow: none;
   -webkit-overflow-scrolling: touch;
   text-align: left;
   pointer-events: none;
   @include transition(max-height 300ms);
+  padding: 0 32px 32px;
+
+  @media screen and (max-width: $tablet-3) {
+    padding: 0 16px 16px;
+  }
 
   &.no-content {
     padding: 20px;
@@ -248,17 +243,12 @@
   }
 
   &.search-results-active {
-    padding-top: 16px;
     padding-bottom: 16px;
     overflow: auto;
     max-height: calc(100vh - 64px);
     display: block;
     pointer-events: all;
     opacity: 1;
-
-    @media screen and (max-width: $tablet-3) {
-      max-height: 100vh;
-    }
   }
 }
 
@@ -298,7 +288,7 @@
 }
 
 .voog-search-modal-result {
-  padding: 15px;
+  padding: 16px 0;
   border-top: rgba($black, .13) solid 1px;
 
   &:first-of-type {
