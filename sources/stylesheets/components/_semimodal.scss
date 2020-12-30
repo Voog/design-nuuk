@@ -20,7 +20,7 @@
     padding: 32px;
     min-height: 100vh;
 
-    @include query($desktop-1) {
+    @include query($tablet-1) {
       overflow: auto;
     }
 
@@ -64,7 +64,7 @@
   .semimodal-relative & {
     position: relative;
 
-    @include query($desktop-1) {
+    @include query($tablet-1) {
       transform: translateX(-320px);
       position: fixed;
     }
@@ -73,7 +73,7 @@
       box-shadow: none;
       border-right: 1px solid $grey-2;
 
-      @include query($desktop-1) {
+      @include query($tablet-1) {
         border-right: none;
       }
     }
@@ -82,7 +82,7 @@
   .semimodal-open:not(.semimodal-relative) & {
     transform: translateX(0px);
 
-    @include query($desktop-1) {
+    @include query($tablet-1) {
       min-width: 320px;
       max-width: 320px;
       overflow: auto;
@@ -103,7 +103,7 @@
     pointer-events: all;
   }
 
-  @include query($desktop-1) {
+  @include query($tablet-1) {
     .semimodal-open-state {
       transform: translateX(-320px);
     }

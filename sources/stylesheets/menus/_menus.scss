@@ -60,6 +60,16 @@
       }
     }
 
+    @include query($tablet-1) {
+      .semimodal-open.semimodal-open-state & {
+        transform: rotate(45deg) translate(-5px, -5px);
+
+        &:first-child {
+          transform: rotate(-45deg) translate(-5px, 5px);
+        }
+      }
+    }
+
     .dark-background & {
       @include bg($white, 1);
     }
