@@ -80,7 +80,7 @@
       {% include "footer" %}
     </div>
 
-  {% include 'site-components' %}
+
   {% include "site-signout" %}
   {% include 'settings-popover', _productPage: true %}
   {% include "javascripts" %}

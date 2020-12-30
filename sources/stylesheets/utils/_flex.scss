@@ -44,8 +44,6 @@
           margin-top: 32px;
         }
 
-
-        .semimodal-open &,
         .semimodal-open-state & {
           @include query($desktop-1) {
             width: 50%;
@@ -73,7 +71,6 @@
       &--item {
         width: 50%;
 
-        .semimodal-open &,
         .semimodal-open-state & {
           @include query($desktop-1) {
             width: 100%;

@@ -17,13 +17,7 @@
     {%- if _productPage == true -%}
       {% include 'settings-product-page' %}
     {%- endif -%}
-
     {% include 'settings-menu' %}
-    {%- comment -%}
-      <div class="cart_settings-btn js-prevent-sideclick layout_settings-btn">
-        {% include 'shopping-cart-editor' %}
-      </div>
-    {%- endcomment -%}
     <div class="layout_settings-arrow"></div>
   </div>
 

@@ -72,8 +72,6 @@
       }
 
       new Edicy.BgPicker($picker, opts);
-
     });
-
   })
 </script>

@@ -34,7 +34,7 @@
       {%- include "footer" -%}
     </div>
   </div>
-  {% include 'site-components' %}
+
   {% include 'settings-popover' %}
   {%- include "site-signout" -%}
   {%- include "javascripts" -%}

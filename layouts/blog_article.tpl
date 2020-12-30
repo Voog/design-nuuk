@@ -129,7 +129,7 @@
       {% include "footer" %}
     </div>
   </div>
-  {% include 'site-components' %}
+
   {% include "site-signout" %}
   {% include 'settings-popover', _articlePage: true %}
   {% include "javascripts" %}

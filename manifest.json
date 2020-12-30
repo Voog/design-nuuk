@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/menu-main.tpl",
-      "layout_name": "menu-main",
-      "title": "menu-main"
+      "file": "components/tags-post.tpl",
+      "layout_name": "tags-post",
+      "title": "tags-post"
     },
     {
       "content_type": "component",
@@ -155,13 +155,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/topbar.tpl",
-      "layout_name": "topbar",
-      "title": "topbar"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/modular-blocks.tpl",
       "layout_name": "modular-blocks",
       "title": "modular-blocks"
@@ -200,13 +193,6 @@
       "file": "components/modular-content-3-1.tpl",
       "layout_name": "modular-content-3-1",
       "title": "modular-content-3-1"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/site-components.tpl",
-      "layout_name": "site-components",
-      "title": "site-components"
     },
     {
       "content_type": "component",
@@ -372,16 +358,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/menu-main.tpl",
+      "layout_name": "menu-main",
+      "title": "menu-main"
     },
     {
       "content_type": "component",
       "component": true,
-      "file": "components/tags-post.tpl",
-      "layout_name": "tags-post",
-      "title": "tags-post"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
@@ -473,13 +459,6 @@
       "file": "components/settings-modular-content.tpl",
       "layout_name": "settings-modular-content",
       "title": "settings-modular-content"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/shopping-cart-editor.tpl",
-      "layout_name": "shopping-cart-editor",
-      "title": "shopping-cart-editor"
     },
     {
       "content_type": "component",

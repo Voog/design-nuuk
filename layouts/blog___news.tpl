@@ -37,7 +37,7 @@
       {% include "footer" %}
     </div>
   </div>
-  {% include 'site-components' %}
+
   {% include "site-signout" %}
   {% include 'settings-popover', _blogPage: true %}
   {% include "javascripts" %}

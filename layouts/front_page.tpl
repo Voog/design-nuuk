@@ -115,7 +115,7 @@
       </div>
     </div>
   </div>
-  {% include 'site-components' %}
+
   {% include "site-signout" %}
   {% include 'settings-popover', _frontPage: true %}
   {% include "javascripts" %}
