@@ -47,7 +47,7 @@
 {% else %}
   <{{wrapperTag}} class="content-item-box {{ item_image_state }} js-content-item-box not-loaded"{% if _staticItem != true %} href="{{ _entityData.url }}"{% endif %}>
     <div class="item-top{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
-      <div class="top-inner of-hidden">
+      <div class="top-inner of-hidden{% if _zoom == true and editmode != true %} js-zoom cursor-zoomin{% endif %}">
         {% if _entityData.data.item_image != blank %}
           <div class="loader js-loader"></div>
           {%- assign imageClass = "item-image " | append: item_image_crop_state -%}

@@ -1,6 +1,6 @@
 <a class="content-item-box" href="{{ _entityData.url }}">
   <div class="item-top p-rel">
-    <div class="top-inner of-hidden js-zoom">
+    <div class="top-inner of-hidden">
       {% include "lazy-image", _altAttr: _entityData.data.item_image_alt_attr, _data: _entityData.data.item_image, _targetWidth: '300', _className: "item-image is-cropped" %}
     </div>
   </div>

@@ -3,7 +3,6 @@
   top: 0;
   left: 0;
   bottom: 0;
-  box-shadow: 0 25px 35px rgba(0,0,0,.2), 0 0 5px rgba(0,0,0,.1);
   background-color: #FBFBFB;
   pointer-events: none;
   z-index: $zindex-semimodal;
@@ -36,6 +35,10 @@
     .semimodal-open &,
     .semimodal-open-state & {
       transform: translateX(0px);
+    }
+
+    .semimodal-open:not(.senimodal-open-state) & {
+      box-shadow: 0 25px 35px rgba(0,0,0,.2), 0 0 5px rgba(0,0,0,.1);
     }
   }
 

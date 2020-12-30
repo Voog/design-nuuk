@@ -43,7 +43,7 @@
     {% endif %}
 
     <div class="mar_b-48">
-      {% include 'content-item', _entityData: article, _itemType: 'article', _id: article.id %}
+      {% include 'content-item', _entityData: article, _itemType: 'article', _id: article.id, _staticItem: true, _zoom: true %}
     </div>
 
     {% if post-box != "article" %}

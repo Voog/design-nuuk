@@ -31,7 +31,7 @@
           <div class="flex_row-2--item">
             <div class="mar_0-24 p-rel">
               {%- if page.data.item_image != blank or editmode -%}
-                {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id %}
+                {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id, _staticItem: true, _zoom: true %}
               {%- endif -%}
             </div>
           </div>
@@ -42,6 +42,11 @@
                 {% contentblock name="page-title" publish_default_content="true" %}
                   <h3>{{page.title}}</h3>
                 {% endcontentblock %}
+                {%- if page.data[productPageSettingsKey].product_label != blank -%}
+                  <div class="mar_t-16 p18{% if page.data[productPageSettingsKey].product_label_line_through == true %} td-lt{% endif %}">
+                    {{page.data[productPageSettingsKey].product_label}}
+                  </div>
+                {%- endif -%}
               </div>
               <section class="content-body content-formatted">{% content %}</section>
             </div>

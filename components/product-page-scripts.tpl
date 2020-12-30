@@ -68,7 +68,7 @@
                   "on": true,
                   "off": false
                 }
-              },
+              }/*,
               {
                 "title": "Select note input area count",
                 "type": "select",
@@ -95,7 +95,7 @@
                   "key": "product_note_input_label_{{i}}",
                   "placeholder": "Add product note input label"
                 },
-              {%- endfor -%}
+              {%- endfor -%}*/
             ],
             dataKey: '{{productPageSettingsKey}}',
             values: valuesObj
@@ -106,33 +106,33 @@
   {% endif %}
 </script>
 
+{%- comment -%}
+<script>
+  // Append polyfill for IE. Source: https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/append()/append().md
+  (function (arr) {
+    arr.forEach(function (item) {
+      if (item.hasOwnProperty('append')) {
+        return;
+      }
+      Object.defineProperty(item, 'append', {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        value: function append() {
+          var argArr = Array.prototype.slice.call(arguments),
+            docFrag = document.createDocumentFragment();
 
-  <script>
-    // Append polyfill for IE. Source: https://github.com/jserz/js_piece/blob/master/DOM/ParentNode/append()/append().md
-    (function (arr) {
-      arr.forEach(function (item) {
-        if (item.hasOwnProperty('append')) {
-          return;
+          argArr.forEach(function (argItem) {
+            var isNode = argItem instanceof Node;
+            docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+          });
+
+          this.appendChild(docFrag);
         }
-        Object.defineProperty(item, 'append', {
-          configurable: true,
-          enumerable: true,
-          writable: true,
-          value: function append() {
-            var argArr = Array.prototype.slice.call(arguments),
-              docFrag = document.createDocumentFragment();
-
-            argArr.forEach(function (argItem) {
-              var isNode = argItem instanceof Node;
-              docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
-            });
-
-            this.appendChild(docFrag);
-          }
-        });
       });
-    })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
-  </script>
+    });
+  })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
+</script>
 
 <script>
   {%- for i in (1..productNoteInputCount) -%}
@@ -186,10 +186,4 @@
     });
   });
 </script>
-
-
-<script>
-  $('.top-inner.js-zoom').click(function() {
-    $(this).toggleClass('zoom');
-  });
-</script>
+{%- endcomment -%}

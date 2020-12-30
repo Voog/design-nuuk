@@ -99,3 +99,9 @@
     }
   });
 </script>
+
+<script>
+  $('.top-inner.js-zoom').click(function() {
+    $(this).toggleClass('zoom');
+  });
+</script>

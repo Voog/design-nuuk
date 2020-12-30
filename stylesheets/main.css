@@ -1232,8 +1232,6 @@ p {
   top: 0;
   left: 0;
   bottom: 0;
-  -webkit-box-shadow: 0 25px 35px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 25px 35px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1);
   background-color: #FBFBFB;
   pointer-events: none;
   z-index: 100;
@@ -1293,6 +1291,10 @@ p {
   -webkit-transform: translateX(0px);
       -ms-transform: translateX(0px);
           transform: translateX(0px);
+}
+.semimodal-open:not(.senimodal-open-state) .semimodal .semimodal_inner {
+  -webkit-box-shadow: 0 25px 35px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 25px 35px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .semimodal .semimodal_bottom {
   display: -webkit-box;
@@ -1954,16 +1956,16 @@ article .item-top > .aspect-ratio-inner {
 }
 .publicmode .item-top .top-inner.zoom {
   position: fixed;
-  padding: 32px;
-  height: 100vh;
-  width: 100vw;
   left: 0;
   top: 0;
+  right: 32px;
+  bottom: 32px;
+  left: 32px;
+  top: 32px;
+  width: unset;
+  max-height: calc(100vh - 64px);
   z-index: 100000;
-  background-color: white;
-  -webkit-transition: all 0.9s cubic-bezier(0.1, 0.6, 0, 1);
-  -o-transition: all 0.9s cubic-bezier(0.1, 0.6, 0, 1);
-  transition: all 0.9s cubic-bezier(0.1, 0.6, 0, 1);
+  background-color: transparent;
 }
 .publicmode .item-top .top-inner.zoom img {
   -o-object-fit: contain;
@@ -1974,6 +1976,9 @@ article .item-top > .aspect-ratio-inner {
   height: 100%;
   cursor: -webkit-zoom-out;
   cursor: zoom-out;
+  -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
 }
 .item-top .image-drop-area {
   background-position: center !important;
@@ -2050,6 +2055,9 @@ article .item-top > .aspect-ratio-inner {
           backface-visibility: hidden;
   width: 100%;
   height: 100%;
+  -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
 }
 .item-image.not-cropped {
   -o-object-fit: contain;
