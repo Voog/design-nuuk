@@ -1916,7 +1916,7 @@ article .item-top > .aspect-ratio-inner {
 .item-top .bg-crop-btn.is-hidden, .without-image .editmode .item-top .bg-crop-btn {
   display: none;
 }
-.publicmode .without-image .item-top {
+.without-image .item-top {
   background-color: #F2F2F2;
   background-image: url("../assets/ico-placeholder.svg");
   background-size: 40px;
@@ -1947,14 +1947,10 @@ article .item-top > .aspect-ratio-inner {
   background-color: white;
 }
 .without-image .editmode .item-top .top-inner {
-  border-color: rgba(0, 0, 0, 0.1);
-  border-style: solid;
-  border-width: 1px;
+  border: none;
 }
 .cms-blog-article-add-button .item-top .top-inner {
-  border-color: rgba(0, 0, 0, 0.4);
-  border-style: dashed;
-  border-width: 1px;
+  border: none;
 }
 .publicmode .item-top .top-inner.zoom {
   position: fixed;
@@ -1990,12 +1986,7 @@ article .item-top > .aspect-ratio-inner {
   background-size: cover;
 }
 .item-top .image-drop-area:not(.active) {
-  border-color: rgba(0, 0, 0, 0.4);
-  border-style: dashed;
-  border-width: 1px;
-}
-.item-top .image-drop-area:not(.active):hover {
-  border-style: solid;
+  border: none;
 }
 .item-top .image-drop-area:hover .btn,
 .item-top .image-drop-area:hover .edy-img-drop-area-remove-image {
@@ -2026,11 +2017,13 @@ article .item-top > .aspect-ratio-inner {
 @media screen and (max-width: 480px) {
   .item-top .image-drop-area .edy-img-drop-area-placeholder {
     font-size: 13px;
+    margin-top: 48px;
   }
 }
 @media screen and (min-width: 481px) {
   .item-top .image-drop-area .edy-img-drop-area-placeholder {
     font-size: 18px;
+    margin-top: 56px;
   }
 }
 

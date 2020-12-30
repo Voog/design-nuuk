@@ -56,14 +56,13 @@
     }
   }
 
-  .publicmode .without-image & {
+  .without-image & {
     background-color: $-grey-bg;
     background-image: url('../assets/ico-placeholder.svg');
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
   }
-
   .top-inner {
     // scss-lint:disable ImportantRule
     display: flex !important;
@@ -83,15 +82,11 @@
     }
 
     .without-image .editmode & {
-      border-color: rgba($black, .1);
-      border-style: solid;
-      border-width: 1px;
+      border: none;
     }
 
     .cms-blog-article-add-button & {
-      border-color: rgba($black, .4);
-      border-style: dashed;
-      border-width: 1px;
+      border: none;
     }
 
     &.zoom {
@@ -133,13 +128,7 @@
     }
 
     &:not(.active) {
-      border-color: rgba($black, .4);
-      border-style: dashed;
-      border-width: 1px;
-
-      &:hover {
-        border-style: solid;
-      }
+      border: none;
     }
 
     &:hover {
@@ -174,10 +163,12 @@
     .edy-img-drop-area-placeholder {
       @media screen and (max-width: $mobile-1) {
         font-size: 13px;
+        margin-top: 48px;
       }
 
       @media screen and (min-width: $mobile-1 + 1) {
         font-size: $base-font-size;
+        margin-top: 56px;
       }
     }
   }
