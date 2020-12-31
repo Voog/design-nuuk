@@ -206,6 +206,12 @@ body.dark-background {
       -ms-hyphens: var(--headings-title-hyphens);
           hyphens: var(--headings-title-hyphens);
 }
+@media screen and (max-width: 900px) {
+  .content-formatted h1, .content-formatted p h1 {
+    font-size: calc(var(--headings-title-font-size) / 1.4);
+    line-height: calc(var(--headings-title-line-height) / 1.4);
+  }
+}
 .content-formatted h2, .content-formatted p h2 {
   font-size: var(--headings-heading-font-size);
   font-style: var(--headings-heading-font-style);
@@ -220,6 +226,12 @@ body.dark-background {
       -ms-hyphens: var(--headings-heading-hyphens);
           hyphens: var(--headings-heading-hyphens);
 }
+@media screen and (max-width: 900px) {
+  .content-formatted h2, .content-formatted p h2 {
+    font-size: calc(var(--headings-heading-font-size) / 1.4);
+    line-height: calc(var(--headings-heading-line-height) / 1.4);
+  }
+}
 .content-formatted h3, .content-formatted p h3 {
   font-size: var(--headings-subheading-font-size);
   font-style: var(--headings-subheading-font-style);
@@ -233,6 +245,12 @@ body.dark-background {
   -webkit-hyphens: var(--headings-subheading-hyphens);
       -ms-hyphens: var(--headings-subheading-hyphens);
           hyphens: var(--headings-subheading-hyphens);
+}
+@media screen and (max-width: 900px) {
+  .content-formatted h3, .content-formatted p h3 {
+    font-size: calc(var(--headings-subheading-font-size) / 1.4);
+    line-height: calc(var(--headings-subheading-line-height) / 1.4);
+  }
 }
 .content-formatted a:not(.custom-btn), .content-formatted p a:not(.custom-btn) {
   font-style: var(--content-link-font-style);

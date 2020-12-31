@@ -94,7 +94,6 @@
       position: fixed;
       margin-top: 16px;
       top: 100%;
-      right: 0;
       padding: 16px 0 8px 0;
       opacity: 0;
       pointer-events: none;
@@ -125,6 +124,7 @@
       text-decoration: none;
       font-size: 16px;
       text-align: left;
+      white-space: nowrap;
 
       // scss-lint:disable NestingDepth
       &::before,

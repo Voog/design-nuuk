@@ -317,6 +317,11 @@ body {
     text-decoration: var(--headings-title-text-decoration);
     text-transform: var(--headings-title-text-transform);
     hyphens: var(--headings-title-hyphens);
+
+    @include query($tablet-1) {
+      font-size: calc(var(--headings-title-font-size) / 1.4);
+      line-height: calc(var(--headings-title-line-height) / 1.4);
+    }
   }
 
   h2 {
@@ -329,6 +334,11 @@ body {
     text-decoration: var(--headings-heading-text-decoration);
     text-transform: var(--headings-heading-text-transform);
     hyphens: var(--headings-heading-hyphens);
+
+    @include query($tablet-1) {
+      font-size: calc(var(--headings-heading-font-size) / 1.4);
+      line-height: calc(var(--headings-heading-line-height) / 1.4);
+    }
   }
 
   // scss-lint:disable SingleLinePerSelector
@@ -342,6 +352,11 @@ body {
     text-decoration: var(--headings-subheading-text-decoration);
     text-transform: var(--headings-subheading-text-transform);
     hyphens: var(--headings-subheading-hyphens);
+
+    @include query($tablet-1) {
+      font-size: calc(var(--headings-subheading-font-size) / 1.4);
+      line-height: calc(var(--headings-subheading-line-height) / 1.4);
+    }
   }
   // scss-lint:enable SingleLinePerSelector
 

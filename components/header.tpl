@@ -31,15 +31,31 @@
 
   <header class="semimodal_inner">
     {%- if editmode -%}
-      <div class="semimodal_picker-btn js-prevent-sideclick hidden-mobile">
+      <div class="semimodal_picker-btn js-prevent-sideclick hidden-tablet">
         <button class="bg-picker" data-type="img" data-entity="siteData" data-picture="true" data-color="true" data-image_elem=".semimodal_bg-image" data-color_elem=".semimodal_bg-color" data-name="semimodal_image" data-bg="{{ site.data.semimodal_image | json | escape }}"></button>
       </div>
     {%- endif -%}
     <div class="semimodal_bottom">
+      <div class="header_components-tablet">
+        {% if show_language_menu_popover %}
+          <div class="js-toggle-menu-language menu-language-toggle js-prevent-sideclick" tabindex=0>
+            <button class="menu-language-btn ico-flags ico-flag-{{ page.language_code }} js-menu-language-popover-btn" data-lang-code="{{ page.language_locale }}" {{ edy_intro_add_lang }}>
+              <span>{{ current_language_title }}</span>
+            </button>
+            {% if show_language_menu_popover %}
+              {% include "menu-language-popover" %}
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% include "menu-language-list" %}
+        {%- if site.search.enabled -%}<div class="js-prevent-sideclick">{%- include "search-btn" -%}</div>{%- endif -%}
+      </div>
       {%- include "menu-main" -%}
       <div class="mar_t-32 content-body content-formatted">
         {% xcontent name="header-inner-content" %}
       </div>
+
     </div>
 
   </header>

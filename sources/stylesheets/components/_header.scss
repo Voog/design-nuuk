@@ -3,13 +3,10 @@
 .header_ {
   &fixed {
     position: fixed;
-    display: flex;
     align-items: center;
     top: 0;
     right: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
     z-index: $zindex-header-fixed;
     padding: 16px 32px;
     box-sizing: border-box;
@@ -17,6 +14,12 @@
 
     @include query($tablet-1) {
       padding: 16px;
+    }
+
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
     }
 
     .semimodal-open &,
@@ -47,6 +50,27 @@
 
     @include query($tablet-1) {
       margin-left: 0;
+    }
+
+    &-desktop {
+      display: flex;
+
+      @include query($tablet-1) {
+        display: none;
+      }
+    }
+
+    &-tablet {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      border-bottom: 1px solid;
+      padding: 16px;
+      margin-bottom: 16px;
+
+      @include query($tablet-1, 'min-width') {
+        display: none;
+      }
     }
   }
 

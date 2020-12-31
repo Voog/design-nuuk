@@ -118,14 +118,14 @@
   cursor: zoom-in;
 }
 
-.hidden-mobile {
-  @include query($desktop-1) {
+.hidden-tablet {
+  @include query($tablet-1) {
     display: none;
   }
 }
 
 .hidden-desktop {
-  @include query($desktop-1, 'min-width') {
+  @include query($tablet-1, 'min-width') {
     display: none;
   }
 }

@@ -983,10 +983,10 @@ MMCQ = (function() {
   // ===========================================================================
   var positionPopoverMenu = function(popoverButton, popoverMenu) {
     var $popoverButton = $(popoverButton);
-
+    var rect = $popoverButton.offset();
+    console.log(rect.top);
     $(popoverMenu).css({
-      top: '40px',
-      right: Math.round($(window).width() - $popoverButton.offset().left - $popoverButton.outerWidth())
+      top: rect.top
     });
   };
 
@@ -1075,6 +1075,7 @@ MMCQ = (function() {
   // Initiates the table horisontal scroll function when window is resized.
   var handleWindowResize = function() {
     $(window).resize(debounce(function() {
+      handleActivLangMenu();
       handleMenuPos();
       if (languageMenuPopoverOpen()) {
         positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
@@ -1167,15 +1168,19 @@ MMCQ = (function() {
     $(document).ready(function() {
       var topPos = $('.header_fixed').height() + 56;
       $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
+      handleActivLangMenu();
     });
   };
 
-  var handleWindowRezise = function() {
-    $( window ).resize(function() {
-    });
+  var handleActivLangMenu = function() {
+    if ($( window ).width() >= 900) {
+      $('.header_components-tablet .menu-language-toggle').removeClass('js-toggle-menu-language');
+      $('.header_components-desktop .menu-language-toggle').addClass('js-toggle-menu-language');
+    } else {
+      $('.header_components-desktop .menu-language-toggle').removeClass('js-toggle-menu-language');
+      $('.header_components-tablet .menu-language-toggle').addClass('js-toggle-menu-language');
+    }
   };
-
-
 
   var init = function() {
     // Add site wide functions here.
@@ -1189,7 +1194,6 @@ MMCQ = (function() {
     handleMenuPos();
     bindLanguageMenuButttons();
     handleDocumentReady();
-    handleWindowRezise();
 
     $(document).on('voog:shoppingcart:button:created', function() {
       buildCustomShoppingCartIcon();
