@@ -3112,9 +3112,7 @@ article.post_wrapper .date-separator.hide-separator {
 }
 .lang_menu-popover--wrap {
   position: fixed;
-  margin-top: 16px;
   top: 100%;
-  padding: 16px 0 8px 0;
   opacity: 0;
   pointer-events: none;
   -webkit-transition: opacity 200ms;
@@ -3518,7 +3516,7 @@ article.post_wrapper .date-separator.hide-separator {
   pointer-events: none;
   opacity: 0;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   .semimodal-open-state .menu-btn {
     pointer-events: all;
     opacity: 1;
@@ -3528,7 +3526,7 @@ article.post_wrapper .date-separator.hide-separator {
   font-size: 16px;
   margin-left: 16px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   .menu-btn label {
     display: none;
   }
@@ -3604,7 +3602,7 @@ article.post_wrapper .date-separator.hide-separator {
 .close-menu-btn:hover {
   opacity: .7;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   .close-menu-btn {
     display: block;
   }

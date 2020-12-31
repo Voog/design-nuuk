@@ -986,7 +986,7 @@ MMCQ = (function() {
     var rect = $popoverButton.offset();
     console.log(rect.top);
     $(popoverMenu).css({
-      top: rect.top
+      top: rect.top + 40
     });
   };
 
