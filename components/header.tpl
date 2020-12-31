@@ -52,10 +52,6 @@
         {%- if site.search.enabled -%}<div class="js-prevent-sideclick">{%- include "search-btn" -%}</div>{%- endif -%}
       </div>
       {%- include "menu-main" -%}
-      <div class="mar_t-32 content-body content-formatted">
-        {% xcontent name="header-inner-content" %}
-      </div>
-
     </div>
 
   </header>

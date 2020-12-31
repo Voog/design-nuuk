@@ -1260,6 +1260,7 @@ p {
           box-sizing: border-box;
   padding: 32px;
   min-height: 100vh;
+  overflow: auto;
   -webkit-transform: translateX(-320px);
       -ms-transform: translateX(-320px);
           transform: translateX(-320px);
@@ -1316,10 +1317,14 @@ p {
   position: sticky;
   top: 64px;
 }
+.editmode .semimodal .semimodal_bottom {
+  padding-bottom: 72px;
+}
 body:not(.semimodal-relative) .semimodal {
   -webkit-transform: translateX(-320px);
       -ms-transform: translateX(-320px);
           transform: translateX(-320px);
+  overflow-y: auto;
 }
 .semimodal-relative:not(.semimodal-open-state) .semimodal {
   max-width: 0 !important;
