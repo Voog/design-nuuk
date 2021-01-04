@@ -556,10 +556,40 @@
       "filename": "chevron-down-white.svg"
     },
     {
+      "content_type": "image/jpeg",
+      "file": "images/front-header-bg_medium.jpg",
+      "kind": "images",
+      "filename": "front-header-bg_medium.jpg"
+    },
+    {
+      "content_type": "image/jpeg",
+      "file": "images/front-header-bg_large.jpg",
+      "kind": "images",
+      "filename": "front-header-bg_large.jpg"
+    },
+    {
+      "content_type": "image/jpeg",
+      "file": "images/front-header-bg_huge.jpg",
+      "kind": "images",
+      "filename": "front-header-bg_huge.jpg"
+    },
+    {
       "content_type": "image/png",
       "file": "images/ico-check.png",
       "kind": "images",
       "filename": "ico-check.png"
+    },
+    {
+      "content_type": "image/jpeg",
+      "file": "images/front-header-bg_block.jpg",
+      "kind": "images",
+      "filename": "front-header-bg_block.jpg"
+    },
+    {
+      "content_type": "image/jpeg",
+      "file": "images/front-header-bg.jpg",
+      "kind": "images",
+      "filename": "front-header-bg.jpg"
     },
     {
       "content_type": "image/png",

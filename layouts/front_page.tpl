@@ -8,15 +8,6 @@
 </head>
 
 <body class="front-page js-bg-picker-area{% include 'semimodal-class-names' %}">
-  {% if editmode %}
-    <div class="bg-picker-top"
-      {%- if page.data.front_header_bg_1.image != blank %}
-        style="top: 500px"
-      {%- endif -%}
-    >
-      <button class="voog-bg-picker-btn js-background-settings l-64 t-32" data-bg-key="body_bg" data-bg-picture-boolean="false" data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
-    </div>
-  {% endif %}
   <div class="background-color js-background-color"></div>
 
   <div class="flex_box js-background-type {{ body_bg_type }}">
@@ -24,7 +15,7 @@
     <div class="flex_col content_wrap">
 
       {% capture header_content %}
-        <div class="swiper-content swiper-content-absolute content-formatted">
+        <div class="swiper-content content-formatted">
           {% contentblock name="front_header_content" publish_default_content="true" %}
             <h1>Shop</h1>
           {% endcontentblock %}
@@ -33,20 +24,26 @@
 
       {%- if swiperSettingsData.slides_count >= 2 -%}
         <div class="swiper-container">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper{%- if swiperSettingsData.is_content_by_slide != true %} p-abs{% endif -%}">
             {%- for i in (1..swiperSettingsData.slides_count) -%}
               {% assign headerImageKey = 'front_header_bg_' | append: i %}
               {% assign contentKey = 'front_header_content_' | append: i %}
-              {% include 'image_src_variable', _data: page.data[headerImageKey], _targetWidth: "1400" %}
-              <div
-                class="swiper-slide{%- if page.data[headerImageKey].image != blank %} image_header{%- endif -%}"
-              >
-                {%- assign imageClass = "image_fit-cover swiper-lazy front_header-image-" | append: i -%}
 
-                {% include "lazy-image", _data: page.data[headerImageKey], _targetWidth: '1400', _className: imageClass, disableLazyLoad: true  %}
-                <div class="front_header-color-{{i}} bg_color-absolute"
-                  {% if site.data[headerImageKey].color != blank %}
-                    style="background-color: {{ site.data[headerImageKey].color }};"
+              {%- if forloop.index == 1 -%}
+                {%- assign imagedata = front_header_bg_1 -%}
+              {%- else -%}
+                {%- assign imagedata = page.data[headerImageKey] -%}
+              {%- endif -%}
+
+              <div
+                class="swiper-slide{%- if imagedata != blank or editmode %} image_header{%- endif -%}"
+              >
+                {%- assign imageClass = "image_fit-cover img-absolute swiper-lazy front_header-image-" | append: i -%}
+
+                {% include "lazy-image", _data: imagedata, _targetWidth: '1400', _className: imageClass, disableLazyLoad: true  %}
+                <div class="front_header-color-{{i}}"
+                  {% if page.data[headerImageKey].color != blank %}
+                    style="background-color: {{ page.data[headerImageKey].color }};"
                   {% endif %}
                 >
                   {%- if swiperSettingsData.is_content_by_slide == true -%}
@@ -55,15 +52,16 @@
                         <h1>Shop</h1>
                       {% endcontentblock %}
                     </div>
-                    {% if editmode %}
-                      <button
-                        class="bg-picker r-32 t-32" data-type="img" data-picture="true"
-                        data-color="true" data-image_elem=".front_header-image-{{i}}"
-                        data-color_elem=".front_header-color-{{i}}" data-name="{{headerImageKey}}"
-                        data-bg="{{ page.data[headerImageKey] | json | escape }}">
-                      </button>
-                    {% endif %}
                   {%- endif -%}
+
+                  {% if editmode %}
+                    <button
+                      class="bg-picker r-32 t-32" data-type="img" data-picture="true"
+                      data-color="true" data-image_elem=".front_header-image-{{i}}"
+                      data-color_elem=".front_header-color-{{i}}" data-name="{{headerImageKey}}"
+                      data-bg="{{ imagedata | json | escape }}">
+                    </button>
+                  {% endif %}
                 </div>
 
               </div>
@@ -80,33 +78,44 @@
           {%- endif -%}
         </div>
       {%- else -%}
-        {% include 'image_src_variable', _data: page.data.front_header_bg_1, _targetWidth: "1800" %}
         <div
-          class="js-bg-wrapper {%- if page.data.front_header_bg_1.image != blank %} image_header{%- endif -%}"
+          class="swiper-container js-bg-wrapper image_header"
         >
-        {%- assign imageClass = "image_fit-cover front_header-image-1" -%}
-        {% include "lazy-image", _data: page.data.front_header_bg_1, _targetWidth: '1400', _className: imageClass  %}
-          <div class="front_header-color-1 bg_color-absolute"
-            {% if site.data.front_header_bg_1.color != blank %}
-              style="background-color: {{ site.data.front_header_bg_1.color }};"
-            {% endif %}
-          ></div>
+          {%- assign imageClass = "image_fit-cover img-absolute front_header-image-1" -%}
+          {% include "lazy-image", _data: front_header_bg_1, _targetWidth: '1400', _className: imageClass  %}
+
           {% if editmode %}
             <button
-              class="bg-picker r-32 t-32" data-type="img" data-picture="true" data-color="true"
+              class="bg-picker" data-type="img" data-picture="true" data-color="true"
               data-image_elem=".front_header-image-1" data-color_elem=".front_header-color-1"
-              data-name="front_header_bg_1" data-bg="{{ page.data.front_header_bg_1 | json | escape }}"
+              data-name="front_header_bg_1" data-bg="{{ front_header_bg_1 | json | escape }}"
               data-wrapper_class="image_header"
             ></button>
           {% endif %}
 
           {{header_content}}
+
+          <div class="front_header-color-1 bg_color-absolute"
+            {% if page.data.front_header_bg_1.color != blank %}
+              style="background-color: {{ page.data.front_header_bg_1.color }};"
+            {% endif %}
+          ></div>
         </div>
       {%- endif -%}
 
       <div class="container flex_col flex_j-space-between h-100p">
         <main class="content" role="main" data-search-indexing-allowed="true">
-          <div class="content-slogan content-formatted js-content-optional">{% content name="slogan" %}</div>
+          {% if editmode %}
+            <div class="bg-picker-top" style="top: -32px;left: 0;">
+              <button class="voog-bg-picker-btn js-background-settings l-64 t-32" data-bg-key="body_bg" data-bg-picture-boolean="false" data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
+            </div>
+          {% endif %}
+
+          <div class="content-slogan content-formatted js-content-optional">
+            {% contentblock name="slogan" publish_default_content="false" %}
+              <h1>Welcome to<br>our fancy<br>vanilla website</h1>
+            {% endcontentblock %}
+          </div>
           <section class="content-body content-formatted">{% content %}</section>
         </main>
 

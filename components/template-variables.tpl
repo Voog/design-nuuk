@@ -1,4 +1,25 @@
+{%- capture front_header_bg_json -%}
+  {
+    "image":"{{images_path}}/front-header-bg.jpg",
+    "width":3504,
+    "height":1584,
+    "imageSizes":[
+      {"url":"{{images_path}}/front-header-bg.jpg","height":1584,"width":3504},
+      {"url":"{{images_path}}/front-header-bg_huge.jpg","height":926,"width":2048},
+      {"url":"{{images_path}}/front-header-bg_large.jpg","height":579,"width":1280},
+      {"url":"{{images_path}}/front-header-bg_block.jpg","height":271,"width":600},
+      {"url":"{{images_path}}/front-header-bg_medium.jpg","height":68,"width":150}
+    ]
+  }
+{%- endcapture -%}
+{%- assign front_header_bg = front_header_bg_json | json_parse -%}
+
 {% capture dont_render %}
+  {% assign front_header_bg_1 = page.data.front_header_bg_1 %}
+  {%- if front_header_bg_1 == blank -%}
+    {% assign front_header_bg_1 = front_header_bg %}
+  {%- endif -%}
+
   {% comment %}SITE BODY RELATED VARIABLES.{% endcomment %}
   {% comment %}Assign variables based on page type.{% endcomment %}
   {% if blog_article_page %}

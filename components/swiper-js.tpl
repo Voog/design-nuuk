@@ -27,7 +27,7 @@
           },
           dynamicBullets: true,
           grabCursor: conditionalBool,
-          loop: true,
+          loop: conditionalBool,
           centeredSlides: true,
           autoplay: autoPlay,
           navigation: {nextEl: '.swiper-button-next',prevEl: '.swiper-button-prev'},
