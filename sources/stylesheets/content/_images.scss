@@ -27,13 +27,6 @@
     }
   }
 
-  &header {
-    height: 528px;
-    min-height: 528px;
-    position: relative;
-    overflow: hidden;
-  }
-
   &fit-cover {
     object-fit: cover;
     font-family: 'object-fit: cover;'; // uses object-fit-images polyfill

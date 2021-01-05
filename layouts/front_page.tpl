@@ -106,8 +106,8 @@
       <div class="container flex_col flex_j-space-between h-100p">
         <main class="content" role="main" data-search-indexing-allowed="true">
           {% if editmode %}
-            <div class="bg-picker-top" style="top: -32px;left: 0;">
-              <button class="voog-bg-picker-btn js-background-settings l-64 t-32" data-bg-key="body_bg" data-bg-picture-boolean="false" data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
+            <div class="bg-picker-top">
+              <button class="voog-bg-picker-btn js-background-settings" data-bg-key="body_bg" data-bg-picture-boolean="false" data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
             </div>
           {% endif %}
 

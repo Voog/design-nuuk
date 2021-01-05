@@ -769,12 +769,6 @@ p {
   width: 344px;
   height: 192px;
 }
-.image_header {
-  height: 528px;
-  min-height: 528px;
-  position: relative;
-  overflow: hidden;
-}
 .image_fit-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1668,8 +1662,15 @@ body .edy-bgpicker-toggle-button:hover {
   opacity: .7;
 }
 
-.front-page .edy-bgpicker-toggle-button {
+body.front-page .edy-bgpicker-toggle-button {
   z-index: 99;
+  left: 0;
+  top: -32px;
+}
+@media screen and (max-width: 752px) {
+  body.front-page .edy-bgpicker-toggle-button {
+    top: -72px;
+  }
 }
 
 .admin_btn {
@@ -1813,6 +1814,18 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
           align-items: center;
   width: 100%;
   overflow: hidden;
+  min-height: 528px;
+  position: relative;
+}
+@media screen and (max-width: 900px) {
+  .swiper-slide {
+    min-height: 400px;
+  }
+}
+@media screen and (max-width: 506px) {
+  .swiper-slide {
+    min-height: 336px;
+  }
 }
 
 .front-page .img-absolute {
@@ -1836,10 +1849,22 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: calc(100% - 128px);
   width: 100%;
-  margin: 64px 0;
-  padding: 16px;
+  margin: 64px 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: calc(528px - 128px);
+  position: relative;
+}
+@media screen and (max-width: 900px) {
+  .front-page .swiper-content {
+    min-height: calc(400px - 128px);
+  }
+}
+@media screen and (max-width: 506px) {
+  .front-page .swiper-content {
+    min-height: calc(336px - 128px);
+  }
 }
 .front-page .swiper-content-absolute {
   z-index: 49;
