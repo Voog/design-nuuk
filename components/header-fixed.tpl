@@ -3,7 +3,7 @@
   {%- assign menuTop = true -%}
 {% endif %}
 
-<header class="header_fixed">
+<header class="header_fixed{% if menuPos == 'is_top_fixed'%} relative{% endif %}">
   <div class="header_fixed-content">
     <button class="menu-btn js-menu-btn js-prevent-sideclick{% if menuTop == true %} hidden-desktop{% endif %}">
       <div>

@@ -79,12 +79,13 @@
             }
 
             if (data.positioning === 'is_top') {
-              $('.header_fixed').removeClass('p-abs');
+              $('.header_fixed').removeClass('relative');
             } else if (data.positioning === 'is_top_fixed') {
-              $('.header_fixed').addClass('p-abs');
+              $('.header_fixed').addClass('relative');
             }
 
             if (data.positioning === 'is_side_always_open') {
+              $('.header_fixed').removeClass('relative');
               $('.js-semimodal-toggle').addClass('semimodal-open-state semimodal-relative');
             } else {
               $('.js-semimodal-toggle').removeClass('semimodal-open-state semimodal-relative');
@@ -97,6 +98,10 @@
             } else {
               $('.semimodal').addClass('semimodal-border');
             }
+
+            var topPos = $('.header_fixed').height();
+            $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
+
             {%- if semimodalSettings.max_width != blank -%}
               if (data.max_width >= 1 && data.max_width != {{semimodalSettings.max_width}}) {
                 $('.semimodal-open:not(.semimodal-relative) .semimodal,.semimodal_inner,.semimodal-open .semimodal,.semimodal-open-state .semimodal').css(

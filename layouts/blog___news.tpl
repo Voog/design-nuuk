@@ -16,7 +16,7 @@
   {% endif %}
   <div class="background-color js-background-color"></div>
 
-  <div class="flex_box js-background-type {{ body_bg_type }}">
+  <div class="container_wrap js-background-type {{ body_bg_type }}">
     {% include "header" %}
 
     <div class="container">

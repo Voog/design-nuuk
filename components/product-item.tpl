@@ -10,7 +10,7 @@
 </a>
 {%- capture product_label -%}
   {%- if _entityData.data[productPageSettingsKey].product_label != blank -%}
-    <span class="mar_l-16{% if _entityData.data[productPageSettingsKey].product_label_line_through == true %} td-lt{% endif %}">
+    <span class="{% if _entityData.data[productPageSettingsKey].product_label_line_through == true %} td-lt{% endif %}">
       {{_entityData.data[productPageSettingsKey].product_label}}
     </span>
   {%- endif -%}
@@ -22,11 +22,11 @@
     {%- else -%}
       <button class="product_item-btn js-cart-btn p-abs" data-product-id="{{ product.id }}">ADD TO CART</button>
     {%- endif -%}
-    <p class="product_item-price p-abs">{{ product.price_with_tax | money_with_currency: "EUR" }} {{product_label}}</p>
+    <p class="product_item-price p-abs">{{ product.price_with_tax | money_with_currency: "EUR" }}<span class="mar_l-16"></span> {{product_label}}</p>
   </div>
 {%- else -%}
   <div class="flex_box product_item-details oo">
     <a class="product_item-btn p-abs" href="{{ _entityData.url }}">LOOK CLOSER</a>
-    {{product_label}}
+    <p class="product_item-price p-abs">{{product_label}}</p>
   </div>
 {%- endif -%}

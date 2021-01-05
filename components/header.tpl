@@ -29,7 +29,21 @@
     {%- endif -%}
   ></div>
 
+
+
   <header class="semimodal_inner">
+    <div class="site_title content-formatted">
+      {%- unless editmode -%}
+        <a href="{{ site.root_item.url }}">
+      {%- endunless -%}
+        {% contentblock name="site-title" xpage="true" %}
+          {{site.title}}
+        {% endcontentblock %}
+      {%- unless editmode -%}
+        </a>
+      {%- endunless -%}
+    </div>
+
     {%- if editmode -%}
       <div class="semimodal_picker-btn js-prevent-sideclick hidden-tablet">
         <button class="bg-picker" data-type="img" data-entity="siteData" data-picture="true" data-color="true" data-image_elem=".semimodal_bg-image" data-color_elem=".semimodal_bg-color" data-name="semimodal_image" data-bg="{{ site.data.semimodal_image | json | escape }}"></button>

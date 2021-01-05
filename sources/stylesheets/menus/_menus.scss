@@ -4,7 +4,7 @@
 // Menu button. Only visible on smaller screens.
 .menu-btn {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin: -8px;
   padding: 8px;
   background: none;
@@ -19,6 +19,12 @@
     @include query($tablet-1) {
       pointer-events: all;
       opacity: 1;
+    }
+  }
+
+  @include query($tablet-1, 'min-width') {
+    .semimodal-relative & {
+      display: none;
     }
   }
 

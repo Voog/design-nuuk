@@ -10,7 +10,7 @@
 <body class="front-page js-bg-picker-area{% include 'semimodal-class-names' %}">
   <div class="background-color js-background-color"></div>
 
-  <div class="flex_box js-background-type {{ body_bg_type }}">
+  <div class="container_wrap js-background-type {{ body_bg_type }}">
     {% include "header" %}
     <div class="flex_col content_wrap">
 

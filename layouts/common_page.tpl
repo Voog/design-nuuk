@@ -15,7 +15,7 @@
     </div>
   {%- endif -%}
 
-  <div class="flex_box js-background-type {{ body_bg_type }}">
+  <div class="container_wrap js-background-type {{ body_bg_type }}">
     {%- include "header" -%}
     <div class="container">
       <main class="content" role="main" data-search-indexing-allowed="true">

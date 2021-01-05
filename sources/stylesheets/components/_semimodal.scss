@@ -70,6 +70,10 @@
     width: 0;
   }
 
+  .site_title {
+    display: none;
+  }
+
   .semimodal-relative & {
     position: relative;
 
@@ -85,6 +89,10 @@
       @include query($tablet-1) {
         border-right: none;
       }
+    }
+
+    .site_title {
+      display: block;
     }
   }
 
