@@ -1,10 +1,10 @@
 <div class="tags">
   {% include "tags-variables" %}
   {% if editmode %}
-    <div class="tags-editor">{% editable article.tags %}</div>
+    <div class="tags-editor mar_t-32">{% editable article.tags %}</div>
   {% else %}
     {% unless article.tags == empty %}
-      <nav class="post_tags menu-sub">
+      <nav class="post_tags mar_t-32 menu-sub">
         <ul class="menu">
           {% for tag in article.tags %}
             <li class="menu-item">

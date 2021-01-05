@@ -41,9 +41,14 @@
         {{ post_details }}
       </div>
     {% endif %}
+    {% if post-box == "article" and editmode == true %}
+      {%- assign isPostImageStatic = false -%}
+    {% else %}
+      {%- assign isPostImageStatic = true -%}
+    {% endif %}
 
     <div class="mar_b-48">
-      {% include 'content-item', _entityData: article, _itemType: 'article', _id: article.id, _staticItem: true, _zoom: true %}
+      {% include 'content-item', _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic, _zoom: true %}
     </div>
 
     {% if post-box != "article" %}
@@ -58,7 +63,7 @@
 
     {% if post-box == "article" %}
       <div class="post_excerpt content-formatted mar_b-32" {{ edy_intro_edit_text }}>{% editable article.excerpt %}</div>
-      <div class="post_body content-formatted">{% editable article.body %}</div>
+      <div class="post_body content-formatted mar_b-32">{% editable article.body %}</div>
       <div class="post_body content-formatted">{% content name="additional_body" bind="Article" %}</div>
     {% endif %}
 

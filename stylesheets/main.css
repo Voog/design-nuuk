@@ -2753,7 +2753,6 @@ body.edy-checkout-button-visible {
   padding: 24px 0;
   border-top: 1px solid;
   border-bottom: 1px solid;
-  margin-top: 48px;
 }
 .post_page .post_narrow {
   margin-left: 48px;
@@ -2781,7 +2780,7 @@ body.edy-checkout-button-visible {
 }
 .post_title a:hover {
   color: black;
-  opacity: .8;
+  opacity: .6;
 }
 .dark-background .post_title a:hover {
   color: white;
@@ -2822,7 +2821,7 @@ body.edy-checkout-button-visible {
 }
 .post_comments-count a:hover {
   color: #0066bb;
-  opacity: .8;
+  opacity: .6;
 }
 .dark-background .post_comments-count a:hover {
   color: white;
@@ -2965,7 +2964,7 @@ body.edy-checkout-button-visible {
   text-decoration: underline;
 }
 .blog-page .post_read-more-btn:hover {
-  opacity: .8;
+  opacity: .6;
 }
 
 .comments.hide-post-comments {
@@ -4234,6 +4233,9 @@ body .animate_translated-x--0 {
 }
 .mar_l-16 {
   margin-left: 16px;
+}
+.mar_r-8 {
+  margin-right: 8px;
 }
 .mar_r-32 {
   margin-right: 32px;

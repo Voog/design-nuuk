@@ -79,7 +79,6 @@
     padding: 24px 0;
     border-top: 1px solid;
     border-bottom: 1px solid;
-    margin-top: 48px;
   }
 
   &narrow {
@@ -113,7 +112,7 @@
     a {
       &:hover {
         color: $primary-color;
-        opacity: .8;
+        opacity: .6;
 
         .dark-background & {
           @include color($white, 1);
@@ -166,7 +165,7 @@
 
       &:hover {
         @include color($blue-1, 1);
-        opacity: .8;
+        opacity: .6;
 
         .dark-background & {
           @include color($white, 1);
@@ -295,7 +294,7 @@
     text-decoration: underline;
 
     &:hover {
-      opacity: .8;
+      opacity: .6;
     }
   }
 }
