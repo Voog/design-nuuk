@@ -50,27 +50,25 @@
           </div>
         </div>
 
-        <div class="content-formatted mar_t-48">
-          {%- if articleSettingsData.show_related_articles -%}
-            {% assign current_article_id = article.id %}
-            <h4 class="post_narrow">Continue reading</h4>
+        <div class="content-formatted mar_t-48 js-related-articles{%- if articleSettingsData.show_related_articles != true %} d-none{%- endif -%}">
+          {% assign current_article_id = article.id %}
+          <h4 class="post_narrow">Continue reading</h4>
 
-            <div class="flex_row flex_row-3 mar_0-16-neg related_posts mar_t-32">
-              {%- load articles to "articles" q.article.tag$in=article.tags -%}
-              {% for article in articles %}
-                {%- if article.id != current_article_id -%}
-                  <div class="flex_row-3--item">
-                    <div class="mar_0-16">
-                      {% include "post-box" %}
-                    </div>
+          <div class="flex_row flex_row-3 mar_0-16-neg related_posts mar_t-32">
+            {%- load articles to "articles" q.article.tag$in=article.tags -%}
+            {% for article in articles %}
+              {%- if article.id != current_article_id -%}
+                <div class="flex_row-3--item">
+                  <div class="mar_0-16">
+                    {% include "post-box" %}
                   </div>
-                  {%- if forloop.index == 3 -%}
-                    {% break %}
-                  {%- endif -%}
+                </div>
+                {%- if forloop.index == 3 -%}
+                  {% break %}
                 {%- endif -%}
-              {% endfor %}
-            </div>
-          {%- endif -%}
+              {%- endif -%}
+            {% endfor %}
+          </div>
         </div>
 
         {% if article.older or article.newer %}
@@ -105,40 +103,37 @@
             </div>
           </div>
         {% endif %}
-        {%- unless editmode -%}
-          {%- if previewmode -%}
-            {%- assign sharerTag = 'div' -%}
-          {%- else -%}
-            {%- assign sharerTag = 'a' -%}
-          {%- endif -%}
 
-          {%- if articleSettingsData.has_share_on_facebook_btn == true or articleSettingsData.has_share_on_twitter_btn == true or articleSettingsData.has_share_on_linkedin_btn == true -%}
-            <div class="tags mar_t-32">
-              <h4>Share this article</h4>
-              <nav class="post_tags menu-sub mar_t-16">
-                <ul class="menu">
-                  <li class="menu-item">
-                    <{{sharerTag}} class="menu-link"{% unless previewmode %} href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');"{% endunless %}>
-                      Facebook
-                    </{{sharerTag}}>
-                    {%- if articleSettingsData.has_share_on_facebook_btn == true and articleSettingsData.has_share_on_twitter_btn == true or articleSettingsData.has_share_on_linkedin_btn == true -%}
-                      <span class="mar_l-8 mar_r-8">&bull;</span>
-                    {%- endif -%}
-                    <{{sharerTag}} class="menu-link"{% unless previewmode %} href="#" onclick="javascript:popup_share('http://twitter.com/home?status={{ article.title }} {{ site.url }}{{ article.url }}',800,320)"{% endunless %}>
-                      Twitter
-                    </{{sharerTag}}>
-                    {%- if articleSettingsData.has_share_on_twitter_btn == true and articleSettingsData.has_share_on_linkedin_btn == true -%}
-                      <span class="mar_l-8 mar_r-8">&bull;</span>
-                    {%- endif -%}
-                    <{{sharerTag}} class="menu-link"{% unless previewmode %} target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ article.url | remove_first:'/' }}&title={{ article.title | remove:'&' }}"{% endunless %}>
-                      LinkedIn
-                    </{{sharerTag}}>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          {%- endif -%}
-        {%- endunless -%}
+        {%- if previewmode or editmode -%}
+          {%- assign sharerTag = 'div' -%}
+        {%- else -%}
+          {%- assign sharerTag = 'a' -%}
+        {%- endif -%}
+        <div class="js-article-shared tags mar_t-32{%- if articleSettingsData.has_share_on_facebook_btn != true and articleSettingsData.has_share_on_twitter_btn != true and articleSettingsData.has_share_on_linkedin_btn != true %} d-none{%- endif -%}">
+          <h4>Share this article</h4>
+          <nav class="post_tags menu-sub mar_t-16">
+            <ul class="menu">
+              <li class="menu-item">
+                <{{sharerTag}} class="menu-link facebook{%- if articleSettingsData.has_share_on_facebook_btn != true %} d-none{%- endif -%}"{% unless previewmode %} href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');"{% endunless %}>
+                  Facebook
+                </{{sharerTag}}>
+                  <span class="mar_l-8 mar_r-8{%- if articleSettingsData.has_share_on_facebook_btn != true and articleSettingsData.has_share_on_twitter_btn != true or articleSettingsData.has_share_on_linkedin_btn == true %} d-none{%- endif -%}">
+                    &bull;
+                  </span>
+                <{{sharerTag}} class="menu-link twitter{%- if articleSettingsData.has_share_on_twitter_btn != true %} d-none{%- endif -%}"{% unless previewmode %} href="#" onclick="javascript:popup_share('http://twitter.com/home?status={{ article.title }} {{ site.url }}{{ article.url }}',800,320)"{% endunless %}>
+                  Twitter
+                </{{sharerTag}}>
+                  <span class="mar_l-8 mar_r-8{%- if articleSettingsData.has_share_on_twitter_btn != true and articleSettingsData.has_share_on_linkedin_btn != true %} d-none{%- endif -%}">
+                    &bull;
+                  </span>
+                <{{sharerTag}} class="menu-link linkedin{%- if articleSettingsData.has_share_on_linkedin_btn != true %} d-none{%- endif -%}"{% unless previewmode %} target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ article.url | remove_first:'/' }}&title={{ article.title | remove:'&' }}"{% endunless %}>
+                  LinkedIn
+                </{{sharerTag}}>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
       </main>
 
       {% include "footer" %}

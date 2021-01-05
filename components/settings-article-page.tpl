@@ -56,7 +56,7 @@
         menuItems: [
           {
             "title": "Add share on Facebook button",
-            "tooltip": "Visible in live & preview mode.",
+            "tooltip": "Visible in live & preview mode (only visuals).",
             "type": "checkbox",
             "key": "has_share_on_facebook_btn",
             "states": {
@@ -66,7 +66,7 @@
           },
           {
             "title": "Add share on Twitter button",
-            "tooltip": "Visible in live & preview mode.",
+            "tooltip": "Visible in live & preview mode (only visuals).",
             "type": "checkbox",
             "key": "has_share_on_twitter_btn",
             "states": {
@@ -76,7 +76,7 @@
           },
           {
             "title": "Add share on LinkedIn button",
-            "tooltip": "Visible in live & preview mode.",
+            "tooltip": "Visible in live & preview mode (only visuals).",
             "type": "checkbox",
             "key": "has_share_on_linkedin_btn",
             "states": {
@@ -162,6 +162,60 @@
 
           if (data.show_author == true && data.show_date == true) {
             $dateSeparator.removeClass('hide-separator');
+          }
+
+          // Share buttons script
+
+          if (data.has_share_on_facebook_btn == true) {
+            if (data.has_share_on_linkedin_btn == true || data.has_share_on_twitter_btn == true) {
+              $('.js-article-shared .facebook').next('span').removeClass('d-none');
+            }
+
+            $('.js-article-shared .facebook').removeClass('d-none');
+          } else {
+            $('.js-article-shared .facebook').next('span').addClass('d-none');
+            $('.js-article-shared .facebook').addClass('d-none');
+          }
+
+          if (data.has_share_on_twitter_btn == true) {
+            if (data.has_share_on_linkedin_btn == true) {
+              $('.js-article-shared .twitter').next('span').removeClass('d-none');
+            }
+
+            $('.js-article-shared .twitter').removeClass('d-none');
+          } else {
+            if (data.has_share_on_facebook_btn != true) {
+              $('.js-article-shared .twitter').next('span').addClass('d-none');
+            }
+
+            $('.js-article-shared .twitter').addClass('d-none');
+          }
+
+          if (data.has_share_on_linkedin_btn == true) {
+            if (data.has_share_on_twitter_btn != true) {
+              $('.js-article-shared .twitter').next('span').addClass('d-none');
+            } else if (data.has_share_on_twitter_btn == true) {
+              $('.js-article-shared .twitter').next('span').removeClass('d-none');
+            }
+
+            $('.js-article-shared .linkedin').removeClass('d-none');
+          } else {
+            $('.js-article-shared .twitter').next('span').addClass('d-none');
+            $('.js-article-shared .linkedin').addClass('d-none');
+          }
+
+          if (data.has_share_on_facebook_btn != true && data.has_share_on_twitter_btn != true && data.has_share_on_linkedin_btn != true ) {
+            $('.js-article-shared').addClass('d-none');
+          } else {
+            $('.js-article-shared').removeClass('d-none');
+          }
+
+          // Related article script
+
+          if (data.show_related_articles != true) {
+            $('.js-related-articles').addClass('d-none');
+          } else if (data.show_related_articles == true) {
+            $('.js-related-articles').removeClass('d-none');
           }
         }
       }
