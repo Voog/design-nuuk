@@ -3067,14 +3067,6 @@ article.post_wrapper .date-separator.hide-separator {
 .product_item-btn:hover {
   opacity: .6;
 }
-.product_filters {
-  display: none;
-}
-.product_filters.visible {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
 .product_alt-attr {
   display: none;
 }

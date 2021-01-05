@@ -27,6 +27,11 @@
             <h1>{{page.title}}</h1>
           {% endcontentblock %}
         </div>
+
+        {% if editmode %}
+          <div class="edit-btn">{% menuadd parent="page" %}</div>
+        {% endif %}
+
         {% include 'product-list-filter' %}
         {% include 'product-list-block' %}
       </main>
@@ -43,7 +48,7 @@
     site.initCommonPage();
 
     if ($(".js-product-whith-data").length >= 2) {
-      $(".product_filters").addClass('visible');
+      $(".product_filters").removeClass('d-none');
     }
 
     function fadeAnimation(wrapper) {

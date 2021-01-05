@@ -26,12 +26,15 @@
 
       <main class="content" role="main" data-search-indexing-allowed="true">
         {% if editmode %}
+          {%- assign isPostImageStatic = false -%}
+        {% else %}
+          {%- assign isPostImageStatic = true -%}
         {% endif %}
         <div class="flex_row flex_row-2 mar_0-24-neg mar_b-32">
           <div class="flex_row-2--item">
             <div class="mar_0-24 p-rel">
               {%- if page.data.item_image != blank or editmode -%}
-                {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id, _staticItem: true, _zoom: true %}
+                {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic, _zoom: true %}
               {%- endif -%}
             </div>
           </div>
