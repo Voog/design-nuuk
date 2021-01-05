@@ -81,7 +81,7 @@ body.dark-background {
 }
 .container .voog-bg-picker-btn,
 .container .bg-picker {
-  top: 68px;
+  top: -64px;
   right: 15px;
 }
 
@@ -1546,9 +1546,9 @@ body:not(.semimodal-relative) .semimodal {
 
 .semimodal_picker-btn {
   z-index: 100;
-  position: relative;
-  top: 32px;
-  left: -32px;
+  position: absolute;
+  top: -72px;
+  left: 0;
 }
 
 body .edy-popover {
@@ -1658,7 +1658,7 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
 }
 
 .body_bg-picker--btn.edy-bgpicker-toggle-button {
-  left: 32px;
+  left: 0px;
 }
 @media screen and (max-width: 1024px) {
   .body_bg-picker--btn.edy-bgpicker-toggle-button {
@@ -1667,7 +1667,7 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
 }
 
 body .edy-bgpicker-toggle-button {
-  left: 32px;
+  left: 0px;
   background-color: #1B2124;
   opacity: 1;
   height: 40px;

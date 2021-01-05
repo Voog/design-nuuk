@@ -11,15 +11,16 @@
 
 <body class="blog-page js-bg-picker-area{% include 'semimodal-class-names' %}">
   {% include "template-svg-spritesheet" %}
-  {% if editmode %}
-    <div class="bg-picker-top"><button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button></div>
-  {% endif %}
   <div class="background-color js-background-color"></div>
 
   <div class="container_wrap js-background-type {{ body_bg_type }}">
     {% include "header" %}
 
     <div class="container">
+      {% if editmode %}
+        <div class="bg-picker-top"><button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="body_bg" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button></div>
+      {% endif %}
+
       <main class="content" role="main" data-search-indexing-allowed="true">
         <section class="content-body content-formatted post_intro-content" {{ edy_intro_edit_text }}>{% content %}</section>
 

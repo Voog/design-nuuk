@@ -44,12 +44,12 @@
       {%- endunless -%}
     </div>
 
-    {%- if editmode -%}
-      <div class="semimodal_picker-btn js-prevent-sideclick hidden-tablet">
-        <button class="bg-picker" data-type="img" data-entity="siteData" data-picture="true" data-color="true" data-image_elem=".semimodal_bg-image" data-color_elem=".semimodal_bg-color" data-name="semimodal_image" data-bg="{{ site.data.semimodal_image | json | escape }}"></button>
-      </div>
-    {%- endif -%}
     <div class="semimodal_bottom">
+      {%- if editmode -%}
+        <div class="semimodal_picker-btn js-prevent-sideclick hidden-tablet">
+          <button class="bg-picker" data-type="img" data-entity="siteData" data-picture="true" data-color="true" data-image_elem=".semimodal_bg-image" data-color_elem=".semimodal_bg-color" data-name="semimodal_image" data-bg="{{ site.data.semimodal_image | json | escape }}"></button>
+        </div>
+      {%- endif -%}
       <div class="header_components-tablet">
         {% if show_language_menu_popover %}
           <div class="js-toggle-menu-language menu-language-toggle js-prevent-sideclick" tabindex=0>

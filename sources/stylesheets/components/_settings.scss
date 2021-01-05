@@ -122,9 +122,9 @@
 .semimodal_ {
   &picker-btn {
     z-index: $zindex-semimodal;
-    position: relative;
-    top: 32px;
-    left: -32px;
+    position: absolute;
+    top: -72px;
+    left: 0;
   }
 }
 
@@ -221,7 +221,7 @@ body .edy-settings-editor:not(.editor_default) {
 
 
 .body_bg-picker--btn.edy-bgpicker-toggle-button {
-  left: 32px;
+  left: 0px;
 
   @include query($desktop-1) {
     display: none;
@@ -229,7 +229,7 @@ body .edy-settings-editor:not(.editor_default) {
 }
 
 body .edy-bgpicker-toggle-button {
-  left: 32px;
+  left: 0px;
   background-color: $editor-grey;
   opacity: 1;
   height: 40px;
