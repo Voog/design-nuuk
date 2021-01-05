@@ -105,23 +105,34 @@
             </div>
           </div>
         {% endif %}
-
         {%- unless editmode -%}
+          {%- if previewmode -%}
+            {%- assign sharerTag = 'div' -%}
+          {%- else -%}
+            {%- assign sharerTag = 'a' -%}
+          {%- endif -%}
+
           {%- if articleSettingsData.has_share_on_facebook_btn == true or articleSettingsData.has_share_on_twitter_btn == true or articleSettingsData.has_share_on_linkedin_btn == true -%}
             <div class="tags mar_t-32">
               <h4>Share this article</h4>
               <nav class="post_tags menu-sub mar_t-16">
                 <ul class="menu">
                   <li class="menu-item">
-                    <a class="menu-link" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');">Facebook </a>
+                    <{{sharerTag}} class="menu-link"{% unless previewmode %} href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');"{% endunless %}>
+                      Facebook
+                    </{{sharerTag}}>
                     {%- if articleSettingsData.has_share_on_facebook_btn == true and articleSettingsData.has_share_on_twitter_btn == true or articleSettingsData.has_share_on_linkedin_btn == true -%}
                       <span class="mar_l-8 mar_r-8">&bull;</span>
                     {%- endif -%}
-                    <a class="menu-link" href="#" onclick="javascript:popup_share('http://twitter.com/home?status={{ article.title }} {{ site.url }}{{ article.url }}',800,320)">Twitter </a>
+                    <{{sharerTag}} class="menu-link"{% unless previewmode %} href="#" onclick="javascript:popup_share('http://twitter.com/home?status={{ article.title }} {{ site.url }}{{ article.url }}',800,320)"{% endunless %}>
+                      Twitter
+                    </{{sharerTag}}>
                     {%- if articleSettingsData.has_share_on_twitter_btn == true and articleSettingsData.has_share_on_linkedin_btn == true -%}
                       <span class="mar_l-8 mar_r-8">&bull;</span>
                     {%- endif -%}
-                    <a class="menu-link" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ article.url | remove_first:'/' }}&title={{ article.title | remove:'&' }}">LinkedIn</a>
+                    <{{sharerTag}} class="menu-link"{% unless previewmode %} target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ article.url | remove_first:'/' }}&title={{ article.title | remove:'&' }}"{% endunless %}>
+                      LinkedIn
+                    </{{sharerTag}}>
                   </li>
                 </ul>
               </nav>
