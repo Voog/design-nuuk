@@ -2755,8 +2755,8 @@ body.edy-checkout-button-visible {
   border-bottom: 1px solid;
 }
 .post_page .post_narrow {
-  margin-left: 48px;
-  margin-right: 48px;
+  margin-left: 124px;
+  margin-right: 124px;
 }
 @media screen and (max-width: 1024px) {
   .post_page .post_narrow {

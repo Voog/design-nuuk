@@ -83,8 +83,8 @@
 
   &narrow {
     .post_page & {
-      margin-left: 48px;
-      margin-right: 48px;
+      margin-left: 124px;
+      margin-right: 124px;
       @include query($desktop-1) {
         margin: 0;
       }
