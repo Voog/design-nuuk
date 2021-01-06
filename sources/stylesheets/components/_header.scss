@@ -12,6 +12,14 @@
     box-sizing: border-box;
     @include transition(all 200ms);
 
+    .front-page & {
+      margin-bottom: -124px;
+    }
+
+    &.scroll {
+      box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
+    }
+
     @include query($tablet-1) {
       padding: 16px;
     }

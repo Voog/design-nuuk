@@ -45,7 +45,7 @@ body {
   position: absolute;
 
   .container & {
-    top: -64px;
+    top: -80px;
     right: 15px;
   }
 }
@@ -89,15 +89,15 @@ body {
 .container {
   position: relative;
   max-width: 960px;
-  padding: 32px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
   transform: translate3d(0, 0, 0);
   overflow: hidden;
+  padding: 40px 32px;
 
   @include query($tablet-2) {
-    padding: 32px 16px
+    padding: 40px 16px;
   }
 
   .editmode & {

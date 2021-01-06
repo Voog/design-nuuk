@@ -14,6 +14,10 @@ body.dark-background {
 .header_fixed {
   background-color: var(--header-background-color);
 }
+.header_fixed.scroll {
+  -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
+}
 .header_fixed .header_title {
   font-size: var(--header-site-title-font-size);
   line-height: var(--header-site-title-font-size);

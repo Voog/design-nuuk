@@ -81,7 +81,7 @@ body.dark-background {
 }
 .container .voog-bg-picker-btn,
 .container .bg-picker {
-  top: -64px;
+  top: -80px;
   right: 15px;
 }
 
@@ -120,7 +120,6 @@ body.dark-background {
 .container {
   position: relative;
   max-width: 960px;
-  padding: 32px;
   margin: 0 auto;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -128,10 +127,11 @@ body.dark-background {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   overflow: hidden;
+  padding: 40px 32px;
 }
 @media screen and (max-width: 752px) {
   .container {
-    padding: 32px 16px;
+    padding: 40px 16px;
   }
 }
 .editmode .container {
@@ -692,14 +692,6 @@ p {
 }
 
 /* CONTENT */
-.content {
-  display: block;
-  margin-top: 30px;
-}
-.front-page .content {
-  margin-top: 0;
-}
-
 .content-header .edy-partial-view {
   margin-top: -3px;
 }
@@ -2317,6 +2309,13 @@ body.edy-checkout-button-visible {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+.front-page .header_fixed {
+  margin-bottom: -124px;
+}
+.header_fixed.scroll {
+  -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 900px) {
   .header_fixed {

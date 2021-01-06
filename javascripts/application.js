@@ -1087,6 +1087,24 @@ MMCQ = (function() {
     $('.header_bottom').css('top', $('.header_fixed').innerHeight() + 60);
   };
 
+  var handleWindowScroll = function() {
+    window.addEventListener('scroll', function(e) {
+      var wrapperHeight = $('.header_fixed').height();
+
+      if (window.scrollY > wrapperHeight) {
+        $('.header_fixed').addClass('scroll');
+        if ($('.header_fixed').css('background-color') == 'rgba(0, 0, 0, 0)') {
+          $('.header_fixed').css('background-color', 'white');
+        }
+      } else {
+        $('.header_fixed').removeClass('scroll');
+        if ($('.header_fixed').css('background-color') == 'rgb(255, 255, 255)') {
+          $('.header_fixed').attr("style", "");
+        }
+      }
+    });
+  };
+
   var bindLanguageMenuButttons = function() {
     // Toggles language menu popover.
     var togglePopover = function() {
@@ -1178,6 +1196,7 @@ MMCQ = (function() {
     toggleMainMenu();
     focusFormWithErrors();
     handleWindowResize();
+    handleWindowScroll();
     handleMenuPos();
     bindLanguageMenuButttons();
     handleDocumentReady();
