@@ -546,18 +546,6 @@
     $('.header_bottom').css('top', $('.header_fixed').innerHeight() + 60);
   };
 
-  var handleWindowScroll = function() {
-    window.addEventListener('scroll', function(e) {
-      var wrapperHeight = $('.header_fixed').height();
-
-      if (window.scrollY > wrapperHeight) {
-        $('.header_fixed').addClass('scroll');
-      } else {
-        $('.header_fixed').removeClass('scroll');
-      }
-    });
-  };
-
   var bindLanguageMenuButttons = function() {
     // Toggles language menu popover.
     var togglePopover = function() {
@@ -649,7 +637,6 @@
     toggleMainMenu();
     focusFormWithErrors();
     handleWindowResize();
-    handleWindowScroll();
     handleMenuPos();
     bindLanguageMenuButttons();
     handleDocumentReady();

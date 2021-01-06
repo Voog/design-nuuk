@@ -11,9 +11,8 @@
   <div class="background-color js-background-color"></div>
 
   <div class="container_wrap js-background-type {{ body_bg_type }}">
-    {% include "header" %}
-    <div class="flex_col content_wrap">
 
+    <div class="flex_col content_wrap">
       {% capture header_content %}
         <div class="swiper-content content-formatted">
           {% contentblock name="front_header_content" publish_default_content="true" %}
@@ -24,6 +23,8 @@
 
       {%- if swiperSettingsData.slides_count >= 2 -%}
         <div class="swiper-container">
+          {% include "header" %}
+
           <div class="swiper-wrapper{%- if swiperSettingsData.is_content_by_slide != true %} p-abs{% endif -%}">
             {%- for i in (1..swiperSettingsData.slides_count) -%}
               {% assign headerImageKey = 'front_header_bg_' | append: i %}
@@ -81,6 +82,8 @@
         <div
           class="swiper-container js-bg-wrapper image_header"
         >
+          {% include "header" %}
+
           {%- assign imageClass = "image_fit-cover img-absolute front_header-image-1" -%}
           {% include "lazy-image", _data: front_header_bg_1, _targetWidth: '1400', _className: imageClass  %}
 

@@ -40,6 +40,8 @@ body {
 // =============================================================================
 // Styling rules for the site's header. These rules affect the entire site.
 .header_fixed {
+  background-color: var(--header-background-color);
+
   .header_title {
     font-size: var(--header-site-title-font-size);
     line-height: var(--header-site-title-font-size);
@@ -293,8 +295,10 @@ body {
   color: var(--content-body-color);
   hyphens: var(--content-body-hyphens);
 
-  .dark-background & {
-    color: var(--fourth-color);
+  &:not(.header_title) {
+    .dark-background & {
+      color: var(--fourth-color);
+    }
   }
 
   // Styling rules for the editable content area headings.
@@ -302,8 +306,10 @@ body {
   h1, h2, h3, h4, h5, h6 {
     color: var(--secondary-color);
 
-    .dark-background & {
-      color: var(--fourth-color);
+    &:not(.header_title) {
+      .dark-background & {
+        color: var(--fourth-color);
+      }
     }
   }
   // scss-lint:enable SingleLinePerSelector
@@ -452,11 +458,11 @@ body {
     .form_field_textfield,
     .form_field_textarea,
     .form_field_select {
-      color: var(--third-color);
-      border-color: var(--third-color);
+      color: var(--fourth-color);
+      border-color: var(--fourth-color);
 
       &::placeholder {
-        color: var(--third-color);
+        color: var(--fourth-color);
       }
     }
   }

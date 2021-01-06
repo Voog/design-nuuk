@@ -8,11 +8,9 @@
     right: 0;
     width: 100%;
     z-index: $zindex-header-fixed;
-    padding: 16px 32px;
+    padding: 32px;
     box-sizing: border-box;
     @include transition(all 200ms);
-    background: $white;
-    box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
 
     @include query($tablet-1) {
       padding: 16px;
@@ -28,7 +26,6 @@
     .semimodal-open-state & {
       @include query($tablet-1) {
         width: 100%;
-        background: $white;
         box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
       }
     }
@@ -94,6 +91,7 @@
 
   &title {
     margin-right: 32px;
+    min-width: 72px;
 
     @include query($tablet-1) {
       margin-right: 16px;

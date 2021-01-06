@@ -11,6 +11,9 @@ body.dark-background {
   max-width: var(--container-max-width);
 }
 
+.header_fixed {
+  background-color: var(--header-background-color);
+}
 .header_fixed .header_title {
   font-size: var(--header-site-title-font-size);
   line-height: var(--header-site-title-font-size);
@@ -175,7 +178,8 @@ body.dark-background {
   color: var(--primary-color);
 }
 
-.content-formatted, .content-formatted p {
+.content-formatted,
+.content-formatted p {
   font-size: var(--content-body-font-size);
   line-height: var(--content-body-line-height);
   color: var(--content-body-color);
@@ -183,17 +187,30 @@ body.dark-background {
       -ms-hyphens: var(--content-body-hyphens);
           hyphens: var(--content-body-hyphens);
 }
-.dark-background .content-formatted,
-.dark-background .content-formatted p {
+.dark-background .content-formatted:not(.header_title),
+.dark-background .content-formatted p:not(.header_title) {
   color: var(--fourth-color);
 }
-.content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6, .content-formatted p h1, .content-formatted p h2, .content-formatted p h3, .content-formatted p h4, .content-formatted p h5, .content-formatted p h6 {
+.content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6,
+.content-formatted p h1,
+.content-formatted p h2,
+.content-formatted p h3,
+.content-formatted p h4,
+.content-formatted p h5,
+.content-formatted p h6 {
   color: var(--secondary-color);
 }
-.dark-background .content-formatted h1, .dark-background .content-formatted h2, .dark-background .content-formatted h3, .dark-background .content-formatted h4, .dark-background .content-formatted h5, .dark-background .content-formatted h6, .dark-background .content-formatted p h1, .dark-background .content-formatted p h2, .dark-background .content-formatted p h3, .dark-background .content-formatted p h4, .dark-background .content-formatted p h5, .dark-background .content-formatted p h6 {
+.dark-background .content-formatted h1:not(.header_title), .dark-background .content-formatted h2:not(.header_title), .dark-background .content-formatted h3:not(.header_title), .dark-background .content-formatted h4:not(.header_title), .dark-background .content-formatted h5:not(.header_title), .dark-background .content-formatted h6:not(.header_title),
+.dark-background .content-formatted p h1:not(.header_title),
+.dark-background .content-formatted p h2:not(.header_title),
+.dark-background .content-formatted p h3:not(.header_title),
+.dark-background .content-formatted p h4:not(.header_title),
+.dark-background .content-formatted p h5:not(.header_title),
+.dark-background .content-formatted p h6:not(.header_title) {
   color: var(--fourth-color);
 }
-.content-formatted h1, .content-formatted p h1 {
+.content-formatted h1,
+.content-formatted p h1 {
   font-size: var(--headings-title-font-size);
   font-style: var(--headings-title-font-style);
   font-weight: var(--headings-title-font-weight);
@@ -208,12 +225,14 @@ body.dark-background {
           hyphens: var(--headings-title-hyphens);
 }
 @media screen and (max-width: 900px) {
-  .content-formatted h1, .content-formatted p h1 {
+  .content-formatted h1,
+  .content-formatted p h1 {
     font-size: calc(var(--headings-title-font-size) / 1.4);
     line-height: calc(var(--headings-title-line-height) / 1.4);
   }
 }
-.content-formatted h2, .content-formatted p h2 {
+.content-formatted h2,
+.content-formatted p h2 {
   font-size: var(--headings-heading-font-size);
   font-style: var(--headings-heading-font-style);
   font-weight: var(--headings-heading-font-weight);
@@ -228,12 +247,14 @@ body.dark-background {
           hyphens: var(--headings-heading-hyphens);
 }
 @media screen and (max-width: 900px) {
-  .content-formatted h2, .content-formatted p h2 {
+  .content-formatted h2,
+  .content-formatted p h2 {
     font-size: calc(var(--headings-heading-font-size) / 1.4);
     line-height: calc(var(--headings-heading-line-height) / 1.4);
   }
 }
-.content-formatted h3, .content-formatted p h3 {
+.content-formatted h3,
+.content-formatted p h3 {
   font-size: var(--headings-subheading-font-size);
   font-style: var(--headings-subheading-font-style);
   font-weight: var(--headings-subheading-font-weight);
@@ -248,7 +269,8 @@ body.dark-background {
           hyphens: var(--headings-subheading-hyphens);
 }
 @media screen and (max-width: 900px) {
-  .content-formatted h3, .content-formatted p h3 {
+  .content-formatted h3,
+  .content-formatted p h3 {
     font-size: calc(var(--headings-subheading-font-size) / 1.4);
     line-height: calc(var(--headings-subheading-line-height) / 1.4);
   }
@@ -261,7 +283,8 @@ body.dark-background {
           text-decoration: var(--content-link-text-decoration);
   text-transform: var(--content-link-text-transform);
 }
-.dark-background .content-formatted a:not(.custom-btn), .dark-background .content-formatted p a:not(.custom-btn) {
+.dark-background .content-formatted a:not(.custom-btn),
+.dark-background .content-formatted p a:not(.custom-btn) {
   color: var(--fourth-color);
 }
 .content-formatted a:not(.custom-btn):hover, .content-formatted p a:not(.custom-btn):hover {
@@ -276,7 +299,8 @@ body.dark-background {
   color: var(--fourth-color);
 }
 .content-formatted .custom-btn,
-.content-formatted .form_submit input, .content-formatted p .custom-btn,
+.content-formatted .form_submit input,
+.content-formatted p .custom-btn,
 .content-formatted p .form_submit input {
   padding: calc(var(--button-padding) - 8px) var(--button-padding) calc(var(--button-padding) - 7px);
   color: var(--button-color);
@@ -292,7 +316,8 @@ body.dark-background {
   background-color: var(--button-background-color);
 }
 .content-formatted .custom-btn:hover,
-.content-formatted .form_submit input:hover, .content-formatted p .custom-btn:hover,
+.content-formatted .form_submit input:hover,
+.content-formatted p .custom-btn:hover,
 .content-formatted p .form_submit input:hover {
   padding: calc(var(--button-hover-padding) - 8px) var(--button-hover-padding) calc(var(--button-hover-padding) - 7px);
   color: var(--button-hover-color);
@@ -335,28 +360,28 @@ body.dark-background {
 .dark-background .content-formatted .form_field_textfield,
 .dark-background .content-formatted .form_field_textarea,
 .dark-background .content-formatted .form_field_select {
-  color: var(--third-color);
-  border-color: var(--third-color);
+  color: var(--fourth-color);
+  border-color: var(--fourth-color);
 }
 .dark-background .content-formatted .form_field_textfield::-webkit-input-placeholder,
 .dark-background .content-formatted .form_field_textarea::-webkit-input-placeholder,
 .dark-background .content-formatted .form_field_select::-webkit-input-placeholder {
-  color: var(--third-color);
+  color: var(--fourth-color);
 }
 .dark-background .content-formatted .form_field_textfield::-moz-placeholder,
 .dark-background .content-formatted .form_field_textarea::-moz-placeholder,
 .dark-background .content-formatted .form_field_select::-moz-placeholder {
-  color: var(--third-color);
+  color: var(--fourth-color);
 }
 .dark-background .content-formatted .form_field_textfield::-ms-input-placeholder,
 .dark-background .content-formatted .form_field_textarea::-ms-input-placeholder,
 .dark-background .content-formatted .form_field_select::-ms-input-placeholder {
-  color: var(--third-color);
+  color: var(--fourth-color);
 }
 .dark-background .content-formatted .form_field_textfield::placeholder,
 .dark-background .content-formatted .form_field_textarea::placeholder,
 .dark-background .content-formatted .form_field_select::placeholder {
-  color: var(--third-color);
+  color: var(--fourth-color);
 }
 .light-background .content-formatted .form_field_textfield,
 .light-background .content-formatted .form_field_textarea,
