@@ -120,14 +120,14 @@
     // scss-lint:disable ImportantRule
     background-position: center !important;
     // scss-lint:enable ImportantRule
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
 
     &.not-cropped {
-      background-size: contain;
+      background-size: contain !important;
     }
 
     &.is-cropped {
-      background-size: cover;
+      background-size: cover !important;
     }
 
     &:not(.active) {
@@ -135,32 +135,13 @@
     }
 
     &:hover {
-      .btn,
-      .edy-img-drop-area-remove-image {
+      .btn {
         opacity: 1;
       }
     }
 
     .edy-img-drop-area-remove-image {
-      @include size(45px 40px);
-      border-radius: 4px;
-      top: 10px;
-      right: 10px;
-      z-index: 9;
-      color: rgba($white, 1);
-      background-color: $editor-grey;
-      border: 0;
-      opacity: 0;
-      transition: background-color .5s, opacity .5s;
-
-      &:hover svg {
-        opacity: .7;
-      }
-    }
-
-    .edy-img-drop-area-remove-image-ico {
-      margin-top: -10px;
-      margin-left: -8px;
+      display: none !important;
     }
 
     .edy-img-drop-area-placeholder {

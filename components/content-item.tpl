@@ -20,27 +20,38 @@
     data-item-type="{{_itemType}}"
     data-item-id="{{ _id }}"
   >
-    <div class="product_alt-attr content-formatted {{ item_image_state }}">
-      <div class="form_field">
-        <label for="item-image-alt-{{_id}}" class="form_field_label">Add image alt attribute</label>
-        <input
-          placeholder="Add image alt attribute"
-          id="item-image-alt-{{_id}}"
-          class="form_field_textfield js-data-item mar_l-16"
-          value="{{_entityData.data.item_image_alt_attr}}"
-          data-name="item_image_alt_attr"
-          data-entity="{{_itemType}}"
-          data-id="{{_id}}"
-        >
+
+    <div class="image_settings js-prevent-sideclick"{% if _entityData.data.item_image == blank %} style="display: none;"{% endif %}>
+      <div class="image_settings-buttons">
+        <div class="image_settings-button--title mar_r-8">Image</div>
+        <button class="bg_img-contain image_settings-button mar_r-8 btn-no-style js-toggle-image-settings">
+        </button>
+        <button class="bg_img-contain image_settings-expand mar_r-8 btn-no-style js-toggle-crop-state">
+        </button>
+        <button class="bg_img-contain image_settings-remove btn-no-style js-remove-image">
+        </button>
+      </div>
+      <div class="settings_popover js-image-settings-popover">
+        <div class="settings_popover-arrow--up"></div>
+        <div class="product_alt-attr {{ item_image_state }}">
+          <div class="form_field-cms">
+            <input
+              placeholder="Add image alt text"
+              id="item-image-alt-{{_id}}"
+              class="form_field_textfield js-data-item image_settings-remove--input"
+              value="{{_entityData.data.item_image_alt_attr}}"
+              data-name="item_image_alt_attr"
+              data-entity="{{_itemType}}"
+              data-id="{{_id}}"
+            >
+            <label for="item-image-alt-{{_id}}" class="form_field_label">Alt text</label>
+          </div>
+        </div>
       </div>
     </div>
 
+
     <div class="item-top{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
-      <button class="btn bg-crop-btn {% if _entityData.data.item_image == blank %}is-hidden{% else %}is-visible{% endif %} js-toggle-crop-state">
-        <svg width="20" height="20" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
-          <use xlink:href="#ico-toggle"></use>
-        </svg>
-      </button>
       <div class="top-inner aspect-ratio-inner image-drop-area {{ item_image_crop_state }} js-content-item-img-drop-area js-lazyload" data-image="{{ _entityData.data.item_image.url }}"></div>
     </div>
   </div>

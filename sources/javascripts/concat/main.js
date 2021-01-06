@@ -55,6 +55,7 @@
         $('html').removeClass('menu-language-popover-open');
         $('body').removeClass('layout_settings-visible');
         $('.editor_default-container').removeClass('active');
+        $('.js-image-settings-popover').toggleClass('active');
       };
     });
 
@@ -258,9 +259,11 @@
   // Binds editmode image drop areas.
   // ===========================================================================
   var bindContentItemImgDropAreas = function(placeholderText) {
+
     $('.js-content-item-img-drop-area').each(function(index, imgDropAreaTarget) {
       var $imgDropAreaTarget = $(imgDropAreaTarget),
           $contentItemBox = $imgDropAreaTarget.closest('.js-content-item-box'),
+          $removeBtn = $contentItemBox.find('.image_settings-remove')
           itemId = $contentItemBox.data('item-id'),
           itemType = $contentItemBox.data('item-type'),
           itemData = new Edicy.CustomData({
@@ -299,6 +302,7 @@
 
           if (image) {
             imageId = image.original_id;
+            $contentItemBox.find('.image_settings').show();
 
             $contentItemBox
               .removeClass('without-image is-loaded with-error')
@@ -311,6 +315,7 @@
             ;
           } else {
             imageId = null;
+            $contentItemBox.find('.image_settings').hide();
 
             $contentItemBox
               .removeClass('with-image is-loaded with-error')
@@ -329,6 +334,24 @@
           $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 1);
           $imgDropAreaTarget.css('opacity', 1);
         }
+      });
+
+      $removeBtn.on('click', function() {
+        $(this).closest('.js-content-item-box').find('.top-inner')
+          .append('<div class="edy-img-drop-area-placeholder">' + placeholderText + '</div>');
+        $(this).closest('.js-content-item-box').find('.top-inner').attr("style", "");
+        $(this).closest('.js-content-item-box')
+          .removeClass('with-image is-loaded with-error')
+          .addClass('without-image not-loaded')
+        ;
+        $(this).closest('.js-content-item-box').find('.edy-img-drop-area').removeClass('active');
+        itemData.set({image_crop_state: null, item_image: null});
+        $(this).closest('.image_settings').hide();
+
+        // Remove alt image data
+        $(this).closest('.js-content-item-box').find('.image_settings-remove--input').val('');
+        $(this).closest('.js-content-item-box').find('.image_settings-remove--input').trigger('change');
+        $(this).closest('.js-content-item-box').find('.form_field-cms').removeClass('with-input');
       });
     });
   };
@@ -393,6 +416,16 @@
       $('html').toggleClass('search-open');
       $('html').removeClass('menu-language-popover-open');
     }
+
+    var toggleImageSettingsPopover = function() {
+      $('.js-image-settings-popover').toggleClass('active');
+    }
+
+    $('.js-toggle-image-settings').click(function() {
+      toggleImageSettingsPopover();
+    });
+
+    handleFocus($('.js-toggle-image-settings'), toggleImageSettingsPopover);
 
     var toggleMenuPopover = function() {
       $('.menu_popover').toggleClass('active');
@@ -629,11 +662,25 @@
     // Add single post layout specific functions here.
   };
 
-  var handleDocumentReady = function() {
+  var handleDocument = function() {
+    if ($('.form_field-cms input').val().length >= 1) {
+      $('.form_field-cms input').closest('.form_field-cms').addClass('with-input');
+    } else {
+      $('.form_field-cms input').closest('.form_field-cms').removeClass('with-input');
+    }
+
     $(document).ready(function() {
       var topPos = $('.header_fixed').height() + 56;
       $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
       handleActivLangMenu();
+
+      $('.form_field-cms input').keyup(function(e) {
+        if ($(this).val().length >= 1) {
+          $(this).closest('.form_field-cms').addClass('with-input');
+        } else {
+          $(this).closest('.form_field-cms').removeClass('with-input');
+        }
+      });
     });
   };
 
@@ -658,7 +705,7 @@
     handleWindowScroll();
     handleMenuPos();
     bindLanguageMenuButttons();
-    handleDocumentReady();
+    handleDocument();
 
     $(document).on('voog:shoppingcart:button:created', function() {
       buildCustomShoppingCartIcon();

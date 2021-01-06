@@ -21,7 +21,7 @@
         </div>
       {% endif %}
 
-      <div class="mar_t-32">
+      <div class="mar_t-32 mar_b-32">
         {% include 'menu-breadcrumbs' %}
       </div>
 
