@@ -1945,9 +1945,6 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   background-color: #fff;
   color: #000;
 }
-.form_field-cms.with-input input::-webkit-input-placeholder {
-  color: transparent;
-}
 .form_field-cms input {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -2506,13 +2503,6 @@ body.edy-checkout-button-visible {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-}
-@media screen and (max-width: 900px) {
-  .semimodal-open .header_fixed, .semimodal-open-state .header_fixed {
-    width: 100%;
-    -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
-  }
 }
 @media screen and (min-width: 900px) {
   .semimodal-relative .header_fixed {
@@ -3899,7 +3889,7 @@ article.post_wrapper .date-separator.hide-separator {
   line-height: 194%;
   max-width: 160px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   .menu_top.menu-main .menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -4004,7 +3994,7 @@ article.post_wrapper .date-separator.hide-separator {
 .menu-main .menu .menu_popover .menu .menu-item:nth-child(n+5) {
   display: block;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   .menu-main .menu .menu_popover .menu .menu-item:nth-child(n+5) {
     display: none;
   }
@@ -4041,7 +4031,7 @@ article.post_wrapper .date-separator.hide-separator {
   width: 24px;
   cursor: pointer;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 900px) {
   .menu-main:not(.menu_top) .menu .menu-item.active a:before {
     content: '';
     background-color: #000000;

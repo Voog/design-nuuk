@@ -151,7 +151,7 @@
       max-width: 160px;
     }
 
-    @include query($desktop-1) {
+    @include query($tablet-1) {
       flex-direction: column;
 
       .menu-item.lvl-1:nth-of-type(n+6) {
@@ -247,7 +247,7 @@
             &:nth-child(n+5) {
               display: block;
 
-              @include query($desktop-1) {
+              @include query($tablet-1) {
                 display: none;
               }
             }
@@ -283,7 +283,7 @@
       }
     }
   }
-  @include query($desktop-1, 'min-width') {
+  @include query($tablet-1, 'min-width') {
     &:not(.menu_top) {
       .menu {
         .menu-item {
