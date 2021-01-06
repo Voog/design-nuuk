@@ -13,6 +13,7 @@ body.dark-background {
 
 .header_fixed .header_title {
   font-size: var(--header-site-title-font-size);
+  line-height: var(--header-site-title-font-size);
   font-weight: var(--header-site-title-font-weight);
   font-style: var(--header-site-title-font-style);
   -webkit-text-decoration: var(--header-site-title-text-decoration);

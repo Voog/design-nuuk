@@ -80,8 +80,10 @@
 
             if (data.positioning === 'is_top') {
               $('.header_fixed').removeClass('relative');
+              $('.js-menu-popover-btn').removeClass('d-none');
             } else if (data.positioning === 'is_top_fixed') {
               $('.header_fixed').addClass('relative');
+              $('.js-menu-popover-btn').removeClass('d-none');
             }
 
             if (data.positioning === 'is_side_always_open') {

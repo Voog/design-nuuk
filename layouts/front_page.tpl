@@ -111,7 +111,7 @@
             </div>
           {% endif %}
 
-          <div class="content-slogan content-formatted js-content-optional">
+          <div class="content-slogan content-formatted js-content-optional mar_t-32">
             {% contentblock name="slogan" publish_default_content="false" %}
               <h1>Welcome to<br>our fancy<br>vanilla website</h1>
             {% endcontentblock %}

@@ -244,11 +244,7 @@ body .edy-bgpicker-toggle-button {
 body.front-page .edy-bgpicker-toggle-button {
   z-index: $zindex-semimodal - 1;
   left: 0;
-  top: -32px;
-
-  @include query($tablet-2) {
-    top: -72px;
-  }
+  top: -64px;
 }
 
 .admin_btn {

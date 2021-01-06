@@ -131,7 +131,7 @@ body.dark-background {
 }
 @media screen and (max-width: 752px) {
   .container {
-    padding: 36px 16px;
+    padding: 32px 16px;
   }
 }
 .editmode .container {
@@ -1681,12 +1681,7 @@ body .edy-bgpicker-toggle-button:hover {
 body.front-page .edy-bgpicker-toggle-button {
   z-index: 99;
   left: 0;
-  top: -32px;
-}
-@media screen and (max-width: 752px) {
-  body.front-page .edy-bgpicker-toggle-button {
-    top: -72px;
-  }
+  top: -64px;
 }
 
 .admin_btn {
@@ -2309,7 +2304,7 @@ body.edy-checkout-button-visible {
   right: 0;
   width: 100%;
   z-index: 101;
-  padding: 32px 32px 16px;
+  padding: 16px 32px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-transition: all 200ms;
@@ -2322,6 +2317,9 @@ body.edy-checkout-button-visible {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
 }
 @media screen and (max-width: 900px) {
   .header_fixed {
@@ -2344,11 +2342,6 @@ body.edy-checkout-button-visible {
     -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
             box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
   }
-}
-.header_fixed.scroll {
-  background: #ffffff;
-  -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 900px) {
   .semimodal-relative .header_fixed {
@@ -3575,7 +3568,6 @@ article.post_wrapper .date-separator.hide-separator {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin: -8px;
   padding: 8px;
   background: none;
   border: none;

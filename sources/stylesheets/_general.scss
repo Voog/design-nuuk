@@ -97,7 +97,7 @@ body {
   overflow: hidden;
 
   @include query($tablet-2) {
-    padding: 36px 16px
+    padding: 32px 16px
   }
 
   .editmode & {
