@@ -101,7 +101,7 @@
               $('.semimodal').addClass('semimodal-border');
             }
 
-            var topPos = $('.header_fixed').height();
+            var topPos = $('.header_fixed').height() + 80;
             $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
 
             {%- if semimodalSettings.max_width != blank -%}

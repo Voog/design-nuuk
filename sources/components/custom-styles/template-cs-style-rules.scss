@@ -138,11 +138,7 @@ body {
 // Menu button. Only visible on smaller screens.
 .menu-btn {
   .menu-stripe {
-    background-color: var(--primary-color);
-
-    .dark-background & {
-      background-color: var(--fourth-color);
-    }
+    background-color: var(--header-mainmenu-color);
   }
 }
 
@@ -299,23 +295,20 @@ body {
   color: var(--content-body-color);
   hyphens: var(--content-body-hyphens);
 
-  &:not(.header_title) {
-    .dark-background & {
-      color: var(--fourth-color);
-    }
-  }
 
+  .dark-background & {
+    color: var(--fourth-color);
+  }
   // Styling rules for the editable content area headings.
   // scss-lint:disable SingleLinePerSelector
   h1, h2, h3, h4, h5, h6 {
     color: var(--secondary-color);
 
-    &:not(.header_title) {
-      .dark-background & {
-        color: var(--fourth-color);
-      }
+    .dark-background & {
+      color: var(--fourth-color);
     }
   }
+
   // scss-lint:enable SingleLinePerSelector
 
   h1 {
@@ -394,6 +387,21 @@ body {
         color: var(--fourth-color);
       }
       // scss-lint:enable NestingDepth
+    }
+  }
+
+  &.header_title,
+  &.site_title {
+    color: var(--header-mainmenu-color);
+
+    .dark-background & {
+      color: var(--header-mainmenu-color);
+    }
+
+    p, h1, h2, h3, h4, h5, h6 {
+      .dark-background & {
+        color: var(--header-mainmenu-color);
+      }
     }
   }
 

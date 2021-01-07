@@ -74,10 +74,6 @@
         }
       }
     }
-
-    .dark-background & {
-      @include bg($white, 1);
-    }
   }
 
   &:hover {
@@ -167,24 +163,12 @@
 
       @include color($blue-1);
 
-      .dark-background & {
-        @include query($tablet-2, 'min-width') {
-          @include color($white, 1);
-        }
-      }
-
       &.untranslated {
         @include color($red, 0.5);
       }
 
       &:hover {
         @include color($primary-color, 1);
-
-        .dark-background & {
-          @include query($tablet-2, 'min-width') {
-            @include color($white, 1);
-          }
-        }
       }
     }
   }
@@ -370,20 +354,6 @@
             transform: rotate(-45deg);
             -webkit-transform: rotate(-45deg);
           }
-        }
-        .dark-background & {
-          @include color($white, 1);
-        }
-
-        &.untranslated {
-
-        }
-
-        &.active {
-        }
-
-        &:hover {
-
         }
       }
     }

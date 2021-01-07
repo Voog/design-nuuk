@@ -1211,7 +1211,7 @@ MMCQ = (function() {
     }
 
     $(document).ready(function() {
-      var topPos = $('.header_fixed').height() + 56;
+      var topPos = $('.header_fixed').height() + 80;
       $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
       handleActivLangMenu();
 
