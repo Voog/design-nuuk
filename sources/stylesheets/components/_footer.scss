@@ -4,8 +4,8 @@
   margin-top: 40px;
   padding: 16px 0;
 
-  @include query($tablet-2) {
-    margin-top: 32px;
+  @include query($tablet-1) {
+    margin-top: 16px;
   }
 
   &_separator {
@@ -13,6 +13,14 @@
     opacity: 0.2;
     border: 1px solid var(--secondary-color);
     margin-bottom: 48px;
+
+    @include query($tablet-1) {
+      margin-bottom: 16px;
+    }
+
+    .dark-background & {
+      border-color: $white;
+    }
   }
 
   // Styling rules for the footer's editable content area.
@@ -37,6 +45,10 @@
       line-height: 1;
       @include bg($white);
       @include border(all,1px,solid,$black, 0.1);
+
+      .dark-background & {
+        color: $black;
+      }
 
       &:hover {
         @include border(all, 1px, solid, $black, 0.75);

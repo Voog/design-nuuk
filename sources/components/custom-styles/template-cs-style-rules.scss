@@ -279,7 +279,7 @@ body {
 .footer {
   .voog-reference {
     a {
-      color: var(--primary-color);
+      color: var(--primary-color) !important;
     }
   }
 }
@@ -289,6 +289,7 @@ body {
 // =============================================================================
 // Styling rules for the site's editable content area and its elements.
 .content-formatted,
+.content-formatted .product_item-btn,
 .content-formatted p {
   font-size: var(--content-body-font-size);
   line-height: var(--content-body-line-height);
@@ -306,6 +307,13 @@ body {
 
     .dark-background & {
       color: var(--fourth-color);
+    }
+  }
+
+  svg, path {
+    .dark-background & {
+      fill: white;
+      border-color: white;
     }
   }
 
@@ -398,7 +406,7 @@ body {
       color: var(--header-mainmenu-color);
     }
 
-    p, h1, h2, h3, h4, h5, h6 {
+    a, p, h1, h2, h3, h4, h5, h6 {
       .dark-background & {
         color: var(--header-mainmenu-color);
       }

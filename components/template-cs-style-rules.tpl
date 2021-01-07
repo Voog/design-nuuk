@@ -176,10 +176,10 @@ body.dark-background {
 }
 
 .footer .voog-reference a {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
-.content-formatted, .content-formatted p {
+.content-formatted, .content-formatted .product_item-btn, .content-formatted p {
   font-size: var(--content-body-font-size);
   line-height: var(--content-body-line-height);
   color: var(--content-body-color);
@@ -188,16 +188,21 @@ body.dark-background {
           hyphens: var(--content-body-hyphens);
 }
 .dark-background .content-formatted,
+.dark-background .content-formatted .product_item-btn,
 .dark-background .content-formatted p {
   color: var(--fourth-color);
 }
-.content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6, .content-formatted p h1, .content-formatted p h2, .content-formatted p h3, .content-formatted p h4, .content-formatted p h5, .content-formatted p h6 {
+.content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6, .content-formatted .product_item-btn h1, .content-formatted .product_item-btn h2, .content-formatted .product_item-btn h3, .content-formatted .product_item-btn h4, .content-formatted .product_item-btn h5, .content-formatted .product_item-btn h6, .content-formatted p h1, .content-formatted p h2, .content-formatted p h3, .content-formatted p h4, .content-formatted p h5, .content-formatted p h6 {
   color: var(--secondary-color);
 }
-.dark-background .content-formatted h1, .dark-background .content-formatted h2, .dark-background .content-formatted h3, .dark-background .content-formatted h4, .dark-background .content-formatted h5, .dark-background .content-formatted h6, .dark-background .content-formatted p h1, .dark-background .content-formatted p h2, .dark-background .content-formatted p h3, .dark-background .content-formatted p h4, .dark-background .content-formatted p h5, .dark-background .content-formatted p h6 {
+.dark-background .content-formatted h1, .dark-background .content-formatted h2, .dark-background .content-formatted h3, .dark-background .content-formatted h4, .dark-background .content-formatted h5, .dark-background .content-formatted h6, .dark-background .content-formatted .product_item-btn h1, .dark-background .content-formatted .product_item-btn h2, .dark-background .content-formatted .product_item-btn h3, .dark-background .content-formatted .product_item-btn h4, .dark-background .content-formatted .product_item-btn h5, .dark-background .content-formatted .product_item-btn h6, .dark-background .content-formatted p h1, .dark-background .content-formatted p h2, .dark-background .content-formatted p h3, .dark-background .content-formatted p h4, .dark-background .content-formatted p h5, .dark-background .content-formatted p h6 {
   color: var(--fourth-color);
 }
-.content-formatted h1, .content-formatted p h1 {
+.dark-background .content-formatted svg, .dark-background .content-formatted path, .dark-background .content-formatted .product_item-btn svg, .dark-background .content-formatted .product_item-btn path, .dark-background .content-formatted p svg, .dark-background .content-formatted p path {
+  fill: white;
+  border-color: white;
+}
+.content-formatted h1, .content-formatted .product_item-btn h1, .content-formatted p h1 {
   font-size: var(--headings-title-font-size);
   font-style: var(--headings-title-font-style);
   font-weight: var(--headings-title-font-weight);
@@ -212,12 +217,12 @@ body.dark-background {
           hyphens: var(--headings-title-hyphens);
 }
 @media screen and (max-width: 900px) {
-  .content-formatted h1, .content-formatted p h1 {
+  .content-formatted h1, .content-formatted .product_item-btn h1, .content-formatted p h1 {
     font-size: calc(var(--headings-title-font-size) / 1.4);
     line-height: calc(var(--headings-title-line-height) / 1.4);
   }
 }
-.content-formatted h2, .content-formatted p h2 {
+.content-formatted h2, .content-formatted .product_item-btn h2, .content-formatted p h2 {
   font-size: var(--headings-heading-font-size);
   font-style: var(--headings-heading-font-style);
   font-weight: var(--headings-heading-font-weight);
@@ -232,12 +237,12 @@ body.dark-background {
           hyphens: var(--headings-heading-hyphens);
 }
 @media screen and (max-width: 900px) {
-  .content-formatted h2, .content-formatted p h2 {
+  .content-formatted h2, .content-formatted .product_item-btn h2, .content-formatted p h2 {
     font-size: calc(var(--headings-heading-font-size) / 1.4);
     line-height: calc(var(--headings-heading-line-height) / 1.4);
   }
 }
-.content-formatted h3, .content-formatted p h3 {
+.content-formatted h3, .content-formatted .product_item-btn h3, .content-formatted p h3 {
   font-size: var(--headings-subheading-font-size);
   font-style: var(--headings-subheading-font-style);
   font-weight: var(--headings-subheading-font-weight);
@@ -252,12 +257,12 @@ body.dark-background {
           hyphens: var(--headings-subheading-hyphens);
 }
 @media screen and (max-width: 900px) {
-  .content-formatted h3, .content-formatted p h3 {
+  .content-formatted h3, .content-formatted .product_item-btn h3, .content-formatted p h3 {
     font-size: calc(var(--headings-subheading-font-size) / 1.4);
     line-height: calc(var(--headings-subheading-line-height) / 1.4);
   }
 }
-.content-formatted a:not(.custom-btn), .content-formatted p a:not(.custom-btn) {
+.content-formatted a:not(.custom-btn), .content-formatted .product_item-btn a:not(.custom-btn), .content-formatted p a:not(.custom-btn) {
   font-style: var(--content-link-font-style);
   font-weight: var(--content-link-font-weight);
   color: var(--content-link-color);
@@ -265,10 +270,10 @@ body.dark-background {
           text-decoration: var(--content-link-text-decoration);
   text-transform: var(--content-link-text-transform);
 }
-.dark-background .content-formatted a:not(.custom-btn), .dark-background .content-formatted p a:not(.custom-btn) {
+.dark-background .content-formatted a:not(.custom-btn), .dark-background .content-formatted .product_item-btn a:not(.custom-btn), .dark-background .content-formatted p a:not(.custom-btn) {
   color: var(--fourth-color);
 }
-.content-formatted a:not(.custom-btn):hover, .content-formatted p a:not(.custom-btn):hover {
+.content-formatted a:not(.custom-btn):hover, .content-formatted .product_item-btn a:not(.custom-btn):hover, .content-formatted p a:not(.custom-btn):hover {
   font-style: var(--content-link-hover-font-style);
   font-weight: var(--content-link-hover-font-weight);
   color: var(--content-link-hover-color);
@@ -276,20 +281,21 @@ body.dark-background {
           text-decoration: var(--content-link-hover-text-decoration);
   text-transform: var(--content-link-hover-text-transform);
 }
-.dark-background .content-formatted a:not(.custom-btn):hover, .dark-background .content-formatted p a:not(.custom-btn):hover {
+.dark-background .content-formatted a:not(.custom-btn):hover, .dark-background .content-formatted .product_item-btn a:not(.custom-btn):hover, .dark-background .content-formatted p a:not(.custom-btn):hover {
   color: var(--fourth-color);
 }
-.content-formatted.header_title, .content-formatted.site_title, .content-formatted p.header_title, .content-formatted p.site_title {
+.content-formatted.header_title, .content-formatted.site_title, .content-formatted .product_item-btn.header_title, .content-formatted .product_item-btn.site_title, .content-formatted p.header_title, .content-formatted p.site_title {
   color: var(--header-mainmenu-color);
 }
-.dark-background .content-formatted.header_title, .dark-background .content-formatted.site_title, .dark-background .content-formatted p.header_title, .dark-background .content-formatted p.site_title {
+.dark-background .content-formatted.header_title, .dark-background .content-formatted.site_title, .dark-background .content-formatted .product_item-btn.header_title, .dark-background .content-formatted .product_item-btn.site_title, .dark-background .content-formatted p.header_title, .dark-background .content-formatted p.site_title {
   color: var(--header-mainmenu-color);
 }
-.dark-background .content-formatted.header_title p, .dark-background .content-formatted.header_title h1, .dark-background .content-formatted.header_title h2, .dark-background .content-formatted.header_title h3, .dark-background .content-formatted.header_title h4, .dark-background .content-formatted.header_title h5, .dark-background .content-formatted.header_title h6, .dark-background .content-formatted.site_title p, .dark-background .content-formatted.site_title h1, .dark-background .content-formatted.site_title h2, .dark-background .content-formatted.site_title h3, .dark-background .content-formatted.site_title h4, .dark-background .content-formatted.site_title h5, .dark-background .content-formatted.site_title h6, .dark-background .content-formatted p.header_title p, .dark-background .content-formatted p.header_title h1, .dark-background .content-formatted p.header_title h2, .dark-background .content-formatted p.header_title h3, .dark-background .content-formatted p.header_title h4, .dark-background .content-formatted p.header_title h5, .dark-background .content-formatted p.header_title h6, .dark-background .content-formatted p.site_title p, .dark-background .content-formatted p.site_title h1, .dark-background .content-formatted p.site_title h2, .dark-background .content-formatted p.site_title h3, .dark-background .content-formatted p.site_title h4, .dark-background .content-formatted p.site_title h5, .dark-background .content-formatted p.site_title h6 {
+.dark-background .content-formatted.header_title a, .dark-background .content-formatted.header_title p, .dark-background .content-formatted.header_title h1, .dark-background .content-formatted.header_title h2, .dark-background .content-formatted.header_title h3, .dark-background .content-formatted.header_title h4, .dark-background .content-formatted.header_title h5, .dark-background .content-formatted.header_title h6, .dark-background .content-formatted.site_title a, .dark-background .content-formatted.site_title p, .dark-background .content-formatted.site_title h1, .dark-background .content-formatted.site_title h2, .dark-background .content-formatted.site_title h3, .dark-background .content-formatted.site_title h4, .dark-background .content-formatted.site_title h5, .dark-background .content-formatted.site_title h6, .dark-background .content-formatted .product_item-btn.header_title a, .dark-background .content-formatted .product_item-btn.header_title p, .dark-background .content-formatted .product_item-btn.header_title h1, .dark-background .content-formatted .product_item-btn.header_title h2, .dark-background .content-formatted .product_item-btn.header_title h3, .dark-background .content-formatted .product_item-btn.header_title h4, .dark-background .content-formatted .product_item-btn.header_title h5, .dark-background .content-formatted .product_item-btn.header_title h6, .dark-background .content-formatted .product_item-btn.site_title a, .dark-background .content-formatted .product_item-btn.site_title p, .dark-background .content-formatted .product_item-btn.site_title h1, .dark-background .content-formatted .product_item-btn.site_title h2, .dark-background .content-formatted .product_item-btn.site_title h3, .dark-background .content-formatted .product_item-btn.site_title h4, .dark-background .content-formatted .product_item-btn.site_title h5, .dark-background .content-formatted .product_item-btn.site_title h6, .dark-background .content-formatted p.header_title a, .dark-background .content-formatted p.header_title p, .dark-background .content-formatted p.header_title h1, .dark-background .content-formatted p.header_title h2, .dark-background .content-formatted p.header_title h3, .dark-background .content-formatted p.header_title h4, .dark-background .content-formatted p.header_title h5, .dark-background .content-formatted p.header_title h6, .dark-background .content-formatted p.site_title a, .dark-background .content-formatted p.site_title p, .dark-background .content-formatted p.site_title h1, .dark-background .content-formatted p.site_title h2, .dark-background .content-formatted p.site_title h3, .dark-background .content-formatted p.site_title h4, .dark-background .content-formatted p.site_title h5, .dark-background .content-formatted p.site_title h6 {
   color: var(--header-mainmenu-color);
 }
 .content-formatted .custom-btn,
-.content-formatted .form_submit input, .content-formatted p .custom-btn,
+.content-formatted .form_submit input, .content-formatted .product_item-btn .custom-btn,
+.content-formatted .product_item-btn .form_submit input, .content-formatted p .custom-btn,
 .content-formatted p .form_submit input {
   padding: calc(var(--button-padding) - 8px) var(--button-padding) calc(var(--button-padding) - 7px);
   color: var(--button-color);
@@ -305,7 +311,8 @@ body.dark-background {
   background-color: var(--button-background-color);
 }
 .content-formatted .custom-btn:hover,
-.content-formatted .form_submit input:hover, .content-formatted p .custom-btn:hover,
+.content-formatted .form_submit input:hover, .content-formatted .product_item-btn .custom-btn:hover,
+.content-formatted .product_item-btn .form_submit input:hover, .content-formatted p .custom-btn:hover,
 .content-formatted p .form_submit input:hover {
   padding: calc(var(--button-hover-padding) - 8px) var(--button-hover-padding) calc(var(--button-hover-padding) - 7px);
   color: var(--button-hover-color);

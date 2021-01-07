@@ -1,5 +1,5 @@
 
-<footer class="footer">
+<footer class="footer content-formatted">
   <div class="footer_separator"></div>
   <section class="content-body content-formatted mar_b-56">{% xcontent name="footer-top" %}</section>
   <div class="flex_row flex_row-3 mar_0-8-neg flex_j-space-between">

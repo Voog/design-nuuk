@@ -96,15 +96,7 @@ body {
   padding: 40px 32px;
 
   @include query($tablet-2) {
-    padding: 40px 16px;
-  }
-
-  .editmode & {
-    margin-bottom: 72px;
-  }
-
-  .edy-bar-open & {
-    margin-bottom: 200px;
+    padding: 24px 16px;
   }
 
   a {
@@ -122,6 +114,14 @@ body {
       @include query($tablet-1) {
         display: block;
       }
+    }
+  }
+
+  .semimodal-open-state & {
+    margin-top: 48px;
+
+    @include query($tablet-1) {
+      margin-top: 0;
     }
   }
 }

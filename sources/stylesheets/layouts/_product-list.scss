@@ -5,6 +5,8 @@
         transform: translateY(20px);
         pointer-events: none;
         top: 0;
+        font-size: 14px;
+        line-height: 27.16px;
         @include transition(transform 200ms);
       }
 
@@ -13,7 +15,8 @@
         pointer-events: all;
         top: 0;
         margin: 0;
-        color: $grey-1;
+        font-size: 14px;
+        line-height: 27.16px;
         @include transition(transform 200ms);
       }
 
@@ -46,7 +49,6 @@
 
     &-btn {
       cursor: pointer;
-      color: $green;
       font-weight: 600;
       font-size: 14px;
       line-height: 20px;

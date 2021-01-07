@@ -22,11 +22,11 @@
     {%- else -%}
       <button class="product_item-btn js-cart-btn p-abs" data-product-id="{{ product.id }}">ADD TO CART</button>
     {%- endif -%}
-    <p class="product_item-price p-abs">{{ product.price_with_tax | money_with_currency: "EUR" }}<span class="mar_l-16"></span> {{product_label}}</p>
+    <div class="product_item-price p-abs">{{ product.price_with_tax | money_with_currency: "EUR" }}<span class="mar_l-16"></span> {{product_label}}</div>
   </div>
 {%- else -%}
   <div class="flex_box product_item-details oo">
     <a class="product_item-btn p-abs" href="{{ _entityData.url }}">LOOK CLOSER</a>
-    <p class="product_item-price p-abs">{{product_label}}</p>
+    <div class="product_item-price p-abs">{{product_label}}</div>
   </div>
 {%- endif -%}

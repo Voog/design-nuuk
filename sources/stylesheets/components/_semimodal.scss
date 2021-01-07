@@ -56,6 +56,10 @@
     .editmode & {
       padding-bottom: 72px;
     }
+
+    @include query($tablet-1) {
+      margin-top: 64px;
+    }
   }
 
 

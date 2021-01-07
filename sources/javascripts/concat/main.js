@@ -663,11 +663,14 @@
   };
 
   var handleDocument = function() {
-    if ($('.form_field-cms input').val().length >= 1) {
-      $('.form_field-cms input').closest('.form_field-cms').addClass('with-input');
-    } else {
-      $('.form_field-cms input').closest('.form_field-cms').removeClass('with-input');
+    if ($('.form_field-cms input').length) {
+      if ($('.form_field-cms input').val().length >= 1) {
+        $('.form_field-cms input').closest('.form_field-cms').addClass('with-input');
+      } else {
+        $('.form_field-cms input').closest('.form_field-cms').removeClass('with-input');
+      }
     }
+
 
     $(document).ready(function() {
       var topPos = $('.header_fixed').height() + 80;
