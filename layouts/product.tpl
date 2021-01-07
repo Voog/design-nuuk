@@ -35,7 +35,7 @@
           <div class="flex_row-2--item">
             <div class="mar_0-24 p-rel">
               {%- if page.data.item_image != blank or editmode -%}
-                {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic, _zoom: true %}
+                {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic %}
               {%- endif -%}
             </div>
           </div>
