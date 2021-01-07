@@ -242,7 +242,6 @@
           ],
           dataKey: '{{blockColumnsSettingsKey}}',
           values: valuesObj,
-          noReload: true,
           prevFunc: function(data) {
             {%- assign rowSettingsKey = id | append: '_block_columns' -%}
             {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
