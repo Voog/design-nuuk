@@ -120,6 +120,12 @@
 
   a {
     color: black;
+
+    &:hover {
+      .dark-background & {
+        opacity: .7;
+      }
+    }
   }
 
   p {
