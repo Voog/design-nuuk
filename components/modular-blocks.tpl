@@ -13,8 +13,7 @@
   {%- assign blockColumnsSettingsKey = 'block_columns_settings' | append: id -%}
   {%- assign blockColumnsSettings = page.data[blockColumnsSettingsKey] -%}
 
-  {%- assign blockColumnsCountKey = id | append: '_block_columns' -%}
-  {%- assign blockColumnsCount = _blockSettings[blockColumnsCountKey] -%}
+  {%- assign blockColumnsCount = blockColumnsSettings.block_columns -%}
   {%- assign blockObjKey = 'block_' | append: id -%}
 
   {%- if blockColumnsCount != blank -%}
@@ -137,9 +136,9 @@
       {%- if editmode -%}
         <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">Block {{ id }}</button>
       {%- endif -%}
-      {%- assign blockColumnsCountKey = id | append: '_block_columns' -%}
+      {%- assign blockColumnsSettingsKey = 'block_columns_settings' | append: id -%}
       {%- assign blockObjKey = 'block_' | append: id -%}
-      {%- assign blockColumnsCount = page.data.block_settings[blockColumnsCountKey] -%}
+      {%- assign blockColumnsCount = page.data[blockColumnsSettingsKey].block_columns -%}
 
 
       {%- if blockColumnsCount -%}

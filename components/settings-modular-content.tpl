@@ -16,19 +16,6 @@
       valuesObj.block_count = {{_blockCount}};
     }
 
-    {% for id in (1.._blockCount) %}
-      {%- assign columnKey = id | append: '_block_columns' -%}
-      {%- assign blockObjKey = 'block_' | append: id -%}
-
-      if (!('{{columnKey}}' in valuesObj)) {
-        {%- if _defaultBlockObj[blockObjKey].col_count %}
-          valuesObj['{{columnKey}}'] = {{_defaultBlockObj[blockObjKey].col_count}};
-        {%- else %}
-          valuesObj['{{columnKey}}'] = 3;
-        {%- endif %}
-      }
-    {% endfor %}
-
     initSettingsEditor(
       {
         settingsBtn: document.querySelector('.js-content-area-settings-btn'),
@@ -44,21 +31,7 @@
               {"title": "4", "value": 4},
               {"title": "5", "value": 5}
             ]
-          },
-          {% for id in (1.._blockCount) %}
-          {
-            "title": "Number of columns in block {{id}}",
-            "type": "select",
-            "key": "{{id}}_block_columns",
-            "list": [
-              {"title": "1", "value": 1},
-              {"title": "2", "value": 2},
-              {"title": "3", "value": 3},
-              {"title": "4", "value": 4},
-              {"title": "5", "value": 5}
-            ]
-          },
-          {% endfor %}
+          }
         ],
         dataKey: 'block_settings',
         values: valuesObj
@@ -138,6 +111,16 @@
         $('.block_justification').hide();
       }
 
+      {%- assign blockObjKey = 'block_' | append: id -%}
+
+      if (!('block_columns' in valuesObj)) {
+        {%- if _defaultBlockObj[blockObjKey].col_count %}
+          valuesObj['block_columns'] = {{_defaultBlockObj[blockObjKey].col_count}};
+        {%- else %}
+          valuesObj['block_columns'] = 3;
+        {%- endif %}
+      }
+
       var setMinWidth = function() {
         var colItem = $(".column-container-{{id}} .col-item");
 
@@ -168,6 +151,18 @@
         {
           settingsBtn: document.querySelector('.js-column-settings-btn-{{ id }}'),
           menuItems: [
+            {
+              "title": "Number of columns in block {{id}}",
+              "type": "select",
+              "key": "block_columns",
+              "list": [
+                {"title": "1", "value": 1},
+                {"title": "2", "value": 2},
+                {"title": "3", "value": 3},
+                {"title": "4", "value": 4},
+                {"title": "5", "value": 5}
+              ]
+            },
             {
               "title": "Block maximum width (%)",
               "type": "number",
