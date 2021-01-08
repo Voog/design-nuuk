@@ -101,9 +101,7 @@
       display: block;
 
       @include query($tablet-1) {
-        margin-top: -32px;
-        position: relative;
-        margin-left: 47px;
+        margin-top: 32px;
       }
     }
   }

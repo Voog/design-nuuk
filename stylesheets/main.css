@@ -1330,9 +1330,7 @@ body:not(.semimodal-relative) .semimodal {
 }
 @media screen and (max-width: 900px) {
   .semimodal-relative .semimodal .site_title {
-    margin-top: -32px;
-    position: relative;
-    margin-left: 47px;
+    margin-top: 32px;
   }
 }
 .semimodal-open:not(.semimodal-relative) .semimodal {
