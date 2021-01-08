@@ -102,7 +102,10 @@
             }
 
             var topPos = $('.header_fixed').height() + 80;
-            $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
+
+            if ($('.semimodal-open-state').length <= 0) {
+              $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
+            }
 
             {%- if semimodalSettings.max_width != blank -%}
               if (data.max_width >= 1 && data.max_width != {{semimodalSettings.max_width}}) {

@@ -1223,8 +1223,11 @@ MMCQ = (function() {
 
     $(document).ready(function() {
       var topPos = $('.header_fixed').height() + 80;
-      $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
       handleActivLangMenu();
+
+      if ($('.semimodal-open-state').length <= 0) {
+        $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
+      }
 
       $('.form_field-cms input').keyup(function(e) {
         if ($(this).val().length >= 1) {
