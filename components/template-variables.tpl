@@ -32,10 +32,6 @@
     {% assign isSemimodalOpen = true %}
   {% endif %}
 
-  {% if site.data.menu_settings.is_side_absolute == true %}
-    {% assign isSemimodalBorder = true %}
-  {% endif %}
-
   {% comment %}Assign variables based on page type.{% endcomment %}
   {% assign body_bg_color = body_bg.color %}
   {% assign body_bg_color_data = body_bg.colorData %}

@@ -16,6 +16,11 @@
       margin-bottom: -124px;
     }
 
+    .semimodal-open-state & {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
     &.scroll {
       box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
     }

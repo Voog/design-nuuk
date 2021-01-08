@@ -2505,6 +2505,11 @@ body.edy-checkout-button-visible {
 .front-page .header_fixed {
   margin-bottom: -124px;
 }
+.semimodal-open-state .header_fixed {
+  background-color: transparent !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
 .header_fixed.scroll {
   -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
@@ -4038,6 +4043,9 @@ article.post_wrapper .date-separator.hide-separator {
   height: 24px;
   width: 24px;
   cursor: pointer;
+}
+.semimodal_inner .menu-main .menu .menu_popover-btn {
+  display: none;
 }
 @media screen and (min-width: 900px) {
   .menu-main:not(.menu_top) .menu .menu-item.active a:before {

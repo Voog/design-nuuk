@@ -17,7 +17,6 @@
 {%- include 'image_src_variable', _data: site.data.semimodal_image, _targetWidth: "1000" -%}
 <div class="
   semimodal js-prevent-sideclick
-  {% if isSemimodalBorder %} semimodal-border{% endif %}
   {% if semimodalSettings.positioning == 'is_top' or semimodalSettings.positioning == 'is_top_fixed' %} hidden-desktop{% endif %}
   "
 >
