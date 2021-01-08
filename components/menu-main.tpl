@@ -24,16 +24,19 @@
       {% endif %}
     {% endfor %}
 
+    {%- if site.visible_menuitems.size > 5 -%}
       <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true %} d-none{% endif %}">
         {% include 'ico-ellipsis' %}
       </div>
-      <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
-        <ul class="menu">
-          {% for item in site.visible_menuitems %}
-            {% menulink item wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
-          {% endfor %}
-        </ul>
-      </li>
+    {%- endif -%}
+
+    <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
+      <ul class="menu">
+        {% for item in site.visible_menuitems %}
+          {% menulink item wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
+        {% endfor %}
+      </ul>
+    </li>
 
     {% if editmode %}
       {% if site.hidden_menuitems.size > 0 %}
