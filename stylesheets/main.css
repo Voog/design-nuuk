@@ -2168,7 +2168,7 @@ article .item-top > .aspect-ratio-inner {
   display: none;
 }
 .without-image .item-top {
-  background-color: #F2F2F2;
+  background-color: #ffffff;
   background-image: url("../assets/ico-placeholder.svg");
   background-size: 40px;
   background-repeat: no-repeat;

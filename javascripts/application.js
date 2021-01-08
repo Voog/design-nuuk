@@ -878,21 +878,29 @@ MMCQ = (function() {
       });
 
       $removeBtn.on('click', function() {
-        $(this).closest('.js-content-item-box').find('.top-inner')
-          .append('<div class="edy-img-drop-area-placeholder">' + placeholderText + '</div>');
-        $(this).closest('.js-content-item-box').find('.top-inner').attr("style", "");
-        $(this).closest('.js-content-item-box')
-          .removeClass('with-image is-loaded with-error')
-          .addClass('without-image not-loaded')
-        ;
-        $(this).closest('.js-content-item-box').find('.edy-img-drop-area').removeClass('active');
-        itemData.set({image_crop_state: null, item_image: null});
-        $(this).closest('.image_settings').hide();
+        var $el = $(this);
+        itemData.remove('item_image', {
+          success: function(data) {
+            itemData.remove('image_crop_state', {
+              success: function(data) {
+                $el.closest('.js-content-item-box').find('.top-inner')
+                  .append('<div class="edy-img-drop-area-placeholder">' + placeholderText + '</div>');
+                $el.closest('.js-content-item-box').find('.top-inner').attr("style", "");
+                $el.closest('.js-content-item-box')
+                  .removeClass('with-image is-loaded with-error')
+                  .addClass('without-image not-loaded')
+                ;
+                $el.closest('.js-content-item-box').find('.edy-img-drop-area').removeClass('active');
+                $el.closest('.image_settings').hide();
 
-        // Remove alt image data
-        $(this).closest('.js-content-item-box').find('.image_settings-remove--input').val('');
-        $(this).closest('.js-content-item-box').find('.image_settings-remove--input').trigger('change');
-        $(this).closest('.js-content-item-box').find('.form_field-cms').removeClass('with-input');
+                // Remove alt image data
+                $el.closest('.js-content-item-box').find('.image_settings-remove--input').val('');
+                $el.closest('.js-content-item-box').find('.image_settings-remove--input').trigger('change');
+                $el.closest('.js-content-item-box').find('.form_field-cms').removeClass('with-input');
+              }
+            });
+          }
+        });
       });
     });
   };

@@ -57,7 +57,7 @@
   }
 
   .without-image & {
-    background-color: $-grey-bg;
+    background-color: $white;
     background-image: url('../assets/ico-placeholder.svg');
     background-size: 40px;
     background-repeat: no-repeat;

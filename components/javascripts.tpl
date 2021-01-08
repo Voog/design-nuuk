@@ -58,7 +58,13 @@
         type: 'site'
       });
 
-      site.bindContentItemImgDropAreas('{{ "drag_picture_for_product_here" | lc: editor_locale | escape }}');
+      {%- if page.layout_title == product_list_layout or page.layout_title == product_layout -%}
+        {%- assign dropAreaPlaceholder = "drag_picture_for_product_here" | lc: editor_locale | escape -%}
+      {%- else -%}
+        {%- assign dropAreaPlaceholder = "drag_picture_here" | lc: editor_locale | escape -%}
+      {%- endif -%}
+
+      site.bindContentItemImgDropAreas('{{ dropAreaPlaceholder }}');
       site.bindContentItemImageCropToggle();
 
       {%if site.data.settings_root_item %}
