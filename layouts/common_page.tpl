@@ -89,7 +89,6 @@
           _defaultBlockObj: defaultBlockObj
         %}
       </main>
-      {%- include 'site-components' -%}
       {%- include "footer" -%}
     </div>
   </div>

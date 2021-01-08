@@ -1,6 +1,11 @@
 {
-  "name": "voog-design-boilerplate",
+  "name": "voog-design-nuuk",
+  "homepage": "https://github.com/Voog/design-nuuk",
+  "authors": [
+    "Siim Häelm <siim@voog.com>"
+  ],
+  "description": "The Nuuk design template for Voog",
   "devDependencies": {
-    "bourbon": "^4.3.4" 
+    "bourbon": "^4.3.4"
   }
 }
