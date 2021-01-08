@@ -1219,6 +1219,7 @@ p {
   padding-bottom: 30px;
   opacity: 1;
   height: 100%;
+  width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 32px;
