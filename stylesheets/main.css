@@ -1286,7 +1286,8 @@ p {
 }
 @media screen and (max-width: 900px) {
   .semimodal .semimodal_bottom {
-    margin-top: 64px;
+    margin-top: 32px !important;
+    top: 0 !important;
   }
 }
 body:not(.semimodal-relative) .semimodal {
@@ -1326,6 +1327,11 @@ body:not(.semimodal-relative) .semimodal {
 }
 .semimodal-relative .semimodal .site_title {
   display: block;
+}
+@media screen and (max-width: 900px) {
+  .semimodal-relative .semimodal .site_title {
+    margin-top: 32px;
+  }
 }
 .semimodal-open:not(.semimodal-relative) .semimodal {
   -webkit-transform: translateX(0px);

@@ -101,10 +101,12 @@
               $('.semimodal').addClass('semimodal-border');
             }
 
-            var topPos = $('.header_fixed').height() + 80;
+            if ($( window ).width() >= 900) {
+              var topPos = $('.header_fixed').height() + 80;
 
-            if ($('.semimodal-open-state').length <= 0) {
-              $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
+              if ($('.semimodal-open-state').length <= 0) {
+                $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
+              }
             }
 
             {%- if semimodalSettings.max_width != blank -%}

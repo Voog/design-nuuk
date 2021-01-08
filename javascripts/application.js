@@ -1118,14 +1118,13 @@ MMCQ = (function() {
     $(window).resize(debounce(function() {
       handleActivLangMenu();
       handleMenuPos();
+      handleMenuTopPos();
       if (languageMenuPopoverOpen()) {
         positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
       }
-    }, 25));
-  };
 
-  var handleMenuPos = function() {
-    $('.header_bottom').css('top', $('.header_fixed').innerHeight() + 60);
+
+    }, 25));
   };
 
   var handleWindowScroll = function() {
@@ -1211,6 +1210,16 @@ MMCQ = (function() {
     // Add single post layout specific functions here.
   };
 
+  var handleMenuTopPos = function() {
+    if ($( window ).width() >= 900) {
+      var topPos = $('.header_fixed').height() + 80;
+
+      if ($('.semimodal-open-state').length <= 0) {
+        $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
+      }
+    }
+  };
+
   var handleDocument = function() {
     if ($('.form_field-cms input').length) {
       if ($('.form_field-cms input').val().length >= 1) {
@@ -1222,12 +1231,12 @@ MMCQ = (function() {
 
 
     $(document).ready(function() {
-      var topPos = $('.header_fixed').height() + 80;
       handleActivLangMenu();
+      handleMenuTopPos();
 
-      if ($('.semimodal-open-state').length <= 0) {
-        $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
-      }
+      $('.header_title').keyup(function(e) {
+        handleMenuTopPos();
+      });
 
       $('.form_field-cms input').keyup(function(e) {
         if ($(this).val().length >= 1) {
@@ -1258,7 +1267,6 @@ MMCQ = (function() {
     focusFormWithErrors();
     handleWindowResize();
     handleWindowScroll();
-    handleMenuPos();
     bindLanguageMenuButttons();
     handleDocument();
 

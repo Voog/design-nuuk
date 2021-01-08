@@ -59,7 +59,8 @@
     }
 
     @include query($tablet-1) {
-      margin-top: 64px;
+      margin-top: 32px !important;
+      top: 0 !important;
     }
   }
 
@@ -98,6 +99,10 @@
 
     .site_title {
       display: block;
+
+      @include query($tablet-1) {
+        margin-top: 32px;
+      }
     }
   }
 
