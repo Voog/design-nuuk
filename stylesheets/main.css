@@ -3153,6 +3153,11 @@ body.edy-checkout-button-visible {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
+@media screen and (max-width: 900px) {
+  .post_nav-link--inner .post_nav-image {
+    opacity: 1;
+  }
+}
 .post_nav-link--inner .post_nav-image .post_nav-title {
   font-size: 18px;
   margin-top: 16px;
