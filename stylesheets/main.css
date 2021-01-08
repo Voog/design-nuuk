@@ -1330,7 +1330,9 @@ body:not(.semimodal-relative) .semimodal {
 }
 @media screen and (max-width: 900px) {
   .semimodal-relative .semimodal .site_title {
-    margin-top: 32px;
+    margin-top: -32px;
+    position: relative;
+    margin-left: 47px;
   }
 }
 .semimodal-open:not(.semimodal-relative) .semimodal {
@@ -2608,6 +2610,9 @@ body.edy-checkout-button-visible {
     margin-right: 16px;
     margin-left: 16px;
   }
+}
+.semimodal-open-state .header_title {
+  display: none;
 }
 
 .site-search {
