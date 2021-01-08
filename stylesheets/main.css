@@ -964,10 +964,10 @@ p {
     line-height: 22.96px;
   }
 }
-.content-formatted a {
+.content-formatted a:not(.content-item-box) {
   color: black;
 }
-.dark-background .content-formatted a:hover {
+.dark-background .content-formatted a:not(.content-item-box):hover {
   opacity: .7;
 }
 .content-formatted p {

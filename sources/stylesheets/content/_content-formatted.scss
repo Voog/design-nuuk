@@ -118,7 +118,7 @@
     }
   }
 
-  a {
+  a:not(.content-item-box) {
     color: black;
 
     &:hover {
