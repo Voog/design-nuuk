@@ -1,9 +1,9 @@
 {
-  "description": "The basic developer's template",
-  "name": "Pripyat",
+  "description": "Modular layout",
+  "name": "Nuuk",
   "preview_medium": "",
   "preview_small": "",
-  "author": "Tõnu Runnel",
+  "author": "Stefan Hiienurm",
   "layouts": [
     {
       "content_type": "page",
