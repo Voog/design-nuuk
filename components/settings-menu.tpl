@@ -97,8 +97,11 @@
 
             if (data.positioning === 'is_side_absolute') {
               $('.semimodal').removeClass('semimodal-border');
+              $('.header_fixed').removeClass('relative');
+              $('.js-semimodal-toggle').addClass('semimodal-absolute');
             } else {
               $('.semimodal').addClass('semimodal-border');
+              $('.js-semimodal-toggle').removeClass('semimodal-absolute');
             }
 
             if ($( window ).width() >= 900) {

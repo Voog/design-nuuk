@@ -2507,9 +2507,6 @@ body.edy-checkout-button-visible {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.front-page .header_fixed {
-  margin-bottom: -124px;
-}
 .semimodal-open-state .header_fixed {
   background-color: transparent !important;
   -webkit-box-shadow: none !important;
@@ -2543,6 +2540,9 @@ body.edy-checkout-button-visible {
   }
   .semimodal-relative .header_fixed .header_title {
     display: none;
+  }
+  .front-page.semimodal-absolute .header_fixed {
+    position: fixed;
   }
   .header_fixed.relative {
     position: relative;

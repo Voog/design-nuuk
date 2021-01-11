@@ -12,10 +12,6 @@
     box-sizing: border-box;
     @include transition(all 200ms);
 
-    .front-page & {
-      margin-bottom: -124px;
-    }
-
     .semimodal-open-state & {
       background-color: transparent !important;
       box-shadow: none !important;
@@ -45,6 +41,10 @@
         .header_title {
           display: none;
         }
+      }
+
+      .front-page.semimodal-absolute & {
+        position: fixed;
       }
 
       &.relative {
