@@ -1117,7 +1117,6 @@ MMCQ = (function() {
   var handleWindowResize = function() {
     $(window).resize(debounce(function() {
       handleActivLangMenu();
-      handleMenuPos();
       handleMenuTopPos();
       if (languageMenuPopoverOpen()) {
         positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
