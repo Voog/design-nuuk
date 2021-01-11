@@ -3305,6 +3305,9 @@ article.post_wrapper .date-separator.hide-separator {
   display: block;
 }
 
+.menu-language-btn {
+  z-index: 3;
+}
 .language-menu-mode-popover .menu-language-btn {
   display: inline-block;
   margin: 0;
@@ -3381,6 +3384,7 @@ article.post_wrapper .date-separator.hide-separator {
   top: 100%;
   opacity: 0;
   pointer-events: none;
+  padding-top: 40px;
   -webkit-transition: opacity 200ms;
   -o-transition: opacity 200ms;
   transition: opacity 200ms;
@@ -3392,7 +3396,7 @@ article.post_wrapper .date-separator.hide-separator {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.menu-language-popover-open .lang_menu-popover--wrap {
+.menu-language-popover-open .lang_menu-popover--wrap, body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
   z-index: 2;
   opacity: 1;
   pointer-events: all;

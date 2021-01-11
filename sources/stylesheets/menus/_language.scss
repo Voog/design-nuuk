@@ -4,6 +4,8 @@
 // Gerneral menu styles are located in "general/_menus.scss" partial.
 //==============================================================================
 .menu-language-btn {
+  z-index: 3;
+
   .language-menu-mode-popover & {
     display: inline-block;
     margin: 0;
@@ -95,9 +97,11 @@
       top: 100%;
       opacity: 0;
       pointer-events: none;
+      padding-top: 40px;
       @include transition(opacity 200ms);
 
-      .menu-language-popover-open & {
+      .menu-language-popover-open &,
+      body:not(.edy-editmode) .menu-language-toggle:hover & {
         z-index: 2;
         opacity: 1;
         pointer-events: all;

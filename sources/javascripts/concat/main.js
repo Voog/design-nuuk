@@ -484,9 +484,15 @@
   var positionPopoverMenu = function(popoverButton, popoverMenu) {
     var $popoverButton = $(popoverButton);
     var rect = $popoverButton.offset();
-    console.log(rect.top);
+    if ($( window ).width() >= 900) {
+      var rightPos = $(window).width() - rect.left - $popoverButton.outerWidth();
+    } else {
+      var rightPos = 'unset';
+    }
+
     $(popoverMenu).css({
-      top: rect.top + 40
+      top: rect.top,
+      right: rightPos
     });
   };
 
@@ -609,7 +615,6 @@
       var $html = $('html');
 
       $html.toggleClass('menu-language-popover-open');
-
       if ($html.hasClass('menu-main-opened') || $html.hasClass('site-search-opened')) {
         $html.removeClass('menu-main-opened site-search-opened');
 
@@ -633,7 +638,7 @@
         });
       } else {
         $('.js-toggle-menu-language').hover(function() {
-          togglePopover();
+          positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
         });
       }
     }
