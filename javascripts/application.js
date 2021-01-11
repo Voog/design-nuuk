@@ -1032,7 +1032,7 @@ MMCQ = (function() {
     }
 
     $(popoverMenu).css({
-      top: rect.top,
+      top: rect.top - $(window).scrollTop(),
       right: rightPos
     });
   };
@@ -1219,7 +1219,7 @@ MMCQ = (function() {
       var topPos = $('.header_fixed').height() + 80;
 
       if ($('.semimodal-open-state').length <= 0) {
-        $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
+        $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos + 16});
       }
     }
   };

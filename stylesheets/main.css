@@ -1224,7 +1224,6 @@ p {
           box-sizing: border-box;
   padding: 32px;
   min-height: 100vh;
-  overflow: auto;
   -webkit-transform: translateX(-320px);
       -ms-transform: translateX(-320px);
           transform: translateX(-320px);
