@@ -9,7 +9,7 @@
           {%- assign product = buy_button.product -%}
           <div class="product_item js-product-item flex_row-3--item scale-up{% if product != blank %} js-product-whith-data{% endif %}"
             data-title="{{item_child.title | escape }}"
-            {%- if product != blank -%}
+            {%- if product != blank %}
               data-price="{{product.price}}"
             {%- endif -%}
           >

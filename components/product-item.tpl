@@ -22,7 +22,7 @@
     {%- else -%}
       <button class="product_item-btn js-cart-btn p-abs" data-product-id="{{ product.id }}">ADD TO CART</button>
     {%- endif -%}
-    <div class="product_item-price p-abs">{{ product.price_with_tax | money_with_currency: "EUR" }}<span class="mar_l-16"></span> {{product_label}}</div>
+    <div class="product_item-price p-abs">{{ product.price_with_tax | money_with_currency: product.currency }}<span class="mar_l-16"></span> {{product_label}}</div>
   </div>
 {%- else -%}
   <div class="flex_box product_item-details oo">

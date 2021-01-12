@@ -22,8 +22,8 @@
         </div>
       {%- endif -%}
 
-      <main class="content" role="main" data-search-indexing-allowed="true">
-        <div class="content-body content-formatted">
+      <main class="content" role="main">
+        <div class="content-body content-formatted" data-search-indexing-allowed="true">
           {% contentblock name="page-title" publish_default_content="true" %}
             <h1>{{page.title}}</h1>
           {% endcontentblock %}
