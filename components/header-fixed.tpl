@@ -14,13 +14,7 @@
     </button>
 
     <div class="header_title content-formatted">
-      {%- unless editmode -%}
-        <a href="{{ site.root_item.url }}">
-      {%- endunless -%}
-        {%- editable site.header -%}
-      {%- unless editmode -%}
-        </a>
-      {%- endunless -%}
+      {%- editable site.header -%}
     </div>
 
     <div class="js-menu-main-wrapper{% if menuTop == true %} hidden-tablet{% else %} hidden-tablet hidden-desktop{% endif %}">

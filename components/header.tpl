@@ -28,19 +28,11 @@
     {%- endif -%}
   ></div>
 
-
-
   <header class="semimodal_inner">
     <div class="site_title content-formatted">
-      {%- unless editmode -%}
-        <a href="{{ site.root_item.url }}">
-      {%- endunless -%}
-        {% contentblock name="site-title" xpage="true" %}
-          {{site.title}}
-        {% endcontentblock %}
-      {%- unless editmode -%}
-        </a>
-      {%- endunless -%}
+      {% contentblock name="site-title" xpage="true" %}
+        <h3>{{site.title}}</h3>
+      {% endcontentblock %}
     </div>
 
     <div class="semimodal_bottom">
