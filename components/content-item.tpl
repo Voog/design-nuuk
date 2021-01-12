@@ -1,4 +1,4 @@
-{% unless _entityData.data.item_image %}
+{% unless _entityData.data.item_image != blank %}
   {% assign item_image_state = "without-image" %}
 {% else %}
   {% assign item_image_state = "with-image" %}
@@ -20,7 +20,6 @@
     data-item-type="{{_itemType}}"
     data-item-id="{{ _id }}"
   >
-
     <div class="image_settings js-prevent-sideclick"{% if _entityData.data.item_image == blank %} style="display: none;"{% endif %}>
       <div class="image_settings-buttons">
         <div class="image_settings-button--title mar_r-8">Image</div>
