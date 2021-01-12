@@ -20,7 +20,7 @@
 
         <div class="form_field{% if comment_email_error %} form_field_with_errors{% endif %}">
           <label for="comment_form-email">{{ "email" | lc }}{% if comment_email_error %}<span class="form_field_error"> — {{ "comment_email_blank" | lc }}</span>{% endif %}</label>
-          <input id="comment_form-email" class="form_field_textfield form_field_size_small" name="comment[author_email]" value="{{ comment.author_email }}">
+          <input type="email" id="comment_form-email" class="form_field_textfield form_field_size_small" name="comment[author_email]" value="{{ comment.author_email }}">
         </div>
 
         <div class="form_field{% if comment_body_error %} form_field_with_errors{% endif %}">
