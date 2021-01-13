@@ -839,9 +839,6 @@ p {
   margin-right: 0;
 }
 
-.content-formatted {
-  content-visibility: auto;
-}
 .content-formatted:empty {
   display: none;
 }
