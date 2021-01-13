@@ -16,6 +16,7 @@
             var $wrapperEl = $imageEl.closest('.js-bg-wrapper');
             console.log($wrapperEl)
             var col = (data.color && data.color !== "") ? data.color : "transparent";
+            console.log(col);
             if (pickerOpts.type === 'img') {
               if (data.image) {
                 $imageEl.attr('src', data.image);
@@ -39,7 +40,7 @@
                 }
               }
 
-              if (data.color) {
+              if (col) {
                 $colorEl.css('background-color', col);
               }
             } else {
@@ -49,7 +50,7 @@
                 $imageEl.css('background-image', 'none');
               }
 
-              if (data.color) {
+              if (col) {
                 $colorEl.css('background-color', col);
               }
             }
