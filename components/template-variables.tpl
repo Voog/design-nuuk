@@ -288,6 +288,44 @@
     ]
   {% endcapture %}
 
+  {% capture base_alignment_flex %}
+    [
+      {
+        "titleI18n": "left",
+        "value": "flex-start"
+      },
+      {
+        "titleI18n": "center",
+        "value": "center"
+      },
+      {
+        "titleI18n": "right",
+        "value": "flex-end"
+      }
+    ]
+  {% endcapture %}
+
+  {% capture base_number_of_columns_set %}
+    [
+      {
+        "title": "3",
+        "value": "33.3%"
+      },
+      {
+        "title": "4",
+        "value": "25%"
+      },
+      {
+        "title": "5",
+        "value": "20%"
+      },
+      {
+        "title": "6",
+        "value": "16.6%"
+      }
+    ]
+  {% endcapture %}
+
   {% comment %}VOOG intro popover targets. Add them where applicable popovers should appear.{% endcomment %}
   {% capture edy_intro_add_page %}{% if editmode %}data-edy-intro-popover="edy-add-page"{% endif %}{% endcapture %}
   {% capture edy_intro_add_lang %}{% if editmode %}data-edy-intro-popover="edy-add-lang"{% endif %}{% endcapture %}

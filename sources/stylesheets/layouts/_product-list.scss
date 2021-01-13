@@ -1,12 +1,26 @@
 .product_ {
   &item {
     &-wrap {
+      .product_item-title,
+      .product_item-btn,
+      .product_item-price {
+        color: var(--product-list-item__color);
+        font-size: var(--product-list-item__font-size);
+        line-height: calc(var(--product-list-item__font-size) * 1.5 + 1px);
+
+        .dark-background & {
+          color: $white;
+        }
+      }
+
+      .item-top {
+        border-radius: var(--product-list-item__image-radius);
+      }
+
       .product_item-btn {
-        transform: translateY(20px);
+        transform: translateY(calc(var(--product-list-item__font-size) * 1.5 + 1px));
         pointer-events: none;
         top: 0;
-        font-size: 14px;
-        line-height: 27.16px;
         @include transition(transform 200ms);
       }
 
@@ -15,9 +29,11 @@
         pointer-events: all;
         top: 0;
         margin: 0;
-        font-size: 14px;
-        line-height: 27.16px;
         @include transition(transform 200ms);
+      }
+
+      .product_item-title {
+        text-align: var(--product-list-item__alignment);
       }
 
       &:hover {
@@ -29,13 +45,12 @@
         }
 
         .product_item-price {
-          transform: translateY(-20px);
+          transform: translateY(calc(var(--product-list-item__font-size) * 1.5 + 1px));
           pointer-events: none;
         }
 
         .product_item-btn {
           transform: translateY(0px);
-          font-size: 14px;
           pointer-events: all;
         }
       }
@@ -44,18 +59,17 @@
     &-details {
       position: relative;
       overflow: hidden;
-      height: 20px;
+      height: calc(var(--product-list-item__font-size) * 1.4 + 1px);
+      justify-content: var(--product-list-item__alignment);
     }
 
     &-btn {
       cursor: pointer;
       font-weight: 600;
-      font-size: 14px;
-      line-height: 20px;
       @extend %button;
 
       &:hover {
-        opacity: .6;
+        opacity: .7;
       }
     }
   }

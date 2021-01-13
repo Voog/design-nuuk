@@ -1,4 +1,4 @@
-<div class="product_list content-formatted flex_row flex_row-3 mar_0-8-neg pad_40-0">
+<div class="product_list flex_row flex_row-3 mar_0-8-neg pad_40-0">
   {%- assign level_str = 'menuitems_on_level_' | append: page.level -%}
 
   {%- for item in site[level_str] -%}

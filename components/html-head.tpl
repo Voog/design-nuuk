@@ -14,7 +14,7 @@
 {% endif %}
 
 {% comment %}STYLESHEETS{% endcomment %}
-{% stylesheet_link "main.min.css?v=1.1" %}
+{% stylesheet_link "main.min.css?v=1.2" %}
 {% if editmode %}
   <link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">
 {% endif %}
@@ -33,6 +33,7 @@
   {% include "template-cs-header" %}
   {% include "template-cs-headings" %}
   {% include "template-cs-content" %}
+  {% include "template-cs-product-list" %}
   {% include "template-cs-button" %}
   {% include "template-cs-form" %}
   {% include "template-cs-style-rules" %}

@@ -69,7 +69,7 @@
     "featured": true,
     "scope": "global"
   */
-  #{--content-link-color}: rgba($blue-1, 1);
+  #{--content-link-color}: rgba($black, 1);
 
   /* VoogStyle
     "pathI18n": ["content", "link", "normal"],
@@ -202,7 +202,7 @@
     "editor": "colorPicker",
     "scope": "global"
   */
-  #{--content-link-hover-color}: rgba($blue-1, .8);
+  #{--content-link-hover-color}: rgba($black, .7);
 
   // scss-lint:enable Comment, Indentation
 }

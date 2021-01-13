@@ -26,22 +26,31 @@
 
       &--item {
         width: 33%;
-
-        &:nth-child(n+4) {
-          margin-top: 32px;
-        }
+        margin-bottom: 32px;
 
         @include query($tablet-1) {
           width: 50%;
 
-          &:nth-child(n+3) {
-            margin-top: 32px;
-          }
         }
 
         @include query($mobile-1) {
           width: 100%;
-          margin-top: 32px;
+        }
+
+        .product_list & {
+          @include query($desktop-1, 'min-width') {
+            width: var(--product-list-item__width);
+          }
+
+          .semimodal-open-state & {
+            @include query($desktop-2, 'min-width') {
+              width: var(--product-list-item__width);
+            }
+
+            @include query($desktop-2) {
+              width: 33%;
+            }
+          }
         }
       }
     }
@@ -51,14 +60,10 @@
 
       &--item {
         width: 50%;
+        margin-bottom: 32px;
 
         @include query($tablet-2) {
           width: 100%;
-          margin-top: 32px;
-
-          &:first-child {
-            margin-top: 0;
-          }
         }
       }
     }

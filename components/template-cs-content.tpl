@@ -45,7 +45,7 @@
     "featured": true,
     "scope": "global"
   */
-  --content-link-color: #0066bb;
+  --content-link-color: black;
   /* VoogStyle
     "pathI18n": ["content", "link", "normal"],
     "titleI18n": "font_size",
@@ -169,5 +169,5 @@
     "editor": "colorPicker",
     "scope": "global"
   */
-  --content-link-hover-color: rgba(0, 102, 187, 0.8);
+  --content-link-hover-color: rgba(0, 0, 0, 0.7);
 }
