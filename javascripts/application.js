@@ -1049,53 +1049,51 @@ MMCQ = (function() {
       languageMenuValuesObj.item_state = 'names_only';
     }
 
-    $('.js-menu-language-settings-toggle').each(function(index, languageMenuSettingsButton) {
-      var langSettingsEditor = new Edicy.SettingsEditor(languageMenuSettingsButton, {
-        menuItems: [
-          {
-            "titleI18n": "show",
-            "type": "radio",
-            "key": "item_state",
-            "list": [
-              {
-                "titleI18n": "flags_only",
-                "value": "flags_only"
-              },
-              {
-                "titleI18n": "names_only",
-                "value": "names_only"
-              }
-            ]
-          }
-        ],
-
-        buttonTitleI18n: "settings",
-        values: languageMenuValuesObj,
-        containerClass: ['editor_default', 'js-prevent-sideclick'],
-        preview: function(data) {
-          var $html = $('html'),
-            $languageSettingsMenuElement = $('.js-menu-language-settings');
-
-          if (data.item_state === 'flags_only') {
-            $html.removeClass('language-flags-disabled');
-            $html.removeClass('language-names-enabled');
-            $html.addClass('language-flags-enabled');
-            $html.addClass('language-names-disabled');
-          } else if (data.item_state === 'names_only') {
-            $html.removeClass('language-flags-enabled');
-            $html.removeClass('language-names-disabled');
-            $html.addClass('language-flags-disabled');
-            $html.addClass('language-names-enabled');
-          }
-
-          positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
-          this.setPosition();
-        },
-
-        commit: function(data) {
-          siteData.set('settings_language_menu', data);
+    var langSettingsEditor = new Edicy.SettingsEditor($('.js-menu-language-settings-toggle').get(0), {
+      menuItems: [
+        {
+          "titleI18n": "show",
+          "type": "radio",
+          "key": "item_state",
+          "list": [
+            {
+              "titleI18n": "flags_only",
+              "value": "flags_only"
+            },
+            {
+              "titleI18n": "names_only",
+              "value": "names_only"
+            }
+          ]
         }
-      });
+      ],
+
+      buttonTitleI18n: "settings",
+      values: languageMenuValuesObj,
+      containerClass: ['editor_default', 'js-prevent-sideclick'],
+      preview: function(data) {
+        var $html = $('html'),
+          $languageSettingsMenuElement = $('.js-menu-language-settings');
+
+        if (data.item_state === 'flags_only') {
+          $html.removeClass('language-flags-disabled');
+          $html.removeClass('language-names-enabled');
+          $html.addClass('language-flags-enabled');
+          $html.addClass('language-names-disabled');
+        } else if (data.item_state === 'names_only') {
+          $html.removeClass('language-flags-enabled');
+          $html.removeClass('language-names-disabled');
+          $html.addClass('language-flags-disabled');
+          $html.addClass('language-names-enabled');
+        }
+
+        positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
+        this.setPosition();
+      },
+
+      commit: function(data) {
+        siteData.set('language_menu_settings', data);
+      }
     });
   };
 

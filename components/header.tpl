@@ -48,7 +48,7 @@
               <span>{{ current_language_title }}</span>
             </button>
             {% if show_language_menu_popover %}
-              {% include "menu-language-popover" %}
+              {% include "menu-language-popover", _semimodal: true %}
             {% endif %}
           </div>
         {% endif %}

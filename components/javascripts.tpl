@@ -85,8 +85,8 @@
       //==========================================================================
       // Initiates the language menu mode toggleing popover.
       //==========================================================================
-      {%if site.data.settings_language_menu %}
-        languageMenuValuesObj = {{ site.data.settings_language_menu | json }};
+      {%if site.data.language_menu_settings %}
+        languageMenuValuesObj = {{ site.data.language_menu_settings | json }};
       {% else %}
         languageMenuValuesObj = {};
       {% endif %};

@@ -3307,6 +3307,7 @@ article.post_wrapper .date-separator.hide-separator {
 
 .menu-language-btn {
   z-index: 3;
+  font-size: 16px;
 }
 .language-menu-mode-popover .menu-language-btn {
   display: inline-block;

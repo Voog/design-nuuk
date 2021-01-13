@@ -27,7 +27,7 @@
       <ul class="menu menu-vertical menu-cms js-menu-language-popover-setting-parent">
         <li class="menu-item menu-item-cms-add">{% languageadd %}</li>
 
-        {% if language_menu_mode == "language-menu-mode-popover" %}
+        {% if language_menu_mode == "language-menu-mode-popover" and _semimodal != true %}
           <li class="menu-item menu-item-cms-settings js-menu-language-settings">
             <button class="btn btn-js-styled js-menu-language-settings-toggle"></button>
           </li>

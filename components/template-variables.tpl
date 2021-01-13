@@ -112,18 +112,14 @@
   {% endif %}
 
   {% comment %}Detects language flags visibility setting.{% endcomment %}
-  {% if site.data.settings_language_menu.item_state %}
-    {% if site.data.settings_language_menu.item_state == "names_only" %}
-      {% assign language_flags_mode = "language-flags-disabled" %}
-    {% else %}
-      {% assign language_flags_mode = "language-flags-enabled" %}
-    {% endif %}
+  {% if site.data.language_menu_settings.item_state == "names_only" %}
+    {% assign language_flags_mode = "language-flags-disabled" %}
   {% else %}
     {% assign language_flags_mode = "language-flags-enabled" %}
   {% endif %}
 
   {% comment %}Detects language flags visibility setting.{% endcomment %}
-  {% if site.data.settings_language_menu.item_state == "flags_only" %}
+  {% if site.data.language_menu_settings.item_state == "flags_only" %}
     {% assign language_names_mode = "language-names-disabled" %}
   {% else %}
     {% assign language_names_mode = "language-names-enabled" %}
