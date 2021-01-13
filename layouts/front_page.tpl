@@ -20,7 +20,7 @@
 
 <body class="front-page js-bg-picker-area{% include 'semimodal-class-names' %}">
   <div class="background-color js-background-color"></div>
-  <div class="container_wrap js-background-type {{ body_bg_type }}">
+  <div class="container_wrap">
     {% include "header" %}
 
     <div class="flex_col content_wrap">
@@ -89,7 +89,7 @@
         </div>
       {%- else -%}
         <div
-          class="swiper-container js-bg-wrapper image_header"
+          class="swiper-container js-bg-wrapper image_header flex_box"
         >
           {%- assign imageClass = "image_fit-cover img-absolute front_header-image-1" -%}
           {% include "lazy-image", _data: front_header_bg_1, _targetWidth: '1400', _className: imageClass  %}
@@ -113,7 +113,7 @@
         </div>
       {%- endif -%}
 
-      <div class="container flex_col flex_j-space-between h-100p">
+      <div class="container flex_col flex_j-space-between h-100p js-background-type {{ body_bg_type }}">
         <main class="content" role="main" data-search-indexing-allowed="true">
           {% if editmode %}
             <div class="bg-picker-top">

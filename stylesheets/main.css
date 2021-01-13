@@ -1651,6 +1651,7 @@ body .edy-bgpicker-toggle-button:hover {
 body.front-page .edy-bgpicker-toggle-button {
   z-index: 99;
   left: 0;
+  top: -60px;
 }
 
 .admin_btn {

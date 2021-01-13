@@ -41,16 +41,6 @@
   {% assign body_bg_color_data = body_bg.colorData %}
   {% assign body_bg_combined_lightness = body_bg.combinedLightness %}
 
-  {% if body_bg_color == blank %}
-    {% assign body_bg_color = "#F2F2F2" %}
-  {% endif %}
-
-  {% if body_bg_color_data == blank %}
-    {% assign body_bg_color_data_str = "#F2F2F2" %}
-  {% else %}
-    {% assign body_bg_color_data_str = body_bg_color_data | json %}
-  {% endif %}
-
   {% if body_bg %}
     {% if body_bg_combined_lightness %}
       {% if body_bg_combined_lightness > 0.6 %}
