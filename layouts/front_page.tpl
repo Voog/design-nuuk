@@ -51,7 +51,7 @@
                 {%- assign imageClass = "image_fit-cover img-absolute swiper-lazy front_header-image-" | append: i -%}
 
                 {% include "lazy-image", _data: imagedata, _targetWidth: '1400', _className: imageClass, disableLazyLoad: true  %}
-                <div class="front_header-color-{{i}}"
+                <div class="w-100p h-100p front_header-color-{{i}}"
                   {% if page.data[headerImageKey].color != blank %}
                     style="background-color: {{ page.data[headerImageKey].color }};"
                   {% endif %}
@@ -105,7 +105,7 @@
 
           {{header_content}}
 
-          <div class="front_header-color-1 bg_color-absolute"
+          <div class="w-100p h-100p front_header-color-1 bg_color-absolute"
             {% if page.data.front_header_bg_1.color != blank %}
               style="background-color: {{ page.data.front_header_bg_1.color }};"
             {% endif %}
