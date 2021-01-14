@@ -18,19 +18,6 @@ body.dark-background {
   -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
 }
-.header_fixed .header_title {
-  font-size: var(--header-site-title-font-size);
-  line-height: var(--header-site-title-font-size);
-  font-weight: var(--header-site-title-font-weight);
-  font-style: var(--header-site-title-font-style);
-  -webkit-text-decoration: var(--header-site-title-text-decoration);
-          text-decoration: var(--header-site-title-text-decoration);
-  text-transform: var(--header-site-title-text-transform);
-  color: var(--header-site-title-color);
-  -webkit-hyphens: var(--header-site-title-hyphens);
-      -ms-hyphens: var(--header-site-title-hyphens);
-          hyphens: var(--header-site-title-hyphens);
-}
 
 .post .post_title, .post .post_title a {
   color: var(--primary-color);
@@ -67,8 +54,15 @@ body.dark-background {
   color: var(--fourth-color);
 }
 
+.menu-btn {
+  color: var(--header-mainmenu-color);
+}
 .menu-btn .menu-stripe {
   background-color: var(--header-mainmenu-color);
+}
+
+.search-btn svg g {
+  fill: var(--header-mainmenu-color);
 }
 
 .menu_popover-btn svg path {
@@ -285,13 +279,23 @@ body.dark-background {
   color: var(--fourth-color);
 }
 .content-formatted.header_title, .content-formatted.site_title, .content-formatted .product_item-btn.header_title, .content-formatted .product_item-btn.site_title, .content-formatted p.header_title, .content-formatted p.site_title {
-  color: var(--header-mainmenu-color);
+  font-size: var(--header-site-title-font-size);
+  line-height: var(--header-site-title-font-size);
+  font-weight: var(--header-site-title-font-weight);
+  font-style: var(--header-site-title-font-style);
+  -webkit-text-decoration: var(--header-site-title-text-decoration);
+          text-decoration: var(--header-site-title-text-decoration);
+  text-transform: var(--header-site-title-text-transform);
+  color: var(--header-site-title-color);
+  -webkit-hyphens: var(--header-site-title-hyphens);
+      -ms-hyphens: var(--header-site-title-hyphens);
+          hyphens: var(--header-site-title-hyphens);
 }
 .dark-background .content-formatted.header_title, .dark-background .content-formatted.site_title, .dark-background .content-formatted .product_item-btn.header_title, .dark-background .content-formatted .product_item-btn.site_title, .dark-background .content-formatted p.header_title, .dark-background .content-formatted p.site_title {
-  color: var(--header-mainmenu-color);
+  color: var(--header-site-title-color);
 }
 .dark-background .content-formatted.header_title a, .dark-background .content-formatted.header_title p, .dark-background .content-formatted.header_title h1, .dark-background .content-formatted.header_title h2, .dark-background .content-formatted.header_title h3, .dark-background .content-formatted.header_title h4, .dark-background .content-formatted.header_title h5, .dark-background .content-formatted.header_title h6, .dark-background .content-formatted.site_title a, .dark-background .content-formatted.site_title p, .dark-background .content-formatted.site_title h1, .dark-background .content-formatted.site_title h2, .dark-background .content-formatted.site_title h3, .dark-background .content-formatted.site_title h4, .dark-background .content-formatted.site_title h5, .dark-background .content-formatted.site_title h6, .dark-background .content-formatted .product_item-btn.header_title a, .dark-background .content-formatted .product_item-btn.header_title p, .dark-background .content-formatted .product_item-btn.header_title h1, .dark-background .content-formatted .product_item-btn.header_title h2, .dark-background .content-formatted .product_item-btn.header_title h3, .dark-background .content-formatted .product_item-btn.header_title h4, .dark-background .content-formatted .product_item-btn.header_title h5, .dark-background .content-formatted .product_item-btn.header_title h6, .dark-background .content-formatted .product_item-btn.site_title a, .dark-background .content-formatted .product_item-btn.site_title p, .dark-background .content-formatted .product_item-btn.site_title h1, .dark-background .content-formatted .product_item-btn.site_title h2, .dark-background .content-formatted .product_item-btn.site_title h3, .dark-background .content-formatted .product_item-btn.site_title h4, .dark-background .content-formatted .product_item-btn.site_title h5, .dark-background .content-formatted .product_item-btn.site_title h6, .dark-background .content-formatted p.header_title a, .dark-background .content-formatted p.header_title p, .dark-background .content-formatted p.header_title h1, .dark-background .content-formatted p.header_title h2, .dark-background .content-formatted p.header_title h3, .dark-background .content-formatted p.header_title h4, .dark-background .content-formatted p.header_title h5, .dark-background .content-formatted p.header_title h6, .dark-background .content-formatted p.site_title a, .dark-background .content-formatted p.site_title p, .dark-background .content-formatted p.site_title h1, .dark-background .content-formatted p.site_title h2, .dark-background .content-formatted p.site_title h3, .dark-background .content-formatted p.site_title h4, .dark-background .content-formatted p.site_title h5, .dark-background .content-formatted p.site_title h6 {
-  color: var(--header-mainmenu-color);
+  color: var(--header-site-title-color);
 }
 .content-formatted .custom-btn,
 .content-formatted .form_submit input, .content-formatted .product_item-btn .custom-btn,

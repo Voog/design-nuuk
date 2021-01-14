@@ -46,17 +46,6 @@ body {
     box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
   }
 
-  .header_title {
-    font-size: var(--header-site-title-font-size);
-    line-height: var(--header-site-title-font-size);
-    font-weight: var(--header-site-title-font-weight);
-    font-style: var(--header-site-title-font-style);
-    text-decoration: var(--header-site-title-text-decoration);
-    text-transform: var(--header-site-title-text-transform);
-    color: var(--header-site-title-color);
-    hyphens: var(--header-site-title-hyphens);
-    // scss-lint:enable NestingDepth, SelectorDepth, SingleLinePerSelector
-  }
 }
 
 // =============================================================================
@@ -137,9 +126,14 @@ body {
 // =============================================================================
 // Menu button. Only visible on smaller screens.
 .menu-btn {
+  color: var(--header-mainmenu-color);
   .menu-stripe {
     background-color: var(--header-mainmenu-color);
   }
+}
+
+.search-btn svg g {
+  fill: var(--header-mainmenu-color);
 }
 
 .menu_popover-btn svg path {
@@ -400,19 +394,25 @@ body {
 
   &.header_title,
   &.site_title {
-    color: var(--header-mainmenu-color);
+    font-size: var(--header-site-title-font-size);
+    line-height: var(--header-site-title-font-size);
+    font-weight: var(--header-site-title-font-weight);
+    font-style: var(--header-site-title-font-style);
+    text-decoration: var(--header-site-title-text-decoration);
+    text-transform: var(--header-site-title-text-transform);
+    color: var(--header-site-title-color);
+    hyphens: var(--header-site-title-hyphens);
 
     .dark-background & {
-      color: var(--header-mainmenu-color);
+      color: var(--header-site-title-color);
     }
 
     a, p, h1, h2, h3, h4, h5, h6 {
       .dark-background & {
-        color: var(--header-mainmenu-color);
+        color: var(--header-site-title-color);
       }
     }
   }
-
   // Code blocks and preformatted content.
   .custom-btn,
   .form_submit input {
