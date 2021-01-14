@@ -246,7 +246,7 @@
             {%- assign rowSettingsKey = id | append: '_block_columns' -%}
             {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
 
-            if (data.block_max_width >= 0) {
+            if (data.block_max_width >= 1) {
               if ($(window).width() >= 540) {
                 $('.block-{{ id }}').css({
                   width: data.block_max_width + '%'

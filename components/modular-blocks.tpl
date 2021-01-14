@@ -69,24 +69,36 @@
   {%- if blockColumnsSettings.col_max_width != blank and blockColumnsSettings.col_max_width != 0 -%}
     {%- assign col_max_width = blockColumnsSettings.col_max_width -%}
   {%- else -%}
-    {%- assign col_max_width = _defaultBlockObj[blockObjKey].col_max_width -%}
+    {%- if blockColumnsSettings.col_max_width == 0 -%}
+      {%- assign col_max_width = 'none' -%}
+    {%- else -%}
+      {%- if _defaultBlockObj[blockObjKey].col_max_width -%}
+        {%- assign col_max_width = _defaultBlockObj[blockObjKey].col_max_width -%}
+      {%- else -%}
+        {%- assign col_max_width = _defaultBlockObj.default.col_max_width -%}
+      {%- endif -%}
+    {%- endif -%}
   {%- endif -%}
 
-  {%- if blockColumnsSettings.block_max_width != blank -%}
+  {%- if blockColumnsSettings.block_max_width != blank and blockColumnsSettings.block_max_width != 0 -%}
     {%- assign maxBlockWidth = blockColumnsSettings.block_max_width -%}
   {%- else -%}
-    {%- if _defaultBlockObj[blockObjKey].block_max_width -%}
-      {%- assign maxBlockWidth = _defaultBlockObj[blockObjKey].block_max_width -%}
-    {%- else -%}
-      {%- assign maxBlockWidth = _defaultBlockObj.default.block_max_width -%}
-    {%- endif -%}
+    {% if blockColumnsSettings.block_max_width == 0 %}
+      {%- assign maxBlockWidth = 100 -%}
+    {% else %}
+      {%- if _defaultBlockObj[blockObjKey].block_max_width -%}
+        {%- assign maxBlockWidth = _defaultBlockObj[blockObjKey].block_max_width -%}
+      {%- else -%}
+        {%- assign maxBlockWidth = _defaultBlockObj.default.block_max_width -%}
+      {%- endif -%}
+    {% endif %}
   {%- endif -%}
 
   {%- if blockColumnsSettings.block_justification != blank -%}
     {%- assign blockJustification = blockColumnsSettings.block_justification -%}
   {%- else -%}
     {%- if _defaultBlockObj[blockObjKey].block_justification -%}
-      {%- assign blockJustification = _defaultBlockObj.default.block_justification -%}
+      {%- assign blockJustification = _defaultBlockObj[blockObjKey].block_justification -%}
     {%- else -%}
       {%- assign blockJustification = _defaultBlockObj.default.block_justification -%}
     {%- endif -%}
@@ -112,6 +124,7 @@
       Remove col-item bottom padding on last row
       and add margin subtraction to v-pad
     {%- endcomment -%}
+
     .column-container-{{ id }} {
       margin: 0 -{{hPadding}}px -32px;
       padding: {{vPadding}}px 0;

@@ -1520,6 +1520,9 @@ body:not(.semimodal-relative) .semimodal {
   top: -72px;
   left: 0;
 }
+.front-page .semimodal_picker-btn {
+  top: 0;
+}
 
 body .edy-popover {
   z-index: 56502 !important;
