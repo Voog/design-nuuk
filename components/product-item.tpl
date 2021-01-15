@@ -18,9 +18,9 @@
   </div>
 </a>
 {%- capture product_label -%}
-  {%- if _entityData.data[productPageSettingsKey].product_label != blank -%}
-    <span class="{% if _entityData.data[productPageSettingsKey].is_product_label_line_through == true %} td-lt{% endif %}">
-      {{_entityData.data[productPageSettingsKey].product_label}}
+  {%- if _entityData.data[productLayoutSettingsKey].product_label != blank -%}
+    <span class="{% if _entityData.data[productLayoutSettingsKey].is_product_label_line_through == true %} td-lt{% endif %}">
+      {{_entityData.data[productLayoutSettingsKey].product_label}}
     </span>
   {%- endif -%}
 {%- endcapture -%}

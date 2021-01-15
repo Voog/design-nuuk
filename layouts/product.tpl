@@ -6,7 +6,6 @@
   {% include "html-head" %}
   {% include "template-styles" %}
   {%- assign product_page = true -%}
-  {%- assign productPageSettingsKey = 'product_layout_settings' -%}
 </head>
 
 <body class="product-page js-bg-picker-area{% include 'semimodal-class-names' %}">
@@ -47,9 +46,9 @@
                 {% contentblock name="page-title" publish_default_content="true" %}
                   <h3>{{page.title}}</h3>
                 {% endcontentblock %}
-                {%- if page.data[productPageSettingsKey].product_label != blank -%}
-                  <div class="mar_t-16 p18{% if page.data[productPageSettingsKey].is_product_label_line_through == true %} td-lt{% endif %}">
-                    {{page.data[productPageSettingsKey].product_label}}
+                {%- if page.data[productLayoutSettingsKey].product_label != blank -%}
+                  <div class="mar_t-16 p18{% if page.data[productLayoutSettingsKey].is_product_label_line_through == true %} td-lt{% endif %}">
+                    {{page.data[productLayoutSettingsKey].product_label}}
                   </div>
                 {%- endif -%}
               </div>
@@ -64,7 +63,7 @@
           {%- assign pageIdsArr = "" | split: ',' -%}
           {%- for i in (1..3) -%}
             {%- assign relatedProductKey = 'is_related_product_' | append: i -%}
-            {%- assign relatedProductPageId = page.data[productPageSettingsKey][relatedProductKey] -%}
+            {%- assign relatedProductPageId = page.data[productLayoutSettingsKey][relatedProductKey] -%}
             {%- assign pageIdsArr = pageIdsArr | push: relatedProductPageId -%}
             {%- assign pageIdCompactArr = pageIdsArr | compact -%}
           {%- endfor -%}

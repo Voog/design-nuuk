@@ -1,5 +1,5 @@
 {%- assign productNoteInputCount = 1 -%}
-{%- assign productPageSettings = page.data[productPageSettingsKey] -%}
+{%- assign productPageSettings = page.data[productLayoutSettingsKey] -%}
 {%- if productPageSettings != blank -%}
   {%- assign productNoteInputCount = productPageSettings.product_note_input_count | to_num -%}
 {%- endif -%}
@@ -97,7 +97,7 @@
                 },
               {%- endfor -%}*/
             ],
-            dataKey: '{{productPageSettingsKey}}',
+            dataKey: '{{productLayoutSettingsKey}}',
             values: valuesObj
           }
         )

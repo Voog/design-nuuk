@@ -53,6 +53,10 @@
         }
       }
     },
+    "swiper_bg": {
+      "key": "PREFIX_swiper_bg",
+      "value": {}
+    },
     "item_image": {
       "key": "PREFIX_item_image",
       "value": {}

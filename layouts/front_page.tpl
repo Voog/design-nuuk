@@ -3,7 +3,7 @@
 {% include "template-variables" %}
 <html class="{% include "language-menu-class-names" %} {% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
-  {%- assign swiperSettingsData = page.data.swiper_settings -%}
+  {%- assign swiperSettingsData = page.data[swiperSettingsKey] -%}
   {% include "html-head" %}
   {% include "template-styles" %}
   {% capture front_slogan_html %}{% unless editmode %}{% content name="front-slogan" %}{% endunless %}{% endcapture %}
@@ -37,13 +37,13 @@
         <div class="swiper-container">
           <div class="swiper-wrapper{%- if swiperSettingsData.is_content_by_slide != true %} p-abs{% endif -%}">
             {%- for i in (1..swiperSettingsData.slides_count) -%}
-              {% assign headerImageKey = 'front_header_bg_' | append: i %}
+              {% assign swiperDataKey = swiperBgKey | append: i %}
               {% assign contentKey = 'front_header_content_' | append: i %}
 
               {%- if forloop.index == 1 -%}
-                {%- assign imagedata = front_header_bg_1 -%}
+                {%- assign imagedata = swiper_bg_1 -%}
               {%- else -%}
-                {%- assign imagedata = page.data[headerImageKey] -%}
+                {%- assign imagedata = page.data[swiperDataKey] -%}
               {%- endif -%}
 
               <div
@@ -53,8 +53,8 @@
 
                 {% include "lazy-image", _data: imagedata, _targetWidth: '1400', _className: imageClass, disableLazyLoad: true  %}
                 <div class="w-100p h-100p front_header-color-{{i}}"
-                  {% if page.data[headerImageKey].color != blank %}
-                    style="background-color: {{ page.data[headerImageKey].color }};"
+                  {% if page.data[swiperDataKey].color != blank %}
+                    style="background-color: {{ page.data[swiperDataKey].color }};"
                   {% endif %}
                 >
                   {%- if swiperSettingsData.is_content_by_slide == true -%}
@@ -69,7 +69,7 @@
                     <button
                       class="bg-picker r-32 t-32" data-type="img" data-picture="true"
                       data-color="true" data-image_elem=".front_header-image-{{i}}"
-                      data-color_elem=".front_header-color-{{i}}" data-name="{{headerImageKey}}"
+                      data-color_elem=".front_header-color-{{i}}" data-name="{{swiperDataKey}}"
                       data-bg="{{ imagedata | json | escape }}">
                     </button>
                   {% endif %}
@@ -93,13 +93,13 @@
           class="swiper-container js-bg-wrapper image_header flex_box"
         >
           {%- assign imageClass = "image_fit-cover img-absolute front_header-image-1" -%}
-          {% include "lazy-image", _data: front_header_bg_1, _targetWidth: '1400', _className: imageClass  %}
+          {% include "lazy-image", _data: swiper_bg_1, _targetWidth: '1400', _className: imageClass  %}
 
           {% if editmode %}
             <button
               class="bg-picker" data-type="img" data-picture="true" data-color="true"
               data-image_elem=".front_header-image-1" data-color_elem=".front_header-color-1"
-              data-name="front_header_bg_1" data-bg="{{ front_header_bg_1 | json | escape }}"
+              data-name="swiper_bg_1" data-bg="{{ swiper_bg_1 | json | escape }}"
               data-wrapper_class="image_header"
             ></button>
           {% endif %}
@@ -107,8 +107,8 @@
           {{header_content}}
 
           <div class="w-100p h-100p front_header-color-1 bg_color-absolute"
-            {% if page.data.front_header_bg_1.color != blank %}
-              style="background-color: {{ page.data.front_header_bg_1.color }};"
+            {% if page.data.swiper_bg_1.color != blank %}
+              style="background-color: {{ page.data.swiper_bg_1.color }};"
             {% endif %}
           ></div>
         </div>

@@ -14,7 +14,6 @@
             {%- endif -%}
           >
             <div class="mar_0-8">
-              {%- assign productPageSettingsKey = 'product_layout_settings' -%}
               <div class="product_item-wrap p-rel">
                 {%- if item_child.layout_title == product_list_layout -%}
                   {% include 'content-item', _entityData: item_child, _itemType: 'page', _id: item_child.page_id %}

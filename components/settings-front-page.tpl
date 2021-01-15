@@ -6,18 +6,18 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
-    {% if page.data.swiper_settings %}
-      var valuesObj = {{ page.data.swiper_settings | json }};
+    {% if page.data[swiperSettingsKey] %}
+      var valuesObj = {{ page.data[swiperSettingsKey] | json }};
     {% else %}
       var valuesObj = {};
     {% endif %}
 
     if (!('is_content_by_slide' in valuesObj)) {
-      valuesObj.is_content_by_slide = true;
+      valuesObj.is_content_by_slide = false;
     }
 
     if (!('is_fade_effect' in valuesObj)) {
-      valuesObj.is_fade_effect = true;
+      valuesObj.is_fade_effect = false;
     }
 
     if (!('slides_count' in valuesObj)) {
@@ -55,7 +55,7 @@
             "min": 1
           }
         ],
-        dataKey: 'swiper_settings',
+        dataKey: '{{swiperSettingsKey}}',
         values: valuesObj
       }
     );

@@ -1,4 +1,4 @@
-{%- capture front_header_bg_json -%}
+{%- capture swiper_bg_json -%}
   {
     "image":"{{images_path}}/front-header-bg.jpg",
     "width":3504,
@@ -12,7 +12,7 @@
     ]
   }
 {%- endcapture -%}
-{%- assign front_header_bg = front_header_bg_json | json_parse -%}
+{%- assign swiper_bg = swiper_bg_json | json_parse -%}
 {% capture dont_render %}
   {%- assign bodyBgKey = template_settings.page.body_bg.key -%}
   {%- assign blockSettingsKey = template_settings.page.block_settings.key -%}
@@ -20,13 +20,15 @@
   {%- assign itemImageCropStateKey = template_settings.page.item_image_crop_state.key -%}
   {%- assign itemImageAltAttrKey = template_settings.page.item_image_alt_attr.key -%}
   {%- assign productLayoutSettingsKey = template_settings.page.product_layout_settings.key -%}
+  {%- assign swiperBgKey = template_settings.page.swiper_bg.key -%}
   {%- assign swiperSettingsKey = template_settings.page.swiper_settings.key -%}
   {%- assign menuSettingsKey = template_settings.site.menu_settings.key -%}
   {%- assign semimodalBgKey = template_settings.site.semimodal_bg.key -%}
 
-  {% assign front_header_bg_1 = page.data.front_header_bg_1 %}
-  {%- if front_header_bg_1 == blank -%}
-    {% assign front_header_bg_1 = front_header_bg %}
+  {%- assign swiperBg1Key = swiperBgKey | append: 1 -%}
+  {% assign swiper_bg_1 = page.data[swiperBg1Key] %}
+  {%- if swiper_bg_1 == blank -%}
+    {% assign swiper_bg_1 = swiper_bg %}
   {%- endif -%}
 
   {% comment %}SITE BODY RELATED VARIABLES.{% endcomment %}
