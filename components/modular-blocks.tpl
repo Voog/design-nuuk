@@ -103,6 +103,7 @@
     .block-container-{{ id }} {
       display: flex;
       justify-content: {{blockJustification}};
+      margin-bottom: 8px;
     }
 
     .block-{{ id }} {

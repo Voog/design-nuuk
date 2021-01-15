@@ -9,7 +9,7 @@
     "unit": "px",
     "scope": "global"
   */
-  --container-max-width: 960px;
+  --container-max-width: 1440px;
   /* VoogStyle
     "pathI18n": ["main_styles"],
     "titleI18n": "font",
