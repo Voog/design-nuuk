@@ -14,7 +14,7 @@
     },
     "semimodal_bg": {
       "key": "PREFIX_semimodal_bg",
-      "value": null
+      "value": {}
     }
   },
   "page": {
@@ -63,16 +63,16 @@
     },
     "item_image_crop_state": {
       "key": "PREFIX_item_image_crop_state",
-      "value": 1
+      "value": ""
     },
     "item_image_alt_attr": {
       "key": "PREFIX_item_image_alt_attr",
-      "value": 1
+      "value": ""
     },
     "product_layout_settings": {
       "key": "PREFIX_product_layout_settings",
       "value": {
-        "product_label": 1,
+        "product_label": "",
         "is_product_label_line_through": false,
         "is_related_product_1": null,
         "is_related_product_2": null,
