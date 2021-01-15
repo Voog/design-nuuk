@@ -13,7 +13,6 @@
   }
 {%- endcapture -%}
 {%- assign front_header_bg = front_header_bg_json | json_parse -%}
-
 {% capture dont_render %}
   {% assign front_header_bg_1 = page.data.front_header_bg_1 %}
   {%- if front_header_bg_1 == blank -%}
@@ -22,10 +21,12 @@
 
   {% comment %}SITE BODY RELATED VARIABLES.{% endcomment %}
   {% comment %}Assign variables based on page type.{% endcomment %}
+  {%- assign bodyBgKey = template_settings.page.body_bg.key -%}
+
   {% if blog_article_page %}
-    {% assign body_bg = article.data.body_bg %}
+    {% assign body_bg = article.data[bodyBgKey] %}
   {% else %}
-    {% assign body_bg = page.data.body_bg %}
+    {% assign body_bg = page.data[bodyBgKey] %}
   {% endif %}
 
   {% comment %}Assign variables based on page type.{% endcomment %}
