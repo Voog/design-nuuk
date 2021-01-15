@@ -41,8 +41,7 @@
 
 
     {% for id in (1.._blockCount) %}
-      {%- assign blockColumnsSettingsKey = 'block_columns_settings' | append: id -%}
-      {%- assign blockObjKey = 'block_' | append: id -%}
+      {%- assign blockColumnsSettingsKey = 'block_columns_settings_' | append: id -%}
 
       {%- if page.data[blockColumnsSettingsKey] %}
         var valuesObj = {{ page.data[blockColumnsSettingsKey] | json }};
@@ -51,55 +50,55 @@
       {%- endif %}
 
       if (!('col_h_padding' in valuesObj)) {
-        {%- if _defaultBlockObj[blockObjKey].col_h_padding -%}
-          valuesObj.col_h_padding = "{{_defaultBlockObj[blockObjKey].col_h_padding}}";
+        {%- if _defaultBlockObj[blockColumnsSettingsKey].col_h_padding -%}
+          valuesObj.col_h_padding = "{{_defaultBlockObj[blockColumnsSettingsKey].col_h_padding}}";
         {%- else -%}
           valuesObj.col_h_padding = "{{_defaultBlockObj.default.col_h_padding}}";
         {%- endif -%}
       }
       if (!('col_min_width' in valuesObj)) {
-        {%- if _defaultBlockObj[blockObjKey].col_min_width -%}
-          valuesObj.col_min_width = "{{_defaultBlockObj[blockObjKey].col_min_width}}";
+        {%- if _defaultBlockObj[blockColumnsSettingsKey].col_min_width -%}
+          valuesObj.col_min_width = "{{_defaultBlockObj[blockColumnsSettingsKey].col_min_width}}";
         {%- else -%}
           valuesObj.col_min_width = "{{_defaultBlockObj.default.col_min_width}}";
         {%- endif -%}
       }
 
       if (!('col_max_width' in valuesObj)) {
-        {%- if _defaultBlockObj[blockObjKey].col_max_width -%}
-          valuesObj.col_max_width = "{{_defaultBlockObj[blockObjKey].col_max_width}}";
+        {%- if _defaultBlockObj[blockColumnsSettingsKey].col_max_width -%}
+          valuesObj.col_max_width = "{{_defaultBlockObj[blockColumnsSettingsKey].col_max_width}}";
         {%- else -%}
           valuesObj.col_max_width = "{{_defaultBlockObj.default.col_max_width}}";
         {%- endif -%}
       }
 
       if (!('col_justification' in valuesObj)) {
-        {%- if _defaultBlockObj[blockObjKey].col_justification -%}
-          valuesObj.col_justification = "{{_defaultBlockObj[blockObjKey].col_justification}}";
+        {%- if _defaultBlockObj[blockColumnsSettingsKey].col_justification -%}
+          valuesObj.col_justification = "{{_defaultBlockObj[blockColumnsSettingsKey].col_justification}}";
         {%- else -%}
           valuesObj.col_justification = "{{_defaultBlockObj.default.col_justification}}";
         {%- endif -%}
       }
 
       if (!('block_v_padding' in valuesObj)) {
-      {%- if _defaultBlockObj[blockObjKey].block_v_padding -%}
-        valuesObj.block_v_padding = "{{_defaultBlockObj[blockObjKey].block_v_padding}}";
+      {%- if _defaultBlockObj[blockColumnsSettingsKey].block_v_padding -%}
+        valuesObj.block_v_padding = "{{_defaultBlockObj[blockColumnsSettingsKey].block_v_padding}}";
       {%- else -%}
         valuesObj.block_v_padding = "{{_defaultBlockObj.default.block_v_padding}}";
       {%- endif -%}
       }
 
       if (!('block_max_width' in valuesObj)) {
-        {%- if _defaultBlockObj[blockObjKey].block_max_width -%}
-          valuesObj.block_max_width = "{{_defaultBlockObj[blockObjKey].block_max_width}}";
+        {%- if _defaultBlockObj[blockColumnsSettingsKey].block_max_width -%}
+          valuesObj.block_max_width = "{{_defaultBlockObj[blockColumnsSettingsKey].block_max_width}}";
         {%- else -%}
           valuesObj.block_max_width = "{{_defaultBlockObj.default.block_max_width}}";
         {%- endif -%}
       }
 
       if (!('block_justification' in valuesObj)) {
-        {%- if _defaultBlockObj[blockObjKey].block_justification -%}
-            valuesObj.block_justification = "{{_defaultBlockObj[blockObjKey].block_justification}}";
+        {%- if _defaultBlockObj[blockColumnsSettingsKey].block_justification -%}
+            valuesObj.block_justification = "{{_defaultBlockObj[blockColumnsSettingsKey].block_justification}}";
         {%- else -%}
           valuesObj.block_justification = "{{_defaultBlockObj.default.block_justification}}";
         {%- endif -%}
@@ -111,13 +110,11 @@
         $('.block_justification').hide();
       }
 
-      {%- assign blockObjKey = 'block_' | append: id -%}
-
       if (!('block_columns' in valuesObj)) {
-        {%- if _defaultBlockObj[blockObjKey].col_count %}
-          valuesObj['block_columns'] = {{_defaultBlockObj[blockObjKey].col_count}};
+        {%- if _defaultBlockObj[blockColumnsSettingsKey].col_count %}
+          valuesObj['block_columns'] = {{_defaultBlockObj[blockColumnsSettingsKey].col_count}};
         {%- else %}
-          valuesObj['block_columns'] = 3;
+          valuesObj['block_columns'] = {{_defaultBlockObj.default.col_count}};
         {%- endif %}
       }
 

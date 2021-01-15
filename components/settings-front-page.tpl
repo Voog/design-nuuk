@@ -12,6 +12,17 @@
       var valuesObj = {};
     {% endif %}
 
+    if (!('is_content_by_slide' in valuesObj)) {
+      valuesObj.is_content_by_slide = true;
+    }
+
+    if (!('is_fade_effect' in valuesObj)) {
+      valuesObj.is_fade_effect = true;
+    }
+
+    if (!('slides_count' in valuesObj)) {
+      valuesObj.slides_count = 1;
+    }
 
     initSettingsEditor(
       {

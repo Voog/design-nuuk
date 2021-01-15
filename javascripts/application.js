@@ -870,7 +870,7 @@ MMCQ = (function() {
             $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 0);
           }
 
-          itemData.set({image_crop_state: 'not-cropped', item_image: image});
+          itemData.set({item_image_crop_state: 'not-cropped', item_image: image});
           $contentItemBox.removeClass('not-loaded with-error').addClass('is-loaded');
           $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 1);
           $imgDropAreaTarget.css('opacity', 1);
@@ -881,7 +881,7 @@ MMCQ = (function() {
         var $el = $(this);
         itemData.remove('item_image', {
           success: function(data) {
-            itemData.remove('image_crop_state', {
+            itemData.remove('item_image_crop_state', {
               success: function(data) {
                 $el.closest('.js-content-item-box').find('.top-inner')
                   .append('<div class="edy-img-drop-area-placeholder">' + placeholderText + '</div>');
@@ -937,7 +937,7 @@ MMCQ = (function() {
         imageCropState = 'is-cropped';
       }
 
-      itemData.set('image_crop_state', imageCropState);
+      itemData.set('item_image_crop_state', imageCropState);
     });
   };
 

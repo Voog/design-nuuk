@@ -67,7 +67,7 @@
       site.bindContentItemImgDropAreas('{{ dropAreaPlaceholder }}');
       site.bindContentItemImageCropToggle();
 
-      {%if site.data.settings_root_item %}
+      {% if site.data.settings_root_item %}
         rootItemValuesObj = {{ site.data.settings_root_item | json }};
       {% else %}
         rootItemValuesObj = {};

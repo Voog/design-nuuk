@@ -14,17 +14,17 @@
   </style>
 {%- endif -%}
 
-{%- include 'image_src_variable', _data: site.data.semimodal_image, _targetWidth: "1000" -%}
+{%- include 'image_src_variable', _data: site.data.semimodal_bg, _targetWidth: "1000" -%}
 <div class="
   semimodal js-prevent-sideclick
   {% if semimodalSettings.positioning == 'is_top' or semimodalSettings.positioning == 'is_top_fixed' %} hidden-desktop{% endif %}
   "
 >
   {%- assign imageClass = "image_fit-cover semimodal_bg-image image_abs" -%}
-  {%- include "lazy-image", _data: site.data.semimodal_image, _targetWidth: '600', _className: imageClass -%}
+  {%- include "lazy-image", _data: site.data.semimodal_bg, _targetWidth: '600', _className: imageClass -%}
   <div class="semimodal_bg-color bg_color-absolute"
-    {%- if site.data.semimodal_image.color != blank %}
-      style="background-color: {{ site.data.semimodal_image.color }};"
+    {%- if site.data.semimodal_bg.color != blank %}
+      style="background-color: {{ site.data.semimodal_bg.color }};"
     {%- endif -%}
   ></div>
 
@@ -38,7 +38,16 @@
     <div class="semimodal_bottom">
       {%- if editmode -%}
         <div class="semimodal_picker-btn js-prevent-sideclick hidden-tablet">
-          <button class="bg-picker" data-type="img" data-entity="siteData" data-picture="true" data-color="true" data-image_elem=".semimodal_bg-image" data-color_elem=".semimodal_bg-color" data-name="semimodal_image" data-bg="{{ site.data.semimodal_image | json | escape }}"></button>
+          <button class="bg-picker"
+            data-type="img"
+            data-entity="siteData"
+            data-picture="true"
+            data-color="true"
+            data-image_elem=".semimodal_bg-image"
+            data-color_elem=".semimodal_bg-color"
+            data-name="semimodal_bg"
+            data-bg="{{ site.data.semimodal_bg | json | escape }}"
+          ></button>
         </div>
       {%- endif -%}
       <div class="header_components-tablet">

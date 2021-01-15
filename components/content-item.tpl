@@ -2,8 +2,8 @@
   {% assign item_image_state = "without-image" %}
 {% else %}
   {% assign item_image_state = "with-image" %}
-  {% if _entityData.data.image_crop_state %}
-    {% assign item_image_crop_state = _entityData.data.image_crop_state %}
+  {% if _entityData.data.item_image_crop_state %}
+    {% assign item_image_crop_state = _entityData.data.item_image_crop_state %}
   {% else %}
     {% assign item_image_crop_state = "not-cropped" %}
   {% endif %}
