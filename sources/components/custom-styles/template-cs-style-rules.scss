@@ -420,6 +420,15 @@ body {
     }
 
     a, p, h1, h2, h3, h4, h5, h6 {
+      font-size: var(--header-site-title-font-size);
+      line-height: var(--header-site-title-font-size);
+      font-weight: var(--header-site-title-font-weight);
+      font-style: var(--header-site-title-font-style);
+      text-decoration: var(--header-site-title-text-decoration);
+      text-transform: var(--header-site-title-text-transform);
+      color: var(--header-site-title-color);
+      hyphens: var(--header-site-title-hyphens);
+
       .dark-background & {
         color: var(--header-site-title-color);
       }
