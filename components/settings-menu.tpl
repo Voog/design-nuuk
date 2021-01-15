@@ -1,4 +1,4 @@
-{%- assign menuSettings = site.data[template_settings.site.menu_settings.key] -%}
+{%- assign menuSettings = site.data[menuSettingsKey] -%}
 
 <div class="menu_settings-btn layout_settings-btn js-prevent-sideclick">
   <button disabled class="js-menu-settings-btn js-settings-editor-btn">
@@ -57,7 +57,7 @@
               "placeholder": "Side menu width (px)"
             },
           ],
-          dataKey: '{{template_settings.site.menu_settings.key}}',
+          dataKey: '{{menuSettingsKey}}',
           values: valuesObj,
           entityData: 'siteData',
           noReload: true,

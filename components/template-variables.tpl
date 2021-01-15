@@ -14,6 +14,11 @@
 {%- endcapture -%}
 {%- assign front_header_bg = front_header_bg_json | json_parse -%}
 {% capture dont_render %}
+  {%- assign bodyBgKey = template_settings.page.body_bg.key -%}
+  {%- assign blockSettingsKey = template_settings.page.block_settings.key -%}
+  {%- assign menuSettingsKey = template_settings.site.menu_settings.key -%}
+  {%- assign semimodalBgKey = template_settings.site.semimodal_bg.key -%}
+
   {% assign front_header_bg_1 = page.data.front_header_bg_1 %}
   {%- if front_header_bg_1 == blank -%}
     {% assign front_header_bg_1 = front_header_bg %}
@@ -21,8 +26,6 @@
 
   {% comment %}SITE BODY RELATED VARIABLES.{% endcomment %}
   {% comment %}Assign variables based on page type.{% endcomment %}
-  {%- assign bodyBgKey = template_settings.page.body_bg.key -%}
-
   {% if blog_article_page %}
     {% assign body_bg = article.data[bodyBgKey] %}
   {% else %}

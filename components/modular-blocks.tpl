@@ -6,7 +6,7 @@
 {%- endif -%}
 
 {%- for id in (1..blockCount) -%}
-  {%- assign blockColumnsSettingsKey = 'block_columns_settings_' | append: id -%}
+  {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
   {%- assign blockColumnsSettings = page.data[blockColumnsSettingsKey] -%}
 
   {%- assign blockColumnsCount = blockColumnsSettings.block_columns -%}
@@ -144,7 +144,7 @@
       {%- if editmode -%}
         <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">Block {{ id }}</button>
       {%- endif -%}
-      {%- assign blockColumnsSettingsKey = 'block_columns_settings_' | append: id -%}
+      {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
       {%- assign blockColumnsCount = page.data[blockColumnsSettingsKey].block_columns -%}
 
 

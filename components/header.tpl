@@ -1,8 +1,8 @@
 
 {% include "site-search" %}
 {% include 'header-fixed' %}
-{%- assign semimodalBgKey = template_settings.site.semimodal_bg.key -%}
-{%- assign menuSettings = site.data[template_settings.site.menu_settings.key] -%}
+
+{%- assign menuSettings = site.data[menuSettingsKey] -%}
 
 {%- if menuSettings.max_width >= 1 -%}
   <style>

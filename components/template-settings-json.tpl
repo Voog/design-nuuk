@@ -23,22 +23,34 @@
       "value": {}
     },
     "block_settings": {
-      "block_count": {
-        "key": "PREFIX_block_count",
-        "value": 1
+      "key": "PREFIX_block_settings",
+      "value": {
+        "block_count": 1
       }
     },
     "block_columns_settings": {
       "key": "PREFIX_block_columns_settings_",
       "value": {
-        "col_count": 2,
-        "block_max_width": 80,
-        "block_justification": "center",
-        "block_v_padding": 64,
-        "col_justification": "evenly",
-        "col_max_width": 400,
-        "col_min_width": 240,
-        "col_h_padding": 16
+        "PREFIX_block_columns_settings_1": {
+          "col_count": 1,
+          "block_max_width": 100,
+          "block_justification": "center",
+          "block_v_padding": 16,
+          "col_max_width": "none",
+          "col_justification": "between",
+          "col_min_width": 240,
+          "col_h_padding": 16
+        },
+        "default": {
+          "col_count": 2,
+          "block_max_width": 80,
+          "block_justification": "center",
+          "block_v_padding": 64,
+          "col_justification": "evenly",
+          "col_max_width": 400,
+          "col_min_width": 240,
+          "col_h_padding": 16
+        }
       }
     },
     "item_image": {

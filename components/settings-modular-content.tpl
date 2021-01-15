@@ -33,7 +33,7 @@
             ]
           }
         ],
-        dataKey: 'block_settings',
+        dataKey: '{{blockSettingsKey}}',
         values: valuesObj
       }
     )
@@ -41,7 +41,7 @@
 
 
     {% for id in (1.._blockCount) %}
-      {%- assign blockColumnsSettingsKey = 'block_columns_settings_' | append: id -%}
+      {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
 
       {%- if page.data[blockColumnsSettingsKey] %}
         var valuesObj = {{ page.data[blockColumnsSettingsKey] | json }};
