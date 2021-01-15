@@ -1,1 +1,1 @@
-{% if isSemimodalAbsolute %} semimodal-absolute{% endif %}{% if isSemimodalOpen %} semimodal-relative semimodal-open-state{% endif %} js-semimodal-toggle
+{% if isMenuSideAbsolute %} semimodal-absolute{% endif %}{% if isSemimodalAlwaysOpen %} semimodal-relative semimodal-open-state{% endif %} js-semimodal-toggle

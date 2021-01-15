@@ -29,11 +29,11 @@
   {% endif %}
 
   {% if site.data[template_settings.site.menu_settings.key].positioning == 'is_side_always_open' %}
-    {% assign isSemimodalOpen = true %}
+    {% assign isSemimodalAlwaysOpen = true %}
   {% endif %}
 
   {% if site.data[template_settings.site.menu_settings.key].positioning == 'is_side_absolute' %}
-    {% assign isSemimodalAbsolute = true %}
+    {% assign isMenuSideAbsolute = true %}
   {% endif %}
 
   {% comment %}Assign variables based on page type.{% endcomment %}

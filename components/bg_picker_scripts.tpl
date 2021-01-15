@@ -14,9 +14,8 @@
             var $imageEl = $(pickerOpts.image_elem);
             var $colorEl = $(pickerOpts.color_elem);
             var $wrapperEl = $imageEl.closest('.js-bg-wrapper');
-            console.log($wrapperEl)
             var col = (data.color && data.color !== "") ? data.color : "transparent";
-            console.log(col);
+
             if (pickerOpts.type === 'img') {
               if (data.image) {
                 $imageEl.attr('src', data.image);
