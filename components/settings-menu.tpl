@@ -1,15 +1,15 @@
-{%- assign semimodalSettings = site.data.menu_settings -%}
+{%- assign menuSettings = site.data[template_settings.site.menu_settings.key] -%}
 
 <div class="menu_settings-btn layout_settings-btn js-prevent-sideclick">
-  <button disabled class="js-semimodal-settings-btn js-settings-editor-btn">
+  <button disabled class="js-menu-settings-btn js-settings-editor-btn">
     <div class="p14 bold">Navigation</div><div class="p14 grey">Change menu settings</div>
   </button>
 </div>
 <script>
   {%- if editmode -%}
     window.addEventListener('DOMContentLoaded', (event) => {
-      {%- if semimodalSettings -%}
-        var valuesObj = {{ semimodalSettings | json }};
+      {%- if menuSettings -%}
+        var valuesObj = {{ menuSettings | json }};
       {%- else -%}
         var valuesObj = {};
       {%- endif -%}
@@ -24,7 +24,7 @@
 
       initSettingsEditor(
         {
-          settingsBtn: document.querySelector('.js-semimodal-settings-btn'),
+          settingsBtn: document.querySelector('.js-menu-settings-btn'),
           menuItems: [
             {
               "title": "Menu alignment",
@@ -57,7 +57,7 @@
               "placeholder": "Side menu width (px)"
             },
           ],
-          dataKey: 'menu_settings',
+          dataKey: '{{template_settings.site.menu_settings.key}}',
           values: valuesObj,
           entityData: 'siteData',
           noReload: true,
@@ -112,8 +112,8 @@
               }
             }
 
-            {%- if semimodalSettings.max_width != blank -%}
-              if (data.max_width >= 1 && data.max_width != {{semimodalSettings.max_width}}) {
+            {%- if menuSettings.max_width != blank -%}
+              if (data.max_width >= 1 && data.max_width != {{menuSettings.max_width}}) {
                 $('.semimodal-open:not(.semimodal-relative) .semimodal,.semimodal_inner,.semimodal-open .semimodal,.semimodal-open-state .semimodal').css(
                   {'max-width': data.max_width + 'px', 'min-width': data.max_width + 'px'}
                 );

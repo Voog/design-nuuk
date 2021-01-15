@@ -1,7 +1,7 @@
 
 {% include "site-search" %}
 {% include 'header-fixed' %}
-{%- assign semimodalSettings = site.data.menu_settings -%}
+{%- assign semimodalSettings = site.data[template_settings.site.menu_settings.key] -%}
 {%- if semimodalSettings.max_width >= 1 -%}
   <style>
     body.semimodal-open:not(.semimodal-relative) .semimodal,

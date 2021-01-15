@@ -1,4 +1,4 @@
-{%- assign menuPos = site.data.menu_settings.positioning -%}
+{%- assign menuPos = site.data[template_settings.site.menu_settings.key].positioning -%}
 {% if menuPos == 'is_top' or menuPos == 'is_top_fixed'%}
   {%- assign menuTop = true -%}
 {% endif %}

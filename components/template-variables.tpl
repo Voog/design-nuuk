@@ -28,11 +28,11 @@
     {% assign body_bg = page.data.body_bg %}
   {% endif %}
 
-  {% if site.data.menu_settings.positioning == 'is_side_always_open' %}
+  {% if site.data[template_settings.site.menu_settings.key].positioning == 'is_side_always_open' %}
     {% assign isSemimodalOpen = true %}
   {% endif %}
 
-  {% if site.data.menu_settings.positioning == 'is_side_absolute' %}
+  {% if site.data[template_settings.site.menu_settings.key].positioning == 'is_side_absolute' %}
     {% assign isSemimodalAbsolute = true %}
   {% endif %}
 
