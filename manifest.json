@@ -323,6 +323,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/template-settings.tpl",
+      "layout_name": "template-settings",
+      "title": "template-settings"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-cs-main-menu.tpl",
       "layout_name": "template-cs-main-menu",
       "title": "template-cs-main-menu"
@@ -403,6 +410,13 @@
       "file": "components/image_src_variable.tpl",
       "layout_name": "image_src_variable",
       "title": "image_src_variable"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-settings-json.tpl",
+      "layout_name": "template-settings-json",
+      "title": "template-settings-json"
     },
     {
       "content_type": "component",

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% include "template-variables" %}
+{% include "template-settings" %}
 <html class="{% include "language-menu-class-names" %} {% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
   {%- assign swiperSettingsData = page.data.swiper_settings -%}

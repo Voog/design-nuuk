@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% include "template-variables" with "article" %}
+{% include "template-settings" %}
 {% include "blog-article-variables" %}
 {% include "article-settings-variables" %}
 <html class="{% include "language-menu-class-names" %} {% if editmode %}editmode{% else %}publicmode{% endif %}" lang="{{ page.language_code }}">
