@@ -47,7 +47,7 @@
                   <h3>{{page.title}}</h3>
                 {% endcontentblock %}
                 {%- if page.data[productPageSettingsKey].product_label != blank -%}
-                  <div class="mar_t-16 p18{% if page.data[productPageSettingsKey].product_label_line_through == true %} td-lt{% endif %}">
+                  <div class="mar_t-16 p18{% if page.data[productPageSettingsKey].is_product_label_line_through == true %} td-lt{% endif %}">
                     {{page.data[productPageSettingsKey].product_label}}
                   </div>
                 {%- endif -%}
@@ -62,7 +62,7 @@
         <div>
           {%- assign pageIdsArr = "" | split: ',' -%}
           {%- for i in (1..3) -%}
-            {%- assign relatedProductKey = 'related_product_' | append: i -%}
+            {%- assign relatedProductKey = 'is_related_product_' | append: i -%}
             {%- assign relatedProductPageId = page.data[productPageSettingsKey][relatedProductKey] -%}
             {%- assign pageIdsArr = pageIdsArr | push: relatedProductPageId -%}
             {%- assign pageIdCompactArr = pageIdsArr | compact -%}

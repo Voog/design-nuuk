@@ -39,19 +39,19 @@
               {
                 "title": "Select related product",
                 "type": "select",
-                "key": "related_product_1",
+                "key": "is_related_product_1",
                 "list": productsPageList,
               },
               {
                 "title": "Select related product",
                 "type": "select",
-                "key": "related_product_2",
+                "key": "is_related_product_2",
                 "list": productsPageList,
               },
               {
                 "title": "Select related product",
                 "type": "select",
-                "key": "related_product_3",
+                "key": "is_related_product_3",
                 "list": productsPageList,
               },
               {
@@ -63,7 +63,7 @@
               {
                 "title": "Line through label text",
                 "type": "checkbox",
-                "key": "product_label_line_through",
+                "key": "is_product_label_line_through",
                 "states": {
                   "on": true,
                   "off": false
