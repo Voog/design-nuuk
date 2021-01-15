@@ -9,7 +9,7 @@
     body.semimodal-open:not(.semimodal-relative) .semimodal,
     body .semimodal_inner,
     body.semimodal-open .semimodal,
-    body.semimodal-open-state .semimodal {
+    body.semimodal-relative .semimodal {
       min-width: {{menuSettings.max_width}}px;
       max-width: {{menuSettings.max_width}}px;
     }

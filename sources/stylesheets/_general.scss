@@ -117,7 +117,7 @@ body {
     }
   }
 
-  .semimodal-open-state & {
+  .semimodal-relative & {
     margin-top: 48px;
 
     @include query($tablet-1) {

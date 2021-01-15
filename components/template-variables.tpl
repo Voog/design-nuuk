@@ -28,14 +28,6 @@
     {% assign body_bg = page.data.body_bg %}
   {% endif %}
 
-  {% if site.data[template_settings.site.menu_settings.key].positioning == 'is_side_always_open' %}
-    {% assign isSemimodalAlwaysOpen = true %}
-  {% endif %}
-
-  {% if site.data[template_settings.site.menu_settings.key].positioning == 'is_side_absolute' %}
-    {% assign isMenuSideAbsolute = true %}
-  {% endif %}
-
   {% comment %}Assign variables based on page type.{% endcomment %}
   {% assign body_bg_color = body_bg.color %}
   {% assign body_bg_color_data = body_bg.colorData %}

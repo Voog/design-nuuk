@@ -12,7 +12,7 @@
     box-sizing: border-box;
     @include transition(all 200ms);
 
-    .semimodal-open-state & {
+    .semimodal-relative & {
       background-color: transparent !important;
       box-shadow: none !important;
     }
@@ -103,7 +103,7 @@
       margin-left: 16px;
     }
 
-    .semimodal-open-state & {
+    .semimodal-relative & {
       display: none;
     }
   }

@@ -88,9 +88,9 @@
 
             if (data.positioning === 'is_side_always_open') {
               $('.header_fixed').removeClass('relative');
-              $('.js-semimodal-toggle').addClass('semimodal-open-state semimodal-relative');
+              $('.js-semimodal-toggle').addClass('semimodal-relative');
             } else {
-              $('.js-semimodal-toggle').removeClass('semimodal-open-state semimodal-relative');
+              $('.js-semimodal-toggle').removeClass('semimodal-relative');
               $('.js-semimodal-toggle').removeClass('semimodal-relative');
               $('.js-semimodal-toggle').addClass('semimodal-open');
             }
@@ -107,14 +107,14 @@
             if ($( window ).width() >= 900) {
               var topPos = $('.header_fixed').height() + 80;
 
-              if ($('.semimodal-open-state').length <= 0) {
+              if ($('.semimodal-relative').length <= 0) {
                 $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
               }
             }
 
             {%- if menuSettings.max_width != blank -%}
               if (data.max_width >= 1 && data.max_width != {{menuSettings.max_width}}) {
-                $('.semimodal-open:not(.semimodal-relative) .semimodal,.semimodal_inner,.semimodal-open .semimodal,.semimodal-open-state .semimodal').css(
+                $('.semimodal-open:not(.semimodal-relative) .semimodal,.semimodal_inner,.semimodal-relative .semimodal').css(
                   {'max-width': data.max_width + 'px', 'min-width': data.max_width + 'px'}
                 );
               }

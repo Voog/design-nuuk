@@ -11,7 +11,7 @@
   cursor: pointer;
   transition: top .6s ease-in;
 
-  .semimodal-open-state & {
+  .semimodal-relative & {
     pointer-events: none;
     opacity: 0;
 
@@ -57,7 +57,7 @@
       margin-bottom: 10px;
     }
 
-    .semimodal-open:not(.semimodal-open-state) & {
+    .semimodal-open:not(.semimodal-relative) & {
       transform: rotate(45deg) translate(-5px, -5px);
 
       &:first-child {
@@ -66,7 +66,7 @@
     }
 
     @include query($tablet-1) {
-      .semimodal-open.semimodal-open-state & {
+      .semimodal-open.semimodal-relative & {
         transform: rotate(45deg) translate(-5px, -5px);
 
         &:first-child {
@@ -74,10 +74,6 @@
         }
       }
     }
-  }
-
-  &:hover {
-    opacity: .7;
   }
 }
 
@@ -278,7 +274,6 @@
           &.active a {
             &:before {
               content: '';
-              background-color: #000000;
               border: 1px solid;
               height: 8px;
               width: 8px;

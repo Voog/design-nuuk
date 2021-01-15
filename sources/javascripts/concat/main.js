@@ -675,7 +675,7 @@
     if ($( window ).width() >= 900) {
       var topPos = $('.header_fixed').height() + 80;
 
-      if ($('.semimodal-open-state').length <= 0) {
+      if ($('.semimodal-relative').length <= 0) {
         $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos + 16});
       }
     }

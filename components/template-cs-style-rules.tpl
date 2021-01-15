@@ -60,9 +60,19 @@ body.dark-background {
 .menu-btn .menu-stripe {
   background-color: var(--header-mainmenu-color);
 }
+.menu-btn:hover {
+  color: var(--header-mainmenu-hover-color);
+}
+.menu-btn:hover .menu-stripe {
+  background-color: var(--header-mainmenu-hover-color);
+}
 
 .search-btn svg g {
   fill: var(--header-mainmenu-color);
+}
+
+.search-btn:hover svg g {
+  fill: var(--header-mainmenu-hover-color);
 }
 
 .menu_popover-btn svg path {
@@ -116,12 +126,12 @@ body.dark-background {
   background-color: var(--header-mainmenu-active-color);
 }
 .menu-main .menu .menu-item.active a:hover {
-  color: var(--header-mainmenu-color);
+  color: var(--header-mainmenu-hover-color);
   -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
           text-decoration: var(--header-mainmenu-hover-decoration);
 }
 .menu-main .menu .menu-item.active a:hover::before {
-  background-color: var(--header-mainmenu-color);
+  background-color: var(--header-mainmenu-hover-color);
 }
 .menu-main .menu .menu-sub .menu-item a.active {
   font-weight: 400;

@@ -130,10 +130,21 @@ body {
   .menu-stripe {
     background-color: var(--header-mainmenu-color);
   }
+
+  &:hover {
+    color: var(--header-mainmenu-hover-color);
+    .menu-stripe {
+      background-color: var(--header-mainmenu-hover-color);
+    }
+  }
 }
 
 .search-btn svg g {
   fill: var(--header-mainmenu-color);
+}
+
+.search-btn:hover svg g {
+  fill: var(--header-mainmenu-hover-color);
 }
 
 .menu_popover-btn svg path {
@@ -188,11 +199,12 @@ body {
       &::before {
         background-color: var(--header-mainmenu-active-color);
       }
+
       &:hover {
-        color: var(--header-mainmenu-color);
+        color: var(--header-mainmenu-hover-color);
         text-decoration: var(--header-mainmenu-hover-decoration);
         &::before {
-          background-color: var(--header-mainmenu-color);
+          background-color: var(--header-mainmenu-hover-color);
         }
       }
     }

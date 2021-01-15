@@ -42,7 +42,7 @@
             width: var(--product-list-item__width);
           }
 
-          .semimodal-open-state & {
+          .semimodal-relative & {
             @include query($desktop-2, 'min-width') {
               width: var(--product-list-item__width);
             }

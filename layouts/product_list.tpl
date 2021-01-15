@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-{% include "template-variables" %}
 {% include "template-settings" %}
+{% include "template-variables" %}
 <html class="{% include "language-menu-class-names" %} {%- if editmode -%}editmode{%- else -%}publicmode{%- endif -%}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
   {%- include "html-head" -%}
