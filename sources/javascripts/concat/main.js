@@ -258,7 +258,7 @@
   // ===========================================================================
   // Binds editmode image drop areas.
   // ===========================================================================
-  var bindContentItemImgDropAreas = function(placeholderText) {
+  var bindContentItemImgDropAreas = function(placeholderText, dataKeys) {
 
     $('.js-content-item-img-drop-area').each(function(index, imgDropAreaTarget) {
       var $imgDropAreaTarget = $(imgDropAreaTarget),
@@ -328,8 +328,8 @@
             ;
             $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 0);
           }
-
-          itemData.set({item_image_crop_state: 'not-cropped', item_image: image});
+          console.log({[dataKeys.page.item_image_crop_state.key]: 'not-cropped'});
+          itemData.set({[dataKeys.page.item_image_crop_state.key]: 'not-cropped', [dataKeys.page.item_image.key]: image});
           $contentItemBox.removeClass('not-loaded with-error').addClass('is-loaded');
           $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 1);
           $imgDropAreaTarget.css('opacity', 1);
@@ -338,9 +338,9 @@
 
       $removeBtn.on('click', function() {
         var $el = $(this);
-        itemData.remove('item_image', {
+        itemData.remove(dataKeys.page.item_image.key, {
           success: function(data) {
-            itemData.remove('item_image_crop_state', {
+            itemData.remove(dataKeys.page.item_image_crop_state.key, {
               success: function(data) {
                 $el.closest('.js-content-item-box').find('.top-inner')
                   .append('<div class="edy-img-drop-area-placeholder">' + placeholderText + '</div>');
@@ -368,7 +368,7 @@
   // Sets functions that will be initiated globally when resizing the browser
   // window.
   // ===========================================================================
-  var bindContentItemImageCropToggle = function() {
+  var bindContentItemImageCropToggle = function(dataKeys) {
     $('.js-toggle-crop-state').on('click', function() {
       var $contentItemBox = $(this).closest('.js-content-item-box'),
           $imgDropAreaTarget = $contentItemBox.find('.js-content-item-img-drop-area'),
@@ -396,7 +396,7 @@
         imageCropState = 'is-cropped';
       }
 
-      itemData.set('item_image_crop_state', imageCropState);
+      itemData.set(dataKeys.page.item_image_crop_state.key, imageCropState);
     });
   };
 

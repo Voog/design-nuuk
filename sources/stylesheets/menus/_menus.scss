@@ -282,6 +282,13 @@
             }
           }
         }
+        .menu-sub {
+          .menu-item.active a {
+            &:before {
+              content: none;
+            }
+          }
+        }
       }
     }
   }

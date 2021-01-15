@@ -57,7 +57,7 @@
       "key": "PREFIX_item_image",
       "value": {}
     },
-    "image_crop_state": {
+    "item_image_crop_state": {
       "key": "PREFIX_item_image_crop_state",
       "value": 1
     },

@@ -1,11 +1,16 @@
-{% unless _entityData.data.item_image != blank %}
+{% unless _entityData.data[itemImageKey] != blank %}
   {% assign item_image_state = "without-image" %}
 {% endunless %}
 
 <a class="content-item-box {{item_image_state}}" href="{{ _entityData.url }}">
   <div class="item-top p-rel">
     <div class="top-inner of-hidden">
-      {% include "lazy-image", _altAttr: _entityData.data.item_image_alt_attr, _data: _entityData.data.item_image, _targetWidth: '300', _className: "item-image is-cropped" %}
+      {% include "lazy-image",
+        _altAttr:
+        _entityData.data[itemImageAltAttrKey],
+        _data: _entityData.data[itemImageKey],
+        _targetWidth: '300',
+        _className: "item-image is-cropped" %}
     </div>
   </div>
   <div class="p14 mar_t-16 bold product_item-title bold">

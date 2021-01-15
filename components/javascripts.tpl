@@ -64,8 +64,14 @@
         {%- assign dropAreaPlaceholder = "drag_picture_here" | lc: editor_locale | escape -%}
       {%- endif -%}
 
-      site.bindContentItemImgDropAreas('{{ dropAreaPlaceholder }}');
-      site.bindContentItemImageCropToggle();
+      {%- capture template_settings_json -%}
+        {% include 'template-settings-json' %}
+      {%- endcapture -%}
+
+      {%- assign template_settings_json = template_settings_json | replace: "PREFIX", 'nuuk' -%}
+
+      site.bindContentItemImgDropAreas('{{ dropAreaPlaceholder }}', {{template_settings_json}});
+      site.bindContentItemImageCropToggle({{template_settings_json}});
 
       {% if site.data.settings_root_item %}
         rootItemValuesObj = {{ site.data.settings_root_item | json }};

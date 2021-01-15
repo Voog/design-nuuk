@@ -16,6 +16,11 @@
 {% capture dont_render %}
   {%- assign bodyBgKey = template_settings.page.body_bg.key -%}
   {%- assign blockSettingsKey = template_settings.page.block_settings.key -%}
+  {%- assign itemImageKey = template_settings.page.item_image.key -%}
+  {%- assign itemImageCropStateKey = template_settings.page.item_image_crop_state.key -%}
+  {%- assign itemImageAltAttrKey = template_settings.page.item_image_alt_attr.key -%}
+  {%- assign productLayoutSettingsKey = template_settings.page.product_layout_settings.key -%}
+  {%- assign swiperSettingsKey = template_settings.page.swiper_settings.key -%}
   {%- assign menuSettingsKey = template_settings.site.menu_settings.key -%}
   {%- assign semimodalBgKey = template_settings.site.semimodal_bg.key -%}
 

@@ -4087,6 +4087,9 @@ article.post_wrapper .date-separator.hide-separator {
     position: absolute;
     left: 0px;
   }
+  .menu-main:not(.menu_top) .menu .menu-sub .menu-item.active a:before {
+    content: none;
+  }
 }
 .menu-main .menu-sub {
   display: none;
