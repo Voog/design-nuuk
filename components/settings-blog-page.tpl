@@ -73,6 +73,7 @@
         values: valuesObj,
         entityData: 'siteData',
         noReload: true,
+        containerClass: ['bottom-settings-popover', 'first', 'editor_default'],
         prevFunc: function(data) {
           var $articleDate = $('.post_date.site-data'),
             $dateSeparator = $('.post_date.site-data + .date-separator'),

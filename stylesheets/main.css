@@ -1243,7 +1243,7 @@ p {
 }
 @media screen and (max-width: 900px) {
   .semimodal .semimodal_inner {
-    overflow: auto;
+    overflow: none;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1342,13 +1342,13 @@ body:not(.semimodal-relative) .semimodal {
   .semimodal-open:not(.semimodal-relative) .semimodal {
     min-width: 320px;
     max-width: 320px;
-    overflow: auto;
+    overflow: hidden;
   }
 }
 @media screen and (max-width: 480px) {
   .semimodal-open:not(.semimodal-relative) .semimodal {
-    min-width: 100vw;
-    max-width: 100vw;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
     -webkit-box-shadow: none;
             box-shadow: none;
   }
@@ -1369,9 +1369,6 @@ body:not(.semimodal-relative) .semimodal {
     -webkit-transform: translateX(0px);
         -ms-transform: translateX(0px);
             transform: translateX(0px);
-    min-width: 320px;
-    max-width: 320px;
-    overflow: auto;
   }
 }
 @media screen and (max-width: 900px) and (max-width: 480px) {
@@ -1460,6 +1457,9 @@ body:not(.semimodal-relative) .semimodal {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   pointer-events: none;
+}
+.edy-bar-open .layout_settings-popover {
+  bottom: 200px;
 }
 .layout_settings-visible .layout_settings-popover {
   pointer-events: all;
@@ -1978,6 +1978,39 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   color: black;
 }
 
+.bottom-settings-popover.edy-popover.first {
+  bottom: 213px !important;
+}
+.edy-bar-open .bottom-settings-popover.edy-popover.first {
+  bottom: 340px !important;
+}
+.bottom-settings-popover.edy-popover.second {
+  bottom: 150px !important;
+}
+.edy-bar-open .bottom-settings-popover.edy-popover.second {
+  bottom: 276px !important;
+}
+.bottom-settings-popover.edy-popover.first, .bottom-settings-popover.edy-popover.second {
+  top: unset !important;
+  position: fixed !important;
+}
+.bottom-settings-popover.edy-popover.first.edy-popover-bottom::after, .bottom-settings-popover.edy-popover.second.edy-popover-bottom::after {
+  height: 0;
+}
+.bottom-settings-popover.edy-popover.first .edy-popover-arrow, .bottom-settings-popover.edy-popover.second .edy-popover-arrow {
+  top: unset !important;
+  bottom: unset !important;
+}
+.bottom-settings-popover.edy-popover.first .edy-popover-arrow::after, .bottom-settings-popover.edy-popover.second .edy-popover-arrow::after {
+  -webkit-filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.15));
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-top-color: rgba(255, 255, 255, 0.95);
+  border-bottom-color: transparent;
+}
+
 .swiper-container {
   width: 100%;
   -webkit-box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
@@ -2062,8 +2095,8 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
-  margin: 64px 32px;
+  width: calc(100% - 96px);
+  margin: 64px 48px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-height: calc(528px - 128px);
@@ -2534,6 +2567,20 @@ body.edy-checkout-button-visible {
           justify-content: space-between;
   width: 100%;
 }
+@media screen and (max-width: 900px) {
+  .header_fixed-content {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+.front-page .header_fixed {
+  position: fixed;
+}
 @media screen and (min-width: 900px) {
   .semimodal-relative .header_fixed {
     position: absolute;
@@ -2545,11 +2592,8 @@ body.edy-checkout-button-visible {
   .semimodal-relative .header_fixed .header_title {
     display: none;
   }
-  .front-page.semimodal-absolute .header_fixed {
-    position: fixed;
-  }
   .header_fixed.relative {
-    position: relative;
+    position: absolute;
   }
   .header_fixed .menu-main {
     -webkit-box-align: start;

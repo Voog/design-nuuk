@@ -8,12 +8,12 @@
     });
 
     function initSwiper() {
-      {%- if editmode -%}
+      {%- if editmode or swiperSettingsData.is_autoplay != true -%}
         var conditionalBool = false;
         var autoPlay = false;
       {%- else -%}
         var conditionalBool = true;
-        var autoPlay = {delay: 3000, disableOnInteraction: true};
+        var autoPlay = {delay: {{swiperSettingsData.autoplay_interval}}, disableOnInteraction: true};
       {%- endif -%}
 
       var sliderEffect = {%- if swiperSettingsData.is_fade_effect -%}'fade'{%- else -%}'slide'{%- endif -%};
@@ -30,6 +30,10 @@
           loop: conditionalBool,
           centeredSlides: true,
           autoplay: autoPlay,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
           navigation: {nextEl: '.swiper-button-next',prevEl: '.swiper-button-prev'},
           keyboard: {
             enabled: true,

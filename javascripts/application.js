@@ -1135,8 +1135,8 @@ MMCQ = (function() {
       var wrapperHeight = $('.header_fixed').height();
 
       if (window.scrollY > wrapperHeight) {
-        $('.header_fixed').addClass('scroll');
-        if ($('.header_fixed').css('background-color') == 'rgba(0, 0, 0, 0)') {
+        $('.header_fixed:not(.relative)').addClass('scroll');
+        if ($('.header_fixed:not(.relative)').css('background-color') == 'rgba(0, 0, 0, 0)') {
           $('.header_fixed').css('background-color', 'white');
         }
       } else {

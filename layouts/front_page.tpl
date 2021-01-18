@@ -78,12 +78,16 @@
               </div>
             {%- endfor -%}
           </div>
-        <!-- If we need pagination -->
-          {%- if editmode -%}
-            <!-- If we need navigation buttons -->
+
+          {%- if swiperSettingsData.are_navigation_bullets == true -%}
+            <div class="swiper-pagination"></div>
+          {%- endif -%}
+
+          {%- if swiperSettingsData.are_navigation_arrows == true or editmode -%}
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           {%- endif -%}
+
           {%- if swiperSettingsData.is_content_by_slide != true -%}
             {{header_content}}
           {%- endif -%}

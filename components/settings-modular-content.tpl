@@ -34,6 +34,7 @@
           }
         ],
         dataKey: '{{blockSettingsKey}}',
+        containerClass: ['bottom-settings-popover', 'first', 'editor_default'],
         values: valuesObj
       }
     )

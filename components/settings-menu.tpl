@@ -61,6 +61,7 @@
           values: valuesObj,
           entityData: 'siteData',
           noReload: true,
+          containerClass: ['bottom-settings-popover', 'second', 'editor_default'],
           prevFunc: function(data) {
             if (data.positioning === 'is_top' || data.positioning === 'is_top_fixed') {
               $('.js-menu-btn, .semimodal').addClass('hidden-desktop');
@@ -69,6 +70,7 @@
               $('.js-menu-main').addClass('menu_top');
               $('.js-menu-popover, .js-menu-popover').removeClass('d-none');
               $('.js-menu-sub').addClass('d-none');
+              $('body').removeClass('semimodal-open');
             } else {
               $('.js-menu-btn, .semimodal').removeClass('hidden-desktop');
               $('.js-menu-main-wrapper').addClass('hidden-tablet');
@@ -89,16 +91,17 @@
             if (data.positioning === 'is_side_always_open') {
               $('.header_fixed').removeClass('relative');
               $('.js-semimodal-toggle').addClass('semimodal-relative');
+              $('.js-semimodal-toggle').addClass('semimodal-open');
             } else {
               $('.js-semimodal-toggle').removeClass('semimodal-relative');
               $('.js-semimodal-toggle').removeClass('semimodal-relative');
-              $('.js-semimodal-toggle').addClass('semimodal-open');
             }
 
             if (data.positioning === 'is_side_absolute') {
               $('.semimodal').removeClass('semimodal-border');
               $('.header_fixed').removeClass('relative');
               $('.js-semimodal-toggle').addClass('semimodal-absolute');
+              $('.js-semimodal-toggle').addClass('semimodal-open');
             } else {
               $('.semimodal').addClass('semimodal-border');
               $('.js-semimodal-toggle').removeClass('semimodal-absolute');

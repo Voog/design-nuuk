@@ -127,6 +127,7 @@
         dataKey: 'article_settings',
         values: valuesObj,
         entityData: 'articleData',
+        containerClass: ['bottom-settings-popover', 'first', 'editor_default'],
         noReload: true,
         prevFunc: function(data) {
           var $articleComment = $('.comments'),

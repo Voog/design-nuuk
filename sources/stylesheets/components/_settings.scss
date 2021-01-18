@@ -61,6 +61,10 @@
       @include transition(opacity 300ms);
       pointer-events: none;
 
+      .edy-bar-open & {
+        bottom: 200px;
+      }
+
       .layout_settings-visible & {
         pointer-events: all;
         opacity: 1;
@@ -539,5 +543,44 @@ body {
   label,
   input {
     color: black;
+  }
+}
+
+.bottom-settings-popover.edy-popover {
+  &.first {
+    bottom: 213px !important;
+
+    .edy-bar-open & {
+      bottom: 340px !important;
+    }
+  }
+  &.second {
+    bottom: 150px !important;
+
+    .edy-bar-open & {
+      bottom: 276px !important;
+    }
+  }
+
+  &.first,
+  &.second {
+    top: unset !important;
+    position: fixed !important;
+
+    &.edy-popover-bottom::after {
+      height: 0;
+    }
+
+    .edy-popover-arrow {
+      top: unset!important;
+      bottom: unset!important;
+
+      &::after {
+        filter: drop-shadow(0 2px 1px rgba(0,0,0,0.15));
+        transform: translateX(-50%);
+        border-top-color: rgba(255,255,255,0.95);
+        border-bottom-color: transparent;
+      }
+    }
   }
 }

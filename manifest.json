@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/tags-post.tpl",
-      "layout_name": "tags-post",
-      "title": "tags-post"
+      "file": "components/site-search.tpl",
+      "layout_name": "site-search",
+      "title": "site-search"
     },
     {
       "content_type": "component",
@@ -169,6 +169,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/settings-swiper.tpl",
+      "layout_name": "settings-swiper",
+      "title": "settings-swiper"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/modular-content-1-1.tpl",
       "layout_name": "modular-content-1-1",
       "title": "modular-content-1-1"
@@ -228,13 +235,6 @@
       "file": "components/post-box.tpl",
       "layout_name": "post-box",
       "title": "post-box"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/settings-front-page.tpl",
-      "layout_name": "settings-front-page",
-      "title": "settings-front-page"
     },
     {
       "content_type": "component",
@@ -302,13 +302,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/product-page-scripts.tpl",
-      "layout_name": "product-page-scripts",
-      "title": "product-page-scripts"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/javascripts.tpl",
       "layout_name": "javascripts",
       "title": "javascripts"
@@ -372,16 +365,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/tags-post.tpl",
+      "layout_name": "tags-post",
+      "title": "tags-post"
     },
     {
       "content_type": "component",
       "component": true,
-      "file": "components/site-search.tpl",
-      "layout_name": "site-search",
-      "title": "site-search"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",

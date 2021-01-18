@@ -1,7 +1,7 @@
 {%- if editmode -%}
   <div class="layout_settings-popover js-layout_settings-popover">
     {%- if _frontPage == true -%}
-      {% include 'settings-front-page' %}
+      {% include 'settings-swiper' %}
     {%- endif -%}
     {%- if _commonPage == true -%}
       {% include 'settings-modular-content',

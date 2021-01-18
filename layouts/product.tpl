@@ -91,9 +91,8 @@
 
 
   {% include "site-signout" %}
-  {% include 'settings-popover', _productPage: true %}
   {% include "javascripts" %}
   {% include "template-tools" %}
-  {% include 'product-page-scripts' %}
+  {% include 'settings-popover', _productPage: true %}
 </body>
 </html>

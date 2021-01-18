@@ -29,6 +29,15 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
+
+      @include query($tablet-1) {
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+      }
+    }
+
+    .front-page & {
+      position: fixed;
     }
 
     @include query($tablet-1, 'min-width') {
@@ -43,12 +52,8 @@
         }
       }
 
-      .front-page.semimodal-absolute & {
-        position: fixed;
-      }
-
       &.relative {
-        position: relative;
+        position: absolute;
       }
 
       .menu-main {

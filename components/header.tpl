@@ -13,6 +13,14 @@
       min-width: {{menuSettings.max_width}}px;
       max-width: {{menuSettings.max_width}}px;
     }
+
+    @media screen and (max-width: 900px) {
+      .semimodal-relative .semimodal {
+        -webkit-transform: translateX(-{{menuSettings.max_width}}px);
+        -ms-transform: translateX(-{{menuSettings.max_width}}px);
+        transform: translateX(-{{menuSettings.max_width}}px);
+      }
+    }
   </style>
 {%- endif -%}
 
