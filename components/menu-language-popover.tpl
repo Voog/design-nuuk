@@ -5,7 +5,7 @@
         {% if language.code == page.language_code %}
           <li class="menu-item">
             <a class="ico-flags ico-flag-{{ language.code }}{% if language.selected? %} selected{% endif %}" href="{{ language.url }}" data-lang-code="{{ language.locale }}">
-              <span class="menu-language-name">{{ language.title }}</span>
+              <span class="menu-language-popover-name">{{ language.title }}</span>
             </a>
           </li>
           {% break %}
@@ -16,7 +16,7 @@
         {% unless language.code == page.language_code %}
           <li class="menu-item">
             <a class="ico-flags ico-flag-{{ language.code }}{% if language.selected? %} selected{% endif %}" href="{{ language.url }}" data-lang-code="{{ language.locale }}">
-              <span class="menu-language-name">{{ language.title }}</span>
+              <span class="menu-language-popover-name">{{ language.title }}</span>
             </a>
           </li>
         {% endunless %}

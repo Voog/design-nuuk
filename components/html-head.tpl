@@ -14,7 +14,7 @@
 {% endif %}
 
 {% comment %}STYLESHEETS{% endcomment %}
-{% stylesheet_link "main.min.css?v=1.5" %}
+{% stylesheet_link "main.min.css?v=1.6" %}
 {% if editmode %}
   <link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">
 {% endif %}

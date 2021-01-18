@@ -3468,6 +3468,9 @@ article.post_wrapper .date-separator.hide-separator {
 .language-names-disabled.language-flags-enabled .menu-language .menu-language-name {
   display: none;
 }
+.menu-language .menu-item a .menu-language-popover-name {
+  color: #000000;
+}
 .language-menu-mode-popover.language-flags-enabled .menu-language .menu-cms li {
   padding: 6px 14px;
 }

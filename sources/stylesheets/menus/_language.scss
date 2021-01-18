@@ -184,6 +184,10 @@
     }
   }
 
+  .menu-item a .menu-language-popover-name {
+    color: $black;
+  }
+
   .menu-cms {
     li {
       // scss-lint:disable NestingDepth, SelectorDepth
