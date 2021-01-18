@@ -51,7 +51,7 @@
       });
     </script>
     {% include "settings_editor" %}
-    {% include "bg_picker_scripts" %}
+    {% include "bg-picker-scripts" %}
 
     <script>
       var siteData = new Edicy.CustomData({
