@@ -80,18 +80,6 @@
             ]
           },
           {
-            "title": "Use fade effect on changing slides",
-            "type": "checkbox",
-            "key": "is_fade_effect",
-            "states": {
-              "on": true,
-              "off": false
-            },
-            "class": [
-              'swiper-settings-opt'
-            ]
-          },
-          {
             "title": "Use right & left arrows in live view",
             "type": "checkbox",
             "key": "are_navigation_arrows",
