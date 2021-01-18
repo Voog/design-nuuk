@@ -258,7 +258,7 @@
   // ===========================================================================
   // Binds editmode image drop areas.
   // ===========================================================================
-  var bindContentItemImgDropAreas = function(placeholderText, dataKeys) {
+  var bindContentItemImgDropAreas = function(placeholderText, itemImageKey, cropStateKey) {
 
     $('.js-content-item-img-drop-area').each(function(index, imgDropAreaTarget) {
       var $imgDropAreaTarget = $(imgDropAreaTarget),
@@ -328,8 +328,8 @@
             ;
             $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 0);
           }
-          console.log({[dataKeys.page.item_image_crop_state.key]: 'not-cropped'});
-          itemData.set({[dataKeys.page.item_image_crop_state.key]: 'not-cropped', [dataKeys.page.item_image.key]: image});
+          console.log({[cropStateKey]: 'not-cropped'});
+          itemData.set({[cropStateKey]: 'not-cropped', [itemImageKey]: image});
           $contentItemBox.removeClass('not-loaded with-error').addClass('is-loaded');
           $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 1);
           $imgDropAreaTarget.css('opacity', 1);
@@ -338,9 +338,9 @@
 
       $removeBtn.on('click', function() {
         var $el = $(this);
-        itemData.remove(dataKeys.page.item_image.key, {
+        itemData.remove(itemImageKey, {
           success: function(data) {
-            itemData.remove(dataKeys.page.item_image_crop_state.key, {
+            itemData.remove(cropStateKey, {
               success: function(data) {
                 $el.closest('.js-content-item-box').find('.top-inner')
                   .append('<div class="edy-img-drop-area-placeholder">' + placeholderText + '</div>');
@@ -368,7 +368,7 @@
   // Sets functions that will be initiated globally when resizing the browser
   // window.
   // ===========================================================================
-  var bindContentItemImageCropToggle = function(dataKeys) {
+  var bindContentItemImageCropToggle = function(dataKey) {
     $('.js-toggle-crop-state').on('click', function() {
       var $contentItemBox = $(this).closest('.js-content-item-box'),
           $imgDropAreaTarget = $contentItemBox.find('.js-content-item-img-drop-area'),
@@ -396,7 +396,7 @@
         imageCropState = 'is-cropped';
       }
 
-      itemData.set(dataKeys.page.item_image_crop_state.key, imageCropState);
+      itemData.set(dataKey, imageCropState);
     });
   };
 
@@ -499,7 +499,7 @@
   // ===========================================================================
   // Toggles language menu mode.
   // ===========================================================================
-  var bindLanguageMenuSettings = function(languageMenuValuesObj) {
+  var bindLanguageMenuSettings = function(languageMenuValuesObj, dataKey) {
     if (!('type' in languageMenuValuesObj)) {
       languageMenuValuesObj.type = 'popover';
     }
@@ -551,7 +551,7 @@
       },
 
       commit: function(data) {
-        siteData.set('language_menu_settings', data);
+        siteData.set(dataKey, data);
       }
     });
   };

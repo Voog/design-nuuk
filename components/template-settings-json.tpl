@@ -5,6 +5,12 @@
       "show_comments": true,
       "show_authors": true
     },
+    "language_menu_settings": {
+      "key": "PREFIX_language_menu_settings",
+      "value": {
+        "item_state": "names_only"
+      }
+    },
     "menu_settings": {
       "key": "PREFIX_menu_settings",
       "value": {

@@ -64,14 +64,9 @@
         {%- assign dropAreaPlaceholder = "drag_picture_here" | lc: editor_locale | escape -%}
       {%- endif -%}
 
-      {%- capture template_settings_json -%}
-        {% include 'template-settings-json' %}
-      {%- endcapture -%}
 
-      {%- assign template_settings_json = template_settings_json | replace: "PREFIX", 'nuuk' -%}
-
-      site.bindContentItemImgDropAreas('{{ dropAreaPlaceholder }}', {{template_settings_json}});
-      site.bindContentItemImageCropToggle({{template_settings_json}});
+      site.bindContentItemImgDropAreas('{{ dropAreaPlaceholder }}', "{{itemImageKey}}", "{{itemImageCropStateKey}}");
+      site.bindContentItemImageCropToggle("{{itemImageCropStateKey}}");
 
       {% if site.data.settings_root_item %}
         rootItemValuesObj = {{ site.data.settings_root_item | json }};
@@ -91,13 +86,13 @@
       //==========================================================================
       // Initiates the language menu mode toggleing popover.
       //==========================================================================
-      {%if site.data.language_menu_settings %}
-        languageMenuValuesObj = {{ site.data.language_menu_settings | json }};
+      {%if site.data[languageMenuSettingsKey] %}
+        languageMenuValuesObj = {{ site.data[languageMenuSettingsKey] | json }};
       {% else %}
         languageMenuValuesObj = {};
       {% endif %};
 
-      site.bindLanguageMenuSettings(languageMenuValuesObj);
+      site.bindLanguageMenuSettings(languageMenuValuesObj, "{{languageMenuSettingsKey}}");
     </script>
   {% endeditorjsblock %}
 {% endif %}
