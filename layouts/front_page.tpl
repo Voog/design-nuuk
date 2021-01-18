@@ -108,13 +108,13 @@
             ></button>
           {% endif %}
 
-          {{header_content}}
-
           <div class="w-100p h-100p front_header-color-1 bg_color-absolute"
             {% if page.data.swiper_bg_1.color != blank %}
               style="background-color: {{ page.data.swiper_bg_1.color }};"
             {% endif %}
           ></div>
+
+          {{header_content}}
         </div>
       {%- endif -%}
 
