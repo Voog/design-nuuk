@@ -13,7 +13,11 @@
         var autoPlay = false;
       {%- else -%}
         var conditionalBool = true;
-        var autoPlay = {delay: {{swiperSettingsData.autoplay_interval}}, disableOnInteraction: true};
+        var autoPlay = {delay: {%- if swiperSettingsData.autoplay_interval >= 1 -%}
+          {{swiperSettingsData.autoplay_interval}}
+        {%- else -%}
+          {{template_settings.page.swiper_settings.value.autoplay_interval}}
+        {%- endif -%}, disableOnInteraction: true};
       {%- endif -%}
 
       var sliderEffect = {%- if swiperSettingsData.is_fade_effect -%}'fade'{%- else -%}'slide'{%- endif -%};

@@ -90,7 +90,11 @@
       "value": {
         "is_content_by_slide": true,
         "is_fade_effect": true,
-        "slides_count": 1
+        "slides_count": 1,
+        "is_autoplay": false,
+        "autoplay_interval": 1000,
+        "are_navigation_arrows": false,
+        "are_navigation_bullets": false
       }
     }
   },

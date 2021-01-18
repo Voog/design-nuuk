@@ -12,16 +12,12 @@
       var valuesObj = {};
     {% endif %}
 
-    if (!('is_content_by_slide' in valuesObj)) {
-      valuesObj.is_content_by_slide = false;
-    }
-
-    if (!('is_fade_effect' in valuesObj)) {
-      valuesObj.is_fade_effect = false;
-    }
-
     if (!('slides_count' in valuesObj)) {
-      valuesObj.slides_count = 1;
+      valuesObj.slides_count = {{template_settings.page.swiper_settings.value.slides_count}};
+    }
+
+    if (!('autoplay_interval' in valuesObj)) {
+      valuesObj.autoplay_interval = {{template_settings.page.swiper_settings.value.autoplay_interval}};
     }
 
     initSettingsEditor(
