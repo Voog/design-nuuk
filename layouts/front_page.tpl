@@ -58,7 +58,7 @@
                   {% endif %}
                 >
                   {%- if swiperSettingsData.is_content_by_slide == true -%}
-                    <div class="swiper-content content-formatted" data-search-indexing-allowed="true">
+                    <div class="swiper-content content-formatted" data-swiper-parallax="-100%" data-search-indexing-allowed="true">
                       {% contentblock name=contentKey publish_default_content="true" %}
                         <h1>Shop</h1>
                       {% endcontentblock %}

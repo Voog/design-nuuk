@@ -331,23 +331,16 @@
     }
 
     if (editmode()) {
+      $('.js-toggle-menu-language .menu-language-btn').click(function() {
+        togglePopover();
+      });
+    } else {
       if ("ontouchstart" in document.documentElement) {
         handleFocus($('.js-toggle-menu-language'), togglePopover);
-
         $('.js-toggle-menu-language .menu-language-btn').click(function() {
           togglePopover();
         });
       } else {
-        if ("ontouchstart" in document.documentElement) {
-          handleFocus($('.js-toggle-menu-language'), togglePopover);
-          $('.js-toggle-menu-language .menu-language-btn').click(function() {
-            togglePopover();
-          });
-        } else {
-          $('.js-toggle-menu-language').hover(function() {
-            positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
-          });
-        }
         $('.js-toggle-menu-language').hover(function() {
           positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
         });

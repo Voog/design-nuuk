@@ -95,54 +95,6 @@
     {% assign body_bg_type = "light-background" %}
   {% endif %}
 
-  {% comment %}SITE CONTAINER RELATED VARIABLES.{% endcomment %}
-  {% if blog_article_page %}
-    {% assign container_bg = article.data.container_bg %}
-  {% else %}
-    {% assign container_bg = page.data.container_bg %}
-  {% endif %}
-
-  {% assign container_bg_color = container_bg.color %}
-  {% assign container_bg_color_data = container_bg.colorData %}
-  {% assign container_bg_combined_lightness = container_bg.combinedLightness %}
-
-  {% comment %}Sets the background type to choose active CMS color scheme.{% endcomment %}
-  {% if container_bg %}
-    {% if container_bg_combined_lightness %}
-      {% if container_bg_combined_lightness > 0.6 %}
-        {% assign container_bg_type = "light-background" %}
-      {% else %}
-        {% assign container_bg_type = "dark-background" %}
-      {% endif %}
-    {% else %}
-      {% if container_bg_color_data.a >= 0.6 %}
-        {% if container_bg_color_data.lightness >= 0.6 %}
-          {% assign container_bg_type = "light-background" %}
-        {% else %}
-          {% assign container_bg_type = "dark-background" %}
-        {% endif %}
-      {% else %}
-        {% assign container_bg_type = "light-background" %}
-      {% endif %}
-    {% endif %}
-  {% else %}
-    {% assign container_bg_type = "light-background" %}
-  {% endif %}
-
-  {% if container_bg_color == blank %}
-    {% if front_page %}
-      {% assign container_bg_color = "" %}
-    {% else %}
-      {% assign container_bg_color = "rgb(255,255,255)" %}
-    {% endif %}
-  {% endif %}
-
-  {% if container_bg_color_data == blank %}
-    {% assign container_bg_color_data_str = "" %}
-  {% else %}
-    {% assign container_bg_color_data_str = container_bg_color_data | json %}
-  {% endif %}
-
   {% comment %}Detects language flags visibility setting.{% endcomment %}
   {% if site.data[languageMenuSettingsKey].item_state == "names_only" %}
     {% assign language_flags_mode = "language-flags-disabled" %}

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
+{% assign blog_article_page = true %}
 {% include "template-settings" %}
 {% include "template-variables" with "article" %}
 {% include "blog-article-variables" %}
 {% include "article-settings-variables" %}
 <html class="{% include "language-menu-class-names" %} {% if editmode %}editmode{% else %}publicmode{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
-  {% assign blog_article_page = true %}
   {% include "html-head" %}
   {% include "template-styles" %}
   {%- assign articleSettingsData = article.data.article_settings -%}
@@ -29,6 +29,7 @@
             data-picker_area_elem=".body-bg_picker--area"
             data-picker_elem =".{{bodyBgKey}}-picker"
             data-bg-color="{{ body_bg_color }}"
+            data-entity="articleData"
           ></button>
         </div>
       {% endif %}
