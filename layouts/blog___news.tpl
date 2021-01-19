@@ -53,7 +53,7 @@
   {% include "site-signout" %}
   {% include 'settings-popover', _blogPage: true %}
   {% include "javascripts" %}
-  {% include "template-tools" %}
+
   <script>
     $(document).ready(function() {
       currentUrl = window.location.href;

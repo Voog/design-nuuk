@@ -156,7 +156,6 @@
   {% include "site-signout" %}
   {% include 'settings-popover', _articlePage: true %}
   {% include "javascripts" %}
-  {% include "template-tools" with 'article' %}
   <script>
     site.initPostPage();
   </script>

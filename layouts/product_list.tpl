@@ -50,7 +50,6 @@
   {% include 'settings-popover' %}
   {%- include "site-signout" -%}
   {%- include "javascripts" -%}
-  {%- include "template-tools" -%}
   <script>
     site.initCommonPage();
 
