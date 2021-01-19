@@ -1,77 +1,21 @@
 <script type="text/javascript">
   $(function() {
-    $('.bg-picker').each(function() {
-      var $picker = $(this);
-      var pickerOpts = $picker.data();
+    $('.bg-picker').each(function(index, pickerArea) {
+      var $picker = $(this),
+        pickerOpts = $picker.data();
 
-      var opts = {
-        picture: pickerOpts.picture,
-        color: pickerOpts.color,
+      var bgPicker = new Edicy.BgPicker($picker, {
+        picture: pickerOpts.type_picture,
+        color: pickerOpts.type_color,
         showAlpha: true,
-
+        target_width: pickerOpts.width,
         preview: function(data) {
-          if (pickerOpts.image_elem || pickerOpts.color_elem) {
-            var $imageEl = $(pickerOpts.image_elem);
-            var $colorEl = $(pickerOpts.color_elem);
-            var $wrapperEl = $imageEl.closest('.js-bg-wrapper');
-            var col = (data.color && data.color !== "") ? data.color : "transparent";
-
-            if (pickerOpts.type === 'img') {
-              if (data.image) {
-                $imageEl.attr('src', data.image);
-                $imageEl.attr('srcset', data.image);
-                $imageEl.css('display', 'initial');
-
-                if (pickerOpts.wrapper_class) {
-                  if (!$wrapperEl.hasClass(pickerOpts.wrapper_class)) {
-                    $wrapperEl.addClass(pickerOpts.wrapper_class);
-                  }
-                }
-              } else {
-                $imageEl.attr('src', 'none');
-                $imageEl.attr('srcset', 'none');
-                $imageEl.css('display', 'none');
-
-                if (pickerOpts.wrapper_class) {
-                  if ($wrapperEl.hasClass(pickerOpts.wrapper_class)) {
-                    $wrapperEl.removeClass(pickerOpts.wrapper_class);
-                  }
-                }
-              }
-
-              if (col) {
-                $colorEl.css('background-color', col);
-              }
-            } else {
-              if (data.image) {
-                $imageEl.css('background-image', 'url("'+ data.image+'")');
-              } else {
-                $imageEl.css('background-image', 'none');
-              }
-
-              if (col) {
-                $colorEl.css('background-color', col);
-              }
-            }
-          }
+          site.bgPickerPreview(pickerOpts, data, bgPicker);
         },
         commit: function(data) {
-          if (pickerOpts.entity == 'siteData') {
-            var entityData = siteData;
-          } else {
-            var entityData = pageData;
-          }
-          var obj = {};
-          obj[pickerOpts.name] = data;
-          entityData.set(obj);
+          site.bgPickerCommit(pickerOpts.bg_key, data, bgPicker, pickerOpts.entity);
         }
-      };
-
-      if (pickerOpts.width) {
-        opts.target_width = pickerOpts.width;
-      }
-
-      new Edicy.BgPicker($picker, opts);
+      });
     });
   })
 </script>

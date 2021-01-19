@@ -19,8 +19,8 @@
   {% endunless %}
 </head>
 
-<body class="front-page js-bg-picker-area{% include 'semimodal-class-names' %}">
-  <div class="background-color js-background-color"></div>
+<body class="front-page body-bg_picker--area {{ body_bg_type }}{% include 'semimodal-class-names' %}">
+  <div class="body-bg_color"></div>
   <div class="container_wrap">
     {% include "header" %}
 
@@ -47,7 +47,7 @@
               {%- endif -%}
 
               <div
-                class="swiper-slide{%- if imagedata != blank or editmode %} image_header{%- endif -%}"
+                class="swiper-slide front-header-bg_picker--area--{{i}}{%- if imagedata != blank or editmode %} image_header{%- endif -%}"
               >
                 {%- assign imageClass = "image_fit-cover img-absolute swiper-lazy front_header-image-" | append: i -%}
 
@@ -67,11 +67,17 @@
 
                   {% if editmode %}
                     <button
-                      class="bg-picker r-32 t-32" data-type="img" data-picture="true"
-                      data-color="true" data-image_elem=".front_header-image-{{i}}"
-                      data-color_elem=".front_header-color-{{i}}" data-name="{{swiperDataKey}}"
-                      data-bg="{{ imagedata | json | escape }}">
-                    </button>
+                      class="bg-picker r-32 t-32"
+                      data-type="img"
+                      data-type_picture="true"
+                      data-type_color="true"
+                      data-image_elem=".front_header-image-{{i}}"
+                      data-color_elem=".front_header-color-{{i}}"
+                      data-picker_area_elem=".front-header-bg_picker--area--{{i}}"
+                      data-picker_elem=".front-header-bg_picker-{{i}}"
+                      data-bg_key="{{swiperDataKey}}"
+                      data-bg="{{ imagedata | json | escape }}"
+                    ></button>
                   {% endif %}
                 </div>
 
@@ -94,21 +100,27 @@
         </div>
       {%- else -%}
         <div
-          class="swiper-container js-bg-wrapper image_header flex_box"
+          class="swiper-container image_header flex_box front-header-bg_picker--area-1"
         >
           {%- assign imageClass = "image_fit-cover img-absolute front_header-image-1" -%}
           {% include "lazy-image", _data: swiper_bg_1, _targetWidth: '1400', _className: imageClass  %}
 
           {% if editmode %}
             <button
-              class="bg-picker" data-type="img" data-picture="true" data-color="true"
-              data-image_elem=".front_header-image-1" data-color_elem=".front_header-color-1"
-              data-name="swiper_bg_1" data-bg="{{ swiper_bg_1 | json | escape }}"
+              class="bg-picker"
+              data-type_picture="true"
+              data-type_color="true"
+              data-image_elem=".front_header-image-1"
+              data-color_elem=".front_header-color-1"
+              data-picker_area_elem=".front-header-bg_picker--area-1"
+              data-picker_elem=".front-header-bg_picker-1"
+              data-bg_key="swiper_bg_1"
+              data-bg="{{ swiper_bg_1 | json | escape }}"
               data-wrapper_class="image_header"
             ></button>
           {% endif %}
 
-          <div class="w-100p h-100p front_header-color-1 bg_color-absolute"
+          <div class="w-100p h-100p front_header-color-1 bg_color-absolute js-background-type"
             {% if page.data.swiper_bg_1.color != blank %}
               style="background-color: {{ page.data.swiper_bg_1.color }};"
             {% endif %}
@@ -118,11 +130,20 @@
         </div>
       {%- endif -%}
 
-      <div class="container flex_col flex_j-space-between h-100p js-background-type {{ body_bg_type }}">
+      <div class="container flex_col flex_j-space-between h-100p">
         <main class="content" role="main" data-search-indexing-allowed="true">
           {% if editmode %}
             <div class="bg-picker-top">
-              <button class="voog-bg-picker-btn js-background-settings" data-bg-key="{{bodyBgKey}}" data-bg-picture-boolean="false" data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button>
+              <button
+                class="voog-bg-picker-btn body_bg-picker--btn bg-picker {{bodyBgKey}}-picker"
+                data-bg_key="{{bodyBgKey}}"
+                data-type_picture="false"
+                data-type_color="true"
+                data-color_elem=".body-bg_color"
+                data-picker_area_elem=".body-bg_picker--area"
+                data-picker_elem=".{{bodyBgKey}}-picker"
+                data-bg-color="{{ body_bg_color }}"
+              ></button>
             </div>
           {% endif %}
 

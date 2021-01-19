@@ -5,7 +5,7 @@
   content: '';
 }
 
-.background-color {
+.body-bg_color {
   position: absolute;
   top: 0;
   left: 0;
@@ -91,30 +91,19 @@ body.dark-background {
   position: absolute;
 }
 
-.background-image, .background-color {
+.body-bg_color {
   position: fixed;
   z-index: -2;
 }
-.container .background-image,
-.container .background-color {
+.container .body-bg_color {
   position: static;
   padding: 40px 20px;
   background-color: white;
 }
 @media screen and (max-width: 752px) {
-  .container .background-image,
-  .container .background-color {
+  .container .body-bg_color {
     padding-top: 1px;
   }
-}
-
-.background-image {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
 }
 
 .container {
@@ -1216,6 +1205,9 @@ p {
   min-width: 320px;
   max-width: 320px;
 }
+.semimodal.dark-background {
+  color: white;
+}
 .semimodal .semimodal_inner {
   padding-bottom: 30px;
   opacity: 1;
@@ -1631,11 +1623,11 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   opacity: 1 !important;
 }
 
-.body_bg-picker--btn.edy-bgpicker-toggle-button {
+.body_bg-picker--btn bg-picker .edy-bgpicker-toggle-button {
   left: 0px;
 }
 @media screen and (max-width: 1024px) {
-  .body_bg-picker--btn.edy-bgpicker-toggle-button {
+  .body_bg-picker--btn bg-picker .edy-bgpicker-toggle-button {
     display: none;
   }
 }
@@ -2593,7 +2585,7 @@ body.edy-checkout-button-visible {
     display: none;
   }
   .header_fixed.relative {
-    position: absolute;
+    position: relative;
   }
   .header_fixed .menu-main {
     -webkit-box-align: start;

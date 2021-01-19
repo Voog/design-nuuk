@@ -228,7 +228,7 @@ body .edy-settings-editor:not(.editor_default) {
 }
 
 
-.body_bg-picker--btn.edy-bgpicker-toggle-button {
+.body_bg-picker--btn bg-picker .edy-bgpicker-toggle-button {
   left: 0px;
 
   @include query($desktop-1) {

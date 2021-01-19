@@ -35,6 +35,31 @@
     {% assign swiper_bg_1 = swiper_bg %}
   {%- endif -%}
 
+  {% assign semimodal_bg = site.data[semimodalBgKey] %}
+  {% assign semimodal_bg_combined_lightness = semimodal_bg.combinedLightness %}
+
+  {% if semimodal_bg %}
+    {% if semimodal_bg_combined_lightness %}
+      {% if semimodal_bg_combined_lightness > 0.6 %}
+        {% assign semimodal_bg_type = "light-background" %}
+      {% else %}
+        {% assign semimodal_bg_type = "dark-background" %}
+      {% endif %}
+    {% else %}
+      {% if semimodal_bg_color_data.a >= 0.6 %}
+        {% if semimodal_bg_color_data.lightness >= 0.6 %}
+          {% assign semimodal_bg_type = "light-background" %}
+        {% else %}
+          {% assign semimodal_bg_type = "dark-background" %}
+        {% endif %}
+      {% else %}
+        {% assign semimodal_bg_type = "light-background" %}
+      {% endif %}
+    {% endif %}
+  {% else %}
+    {% assign semimodal_bg_type = "light-background" %}
+  {% endif %}
+
   {% comment %}SITE BODY RELATED VARIABLES.{% endcomment %}
   {% comment %}Assign variables based on page type.{% endcomment %}
   {% if blog_article_page %}

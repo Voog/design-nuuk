@@ -9,16 +9,27 @@
   {%- assign blog_listing_page = true -%}
 </head>
 
-<body class="blog-page js-bg-picker-area{% include 'semimodal-class-names' %}">
+<body class="blog-page body-bg_picker--area {{ body_bg_type }}{% include 'semimodal-class-names' %}">
   {% include "template-svg-spritesheet" %}
-  <div class="background-color js-background-color"></div>
+  <div class="body-bg_color"></div>
 
-  <div class="container_wrap js-background-type {{ body_bg_type }}">
+  <div class="container_wrap">
     {% include "header" %}
 
     <div class="container">
       {% if editmode %}
-        <div class="bg-picker-top"><button class="voog-bg-picker-btn js-background-settings body_bg-picker--btn" data-bg-key="{{bodyBgKey}}" data-bg-picture-boolean="false"  data-bg-color="{{ body_bg_color }}" data-bg-color-data="{{ body_bg_color_data_str | escape }}"></button></div>
+        <div class="bg-picker-top">
+          <button
+            class="voog-bg-picker-btn body_bg-picker--btn bg-picker {{bodyBgKey}}-picker"
+            data-bg_key="{{bodyBgKey}}"
+            data-type_picture="false"
+            data-type_color="true"
+            data-color_elem=".body-bg_color"
+            data-picker_area_elem=".body-bg_picker--area"
+            data-picker_elem=".{{bodyBgKey}}-picker"
+            data-bg-color="{{ body_bg_color }}"
+          ></button>
+        </div>
       {% endif %}
 
       <main class="content" role="main" data-search-indexing-allowed="true">

@@ -24,21 +24,18 @@
   </style>
 {%- endif -%}
 
-{%- include 'image_src_variable', _data: site.data[semimodalBgKey], _targetWidth: "1000" -%}
+{%- include 'image_src_variable', _data: semimodal_bg, _targetWidth: "1000" -%}
 <div class="
-  semimodal js-prevent-sideclick
+  semimodal js-prevent-sideclick semimodal-bg_picker--area {{semimodal_bg_type}}
   {% if menuSettings.positioning == 'is_top' or menuSettings.positioning == 'is_top_fixed' %} hidden-desktop{% endif %}
   "
 >
-  {%- assign semimodalBgImageClass = semimodalBgKey | append: '-image' -%}
-  {%- assign semimodalBgColorClass = semimodalBgKey | append: '-color' -%}
-  {%- assign imageClass = "image_fit-cover image_abs " | append: semimodalBgImageClass -%}
+  {%- assign imageClass = "image_fit-cover image_abs semimodal-bg_image" -%}
+  {%- include "lazy-image", _data: semimodal_bg, _targetWidth: '600', _className: imageClass -%}
 
-  {%- include "lazy-image", _data: site.data[semimodalBgKey], _targetWidth: '600', _className: imageClass -%}
-
-  <div class="{{semimodalBgColorClass}} bg_color-absolute"
-    {%- if site.data[semimodalBgKey].color != blank %}
-      style="background-color: {{ site.data[semimodalBgKey].color }};"
+  <div class="semimodal-bg_color bg_color-absolute"
+    {%- if semimodal_bg.color != blank %}
+      style="background-color: {{ semimodal_bg.color }};"
     {%- endif -%}
   ></div>
 
@@ -50,18 +47,18 @@
     </div>
 
     <div class="semimodal_bottom">
-
       {%- if editmode -%}
         <div class="semimodal_picker-btn js-prevent-sideclick hidden-tablet">
           <button class="bg-picker"
-            data-type="img"
-            data-entity="siteData"
             data-picture="true"
             data-color="true"
-            data-image_elem=".{{semimodalBgImageClass}}"
-            data-color_elem=".{{semimodalBgColorClass}}"
-            data-name="{{semimodalBgKey}}"
-            data-bg="{{ site.data[semimodalBgKey] | json | escape }}"
+            data-image_elem=".semimodal-bg_image"
+            data-color_elem=".semimodal-bg_color"
+            data-picker_area_elem=".semimodal-bg_picker--area"
+            data-picker_elem=".semimodal-bg_picker"
+            data-bg_key="{{semimodalBgKey}}"
+            data-bg="{{ semimodal_bg | json | escape }}"
+            data-entity="siteData"
           ></button>
         </div>
       {%- endif -%}
