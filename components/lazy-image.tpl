@@ -15,10 +15,12 @@
     {%- if _data.imageSizes.size >= 1 %}
       data-srcset="
         {%- for image in _data.imageSizes -%}
-          {{image.url}} {{image.width}}w
-          {%- unless forloop.last -%}
-          ,
-          {%- endunless -%}
+          {%- if image.width < _maxWidth -%}
+            {{image.url}} {{image.width}}w
+            {%- unless forloop.last -%}
+            ,
+            {%- endunless -%}
+          {%- endif -%}
         {%- endfor -%}
       "
     {%- endif -%}

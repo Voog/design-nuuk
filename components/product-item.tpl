@@ -9,7 +9,7 @@
         _altAttr:
         _entityData.data[itemImageAltAttrKey],
         _data: _entityData.data[itemImageKey],
-        _targetWidth: '300',
+        _targetWidth: '700',
         _className: "item-image is-cropped" %}
     </div>
   </div>
