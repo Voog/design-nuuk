@@ -617,27 +617,27 @@
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/application-editmode.min.js",
+      "file": "javascripts/global.min.js",
       "kind": "javascripts",
-      "filename": "application-editmode.min.js"
+      "filename": "global.min.js"
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/application.min.js",
+      "file": "javascripts/editmode.js",
       "kind": "javascripts",
-      "filename": "application.min.js"
+      "filename": "editmode.js"
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/application.js",
+      "file": "javascripts/global.js",
       "kind": "javascripts",
-      "filename": "application.js"
+      "filename": "global.js"
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/application-editmode.js",
+      "file": "javascripts/editmode.min.js",
       "kind": "javascripts",
-      "filename": "application-editmode.js"
+      "filename": "editmode.min.js"
     },
     {
       "content_type": "application/javascript",
