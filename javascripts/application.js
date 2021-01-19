@@ -4,7 +4,7 @@
 // Basic CoffeeScript port of the (MMCQ) Modified Media Cut Quantization
 // algorithm from the Leptonica library (http://www.leptonica.com/).
 // Return a color map you can use to map original pixels to the reduced palette.
-// 
+//
 // Rewritten from the JavaScript port (http://gist.github.com/1104622)
 // developed by Nick Rabinowitz under the MIT license.
 
@@ -677,7 +677,6 @@ MMCQ = (function() {
 
   // Checks the lightness sum of header background image and color and sets the lightness class depending on it's value.
   var bgPickerContentLightnessClass = function(pickerArea, combinedLightness) {
-    console.log(pickerArea, combinedLightness);
     if (combinedLightness >= 0.5) {
       $(pickerArea).addClass('light-background').removeClass('dark-background');
     } else {
@@ -747,7 +746,6 @@ MMCQ = (function() {
           }
         }
       }
-      console.log(col, $colorEl, pickerOpts.color_elem);
       if (col) {
         $colorEl.css('background-color', col);
       }

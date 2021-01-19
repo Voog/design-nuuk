@@ -136,7 +136,6 @@
 
   // Checks the lightness sum of header background image and color and sets the lightness class depending on it's value.
   var bgPickerContentLightnessClass = function(pickerArea, combinedLightness) {
-    console.log(pickerArea, combinedLightness);
     if (combinedLightness >= 0.5) {
       $(pickerArea).addClass('light-background').removeClass('dark-background');
     } else {
@@ -206,7 +205,6 @@
           }
         }
       }
-      console.log(col, $colorEl, pickerOpts.color_elem);
       if (col) {
         $colorEl.css('background-color', col);
       }
