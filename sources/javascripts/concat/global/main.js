@@ -1,4 +1,8 @@
 ;(function($) {
+  var editmode = function () {
+    return $('html').hasClass('editmode');
+  };
+
   // ===========================================================================
   // Binds site search functionality.
   // ===========================================================================
@@ -326,16 +330,28 @@
       }
     }
 
-    if ("ontouchstart" in document.documentElement) {
-      handleFocus($('.js-toggle-menu-language'), togglePopover);
+    if (editmode()) {
+      if ("ontouchstart" in document.documentElement) {
+        handleFocus($('.js-toggle-menu-language'), togglePopover);
 
-      $('.js-toggle-menu-language .menu-language-btn').click(function() {
-        togglePopover();
-      });
-    } else {
-      $('.js-toggle-menu-language').hover(function() {
-        positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
-      });
+        $('.js-toggle-menu-language .menu-language-btn').click(function() {
+          togglePopover();
+        });
+      } else {
+        if ("ontouchstart" in document.documentElement) {
+          handleFocus($('.js-toggle-menu-language'), togglePopover);
+          $('.js-toggle-menu-language .menu-language-btn').click(function() {
+            togglePopover();
+          });
+        } else {
+          $('.js-toggle-menu-language').hover(function() {
+            positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
+          });
+        }
+        $('.js-toggle-menu-language').hover(function() {
+          positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
+        });
+      }
     }
   };
 
@@ -432,7 +448,9 @@
       buildCustomShoppingCartIcon();
     });
 
-    wrapTables();
+    if (editmode()) {
+      wrapTables();
+    }
   };
 
   // Enables the usage of the initiations outside this file.
