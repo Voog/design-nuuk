@@ -33,7 +33,7 @@
 
   var bgPickerPreview = function(pickerOpts, data, bgPicker) {
     // Defines the variables used in preview logic.
-    var bgPickerImagePrevious = pickerOpts.bg && pickerOpts.bg.image || null,
+    var bgPickerImagePrevious = pickerOpts.bg && pickerOpts.bg.image || '',
       bgPickerImageSuitable = data.imageSizes ? getImageByWidth(data.imageSizes, $(window).width()) : null,
       bgPickerImage = (data.image && data.image !== '') ? 'url(' + bgPickerImageSuitable.url + ')' : 'none',
       bgPickerImageSizes = (data.imageSizes && data.imageSizes !== '') ? data.imageSizes : null,
