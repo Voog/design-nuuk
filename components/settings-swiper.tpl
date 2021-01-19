@@ -128,7 +128,7 @@
       $('.swiper-settings-opt-interval').hide();
     {%- endif -%}
 
-    {%- if page.data[swiperSettingsKey].slides_count <= 1 -%}
+    {%- if page.data[swiperSettingsKey].slides_count == blank or page.data[swiperSettingsKey].slides_count < 1 -%}
       $('.swiper-settings-opt').hide();
     {%- endif -%}
   });
