@@ -83,8 +83,8 @@
           }
         }
       } else {
-        $imageEl.attr('src', 'none');
-        $imageEl.attr('srcset', 'none');
+        $imageEl.removeAttr('src');
+        $imageEl.removeAttr('srcset');
         $imageEl.css('display', 'none');
 
         if (pickerOpts.wrapper_class) {
