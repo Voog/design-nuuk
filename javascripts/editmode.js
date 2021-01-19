@@ -312,10 +312,6 @@
   };
 
   var init = function() {
-    $('.editmode .js-toggle-menu-language .menu-language-btn').click(function() {
-      togglePopover();
-    });
-
     bindCustomTexteditorStyles();
   };
 
