@@ -81,7 +81,7 @@
 
           <div class="product_list content-formatted flex_row flex_row-3 mar_0-8-neg pad_40-0">
             {%- for id in pageIdCompactArr -%}
-              <div class="product_item js-product-item flex_row-3--item scale-up" data-path="{{page.path}}">
+              <div class="product_item js-product-item flex_row-3--item" data-path="{{page.path}}">
                 <div class="mar_0-8 mar_b-32">
                   <div class="product_item-wrap">
                     {%- load buy_button to "buy_button" q.content.parent_id=id q.content.parent_type="page" -%}

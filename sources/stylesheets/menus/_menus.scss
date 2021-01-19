@@ -225,7 +225,7 @@
             display: none;
 
             &:nth-child(n+5) {
-              display: block;
+              display: inline-flex;
 
               @include query($tablet-1) {
                 display: none;
@@ -233,7 +233,7 @@
             }
 
             a {
-              padding: 8px 24px;
+              padding: 8px 40px 8px 24px;
               background-color: $black;
               color: $white;
               width: 100%;

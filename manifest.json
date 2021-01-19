@@ -400,13 +400,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/animation-javascripts.tpl",
-      "layout_name": "animation-javascripts",
-      "title": "animation-javascripts"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/html-head.tpl",
       "layout_name": "html-head",
       "title": "html-head"
@@ -624,6 +617,12 @@
     },
     {
       "content_type": "application/javascript",
+      "file": "javascripts/application-editmode.min.js",
+      "kind": "javascripts",
+      "filename": "application-editmode.min.js"
+    },
+    {
+      "content_type": "application/javascript",
       "file": "javascripts/application.min.js",
       "kind": "javascripts",
       "filename": "application.min.js"
@@ -633,6 +632,12 @@
       "file": "javascripts/application.js",
       "kind": "javascripts",
       "filename": "application.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/application-editmode.js",
+      "kind": "javascripts",
+      "filename": "application-editmode.js"
     },
     {
       "content_type": "application/javascript",
