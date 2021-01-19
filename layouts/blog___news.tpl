@@ -36,7 +36,7 @@
         <section class="content-body content-formatted post_intro-content" {{ edy_intro_edit_text }}>{% content %}</section>
 
         <div class="mar_b-16">{% addbutton %}</div>
-        <div class="blog_listing-wrapper">
+        <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
           {% for article in articles %}
             <div class="blog_listing-item">
             {% include "article-settings-variables" %}
