@@ -33,7 +33,7 @@
     <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
       <ul class="menu">
         {% for item in site.visible_menuitems %}
-          {% menulink item wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
+          {% menulink item wrapper-tag="li" wrapper-class="menu-item menu_popover-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
         {% endfor %}
       </ul>
     </li>

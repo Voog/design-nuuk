@@ -2518,6 +2518,50 @@ body.edy-checkout-button-visible {
 .header_fixed.scroll {
   -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+.header_fixed.scroll :not(.menu_popover-item).menu-item a, .header_fixed.scroll :not(.menu_popover-item).menu-item p, .header_fixed.scroll :not(.menu_popover-item).menu-item h1, .header_fixed.scroll :not(.menu_popover-item).menu-item h2, .header_fixed.scroll :not(.menu_popover-item).menu-item h3, .header_fixed.scroll :not(.menu_popover-item).menu-item h4, .header_fixed.scroll :not(.menu_popover-item).menu-item h5, .header_fixed.scroll :not(.menu_popover-item).menu-item h6,
+.header_fixed.scroll .header_title a,
+.header_fixed.scroll .header_title p,
+.header_fixed.scroll .header_title h1,
+.header_fixed.scroll .header_title h2,
+.header_fixed.scroll .header_title h3,
+.header_fixed.scroll .header_title h4,
+.header_fixed.scroll .header_title h5,
+.header_fixed.scroll .header_title h6 {
+  color: var(--header-mainmenu-color) !important;
+}
+.header_fixed.scroll .menu-btn {
+  color: var(--header-mainmenu-color) !important;
+}
+.header_fixed.scroll .menu-btn .menu-stripe {
+  background-color: var(--header-mainmenu-color) !important;
+}
+.header_fixed.scroll .menu-btn:hover {
+  color: var(--header-mainmenu-hover-color) !important;
+}
+.header_fixed.scroll .menu-btn:hover .menu-stripe {
+  background-color: var(--header-mainmenu-hover-color) !important;
+}
+.header_fixed.scroll .search-btn svg g {
+  fill: var(--header-mainmenu-color) !important;
+}
+.header_fixed.scroll .search-btn:hover svg g {
+  fill: var(--header-mainmenu-hover-color) !important;
+}
+.header_fixed.scroll .menu_popover-btn svg path {
+  fill: var(--header-mainmenu-color) !important;
+}
+.header_fixed.scroll .menu_popover-btn svg path:hover {
+  fill: var(--header-mainmenu-hover-color) !important;
+}
+.header_fixed.scroll .menu-language-btn,
+.header_fixed.scroll .menu-language-name {
+  color: var(--header-mainmenu-color) !important;
+}
+.header_fixed.scroll .menu-language-btn:hover,
+.header_fixed.scroll .menu-language-name:hover {
+  color: var(--header-mainmenu-hover-color) !important;
 }
 @media screen and (max-width: 900px) {
   .header_fixed {
@@ -2569,6 +2613,7 @@ body.edy-checkout-button-visible {
 }
 .search-open .header_fixed, .comments-open .header_fixed {
   opacity: 0;
+  pointer-events: none;
 }
 .header_components {
   display: -webkit-box;
