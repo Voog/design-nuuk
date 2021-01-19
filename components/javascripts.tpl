@@ -25,6 +25,18 @@
       //==========================================================================
       // Sets site custom data saving fanction variable.
       //==========================================================================
+      var siteData = new Edicy.CustomData({
+        type: 'site'
+      });
+
+      pageData = new Edicy.CustomData({
+        type: 'page',
+        id: '{{ page.id }}'
+      });
+
+      //==========================================================================
+      // Sets site custom data saving fanction variable.
+      //==========================================================================
       $('.js-data-item').each(function() {
         $(this).on('change', function(e) {
           if (e.target.type === 'checkbox') {
