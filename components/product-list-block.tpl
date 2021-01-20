@@ -9,21 +9,21 @@
           {%- assign product = buy_button.product -%}
           <div class="product_item js-product-item flex_row-3--item{% if product != blank %} js-product-whith-data{% endif %}"
             data-title="{{item_child.title | escape }}"
-            {%- if product != blank %}
-              data-price="{{product.price}}"
+            {%- if product != blank and product.out_of_stock? != true %}
+              data-price="{{product.price_max_with_tax}}"
             {%- endif -%}
           >
             <div class="mar_0-8">
-              <div class="product_item-wrap p-rel">
+              <div class="product_item-wrap product_item_list p-rel">
                 {%- if item_child.layout_title == product_list_layout -%}
-                  {% include 'content-item', _entityData: item_child, _itemType: 'page', _id: item_child.page_id %}
+                  {% include 'content-item', _imageData: item_child.data[itemImageKey], _entityData: item_child, _itemType: 'page', _id: item_child.page_id %}
                   <a class="p14 mar_t-16" href="{{ item_child.url }}">
                     <div class="p14 mar_t-16 bold product_item-title">
                       {{ item_child.title }}
                     </div>
                   </a>
                   <div class="flex_box product_item-details">
-                    <a class="product_item-btn p-abs" href="{{ item_child.url }}">LOOK CLOSER</a>
+                    <a class="product_item-btn p-rel" href="{{ item_child.url }}">LOOK CLOSER</a>
                   </div>
                 {%- else -%}
                   {% include 'product-item', _buyButton: buy_button, _entityData: item_child %}

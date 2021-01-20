@@ -43,8 +43,19 @@
         <div class="flex_row flex_row-2 mar_0-24-neg mar_b-32">
           <div class="flex_row-2--item">
             <div class="mar_0-24 p-rel">
+              {%- load buy_button to "buy_button" q.content.parent_id=page.id q.content.parent_type="page" -%}
+              {% if buy_button.product != blank %}
+                {%- assign buyButtonImage = buy_button.product.image -%}
+              {% endif %}
+
+              {%- if buyButtonImage != blank -%}
+                {%- assign productImage = buyButtonImage -%}
+              {%- else -%}
+                {%- assign productImage = page.data[itemImageKey] -%}
+              {%- endif -%}
+
               {%- if page.data.item_image != blank or editmode -%}
-                {% include 'content-item', _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic %}
+                {% include 'content-item', _imageData: productImage, _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic %}
               {%- endif -%}
             </div>
           </div>

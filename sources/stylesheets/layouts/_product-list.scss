@@ -18,10 +18,10 @@
       }
 
       .product_item-btn {
-        transform: translateY(calc(var(--product-list-item__font-size) * 1.5 + 1px));
+        transform: translateY(-100%);
         pointer-events: none;
         top: 0;
-        @include transition(transform 200ms);
+        @include transition(transform 400ms);
       }
 
       .product_item-price {
@@ -29,7 +29,7 @@
         pointer-events: all;
         top: 0;
         margin: 0;
-        @include transition(transform 200ms);
+        @include transition(transform 400ms);
       }
 
       .product_item-title {
@@ -40,12 +40,12 @@
         .product_image,
         .item-top,
         .product_item-title {
-          @include transition(opacity 200ms);
+          @include transition(opacity 400ms);
           opacity: .7;
         }
 
         .product_item-price {
-          transform: translateY(calc(var(--product-list-item__font-size) * 1.5 + 1px));
+          transform: translateY(-100%);
           pointer-events: none;
         }
 
@@ -59,8 +59,7 @@
     &-details {
       position: relative;
       overflow: hidden;
-      height: calc(var(--product-list-item__font-size) * 1.4 + 1px);
-      justify-content: var(--product-list-item__alignment);
+      text-align: var(--product-list-item__alignment);
     }
 
     &-btn {

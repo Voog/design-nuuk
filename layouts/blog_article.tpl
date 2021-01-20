@@ -91,7 +91,7 @@
                   <div class="post_nav-link--inner">
                     <h4 class="post_nav-direction">{{ "previous" | lc }}</h4>
                     <div class="post_nav-image">
-                      {% include 'content-item', _staticItem: true, _entityData: article.older, _itemType: 'article', _id: article.older.id %}
+                      {% include 'content-item', _imageData: article.data[itemImageKey], _staticItem: true, _entityData: article.older, _itemType: 'article', _id: article.older.id %}
                       <h4 class="post_nav-title">{{ article.older.title }}</h4>
                     </div>
                   </div>
@@ -106,7 +106,7 @@
                     <h4 class="post_nav-direction">{{ "next" | lc }}</h4>
 
                     <div class="post_nav-image">
-                      {% include 'content-item', _staticItem: true, _entityData: article.newer, _itemType: 'article', _id: article.newer.id %}
+                      {% include 'content-item', _imageData: article.data[itemImageKey], _staticItem: true, _entityData: article.newer, _itemType: 'article', _id: article.newer.id %}
                       <h4 class="post_nav-title">{{ article.newer.title }}</h4>
                     </div>
                   </div>

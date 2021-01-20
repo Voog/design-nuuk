@@ -1,4 +1,4 @@
-{% unless _entityData.data[itemImageKey] != blank %}
+{% unless _imageData != blank %}
   {% assign item_image_state = "without-image" %}
 {% else %}
   {% assign item_image_state = "with-image" %}
@@ -20,7 +20,7 @@
     data-item-type="{{_itemType}}"
     data-item-id="{{ _id }}"
   >
-    <div class="image_settings js-prevent-sideclick"{% if _entityData.data[itemImageKey] == blank %} style="display: none;"{% endif %}>
+    <div class="image_settings js-prevent-sideclick"{% if _imageData == blank %} style="display: none;"{% endif %}>
       <div class="image_settings-buttons">
         <div class="image_settings-button--title mar_r-8">Image</div>
         <button class="bg_img-contain image_settings-button mar_r-8 btn-no-style js-toggle-image-settings">
@@ -51,17 +51,17 @@
 
 
     <div class="item-top{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
-      <div class="top-inner aspect-ratio-inner image-drop-area {{ item_image_crop_state }} js-content-item-img-drop-area js-lazyload" data-image="{{ _entityData.data[itemImageKey].url }}"></div>
+      <div class="top-inner aspect-ratio-inner image-drop-area {{ item_image_crop_state }} js-content-item-img-drop-area js-lazyload" data-image="{{ _imageData.url }}"></div>
     </div>
   </div>
 {% else %}
   <{{wrapperTag}} class="content-item-box {{ item_image_state }} js-content-item-box not-loaded"{% if _staticItem != true %} href="{{ _entityData.url }}"{% endif %}>
     <div class="item-top{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
       <div class="top-inner of-hidden">
-        {% if _entityData.data[itemImageKey] != blank %}
+        {% if _imageData != blank %}
           <div class="loader js-loader"></div>
           {%- assign imageClass = "item-image " | append: item_image_crop_state -%}
-          {% include "lazy-image", _altAttr: _entityData.data[itemImageAltAttrKey], _data: _entityData.data[itemImageKey], _targetWidth: '1400', _className: imageClass  %}
+          {% include "lazy-image", _altAttr: _entityData.data[itemImageAltAttrKey], _data: _imageData, _targetWidth: '1400', _className: imageClass  %}
         {% else %}
           <div class="item-image-placeholder"></div>
         {% endif %}

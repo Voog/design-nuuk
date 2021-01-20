@@ -24,7 +24,6 @@
   </style>
 {%- endif -%}
 
-{%- include 'image_src_variable', _data: semimodal_bg, _targetWidth: "1000" -%}
 <div class="
   semimodal js-prevent-sideclick semimodal-bg_picker--area {{semimodal_bg_type}}
   {% if menuSettings.positioning == 'is_top' or menuSettings.positioning == 'is_top_fixed' %} hidden-desktop{% endif %}
