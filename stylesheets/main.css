@@ -733,7 +733,10 @@ p {
   font-family: 'object-fit: cover;';
   min-width: 100%;
   min-height: 100%;
+  width: 100%;
   height: 100%;
+  -o-object-position: center;
+     object-position: center;
 }
 .image_fit-contain {
   -o-object-fit: contain;
@@ -741,7 +744,10 @@ p {
   font-family: 'object-fit: contain;';
   min-width: 100%;
   min-height: 100%;
+  width: 100%;
   height: 100%;
+  -o-object-position: center;
+     object-position: center;
 }
 .image_abs {
   position: absolute;
@@ -3355,9 +3361,6 @@ article.post_wrapper .date-separator.hide-separator {
 .product_item-details {
   position: relative;
   overflow: hidden;
-  -webkit-box-pack: var(--product-list-item__alignment);
-      -ms-flex-pack: var(--product-list-item__alignment);
-          justify-content: var(--product-list-item__alignment);
   text-align: var(--product-list-item__alignment);
 }
 .product_item-btn {
