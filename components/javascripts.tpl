@@ -21,51 +21,6 @@
 {% if editmode %}
   {% editorjsblock %}
     <script src="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.js"></script>
-    <script>
-      //==========================================================================
-      // Sets site custom data saving fanction variable.
-      //==========================================================================
-      var siteData = new Edicy.CustomData({
-        type: 'site'
-      });
-
-      pageData = new Edicy.CustomData({
-        type: 'page',
-        id: '{{ page.id }}'
-      });
-
-      //==========================================================================
-      // Sets site custom data saving fanction variable.
-      //==========================================================================
-      $('.js-data-item').each(function() {
-        $(this).on('change', function(e) {
-          if (e.target.type === 'checkbox') {
-            var val = e.target.checked;
-          } else {
-            var val = e.target.value;
-          }
-          var dataKey = e.target.dataset.name;
-          var dataId = e.target.dataset.id;
-          var dataEntity = e.target.dataset.entity;
-          var dataReload = e.target.dataset.reload;
-
-          if (dataEntity == 'site') {
-            var entityData = new Edicy.CustomData({
-              type: 'site'
-            });;
-          } else {
-            var entityData = new Edicy.CustomData({
-              type: dataEntity,
-              id: dataId
-            });
-          }
-
-          entityData.set({ [dataKey] : val }, { success: function() {
-            if (dataReload) {location.reload();};
-          }});
-        });
-      });
-    </script>
     {% include "settings_editor" %}
     {% include "bg-picker-scripts" %}
 

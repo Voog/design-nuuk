@@ -306,6 +306,40 @@
     });
   };
 
+  //==========================================================================
+  // Sets site custom data saving fanction variable.
+  //==========================================================================
+  var bindCustomDataItem = function() {
+    $('.js-data-item').each(function() {
+      $(this).on('change', function(e) {
+        if (e.target.type === 'checkbox') {
+          var val = e.target.checked;
+        } else {
+          var val = e.target.value;
+        }
+        var dataKey = e.target.dataset.name;
+        var dataId = e.target.dataset.id;
+        var dataEntity = e.target.dataset.entity;
+        var dataReload = e.target.dataset.reload;
+
+        if (dataEntity == 'site') {
+          var entityData = new Edicy.CustomData({
+            type: 'site'
+          });;
+        } else {
+          var entityData = new Edicy.CustomData({
+            type: dataEntity,
+            id: dataId
+          });
+        }
+
+        entityData.set({ [dataKey] : val }, { success: function() {
+          if (dataReload) {location.reload();};
+        }});
+      });
+    });
+  };
+
   var bindCustomTexteditorStyles = function() {
     window.edy = window.edy || [];
     edy.push(['texteditorStyles', {name: 'Button', tagname:'a', attribute: {'href': '#'}, classname: 'custom-btn', toggle: true}]);
@@ -313,6 +347,7 @@
 
   var init = function() {
     bindCustomTexteditorStyles();
+    bindCustomDataItem();
   };
 
   // Enables the usage of the initiations outside this file.

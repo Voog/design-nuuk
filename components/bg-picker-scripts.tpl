@@ -1,4 +1,13 @@
 <script type="text/javascript">
+  var siteData = new Edicy.CustomData({
+    type: 'site'
+  });
+
+  pageData = new Edicy.CustomData({
+    type: 'page',
+    id: '{{ page.id }}'
+  });
+
   $(function() {
     $('.bg-picker').each(function(index, pickerArea) {
       var $picker = $(this),

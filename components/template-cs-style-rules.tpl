@@ -72,17 +72,21 @@ body.dark-background {
   background-color: var(--fourth-color);
 }
 
-.search-btn svg g {
+.search-btn svg g, .edy-ecommerce-custom-ico svg g, .edy-ecommerce-custom-ico svg path {
   fill: var(--header-mainmenu-color);
 }
-.dark-background .search-btn svg g {
+.dark-background .search-btn svg g,
+.dark-background .edy-ecommerce-custom-ico svg g,
+.dark-background .edy-ecommerce-custom-ico svg path {
   fill: var(--fourth-color);
 }
 
-.search-btn:hover svg g {
+.search-btn:hover svg g, .edy-ecommerce-custom-ico:hover svg g, .edy-ecommerce-custom-ico:hover svg path {
   fill: var(--header-mainmenu-hover-color);
 }
-.dark-background .search-btn:hover svg g {
+.dark-background .search-btn:hover svg g,
+.dark-background .edy-ecommerce-custom-ico:hover svg g,
+.dark-background .edy-ecommerce-custom-ico:hover svg path {
   opacity: .7;
   fill: var(--fourth-color);
 }
