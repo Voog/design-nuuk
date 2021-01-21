@@ -901,21 +901,72 @@ MMCQ = (function() {
     $('.cart_btn-container').append($('.edy-ecommerce-shopping-cart-button').append(icoElement));
   };
 
-  // FUNCTIONS INITIATIONS
-  var initFrontPage = function() {
-    // Add front page layout specific functions here.
-    removeOptionalContent();
-  };
+  var initProductListPage = function() {
+    if ($(".js-product-whith-data").length >= 2) {
+      $(".product_filters").removeClass('d-none');
+    }
 
-  var initCommonPage = function() {
-    // Add common page specific functions here.
-  };
+    function fadeAnimation(wrapper) {
+      wrapper.find('.js-product-item').each(function() {
+        var item = $(this);
+        var delay = item.index();
+        item.css({'opacity':'0', 'transition': 'none'});
+        setTimeout((function() {
+          item.animate({'opacity':'1'}, 500);
+        }), delay * 40);
+      });
+    }
 
-  var initBlogPage = function() {
-  };
+    $(".product_list-search").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      fadeAnimation($('.product_list'));
+      $(".product_list .js-product-item").filter(function() {
+        $(this).toggle($(this).attr("data-title").toLowerCase().indexOf(value) > -1)
+      });
+    });
 
-  var initPostPage = function() {
-    // Add single post layout specific functions here.
+    $('.product_list-filter').on('change', function() {
+      if (this.value === 'price-default') {
+        var $wrapper = $('.product_list');
+        fadeAnimation($wrapper);
+        $wrapper.find('.js-product-item').sort(function(a, b) {
+          return +a.dataset.index - +b.dataset.index;
+        })
+        .prependTo($wrapper);
+      } else if (this.value === 'price-ascending') {
+        var $wrapper = $('.product_list');
+        fadeAnimation($wrapper);
+        $wrapper.find('.js-product-item[data-price]').sort(function(a, b) {
+          return +a.dataset.price - +b.dataset.price;
+        })
+        .prependTo($wrapper);
+      } else if (this.value === 'price-descending') {
+        var $wrapper = $('.product_list');
+        fadeAnimation($wrapper);
+        $wrapper.find('.js-product-item[data-price]').sort(function(a, b) {
+          return +b.dataset.price - +a.dataset.price;
+        })
+        .prependTo($wrapper);
+      } else if (this.value === 'title-ascending') {
+        var $wrapper = $('.product_list');
+        fadeAnimation($wrapper);
+        $wrapper.find('.js-product-item').sort(function(a, b) {
+          if(a.dataset.title < b.dataset.title) { return -1; }
+          if(a.dataset.title > b.dataset.title) { return 1; }
+          return 0;
+        })
+        .prependTo($wrapper);
+      } else if (this.value === 'title-descending') {
+        var $wrapper = $('.product_list');
+        fadeAnimation($wrapper);
+        $wrapper.find('.js-product-item').sort(function(a, b) {
+          if(a.dataset.title < b.dataset.title) { return 1; }
+          if(a.dataset.title > b.dataset.title) { return -1; }
+          return 0;
+        })
+        .prependTo($wrapper);
+      }
+    });
   };
 
   var handleMenuTopPos = function() {
@@ -982,7 +1033,7 @@ MMCQ = (function() {
       buildCustomShoppingCartIcon();
     });
 
-    if (editmode()) {
+    if (!editmode()) {
       wrapTables();
     }
   };
@@ -990,10 +1041,7 @@ MMCQ = (function() {
   // Enables the usage of the initiations outside this file.
   // For example add "<script>site.initBlogPage();</script>" at the end of the "Blog & News" page to initiate blog listing view functions.
   window.site = $.extend(window.site || {}, {
-    initFrontPage: initFrontPage,
-    initCommonPage: initCommonPage,
-    initBlogPage: initBlogPage,
-    initPostPage: initPostPage,
+    initProductListPage: initProductListPage,
     bindSiteSearch: bindSiteSearch,
     bindLanguageMenuSettings: bindLanguageMenuSettings
   });

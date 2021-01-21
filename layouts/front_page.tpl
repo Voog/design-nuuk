@@ -165,9 +165,5 @@
   {% include 'settings-popover', _frontPage: true %}
   {% include "javascripts" %}
   {% include 'swiper-js' %}
-
-  <script>
-    site.initFrontPage();
-  </script>
 </body>
 </html>

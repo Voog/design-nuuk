@@ -47,8 +47,5 @@
 
   {%- include "site-signout" -%}
   {%- include "javascripts" -%}
-  <script>
-    site.initCommonPage();
-  </script>
 </body>
 </html>

@@ -62,7 +62,6 @@
         $(".js-tags-all").addClass("active");
       };
     });
-    site.initBlogPage();
   </script>
 </body>
 </html>
