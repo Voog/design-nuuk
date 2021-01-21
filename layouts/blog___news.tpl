@@ -38,9 +38,11 @@
         <div class="mar_b-16">{% addbutton %}</div>
         <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
           {% for article in articles %}
-            <div class="blog_listing-item">
-            {% include "article-settings-variables" %}
-            {% include "post-box" %}
+            <div class="blog_listing-item hover">
+              <a href="{{ article.url }}">
+              {% include "article-settings-variables" %}
+              {% include "post-box" %}
+              </a>
             </div>
           {% endfor %}
         </div>

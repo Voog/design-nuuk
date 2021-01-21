@@ -48,10 +48,10 @@
                 {% for comment in article.comments reversed %}
                   <div class="comment edy-site-blog-comment">
                     <div class="flex_box">
-                      <span class="p16 comment_author bold">{{ comment.author }}</span>
-                      <span class="p16 comment_date mar_l-8 grey">{{ comment.created_at | format_date: "long" }}</span>
+                      <span class="comment_author bold">{{ comment.author }}</span>
+                      <span class="comment_date mar_l-8">{{ comment.created_at | format_date: "long" }}</span>
                     </div>
-                    <span class="p16 comment_body">{{ comment.body_html }}</span>
+                    <span class="comment_body">{{ comment.body_html }}</span>
                     <span class="comment_delete">{% removebutton %}</span>
                   </div>
                 {% endfor %}
@@ -84,7 +84,7 @@
         </div>
 
         {% if article.older or article.newer %}
-          <div class="post_nav">
+          <div class="post_nav content-formatted">
             <div class="post_nav-inner">
               {% if article.older %}
                 <a class="post_nav-link{% if article.newer %} post_nav-link--older{% else %} post_nav-link--one{% endif %}" href="{{ article.older.url }}">

@@ -130,6 +130,11 @@
   }
 }
 
+.hover:hover {
+  @include transition(opacity 400ms);
+  opacity: .7;
+}
+
 .btn-no-style {
   background-color: transparent;
   color: inherit;

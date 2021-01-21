@@ -69,7 +69,8 @@ body {
   }
 
   .post_author,
-  .post_date {
+  .post_date,
+  .date-separator {
     color: var(--secondary-color);
 
     .dark-background & {

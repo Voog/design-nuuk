@@ -23,11 +23,12 @@ body.dark-background {
 .dark-background .post .post_title a:hover {
   color: var(--fourth-color);
 }
-.post .post_author, .post .post_date {
+.post .post_author, .post .post_date, .post .date-separator {
   color: var(--secondary-color);
 }
 .dark-background .post .post_author,
-.dark-background .post .post_date {
+.dark-background .post .post_date,
+.dark-background .post .date-separator {
   color: var(--fourth-color);
 }
 .dark-background .post .post_author {

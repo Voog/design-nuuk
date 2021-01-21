@@ -4,7 +4,7 @@
   {% assign article_date_format = "long" %}
 {% endif %}
 
-<article class="post_wrapper">
+<article class="post_wrapper post">
   <header class="post_header">
 
     {% if post-box == "article" %}
@@ -17,7 +17,7 @@
         {% if post-box == "article" %}
           {% editable article.title %}
         {% else %}
-          <a href="{{ article.url }}">{{ article.title }}</a>
+          {{ article.title }}
         {% endif %}
       </{{titleTag}}>
     {% endcapture %}
