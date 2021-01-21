@@ -23,6 +23,17 @@
   --form-field-font-size: 16px;
   /* VoogStyle
     "pathI18n": ["form"],
+    "titleI18n": "line_height",
+    "editor": "rangePicker",
+    "min": 1,
+    "max": 5,
+    "step": 0.1,
+    "unit": "",
+    "scope": "global"
+  */
+  --form-field-line-height: 1.3;
+  /* VoogStyle
+    "pathI18n": ["form"],
     "titleI18n": "font_weight",
     "type": "button",
     "editor": "toggleIcon",

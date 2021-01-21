@@ -80,4 +80,24 @@
       display: block;
     }
   }
+
+  &filters {
+    display: flex;
+    align-items: baseline;
+    border-bottom: 1px solid;
+    padding-bottom: 8px;
+    padding-top: 32px;
+
+    &-item {
+      display: flex;
+      align-items: baseline;
+    }
+
+    &.content-formatted {
+      .product_list-filter,
+      .product_list-search {
+        border: none;
+      }
+    }
+  }
 }

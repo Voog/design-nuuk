@@ -50,12 +50,14 @@
 
               {%- if buyButtonImage != blank -%}
                 {%- assign productImage = buyButtonImage -%}
+                {%- assign isProductImage = true -%}
               {%- else -%}
                 {%- assign productImage = page.data[itemImageKey] -%}
+                {%- assign isProductImage = false -%}
               {%- endif -%}
 
               {%- if page.data.item_image != blank or editmode -%}
-                {% include 'content-item', _imageData: productImage, _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic %}
+                {% include 'content-item', _isProductImage: isProductImage, _imageData: productImage, _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic %}
               {%- endif -%}
             </div>
           </div>
@@ -112,7 +114,6 @@
 
   {% include "site-signout" %}
   {% include "javascripts" %}
-
   {% include 'settings-popover', _productPage: true %}
 </body>
 </html>

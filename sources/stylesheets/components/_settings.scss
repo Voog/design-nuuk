@@ -379,11 +379,18 @@ body {
     color: white;
     align-items: center;
 
-    button,
-    .image_settings-remove {
+    .image_settings-button,
+    .image_settings-remove,
+    .image_settings-expand {
       width: 24px;
       height: 24px;
 
+      &:hover {
+        opacity: .7;
+      }
+    }
+
+    .image_settings-change--image {
       &:hover {
         opacity: .7;
       }

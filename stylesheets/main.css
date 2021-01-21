@@ -1794,13 +1794,18 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
       -ms-flex-align: center;
           align-items: center;
 }
-.image_settings-buttons button,
-.image_settings-buttons .image_settings-remove {
+.image_settings-buttons .image_settings-button,
+.image_settings-buttons .image_settings-remove,
+.image_settings-buttons .image_settings-expand {
   width: 24px;
   height: 24px;
 }
-.image_settings-buttons button:hover,
-.image_settings-buttons .image_settings-remove:hover {
+.image_settings-buttons .image_settings-button:hover,
+.image_settings-buttons .image_settings-remove:hover,
+.image_settings-buttons .image_settings-expand:hover {
+  opacity: .7;
+}
+.image_settings-buttons .image_settings-change--image:hover {
   opacity: .7;
 }
 .image_settings-buttons .image_settings-button {
@@ -3376,6 +3381,29 @@ article.post_wrapper .date-separator.hide-separator {
 .with-image .product_alt-attr {
   display: block;
 }
+.product_filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  border-bottom: 1px solid;
+  padding-bottom: 8px;
+  padding-top: 32px;
+}
+.product_filters-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+.product_filters.content-formatted .product_list-filter,
+.product_filters.content-formatted .product_list-search {
+  border: none;
+}
 
 .menu-language-btn {
   z-index: 3;
@@ -4373,7 +4401,7 @@ article.post_wrapper .date-separator.hide-separator {
 }
 @media screen and (max-width: 1024px) {
   .pad_40-0 {
-    padding: 16px 0;
+    padding: 24px 0;
   }
 }
 .pad_32-0 {

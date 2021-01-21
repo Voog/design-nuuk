@@ -417,12 +417,17 @@ body.dark-background {
   border-top-color: var(--secondary-color);
 }
 
+.content-formatted .form_field {
+  line-height: var(--form-field-line-height);
+}
 .content-formatted .form_field .form_field_label,
 .content-formatted .form_field .edy-fe-label {
   font-size: var(--form-label-font-size);
 }
 .content-formatted .form_field_textfield,
 .content-formatted .form_field_textarea,
+.content-formatted .form_field_select,
+.content-formatted .product_filters-item,
 .content-formatted label:not(.form_field_label) {
   font-style: var(--form-field-font-style);
   font-weight: var(--form-field-font-weight);
