@@ -4,6 +4,7 @@
     <div class="form_field mar_r-32">
       <label class="form_field_label" for="field_field_filter"></label>
       <select class="form_field_select product_list-filter" id="field_field_filter">
+        <option value="price-default">Default</option>
         <option value="price-ascending">Sort by price Lo -> Hi</option>
         <option value="price-descending">Sort by price Hi -> Lo</option>
         <option value="title-ascending">Sort by title A -> Z</option>

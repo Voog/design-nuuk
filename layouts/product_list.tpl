@@ -77,7 +77,14 @@
     });
 
     $('.product_list-filter').on('change', function() {
-      if (this.value === 'price-ascending') {
+      if (this.value === 'price-default') {
+        var $wrapper = $('.product_list');
+        fadeAnimation($wrapper);
+        $wrapper.find('.js-product-item').sort(function(a, b) {
+          return +a.dataset.index - +b.dataset.index;
+        })
+        .appendTo($wrapper);
+      } else if (this.value === 'price-ascending') {
         var $wrapper = $('.product_list');
         fadeAnimation($wrapper);
         $wrapper.find('.js-product-item').sort(function(a, b) {
