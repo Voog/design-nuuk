@@ -2,6 +2,7 @@
 // NB! Each editable content-area - {% content %} - should be wrapped in the element that has the "content-formatted" class.
 // NB! Contact forms and image galleries are located in the separate partials: "_forms.scss" and "_gallery.scss".
 .content-formatted {
+  word-break: break-word;
 
   &:empty {
     display: none;
@@ -66,66 +67,56 @@
 
     @include query($tablet-1) {
       font-size: 56px;
-      line-height: 64.29px;
+      line-height: 64px;
     }
   }
 
   h2 {
     font-size: 56px;
-    line-height: 64.29px;
+    line-height: 64px;
     margin-top: 24px;
     margin-bottom: 8px;
 
     @include query($tablet-1) {
       font-size: 36px;
-      line-height: 41.33px;
+      line-height: 40px;
     }
   }
 
   h3 {
     font-size: 36px;
-    line-height: 41.33px;
+    line-height: 40px;
     margin-top: 16px;
     margin-bottom: 8px;
 
     @include query($tablet-1) {
       font-size: 24px;
-      line-height: 27.55px;
+      line-height: 28px;
     }
   }
 
   h4 {
     font-size: 24px;
-    line-height: 27.55px;
+    line-height: 28px;
     margin-top: 16px;
     margin-bottom: 8px;
 
     @include query($tablet-1) {
       font-size: 20px;
-      line-height: 22.96px;
+      line-height: 24px;
     }
   }
 
   h5 {
     font-weight: 600;
     font-size: 20px;
-    line-height: 22.96px;
+    line-height: 24px;
     margin-top: 16px;
     margin-bottom: 8px;
 
     @include query($tablet-1) {
       font-size: 18px;
-      line-height: 22.96px;
-    }
-  }
-
-  a:not(.content-item-box) {
-    color: black;
-
-    &:hover {
-      .dark-background & {
-        opacity: .7;
-      }
+      line-height: 24px;
     }
   }
 
@@ -260,7 +251,9 @@
   }
 
   blockquote {
-    margin: 20px 40px;
+    margin: 20px 40px 20px 0;
+    padding-left: 16px;
+    border-left: 2px solid;
   }
 
   .custom-btn {

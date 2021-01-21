@@ -154,66 +154,53 @@
 // Custom checkboxes and radio buttons
 .form_field_radio,
 .form_field_checkbox {
-  .svg & {
-    display: none;
-
-    + .form_control_indicator {
-      @include size(18px);
-      position: relative;
-      display: inline-block;
-      margin-right: 10px;
-      vertical-align: middle;
-      border-width: 1px;
-      border-style: solid;
-      border-color: rgba($black, .2);
-    }
+  + .form_control_indicator {
+    @include size(18px);
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 1px solid;
   }
 
   .dark-background & {
-    .svg & {
-      + .form_control_indicator {
-        border-color: rgba($white, .2);
-      }
+    + .form_control_indicator {
+      border-color: $white;
     }
   }
 }
 
 .form_field_radio {
-  .svg & {
-    + .form_control_indicator {
-      top: -2px;
+  + .form_control_indicator {
+    top: -2px;
+    border-radius: 100%;
+
+    &:before {
+      @include size(12px);
+      transform: scale(0);
+      transition: transform .15s ease;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      content: '';
       border-radius: 100%;
-
-      &:before {
-        @include size(12px);
-        transform: scale(0);
-        transition: transform .15s ease;
-        position: absolute;
-        top: 3px;
-        left: 3px;
-        content: '';
-        border-radius: 100%;
-        background-color: rgba($black, .4);
-      }
     }
+  }
 
-    &:checked {
-      + .form_control_indicator {
-        &:before {
-          transform: scale(1);
-          transition: transform .15s ease;
-        }
+  &:checked {
+    + .form_control_indicator {
+      &:before {
+        transform: scale(1);
+        transition: transform .15s ease;
       }
     }
   }
 
   .dark-background & {
-    .svg & {
-      &:checked {
-        + .form_control_indicator {
-          &:before {
-            background-color: rgba($white, .4);
-          }
+    &:checked {
+      + .form_control_indicator {
+        &:before {
+          background-color: $white;
         }
       }
     }
@@ -221,40 +208,35 @@
 }
 
 .form_field_checkbox {
-  .svg & {
-    + .form_control_indicator {
-      top: -2px;
+  + .form_control_indicator {
+    top: -2px;
 
-      &:before {
-        transform: scale(0) rotate(45deg);
-        display: block;
-        width: 5px;
-        height: 10px;
-        margin: 1px 0 0 6px;
-        content: '';
-        transition: transform .15s ease 0s;
-        border-width: 0 2px 2px 0;
-        border-style: none solid solid none;
-        border-color: rgba($black, .4);
-      }
+    &:before {
+      transform: scale(0) rotate(45deg);
+      display: block;
+      width: 5px;
+      height: 10px;
+      margin: 1px 0 0 6px;
+      content: '';
+      transition: transform .15s ease 0s;
+      border: 1px solid;
+      border-style: none solid solid none;
     }
+  }
 
-    &:checked {
-      + .form_control_indicator {
-        &:before {
-          transform: scale(1) rotate(45deg);
-          transition: transform .15s ease;
-        }
+  &:checked {
+    + .form_control_indicator {
+      &:before {
+        transform: scale(1) rotate(45deg);
+        transition: transform .15s ease;
       }
     }
   }
 
   .dark-background & {
-    .svg & {
-      + .form_control_indicator {
-        &:before {
-          border-color: rgba($white, .2);
-        }
+    + .form_control_indicator {
+      &:before {
+        border-color: $white;
       }
     }
   }

@@ -253,60 +253,60 @@ h1 {
 @media screen and (max-width: 900px) {
   h1 {
     font-size: 56px;
-    line-height: 64.29px;
+    line-height: 64px;
   }
 }
 
 h2 {
   font-size: 56px;
-  line-height: 64.29px;
+  line-height: 64px;
   margin-top: 24px;
   margin-bottom: 8px;
 }
 @media screen and (max-width: 900px) {
   h2 {
     font-size: 36px;
-    line-height: 41.33px;
+    line-height: 40px;
   }
 }
 
 h3 {
   font-size: 36px;
-  line-height: 41.33px;
+  line-height: 40px;
   margin-top: 16px;
   margin-bottom: 8px;
 }
 @media screen and (max-width: 900px) {
   h3 {
     font-size: 24px;
-    line-height: 27.55px;
+    line-height: 28px;
   }
 }
 
 h4 {
   font-size: 24px;
-  line-height: 27.55px;
+  line-height: 28px;
   margin-top: 16px;
   margin-bottom: 8px;
 }
 @media screen and (max-width: 900px) {
   h4 {
     font-size: 20px;
-    line-height: 22.96px;
+    line-height: 24px;
   }
 }
 
 h5 {
   font-weight: 600;
   font-size: 20px;
-  line-height: 22.96px;
+  line-height: 24px;
   margin-top: 16px;
   margin-bottom: 8px;
 }
 @media screen and (max-width: 900px) {
   h5 {
     font-size: 18px;
-    line-height: 22.96px;
+    line-height: 24px;
   }
 }
 
@@ -500,31 +500,26 @@ p {
   color: #2f5d4b;
 }
 
-.svg .form_field_radio,
-.svg .form_field_checkbox {
-  display: none;
-}
-.svg .form_field_radio + .form_control_indicator,
-.svg .form_field_checkbox + .form_control_indicator {
+.form_field_radio + .form_control_indicator,
+.form_field_checkbox + .form_control_indicator {
   height: 18px;
   width: 18px;
   position: relative;
   display: inline-block;
   margin-right: 10px;
   vertical-align: middle;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid;
 }
-.svg .dark-background .form_field_radio + .form_control_indicator, .svg .dark-background .form_field_checkbox + .form_control_indicator {
-  border-color: rgba(255, 255, 255, 0.2);
+.dark-background .form_field_radio + .form_control_indicator,
+.dark-background .form_field_checkbox + .form_control_indicator {
+  border-color: #ffffff;
 }
 
-.svg .form_field_radio + .form_control_indicator {
+.form_field_radio + .form_control_indicator {
   top: -2px;
   border-radius: 100%;
 }
-.svg .form_field_radio + .form_control_indicator:before {
+.form_field_radio + .form_control_indicator:before {
   height: 12px;
   width: 12px;
   -webkit-transform: scale(0);
@@ -540,9 +535,8 @@ p {
   left: 3px;
   content: '';
   border-radius: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
 }
-.svg .form_field_radio:checked + .form_control_indicator:before {
+.form_field_radio:checked + .form_control_indicator:before {
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
@@ -552,14 +546,14 @@ p {
   transition: transform .15s ease;
   transition: transform .15s ease, -webkit-transform .15s ease;
 }
-.svg .dark-background .form_field_radio:checked + .form_control_indicator:before {
-  background-color: rgba(255, 255, 255, 0.4);
+.dark-background .form_field_radio:checked + .form_control_indicator:before {
+  background-color: #ffffff;
 }
 
-.svg .form_field_checkbox + .form_control_indicator {
+.form_field_checkbox + .form_control_indicator {
   top: -2px;
 }
-.svg .form_field_checkbox + .form_control_indicator:before {
+.form_field_checkbox + .form_control_indicator:before {
   -webkit-transform: scale(0) rotate(45deg);
       -ms-transform: scale(0) rotate(45deg);
           transform: scale(0) rotate(45deg);
@@ -573,11 +567,10 @@ p {
   -o-transition: transform .15s ease 0s;
   transition: transform .15s ease 0s;
   transition: transform .15s ease 0s, -webkit-transform .15s ease 0s;
-  border-width: 0 2px 2px 0;
+  border: 1px solid;
   border-style: none solid solid none;
-  border-color: rgba(0, 0, 0, 0.4);
 }
-.svg .form_field_checkbox:checked + .form_control_indicator:before {
+.form_field_checkbox:checked + .form_control_indicator:before {
   -webkit-transform: scale(1) rotate(45deg);
       -ms-transform: scale(1) rotate(45deg);
           transform: scale(1) rotate(45deg);
@@ -587,8 +580,8 @@ p {
   transition: transform .15s ease;
   transition: transform .15s ease, -webkit-transform .15s ease;
 }
-.svg .dark-background .form_field_checkbox + .form_control_indicator:before {
-  border-color: rgba(255, 255, 255, 0.2);
+.dark-background .form_field_checkbox + .form_control_indicator:before {
+  border-color: #ffffff;
 }
 
 /* COMMENTS */
@@ -834,6 +827,9 @@ p {
   margin-right: 0;
 }
 
+.content-formatted {
+  word-break: break-word;
+}
 .content-formatted:empty {
   display: none;
 }
@@ -907,63 +903,57 @@ p {
 @media screen and (max-width: 900px) {
   .content-formatted h1 {
     font-size: 56px;
-    line-height: 64.29px;
+    line-height: 64px;
   }
 }
 .content-formatted h2 {
   font-size: 56px;
-  line-height: 64.29px;
+  line-height: 64px;
   margin-top: 24px;
   margin-bottom: 8px;
 }
 @media screen and (max-width: 900px) {
   .content-formatted h2 {
     font-size: 36px;
-    line-height: 41.33px;
+    line-height: 40px;
   }
 }
 .content-formatted h3 {
   font-size: 36px;
-  line-height: 41.33px;
+  line-height: 40px;
   margin-top: 16px;
   margin-bottom: 8px;
 }
 @media screen and (max-width: 900px) {
   .content-formatted h3 {
     font-size: 24px;
-    line-height: 27.55px;
+    line-height: 28px;
   }
 }
 .content-formatted h4 {
   font-size: 24px;
-  line-height: 27.55px;
+  line-height: 28px;
   margin-top: 16px;
   margin-bottom: 8px;
 }
 @media screen and (max-width: 900px) {
   .content-formatted h4 {
     font-size: 20px;
-    line-height: 22.96px;
+    line-height: 24px;
   }
 }
 .content-formatted h5 {
   font-weight: 600;
   font-size: 20px;
-  line-height: 22.96px;
+  line-height: 24px;
   margin-top: 16px;
   margin-bottom: 8px;
 }
 @media screen and (max-width: 900px) {
   .content-formatted h5 {
     font-size: 18px;
-    line-height: 22.96px;
+    line-height: 24px;
   }
-}
-.content-formatted a:not(.content-item-box) {
-  color: black;
-}
-.dark-background .content-formatted a:not(.content-item-box):hover {
-  opacity: .7;
 }
 .content-formatted p {
   font-weight: normal;
@@ -1071,7 +1061,9 @@ p {
   border-radius: 0;
 }
 .content-formatted blockquote {
-  margin: 20px 40px;
+  margin: 20px 40px 20px 0;
+  padding-left: 16px;
+  border-left: 2px solid;
 }
 .content-formatted .custom-btn {
   cursor: pointer;

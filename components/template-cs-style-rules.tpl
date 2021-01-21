@@ -373,10 +373,7 @@ body.dark-background {
 .dark-background .content-formatted.header_title a, .dark-background .content-formatted.header_title p, .dark-background .content-formatted.header_title h1, .dark-background .content-formatted.header_title h2, .dark-background .content-formatted.header_title h3, .dark-background .content-formatted.header_title h4, .dark-background .content-formatted.header_title h5, .dark-background .content-formatted.header_title h6, .dark-background .content-formatted.site_title a, .dark-background .content-formatted.site_title p, .dark-background .content-formatted.site_title h1, .dark-background .content-formatted.site_title h2, .dark-background .content-formatted.site_title h3, .dark-background .content-formatted.site_title h4, .dark-background .content-formatted.site_title h5, .dark-background .content-formatted.site_title h6, .dark-background .content-formatted .product_item-btn.header_title a, .dark-background .content-formatted .product_item-btn.header_title p, .dark-background .content-formatted .product_item-btn.header_title h1, .dark-background .content-formatted .product_item-btn.header_title h2, .dark-background .content-formatted .product_item-btn.header_title h3, .dark-background .content-formatted .product_item-btn.header_title h4, .dark-background .content-formatted .product_item-btn.header_title h5, .dark-background .content-formatted .product_item-btn.header_title h6, .dark-background .content-formatted .product_item-btn.site_title a, .dark-background .content-formatted .product_item-btn.site_title p, .dark-background .content-formatted .product_item-btn.site_title h1, .dark-background .content-formatted .product_item-btn.site_title h2, .dark-background .content-formatted .product_item-btn.site_title h3, .dark-background .content-formatted .product_item-btn.site_title h4, .dark-background .content-formatted .product_item-btn.site_title h5, .dark-background .content-formatted .product_item-btn.site_title h6, .dark-background .content-formatted p.header_title a, .dark-background .content-formatted p.header_title p, .dark-background .content-formatted p.header_title h1, .dark-background .content-formatted p.header_title h2, .dark-background .content-formatted p.header_title h3, .dark-background .content-formatted p.header_title h4, .dark-background .content-formatted p.header_title h5, .dark-background .content-formatted p.header_title h6, .dark-background .content-formatted p.site_title a, .dark-background .content-formatted p.site_title p, .dark-background .content-formatted p.site_title h1, .dark-background .content-formatted p.site_title h2, .dark-background .content-formatted p.site_title h3, .dark-background .content-formatted p.site_title h4, .dark-background .content-formatted p.site_title h5, .dark-background .content-formatted p.site_title h6 {
   color: var(--fourth-color);
 }
-.content-formatted .custom-btn,
-.content-formatted .form_submit input, .content-formatted .product_item-btn .custom-btn,
-.content-formatted .product_item-btn .form_submit input, .content-formatted p .custom-btn,
-.content-formatted p .form_submit input {
+.content-formatted .custom-btn, .content-formatted .form_submit input, .content-formatted .product_item-btn .custom-btn, .content-formatted .product_item-btn .form_submit input, .content-formatted p .custom-btn, .content-formatted p .form_submit input {
   padding: calc(var(--button-padding) - 8px) var(--button-padding) calc(var(--button-padding) - 7px);
   color: var(--button-color);
   font-size: var(--button-font-size);
@@ -390,10 +387,15 @@ body.dark-background {
           hyphens: var(--button-hyphens);
   background-color: var(--button-background-color);
 }
-.content-formatted .custom-btn:hover,
-.content-formatted .form_submit input:hover, .content-formatted .product_item-btn .custom-btn:hover,
-.content-formatted .product_item-btn .form_submit input:hover, .content-formatted p .custom-btn:hover,
-.content-formatted p .form_submit input:hover {
+.dark-background .content-formatted .custom-btn,
+.dark-background .content-formatted .form_submit input,
+.dark-background .content-formatted .product_item-btn .custom-btn,
+.dark-background .content-formatted .product_item-btn .form_submit input,
+.dark-background .content-formatted p .custom-btn,
+.dark-background .content-formatted p .form_submit input {
+  border: 1px solid var(--fourth-color);
+}
+.content-formatted .custom-btn:hover, .content-formatted .form_submit input:hover, .content-formatted .product_item-btn .custom-btn:hover, .content-formatted .product_item-btn .form_submit input:hover, .content-formatted p .custom-btn:hover, .content-formatted p .form_submit input:hover {
   padding: calc(var(--button-hover-padding) - 8px) var(--button-hover-padding) calc(var(--button-hover-padding) - 7px);
   color: var(--button-hover-color);
   font-size: var(--button-hover-font-size);
@@ -487,4 +489,7 @@ body.dark-background {
 .light-background .content-formatted .form_field_textarea::placeholder,
 .light-background .content-formatted .form_field_select::placeholder {
   color: var(--primary-color);
+}
+.content-formatted .form_field_radio + .form_control_indicator:before {
+  background-color: var(--primary-color);
 }

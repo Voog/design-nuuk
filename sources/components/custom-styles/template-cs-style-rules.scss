@@ -515,6 +515,10 @@ body {
     hyphens: var(--button-hyphens);
     background-color: var(--button-background-color);
 
+    .dark-background & {
+      border: 1px solid var(--fourth-color);
+    }
+
     &:hover {
       padding: calc(var(--button-hover-padding) - 8px) var(--button-hover-padding) calc(var(--button-hover-padding) - 7px);
       color: var(--button-hover-color);
@@ -587,6 +591,14 @@ body {
 
       &::placeholder {
         color: var(--primary-color);
+      }
+    }
+  }
+
+  .form_field_radio {
+    + .form_control_indicator {
+      &:before {
+        background-color: var(--primary-color);
       }
     }
   }
