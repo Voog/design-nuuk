@@ -9,8 +9,9 @@
           {%- assign product = buy_button.product -%}
           <div class="product_item js-product-item flex_row-3--item{% if product != blank %} js-product-whith-data{% endif %}"
             data-title="{{item_child.title | escape }}"
+            data-index="{{forloop.index}}"
             {%- if product != blank and product.out_of_stock? != true %}
-              data-price="{{product.price_max_with_tax}}"
+              data-price="{{product.price_min_with_tax}}"
             {%- endif -%}
           >
             <div class="mar_0-8">

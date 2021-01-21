@@ -61,13 +61,13 @@
       {%- if _buyButton.product.uses_variants == true -%}
         {{look_closer_btn}}
         <div class="product_item-price">
-          <span{% if product_label != blank %} class="mar_r-16"{% endif %}>
-            {{ _buyButton.product.price_max_with_tax | money_with_currency: _buyButton.product.currency }}
+          <div class="flex_box{% if product_label != blank %} mar_r-16{% endif %}">
             {%- if _buyButton.product.price_max_with_tax != _buyButton.product.price_min_with_tax -%}
-              <span class="pad_0-4">-</span>
               {{ _buyButton.product.price_min_with_tax | money_with_currency: _buyButton.product.currency }}
+              <span class="pad_0-4">-</span>
             {%- endif -%}
-          </span>
+            {{ _buyButton.product.price_max_with_tax | money_with_currency: _buyButton.product.currency }}
+          </div>
           {{product_label}}
         </div>
       {%- else -%}
