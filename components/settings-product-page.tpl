@@ -11,7 +11,6 @@
 {%- endif -%}
 
 <script>
-  site.initCommonPage();
   {% if editmode %}
     window.addEventListener('DOMContentLoaded', (event) => {
       {% if productPageSettings %}
