@@ -87,13 +87,20 @@
           <div class="post_nav content-formatted">
             <div class="post_nav-inner">
               {% if article.older %}
+              {%- if article.older.data[itemImageKey] != blank -%}
+                {%- assign isOldArticleImage = true -%}
+              {% endif %}
                 <a class="post_nav-link{% if article.newer %} post_nav-link--older{% else %} post_nav-link--one{% endif %}" href="{{ article.older.url }}">
-                  <div class="post_nav-link--inner">
+                  <div class="post_nav-link--inner{%- if isOldArticleImage != true %} without-image{%- endif -%}">
                     <h4 class="post_nav-direction">{{ "previous" | lc }}</h4>
-                    <div class="post_nav-image">
-                      {% include 'content-item', _imageData: article.data[itemImageKey], _staticItem: true, _entityData: article.older, _itemType: 'article', _id: article.older.id %}
-                      <h4 class="post_nav-title">{{ article.older.title }}</h4>
-                    </div>
+                    {%- if isOldArticleImage == true -%}
+                      <div class="post_nav-image">
+                        {% include 'content-item', _imageData: article.older.data[itemImageKey], _staticItem: true, _entityData: article.older, _itemType: 'article', _id: article.older.id %}
+                        <div class="p14 post_nav-title">{{ article.older.title }}</div>
+                      </div>
+                    {%- else -%}
+                      <div class="p14 post_nav-title">{{ article.older.title }}</div>
+                    {%- endif -%}
                   </div>
                 </a>
               {% endif %}
@@ -101,14 +108,20 @@
                 <div class="post_nav-separator"></div>
               {% endif %}
               {% if article.newer %}
+                {%- if article.newer.data[itemImageKey] != blank -%}
+                  {%- assign isNewArticleImage = true -%}
+                {% endif %}
                 <a class="post_nav-link{% if article.older %} post_nav-link--newer{% else %} post_nav-link--one{% endif %}" href="{{ article.newer.url }}">
-                  <div class="post_nav-link--inner">
+                  <div class="post_nav-link--inner{%- if isNewArticleImage != true %} without-image{%- endif -%}">
                     <h4 class="post_nav-direction">{{ "next" | lc }}</h4>
-
-                    <div class="post_nav-image">
-                      {% include 'content-item', _imageData: article.data[itemImageKey], _staticItem: true, _entityData: article.newer, _itemType: 'article', _id: article.newer.id %}
-                      <h4 class="post_nav-title">{{ article.newer.title }}</h4>
-                    </div>
+                    {%- if isNewArticleImage == true -%}
+                      <div class="post_nav-image">
+                        {% include 'content-item', _imageData: article.newer.data[itemImageKey], _staticItem: true, _entityData: article.newer, _itemType: 'article', _id: article.newer.id %}
+                        <div class="p14 post_nav-title">{{ article.newer.title }}</div>
+                      </div>
+                    {%- else -%}
+                      <div class="p14 post_nav-title">{{ article.newer.title }}</div>
+                    {%- endif -%}
                   </div>
                 </a>
               {% endif %}

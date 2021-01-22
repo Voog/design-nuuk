@@ -115,6 +115,10 @@
     justify-content: center;
     overflow: hidden;
 
+    @include query($mobile-1) {
+      margin-top: 24px;
+    }
+
     &-inner {
       display: flex;
       align-items: center;
@@ -131,12 +135,21 @@
       width: 100%;
       max-width: 400px;
 
+      @include query($mobile-1, 'min-width') {
+        min-height: 192px;
+        position: relative;
+      }
+
       &.post_nav-link--older {
         .post_nav-link--inner {
           justify-content: flex-end;
 
           @include query($mobile-1) {
             justify-content: center;
+
+            .post_nav-direction {
+              margin-bottom: 24px;
+            }
           }
         }
         .post_nav-image {
@@ -145,12 +158,19 @@
             margin-right: 0;
           }
         }
+
+        .post_nav-title {
+          text-align: right;
+        }
       }
 
       &.post_nav-link--newer {
         .post_nav-link--inner {
           @include query($mobile-1) {
             justify-content: center;
+            .post_nav-direction {
+              margin-top: 24px;
+            }
           }
         }
 
@@ -175,10 +195,40 @@
       display: flex;
       align-items: center;
 
+        &.without-image {
+          flex-direction: column;
+          align-items: baseline;
+
+          @include query($mobile-1, 'min-width') {
+            position: absolute;
+            top: 82px;
+          }
+
+
+          @include query($mobile-1) {
+            align-items: center;
+          }
+
+          .post_nav-direction {
+            position: relative;
+          }
+        }
+
         .post_nav-direction {
           position: absolute;
           z-index: 1;
           margin: 0;
+
+          @include query($mobile-1) {
+            position: relative;
+          }
+        }
+
+        @include query($mobile-1) {
+          .post_nav-title,
+          .post_nav-image {
+            display: none;
+          }
         }
 
         .post_nav-image {
@@ -186,13 +236,16 @@
           width: 100%;
           @include transition(opacity 300ms);
 
-          @include query($tablet-1) {
+          @include query($mobile-1) {
             opacity: 1;
+
+            .content-item-box {
+              display: none;
+            }
           }
 
-          .post_nav-title {
-            font-size: 18px;
-            margin-top: 16px;
+          .content-item-box img {
+            opacity: .3;
           }
         }
 
@@ -207,6 +260,10 @@
         }
 
         &:hover {
+          &.without-image {
+            opacity: .7;
+          }
+
           .post_nav-image {
             opacity: 1;
           }
