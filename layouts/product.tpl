@@ -110,7 +110,7 @@
       </main>
       {% include "footer" %}
     </div>
-
+  </div>
 
   {% include "site-signout" %}
   {% include "javascripts" %}
