@@ -1,4 +1,4 @@
-<nav class="menu-main js-menu-main js-popover js-prevent-sideclick{% if _menuTop %} menu_top{% endif %}">
+<nav class="menu-main p-rel js-menu-main js-popover js-prevent-sideclick{% if _menuTop %} menu_top{% endif %}">
   <ul class="menu">
     {% unless site.root_item.hidden? %}
       {% menulink site.root_item wrapper-tag="li" wrapper-class="menu-item lvl-1" current-class="active" %}
@@ -38,12 +38,23 @@
       </ul>
     </li>
 
-    {% if editmode %}
+    {%- capture menuSettingsBtns -%}
       {% if site.hidden_menuitems.size > 0 %}
         <li class="edit-btn">{% menubtn site.hidden_menuitems %}</li>
       {% endif %}
 
       <li class="edit-btn" {{ edy_intro_add_page }}>{% menuadd %}</li>
-    {% endif %}
+    {%- endcapture -%}
+
+    {%- if _semimodalMenu -%}
+      {% if editmode %}
+        {{menuSettingsBtns}}
+      {% endif %}
+    {%- endif -%}
+
   </ul>
+
+  {%- if _semimodalMenu != true -%}
+    <ul class="menu-edy-btns">{{menuSettingsBtns}}<ul>
+  {%- endif -%}
 </nav>

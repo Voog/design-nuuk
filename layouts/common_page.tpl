@@ -26,6 +26,9 @@
           data-bg-color="{{ body_bg_color }}"
         ></button>
       </div>
+      <div class=" mar_t-16 mar_b-16">
+        <div class="edit-btn">{% menuadd parent="page" %}</div>
+      </div>
       {%- endif -%}
 
       <main class="content" role="main" data-search-indexing-allowed="true">

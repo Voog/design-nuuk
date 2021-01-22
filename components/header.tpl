@@ -78,7 +78,7 @@
         {%- if site.search.enabled -%}<div class="js-prevent-sideclick">{%- include "search-btn" -%}</div>{%- endif -%}
       </div>
 
-      {%- include "menu-main" -%}
+      {%- include "menu-main", _semimodalMenu: true -%}
     </div>
   </header>
 </div>

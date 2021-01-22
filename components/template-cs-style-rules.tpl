@@ -124,6 +124,9 @@ body.dark-background {
 .edy-ecommerce-product-count {
   color: var(--header-mainmenu-color);
 }
+.dark-background .edy-ecommerce-product-count {
+  color: var(--fourth-color);
+}
 
 .menu-main .menu .menu-item a {
   color: var(--header-mainmenu-color);
@@ -426,18 +429,19 @@ body.dark-background {
 .content-formatted .form_field .form_field_label,
 .content-formatted .form_field .edy-fe-label {
   font-size: var(--form-label-font-size);
+  -webkit-text-decoration: var(--form-field-text-decoration);
+          text-decoration: var(--form-field-text-decoration);
+  text-transform: var(--form-field-text-transform);
+  font-style: var(--form-field-font-style);
+  font-weight: var(--form-field-font-weight);
 }
 .content-formatted .form_field_textfield,
 .content-formatted .form_field_textarea,
 .content-formatted .form_field_select,
 .content-formatted .product_filters-item,
 .content-formatted label:not(.form_field_label) {
-  font-style: var(--form-field-font-style);
   font-weight: var(--form-field-font-weight);
   font-size: var(--form-field-font-size);
-  -webkit-text-decoration: var(--form-field-text-decoration);
-          text-decoration: var(--form-field-text-decoration);
-  text-transform: var(--form-field-text-transform);
 }
 .dark-background .content-formatted .form_field_textfield,
 .dark-background .content-formatted .form_field_textarea,

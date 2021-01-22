@@ -10,7 +10,7 @@
     z-index: $zindex-header-fixed;
     padding: 32px;
     box-sizing: border-box;
-    @include transition(all 200ms);
+    @include transition(all 600ms);
 
     .semimodal-relative & {
       background-color: transparent !important;
@@ -20,6 +20,7 @@
     &.scroll {
       box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
       background-color: $white;
+      @include transition(all 600ms);
 
       :not(.menu_popover-item).menu-item,
       .header_title {
