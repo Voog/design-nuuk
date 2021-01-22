@@ -1,6 +1,6 @@
 <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
   <button disabled class="js-article-settings-btn js-settings-editor-btn">
-    <div class="p14 bold">Article</div><div class="p14 grey">Edit article settings</div>
+    <div class="bold">Article</div><div class="grey">Edit article settings</div>
   </button>
 </div>
 

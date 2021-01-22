@@ -2,7 +2,7 @@
 
 <div class="menu_settings-btn layout_settings-btn js-prevent-sideclick">
   <button disabled class="js-menu-settings-btn js-settings-editor-btn">
-    <div class="p14 bold">Navigation</div><div class="p14 grey">Change menu settings</div>
+    <div class="bold">Navigation</div><div class="grey">Change menu settings</div>
   </button>
 </div>
 <script>
@@ -32,19 +32,19 @@
               "key": "positioning",
               "list": [
                 {
-                  "title": "Top - always visible",
+                  "title": "Top &mdash; always visible",
                   "value": "is_top"
                 },
                 {
-                  "title": "Top - fixed in header",
+                  "title": "Top &mdash; fixed in header",
                   "value": "is_top_fixed"
                 },
                 {
-                  "title": "Side - always visible",
+                  "title": "Side &mdash; always visible",
                   "value": "is_side_always_open"
                 },
                 {
-                  "title": "Side - opens on click",
+                  "title": "Side &mdash; opens on click",
                   "value": "is_side_absolute"
                 }
               ]

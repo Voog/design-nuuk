@@ -1,6 +1,6 @@
 <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
   <button disabled class="js-swiper-settings-btn js-settings-editor-btn">
-    <div class="p14 bold">Front page header</div><div class="p14 grey">Change slider settings</div>
+    <div class="bold">Front page header</div><div class="grey">Change slider settings</div>
   </button>
 </div>
 

@@ -1,6 +1,6 @@
 <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
   <button class="js-blog-settings-editor js-settings-editor-btn">
-    <div class="p14 bold">Blog</div><div class="p14 grey">Edit blog settings</div>
+    <div class="bold">Blog</div><div class="grey">Edit blog settings</div>
   </button>
 </div>
 

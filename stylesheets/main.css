@@ -1395,12 +1395,13 @@ body:not(.semimodal-relative) .semimodal {
           backface-visibility: hidden;
 }
 .layout_settings-btn button:hover, .layout_settings-btn button.active {
+  color: #443df6 !important;
   background-color: rgba(68, 61, 246, 0.1) !important;
 }
-.layout_settings-btn button:hover .edy-cbtn > span > span, .layout_settings-btn button.active .edy-cbtn > span > span {
+.layout_settings-btn button:hover.edy-cbtn > span > span, .layout_settings-btn button.active.edy-cbtn > span > span {
   color: #443df6 !important;
 }
-.layout_settings-btn button:hover .edy-cbtn > span > span .grey, .layout_settings-btn button.active .edy-cbtn > span > span .grey {
+.layout_settings-btn button:hover.edy-cbtn > span > span .grey, .layout_settings-btn button.active.edy-cbtn > span > span .grey {
   color: #443df6 !important;
 }
 .layout_settings-visible .layout_settings-btn button {
@@ -1417,7 +1418,16 @@ body:not(.semimodal-relative) .semimodal {
   content: none !important;
 }
 .layout_settings-btn button.edy-cbtn > span > span {
-  color: black !important;
+  color: #000000 !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  font-family: "Avenir Next", "Avenir", "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif !important;
+  line-height: 20px !important;
+  text-align: left;
+}
+.layout_settings-btn button.edy-cbtn > span > span .bold {
+  font-weight: 600 !important;
+  line-height: 24px !important;
 }
 .layout_settings-btn button .edy-cbtn-content span:last-child {
   margin-right: 0;
@@ -1914,7 +1924,7 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   padding: 11px 16px;
   resize: none;
   min-height: auto;
-  font-family: Avenir Next,AvenirY,sans-serif;
+  font-family: "Avenir Next", "Avenir", "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
   font-size: 14px;
   line-height: 24px;
   -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);

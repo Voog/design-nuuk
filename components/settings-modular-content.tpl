@@ -1,6 +1,6 @@
 <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
   <button disabled class="js-content-area-settings-btn js-settings-editor-btn">
-    <div class="p14 bold">Block settings</div><div class="p14 grey">Edit the number of blocks</div>
+    <div class="bold">Block settings</div><div class="grey">Edit the number of blocks</div>
   </button>
 </div>
 
