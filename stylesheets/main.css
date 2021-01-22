@@ -2106,6 +2106,7 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
           box-sizing: border-box;
   min-height: calc(528px - 128px);
   position: relative;
+  text-align: center;
 }
 @media screen and (max-width: 900px) {
   .front-page .swiper-content {
@@ -2121,6 +2122,9 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   z-index: 49;
   position: absolute;
   top: 0;
+}
+.front-page .swiper-content .swiper-content-area {
+  min-width: 80%;
 }
 .front-page .swiper-container .edy-bgpicker-toggle-button {
   right: 32px;

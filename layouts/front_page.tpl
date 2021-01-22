@@ -27,9 +27,11 @@
     <div class="flex_col content_wrap">
       {% capture header_content %}
         <div class="swiper-content content-formatted" data-search-indexing-allowed="true">
-          {% contentblock name="front_header_content" publish_default_content="true" %}
-            <h1>Shop</h1>
-          {% endcontentblock %}
+          <div class="swiper-content-area">
+            {% contentblock name="front_header_content" publish_default_content="true" %}
+              <h1 style="text-align: center;">Shop</h1>
+            {% endcontentblock %}
+          </div>
         </div>
       {% endcapture %}
 
@@ -59,9 +61,11 @@
                 >
                   {%- if swiperSettingsData.is_content_by_slide == true -%}
                     <div class="swiper-content content-formatted" data-swiper-parallax="-100%" data-search-indexing-allowed="true">
-                      {% contentblock name=contentKey publish_default_content="true" %}
-                        <h1>Shop</h1>
-                      {% endcontentblock %}
+                      <div class="swiper-content-area">
+                        {% contentblock name=contentKey publish_default_content="true" %}
+                          <h1 style="text-align: center;">Shop</h1>
+                        {% endcontentblock %}
+                      </div>
                     </div>
                   {%- endif -%}
 
