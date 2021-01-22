@@ -49,7 +49,7 @@
     "list": {{ base_alignment_flex }},
     "scope": "global"
   */
-  #{--product-list-item__alignment}: left;
+  #{--product-list-item__alignment}: flex-start;
 
   /* VoogStyle
     "pathI18n": ["product_list", "product"],
