@@ -3320,6 +3320,10 @@ article.post_wrapper .date-separator.hide-separator {
   display: none;
 }
 
+.blog-tags {
+  display: none;
+}
+
 .product_item-wrap .product_item-title, .product_item-wrap .product_item-btn, .product_item-wrap .product_item-price, .product_item-wrap .product_item-box--label {
   color: var(--product-list-item__color);
   font-size: var(--product-list-item__font-size);
