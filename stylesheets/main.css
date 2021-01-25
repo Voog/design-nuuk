@@ -2526,7 +2526,7 @@ body.edy-checkout-button-visible {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
-.header_fixed .semimodal-open {
+.semimodal-open .header_fixed {
   -webkit-transform: translateX(320px);
       -ms-transform: translateX(320px);
           transform: translateX(320px);
@@ -2634,9 +2634,6 @@ body.edy-checkout-button-visible {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   margin-left: 32px;
   position: relative;
 }

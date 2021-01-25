@@ -17,7 +17,7 @@
       box-shadow: none !important;
     }
 
-    .semimodal-open {
+    .semimodal-open & {
       transform: translateX(320px);
     }
 
@@ -118,7 +118,6 @@
 
   &components {
     display: flex;
-    align-items: flex-start;
     margin-left: 32px;
     position: relative;
 
