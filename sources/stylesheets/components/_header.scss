@@ -17,6 +17,10 @@
       box-shadow: none !important;
     }
 
+    .semimodal-open {
+      transform: translateX(320px);
+    }
+
     &.scroll {
       box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
       background-color: $white;
@@ -78,11 +82,6 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-
-      @include query($tablet-1) {
-        justify-content: flex-start;
-        flex-direction: row-reverse;
-      }
     }
 
     .front-page & {

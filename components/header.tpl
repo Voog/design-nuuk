@@ -21,6 +21,14 @@
         transform: translateX(-{{menuSettings.max_width}}px);
       }
     }
+
+    @media screen and (min-width: 900px) {
+      .semimodal-open .header_fixed {
+        -webkit-transform: translateX({{menuSettings.max_width}}px);
+        -ms-transform: translateX({{menuSettings.max_width}}px);
+        transform: translateX({{menuSettings.max_width}}px);
+      }
+    }
   </style>
 {%- endif -%}
 

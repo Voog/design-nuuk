@@ -2245,9 +2245,6 @@ article .item-top > .aspect-ratio-inner {
   -o-transition: all 0.9s cubic-bezier(0.1, 0.6, 0, 1);
   transition: all 0.9s cubic-bezier(0.1, 0.6, 0, 1);
 }
-.with-image .item-top .top-inner {
-  background-color: white;
-}
 .without-image .editmode .item-top .top-inner {
   border: none;
 }
@@ -2532,6 +2529,11 @@ body.edy-checkout-button-visible {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
+.header_fixed .semimodal-open {
+  -webkit-transform: translateX(320px);
+      -ms-transform: translateX(320px);
+          transform: translateX(320px);
+}
 .header_fixed.scroll {
   -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
@@ -2603,17 +2605,6 @@ body.edy-checkout-button-visible {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-}
-@media screen and (max-width: 900px) {
-  .header_fixed-content {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-  }
 }
 .front-page .header_fixed {
   position: fixed;

@@ -189,13 +189,58 @@ body.dark-background {
   color: var(--fourth-color);
   opacity: 1;
 }
-.menu-main .menu .menu-sub .menu-item a.active {
-  font-weight: 400;
+
+.dark-background .light-background .menu-main .menu .menu-item a {
+  color: var(--header-mainmenu-color);
 }
-@media screen and (max-width: 752px) {
-  .menu-main.expanded .menu-lang .menu-item .menu-item a {
-    color: var(--secondary-color);
-  }
+.dark-background .light-background .menu-main .menu .menu-item a::before {
+  background-color: var(--header-mainmenu-color);
+}
+.dark-background .light-background .menu-main .menu .menu-item a:hover {
+  color: var(--header-mainmenu-hover-color);
+}
+.dark-background .light-background .menu-main .menu .menu-item.active a {
+  color: var(--header-mainmenu-active-color);
+}
+.dark-background .light-background .menu-main .menu .menu-item.active a::before {
+  background-color: var(--header-mainmenu-active-color);
+}
+.dark-background .light-background .menu-main .menu .menu-item.active a:hover {
+  color: var(--header-mainmenu-hover-color);
+}
+.dark-background .light-background .menu-main .menu .menu-item.active a:hover::before {
+  background-color: var(--header-mainmenu-hover-color);
+}
+
+.dark-background .menu-breadcrumbs.menu-sub .menu-item a::after {
+  background-color: var(--fourth-color);
+}
+.dark-background .menu-breadcrumbs.menu-sub .menu-item a {
+  color: var(--fourth-color);
+}
+.dark-background .menu-breadcrumbs.menu-sub .menu-item a.active {
+  color: var(--fourth-color);
+}
+.dark-background .menu-breadcrumbs.menu-sub .menu-item a.active::before {
+  border-color: var(--fourth-color);
+}
+.menu-breadcrumbs.menu-sub .menu-item a.active:hover {
+  color: var(--header-mainmenu-color);
+  -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
+          text-decoration: var(--header-mainmenu-hover-decoration);
+}
+.dark-background .menu-breadcrumbs.menu-sub .menu-item a.active:hover svg,
+.dark-background .menu-breadcrumbs.menu-sub .menu-item a.active:hover path {
+  fill: var(--fourth-color);
+}
+.dark-background .menu-breadcrumbs.menu-sub .menu-item a:hover {
+  color: var(--fourth-color);
+}
+.dark-background .menu-breadcrumbs.menu-sub .menu-item a:hover::before {
+  border-color: var(--fourth-color);
+}
+.dark-background .menu-breadcrumbs.menu-sub .menu-item a::before {
+  border-color: var(--fourth-color);
 }
 
 .menu-sub .menu-item a {

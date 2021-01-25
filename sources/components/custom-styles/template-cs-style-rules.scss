@@ -279,32 +279,95 @@ body {
         }
       }
     }
+  }
+}
 
-    .menu-sub .menu-item a {
-      &.active {
-        font-weight: 400;
+.dark-background .light-background .menu-main {
+  .menu {
+    .menu-item a {
+      color: var(--header-mainmenu-color);
+
+      &::before {
+        background-color: var(--header-mainmenu-color);
+
+      }
+      // scss-lint:disable NestingDepth
+      &:hover {
+        color: var(--header-mainmenu-hover-color);
       }
     }
-  }
 
-  // scss-lint:disable DeclarationOrder
-  @include query($tablet-2) {
-    &.expanded {
-      // Styling rules for the language menu in the site's main menu. Only visible on smaller screens.
-      .menu-lang {
-        // scss-lint:disable NestingDepth
-        .menu-item {
-          // scss-lint:disable SelectorDepth
-          .menu-item a {
-            color: var(--secondary-color);
-          }
-          // scss-lint:enable SelectorDepth
+    .menu-item.active a {
+      color: var(--header-mainmenu-active-color);
+
+      &::before {
+        background-color: var(--header-mainmenu-active-color);
+      }
+
+      &:hover {
+        color: var(--header-mainmenu-hover-color);
+
+        &::before {
+          background-color: var(--header-mainmenu-hover-color);
         }
-        // scss-lint:enable NestingDepth
       }
     }
   }
-  // scss-lint:enable DeclarationOrder
+}
+
+.menu-breadcrumbs.menu-sub {
+  .menu-item a {
+    &::after {
+      .dark-background & {
+        background-color: var(--fourth-color);
+      }
+    }
+
+    .dark-background & {
+      color: var(--fourth-color);
+    }
+    // scss-lint:disable NestingDepth
+
+    &.active {
+      .dark-background & {
+        color: var(--fourth-color);
+      }
+
+      &::before {
+        .dark-background & {
+          border-color: var(--fourth-color);
+        }
+      }
+      &:hover {
+        color: var(--header-mainmenu-color);
+        text-decoration: var(--header-mainmenu-hover-decoration);
+        svg,
+        path {
+          .dark-background & {
+            fill: var(--fourth-color);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .dark-background & {
+        color: var(--fourth-color);
+      }
+
+      &::before {
+        .dark-background & {
+          border-color: var(--fourth-color);
+        }
+      }
+    }
+
+    &::before {
+      .dark-background & {
+        border-color: var(--fourth-color);
+      }
+    }
+  }
 }
 
 .menu-sub {
