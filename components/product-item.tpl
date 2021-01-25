@@ -36,13 +36,13 @@
   {%- endif -%}
 {%- endcapture -%}
 
-<div class="product_item-details--wrap">
+<div class="product_item-details--wrap mar_t-16">
   <div class="flex_auto">
     {%- capture look_closer_btn -%}
       <a class="product_item-btn{%- if productSettingsData.product_label != blank or _buyButton.product.price != blank %} p-abs{%- else %} p-rel{%- endif -%}" href="{{ _entityData.url }}">LOOK CLOSER</a>
     {%- endcapture -%}
 
-    <div class="p14 mar_t-16 bold product_item-title bold">
+    <div class="p14 bold product_item-title bold">
       {{ _entityData.title }}
     </div>
     {%- if _buyButton.product != blank and _buyButton.available? -%}

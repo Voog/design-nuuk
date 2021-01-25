@@ -1,4 +1,4 @@
-<div class="product_list flex_row flex_row-3 mar_0-8-neg pad_40-0">
+<div class="product_list flex_row flex_row-3 mar_0-16-neg pad_40-0">
   {%- assign level_str = 'menuitems_on_level_' | append: page.level -%}
 
   {%- for item in site[level_str] -%}
@@ -14,7 +14,7 @@
               data-price="{{product.price_min_with_tax}}"
             {%- endif -%}
           >
-            <div class="mar_0-8">
+            <div class="mar_0-16">
               <div class="product_item-wrap product_item_list p-rel">
                 {%- if item_child.layout_title == product_list_layout -%}
                   {% include 'content-item', _imageData: item_child.data[itemImageKey], _entityData: item_child, _itemType: 'page', _id: item_child.page_id %}
