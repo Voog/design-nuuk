@@ -53,7 +53,7 @@
               >
                 {%- assign imageClass = "image_fit-cover img-absolute swiper-lazy front_header-image-" | append: i -%}
 
-                {% include "lazy-image", _data: imagedata, _targetWidth: '1400', _className: imageClass, disableLazyLoad: true  %}
+                {% include "lazy-image", _data: imagedata, _targetWidth: '2048', _className: imageClass, disableLazyLoad: true  %}
                 <div class="w-100p h-100p front_header-color-{{i}}"
                   {% if page.data[swiperDataKey].color != blank %}
                     style="background-color: {{ page.data[swiperDataKey].color }};"
@@ -107,7 +107,7 @@
           class="swiper-container image_header flex_box front-header-bg_picker--area-1"
         >
           {%- assign imageClass = "image_fit-cover img-absolute front_header-image-1" -%}
-          {% include "lazy-image", _data: swiper_bg_1, _targetWidth: '1400', _className: imageClass  %}
+          {% include "lazy-image", _data: swiper_bg_1, _targetWidth: '2048', _className: imageClass  %}
 
           {% if editmode %}
             <button
