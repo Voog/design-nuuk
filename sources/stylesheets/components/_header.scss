@@ -10,7 +10,7 @@
     z-index: $zindex-header-fixed;
     padding: 32px;
     box-sizing: border-box;
-    @include transition(all 600ms);
+    @include transition(all 200ms);
 
     .semimodal-relative & {
       background-color: transparent !important;
