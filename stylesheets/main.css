@@ -3331,11 +3331,11 @@ article.post_wrapper .date-separator.hide-separator {
           transform: translateY(-100%);
   pointer-events: none;
   top: 0;
-  -webkit-transition: -webkit-transform 400ms;
-  transition: -webkit-transform 400ms;
-  -o-transition: transform 400ms;
-  transition: transform 400ms;
-  transition: transform 400ms, -webkit-transform 400ms;
+  -webkit-transition: -webkit-transform 600ms;
+  transition: -webkit-transform 600ms;
+  -o-transition: transform 600ms;
+  transition: transform 600ms;
+  transition: transform 600ms, -webkit-transform 600ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -3351,11 +3351,10 @@ article.post_wrapper .date-separator.hide-separator {
   pointer-events: all;
   top: 0;
   margin: 0;
-  -webkit-transition: -webkit-transform 400ms;
-  transition: -webkit-transform 400ms;
-  -o-transition: transform 400ms;
-  transition: transform 400ms;
-  transition: transform 400ms, -webkit-transform 400ms;
+  opacity: 1;
+  -webkit-transition: all 600ms;
+  -o-transition: all 600ms;
+  transition: all 600ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -3386,6 +3385,7 @@ article.post_wrapper .date-separator.hide-separator {
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
+  opacity: 0;
   pointer-events: none;
 }
 .product_item-wrap:hover .product_item-btn {

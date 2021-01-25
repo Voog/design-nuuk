@@ -22,7 +22,7 @@
         transform: translateY(-100%);
         pointer-events: none;
         top: 0;
-        @include transition(transform 400ms);
+        @include transition(transform 600ms);
       }
 
       .product_item-price {
@@ -30,7 +30,8 @@
         pointer-events: all;
         top: 0;
         margin: 0;
-        @include transition(transform 400ms);
+        opacity: 1;
+        @include transition(all 600ms);
       }
 
       .product_item-title {
@@ -47,6 +48,7 @@
 
         .product_item-price {
           transform: translateY(-100%);
+          opacity: 0;
           pointer-events: none;
         }
 
