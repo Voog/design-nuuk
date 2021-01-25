@@ -50,6 +50,15 @@
             @include query($desktop-2) {
               width: 33%;
             }
+
+            @include query($tablet-1) {
+              width: 50%;
+
+            }
+
+            @include query($mobile-1) {
+              width: 100%;
+            }
           }
         }
       }

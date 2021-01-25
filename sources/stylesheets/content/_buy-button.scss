@@ -18,16 +18,8 @@
 
   .edy-buy-button-container {
     // sass-lint:disable class-name-format
-    .form_field {
-      padding-top: 15px;
-    }
-    // sass-lint:enable class-name-format
-  }
-
-  .product_image .edy-buy-button-container {
-    // sass-lint:disable class-name-format
-    .form_field {
-      padding-top: 0;
+    .edy-buy-button-variants {
+      padding-bottom: 16px;
     }
     // sass-lint:enable class-name-format
   }

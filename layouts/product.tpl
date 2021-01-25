@@ -68,9 +68,19 @@
                 {% contentblock name="page-title" publish_default_content="true" %}
                   <h3>{{page.title}}</h3>
                 {% endcontentblock %}
-                {%- if page.data[productLayoutSettingsKey].product_label != blank -%}
-                  <div class="mar_t-16{% if page.data[productLayoutSettingsKey].is_product_label_line_through == true %} td-lt{% endif %}">
-                    {{page.data[productLayoutSettingsKey].product_label}}
+                {%- assign productSettingsData = page.data[productLayoutSettingsKey] -%}
+                {%- assign isBoxLabel = productSettingsData.is_product_label_box -%}
+
+
+                {%- if buy_button.product.out_of_stock? -%}
+                  <div class="product_item-box--label mar_32-0">OUT OF STOCK</div>
+                {%- elsif productSettingsData.product_label != blank and isBoxLabel != true -%}
+                  <div class="mar_32-0{% if productSettingsData.is_product_label_line_through == true %} td-lt{% endif %}">
+                    {{productSettingsData.product_label}}
+                  </div>
+                {%- elsif productSettingsData.product_label != blank and isBoxLabel == true -%}
+                  <div class="product_item-box--label mar_32-0">
+                    {{productSettingsData.product_label}}
                   </div>
                 {%- endif -%}
               </div>

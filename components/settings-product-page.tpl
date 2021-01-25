@@ -73,6 +73,15 @@
                   "on": true,
                   "off": false
                 }
+              },
+              {
+                "title": "Bordered box around label",
+                "type": "checkbox",
+                "key": "is_product_label_box",
+                "states": {
+                  "on": true,
+                  "off": false
+                }
               }/*,
               {
                 "title": "Select note input area count",

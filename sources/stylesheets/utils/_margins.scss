@@ -27,10 +27,18 @@
     margin-bottom: 16px;
   }
 
+  &32-0 {
+    margin: 32px 0;
+
+    @include query($tablet-1) {
+      margin: 16px 0;
+    }
+  }
+
   &b-32 {
     margin-bottom: 32px;
 
-    @include query($desktop-1) {
+    @include query($tablet-1) {
       margin-bottom: 16px;
     }
   }
@@ -38,7 +46,7 @@
   &b-48 {
     margin-bottom: 48px;
 
-    @include query($desktop-1) {
+    @include query($tablet-1) {
       margin-bottom: 24px;
     }
   }
@@ -46,7 +54,7 @@
   &b-56 {
     margin-bottom: 56px;
 
-    @include query($desktop-1) {
+    @include query($tablet-1) {
       margin-bottom: 24px;
     }
   }

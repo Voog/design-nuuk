@@ -23,68 +23,70 @@
         _className: "item-image is-cropped" %}
     </div>
   </div>
-  <div class="p14 mar_t-16 bold product_item-title bold">
-    {{ _entityData.title }}
-  </div>
 </a>
 
-{%- if _entityData.data[productLayoutSettingsKey].product_label != blank -%}
-  {% assign isLabel = true %}
-{%- else -%}
-  {% assign isLabel = false %}
-{%- endif -%}
+{%- assign productSettingsData = _entityData.data[productLayoutSettingsKey] -%}
+{%- assign isBoxLabel = productSettingsData.is_product_label_box -%}
 
 {%- capture product_label -%}
-  {%- if isLabel -%}
-    <span class="{% if _entityData.data[productLayoutSettingsKey].is_product_label_line_through == true %} td-lt{% endif %}">
-      {{_entityData.data[productLayoutSettingsKey].product_label}}
+  {%- if productSettingsData.product_label != blank and isBoxLabel != true and buy_button.product.out_of_stock? != true -%}
+    <span class="{% if productSettingsData.is_product_label_line_through == true %} td-lt{% endif %}">
+      {{productSettingsData.product_label}}
     </span>
   {%- endif -%}
 {%- endcapture -%}
 
-{%- capture item_details -%}
-  <div class="flex_col product_item-details">
-    <a class="product_item-btn {%- if isLabel == true %} p-abs{%- else %} p-rel{%- endif -%}" href="{{ _entityData.url }}">OUT OF STOCK</a>
-    <div class="product_item-price">{{product_label}}</div>
-  </div>
-{%- endcapture -%}
+<div class="product_item-details--wrap">
+  <div class="flex_auto">
+    {%- capture look_closer_btn -%}
+      <a class="product_item-btn{%- if productSettingsData.product_label != blank or _buyButton.product.price != blank %} p-abs{%- else %} p-rel{%- endif -%}" href="{{ _entityData.url }}">LOOK CLOSER</a>
+    {%- endcapture -%}
 
-{%- capture look_closer_btn -%}
-  <a class="product_item-btn p-abs" href="{{ _entityData.url }}">LOOK CLOSER</a>
-{%- endcapture -%}
-
-{%- if _buyButton.product != blank and _buyButton.available? -%}
-  {%- if buy_button.product.out_of_stock? -%}
-    {{item_details}}
-  {%- else -%}
-    <div class="product_item-details">
-      {%- if _buyButton.product.uses_variants == true -%}
-        {{look_closer_btn}}
-        <div class="product_item-price">
-          <div class="flex_box{% if product_label != blank %} mar_r-16{% endif %}">
-            {%- if _buyButton.product.price_max_with_tax != _buyButton.product.price_min_with_tax -%}
-              {{ _buyButton.product.price_min_with_tax | money_with_currency: _buyButton.product.currency }}
-              <span class="pad_0-4">-</span>
-            {%- endif -%}
-            {{ _buyButton.product.price_max_with_tax | money_with_currency: _buyButton.product.currency }}
-          </div>
-          {{product_label}}
-        </div>
-      {%- else -%}
-        {%- if editmode -%}
+    <div class="p14 mar_t-16 bold product_item-title bold">
+      {{ _entityData.title }}
+    </div>
+    {%- if _buyButton.product != blank and _buyButton.available? -%}
+      <div class="product_item-details flex_col">
+        {%- if _buyButton.product.uses_variants == true -%}
           {{look_closer_btn}}
+          <div class="product_item-price">
+            <div class="flex_box{% if product_label != blank %} mar_r-16{% endif %}">
+              {%- if _buyButton.product.price_max_with_tax != _buyButton.product.price_min_with_tax -%}
+                {{ _buyButton.product.price_min_with_tax | money_with_currency: _buyButton.product.currency }}
+                <span class="pad_0-4">-</span>
+              {%- endif -%}
+              {{ _buyButton.product.price_max_with_tax | money_with_currency: _buyButton.product.currency }}
+            </div>
+            {{product_label}}
+          </div>
         {%- else -%}
-          <button class="product_item-btn js-cart-btn p-abs" data-product-id="{{ _buyButton.product.id }}">ADD TO CART</button>
+          {%- if editmode -%}
+            {{look_closer_btn}}
+          {%- else -%}
+            <button class="product_item-btn js-cart-btn p-abs" data-product-id="{{ _buyButton.product.id }}">ADD TO CART</button>
+          {%- endif -%}
+          <div class="product_item-price">
+            <span{% if product_label != blank %} class="mar_r-16"{% endif %}>
+            {{ _buyButton.product.price_with_tax | money_with_currency: product.currency }}
+            </span>
+            {{product_label}}
+          </div>
+
         {%- endif -%}
-        <div class="product_item-price">
-          <span{% if product_label != blank %} class="mar_r-16"{% endif %}>
-          {{ _buyButton.product.price_with_tax | money_with_currency: product.currency }}
-          </span>
-          {{product_label}}
-        </div>
-      {%- endif -%}
+      </div>
+    {%- else -%}
+      <div class="flex_col product_item-details">
+        {{look_closer_btn}}
+      </div>
+    {%- endif -%}
+  </div>
+  {%- if buy_button.product.out_of_stock? -%}
+    <div class="product_item-box--label">OUT OF STOCK</div>
+  {%- elsif isBoxLabel -%}
+    <div class="product_item-box--label">
+      {{productSettingsData.product_label}}
     </div>
   {%- endif -%}
-{%- else -%}
-  {{item_details}}
-{%- endif -%}
+</div>
+
+{%- assign _buyButton = null -%}
