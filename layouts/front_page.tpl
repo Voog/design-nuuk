@@ -118,7 +118,7 @@
               data-color_elem=".front_header-color-1"
               data-picker_area_elem=".front-header-bg_picker--area-1"
               data-picker_elem=".front-header-bg_picker-1"
-              data-bg_key="swiper_bg_1"
+              data-bg_key="{{swiperBg1Key}}"
               data-bg="{{ swiper_bg_1 | json | escape }}"
               data-wrapper_class="image_header"
             ></button>
