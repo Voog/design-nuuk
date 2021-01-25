@@ -2510,9 +2510,9 @@ body.edy-checkout-button-visible {
   padding: 32px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: all 200ms;
-  -o-transition: all 200ms;
-  transition: all 200ms;
+  -webkit-transition: all 600ms;
+  -o-transition: all 600ms;
+  transition: all 600ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -2525,11 +2525,6 @@ body.edy-checkout-button-visible {
   background-color: transparent !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
-}
-.semimodal-open .header_fixed {
-  -webkit-transform: translateX(320px);
-      -ms-transform: translateX(320px);
-          transform: translateX(320px);
 }
 .header_fixed.scroll {
   -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
@@ -2602,6 +2597,35 @@ body.edy-checkout-button-visible {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  -o-transition: transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.semimodal-open .header_fixed-content {
+  -webkit-transition: -webkit-transform 200ms;
+  transition: -webkit-transform 200ms;
+  -o-transition: transform 200ms;
+  transition: transform 200ms;
+  transition: transform 200ms, -webkit-transform 200ms;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translateX(320px);
+      -ms-transform: translateX(320px);
+          transform: translateX(320px);
 }
 .front-page .header_fixed {
   position: fixed;
