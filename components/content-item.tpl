@@ -61,7 +61,7 @@
       <div class="top-inner aspect-ratio-inner image-drop-area {{ item_image_crop_state }} js-content-item-img-drop-area js-lazyload"
         data-image="{{ _imageData.url }}"
         {%- if _isProductImage == true -%}
-          {% include 'image_src_variable', _data: _imageData, _targetWidth: "600" %}
+          {% include 'image_src_variable', _data: _imageData, _targetWidth: _targetWidth %}
           {% if _src != blank -%}
             style="background-image: url({{_src}});"
           {%- endif -%}
@@ -76,7 +76,7 @@
         {% if _imageData != blank %}
           <div class="loader js-loader"></div>
           {%- assign imageClass = "item-image " | append: item_image_crop_state -%}
-          {% include "lazy-image", _altAttr: _entityData.data[itemImageAltAttrKey], _data: _imageData, _targetWidth: '1400', _className: imageClass  %}
+          {% include "lazy-image", _altAttr: _entityData.data[itemImageAltAttrKey], _data: _imageData, _targetWidth: _targetWidth, _className: imageClass  %}
         {% else %}
           <div class="item-image-placeholder"></div>
         {% endif %}
