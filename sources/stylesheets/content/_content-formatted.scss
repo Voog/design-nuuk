@@ -347,10 +347,11 @@
   .edy-image-container-with-title {
     &:after {
       display: block;
-      padding: 4px;
+      margin-top: 16px;
       font-size: 12px;
-      line-height: 1.3em;
+      line-height: 194%;
       content: attr(data-title);
+      opacity: .7;
     }
   }
 
