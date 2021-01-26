@@ -17,57 +17,64 @@
       box-shadow: none !important;
     }
 
+    @include query($tablet-1) {
+      &.scroll,
+      & {
+        background-color: $white;
+
+        :not(.menu_popover-item).menu-item,
+        .header_title {
+          a, p, h1, h2, h3, h4, h5, h6 {
+            color: var(--header-mainmenu-color)!important;
+          }
+        }
+
+        .menu-btn {
+          color: var(--header-mainmenu-color)!important;
+          .menu-stripe {
+            background-color: var(--header-mainmenu-color)!important;
+          }
+
+          &:hover {
+            color: var(--header-mainmenu-hover-color)!important;
+
+            .menu-stripe {
+              background-color: var(--header-mainmenu-hover-color)!important;
+            }
+          }
+        }
+
+        .search-btn svg g {
+          fill: var(--header-mainmenu-color)!important;
+        }
+
+        .search-btn:hover svg g {
+          fill: var(--header-mainmenu-hover-color)!important;
+        }
+
+        .menu_popover-btn svg path {
+          fill: var(--header-mainmenu-color)!important;
+
+          &:hover {
+            fill: var(--header-mainmenu-hover-color)!important;
+          }
+        }
+
+        .menu-language-btn,
+        .menu-language-name {
+          color: var(--header-mainmenu-color)!important;
+
+          &:hover {
+            color: var(--header-mainmenu-hover-color)!important;
+          }
+        }
+      }
+    }
+
     &.scroll {
       box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
       background-color: $white;
       @include transition(all 600ms);
-
-      :not(.menu_popover-item).menu-item,
-      .header_title {
-        a, p, h1, h2, h3, h4, h5, h6 {
-          color: var(--header-mainmenu-color)!important;
-        }
-      }
-
-      .menu-btn {
-        color: var(--header-mainmenu-color)!important;
-        .menu-stripe {
-          background-color: var(--header-mainmenu-color)!important;
-        }
-
-        &:hover {
-          color: var(--header-mainmenu-hover-color)!important;
-
-          .menu-stripe {
-            background-color: var(--header-mainmenu-hover-color)!important;
-          }
-        }
-      }
-
-      .search-btn svg g {
-        fill: var(--header-mainmenu-color)!important;
-      }
-
-      .search-btn:hover svg g {
-        fill: var(--header-mainmenu-hover-color)!important;
-      }
-
-      .menu_popover-btn svg path {
-        fill: var(--header-mainmenu-color)!important;
-
-        &:hover {
-          fill: var(--header-mainmenu-hover-color)!important;
-        }
-      }
-
-      .menu-language-btn,
-      .menu-language-name {
-        color: var(--header-mainmenu-color)!important;
-
-        &:hover {
-          color: var(--header-mainmenu-hover-color)!important;
-        }
-      }
     }
 
     @include query($tablet-1) {
@@ -80,14 +87,20 @@
       width: 100%;
       @include transition(transform 200ms);
 
-      .semimodal-open & {
-        @include transition(transform 200ms);
-        transform: translateX(320px);
+      @include query($tablet-1, 'min-width') {
+        .semimodal-open & {
+          @include transition(transform 200ms);
+          transform: translateX(320px);
+        }
       }
     }
 
     .front-page & {
       position: fixed;
+    }
+
+    &.relative {
+      position: relative;
     }
 
     @include query($tablet-1, 'min-width') {
@@ -100,10 +113,6 @@
         .header_title {
           display: none;
         }
-      }
-
-      &.relative {
-        position: relative;
       }
 
       .menu-main {

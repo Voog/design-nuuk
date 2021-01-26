@@ -95,7 +95,7 @@
                     <h4 class="post_nav-direction">{{ "previous" | lc }}</h4>
                     {%- if isOldArticleImage == true -%}
                       <div class="post_nav-image">
-                        {% include 'content-item', _imageData: article.older.data[itemImageKey], _staticItem: true, _entityData: article.older, _itemType: 'article', _id: article.older.id %}
+                        {% include 'content-item', _imageData: article.older.data[itemImageKey], _staticItem: true, _entityData: article.older, _itemType: 'article', _id: article.older.id, _targetWidth: '600' %}
                         <div class="p14 post_nav-title">{{ article.older.title }}</div>
                       </div>
                     {%- else -%}
@@ -116,7 +116,7 @@
                     <h4 class="post_nav-direction">{{ "next" | lc }}</h4>
                     {%- if isNewArticleImage == true -%}
                       <div class="post_nav-image">
-                        {% include 'content-item', _imageData: article.newer.data[itemImageKey], _staticItem: true, _entityData: article.newer, _itemType: 'article', _id: article.newer.id %}
+                        {% include 'content-item', _imageData: article.newer.data[itemImageKey], _staticItem: true, _entityData: article.newer, _itemType: 'article', _id: article.newer.id, _targetWidth: '600' %}
                         <div class="p14 post_nav-title">{{ article.newer.title }}</div>
                       </div>
                     {%- else -%}

@@ -2526,6 +2526,64 @@ body.edy-checkout-button-visible {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
+@media screen and (max-width: 900px) {
+  .header_fixed.scroll, .header_fixed {
+    background-color: #ffffff;
+  }
+  .header_fixed.scroll :not(.menu_popover-item).menu-item a, .header_fixed.scroll :not(.menu_popover-item).menu-item p, .header_fixed.scroll :not(.menu_popover-item).menu-item h1, .header_fixed.scroll :not(.menu_popover-item).menu-item h2, .header_fixed.scroll :not(.menu_popover-item).menu-item h3, .header_fixed.scroll :not(.menu_popover-item).menu-item h4, .header_fixed.scroll :not(.menu_popover-item).menu-item h5, .header_fixed.scroll :not(.menu_popover-item).menu-item h6,
+  .header_fixed.scroll .header_title a,
+  .header_fixed.scroll .header_title p,
+  .header_fixed.scroll .header_title h1,
+  .header_fixed.scroll .header_title h2,
+  .header_fixed.scroll .header_title h3,
+  .header_fixed.scroll .header_title h4,
+  .header_fixed.scroll .header_title h5,
+  .header_fixed.scroll .header_title h6, .header_fixed :not(.menu_popover-item).menu-item a, .header_fixed :not(.menu_popover-item).menu-item p, .header_fixed :not(.menu_popover-item).menu-item h1, .header_fixed :not(.menu_popover-item).menu-item h2, .header_fixed :not(.menu_popover-item).menu-item h3, .header_fixed :not(.menu_popover-item).menu-item h4, .header_fixed :not(.menu_popover-item).menu-item h5, .header_fixed :not(.menu_popover-item).menu-item h6,
+  .header_fixed .header_title a,
+  .header_fixed .header_title p,
+  .header_fixed .header_title h1,
+  .header_fixed .header_title h2,
+  .header_fixed .header_title h3,
+  .header_fixed .header_title h4,
+  .header_fixed .header_title h5,
+  .header_fixed .header_title h6 {
+    color: var(--header-mainmenu-color) !important;
+  }
+  .header_fixed.scroll .menu-btn, .header_fixed .menu-btn {
+    color: var(--header-mainmenu-color) !important;
+  }
+  .header_fixed.scroll .menu-btn .menu-stripe, .header_fixed .menu-btn .menu-stripe {
+    background-color: var(--header-mainmenu-color) !important;
+  }
+  .header_fixed.scroll .menu-btn:hover, .header_fixed .menu-btn:hover {
+    color: var(--header-mainmenu-hover-color) !important;
+  }
+  .header_fixed.scroll .menu-btn:hover .menu-stripe, .header_fixed .menu-btn:hover .menu-stripe {
+    background-color: var(--header-mainmenu-hover-color) !important;
+  }
+  .header_fixed.scroll .search-btn svg g, .header_fixed .search-btn svg g {
+    fill: var(--header-mainmenu-color) !important;
+  }
+  .header_fixed.scroll .search-btn:hover svg g, .header_fixed .search-btn:hover svg g {
+    fill: var(--header-mainmenu-hover-color) !important;
+  }
+  .header_fixed.scroll .menu_popover-btn svg path, .header_fixed .menu_popover-btn svg path {
+    fill: var(--header-mainmenu-color) !important;
+  }
+  .header_fixed.scroll .menu_popover-btn svg path:hover, .header_fixed .menu_popover-btn svg path:hover {
+    fill: var(--header-mainmenu-hover-color) !important;
+  }
+  .header_fixed.scroll .menu-language-btn,
+  .header_fixed.scroll .menu-language-name, .header_fixed .menu-language-btn,
+  .header_fixed .menu-language-name {
+    color: var(--header-mainmenu-color) !important;
+  }
+  .header_fixed.scroll .menu-language-btn:hover,
+  .header_fixed.scroll .menu-language-name:hover, .header_fixed .menu-language-btn:hover,
+  .header_fixed .menu-language-name:hover {
+    color: var(--header-mainmenu-hover-color) !important;
+  }
+}
 .header_fixed.scroll {
   -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
@@ -2540,49 +2598,6 @@ body.edy-checkout-button-visible {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-}
-.header_fixed.scroll :not(.menu_popover-item).menu-item a, .header_fixed.scroll :not(.menu_popover-item).menu-item p, .header_fixed.scroll :not(.menu_popover-item).menu-item h1, .header_fixed.scroll :not(.menu_popover-item).menu-item h2, .header_fixed.scroll :not(.menu_popover-item).menu-item h3, .header_fixed.scroll :not(.menu_popover-item).menu-item h4, .header_fixed.scroll :not(.menu_popover-item).menu-item h5, .header_fixed.scroll :not(.menu_popover-item).menu-item h6,
-.header_fixed.scroll .header_title a,
-.header_fixed.scroll .header_title p,
-.header_fixed.scroll .header_title h1,
-.header_fixed.scroll .header_title h2,
-.header_fixed.scroll .header_title h3,
-.header_fixed.scroll .header_title h4,
-.header_fixed.scroll .header_title h5,
-.header_fixed.scroll .header_title h6 {
-  color: var(--header-mainmenu-color) !important;
-}
-.header_fixed.scroll .menu-btn {
-  color: var(--header-mainmenu-color) !important;
-}
-.header_fixed.scroll .menu-btn .menu-stripe {
-  background-color: var(--header-mainmenu-color) !important;
-}
-.header_fixed.scroll .menu-btn:hover {
-  color: var(--header-mainmenu-hover-color) !important;
-}
-.header_fixed.scroll .menu-btn:hover .menu-stripe {
-  background-color: var(--header-mainmenu-hover-color) !important;
-}
-.header_fixed.scroll .search-btn svg g {
-  fill: var(--header-mainmenu-color) !important;
-}
-.header_fixed.scroll .search-btn:hover svg g {
-  fill: var(--header-mainmenu-hover-color) !important;
-}
-.header_fixed.scroll .menu_popover-btn svg path {
-  fill: var(--header-mainmenu-color) !important;
-}
-.header_fixed.scroll .menu_popover-btn svg path:hover {
-  fill: var(--header-mainmenu-hover-color) !important;
-}
-.header_fixed.scroll .menu-language-btn,
-.header_fixed.scroll .menu-language-name {
-  color: var(--header-mainmenu-color) !important;
-}
-.header_fixed.scroll .menu-language-btn:hover,
-.header_fixed.scroll .menu-language-name:hover {
-  color: var(--header-mainmenu-hover-color) !important;
 }
 @media screen and (max-width: 900px) {
   .header_fixed {
@@ -2610,25 +2625,30 @@ body.edy-checkout-button-visible {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.semimodal-open .header_fixed-content {
-  -webkit-transition: -webkit-transform 200ms;
-  transition: -webkit-transform 200ms;
-  -o-transition: transform 200ms;
-  transition: transform 200ms;
-  transition: transform 200ms, -webkit-transform 200ms;
-  -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
-       -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
-          transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
-  -webkit-perspective: 1000;
-          perspective: 1000;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform: translateX(320px);
-      -ms-transform: translateX(320px);
-          transform: translateX(320px);
+@media screen and (min-width: 900px) {
+  .semimodal-open .header_fixed-content {
+    -webkit-transition: -webkit-transform 200ms;
+    transition: -webkit-transform 200ms;
+    -o-transition: transform 200ms;
+    transition: transform 200ms;
+    transition: transform 200ms, -webkit-transform 200ms;
+    -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+         -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+            transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
+    -webkit-perspective: 1000;
+            perspective: 1000;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transform: translateX(320px);
+        -ms-transform: translateX(320px);
+            transform: translateX(320px);
+  }
 }
 .front-page .header_fixed {
   position: fixed;
+}
+.header_fixed.relative {
+  position: relative;
 }
 @media screen and (min-width: 900px) {
   .semimodal-relative .header_fixed {
@@ -2640,9 +2660,6 @@ body.edy-checkout-button-visible {
   }
   .semimodal-relative .header_fixed .header_title {
     display: none;
-  }
-  .header_fixed.relative {
-    position: relative;
   }
   .header_fixed .menu-main {
     -webkit-box-align: start;
