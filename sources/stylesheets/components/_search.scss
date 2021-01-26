@@ -36,8 +36,8 @@
   transform: translateX(100%);
   pointer-events: none;
   z-index: $zindex-search;
-  max-width: 472px;
-  background-color: rgba($white, .9);
+  max-width: 100vw;
+  background-color: $white;
   @include transition(transform 300ms);
 
   &.active {

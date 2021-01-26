@@ -2,14 +2,14 @@
 {% include "template-settings" %}
 {% include "template-variables" %}
 {% include "blog-article-variables" %}
-<html class="{% include "language-menu-class-names" %} {% if editmode %}editmode{% else %}publicmode{% endif %}" lang="{{ page.language_code }}">
+<html class="{% include "language-menu-class-names" %} {% if editmode %}editmode{% else %}publicmode{% endif %} {% include 'semimodal-class-names' %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
   {% include "html-head" %}
   {% include "template-styles" %}
   {%- assign blog_listing_page = true -%}
 </head>
 
-<body class="blog-page body-bg_picker--area {{ body_bg_type }}{% include 'semimodal-class-names' %}">
+<body class="blog-page body-bg_picker--area {{ body_bg_type }}">
   {% include "template-svg-spritesheet" %}
   <div class="body-bg_color"></div>
 

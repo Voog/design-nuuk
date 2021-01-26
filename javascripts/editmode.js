@@ -180,7 +180,7 @@
       if (itemImageType != 'product_image') {
         var imgDropArea = new Edicy.ImgDropArea($imgDropAreaTarget, {
           positionable: false,
-          target_width: 1280,
+          target_width: 2048,
           placeholder: '<div class="edy-img-drop-area-placeholder">' + placeholderText + '</div>',
           removeBtn: '<div class="edy-img-drop-area-remove-image">' +
                         '<div class="edy-img-drop-area-remove-image-ico">' +

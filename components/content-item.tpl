@@ -56,12 +56,12 @@
       {%- endif -%}
     </div>
 
+    {% include 'image_src_variable', _data: _imageData, _targetWidth: _targetWidth %}
 
     <div class="item-top{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
       <div class="top-inner aspect-ratio-inner image-drop-area {{ item_image_crop_state }} js-content-item-img-drop-area js-lazyload"
-        data-image="{{ _imageData.url }}"
+        data-image="{{ _src }}"
         {%- if _isProductImage == true -%}
-          {% include 'image_src_variable', _data: _imageData, _targetWidth: _targetWidth %}
           {% if _src != blank -%}
             style="background-image: url({{_src}});"
           {%- endif -%}

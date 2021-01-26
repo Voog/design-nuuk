@@ -6,10 +6,8 @@
 
 {%- if menuSettings.max_width >= 1 -%}
   <style>
-    body.semimodal-open:not(.semimodal-relative) .semimodal,
-    body .semimodal_inner,
-    body.semimodal-open .semimodal,
-    body.semimodal-relative .semimodal {
+    html.semimodal-open:not(.semimodal-relative) .semimodal,
+    html.semimodal-relative .semimodal {
       min-width: {{menuSettings.max_width}}px;
       max-width: {{menuSettings.max_width}}px;
     }
@@ -19,14 +17,6 @@
         -webkit-transform: translateX(-{{menuSettings.max_width}}px);
         -ms-transform: translateX(-{{menuSettings.max_width}}px);
         transform: translateX(-{{menuSettings.max_width}}px);
-      }
-    }
-
-    @media screen and (min-width: 900px) {
-      .semimodal-open .header_fixed-content {
-        -webkit-transform: translateX({{menuSettings.max_width}}px);
-        -ms-transform: translateX({{menuSettings.max_width}}px);
-        transform: translateX({{menuSettings.max_width}}px);
       }
     }
   </style>
