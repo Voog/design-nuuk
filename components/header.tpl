@@ -6,10 +6,12 @@
 
 {%- if menuSettings.max_width >= 1 -%}
   <style>
-    html.semimodal-open:not(.semimodal-relative) .semimodal,
-    html.semimodal-relative .semimodal {
-      min-width: {{menuSettings.max_width}}px;
-      max-width: {{menuSettings.max_width}}px;
+    @media screen and (min-width: 901px)
+      html.semimodal-open:not(.semimodal-relative) .semimodal,
+      html.semimodal-relative .semimodal {
+        min-width: {{menuSettings.max_width}}px;
+        max-width: {{menuSettings.max_width}}px;
+      }
     }
 
     @media screen and (max-width: 900px) {
@@ -37,6 +39,14 @@
   ></div>
 
   <header class="semimodal_inner">
+    <button class="menu-btn js-menu-btn js-prevent-sideclick{% if menuTop == true %} hidden-desktop{% endif %}">
+      <div>
+        <span class="menu-stripe"></span>
+        <span class="menu-stripe"></span>
+      </div>
+      <label>{{ 'menu' | lc }}</label>
+    </button>
+
     <div class="site_title content-formatted">
       {% contentblock name="site-title" xpage="true" %}
         <h3>{{site.title}}</h3>
@@ -77,6 +87,10 @@
       </div>
 
       {%- include "menu-main", _semimodalMenu: true -%}
+
+      <div class="content-formatted mar_t-32">
+        {% content name="semimodal-footer" xpage="true" %}
+      </div>
     </div>
   </header>
 </div>

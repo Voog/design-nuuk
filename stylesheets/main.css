@@ -1183,8 +1183,7 @@ p {
   left: 0;
   bottom: 0;
   background-color: #FBFBFB;
-  pointer-events: none;
-  z-index: 100;
+  z-index: 101;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1198,8 +1197,6 @@ p {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  min-width: 320px;
-  max-width: 320px;
 }
 .semimodal.dark-background {
   color: white;
@@ -1231,7 +1228,7 @@ p {
 }
 @media screen and (max-width: 900px) {
   .semimodal .semimodal_inner {
-    overflow: none;
+    overflow: unset;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1317,7 +1314,7 @@ html:not(.semimodal-relative) .semimodal {
   min-width: 100vw !important;
   max-width: 100vw !important;
 }
-.semimodal-open .semimodal, .semimodal-relative .semimodal {
+.semimodal-relative .semimodal {
   width: 100%;
   min-width: 320px;
   max-width: 320px;
@@ -1335,12 +1332,10 @@ html:not(.semimodal-relative) .semimodal {
             transform: translateX(0px);
   }
 }
-@media screen and (max-width: 900px) and (max-width: 480px) {
+@media screen and (max-width: 900px) and (max-width: 900px) {
   .semimodal-open .semimodal, .semimodal-relative.semimodal-open .semimodal {
     min-width: 100vw;
     max-width: 100vw;
-    -webkit-box-shadow: none;
-            box-shadow: none;
   }
 }
 
@@ -1356,7 +1351,7 @@ html:not(.semimodal-relative) .semimodal {
   overflow: hidden;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 900px) {
   .semimodal-open {
     overflow: hidden;
   }
@@ -1499,7 +1494,7 @@ html:not(.semimodal-relative) .semimodal {
 }
 
 .semimodal_picker-btn {
-  z-index: 100;
+  z-index: 101;
   position: absolute;
   top: -72px;
   left: 0;
@@ -1636,7 +1631,7 @@ body .edy-bgpicker-toggle-button:hover {
 }
 
 body.front-page .edy-bgpicker-toggle-button {
-  z-index: 99;
+  z-index: 100;
   left: 0;
   top: -60px;
 }
@@ -2492,7 +2487,7 @@ body.edy-checkout-button-visible {
   top: 0;
   right: 0;
   width: 100%;
-  z-index: 101;
+  z-index: 100;
   padding: 32px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -2720,6 +2715,8 @@ body.edy-checkout-button-visible {
   border-bottom: 1px solid;
   padding: 16px;
   margin-bottom: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 @media screen and (min-width: 900px) {
   .header_components-tablet {
