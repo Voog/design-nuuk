@@ -83,6 +83,16 @@
         }
       }
 
+      .edy-ecommerce-product-count {
+        color: var(--header-mainmenu-color)!important;
+      }
+
+      .search-btn svg g,
+      .edy-ecommerce-custom-ico svg g,
+      .edy-ecommerce-custom-ico svg path {
+        fill: var(--header-mainmenu-color)!important;
+      }
+
       .menu-btn {
         color: var(--header-mainmenu-color)!important;
         .menu-stripe {

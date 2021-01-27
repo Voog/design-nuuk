@@ -2582,6 +2582,16 @@ body.edy-checkout-button-visible {
 .header_fixed.scroll .header_title h6 {
   color: var(--header-mainmenu-color) !important;
 }
+.semimodal-open:not(.semimodal-relative) .header_fixed .edy-ecommerce-product-count, .header_fixed.scroll .edy-ecommerce-product-count {
+  color: var(--header-mainmenu-color) !important;
+}
+.semimodal-open:not(.semimodal-relative) .header_fixed .search-btn svg g,
+.semimodal-open:not(.semimodal-relative) .header_fixed .edy-ecommerce-custom-ico svg g,
+.semimodal-open:not(.semimodal-relative) .header_fixed .edy-ecommerce-custom-ico svg path, .header_fixed.scroll .search-btn svg g,
+.header_fixed.scroll .edy-ecommerce-custom-ico svg g,
+.header_fixed.scroll .edy-ecommerce-custom-ico svg path {
+  fill: var(--header-mainmenu-color) !important;
+}
 .semimodal-open:not(.semimodal-relative) .header_fixed .menu-btn, .header_fixed.scroll .menu-btn {
   color: var(--header-mainmenu-color) !important;
 }
