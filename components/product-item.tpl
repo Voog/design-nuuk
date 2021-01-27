@@ -42,9 +42,9 @@
       <a class="product_item-btn{%- if productSettingsData.product_label != blank or _buyButton.product.price != blank %} p-abs{%- else %} p-rel{%- endif -%}" href="{{ _entityData.url }}">LOOK CLOSER</a>
     {%- endcapture -%}
 
-    <div class="p14 bold product_item-title bold">
+    <a class="p14 bold product_item-title bold" href="{{ _entityData.url }}">
       {{ _entityData.title }}
-    </div>
+    </a>
     {%- if _buyButton.product != blank and _buyButton.available? -%}
       <div class="product_item-details flex_col">
         {%- if _buyButton.product.uses_variants == true -%}
@@ -60,7 +60,7 @@
             {{product_label}}
           </div>
         {%- else -%}
-          {%- if editmode -%}
+          {%- if editmode or buy_button.product.out_of_stock? -%}
             {{look_closer_btn}}
           {%- else -%}
             <button class="product_item-btn js-cart-btn p-abs" data-product-id="{{ _buyButton.product.id }}">ADD TO CART</button>
