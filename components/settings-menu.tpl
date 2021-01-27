@@ -70,7 +70,7 @@
               $('.js-menu-main').addClass('menu_top');
               $('.js-menu-popover, .js-menu-popover').removeClass('d-none');
               $('.js-menu-sub').addClass('d-none');
-              $('body').removeClass('semimodal-open');
+              $('html').removeClass('semimodal-open');
             } else {
               $('.js-menu-btn, .semimodal').removeClass('hidden-desktop');
               $('.js-menu-main-wrapper').addClass('hidden-tablet');
