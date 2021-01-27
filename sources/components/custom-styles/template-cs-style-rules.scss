@@ -451,10 +451,12 @@ body {
     }
   }
 
-  svg, path {
-    .dark-background & {
-      fill: var(--fourth-color);
-      border-color: var(--fourth-color);
+  .edy-content-social-button {
+    svg, path {
+      .dark-background & {
+        fill: var(--fourth-color);
+        border-color: var(--fourth-color);
+      }
     }
   }
 

@@ -303,7 +303,7 @@ body.dark-background {
 .dark-background .content-formatted h1, .dark-background .content-formatted h2, .dark-background .content-formatted h3, .dark-background .content-formatted h4, .dark-background .content-formatted h5, .dark-background .content-formatted h6, .dark-background .content-formatted .product_item-btn h1, .dark-background .content-formatted .product_item-btn h2, .dark-background .content-formatted .product_item-btn h3, .dark-background .content-formatted .product_item-btn h4, .dark-background .content-formatted .product_item-btn h5, .dark-background .content-formatted .product_item-btn h6, .dark-background .content-formatted p h1, .dark-background .content-formatted p h2, .dark-background .content-formatted p h3, .dark-background .content-formatted p h4, .dark-background .content-formatted p h5, .dark-background .content-formatted p h6 {
   color: var(--fourth-color);
 }
-.dark-background .content-formatted svg, .dark-background .content-formatted path, .dark-background .content-formatted .product_item-btn svg, .dark-background .content-formatted .product_item-btn path, .dark-background .content-formatted p svg, .dark-background .content-formatted p path {
+.dark-background .content-formatted .edy-content-social-button svg, .dark-background .content-formatted .edy-content-social-button path, .dark-background .content-formatted .product_item-btn .edy-content-social-button svg, .dark-background .content-formatted .product_item-btn .edy-content-social-button path, .dark-background .content-formatted p .edy-content-social-button svg, .dark-background .content-formatted p .edy-content-social-button path {
   fill: var(--fourth-color);
   border-color: var(--fourth-color);
 }
