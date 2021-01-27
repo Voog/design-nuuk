@@ -811,6 +811,9 @@ p {
   padding: 0px 8px;
 }
 
+.edy-content-social-button {
+  margin-right: 8px;
+}
 .edy-content-social-button svg {
   border: 1px solid var(--secondary-color);
   -webkit-box-sizing: border-box;
@@ -818,7 +821,6 @@ p {
   border-radius: 50%;
   height: 40px;
   width: 40px;
-  margin-right: 8px;
 }
 .edy-content-social-button svg:last-child {
   margin-right: 0;
