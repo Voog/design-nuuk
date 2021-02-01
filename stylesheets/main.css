@@ -3619,11 +3619,11 @@ article.post_wrapper .date-separator.hide-separator {
   padding: 8px 0;
 }
 .lang_menu-popover--wrap {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  right: 0;
   opacity: 0;
   pointer-events: none;
-  padding-top: 40px;
+  padding-top: 16px;
   -webkit-transition: opacity 200ms;
   -o-transition: opacity 200ms;
   transition: opacity 200ms;
@@ -3634,6 +3634,10 @@ article.post_wrapper .date-separator.hide-separator {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+.semimodal_bottom .lang_menu-popover--wrap {
+  right: unset;
+  left: 0;
 }
 .menu-language-popover-open .lang_menu-popover--wrap, body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
   z-index: 2;

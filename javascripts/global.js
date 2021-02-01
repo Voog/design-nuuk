@@ -737,24 +737,6 @@ MMCQ = (function() {
   };
 
   // ===========================================================================
-  // Positions popover menus under the toggleing button.
-  // ===========================================================================
-  var positionPopoverMenu = function(popoverButton, popoverMenu) {
-    var $popoverButton = $(popoverButton);
-    var rect = $popoverButton.offset();
-    if ($( window ).width() >= 900) {
-      var rightPos = $(window).width() - rect.left - $popoverButton.outerWidth();
-    } else {
-      var rightPos = 'unset';
-    }
-
-    $(popoverMenu).css({
-      top: rect.top - $(window).scrollTop(),
-      right: rightPos
-    });
-  };
-
-  // ===========================================================================
   // Toggles language menu mode.
   // ===========================================================================
   var bindLanguageMenuSettings = function(languageMenuValuesObj, dataKey) {
@@ -804,7 +786,6 @@ MMCQ = (function() {
           $html.addClass('language-names-enabled');
         }
 
-        positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
         this.setPosition();
       },
 
@@ -834,11 +815,6 @@ MMCQ = (function() {
     $(window).resize(debounce(function() {
       handleActivLangMenu();
       handleMenuTopPos();
-      if (languageMenuPopoverOpen()) {
-        positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
-      }
-
-
     }, 25));
   };
 
@@ -862,12 +838,6 @@ MMCQ = (function() {
       $html.toggleClass('menu-language-popover-open');
       if ($html.hasClass('menu-main-opened') || $html.hasClass('site-search-opened')) {
         $html.removeClass('menu-main-opened site-search-opened');
-
-        setTimeout(function(){
-          positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
-        }, 300);
-      } else if ($html.hasClass('menu-language-popover-open')) {
-        positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
       }
     }
 
@@ -880,10 +850,6 @@ MMCQ = (function() {
         handleFocus($('.js-toggle-menu-language'), togglePopover);
         $('.js-toggle-menu-language .menu-language-btn').click(function() {
           togglePopover();
-        });
-      } else {
-        $('.js-toggle-menu-language').hover(function() {
-          positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
         });
       }
     }
