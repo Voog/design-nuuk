@@ -54,6 +54,12 @@
       padding-bottom: 72px;
     }
 
+    &-content {
+      margin-top: 32px;
+      width: 100%;
+      max-width: 340px;
+    }
+
     @include query($tablet-1) {
       margin-top: 32px !important;
       top: 0 !important;

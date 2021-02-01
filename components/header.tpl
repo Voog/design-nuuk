@@ -88,7 +88,7 @@
 
       {%- include "menu-main", _semimodalMenu: true -%}
 
-      <div class="content-formatted mar_t-32">
+      <div class="content-formatted semimodal_bottom-content">
         {% content name="semimodal-footer" xpage="true" %}
       </div>
     </div>

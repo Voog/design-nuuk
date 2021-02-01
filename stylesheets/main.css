@@ -1267,6 +1267,11 @@ p {
 .editmode .semimodal .semimodal_bottom {
   padding-bottom: 72px;
 }
+.semimodal .semimodal_bottom-content {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 340px;
+}
 @media screen and (max-width: 900px) {
   .semimodal .semimodal_bottom {
     margin-top: 32px !important;
