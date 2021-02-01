@@ -31,7 +31,7 @@
       overflow: auto;
     }
 
-    transform: translateX(-320px);
+    transform: translateX(-100%);
     @include transition(transform 200ms);
 
     .semimodal-open &,
@@ -68,7 +68,7 @@
 
 
   html:not(.semimodal-relative) & {
-    transform: translateX(-320px);
+    transform: translateX(-100%);
     overflow-y: auto;
   }
 
@@ -88,7 +88,7 @@
     border-right: 1px solid;
 
     @include query($tablet-1) {
-      transform: translateX(-320px);
+      transform: translateX(-100%);
       position: fixed;
     }
 
@@ -116,7 +116,7 @@
 
   @include query($tablet-1) {
     .semimodal-relative {
-      transform: translateX(-320px);
+      transform: translateX(-100%);
     }
 
     .semimodal-open &,

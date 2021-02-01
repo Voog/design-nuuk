@@ -1212,9 +1212,9 @@ p {
           box-sizing: border-box;
   padding: 32px;
   min-height: 100vh;
-  -webkit-transform: translateX(-320px);
-      -ms-transform: translateX(-320px);
-          transform: translateX(-320px);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   -webkit-transition: -webkit-transform 200ms;
   transition: -webkit-transform 200ms;
   -o-transition: transform 200ms;
@@ -1279,9 +1279,9 @@ p {
   }
 }
 html:not(.semimodal-relative) .semimodal {
-  -webkit-transform: translateX(-320px);
-      -ms-transform: translateX(-320px);
-          transform: translateX(-320px);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   overflow-y: auto;
 }
 .semimodal-relative:not(.semimodal-relative) .semimodal {
@@ -1300,9 +1300,9 @@ html:not(.semimodal-relative) .semimodal {
 }
 @media screen and (max-width: 900px) {
   .semimodal-relative .semimodal {
-    -webkit-transform: translateX(-320px);
-        -ms-transform: translateX(-320px);
-            transform: translateX(-320px);
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
     position: fixed;
   }
 }
@@ -1329,9 +1329,9 @@ html:not(.semimodal-relative) .semimodal {
 }
 @media screen and (max-width: 900px) {
   .semimodal .semimodal-relative {
-    -webkit-transform: translateX(-320px);
-        -ms-transform: translateX(-320px);
-            transform: translateX(-320px);
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   .semimodal-open .semimodal, .semimodal-relative.semimodal-open .semimodal {
     -webkit-transform: translateX(0px);
