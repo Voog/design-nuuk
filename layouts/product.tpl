@@ -110,9 +110,7 @@
                 <div class="mar_0-8 mar_b-32">
                   <div class="product_item-wrap">
                     {%- load buy_button to "buy_button" q.content.parent_id=id q.content.parent_type="page" -%}
-                    {%- assign product = buy_button.product -%}
                     {% include 'product-item', _buyButton: buy_button, _entityData: _buyButton.content.parent %}
-                    {%- assign product = null -%}
                   </div>
                 </div>
               </div>

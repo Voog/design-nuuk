@@ -80,5 +80,3 @@
     </div>
   </{{wrapperTag}}>
 {% endif %}
-
-{%- assign _imageData = null -%}

@@ -32,7 +32,6 @@
               </div>
             </div>
           </div>
-          {%- assign product = null -%}
         {%- endif -%}
       {%- endfor -%}
     {%- endif -%}
