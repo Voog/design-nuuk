@@ -5,6 +5,8 @@
 {% if _buyButton.product != blank %}
   {%- assign buyButtonImage = _buyButton.product.image -%}
 {% endif %}
+  {%- assign buyButtonImage = null -%}
+{% endif %}
 
 {%- if buyButtonImage != blank -%}
   {%- assign productImage = buyButtonImage -%}
@@ -88,6 +90,3 @@
     </div>
   {%- endif -%}
 </div>
-
-{%- assign _buyButton = null -%}
-{%- assign productImage = null -%}
