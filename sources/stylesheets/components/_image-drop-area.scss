@@ -75,7 +75,6 @@
     height: 100%;
     width: 100%;
     background: transparent;
-    transition: all .9s $bezier-default;
 
     .without-image .editmode & {
       border: none;
@@ -84,6 +83,10 @@
     .cms-blog-article-add-button & {
       border: none;
     }
+  }
+
+  .edy-img-drop-area {
+    opacity: 1;
   }
 
   .image-drop-area {

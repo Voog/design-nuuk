@@ -2221,15 +2221,15 @@ article .item-top > .aspect-ratio-inner {
   height: 100%;
   width: 100%;
   background: transparent;
-  -webkit-transition: all 0.9s cubic-bezier(0.1, 0.6, 0, 1);
-  -o-transition: all 0.9s cubic-bezier(0.1, 0.6, 0, 1);
-  transition: all 0.9s cubic-bezier(0.1, 0.6, 0, 1);
 }
 .without-image .editmode .item-top .top-inner {
   border: none;
 }
 .cms-blog-article-add-button .item-top .top-inner {
   border: none;
+}
+.item-top .edy-img-drop-area {
+  opacity: 1;
 }
 .item-top .image-drop-area {
   background-position: center !important;

@@ -57,7 +57,9 @@
               {%- endif -%}
 
               {%- if page.data.item_image != blank or editmode -%}
-                {% include 'content-item', _isProductImage: isProductImage, _imageData: productImage, _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic, _targetWidth: '1280' %}
+                <div class="js-product-page-image">
+                  {% include 'content-item', _isProductImage: isProductImage, _imageData: productImage, _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic, _targetWidth: '1280' %}
+                </div>
               {%- endif -%}
             </div>
           </div>
@@ -84,9 +86,9 @@
                   </div>
                 {%- endif -%}
               </div>
-              <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content %}</section>
+              <section class="content-body content-formatted js-buy-btn-content" data-search-indexing-allowed="true">{% content %}</section>
             </div>
-          </div>
+          </div>$('.js-buy-btn-content .partial:first-child')
         </div>
 
         <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content name="product-content-1" %}</section>
@@ -123,7 +125,7 @@
   </div>
 
   {% include "site-signout" %}
-  {% include "javascripts" %}
+  {% include "javascripts", _productPage: true %}
   {% include 'settings-popover', _productPage: true %}
 </body>
 </html>

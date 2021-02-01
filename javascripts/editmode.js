@@ -208,17 +208,7 @@
             ;
 
             if (image) {
-              $contentItemBox.find('.image_settings').show();
-
-              $contentItemBox
-                .removeClass('without-image is-loaded with-error')
-                .addClass('with-image not-loaded')
-              ;
-
-              $cropToggleButton
-                .removeClass('is-hidden')
-                .addClass('is-visible')
-              ;
+              removeImagePlaceholder($contentItemBox, $cropToggleButton)
             } else {
               $contentItemBox.find('.image_settings').hide();
 
@@ -248,26 +238,45 @@
           success: function(data) {
             itemData.remove(cropStateKey, {
               success: function(data) {
-                $el.closest('.js-content-item-box').find('.top-inner')
-                  .append('<div class="edy-img-drop-area-placeholder">' + placeholderText + '</div>');
-                $el.closest('.js-content-item-box').find('.top-inner').attr("style", "");
-                $el.closest('.js-content-item-box')
-                  .removeClass('with-image is-loaded with-error')
-                  .addClass('without-image not-loaded')
-                ;
-                $el.closest('.js-content-item-box').find('.edy-img-drop-area').removeClass('active');
-                $el.closest('.image_settings').hide();
-
-                // Remove alt image data
-                $el.closest('.js-content-item-box').find('.image_settings-remove--input').val('');
-                $el.closest('.js-content-item-box').find('.image_settings-remove--input').trigger('change');
-                $el.closest('.js-content-item-box').find('.form_field-cms').removeClass('with-input');
+                addProductImagePlaceholder($el, placeholderText);
               }
             });
           }
         });
       });
     });
+  };
+
+  var removeImagePlaceholder = function ($contentItemBox, $cropToggleButton) {
+    $contentItemBox.find('.image_settings').show();
+
+    $contentItemBox
+      .removeClass('without-image is-loaded with-error')
+      .addClass('with-image not-loaded')
+    ;
+
+    $cropToggleButton
+      .removeClass('is-hidden')
+      .addClass('is-visible')
+    ;
+  }
+
+  var addProductImagePlaceholder = function (el, placeholderText) {
+    el.closest('.js-content-item-box').find('.top-inner')
+      .append('<div class="edy-img-drop-area-placeholder">' + placeholderText + '</div>');
+    el.closest('.js-content-item-box').find('.top-inner').attr("style", "");
+    el.closest('.js-content-item-box')
+      .removeClass('with-image is-loaded with-error')
+      .addClass('without-image not-loaded')
+    ;
+    el.closest('.js-content-item-box').find('.edy-img-drop-area').removeClass('active');
+    el.closest('.image_settings').hide();
+
+    // Remove alt image data
+    el.closest('.js-content-item-box').find('.image_settings-remove--input').val('');
+    el.closest('.js-content-item-box').find('.image_settings-remove--input').trigger('change');
+    el.closest('.js-content-item-box').find('.form_field-cms').removeClass('with-input');
+    $('.image_settings').hide();
   };
 
   // ===========================================================================
@@ -345,6 +354,37 @@
     edy.push(['texteditorStyles', {name: 'Button', tagname:'a', attribute: {'href': '#'}, classname: 'custom-btn', toggle: true}]);
   };
 
+  var bindProductListeners = function(placeholderText, pageId) {
+    document.addEventListener('voog:ecommerce:buttonproductsave', function(event) {
+      var partialId = $('.js-buy-btn-content .partial:first-child .edy-buy-button-container').data( "component-id" );
+      if (event.detail.buyButton.id === partialId) {
+        var productImageEl = $('.js-product-page-image .image-drop-area');
+
+        if (event.detail.product.image) {
+          $('.image_settings').css('display', 'flex');
+          $('.js-toggle-image-settings, .js-remove-image, .js-image-settings-popover').css('display', 'none');
+          $('.edy-img-drop-area-placeholder').remove();
+          removeImagePlaceholder(productImageEl.closest('.js-content-item-box'), productImageEl.find('.js-toggle-crop-state'))
+          productImageEl.css('background-image', 'url(' + event.detail.product.image.url+ ')');
+        } else {
+          $.ajax({
+            type: 'GET',
+            contentType: 'application/json',
+            url: 'http://nuuk.voog.construction/admin/api/pages/' + pageId,
+            dataType: 'json'
+          }).then(function(response) {
+            if (response.data.nuuk_item_image) {
+              productImageEl.css('background-image', 'url(' + response.data.nuuk_item_image.url + ')');
+              $('.js-toggle-image-settings, .js-remove-image, .js-image-settings-popover').css('display', 'flex');
+            } else {
+              addProductImagePlaceholder($('.js-product-page-image .image-drop-area'), placeholderText);
+            }
+          });
+        }
+      }
+    });
+  };
+
   var init = function() {
     bindCustomTexteditorStyles();
     bindCustomDataItem();
@@ -356,7 +396,8 @@
     bgPickerPreview: bgPickerPreview,
     bgPickerCommit: bgPickerCommit,
     bindContentItemImgDropAreas: bindContentItemImgDropAreas,
-    bindContentItemImageCropToggle: bindContentItemImageCropToggle
+    bindContentItemImageCropToggle: bindContentItemImageCropToggle,
+    bindProductListeners: bindProductListeners
   });
 
   // Initiates site wide functions.

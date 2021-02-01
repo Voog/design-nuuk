@@ -2,12 +2,13 @@
   {% assign item_image_state = "without-image" %}
 {% else %}
   {% assign item_image_state = "with-image" %}
-  {% if _entityData.data[itemImageCropStateKey] %}
-    {% assign item_image_crop_state = _entityData.data[itemImageCropStateKey] %}
-  {% else %}
-    {% assign item_image_crop_state = "not-cropped" %}
-  {% endif %}
 {% endunless %}
+
+{% if _entityData.data[itemImageCropStateKey] %}
+  {% assign item_image_crop_state = _entityData.data[itemImageCropStateKey] %}
+{% else %}
+  {% assign item_image_crop_state = "not-cropped" %}
+{% endif %}
 
 {%- if _staticItem == true -%}
   {%- assign wrapperTag = 'div' -%}
@@ -24,36 +25,31 @@
     <div class="image_settings js-prevent-sideclick"{% if _imageData == blank %} style="display: none;"{% endif %}>
       <div class="image_settings-buttons">
         <div class="image_settings-button--title mar_r-8">Image</div>
-        {%- if _isProductImage != true -%}
-          <button class="bg_img-contain image_settings-button mar_r-8 btn-no-style js-toggle-image-settings">
+          <button class="bg_img-contain image_settings-button mar_r-8 btn-no-style js-toggle-image-settings" {%- if _isProductImage == true %} style="display: none;"{% endif %}>
           </button>
-        {%- endif -%}
         <button class="bg_img-contain image_settings-expand mar_r-8 btn-no-style js-toggle-crop-state">
         </button>
-        {%- if _isProductImage != true -%}
-          <button class="bg_img-contain image_settings-remove btn-no-style js-remove-image">
-          </button>
-        {%- endif -%}
+        <button class="bg_img-contain image_settings-remove btn-no-style js-remove-image" {%- if _isProductImage == true %} style="display: none;"{% endif %}>
+        </button>
       </div>
-      {%- if _isProductImage != true -%}
-        <div class="settings_popover js-image-settings-popover">
-          <div class="settings_popover-arrow--up"></div>
-          <div class="product_alt-attr {{ item_image_state }}">
-            <div class="form_field-cms">
-              <input
-                placeholder="Add image alt text"
-                id="item-image-alt-{{_id}}"
-                class="form_field_textfield js-data-item image_settings-remove--input"
-                value="{{_entityData.data[itemImageAltAttrKey]}}"
-                data-name="{{itemImageAltAttrKey}}"
-                data-entity="{{_itemType}}"
-                data-id="{{_id}}"
-              >
-              <label for="item-image-alt-{{_id}}" class="form_field_label">Alt text</label>
-            </div>
+
+      <div class="settings_popover js-image-settings-popover" {%- if _isProductImage == true %} style="display: none;"{% endif %}>
+        <div class="settings_popover-arrow--up"></div>
+        <div class="product_alt-attr {{ item_image_state }}">
+          <div class="form_field-cms">
+            <input
+              placeholder="Add image alt text"
+              id="item-image-alt-{{_id}}"
+              class="form_field_textfield js-data-item image_settings-remove--input"
+              value="{{_entityData.data[itemImageAltAttrKey]}}"
+              data-name="{{itemImageAltAttrKey}}"
+              data-entity="{{_itemType}}"
+              data-id="{{_id}}"
+            >
+            <label for="item-image-alt-{{_id}}" class="form_field_label">Alt text</label>
           </div>
         </div>
-      {%- endif -%}
+      </div>
     </div>
 
     {% include 'image_src_variable', _data: _imageData, _targetWidth: _targetWidth %}
