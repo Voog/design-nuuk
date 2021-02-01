@@ -166,7 +166,7 @@
               "type": "number",
               "min": 1,
               "key": "block_max_width",
-              "placeholder": "Maximum block width (%)"
+              "placeholder": "Block maximum width (%)"
             },
             {
               "title": "Block top & bottom spacing (px)",
