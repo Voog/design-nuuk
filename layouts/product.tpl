@@ -88,7 +88,7 @@
               </div>
               <section class="content-body content-formatted js-buy-btn-content" data-search-indexing-allowed="true">{% content %}</section>
             </div>
-          </div>$('.js-buy-btn-content .partial:first-child')
+          </div>
         </div>
 
         <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content name="product-content-1" %}</section>
