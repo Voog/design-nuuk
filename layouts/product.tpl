@@ -75,18 +75,18 @@
 
 
                 {%- if buy_button.product.out_of_stock? -%}
-                  <div class="product_item-box--label mar_32-0">OUT OF STOCK</div>
+                  <div class="product_item-box--label mar_t-32">OUT OF STOCK</div>
                 {%- elsif productSettingsData.product_label != blank and isBoxLabel != true -%}
-                  <div class="mar_32-0{% if productSettingsData.is_product_label_line_through == true %} td-lt{% endif %}">
+                  <div class="mar_t-32{% if productSettingsData.is_product_label_line_through == true %} td-lt{% endif %}">
                     {{productSettingsData.product_label}}
                   </div>
                 {%- elsif productSettingsData.product_label != blank and isBoxLabel == true -%}
-                  <div class="product_item-box--label mar_32-0">
+                  <div class="product_item-box--label mar_t-32">
                     {{productSettingsData.product_label}}
                   </div>
                 {%- endif -%}
               </div>
-              <section class="content-body content-formatted js-buy-btn-content" data-search-indexing-allowed="true">{% content %}</section>
+              <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">{% content %}</section>
             </div>
           </div>
         </div>
