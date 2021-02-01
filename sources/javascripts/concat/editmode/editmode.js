@@ -370,7 +370,7 @@
           $.ajax({
             type: 'GET',
             contentType: 'application/json',
-            url: 'http://nuuk.voog.construction/admin/api/pages/' + pageId,
+            url: '/admin/api/pages/' + pageId,
             dataType: 'json'
           }).then(function(response) {
             if (response.data.nuuk_item_image) {
