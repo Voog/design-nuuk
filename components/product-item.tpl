@@ -90,3 +90,4 @@
 </div>
 
 {%- assign _buyButton = null -%}
+{%- assign productImage = null -%}
