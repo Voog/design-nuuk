@@ -4,7 +4,7 @@
 
 {% if _buyButton.product != blank %}
   {%- assign buyButtonImage = _buyButton.product.image -%}
-{% endif %}
+{% else %}
   {%- assign buyButtonImage = null -%}
 {% endif %}
 
