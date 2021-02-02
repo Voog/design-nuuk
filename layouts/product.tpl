@@ -56,7 +56,7 @@
                 {%- assign isProductImage = false -%}
               {%- endif -%}
 
-              {%- if page.data.item_image != blank or editmode -%}
+              {%- if productImage != blank or editmode -%}
                 <div class="js-product-page-image">
                   {% include 'content-item', _isProductImage: isProductImage, _imageData: productImage, _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic, _targetWidth: '1280' %}
                 </div>
