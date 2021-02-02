@@ -170,7 +170,13 @@
         {%- for i in (1..columnCount) -%}
           {%- assign name = "content-" | append: i | append: "-" | append: id -%}
           <div class="col-item flex_auto b-box" data-search-indexing-allowed="true">
-            {%- content name=name -%}
+            {%- if id == 1 and i == 1 -%}
+              {% contentblock name=name %}
+                {% include 'modular-content-1-1' %}
+              {% endcontentblock %}
+            {%- else -%}
+              {%- content name=name -%}
+            {%- endif -%}
           </div>
         {%- endfor -%}
       </div>
