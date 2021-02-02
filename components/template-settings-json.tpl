@@ -61,7 +61,7 @@
         },
         "default": {
           "col_count": 2,
-          "block_max_width": 80,
+          "block_max_width": 100,
           "block_justification": "center",
           "block_v_padding": 64,
           "col_justification": "evenly",
