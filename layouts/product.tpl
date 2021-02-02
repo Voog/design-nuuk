@@ -70,7 +70,7 @@
           <div class="flex_row-2--item">
             <div class="mar_0-24 flex_col">
               <div class="content-body content-formatted" data-search-indexing-allowed="true">
-                {% contentblock name="page-title" %}
+                {% contentblock name="page-title" publish_default_content="true" %}
                   <h3>{{page.title}}</h3>
                 {% endcontentblock %}
                 {%- assign productSettingsData = page.data[productLayoutSettingsKey] -%}

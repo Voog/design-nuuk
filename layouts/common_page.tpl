@@ -33,7 +33,7 @@
 
       <main class="content" role="main" data-search-indexing-allowed="true">
         <div class="content-body content-formatted mar_b-32">
-          {% contentblock name="page-title" %}
+          {% contentblock name="page-title" publish_default_content="true" %}
             <h1>{{page.title}}</h1>
           {% endcontentblock %}
         </div>

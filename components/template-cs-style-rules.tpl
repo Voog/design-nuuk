@@ -190,6 +190,61 @@ body.dark-background {
   opacity: 1;
 }
 
+.dark-background .light-background .header_components-tablet,
+.dark-background .light-background .site_title.content-formatted,
+.dark-background .light-background .semimodal_bottom-content,
+.dark-background .light-background .menu-language-btn,
+.dark-background .light-background .menu-language-name {
+  color: var(--header-mainmenu-color);
+}
+.dark-background .light-background .header_components-tablet a, .dark-background .light-background .header_components-tablet p, .dark-background .light-background .header_components-tablet h1, .dark-background .light-background .header_components-tablet h2, .dark-background .light-background .header_components-tablet h3, .dark-background .light-background .header_components-tablet h4, .dark-background .light-background .header_components-tablet h5, .dark-background .light-background .header_components-tablet h6,
+.dark-background .light-background .site_title.content-formatted a,
+.dark-background .light-background .site_title.content-formatted p,
+.dark-background .light-background .site_title.content-formatted h1,
+.dark-background .light-background .site_title.content-formatted h2,
+.dark-background .light-background .site_title.content-formatted h3,
+.dark-background .light-background .site_title.content-formatted h4,
+.dark-background .light-background .site_title.content-formatted h5,
+.dark-background .light-background .site_title.content-formatted h6,
+.dark-background .light-background .semimodal_bottom-content a,
+.dark-background .light-background .semimodal_bottom-content p,
+.dark-background .light-background .semimodal_bottom-content h1,
+.dark-background .light-background .semimodal_bottom-content h2,
+.dark-background .light-background .semimodal_bottom-content h3,
+.dark-background .light-background .semimodal_bottom-content h4,
+.dark-background .light-background .semimodal_bottom-content h5,
+.dark-background .light-background .semimodal_bottom-content h6,
+.dark-background .light-background .menu-language-btn a,
+.dark-background .light-background .menu-language-btn p,
+.dark-background .light-background .menu-language-btn h1,
+.dark-background .light-background .menu-language-btn h2,
+.dark-background .light-background .menu-language-btn h3,
+.dark-background .light-background .menu-language-btn h4,
+.dark-background .light-background .menu-language-btn h5,
+.dark-background .light-background .menu-language-btn h6,
+.dark-background .light-background .menu-language-name a,
+.dark-background .light-background .menu-language-name p,
+.dark-background .light-background .menu-language-name h1,
+.dark-background .light-background .menu-language-name h2,
+.dark-background .light-background .menu-language-name h3,
+.dark-background .light-background .menu-language-name h4,
+.dark-background .light-background .menu-language-name h5,
+.dark-background .light-background .menu-language-name h6 {
+  color: var(--header-mainmenu-color);
+}
+.dark-background .light-background .menu-btn .menu-stripe {
+  background-color: var(--header-mainmenu-color);
+}
+.dark-background .light-background .search-btn svg g,
+.dark-background .light-background .edy-ecommerce-custom-ico svg g,
+.dark-background .light-background .edy-ecommerce-custom-ico svg path {
+  fill: var(--header-mainmenu-color);
+}
+.dark-background .light-background .search-btn:hover svg g,
+.dark-background .light-background .edy-ecommerce-custom-ico:hover svg g,
+.dark-background .light-background .edy-ecommerce-custom-ico:hover svg path {
+  fill: var(--header-mainmenu-hover-color);
+}
 .dark-background .light-background .menu-main .menu .menu-item a {
   color: var(--header-mainmenu-color);
 }

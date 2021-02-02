@@ -136,6 +136,12 @@
       width: calc(100% / {{blockColumnsCount}} - {{hPadding}}*2px);
       max-width: {%- if col_max_width == "none" -%}none{%- else -%}{{col_max_width}}px{%- endif -%};
     }
+
+    @media screen and (max-width: 540px) {
+      .column-container-{{blockColumnsCount}}-{{ id }} .col-item {
+        max-width: 100%;
+      }
+    }
   </style>
 {%- endfor -%}
 

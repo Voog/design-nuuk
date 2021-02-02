@@ -13,7 +13,6 @@
     @include transition(all 600ms);
 
     .semimodal-relative & {
-      background-color: transparent !important;
       box-shadow: none !important;
     }
 
@@ -44,6 +43,16 @@
             background-color: var(--header-mainmenu-hover-color)!important;
           }
         }
+      }
+
+      .search-btn svg g,
+      .edy-ecommerce-custom-ico svg g,
+      .edy-ecommerce-custom-ico svg path {
+        fill: var(--header-mainmenu-color)!important;
+      }
+
+      .edy-ecommerce-product-count {
+        color: var(--header-mainmenu-color)!important;
       }
 
       .search-btn svg g {

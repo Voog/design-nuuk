@@ -2518,7 +2518,6 @@ body.edy-checkout-button-visible {
           backface-visibility: hidden;
 }
 .semimodal-relative .header_fixed {
-  background-color: transparent !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
@@ -2551,6 +2550,14 @@ body.edy-checkout-button-visible {
   }
   .header_fixed .menu-btn:hover .menu-stripe {
     background-color: var(--header-mainmenu-hover-color) !important;
+  }
+  .header_fixed .search-btn svg g,
+  .header_fixed .edy-ecommerce-custom-ico svg g,
+  .header_fixed .edy-ecommerce-custom-ico svg path {
+    fill: var(--header-mainmenu-color) !important;
+  }
+  .header_fixed .edy-ecommerce-product-count {
+    color: var(--header-mainmenu-color) !important;
   }
   .header_fixed .search-btn svg g {
     fill: var(--header-mainmenu-color) !important;
@@ -2816,6 +2823,9 @@ body.edy-checkout-button-visible {
       -ms-transform: translateX(0px);
           transform: translateX(0px);
 }
+.search .menu-stripe {
+  background-color: #000000;
+}
 
 .search-middle {
   vertical-align: middle;
@@ -2971,9 +2981,6 @@ body.edy-checkout-button-visible {
       -ms-transform: rotate(-45deg) translate(-4px, 4px);
           transform: rotate(-45deg) translate(-4px, 4px);
 }
-.dark-background .search-close-btn .menu-stripe {
-  background-color: white;
-}
 
 .voog-search-modal {
   opacity: 0;
@@ -3005,7 +3012,7 @@ body.edy-checkout-button-visible {
   }
 }
 .voog-search-modal.no-content {
-  padding: 20px;
+  padding: 32px;
   color: black;
 }
 .voog-search-modal.search-results-active {

@@ -45,6 +45,10 @@
     pointer-events: all;
     transform: translateX(0px);
   }
+
+  .menu-stripe {
+    background-color: $black;
+  }
 }
 
 .search-middle {
@@ -213,10 +217,6 @@
       margin-bottom: 10px;
       transform: rotate(-45deg) translate(-4px, 4px);
     }
-
-    .dark-background & {
-      @include bg($white, 1);
-    }
   }
 }
 
@@ -238,7 +238,7 @@
   }
 
   &.no-content {
-    padding: 20px;
+    padding: 32px;
     color: rgba($black, 1);
   }
 
