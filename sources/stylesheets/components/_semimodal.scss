@@ -24,6 +24,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: auto;
 
     @include query($tablet-1) {
       overflow: unset;
