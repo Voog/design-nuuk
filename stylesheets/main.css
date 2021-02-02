@@ -115,7 +115,7 @@ body.dark-background {
           box-sizing: border-box;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  padding: 40px 32px;
+  padding: 40px 32px 32px;
 }
 @media screen and (max-width: 752px) {
   .container {
@@ -1189,6 +1189,10 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-transition: all 200ms;
   -o-transition: all 200ms;
   transition: all 200ms;
@@ -2398,7 +2402,7 @@ body.edy-checkout-button-visible {
 /* FOOTER */
 .footer {
   margin-top: 40px;
-  padding: 16px 0;
+  padding-top: 16px;
 }
 @media screen and (max-width: 900px) {
   .footer {
@@ -2427,25 +2431,11 @@ body.edy-checkout-button-visible {
   min-height: 18px;
 }
 .footer .voog-reference {
-  margin-top: 30px;
+  margin-top: 16px;
+  text-align: center;
 }
-.footer .voog-reference a {
-  display: inline-block;
-  padding: 7px 9px;
-  font-size: 10px;
-  color: black;
-  opacity: .75;
-  line-height: 1;
-  background-color: white;
-  border: 1px solid #000000;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-.dark-background .footer .voog-reference a {
-  color: #000000;
-}
-.footer .voog-reference a:hover {
-  border: 1px solid #000000;
-  border: 1px solid rgba(0, 0, 0, 0.75);
+.footer .voog-reference:hover {
+  opacity: .8;
 }
 
 .signout-btn-wrap {
@@ -4737,6 +4727,9 @@ body .animate_translated-x--0 {
 }
 .mar_0-24 {
   margin: 0 24px;
+}
+.mar_b-32-neg {
+  margin-bottom: -32px;
 }
 .mar_b-16 {
   margin-bottom: 16px;

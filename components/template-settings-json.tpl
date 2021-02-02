@@ -44,7 +44,7 @@
           "block_v_padding": 16,
           "col_max_width": "none",
           "col_justification": "between",
-          "col_min_width": 240,
+          "col_min_width": 400,
           "col_h_padding": 16
         },
         "default": {
@@ -54,7 +54,7 @@
           "block_v_padding": 64,
           "col_justification": "evenly",
           "col_max_width": 400,
-          "col_min_width": 240,
+          "col_min_width": 400,
           "col_h_padding": 16
         }
       }

@@ -2,7 +2,7 @@
 // Styling rules for the site's footer. These rules affect the entire site.
 .footer {
   margin-top: 40px;
-  padding: 16px 0;
+  padding-top: 16px;
 
   @include query($tablet-1) {
     margin-top: 16px;
@@ -34,25 +34,11 @@
   }
 
   .voog-reference {
-    margin-top: 30px;
+    margin-top: 16px;
+    text-align: center;
 
-    a {
-      display: inline-block;
-      padding: 7px 9px;
-      font-size: 10px;
-      @include color($primary-color, 1);
-      opacity: .75;
-      line-height: 1;
-      @include bg($white);
-      @include border(all,1px,solid,$black, 0.1);
-
-      .dark-background & {
-        color: $black;
-      }
-
-      &:hover {
-        @include border(all, 1px, solid, $black, 0.75);
-      }
+    &:hover {
+      opacity: .8;
     }
   }
 }

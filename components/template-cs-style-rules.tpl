@@ -335,8 +335,11 @@ body.dark-background {
   border-color: var(--header-mainmenu-color);
 }
 
-.footer .voog-reference a {
-  color: var(--primary-color) !important;
+.footer .voog-reference svg path {
+  fill: var(--primary-color);
+}
+.dark-background .footer .voog-reference svg path {
+  fill: var(--fourth-color);
 }
 
 .content-formatted, .content-formatted .product_item-btn, .content-formatted p {

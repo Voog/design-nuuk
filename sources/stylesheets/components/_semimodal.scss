@@ -6,6 +6,7 @@
   background-color: #FBFBFB;
   z-index: $zindex-semimodal;
   display: flex;
+  flex-direction: column;
   @include transition(all 200ms);
 
   &.dark-background {

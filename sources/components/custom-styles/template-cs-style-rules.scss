@@ -449,9 +449,11 @@ body {
 // =============================================================================
 // Styling rules for the site's footer. These rules affect the entire site.
 .footer {
-  .voog-reference {
-    a {
-      color: var(--primary-color) !important;
+  .voog-reference svg path {
+    fill: var(--primary-color);
+
+    .dark-background & {
+      fill: var(--fourth-color);
     }
   }
 }
