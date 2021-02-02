@@ -28,9 +28,7 @@
       {% capture header_content %}
         <div class="swiper-content content-formatted" data-search-indexing-allowed="true">
           <div class="swiper-content-area">
-            {% contentblock name="front_header_content" publish_default_content="true" %}
-              <h1 style="text-align: center;">Shop</h1>
-            {% endcontentblock %}
+            {% content name="front_header_content" %}
           </div>
         </div>
       {% endcapture %}
@@ -62,9 +60,7 @@
                   {%- if swiperSettingsData.is_content_by_slide == true -%}
                     <div class="swiper-content content-formatted" data-swiper-parallax="-100%" data-search-indexing-allowed="true">
                       <div class="swiper-content-area">
-                        {% contentblock name=contentKey publish_default_content="true" %}
-                          <h1 style="text-align: center;">Shop</h1>
-                        {% endcontentblock %}
+                        {% content name=contentKey %}
                       </div>
                     </div>
                   {%- endif -%}
@@ -152,7 +148,7 @@
           {% endif %}
 
           <div class="content-slogan content-formatted js-content-optional{% if front_slogan_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">
-            {% contentblock name="front-slogan" publish_default_content="false" %}
+            {% contentblock name="front-slogan" %}
               <h1>Welcome to<br>our fancy<br>vanilla website</h1>
             {% endcontentblock %}
           </div>
