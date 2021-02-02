@@ -9,7 +9,7 @@
     <div class="flex_row flex_row-{{footerBlocColumnskCount}} mar_0-8-neg flex_j-space-between mar_b-32-neg">
       {%- for id in (1..footerBlocColumnskCount) -%}
         {%- assign name = "footer_row-" | append: i | append: "-" | append: id -%}
-        <div class="flex_row-{{footerBlocColumnskCount}}--item">
+        <div class="flex_row-{{footerBlocColumnskCount}}--item footer_content">
           <div class="content-formatted mar_0-8">{% xcontent name=name %}</div>
         </div>
       {%- endfor -%}

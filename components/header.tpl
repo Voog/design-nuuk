@@ -6,7 +6,7 @@
 
 {%- if menuSettings.max_width >= 1 -%}
   <style>
-    @media screen and (min-width: 901px)
+    @media screen and (min-width: 901px) {
       html.semimodal-open:not(.semimodal-relative) .semimodal,
       html.semimodal-relative .semimodal {
         min-width: {{menuSettings.max_width}}px;
