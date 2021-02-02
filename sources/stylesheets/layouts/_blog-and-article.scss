@@ -141,8 +141,16 @@
       }
 
       &.post_nav-link--older {
+        display: flex;
+        justify-content: flex-end;
+
         .post_nav-link--inner {
           justify-content: flex-end;
+          width: 100%;
+
+          &.without-image {
+            align-items: flex-end;
+          }
 
           @include query($mobile-1) {
             justify-content: center;
@@ -165,7 +173,17 @@
       }
 
       &.post_nav-link--newer {
+        display: flex;
+        justify-content: flex-start;
+
         .post_nav-link--inner {
+          justify-content: flex-start;
+          width: 100%;
+
+          &.without-image {
+            align-items: flex-start;
+          }
+
           @include query($mobile-1) {
             justify-content: center;
             .post_nav-direction {
