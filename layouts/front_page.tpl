@@ -6,7 +6,7 @@
   {%- assign swiperSettingsData = page.data[swiperSettingsKey] -%}
   {% include "html-head" %}
   {% include "template-styles" %}
-  {% capture front_slogan_html %}{% unless editmode %}{% content name="front-slogan" %}{% endunless %}{% endcapture %}
+  {% capture front_slogan_html %}{% unless editmode %}{% content name="slogan" %}{% endunless %}{% endcapture %}
   {% capture front_slogan_size %}{{ front_slogan_html | size | minus: 1 }}{% endcapture %}
   {% unless front_slogan_size contains "-" %}
     {% assign front_slogan_has_content = true %}
@@ -28,7 +28,7 @@
       {% capture header_content %}
         <div class="swiper-content content-formatted" data-search-indexing-allowed="true">
           <div class="swiper-content-area">
-            {% content name="front_header_content" %}
+            {% content name="slaider_content-1" %}
           </div>
         </div>
       {% endcapture %}
@@ -38,7 +38,7 @@
           <div class="swiper-wrapper{%- if swiperSettingsData.is_content_by_slide != true %} p-abs{% endif -%}">
             {%- for i in (1..swiperSettingsData.slides_count) -%}
               {% assign swiperDataKey = swiperBgKey | append: i %}
-              {% assign contentKey = 'front_header_content_' | append: i %}
+              {% assign contentKey = 'slaider_content-' | append: i %}
 
               {%- if forloop.index == 1 -%}
                 {%- assign imagedata = swiper_bg_1 -%}
@@ -148,7 +148,7 @@
           {% endif %}
 
           <div class="content-slogan content-formatted js-content-optional{% if front_slogan_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">
-            {% content name="front-slogan" %}
+            {% content name="slogan" %}
           </div>
           <section class="content-body content-formatted{% if front_main_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">{% content %}</section>
         </main>

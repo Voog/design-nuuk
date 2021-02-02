@@ -168,7 +168,7 @@
 
       <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap flex_j-center-mobile">
         {%- for i in (1..columnCount) -%}
-          {%- assign name = "col-" | append: i | append: id -%}
+          {%- assign name = "content-" | append: i | append: "-" | append: id -%}
           <div class="col-item flex_auto b-box" data-search-indexing-allowed="true">
             {%- if id == 1 and i == 1 -%}
               {% contentblock name=name %}

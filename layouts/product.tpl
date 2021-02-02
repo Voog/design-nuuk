@@ -63,14 +63,14 @@
               {%- endif -%}
             </div>
             <section class="content-body content-formatted mar_0-24 mar_t-32" data-search-indexing-allowed="true">
-              {% content name="product-gallery" %}
+              {% content name="gallery" %}
             </section>
           </div>
 
           <div class="flex_row-2--item">
             <div class="mar_0-24 flex_col">
               <div class="content-body content-formatted" data-search-indexing-allowed="true">
-                {% contentblock name="page-title" publish_default_content="true" %}
+                {% contentblock name="page_title" publish_default_content="true" %}
                   <h3>{{page.title}}</h3>
                 {% endcontentblock %}
                 {%- assign productSettingsData = page.data[productLayoutSettingsKey] -%}
@@ -89,12 +89,14 @@
                   </div>
                 {%- endif -%}
               </div>
-              <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">{% content %}</section>
+              <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
+                {% contentblock %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}
+              </section>
             </div>
           </div>
         </div>
 
-        <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content name="product-content-1" %}</section>
+        <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content name="content" %}</section>
 
         <div>
           {%- assign pageIdsArr = "" | split: ',' -%}

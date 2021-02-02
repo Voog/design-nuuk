@@ -30,7 +30,7 @@
 
       <main class="content" role="main">
         <div class="content-body content-formatted" data-search-indexing-allowed="true">
-          {% contentblock name="page-title" publish_default_content="true" %}
+          {% contentblock name="page_title" publish_default_content="true" %}
             <h1>{{page.title}}</h1>
           {% endcontentblock %}
         </div>

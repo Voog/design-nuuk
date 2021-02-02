@@ -40,7 +40,7 @@
     </button>
 
     <div class="site_title content-formatted">
-      {% contentblock name="site-title" xpage="true" %}
+      {% contentblock name="site_title" xpage="true" %}
         <h3>{{site.title}}</h3>
       {% endcontentblock %}
     </div>
@@ -81,7 +81,7 @@
       {%- include "menu-main", _semimodalMenu: true -%}
 
       <div class="content-formatted semimodal_bottom-content">
-        {% content name="semimodal-footer" xpage="true" %}
+        {% content name="menu_bottom" xpage="true" %}
       </div>
     </div>
   </header>
