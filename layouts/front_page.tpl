@@ -7,13 +7,13 @@
   {% include "html-head" %}
   {% include "template-styles" %}
   {% capture front_slogan_html %}{% unless editmode %}{% content name="front-slogan" %}{% endunless %}{% endcapture %}
-  {% capture front_slogan_size %}{{ front_slogan_html | size | minus : 1 }}{% endcapture %}
+  {% capture front_slogan_size %}{{ front_slogan_html | size | minus: 1 }}{% endcapture %}
   {% unless front_slogan_size contains "-" %}
     {% assign front_slogan_has_content = true %}
   {% endunless %}
 
-  {% capture front_main_html %}{% unless editmode %}{% content name="front-main" %}{% endunless %}{% endcapture %}
-  {% capture front_main_size %}{{ front_main_html | size | minus : 1 }}{% endcapture %}
+  {% capture front_main_html %}{% unless editmode %}{% content %}{% endunless %}{% endcapture %}
+  {% capture front_main_size %}{{ front_main_html | size | minus: 1 }}{% endcapture %}
   {% unless front_main_size contains "-" %}
     {% assign front_main_has_content = true %}
   {% endunless %}
@@ -150,7 +150,7 @@
           <div class="content-slogan content-formatted js-content-optional{% if front_slogan_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">
             {% content name="front-slogan" %}
           </div>
-          <section class="content-body content-formatted{% if front_main_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">{% content name="front-main" %}</section>
+          <section class="content-body content-formatted{% if front_main_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">{% content %}</section>
         </main>
 
         {% include "footer" %}
