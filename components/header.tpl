@@ -12,6 +12,10 @@
         min-width: {{menuSettings.max_width}}px;
         max-width: {{menuSettings.max_width}}px;
       }
+
+      .semimodal-relative body {
+        margin-left: {{menuSettings.max_width}}px;
+      }
     }
   </style>
 {%- endif -%}

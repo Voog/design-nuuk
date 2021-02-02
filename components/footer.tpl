@@ -1,18 +1,21 @@
 
 <footer class="footer content-formatted">
   <div class="footer_separator"></div>
-  <section class="content-body content-formatted mar_b-56">{% xcontent name="footer-top" %}</section>
-  <div class="flex_row flex_row-3 mar_0-8-neg flex_j-space-between mar_b-32-neg">
-    <div class="flex_row-3--item">
-      <div class="content-formatted mar_0-8">{% xcontent name="footer" %}</div>
+
+  {%- assign footerBlocskCount = template_settings.site.footer_blocks_settings.value.blocks_count -%}
+  {%- assign footerBlocColumnskCount = template_settings.site.footer_block_columns_settings.value.col_count -%}
+
+  {%- for i in (1..footerBlocskCount) -%}
+    <div class="flex_row flex_row-{{footerBlocColumnskCount}} mar_0-8-neg flex_j-space-between mar_b-32-neg">
+      {%- for id in (1..footerBlocColumnskCount) -%}
+        {%- assign name = "footer_row-" | append: i | append: "-" | append: id -%}
+        <div class="flex_row-{{footerBlocColumnskCount}}--item">
+          <div class="content-formatted mar_0-8">{% xcontent name=name %}</div>
+        </div>
+      {%- endfor -%}
     </div>
-    <div class="flex_row-3--item">
-      <div class="content-formatted mar_0-8">{% xcontent name="footer-1" %}</div>
-    </div>
-    <div class="flex_row-3--item">
-      <div class="content-formatted mar_0-8">{% xcontent name="footer-2" %}</div>
-    </div>
-  </div>
+  {%- endfor -%}
+
   {% if site.branding.enabled %}
     <div class="voog-reference{% unless editmode or footer_has_content %} voog-reference-with-padding{% endunless %}">
       {% loginblock %}

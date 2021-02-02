@@ -44,8 +44,8 @@
           _defaultBlockObj: template_settings.page.block_columns_settings.value
         %}
       </main>
-      {%- include "footer" -%}
     </div>
+    {%- include "footer" -%}
   </div>
 
   {%- include "site-signout" -%}

@@ -232,6 +232,9 @@ body.dark-background {
 .dark-background .light-background .menu-language-name h6 {
   color: var(--header-mainmenu-color);
 }
+.dark-background .light-background .menu-btn {
+  color: var(--header-mainmenu-color);
+}
 .dark-background .light-background .menu-btn .menu-stripe {
   background-color: var(--header-mainmenu-color);
 }

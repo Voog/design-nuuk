@@ -1,11 +1,12 @@
 /* FOOTER */
 // Styling rules for the site's footer. These rules affect the entire site.
 .footer {
-  margin-top: 40px;
-  padding-top: 16px;
+  max-width: calc(var(--container-max-width) + 304px);
+  padding: 0 32px 32px;
+  margin: auto;
 
-  @include query($tablet-1) {
-    margin-top: 16px;
+  @include query($tablet-2) {
+    padding: 0 16px;
   }
 
   &_separator {

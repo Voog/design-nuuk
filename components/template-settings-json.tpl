@@ -21,6 +21,18 @@
     "semimodal_bg": {
       "key": "PREFIX_semimodal_bg",
       "value": {}
+    },
+    "footer_blocks_settings": {
+      "key": "PREFIX_footer_blocks_settings_",
+      "value": {
+        "blocks_count": 2
+      }
+    },
+    "footer_block_columns_settings": {
+      "key": "PREFIX_footer_block_columns_settings_",
+      "value": {
+        "col_count": 4
+      }
     }
   },
   "page": {

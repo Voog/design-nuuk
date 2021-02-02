@@ -295,8 +295,12 @@ body {
     }
   }
 
-  .menu-btn .menu-stripe {
-    background-color: var(--header-mainmenu-color);
+  .menu-btn {
+    color: var(--header-mainmenu-color);
+
+    .menu-stripe {
+      background-color: var(--header-mainmenu-color);
+    }
   }
 
   .search-btn svg g,

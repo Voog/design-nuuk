@@ -123,8 +123,8 @@
           </div>
         </div>
       </main>
-      {% include "footer" %}
     </div>
+    {% include "footer" %}
   </div>
 
   {% include "site-signout" %}

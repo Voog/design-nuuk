@@ -42,9 +42,8 @@
         {% include 'product-list-filter' %}
         {% include 'product-list-block' %}
       </main>
-
-      {%- include "footer" -%}
     </div>
+    {%- include "footer" -%}
   </div>
 
   {% include 'settings-popover' %}

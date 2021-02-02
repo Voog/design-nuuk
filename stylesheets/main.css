@@ -128,16 +128,6 @@ body.dark-background {
 .container a img {
   border: none;
 }
-.semimodal-relative .container_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-@media screen and (max-width: 900px) {
-  .semimodal-relative .container_wrap {
-    display: block;
-  }
-}
 .semimodal-relative .container {
   margin-top: 48px;
 }
@@ -1203,6 +1193,7 @@ p {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  height: 100vh;
 }
 .semimodal.dark-background {
   color: white;
@@ -1304,7 +1295,6 @@ html:not(.semimodal-relative) .semimodal {
   display: none;
 }
 .semimodal-relative .semimodal {
-  position: relative;
   -webkit-box-shadow: none;
           box-shadow: none;
   border-right: 1px solid;
@@ -1358,7 +1348,6 @@ html:not(.semimodal-relative) .semimodal {
 }
 
 .content_wrap {
-  width: 100vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
@@ -2401,12 +2390,13 @@ body.edy-checkout-button-visible {
 
 /* FOOTER */
 .footer {
-  margin-top: 40px;
-  padding-top: 16px;
+  max-width: calc(var(--container-max-width) + 304px);
+  padding: 0 32px 32px;
+  margin: auto;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 752px) {
   .footer {
-    margin-top: 16px;
+    padding: 0 16px;
   }
 }
 .footer_separator {
@@ -4828,6 +4818,29 @@ body .animate_translated-x--0 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+.flex_row-4 {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.flex_row-4--item {
+  width: 25%;
+  margin-bottom: 32px;
+}
+@media screen and (max-width: 1024px) {
+  .flex_row-4--item {
+    width: 33%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .flex_row-4--item {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .flex_row-4--item {
+    width: 100%;
+  }
 }
 .flex_row-3 {
   -ms-flex-wrap: wrap;
