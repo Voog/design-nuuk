@@ -20,6 +20,8 @@
     box-sizing: border-box;
     padding: 32px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 
     @include query($tablet-1) {
       overflow: unset;

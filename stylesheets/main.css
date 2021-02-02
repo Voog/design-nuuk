@@ -1212,6 +1212,13 @@ p {
           box-sizing: border-box;
   padding: 32px;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
           transform: translateX(-100%);
@@ -2092,6 +2099,7 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   min-height: calc(528px - 128px);
   position: relative;
   text-align: center;
+  z-index: 49;
 }
 @media screen and (max-width: 900px) {
   .front-page .swiper-content {

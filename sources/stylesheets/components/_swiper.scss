@@ -73,6 +73,7 @@
     min-height: calc(528px - 128px);
     position: relative;
     text-align: center;
+    z-index: $zindex-swiper-content;
 
     @include query($tablet-1) {
       min-height: calc(400px - 128px);

@@ -129,7 +129,7 @@
           </div>
         {% endif %}
 
-        {%- if previewmode or editmode -%}
+        {%- if previewmode or editmode or article.published? != true -%}
           {%- assign sharerTag = 'div' -%}
         {%- else -%}
           {%- assign sharerTag = 'a' -%}
