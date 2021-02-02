@@ -37,7 +37,7 @@
     "featured": true,
     "scope": "global"
   */
-  --product-list-item__font-size: 16px;
+  --product-list-item__font-size: 14px;
   /* VoogStyle
     "pathI18n": ["product_list", "product"],
     "titleI18n": "color",
