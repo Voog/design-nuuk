@@ -12,7 +12,7 @@
   <div class="body-bg_color"></div>
   <div class="container_wrap">
     {%- include "header" -%}
-    <div class="container flex_col flex_j-space-between">
+    <div class="pad_container p-rel">
       {%- if editmode -%}
         <div class="bg-picker-top">
           <button
@@ -27,21 +27,22 @@
           ></button>
         </div>
       {%- endif -%}
+      <div class="container flex_col flex_j-space-between">
+        <main class="content" role="main">
+          <div class="content-body content-formatted" data-search-indexing-allowed="true">
+            {% contentblock name="page_title" publish_default_content="true" %}
+              <h1>{{page.title}}</h1>
+            {% endcontentblock %}
+          </div>
 
-      <main class="content" role="main">
-        <div class="content-body content-formatted" data-search-indexing-allowed="true">
-          {% contentblock name="page_title" publish_default_content="true" %}
-            <h1>{{page.title}}</h1>
-          {% endcontentblock %}
-        </div>
+          {% if editmode %}
+            <div class="edit-btn">{% menuadd parent="page" %}</div>
+          {% endif %}
 
-        {% if editmode %}
-          <div class="edit-btn">{% menuadd parent="page" %}</div>
-        {% endif %}
-
-        {% include 'product-list-filter' %}
-        {% include 'product-list-block' %}
-      </main>
+          {% include 'product-list-filter' %}
+          {% include 'product-list-block' %}
+        </main>
+      </div>
     </div>
     {%- include "footer" -%}
   </div>

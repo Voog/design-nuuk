@@ -87,7 +87,7 @@ body.dark-background {
 
 .bg-picker-top {
   z-index: 99;
-  top: 64px;
+  top: -22px;
   position: absolute;
 }
 
@@ -108,19 +108,12 @@ body.dark-background {
 
 .container {
   position: relative;
-  max-width: 1440px;
   margin: 0 auto;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  padding: 40px 32px 32px;
-}
-@media screen and (max-width: 752px) {
-  .container {
-    padding: 24px 16px;
-  }
 }
 .container a {
   text-decoration: none;
@@ -4593,6 +4586,14 @@ article.post_wrapper .date-separator.hide-separator {
   outline: inherit;
 }
 
+.pad_container {
+  padding: 40px 32px 32px;
+}
+@media screen and (max-width: 752px) {
+  .pad_container {
+    padding: 24px 16px;
+  }
+}
 .pad_40-0 {
   padding: 40px 0;
 }

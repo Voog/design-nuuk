@@ -16,9 +16,8 @@
   <div class="container_wrap">
     {% include "header" %}
 
-
-    <div class="container">
-      {% if editmode %}
+    <div class="pad_container p-rel">
+    {% if editmode %}
         <div class="bg-picker-top">
           <button
             class="voog-bg-picker-btn body_bg-picker--btn bg-picker {{bodyBgKey}}-picker"
@@ -31,24 +30,24 @@
             data-bg-color="{{ body_bg_color }}"
           ></button>
         </div>
-      {% endif %}
-
-      <main class="content" role="main" data-search-indexing-allowed="true">
-        <section class="content-body content-formatted post_intro-content" {{ edy_intro_edit_text }}>{% content %}</section>
-        {% include "blog-news-tags" %}
-        <div class="mar_b-16">{% addbutton %}</div>
-        <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
-          {% for article in articles %}
-            <div class="blog_listing-item hover">
-              <a href="{{ article.url }}">
-              {% include "article-settings-variables" %}
-              {% include "post-box" %}
-              </a>
-            </div>
-          {% endfor %}
-        </div>
-      </main>
-
+    {% endif %}
+      <div class="container">
+        <main class="content" role="main" data-search-indexing-allowed="true">
+          <section class="content-body content-formatted post_intro-content" {{ edy_intro_edit_text }}>{% content %}</section>
+          {% include "blog-news-tags" %}
+          <div class="mar_b-16">{% addbutton %}</div>
+          <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
+            {% for article in articles %}
+              <div class="blog_listing-item hover">
+                <a href="{{ article.url }}">
+                {% include "article-settings-variables" %}
+                {% include "post-box" %}
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </main>
+      </div>
     </div>
     {% include "footer" %}
   </div>

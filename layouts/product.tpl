@@ -14,7 +14,7 @@
 
   <div class="container_wrap">
     {% include "header" %}
-    <div class="container">
+    <div class="pad_container p-rel">
       {% if editmode %}
         <div class="bg-picker-top">
           <button
@@ -29,100 +29,101 @@
           ></button>
         </div>
       {% endif %}
+      <div class="container">
+        <div class="mar_t-32 mar_b-32">
+          {% include 'menu-breadcrumbs' %}
+        </div>
 
-      <div class="mar_t-32 mar_b-32">
-        {% include 'menu-breadcrumbs' %}
-      </div>
+        <main class="content" role="main" data-search-indexing-allowed="true">
+          {% if editmode %}
+            {%- assign isPostImageStatic = false -%}
+          {% else %}
+            {%- assign isPostImageStatic = true -%}
+          {% endif %}
+          <div class="flex_row flex_row-2 mar_0-24-neg mar_b-32">
+            <div class="flex_row-2--item">
+              <div class="mar_0-24 p-rel">
+                {%- load buy_button to "buy_button" q.content.parent_id=page.id q.content.parent_type="page" -%}
+                {% if buy_button.product != blank %}
+                  {%- assign buyButtonImage = buy_button.product.image -%}
+                {% endif %}
 
-      <main class="content" role="main" data-search-indexing-allowed="true">
-        {% if editmode %}
-          {%- assign isPostImageStatic = false -%}
-        {% else %}
-          {%- assign isPostImageStatic = true -%}
-        {% endif %}
-        <div class="flex_row flex_row-2 mar_0-24-neg mar_b-32">
-          <div class="flex_row-2--item">
-            <div class="mar_0-24 p-rel">
-              {%- load buy_button to "buy_button" q.content.parent_id=page.id q.content.parent_type="page" -%}
-              {% if buy_button.product != blank %}
-                {%- assign buyButtonImage = buy_button.product.image -%}
-              {% endif %}
+                {%- if buyButtonImage != blank -%}
+                  {%- assign productImage = buyButtonImage -%}
+                  {%- assign isProductImage = true -%}
+                {%- else -%}
+                  {%- assign productImage = page.data[itemImageKey] -%}
+                  {%- assign isProductImage = false -%}
+                {%- endif -%}
 
-              {%- if buyButtonImage != blank -%}
-                {%- assign productImage = buyButtonImage -%}
-                {%- assign isProductImage = true -%}
-              {%- else -%}
-                {%- assign productImage = page.data[itemImageKey] -%}
-                {%- assign isProductImage = false -%}
-              {%- endif -%}
-
-              {%- if productImage != blank or editmode -%}
-                <div class="js-product-page-image">
-                  {% include 'content-item', _isProductImage: isProductImage, _imageData: productImage, _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic, _targetWidth: '1280' %}
-                </div>
-              {%- endif -%}
-            </div>
-            <section class="content-body content-formatted mar_0-24 mar_t-32" data-search-indexing-allowed="true">
-              {% content name="gallery" %}
-            </section>
-          </div>
-
-          <div class="flex_row-2--item">
-            <div class="mar_0-24 flex_col">
-              <div class="content-body content-formatted" data-search-indexing-allowed="true">
-                {% contentblock name="page_title" publish_default_content="true" %}
-                  <h3>{{page.title}}</h3>
-                {% endcontentblock %}
-                {%- assign productSettingsData = page.data[productLayoutSettingsKey] -%}
-                {%- assign isBoxLabel = productSettingsData.is_product_label_box -%}
-
-
-                {%- if buy_button.product.out_of_stock? -%}
-                  <div class="product_item-box--label mar_t-32">OUT OF STOCK</div>
-                {%- elsif productSettingsData.product_label != blank and isBoxLabel != true -%}
-                  <div class="mar_t-32{% if productSettingsData.is_product_label_line_through == true %} td-lt{% endif %}">
-                    {{productSettingsData.product_label}}
-                  </div>
-                {%- elsif productSettingsData.product_label != blank and isBoxLabel == true -%}
-                  <div class="product_item-box--label mar_t-32">
-                    {{productSettingsData.product_label}}
+                {%- if productImage != blank or editmode -%}
+                  <div class="js-product-page-image">
+                    {% include 'content-item', _isProductImage: isProductImage, _imageData: productImage, _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic, _targetWidth: '1280' %}
                   </div>
                 {%- endif -%}
               </div>
-              <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
-                {% contentblock %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}
+              <section class="content-body content-formatted mar_0-24 mar_t-32" data-search-indexing-allowed="true">
+                {% content name="gallery" %}
               </section>
             </div>
+
+            <div class="flex_row-2--item">
+              <div class="mar_0-24 flex_col">
+                <div class="content-body content-formatted" data-search-indexing-allowed="true">
+                  {% contentblock name="page_title" publish_default_content="true" %}
+                    <h3>{{page.title}}</h3>
+                  {% endcontentblock %}
+                  {%- assign productSettingsData = page.data[productLayoutSettingsKey] -%}
+                  {%- assign isBoxLabel = productSettingsData.is_product_label_box -%}
+
+
+                  {%- if buy_button.product.out_of_stock? -%}
+                    <div class="product_item-box--label mar_t-32">OUT OF STOCK</div>
+                  {%- elsif productSettingsData.product_label != blank and isBoxLabel != true -%}
+                    <div class="mar_t-32{% if productSettingsData.is_product_label_line_through == true %} td-lt{% endif %}">
+                      {{productSettingsData.product_label}}
+                    </div>
+                  {%- elsif productSettingsData.product_label != blank and isBoxLabel == true -%}
+                    <div class="product_item-box--label mar_t-32">
+                      {{productSettingsData.product_label}}
+                    </div>
+                  {%- endif -%}
+                </div>
+                <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
+                  {% contentblock %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}
+                </section>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content name="content" %}</section>
+          <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content name="content" %}</section>
 
-        <div>
-          {%- assign pageIdsArr = "" | split: ',' -%}
-          {%- for i in (1..3) -%}
-            {%- assign relatedProductKey = 'is_related_product_' | append: i -%}
-            {%- assign relatedProductPageId = page.data[productLayoutSettingsKey][relatedProductKey] -%}
-            {%- assign pageIdsArr = pageIdsArr | push: relatedProductPageId -%}
-            {%- assign pageIdCompactArr = pageIdsArr | compact -%}
-          {%- endfor -%}
+          <div>
+            {%- assign pageIdsArr = "" | split: ',' -%}
+            {%- for i in (1..3) -%}
+              {%- assign relatedProductKey = 'is_related_product_' | append: i -%}
+              {%- assign relatedProductPageId = page.data[productLayoutSettingsKey][relatedProductKey] -%}
+              {%- assign pageIdsArr = pageIdsArr | push: relatedProductPageId -%}
+              {%- assign pageIdCompactArr = pageIdsArr | compact -%}
+            {%- endfor -%}
 
-          <h3 class="visits-title mar_t-48"{% if pageIdCompactArr.size <= 0 %} style="display: none;"{% endif %}>Related products</h3>
+            <h3 class="visits-title mar_t-48"{% if pageIdCompactArr.size <= 0 %} style="display: none;"{% endif %}>Related products</h3>
 
-          <div class="product_list content-formatted flex_row flex_row-3 mar_0-8-neg mar_t-48">
-            {%- for id in pageIdCompactArr -%}
-              <div class="product_item js-product-item flex_row-3--item" data-path="{{page.path}}">
-                <div class="mar_0-8">
-                  <div class="product_item-wrap">
-                    {%- load buy_button to "buy_button" q.content.parent_id=id q.content.parent_type="page" -%}
-                    {% include 'product-item', _buyButton: buy_button, _entityData: _buyButton.content.parent %}
+            <div class="product_list content-formatted flex_row flex_row-3 mar_0-8-neg mar_t-48">
+              {%- for id in pageIdCompactArr -%}
+                <div class="product_item js-product-item flex_row-3--item" data-path="{{page.path}}">
+                  <div class="mar_0-8">
+                    <div class="product_item-wrap">
+                      {%- load buy_button to "buy_button" q.content.parent_id=id q.content.parent_type="page" -%}
+                      {% include 'product-item', _buyButton: buy_button, _entityData: _buyButton.content.parent %}
+                    </div>
                   </div>
                 </div>
-              </div>
-            {%- endfor -%}
+              {%- endfor -%}
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
     {% include "footer" %}
   </div>

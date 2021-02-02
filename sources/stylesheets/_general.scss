@@ -52,7 +52,7 @@ body {
 
 .bg-picker-top {
   z-index: $zindex-bg-picker;
-  top: 64px;
+  top: -22px;
   position: absolute;
 }
 
@@ -78,16 +78,10 @@ body {
 // Styling rules for the main container.
 .container {
   position: relative;
-  max-width: 1440px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
   transform: translate3d(0, 0, 0);
-  padding: 40px 32px 32px;
-
-  @include query($tablet-2) {
-    padding: 24px 16px;
-  }
 
   a {
     text-decoration: none;

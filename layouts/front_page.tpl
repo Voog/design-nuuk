@@ -130,28 +130,29 @@
         </div>
       {%- endif -%}
 
-      <div class="container flex_col flex_j-space-between h-100p">
-        <main class="content" role="main" data-search-indexing-allowed="true">
-          {% if editmode %}
-            <div class="bg-picker-top">
-              <button
-                class="voog-bg-picker-btn body_bg-picker--btn bg-picker {{bodyBgKey}}-picker"
-                data-bg_key="{{bodyBgKey}}"
-                data-type_picture="false"
-                data-type_color="true"
-                data-color_elem=".body-bg_color"
-                data-picker_area_elem=".body-bg_picker--area"
-                data-picker_elem=".{{bodyBgKey}}-picker"
-                data-bg-color="{{ body_bg_color }}"
-              ></button>
-            </div>
-          {% endif %}
-
-          <div class="content-slogan content-formatted js-content-optional{% if front_slogan_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">
-            {% content name="slogan" %}
+      <div class="pad_container p-rel">
+        {% if editmode %}
+          <div class="bg-picker-top">
+            <button
+              class="voog-bg-picker-btn body_bg-picker--btn bg-picker {{bodyBgKey}}-picker"
+              data-bg_key="{{bodyBgKey}}"
+              data-type_picture="false"
+              data-type_color="true"
+              data-color_elem=".body-bg_color"
+              data-picker_area_elem=".body-bg_picker--area"
+              data-picker_elem=".{{bodyBgKey}}-picker"
+              data-bg-color="{{ body_bg_color }}"
+            ></button>
           </div>
-          <section class="content-body content-formatted{% if front_main_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">{% content %}</section>
-        </main>
+        {% endif %}
+        <div class="container flex_col flex_j-space-between h-100p">
+          <main class="content" role="main" data-search-indexing-allowed="true">
+            <div class="content-slogan content-formatted js-content-optional{% if front_slogan_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">
+              {% content name="slogan" %}
+            </div>
+            <section class="content-body content-formatted{% if front_main_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">{% content %}</section>
+          </main>
+        </div>
       </div>
     </div>
   </div>
