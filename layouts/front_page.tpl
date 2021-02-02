@@ -148,9 +148,7 @@
           {% endif %}
 
           <div class="content-slogan content-formatted js-content-optional{% if front_slogan_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">
-            {% contentblock name="front-slogan" %}
-              <h1>Welcome to<br>our fancy<br>vanilla website</h1>
-            {% endcontentblock %}
+            {% content name="front-slogan" %}
           </div>
           <section class="content-body content-formatted{% if front_main_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">{% content name="front-main" %}</section>
         </main>
