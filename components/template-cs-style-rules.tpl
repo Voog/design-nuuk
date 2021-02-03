@@ -402,6 +402,12 @@ body.dark-background {
     line-height: calc(var(--headings-title-line-height) / 1.4);
   }
 }
+@media screen and (max-width: 1024px) {
+  .semimodal-relative .content-formatted h1, .semimodal-relative .content-formatted .product_item-btn h1, .semimodal-relative .content-formatted p h1 {
+    font-size: calc(var(--headings-title-font-size) / 1.4);
+    line-height: calc(var(--headings-title-line-height) / 1.4);
+  }
+}
 .content-formatted h2, .content-formatted .product_item-btn h2, .content-formatted p h2 {
   font-size: var(--headings-heading-font-size);
   font-style: var(--headings-heading-font-style);
@@ -422,6 +428,12 @@ body.dark-background {
     line-height: calc(var(--headings-heading-line-height) / 1.4);
   }
 }
+@media screen and (max-width: 1024px) {
+  .semimodal-relative .content-formatted h2, .semimodal-relative .content-formatted .product_item-btn h2, .semimodal-relative .content-formatted p h2 {
+    font-size: calc(var(--headings-heading-font-size) / 1.4);
+    line-height: calc(var(--headings-heading-line-height) / 1.4);
+  }
+}
 .content-formatted h3, .content-formatted .product_item-btn h3, .content-formatted p h3 {
   font-size: var(--headings-subheading-font-size);
   font-style: var(--headings-subheading-font-style);
@@ -438,6 +450,12 @@ body.dark-background {
 }
 @media screen and (max-width: 900px) {
   .content-formatted h3, .content-formatted .product_item-btn h3, .content-formatted p h3 {
+    font-size: calc(var(--headings-subheading-font-size) / 1.4);
+    line-height: calc(var(--headings-subheading-line-height) / 1.4);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .semimodal-relative .content-formatted h3, .semimodal-relative .content-formatted .product_item-btn h3, .semimodal-relative .content-formatted p h3 {
     font-size: calc(var(--headings-subheading-font-size) / 1.4);
     line-height: calc(var(--headings-subheading-line-height) / 1.4);
   }

@@ -531,6 +531,13 @@ body {
       font-size: calc(var(--headings-title-font-size) / 1.4);
       line-height: calc(var(--headings-title-line-height) / 1.4);
     }
+
+    .semimodal-relative & {
+      @include query($desktop-1) {
+        font-size: calc(var(--headings-title-font-size) / 1.4);
+        line-height: calc(var(--headings-title-line-height) / 1.4);
+      }
+    }
   }
 
   h2 {
@@ -547,6 +554,13 @@ body {
     @include query($tablet-1) {
       font-size: calc(var(--headings-heading-font-size) / 1.4);
       line-height: calc(var(--headings-heading-line-height) / 1.4);
+    }
+
+    .semimodal-relative & {
+      @include query($desktop-1) {
+        font-size: calc(var(--headings-heading-font-size) / 1.4);
+        line-height: calc(var(--headings-heading-line-height) / 1.4);
+      }
     }
   }
 
@@ -565,6 +579,13 @@ body {
     @include query($tablet-1) {
       font-size: calc(var(--headings-subheading-font-size) / 1.4);
       line-height: calc(var(--headings-subheading-line-height) / 1.4);
+    }
+
+    .semimodal-relative & {
+      @include query($desktop-1) {
+        font-size: calc(var(--headings-subheading-font-size) / 1.4);
+        line-height: calc(var(--headings-subheading-line-height) / 1.4);
+      }
     }
   }
   // scss-lint:enable SingleLinePerSelector
