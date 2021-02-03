@@ -498,6 +498,18 @@
   ],
   "assets": [
     {
+      "content_type": "application/font-woff",
+      "file": "assets/avenir-next-regular.woff2",
+      "kind": "assets",
+      "filename": "avenir-next-regular.woff2"
+    },
+    {
+      "content_type": "application/font-woff",
+      "file": "assets/avenir-next-regular.woff",
+      "kind": "assets",
+      "filename": "avenir-next-regular.woff"
+    },
+    {
       "content_type": "image/svg+xml",
       "file": "assets/ico-flags-medium-up.svg",
       "kind": "assets",
@@ -508,6 +520,12 @@
       "file": "assets/ico-expand.svg",
       "kind": "assets",
       "filename": "ico-expand.svg"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/avenir-next-regular.ttf",
+      "kind": "assets",
+      "filename": "avenir-next-regular.ttf"
     },
     {
       "content_type": "image/svg+xml",

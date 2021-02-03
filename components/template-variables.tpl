@@ -143,6 +143,10 @@
         "title": "Sans Serif",
         "list": [
           {
+            "title": "Avenir Next",
+            "value": "\"Avenir Next\", sans-serif"
+          },
+          {
             "title": "Fira Sans",
             "value": "\"Fira Sans\", sans-serif"
           },

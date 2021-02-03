@@ -20,7 +20,7 @@
     "boundVariables": [
     ]
   */
-  --main-font-family: "Avenir Next", "Avenir", "Helvetica Neue", "Helvetica", "Segoe UI", sans-serif;
+  --main-font-family: "Avenir Next", sans-serif;
   /* VoogStyle
     "pathI18n": ["main_styles", "colors"],
     "titleI18n": "primary_color",
