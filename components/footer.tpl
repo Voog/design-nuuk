@@ -6,7 +6,7 @@
   {%- assign footerBlocColumnskCount = template_settings.site.footer_block_columns_settings.value.col_count -%}
 
   {%- for i in (1..footerBlocskCount) -%}
-    <div class="flex_row flex_row-{{footerBlocColumnskCount}} mar_0-8-neg flex_j-space-between mar_b-32-neg">
+    <div class="flex_row flex_row-{{footerBlocColumnskCount}} mar_0-8-neg flex_j-space-between">
       {%- for id in (1..footerBlocColumnskCount) -%}
         {%- assign name = "footer_row-" | append: i | append: "-" | append: id -%}
 

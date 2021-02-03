@@ -2425,7 +2425,6 @@ body.edy-checkout-button-visible {
   min-height: 18px;
 }
 .footer .voog-reference {
-  margin-top: 16px;
   text-align: center;
 }
 .footer .voog-reference:hover {
@@ -4848,11 +4847,13 @@ body .animate_translated-x--0 {
 @media screen and (max-width: 1024px) {
   .flex_row-4--item {
     width: 33%;
+    margin-bottom: 24px;
   }
 }
 @media screen and (max-width: 900px) {
   .flex_row-4--item {
     width: 50%;
+    margin-bottom: 16px;
   }
 }
 @media screen and (max-width: 480px) {
