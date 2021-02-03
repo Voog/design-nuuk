@@ -92,7 +92,7 @@
 
   &title {
     margin-top: 24px;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
   }
 
   &details {
@@ -101,10 +101,10 @@
   }
 
   &content {
-    margin-top: 8px;
+    margin-top: 16px;
 
     &body {
-      margin-top: 20px;
+      margin-top: 16px;
     }
   }
 
@@ -263,7 +263,7 @@
           }
 
           .content-item-box img {
-            opacity: .3;
+            opacity: .6;
           }
         }
 

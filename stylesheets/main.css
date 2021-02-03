@@ -3126,7 +3126,7 @@ body.edy-checkout-button-visible {
 }
 .post_title {
   margin-top: 24px;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
 }
 .post_details {
   display: -webkit-box;
@@ -3137,10 +3137,10 @@ body.edy-checkout-button-visible {
           align-items: center;
 }
 .post_content {
-  margin-top: 8px;
+  margin-top: 16px;
 }
 .post_contentbody {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .post_nav {
   margin-top: 50px;
@@ -3351,7 +3351,7 @@ body.edy-checkout-button-visible {
   }
 }
 .post_nav-link--inner .post_nav-image .content-item-box img {
-  opacity: .3;
+  opacity: .6;
 }
 .post_nav-link--inner .content-item-box {
   height: 192px;
