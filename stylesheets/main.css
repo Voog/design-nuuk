@@ -39,10 +39,6 @@
   line-height: inherit;
 }
 
-@font-face {
-  font-family: 'Avenir Next';
-  src: url("../assets/avenir-next-regular.woff2") format("woff2"), url("../assets/avenir-next-regular.woff") format("woff"), url("../assets/avenir-next-regular.ttf") format("truetype");
-}
 /* GENERAL */
 html {
   overflow-x: hidden;
@@ -354,7 +350,7 @@ p {
 }
 
 .bold {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .grey {
@@ -1416,7 +1412,7 @@ html:not(.semimodal-relative) .semimodal {
   text-align: left;
 }
 .layout_settings-btn button.edy-cbtn > span > span .bold {
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   line-height: 24px !important;
 }
 .layout_settings-btn button .edy-cbtn-content span:last-child {
@@ -1653,7 +1649,7 @@ body.front-page .edy-bgpicker-toggle-button {
   background: #1B2124;
   color: #ffffff;
   padding: 8px 16px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 24px;
   position: relative;
   font-size: 14px;
