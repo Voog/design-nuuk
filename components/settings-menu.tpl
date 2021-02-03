@@ -2,8 +2,8 @@
 
 <div class="menu_settings-btn layout_settings-btn js-prevent-sideclick">
   <button disabled class="js-menu-settings-btn js-settings-editor-btn">
-    <div class="bold">{{ "navigation" | lce | escape_once }}</div>
-    <div class="grey">{{ "change_menu_settings" | lce | escape_once }}</div>
+    <div class="bold">{{ "navigation" | lce }}</div>
+    <div class="grey">{{ "change_menu_settings" | lce }}</div>
   </button>
 </div>
 <script>
@@ -23,39 +23,44 @@
         valuesObj.positioning = 'is_side_absolute';
       }
 
+      {%- assign sideMenuTr = value -%}
+
       initSettingsEditor(
         {
           settingsBtn: document.querySelector('.js-menu-settings-btn'),
           menuItems: [
             {
-              "title": '{{ "menu_alignment" | lce | escape_once }}',
+              "title": {{ "menu_alignment" | lce | json }},
               "type": "radio",
               "key": "positioning",
               "list": [
                 {
-                  "title": '{{ "top_always_visible" | lce | escape_once }}',
+                  "title": {{ "top_always_visible" | lce | json }},
                   "value": "is_top"
                 },
                 {
-                  "title": '{{ "top_fixed_header" | lce | escape_once }}',
+                  "title": {{ "top_fixed_header" | lce | json }},
                   "value": "is_top_fixed"
                 },
                 {
-                  "title": '{{ "side_always_open" | lce | escape_once }}',
+                  "title": {{ "side_always_open" | lce | json }},
                   "value": "is_side_always_open"
                 },
                 {
-                  "title": '{{ "side_opens_on_click" | lce | escape_once }}',
+                  "title": {{ "side_opens_on_click" | lce | json }},
                   "value": "is_side_absolute"
                 }
               ]
             },
+            {%- assign sideMenuWidthTr = "side_menu_width" | lce -%}
+            {%- assign pxTr = "units.px" | lce -%}
+            {%- assign sideMenuCombinedTr = sideMenuWidthTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": '{{ "side_menu_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}',
+              "title": {{ sideMenuCombinedTr | json }},
               "type": "number",
               "min": 1,
               "key": "max_width",
-              "placeholder": '{{ "side_menu_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}'
+              "placeholder": {{ sideMenuCombinedTr | json }}
             },
           ],
           dataKey: '{{menuSettingsKey}}',

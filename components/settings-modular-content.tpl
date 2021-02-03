@@ -1,7 +1,7 @@
 <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
   <button disabled class="js-content-area-settings-btn js-settings-editor-btn">
-    <div class="bold">{{ "blocks_settings" | lce | escape_once }}</div>
-    <div class="grey">{{ "set_the_number_of_blocks" | lce | escape_once }}</div>
+    <div class="bold">{{ "blocks_settings" | lce }}</div>
+    <div class="grey">{{ "set_the_number_of_blocks" | lce }}</div>
   </button>
 </div>
 
@@ -22,7 +22,7 @@
         settingsBtn: document.querySelector('.js-content-area-settings-btn'),
         menuItems: [
           {
-            "title": '{{ "no_of_blocks" | lce | escape_once }}',
+            "title": {{ "no_of_blocks" | lce | json }},
             "type": "select",
             "key": "block_count",
             "list": [
@@ -146,7 +146,7 @@
           settingsBtn: document.querySelector('.js-column-settings-btn-{{ id }}'),
           menuItems: [
             {
-              "title": '{{ "no_of_columns" | lce | escape_once }}',
+              "title": {{ "no_of_columns" | lce | json }},
               "type": "select",
               "key": "block_columns",
               "list": [
@@ -157,35 +157,40 @@
                 {"title": "5", "value": 5}
               ]
             },
+            {%- assign blockMaxWidthTr = "block_max_width" | lce -%}
+            {%- assign blockMaxWidthCombinedTr = blockMaxWidthTr | append: ' (%)' -%}
             {
-              "title": '{{ "max_width" | lce | escape_once }} (%)',
+              "title": {{ blockMaxWidthCombinedTr| json }},
               "type": "number",
               "min": 1,
               "key": "block_max_width",
-              "placeholder": '{{ "max_width" | lce | escape_once }} (%)'
+              "placeholder": {{ blockMaxWidthCombinedTr| json }}
             },
+            {%- assign verticalSpacingTr = "vertical_spacing" | lce -%}
+            {%- assign pxTr = "units.px" | lce -%}
+            {%- assign verticalSpacingCombinedTr = verticalSpacingTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": '{{ "vertical_spacing" | lce | escape_once | escape_once  }} {{ "units.px" | lce | escape_once }}',
+              "title": {{verticalSpacingCombinedTr | json }},
               "type": "number",
               "min": 1,
               "key": "block_v_padding",
-              "placeholder": '{{ "vertical_spacing" | lce | escape_once }} {{ "units.px" | lce | escape_once }}'
+              "placeholder": {{verticalSpacingCombinedTr | json }}
             },
             {
-              "title": '{{ "column_distribution" | lce | escape_once }}',
+              "title": {{ "column_distribution" | lce | json }},
               "type": "select",
               "key": "block_justification",
               "list": [
                 {
-                  "title": '{{ "left" | lce | escape_once }}',
+                  "title": {{ "left" | lce | json }},
                   "value": "flex-start"
                 },
                 {
-                  "title": '{{ "center" | lce | escape_once }}',
+                  "title": {{ "center" | lce | json }},
                   "value": "center"
                 },
                 {
-                  "title": '{{ "right" | lce | escape_once }}',
+                  "title": {{ "right" | lce | json }},
                   "value": "flex-end"
                 }
               ],
@@ -193,42 +198,51 @@
                 'block_justification'
               ]
             },
+            {%- assign colMaxWidthTr = "col_max_width" | lce -%}
+            {%- assign pxTr = "units.px" | lce -%}
+            {%- assign colMaxWidthCombinedTr = verticalSpacingTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": '{{ "col_max_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}',
+              "title": {{ colMaxWidthCombinedTr | json }},
               "type": "number",
               "min": 1,
               "key": "col_max_width",
-              "placeholder": '{{ "col_max_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}'
+              "placeholder": {{ colMaxWidthCombinedTr | json }}
             },
+            {%- assign colMinWidthTr = "col_min_width" | lce -%}
+            {%- assign pxTr = "units.px" | lce -%}
+            {%- assign colMinWidthCombinedTr = colMinWidthTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": '{{ "col_min_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}',
+              "title": {{ colMinWidthCombinedTr | json }},
               "type": "number",
               "min": 1,
               "key": "col_min_width",
-              "placeholder": '{{ "col_min_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}'
+              "placeholder": {{ colMinWidthCombinedT | json r}}
             },
+            {%- assign colHPadTr = "col_h_padding" | lce -%}
+            {%- assign pxTr = "units.px" | lce -%}
+            {%- assign colHPadCombinedTr = colHPadTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": '{{ "space_between_columns" | lce | escape_once }} {{ "units.px" | lce | escape_once }}',
+              "title": {{ colHPadCombinedTr | json }},
               "type": "number",
               "min": 1,
               "key": "col_h_padding",
-              "placeholder": '{{ "space_between_columns" | lce | escape_once }} {{ "units.px" | lce | escape_once }}'
+              "placeholder": {{ colHPadCombinedTr | json }}
             },
             {
-              "title": '{{ "column_distribution" | lce | escape_once }}',
+              "title": {{ "column_distribution" | lce | json }},
               "type": "select",
               "key": "col_justification",
               "list": [
                 {
-                  "title": '{{ "space_between_columns" | lce | escape_once }}',
+                  "title": {{ "space_between_columns" | lce | json }},
                   "value": "between"
                 },
                 {
-                  "title": '{{ "space_around_columns" | lce | escape_once }}',
+                  "title": {{ "space_around_columns" | lce | json }},
                   "value": "around"
                 },
                 {
-                  "title": '{{ "columns_are_evenly_distributed" | lce | escape_once }}',
+                  "title": {{ "columns_are_evenly_distributed" | lce | json }},
                   "value": "evenly"
                 }
               ]

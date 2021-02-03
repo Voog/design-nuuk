@@ -1,6 +1,6 @@
 <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
   <button disabled class="js-article-settings-btn js-settings-editor-btn">
-    <div class="bold">{{"article" | lce | escape_once }}</div><div class="grey">{{"edit_article_settings" | lce | escape_once }}</div>
+    <div class="bold">{{"article" | lce }}</div><div class="grey">{{"edit_article_settings" | lce }}</div>
   </button>
 </div>
 
@@ -55,37 +55,37 @@
         settingsBtn: document.querySelector('.js-article-settings-btn'),
         menuItems: [
           {
-            "title": '{{"add_share_facebook_button" | lce | escape_once }}',
+            "title": {{"add_share_facebook_button" | lce | json }},
             "type": "checkbox",
             "key": "has_share_on_facebook_btn",
-            "tooltipI18n": "visible_live_preview_visuals",
+            "tooltip": {{"visible_live_preview_visuals" | lce | json }},
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": '{{"add_share_twitter_button" | lce | escape_once }}',
+            "title": {{"add_share_twitter_button" | lce | json }},
             "type": "checkbox",
             "key": "has_share_on_twitter_btn",
-            "tooltipI18n": "visible_live_preview_visuals",
+            "tooltip": {{"visible_live_preview_visuals" | lce | json }},
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": '{{"add_share_linkedin_button" | lce | escape_once }}',
+            "title": {{"add_share_linkedin_button" | lce | json }},
             "type": "checkbox",
             "key": "has_share_on_linkedin_btn",
-            "tooltipI18n": "visible_live_preview_visuals",
+            "tooltip": {{"visible_live_preview_visuals" | lce | json }},
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": '{{"show_related_articles_by_tags" | lce | escape_once }}',
+            "title": {{"show_related_articles_by_tags" | lce | json }},
             "type": "checkbox",
             "key": "show_related_articles",
             "states": {

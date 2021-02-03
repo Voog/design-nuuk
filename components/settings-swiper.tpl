@@ -1,7 +1,7 @@
 <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
   <button disabled class="js-swiper-settings-btn js-settings-editor-btn">
-    <div class="bold">{{ "front_page_header" | lce | escape_once }}</div>
-    <div class="grey">{{ "change_slider_settings" | lce | escape_once }}</div>
+    <div class="bold">{{ "front_page_header" | lce }}</div>
+    <div class="grey">{{ "change_slider_settings" | lce }}</div>
   </button>
 </div>
 
@@ -26,15 +26,15 @@
         settingsBtn: document.querySelector('.js-swiper-settings-btn'),
         menuItems: [
           {
-            "title": '{{ "no_of_slides" | lce | escape_once }}',
+            "title": {{ "no_of_slides" | lce | json }},
             "type": "number",
             "key": "slides_count",
-            "placeholder": '{{ "no_of_slides" | lce | escape_once }}',
+            "placeholder": {{ "no_of_slides" | lce | json }},
             "step": 1,
             "min": 1
           },
           {
-            "title": '{{ "use_different_titles_on_slides" | lce | escape_once }}',
+            "title": {{ "use_different_titles_on_slides" | lce | json }},
             "type": "checkbox",
             "key": "is_content_by_slide",
             "states": {
@@ -46,7 +46,7 @@
             ]
           },
           {
-            "title": '{{ "use_fade_effect_on_changing_slides" | lce | escape_once }}',
+            "title": {{ "use_fade_effect_on_changing_slides" | lce | json }},
             "type": "checkbox",
             "key": "is_fade_effect",
             "states": {
@@ -58,7 +58,7 @@
             ]
           },
           {
-            "title": '{{ "use_autoplay_for_changing_slides" | lce | escape_once }}',
+            "title": {{ "use_autoplay_for_changing_slides" | lce | json }},
             "type": "checkbox",
             "key": "is_autoplay",
             "states": {
@@ -69,8 +69,11 @@
               'swiper-settings-opt'
             ]
           },
+          {%- assign autoplayIntTr = "autoplay_interval" | lce -%}
+          {%- assign pxTr = "units.ms" | lce -%}
+          {%- assign autoplayIntCombinedTr = autoplayIntTr | append: ' (' | append: pxTr | append: ')' -%}
           {
-            "title": '{{ "autoplay_interval" | lce | escape_once }} ({{ "units.ms" | lce | escape_once }})',
+            "title": {{ autoplayIntCombinedTr | json }},
             "type": "number",
             "key": "autoplay_interval",
             "step": 1,
@@ -80,7 +83,7 @@
             ]
           },
           {
-            "title": '{{ "use_arrows_in_live_view" | lce | escape_once }}',
+            "title": {{ "use_arrows_in_live_view" | lce | json }},
             "type": "checkbox",
             "key": "are_navigation_arrows",
             "states": {
@@ -92,7 +95,7 @@
             ]
           },
           {
-            "title": '{{ "use_navigation_bullets" | lce | escape_once }}',
+            "title": {{ "use_navigation_bullets" | lce | json }},
             "type": "checkbox",
             "key": "are_navigation_bullets",
             "states": {
