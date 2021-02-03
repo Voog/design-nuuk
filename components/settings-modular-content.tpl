@@ -1,7 +1,7 @@
 <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
   <button disabled class="js-content-area-settings-btn js-settings-editor-btn">
-    <div class="bold">{{ "blocks_settings" | lc }}</div>
-    <div class="grey">{{ "set_the_number_of_blocks" | lc }}</div>
+    <div class="bold">{{ "blocks_settings" | lce | escape_once }}</div>
+    <div class="grey">{{ "set_the_number_of_blocks" | lce | escape_once }}</div>
   </button>
 </div>
 
@@ -22,7 +22,7 @@
         settingsBtn: document.querySelector('.js-content-area-settings-btn'),
         menuItems: [
           {
-            "title": '{{ "no_of_blocks" | lc }}',
+            "title": '{{ "no_of_blocks" | lce | escape_once }}',
             "type": "select",
             "key": "block_count",
             "list": [
@@ -146,7 +146,7 @@
           settingsBtn: document.querySelector('.js-column-settings-btn-{{ id }}'),
           menuItems: [
             {
-              "title": '{{ "no_of_columns" | lc }}',
+              "title": '{{ "no_of_columns" | lce | escape_once }}',
               "type": "select",
               "key": "block_columns",
               "list": [
@@ -158,34 +158,34 @@
               ]
             },
             {
-              "title": '{{ "max_width" | lc }} (%)',
+              "title": '{{ "max_width" | lce | escape_once }} (%)',
               "type": "number",
               "min": 1,
               "key": "block_max_width",
-              "placeholder": '{{ "max_width" | lc }} (%)'
+              "placeholder": '{{ "max_width" | lce | escape_once }} (%)'
             },
             {
-              "title": '{{ "vertical_spacing" | lc }} {{ "units.px" | lc }}',
+              "title": '{{ "vertical_spacing" | lce | escape_once | escape_once  }} {{ "units.px" | lce | escape_once }}',
               "type": "number",
               "min": 1,
               "key": "block_v_padding",
-              "placeholder": '{{ "vertical_spacing" | lc }} {{ "units.px" | lc }}'
+              "placeholder": '{{ "vertical_spacing" | lce | escape_once }} {{ "units.px" | lce | escape_once }}'
             },
             {
-              "title": '{{ "column_distribution" | lc }}',
+              "title": '{{ "column_distribution" | lce | escape_once }}',
               "type": "select",
               "key": "block_justification",
               "list": [
                 {
-                  "title": '{{ "left" | lc }}',
+                  "title": '{{ "left" | lce | escape_once }}',
                   "value": "flex-start"
                 },
                 {
-                  "title": '{{ "center" | lc }}',
+                  "title": '{{ "center" | lce | escape_once }}',
                   "value": "center"
                 },
                 {
-                  "title": '{{ "right" | lc }}',
+                  "title": '{{ "right" | lce | escape_once }}',
                   "value": "flex-end"
                 }
               ],
@@ -194,41 +194,41 @@
               ]
             },
             {
-              "title": '{{ "col_max_width" | lc }} {{ "units.px" | lc }}',
+              "title": '{{ "col_max_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}',
               "type": "number",
               "min": 1,
               "key": "col_max_width",
-              "placeholder": '{{ "col_max_width" | lc }} {{ "units.px" | lc }}'
+              "placeholder": '{{ "col_max_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}'
             },
             {
-              "title": '{{ "col_min_width" | lc }} {{ "units.px" | lc }}',
+              "title": '{{ "col_min_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}',
               "type": "number",
               "min": 1,
               "key": "col_min_width",
-              "placeholder": '{{ "col_min_width" | lc }} {{ "units.px" | lc }}'
+              "placeholder": '{{ "col_min_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}'
             },
             {
-              "title": '{{ "space_between_columns" | lc }} {{ "units.px" | lc }}',
+              "title": '{{ "space_between_columns" | lce | escape_once }} {{ "units.px" | lce | escape_once }}',
               "type": "number",
               "min": 1,
               "key": "col_h_padding",
-              "placeholder": '{{ "space_between_columns" | lc }} {{ "units.px" | lc }}'
+              "placeholder": '{{ "space_between_columns" | lce | escape_once }} {{ "units.px" | lce | escape_once }}'
             },
             {
-              "title": '{{ "column_distribution" | lc }}',
+              "title": '{{ "column_distribution" | lce | escape_once }}',
               "type": "select",
               "key": "col_justification",
               "list": [
                 {
-                  "title": '{{ "space_between_columns" | lc }}',
+                  "title": '{{ "space_between_columns" | lce | escape_once }}',
                   "value": "between"
                 },
                 {
-                  "title": '{{ "space_around_columns" | lc }}',
+                  "title": '{{ "space_around_columns" | lce | escape_once }}',
                   "value": "around"
                 },
                 {
-                  "title": '{{ "columns_are_evenly_distributed" | lc }}',
+                  "title": '{{ "columns_are_evenly_distributed" | lce | escape_once }}',
                   "value": "evenly"
                 }
               ]

@@ -1,7 +1,7 @@
 <div class="js-prevent-sideclick content_settings-btn layout_settings-btn">
   <button disabled class="js-product-page-settings-btn js-settings-editor-btn">
-    <div class="bold">{{ "product_page" | lc }}</div>
-    <div class="grey">{{ "edit_product_page" | lc }}</div>
+    <div class="bold">{{ "product_page" | lce | escape_once }}</div>
+    <div class="grey">{{ "edit_product_page" | lce | escape_once }}</div>
   </button>
 </div>
 
@@ -45,31 +45,31 @@
             settingsBtn: document.querySelector('.js-product-page-settings-btn'),
             menuItems: [
               {
-                "title": '{{ "select_related_product" | lc }}',
+                "title": '{{ "select_related_product" | lce | escape_once }}',
                 "type": "select",
                 "key": "is_related_product_1",
                 "list": productsPageList,
               },
               {
-                "title": '{{ "select_related_product" | lc }}',
+                "title": '{{ "select_related_product" | lce | escape_once }}',
                 "type": "select",
                 "key": "is_related_product_2",
                 "list": productsPageList,
               },
               {
-                "title": '{{ "select_related_product" | lc }}',
+                "title": '{{ "select_related_product" | lce | escape_once }}',
                 "type": "select",
                 "key": "is_related_product_3",
                 "list": productsPageList,
               },
               {
-                "title": '{{ "add_product_label" | lc }}',
+                "title": '{{ "add_product_label" | lce | escape_once }}',
                 "type": "text",
                 "key": "product_label",
-                "placeholder": '{{ "add_product_label" | lc }}'
+                "placeholder": '{{ "add_product_label" | lce | escape_once }}'
               },
               {
-                "title": '{{ "cross_out_label" | lc }}',
+                "title": '{{ "cross_out_label" | lce | escape_once }}',
                 "type": "checkbox",
                 "key": "is_product_label_line_through",
                 "states": {
@@ -78,7 +78,7 @@
                 }
               },
               {
-                "title": '{{ "border_around_label" | lc }}',
+                "title": '{{ "border_around_label" | lce | escape_once }}',
                 "type": "checkbox",
                 "key": "is_product_label_box",
                 "states": {

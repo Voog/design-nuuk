@@ -1,6 +1,6 @@
 <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
   <button disabled class="js-article-settings-btn js-settings-editor-btn">
-    <div class="bold">{{"article" | lc }}</div><div class="grey">{{"edit_article_settings" | lc }}</div>
+    <div class="bold">{{"article" | lce | escape_once }}</div><div class="grey">{{"edit_article_settings" | lce | escape_once }}</div>
   </button>
 </div>
 
@@ -55,7 +55,7 @@
         settingsBtn: document.querySelector('.js-article-settings-btn'),
         menuItems: [
           {
-            "title": '{{"add_share_facebook_button" | lc }}',
+            "title": '{{"add_share_facebook_button" | lce | escape_once }}',
             "type": "checkbox",
             "key": "has_share_on_facebook_btn",
             "tooltipI18n": "visible_live_preview_visuals",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "title": '{{"add_share_twitter_button" | lc }}',
+            "title": '{{"add_share_twitter_button" | lce | escape_once }}',
             "type": "checkbox",
             "key": "has_share_on_twitter_btn",
             "tooltipI18n": "visible_live_preview_visuals",
@@ -75,7 +75,7 @@
             }
           },
           {
-            "title": '{{"add_share_linkedin_button" | lc }}',
+            "title": '{{"add_share_linkedin_button" | lce | escape_once }}',
             "type": "checkbox",
             "key": "has_share_on_linkedin_btn",
             "tooltipI18n": "visible_live_preview_visuals",
@@ -85,7 +85,7 @@
             }
           },
           {
-            "title": '{{"show_related_articles_by_tags" | lc }}',
+            "title": '{{"show_related_articles_by_tags" | lce | escape_once }}',
             "type": "checkbox",
             "key": "show_related_articles",
             "states": {

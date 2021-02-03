@@ -2,8 +2,8 @@
 
 <div class="menu_settings-btn layout_settings-btn js-prevent-sideclick">
   <button disabled class="js-menu-settings-btn js-settings-editor-btn">
-    <div class="bold">{{ "navigation" | lc }}</div>
-    <div class="grey">{{ "change_menu_settings" | lc }}</div>
+    <div class="bold">{{ "navigation" | lce | escape_once }}</div>
+    <div class="grey">{{ "change_menu_settings" | lce | escape_once }}</div>
   </button>
 </div>
 <script>
@@ -28,34 +28,34 @@
           settingsBtn: document.querySelector('.js-menu-settings-btn'),
           menuItems: [
             {
-              "title": '{{ "menu_alignment" | lc }}',
+              "title": '{{ "menu_alignment" | lce | escape_once }}',
               "type": "radio",
               "key": "positioning",
               "list": [
                 {
-                  "title": '{{ "top_always_visible" | lc }}',
+                  "title": '{{ "top_always_visible" | lce | escape_once }}',
                   "value": "is_top"
                 },
                 {
-                  "title": '{{ "top_fixed_header" | lc }}',
+                  "title": '{{ "top_fixed_header" | lce | escape_once }}',
                   "value": "is_top_fixed"
                 },
                 {
-                  "title": '{{ "side_always_open" | lc }}',
+                  "title": '{{ "side_always_open" | lce | escape_once }}',
                   "value": "is_side_always_open"
                 },
                 {
-                  "title": '{{ "side_opens_on_click" | lc }}',
+                  "title": '{{ "side_opens_on_click" | lce | escape_once }}',
                   "value": "is_side_absolute"
                 }
               ]
             },
             {
-              "title": '{{ "side_menu_width" | lc }} {{ "units.px" | lc }}',
+              "title": '{{ "side_menu_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}',
               "type": "number",
               "min": 1,
               "key": "max_width",
-              "placeholder": '{{ "side_menu_width" | lc }} {{ "units.px" | lc }}'
+              "placeholder": '{{ "side_menu_width" | lce | escape_once }} {{ "units.px" | lce | escape_once }}'
             },
           ],
           dataKey: '{{menuSettingsKey}}',

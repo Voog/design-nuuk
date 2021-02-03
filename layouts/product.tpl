@@ -108,7 +108,7 @@
             {%- endfor -%}
 
             <h3 class="visits-title mar_t-48"{% if pageIdCompactArr.size <= 0 %} style="display: none;"{% endif %}>
-              {{ "related_products" | lc }}
+              {{ "related_products" | lc | escape_once }}
             </h3>
 
             <div class="product_list content-formatted flex_row flex_row-3 mar_0-8-neg mar_t-48">

@@ -1,7 +1,7 @@
 <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
   <button class="js-blog-settings-editor js-settings-editor-btn">
-    <div class="bold">Blog{{ "blog" | lc }}</div>
-    <div class="grey">{{ "edit_blog_settings" | lc }}</div>
+    <div class="bold">{{ "blog" | lce | escape_once }}</div>
+    <div class="grey">{{ "edit_blog_settings" | lce | escape_once }}</div>
   </button>
 </div>
 
