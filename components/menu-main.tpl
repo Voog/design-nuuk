@@ -55,6 +55,6 @@
   </ul>
 
   {%- if _semimodalMenu != true -%}
-    <ul class="menu-edy-btns">{{menuSettingsBtns}}<ul>
+    <ul class="menu-edy-btns">{{menuSettingsBtns}}</ul>
   {%- endif -%}
 </nav>
