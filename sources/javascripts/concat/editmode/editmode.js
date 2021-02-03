@@ -199,7 +199,6 @@
                       '</div>',
 
           change: function(image) {
-            var imageId;
             var $cropToggleButton = $contentItemBox.find('.js-toggle-crop-state');
             $imgDropAreaTarget
               .removeClass('is-cropped')
@@ -223,6 +222,13 @@
               ;
               $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 0);
             }
+
+            var itemId = $contentItemBox.data('item-id');
+            var itemType = $contentItemBox.data('item-type');
+            var itemData = new Edicy.CustomData({
+              type: itemType,
+              id: itemId
+            });
 
             itemData.set({[cropStateKey]: 'not-cropped', [itemImageKey]: image});
             $contentItemBox.removeClass('not-loaded with-error').addClass('is-loaded');

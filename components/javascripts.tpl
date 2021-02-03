@@ -6,7 +6,7 @@
 <script src="{{ javascripts_path }}/global.min.js?v=1.1"></script>
 
 {%- if editmode -%}
-  <script src="{{ javascripts_path }}/editmode.min.js?v=1.3"></script>
+  <script src="{{ javascripts_path }}/editmode.min.js?v=1.4"></script>
 {%- endif -%}
 
 {% comment %}Site search related javascript components.{% endcomment %}
