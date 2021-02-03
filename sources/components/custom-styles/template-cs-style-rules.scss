@@ -188,12 +188,29 @@ body {
 .menu-language-name {
   color: var(--header-mainmenu-color);
 
+  svg path {
+    stroke: var(--header-mainmenu-color);
+
+    .dark-background & {
+      stroke: var(--fourth-color);
+    }
+  }
+
   .dark-background & {
     color: var(--fourth-color);
   }
 
   &:hover {
     color: var(--header-mainmenu-hover-color);
+
+    svg path {
+      stroke: var(--header-mainmenu-hover-color);
+
+      .dark-background & {
+        opacity: .7;
+        stroke: var(--fourth-color);
+      }
+    }
 
     .dark-background & {
       opacity: .7;

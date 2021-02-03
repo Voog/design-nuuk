@@ -351,6 +351,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/ico-chevron-down.tpl",
+      "layout_name": "ico-chevron-down",
+      "title": "ico-chevron-down"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-variables.tpl",
       "layout_name": "template-variables",
       "title": "template-variables"

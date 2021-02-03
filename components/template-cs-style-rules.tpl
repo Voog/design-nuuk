@@ -109,12 +109,26 @@ body.dark-background {
 .menu-language-btn, .menu-language-name {
   color: var(--header-mainmenu-color);
 }
+.menu-language-btn svg path, .menu-language-name svg path {
+  stroke: var(--header-mainmenu-color);
+}
+.dark-background .menu-language-btn svg path,
+.dark-background .menu-language-name svg path {
+  stroke: var(--fourth-color);
+}
 .dark-background .menu-language-btn,
 .dark-background .menu-language-name {
   color: var(--fourth-color);
 }
 .menu-language-btn:hover, .menu-language-name:hover {
   color: var(--header-mainmenu-hover-color);
+}
+.menu-language-btn:hover svg path, .menu-language-name:hover svg path {
+  stroke: var(--header-mainmenu-hover-color);
+}
+.dark-background .menu-language-btn:hover svg path, .dark-background .menu-language-name:hover svg path {
+  opacity: .7;
+  stroke: var(--fourth-color);
 }
 .dark-background .menu-language-btn:hover, .dark-background .menu-language-name:hover {
   opacity: .7;
