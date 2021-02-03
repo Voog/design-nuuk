@@ -2,7 +2,8 @@
 
 <div class="menu_settings-btn layout_settings-btn js-prevent-sideclick">
   <button disabled class="js-menu-settings-btn js-settings-editor-btn">
-    <div class="bold">Navigation</div><div class="grey">Change menu settings</div>
+    <div class="bold">{{ "navigation" | lc }}</div>
+    <div class="grey">{{ "change_menu_settings" | lc }}</div>
   </button>
 </div>
 <script>
@@ -27,34 +28,34 @@
           settingsBtn: document.querySelector('.js-menu-settings-btn'),
           menuItems: [
             {
-              "title": "Menu alignment",
+              "title": '{{ "menu_alignment" | lc }}',
               "type": "radio",
               "key": "positioning",
               "list": [
                 {
-                  "title": "Top &mdash; always visible",
+                  "title": '{{ "top_always_visible" | lc }}',
                   "value": "is_top"
                 },
                 {
-                  "title": "Top &mdash; fixed in header",
+                  "title": '{{ "top_fixed_header" | lc }}',
                   "value": "is_top_fixed"
                 },
                 {
-                  "title": "Side &mdash; always visible",
+                  "title": '{{ "side_always_open" | lc }}',
                   "value": "is_side_always_open"
                 },
                 {
-                  "title": "Side &mdash; opens on click",
+                  "title": '{{ "side_opens_on_click" | lc }}',
                   "value": "is_side_absolute"
                 }
               ]
             },
             {
-              "title": "Side menu width (px)",
+              "title": '{{ "side_menu_width" | lc }} {{ "units.px" | lc }}',
               "type": "number",
               "min": 1,
               "key": "max_width",
-              "placeholder": "Side menu width (px)"
+              "placeholder": '{{ "side_menu_width" | lc }} {{ "units.px" | lc }}'
             },
           ],
           dataKey: '{{menuSettingsKey}}',

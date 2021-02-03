@@ -1,6 +1,7 @@
 <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
   <button disabled class="js-content-area-settings-btn js-settings-editor-btn">
-    <div class="bold">Block settings</div><div class="grey">Edit the number of blocks</div>
+    <div class="bold">{{ "blocks_settings" | lc }}</div>
+    <div class="grey">{{ "set_the_number_of_blocks" | lc }}</div>
   </button>
 </div>
 
@@ -21,7 +22,7 @@
         settingsBtn: document.querySelector('.js-content-area-settings-btn'),
         menuItems: [
           {
-            "title": "Number of block",
+            "title": '{{ "no_of_blocks" | lc }}',
             "type": "select",
             "key": "block_count",
             "list": [
@@ -38,8 +39,6 @@
         values: valuesObj
       }
     )
-
-
 
     {% for id in (1.._blockCount) %}
       {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
@@ -105,12 +104,6 @@
         {%- endif -%}
       }
 
-      if (valuesObj.block_max_width < 100) {
-        $('.block_justification').show();
-      } else {
-        $('.block_justification').hide();
-      }
-
       if (!('block_columns' in valuesObj)) {
         {%- if _defaultBlockObj[blockColumnsSettingsKey].col_count %}
           valuesObj['block_columns'] = {{_defaultBlockObj[blockColumnsSettingsKey].col_count}};
@@ -153,7 +146,7 @@
           settingsBtn: document.querySelector('.js-column-settings-btn-{{ id }}'),
           menuItems: [
             {
-              "title": "Number of columns in block {{id}}",
+              "title": '{{ "no_of_columns" | lc }}',
               "type": "select",
               "key": "block_columns",
               "list": [
@@ -165,34 +158,34 @@
               ]
             },
             {
-              "title": "Block maximum width (%)",
+              "title": '{{ "max_width" | lc }} (%)',
               "type": "number",
               "min": 1,
               "key": "block_max_width",
-              "placeholder": "Block maximum width (%)"
+              "placeholder": '{{ "max_width" | lc }} (%)'
             },
             {
-              "title": "Block top & bottom spacing (px)",
+              "title": '{{ "vertical_spacing" | lc }} {{ "units.px" | lc }}',
               "type": "number",
               "min": 1,
               "key": "block_v_padding",
-              "placeholder": "Block top & bottom spacing (px)"
+              "placeholder": '{{ "vertical_spacing" | lc }} {{ "units.px" | lc }}'
             },
             {
-              "title": "Block justification",
+              "title": '{{ "column_distribution" | lc }}',
               "type": "select",
               "key": "block_justification",
               "list": [
                 {
-                  "title": "Left",
+                  "title": '{{ "left" | lc }}',
                   "value": "flex-start"
                 },
                 {
-                  "title": "Center",
+                  "title": '{{ "center" | lc }}',
                   "value": "center"
                 },
                 {
-                  "title": "Right",
+                  "title": '{{ "right" | lc }}',
                   "value": "flex-end"
                 }
               ],
@@ -201,41 +194,41 @@
               ]
             },
             {
-              "title": "Column maximum width (px)",
+              "title": '{{ "col_max_width" | lc }} {{ "units.px" | lc }}',
               "type": "number",
               "min": 1,
               "key": "col_max_width",
-              "placeholder": "Maximum column width (px)"
+              "placeholder": '{{ "col_max_width" | lc }} {{ "units.px" | lc }}'
             },
             {
-              "title": "Column minimum width (px)",
+              "title": '{{ "col_min_width" | lc }} {{ "units.px" | lc }}',
               "type": "number",
               "min": 1,
               "key": "col_min_width",
-              "placeholder": "Minimum width of column (px)"
+              "placeholder": '{{ "col_min_width" | lc }} {{ "units.px" | lc }}'
             },
             {
-              "title": "Space between columns (px)",
+              "title": '{{ "space_between_columns" | lc }} {{ "units.px" | lc }}',
               "type": "number",
               "min": 1,
               "key": "col_h_padding",
-              "placeholder": "Space between columns (px)"
+              "placeholder": '{{ "space_between_columns" | lc }} {{ "units.px" | lc }}'
             },
             {
-              "title": "Column justification",
+              "title": '{{ "column_distribution" | lc }}',
               "type": "select",
               "key": "col_justification",
               "list": [
                 {
-                  "title": "Space between columns",
+                  "title": '{{ "space_between_columns" | lc }}',
                   "value": "between"
                 },
                 {
-                  "title": "Space around columns",
+                  "title": '{{ "space_around_columns" | lc }}',
                   "value": "around"
                 },
                 {
-                  "title": "Columns are evenly distributed",
+                  "title": '{{ "columns_are_evenly_distributed" | lc }}',
                   "value": "evenly"
                 }
               ]
@@ -243,6 +236,7 @@
           ],
           dataKey: '{{blockColumnsSettingsKey}}',
           values: valuesObj,
+          containerClass: ['block-settings-popover-{{ id }}', 'editor_default'],
           prevFunc: function(data) {
             {%- assign rowSettingsKey = id | append: '_block_columns' -%}
             {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
@@ -265,7 +259,7 @@
               });
             }
 
-            if (data.col_h_padding >= 0) {
+            if (parseInt(data.col_h_padding) >= 0) {
               var col_h_padding = '0 ' + data.col_h_padding + 'px 32px';
 
               $('.column-container-{{ id }} .col-item').css({
@@ -285,7 +279,7 @@
               });
             }
 
-            if (data.block_v_padding >= 0) {
+            if (parseInt(data.block_v_padding) >= 0) {
               $('.column-container-{{ id }}').css({
                 padding: data.block_v_padding + 'px 0'
               });
@@ -302,7 +296,7 @@
                 'max-width': '100%'
               });
             } else {
-              if (data.col_max_width >= 1) {
+              if (parseInt(data.col_max_width) >= 1) {
                 $('.column-container-{{ id }} .col-item').css({
                   'max-width': data.col_max_width + 'px'
                 });
@@ -324,10 +318,10 @@
               });
             }
 
-            if (data.block_max_width < 100) {
-              $('.block_justification').show();
+            if (parseInt(data.block_max_width) < 100) {
+              $('.block-settings-popover-{{ id }} .block_justification').show();
             } else {
-              $('.block_justification').hide();
+              $('.block-settings-popover-{{ id }} .block_justification').hide();
             }
           }
         }

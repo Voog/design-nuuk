@@ -41,7 +41,9 @@
 <div class="product_item-details--wrap mar_t-16">
   <div class="flex_auto">
     {%- capture look_closer_btn -%}
-      <a class="product_item-btn{%- if productSettingsData.product_label != blank or _buyButton.product.price != blank %} p-abs{%- else %} p-rel{%- endif -%}" href="{{ _entityData.url }}">LOOK CLOSER</a>
+      <a class="product_item-btn{%- if productSettingsData.product_label != blank or _buyButton.product.price != blank %} p-abs{%- else %} p-rel{%- endif -%}" href="{{ _entityData.url }}">
+        {{ "look_closed" | lc }}
+      </a>
     {%- endcapture -%}
 
     <a class="p14 bold product_item-title bold" href="{{ _entityData.url }}">
@@ -65,7 +67,7 @@
           {%- if editmode or buy_button.product.out_of_stock? -%}
             {{look_closer_btn}}
           {%- else -%}
-            <button class="product_item-btn js-cart-btn p-abs" data-product-id="{{ _buyButton.product.id }}">ADD TO CART</button>
+            <button class="product_item-btn js-cart-btn p-abs" data-product-id="{{ _buyButton.product.id }}">{{ "add_to_cart" | lc }}</button>
           {%- endif -%}
           <div class="product_item-price">
             <span{% if product_label != blank %} class="mar_r-16"{% endif %}>
@@ -83,7 +85,7 @@
     {%- endif -%}
   </div>
   {%- if buy_button.product.out_of_stock? -%}
-    <div class="product_item-box--label">OUT OF STOCK</div>
+    <div class="product_item-box--label">{{ "out_of_stock" | lc }}</div>
   {%- elsif isBoxLabel -%}
     <div class="product_item-box--label">
       {{productSettingsData.product_label}}

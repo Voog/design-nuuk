@@ -1,6 +1,7 @@
 <div class="js-prevent-sideclick content_settings-btn layout_settings-btn">
   <button disabled class="js-product-page-settings-btn js-settings-editor-btn">
-    <div class="bold">Product page</div><div class="grey">Edit product page</div>
+    <div class="bold">{{ "product_page" | lc }}</div>
+    <div class="grey">{{ "edit_product_page" | lc }}</div>
   </button>
 </div>
 
@@ -44,31 +45,31 @@
             settingsBtn: document.querySelector('.js-product-page-settings-btn'),
             menuItems: [
               {
-                "title": "Select related product",
+                "title": '{{ "select_related_product" | lc }}',
                 "type": "select",
                 "key": "is_related_product_1",
                 "list": productsPageList,
               },
               {
-                "title": "Select related product",
+                "title": '{{ "select_related_product" | lc }}',
                 "type": "select",
                 "key": "is_related_product_2",
                 "list": productsPageList,
               },
               {
-                "title": "Select related product",
+                "title": '{{ "select_related_product" | lc }}',
                 "type": "select",
                 "key": "is_related_product_3",
                 "list": productsPageList,
               },
               {
-                "title": "Add product label",
+                "title": '{{ "add_product_label" | lc }}',
                 "type": "text",
                 "key": "product_label",
-                "placeholder": "Add product label"
+                "placeholder": '{{ "add_product_label" | lc }}'
               },
               {
-                "title": "Line through label text",
+                "title": '{{ "cross_out_label" | lc }}',
                 "type": "checkbox",
                 "key": "is_product_label_line_through",
                 "states": {
@@ -77,7 +78,7 @@
                 }
               },
               {
-                "title": "Bordered box around label",
+                "title": '{{ "border_around_label" | lc }}',
                 "type": "checkbox",
                 "key": "is_product_label_box",
                 "states": {

@@ -64,7 +64,7 @@
 
           <div class="content-formatted mar_t-48 js-related-articles{%- if articleSettingsData.show_related_articles != true %} d-none{%- endif -%}">
             {% assign current_article_id = article.id %}
-            <h4 class="post_narrow">Continue reading</h4>
+            <h4 class="post_narrow">{{ "continue_reading" | lc }}</h4>
 
             <div class="flex_row flex_row-3 mar_0-16-neg related_posts mar_t-32">
               {%- load articles to "articles" q.article.tag$in=article.tags -%}
@@ -136,7 +136,7 @@
           {%- endif -%}
           <div class="post_narrow">
             <div class="js-article-shared tags mar_t-32{%- if articleSettingsData.has_share_on_facebook_btn != true and articleSettingsData.has_share_on_twitter_btn != true and articleSettingsData.has_share_on_linkedin_btn != true %} d-none{%- endif -%}">
-              <h4>Share this article</h4>
+              <h4>{{ "share_this_article" | lc }}</h4>
               <nav class="post_tags menu-sub mar_t-16">
                 <ul class="menu">
                   <li class="menu-item">

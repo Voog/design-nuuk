@@ -1,6 +1,6 @@
 <div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
   <button disabled class="js-article-settings-btn js-settings-editor-btn">
-    <div class="bold">Article</div><div class="grey">Edit article settings</div>
+    <div class="bold">{{"article" | lc }}</div><div class="grey">{{"edit_article_settings" | lc }}</div>
   </button>
 </div>
 
@@ -55,37 +55,37 @@
         settingsBtn: document.querySelector('.js-article-settings-btn'),
         menuItems: [
           {
-            "title": "Add share on Facebook button",
-            "tooltip": "Visible in live & preview mode (only visuals).",
+            "title": '{{"add_share_facebook_button" | lc }}',
             "type": "checkbox",
             "key": "has_share_on_facebook_btn",
+            "tooltipI18n": "visible_live_preview_visuals",
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": "Add share on Twitter button",
-            "tooltip": "Visible in live & preview mode (only visuals).",
+            "title": '{{"add_share_twitter_button" | lc }}',
             "type": "checkbox",
             "key": "has_share_on_twitter_btn",
+            "tooltipI18n": "visible_live_preview_visuals",
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": "Add share on LinkedIn button",
-            "tooltip": "Visible in live & preview mode (only visuals).",
+            "title": '{{"add_share_linkedin_button" | lc }}',
             "type": "checkbox",
             "key": "has_share_on_linkedin_btn",
+            "tooltipI18n": "visible_live_preview_visuals",
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": "Show related articles by tags",
+            "title": '{{"show_related_articles_by_tags" | lc }}',
             "type": "checkbox",
             "key": "show_related_articles",
             "states": {

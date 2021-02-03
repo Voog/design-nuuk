@@ -107,7 +107,9 @@
               {%- assign pageIdCompactArr = pageIdsArr | compact -%}
             {%- endfor -%}
 
-            <h3 class="visits-title mar_t-48"{% if pageIdCompactArr.size <= 0 %} style="display: none;"{% endif %}>Related products</h3>
+            <h3 class="visits-title mar_t-48"{% if pageIdCompactArr.size <= 0 %} style="display: none;"{% endif %}>
+              {{ "related_products" | lc }}
+            </h3>
 
             <div class="product_list content-formatted flex_row flex_row-3 mar_0-8-neg mar_t-48">
               {%- for id in pageIdCompactArr -%}

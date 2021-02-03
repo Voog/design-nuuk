@@ -1,6 +1,7 @@
 <div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
   <button disabled class="js-swiper-settings-btn js-settings-editor-btn">
-    <div class="bold">Front page header</div><div class="grey">Change slider settings</div>
+    <div class="bold">{{ "front_page_header" | lc }}</div>
+    <div class="grey">{{ "change_slider_settings" | lc }}</div>
   </button>
 </div>
 
@@ -25,15 +26,15 @@
         settingsBtn: document.querySelector('.js-swiper-settings-btn'),
         menuItems: [
           {
-            "title": "Number of header images",
+            "title": '{{ "no_of_slides" | lc }}',
             "type": "number",
             "key": "slides_count",
-            "placeholder": "Number of header images",
+            "placeholder": '{{ "no_of_slides" | lc }}',
             "step": 1,
             "min": 1
           },
           {
-            "title": "Different title on every slide",
+            "title": '{{ "use_different_titles_on_slides" | lc }}',
             "type": "checkbox",
             "key": "is_content_by_slide",
             "states": {
@@ -45,7 +46,7 @@
             ]
           },
           {
-            "title": "Use fade effect on changing slides",
+            "title": '{{ "use_fade_effect_on_changing_slides" | lc }}',
             "type": "checkbox",
             "key": "is_fade_effect",
             "states": {
@@ -57,7 +58,7 @@
             ]
           },
           {
-            "title": "Use autoplay for changing slides",
+            "title": '{{ "use_autoplay_for_changing_slides" | lc }}',
             "type": "checkbox",
             "key": "is_autoplay",
             "states": {
@@ -69,10 +70,9 @@
             ]
           },
           {
-            "title": "Autoplay interval (in ms)",
+            "title": '{{ "autoplay_interval" | lc }} ({{ "units.ms" | lc }})',
             "type": "number",
             "key": "autoplay_interval",
-            "placeholder": "Number of header images",
             "step": 1,
             "min": 1,
             "class": [
@@ -80,7 +80,7 @@
             ]
           },
           {
-            "title": "Use right & left arrows in live view",
+            "title": '{{ "use_arrows_in_live_view" | lc }}',
             "type": "checkbox",
             "key": "are_navigation_arrows",
             "states": {
@@ -92,7 +92,7 @@
             ]
           },
           {
-            "title": "Use navigation bullets",
+            "title": '{{ "use_navigation_bullets" | lc }}',
             "type": "checkbox",
             "key": "are_navigation_bullets",
             "states": {
