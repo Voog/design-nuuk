@@ -41,7 +41,7 @@
 
 @font-face {
   font-family: 'Avenir Next';
-  src: url("avenir-next-regular.woff2") format("woff2"), url("avenir-next-regular.woff") format("woff"), url("avenir-next-regular.ttf") format("truetype");
+  src: url("../assets/avenir-next-regular.woff2") format("woff2"), url("../assets/avenir-next-regular.woff") format("woff"), url("../assets/avenir-next-regular.ttf") format("truetype");
 }
 /* GENERAL */
 html {
