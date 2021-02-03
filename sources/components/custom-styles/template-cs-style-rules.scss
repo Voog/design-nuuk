@@ -39,6 +39,22 @@ body {
 // BLOG & ARTICLE LAYOUTS
 // =============================================================================
 // Styling rules for both - the blog listing view and the blog single article view
+.comments .comment_form .form_area {
+  background-color: var(--article-comment-area-backgroundcolor);
+  color: var(--article-comment-area-color);
+
+  .form_field_textfield,
+  .form_field_textarea {
+    color: var(--article-comment-area-color);
+    border-color: var(--article-comment-area-color);
+  }
+
+  .form_submit input {
+    background-color: var(--article-comment-area-color);
+    color: var(--article-comment-area-backgroundcolor);
+  }
+}
+
 .post {
   .post_title {
     // scss-lint:disable SingleLinePerSelector

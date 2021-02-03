@@ -267,6 +267,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/template-cs-blog-list.tpl",
+      "layout_name": "template-cs-blog-list",
+      "title": "template-cs-blog-list"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/menu-lang.tpl",
       "layout_name": "menu-lang",
       "title": "menu-lang"
@@ -277,6 +284,13 @@
       "file": "components/ico-ellipsis.tpl",
       "layout_name": "ico-ellipsis",
       "title": "ico-ellipsis"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-cs-article-list.tpl",
+      "layout_name": "template-cs-article-list",
+      "title": "template-cs-article-list"
     },
     {
       "content_type": "component",
