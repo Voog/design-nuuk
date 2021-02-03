@@ -14,7 +14,7 @@
       }
 
       .semimodal-relative body {
-        margin-left: {{menuSettings.max_width}}px;
+        padding-left: {{menuSettings.max_width}}px;
       }
     }
   </style>
@@ -83,9 +83,11 @@
       </div>
 
       {%- include "menu-main", _semimodalMenu: true -%}
-      <div class="content-formatted semimodal_bottom-content">
-        {% content name="menu_bottom" xpage="true" %}
-      </div>
+      {%- comment -%}
+        <div class="content-formatted semimodal_bottom-content">
+          {% content name="menu_bottom" xpage="true" %}
+        </div>
+      {%- endcomment -%}
     </div>
   </header>
 </div>

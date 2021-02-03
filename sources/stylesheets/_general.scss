@@ -54,6 +54,10 @@ body {
   z-index: $zindex-bg-picker;
   top: -22px;
   position: absolute;
+
+  .semimodal-relative & {
+    top: 24px;
+  }
 }
 
 .body-bg_color {

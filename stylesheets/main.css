@@ -90,6 +90,9 @@ body.dark-background {
   top: -22px;
   position: absolute;
 }
+.semimodal-relative .bg-picker-top {
+  top: 24px;
+}
 
 .body-bg_color {
   position: fixed;

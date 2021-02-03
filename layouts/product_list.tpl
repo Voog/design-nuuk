@@ -28,16 +28,16 @@
         </div>
       {%- endif -%}
       <div class="container flex_col flex_j-space-between">
+        {% if editmode %}
+          <div class="edit-btn mar_b-16">{% menuadd parent="page" %}</div>
+        {% endif %}
+
         <main class="content" role="main">
           <div class="content-body content-formatted" data-search-indexing-allowed="true">
             {% contentblock name="page_title" publish_default_content="true" %}
               <h1>{{page.title}}</h1>
             {% endcontentblock %}
           </div>
-
-          {% if editmode %}
-            <div class="edit-btn">{% menuadd parent="page" %}</div>
-          {% endif %}
 
           {% include 'product-list-filter' %}
           {% include 'product-list-block' %}
