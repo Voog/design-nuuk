@@ -227,6 +227,13 @@ body {
   }
 }
 
+.semimodal-relative .semimodal {
+  border-color: var(--header-mainmenu-color);
+  .dark-background & {
+    border-color: var(--fourth-color);
+  }
+}
+
 // Styling rules for the site's main menu.
 .menu-main {
   .menu {

@@ -142,6 +142,13 @@ body.dark-background {
   color: var(--fourth-color);
 }
 
+.semimodal-relative .semimodal {
+  border-color: var(--header-mainmenu-color);
+}
+.dark-background .semimodal-relative .semimodal {
+  border-color: var(--fourth-color);
+}
+
 .menu-main .menu .menu-item a {
   color: var(--header-mainmenu-color);
   -webkit-text-decoration: var(--header-mainmenu-decoration);
