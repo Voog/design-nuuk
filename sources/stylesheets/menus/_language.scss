@@ -134,6 +134,10 @@
       text-align: left;
       white-space: nowrap;
 
+      .language-names-disabled & {
+        font-size: 0;
+      }
+
       // scss-lint:disable NestingDepth
       &::before,
       &::after {

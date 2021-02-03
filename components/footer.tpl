@@ -9,9 +9,21 @@
     <div class="flex_row flex_row-{{footerBlocColumnskCount}} mar_0-8-neg flex_j-space-between mar_b-32-neg">
       {%- for id in (1..footerBlocColumnskCount) -%}
         {%- assign name = "footer_row-" | append: i | append: "-" | append: id -%}
-        <div class="flex_row-{{footerBlocColumnskCount}}--item footer_content">
-          <div class="content-formatted mar_0-8">{% xcontent name=name %}</div>
-        </div>
+
+        {% capture footer_item %}{% unless editmode %}{% xcontent name=name %}{% endunless %}{% endcapture %}
+        {% capture footer_item_size %}{{ footer_item | size | minus: 1 }}{% endcapture %}
+        {% unless footer_item_size contains "-" %}
+          {% assign footer_item_has_content = true %}
+        {% else %}
+          {% assign footer_item_has_content = false %}
+        {% endunless %}
+
+        {%- if editmode or footer_item_has_content == true -%}
+          <div class="flex_row-{{footerBlocColumnskCount}}--item footer_content">
+            <div class="content-formatted mar_0-8">{% xcontent name=name %}</div>
+          </div>
+        {%- endif -%}
+
       {%- endfor -%}
     </div>
   {%- endfor -%}

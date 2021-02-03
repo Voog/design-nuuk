@@ -884,6 +884,7 @@ p {
   line-height: 83px;
   margin-top: 32px;
   margin-bottom: 8px;
+  font-weight: 500;
 }
 @media screen and (max-width: 900px) {
   .content-formatted h1 {
@@ -896,6 +897,7 @@ p {
   line-height: 64px;
   margin-top: 24px;
   margin-bottom: 8px;
+  font-weight: 500;
 }
 @media screen and (max-width: 900px) {
   .content-formatted h2 {
@@ -908,6 +910,7 @@ p {
   line-height: 40px;
   margin-top: 16px;
   margin-bottom: 8px;
+  font-weight: 500;
 }
 @media screen and (max-width: 900px) {
   .content-formatted h3 {
@@ -920,6 +923,7 @@ p {
   line-height: 28px;
   margin-top: 16px;
   margin-bottom: 8px;
+  font-weight: 500;
 }
 @media screen and (max-width: 900px) {
   .content-formatted h4 {
@@ -3690,6 +3694,9 @@ article.post_wrapper .date-separator.hide-separator {
   text-align: left;
   white-space: nowrap;
 }
+.language-names-disabled .menu-language .menu-item a {
+  font-size: 0;
+}
 .menu-language .menu-item a::before, .menu-language .menu-item a::after {
   top: 6px;
 }
@@ -4763,6 +4770,9 @@ body .animate_translated-x--0 {
   .mar_b-56 {
     margin-bottom: 24px;
   }
+}
+.mar_t-0 {
+  margin-top: 0 !important;
 }
 .mar_t-16 {
   margin-top: 16px;

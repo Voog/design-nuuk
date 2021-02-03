@@ -13,7 +13,7 @@
       {%- assign titleTag = 'h3' -%}
     {% endif %}
     {% capture post_title %}
-      <{{titleTag}} class="post_title">
+      <{{titleTag}} class="post_title{%- unless article.data[itemImageKey] != blank or editmode %} mar_t-0{%- endunless -%}">
         {% if post-box == "article" %}
           {% editable article.title %}
         {% else %}
@@ -46,10 +46,11 @@
     {% else %}
       {%- assign isPostImageStatic = true -%}
     {% endif %}
-
-    <div class="mar_b-48">
-      {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic, _targetWidth: '2999' %}
-    </div>
+    {%- if article.data[itemImageKey] != blank or editmode -%}
+      <div class="mar_b-48">
+        {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic, _targetWidth: '2999' %}
+      </div>
+    {%- endif -%}
 
     {% if post-box != "article" %}
       {{ post_title }}
