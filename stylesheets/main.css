@@ -350,7 +350,7 @@ p {
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .grey {
@@ -1412,7 +1412,7 @@ html:not(.semimodal-relative) .semimodal {
   text-align: left;
 }
 .layout_settings-btn button.edy-cbtn > span > span .bold {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   line-height: 24px !important;
 }
 .layout_settings-btn button .edy-cbtn-content span:last-child {
@@ -1649,7 +1649,7 @@ body.front-page .edy-bgpicker-toggle-button {
   background: #1B2124;
   color: #ffffff;
   padding: 8px 16px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 24px;
   position: relative;
   font-size: 14px;
