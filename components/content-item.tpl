@@ -38,7 +38,6 @@
         <div class="product_alt-attr {{ item_image_state }}">
           <div class="form_field-cms">
             <input
-              placeholder="Add image alt text"
               id="item-image-alt-{{_id}}"
               class="form_field_textfield js-data-item image_settings-remove--input"
               value="{{_entityData.data[itemImageAltAttrKey]}}"
