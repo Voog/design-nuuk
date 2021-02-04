@@ -3,14 +3,14 @@
 .footer {
   max-width: calc(var(--container-max-width) + 304px);
   padding: 0 32px 32px;
-  margin: auto;
+  margin-top: auto;
 
   &_content {
     z-index: 1;
   }
 
   @include query($tablet-2) {
-    padding: 0 16px;
+    padding: 0 16px 32px;
   }
 
   &_separator {

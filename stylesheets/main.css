@@ -75,12 +75,8 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  min-height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-.editmode body {
-  min-height: calc(100vh - 72px);
 }
 @media screen and (max-width: 506px) {
   .semimodal-open body {
@@ -137,12 +133,29 @@ body.dark-background {
           box-sizing: border-box;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  width: 100%;
 }
 .container a {
   text-decoration: none;
 }
 .container a img {
   border: none;
+}
+.container_wrap {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+.editmode .container_wrap {
+  height: calc(100vh - 72px);
 }
 .semimodal-relative .container {
   margin-top: 48px;
@@ -1170,10 +1183,6 @@ p {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
-.content-formatted .horizontal-scroll {
-  border-left: 1px dashed #d5afb6;
-  border-right: 1px dashed #d5afb6;
-}
 .content-formatted table {
   width: 100%;
   margin-top: 20px;
@@ -1182,8 +1191,6 @@ p {
 }
 .content-formatted table td {
   padding: 10px;
-  border-top: 1px solid #d5afb6;
-  border-bottom: 1px solid #d5afb6;
 }
 .content-formatted .edy-texteditor-view {
   min-height: 32px;
@@ -1214,6 +1221,9 @@ p {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   height: 100vh;
+}
+.editmode .semimodal {
+  height: calc(100vh - 72px);
 }
 .semimodal.dark-background {
   color: white;
@@ -1254,6 +1264,7 @@ p {
 @media screen and (max-width: 900px) {
   .semimodal .semimodal_inner {
     overflow: unset;
+    padding: 16px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1298,6 +1309,7 @@ p {
 @media screen and (max-width: 900px) {
   .semimodal .semimodal_bottom {
     margin-top: 32px !important;
+    margin-bottom: 94px;
     top: 0 !important;
   }
 }
@@ -2413,14 +2425,14 @@ body.edy-checkout-button-visible {
 .footer {
   max-width: calc(var(--container-max-width) + 304px);
   padding: 0 32px 32px;
-  margin: auto;
+  margin-top: auto;
 }
 .footer_content {
   z-index: 1;
 }
 @media screen and (max-width: 752px) {
   .footer {
-    padding: 0 16px;
+    padding: 0 16px 32px;
   }
 }
 .footer_separator {
@@ -4810,6 +4822,9 @@ body .animate_translated-x--0 {
 }
 .mar_l-16 {
   margin-left: 16px;
+}
+.mar_l-32 {
+  margin-left: 32px;
 }
 .mar_r-8 {
   margin-right: 8px;

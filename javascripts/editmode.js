@@ -391,9 +391,16 @@
     });
   };
 
+  var handleDocument = function() {
+    window.addEventListener('DOMContentLoaded', function(event) {
+      $('#fc_frame').css('display', 'block!important;');
+    });
+  };
+
   var init = function() {
     bindCustomTexteditorStyles();
     bindCustomDataItem();
+    //handleDocument();
   };
 
   // Enables the usage of the initiations outside this file.

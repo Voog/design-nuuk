@@ -27,7 +27,7 @@ body {
   background-color: var(--body-background-color);
 
   &.dark-background {
-    color: var(--fourth-color);
+    color: var(--third-color);
   }
 }
 
@@ -63,7 +63,7 @@ body {
 
       // scss-lint:disable NestingDepth, SelectorDepth
       .dark-background & {
-        color: var(--fourth-color);
+        color: var(--third-color);
       }
       // scss-lint:enable NestingDepth, SelectorDepth
     }
@@ -76,7 +76,7 @@ body {
 
         // scss-lint:disable SelectorDepth
         .dark-background & {
-          color: var(--fourth-color);
+          color: var(--third-color);
         }
         // scss-lint:enable SelectorDepth
       }
@@ -90,13 +90,13 @@ body {
     color: var(--secondary-color);
 
     .dark-background & {
-      color: var(--fourth-color);
+      color: var(--third-color);
     }
   }
 
   .post_author {
     .dark-background & {
-      color: var(--fourth-color);
+      color: var(--third-color);
     }
   }
 
@@ -106,7 +106,7 @@ body {
 
       // scss-lint:disable NestingDepth, SelectorDepth
       .dark-background & {
-        color: var(--fourth-color);
+        color: var(--third-color);
       }
       // scss-lint:enable NestingDepth, SelectorDepth
 
@@ -116,7 +116,7 @@ body {
 
         // scss-lint:disable SelectorDepth
         .dark-background & {
-          color: var(--fourth-color);
+          color: var(--third-color);
         }
         // scss-lint:enable SelectorDepth
       }
@@ -133,14 +133,14 @@ body {
   color: var(--header-mainmenu-color);
 
   .dark-background & {
-    color: var(--fourth-color);
+    color: var(--third-color);
   }
 
   .menu-stripe {
     background-color: var(--header-mainmenu-color);
 
     .dark-background & {
-      background-color: var(--fourth-color);
+      background-color: var(--third-color);
     }
   }
 
@@ -148,7 +148,7 @@ body {
     color: var(--header-mainmenu-hover-color);
 
     .dark-background & {
-      color: var(--fourth-color);
+      color: var(--third-color);
       opacity: .7;
     }
 
@@ -156,7 +156,7 @@ body {
       background-color: var(--header-mainmenu-hover-color);
 
       .dark-background & {
-        background-color: var(--fourth-color);
+        background-color: var(--third-color);
       }
     }
   }
@@ -168,7 +168,7 @@ body {
   fill: var(--header-mainmenu-color);
 
   .dark-background & {
-    fill: var(--fourth-color);
+    fill: var(--third-color);
   }
 }
 
@@ -179,7 +179,7 @@ body {
 
   .dark-background & {
     opacity: .7;
-    fill: var(--fourth-color);
+    fill: var(--third-color);
   }
 }
 
@@ -187,7 +187,7 @@ body {
   fill: var(--header-mainmenu-color);
 
   .dark-background & {
-    fill: var(--fourth-color);
+    fill: var(--third-color);
   }
 
   &:hover {
@@ -195,7 +195,7 @@ body {
 
     .dark-background & {
       opacity: .7;
-      fill: var(--fourth-color);
+      fill: var(--third-color);
     }
   }
 }
@@ -208,12 +208,12 @@ body {
     stroke: var(--header-mainmenu-color);
 
     .dark-background & {
-      stroke: var(--fourth-color);
+      stroke: var(--third-color);
     }
   }
 
   .dark-background & {
-    color: var(--fourth-color);
+    color: var(--third-color);
   }
 
   &:hover {
@@ -224,13 +224,13 @@ body {
 
       .dark-background & {
         opacity: .7;
-        stroke: var(--fourth-color);
+        stroke: var(--third-color);
       }
     }
 
     .dark-background & {
       opacity: .7;
-      color: var(--fourth-color);
+      color: var(--third-color);
     }
   }
 }
@@ -239,14 +239,14 @@ body {
   color: var(--header-mainmenu-color);
 
   .dark-background & {
-    color: var(--fourth-color);
+    color: var(--third-color);
   }
 }
 
 .semimodal-relative .semimodal {
   border-color: var(--header-mainmenu-color);
   .dark-background & {
-    border-color: var(--fourth-color);
+    border-color: var(--third-color);
   }
 }
 
@@ -262,14 +262,14 @@ body {
       hyphens: var(--header-mainmenu-hyphens);
 
       .dark-background & {
-        color: var(--fourth-color);
+        color: var(--third-color);
       }
 
       &::before {
         background-color: var(--header-mainmenu-color);
 
         .dark-background & {
-          background-color: var(--fourth-color);
+          background-color: var(--third-color);
         }
       }
       // scss-lint:disable NestingDepth
@@ -280,7 +280,7 @@ body {
         font-style: var(--header-mainmenu-hover-font-style);
 
         .dark-background & {
-          color: var(--fourth-color);
+          color: var(--third-color);
           opacity: .7;
         }
       }
@@ -296,13 +296,13 @@ body {
         background-color: var(--header-mainmenu-active-color);
 
         .dark-background & {
-          background-color: var(--fourth-color);
+          background-color: var(--third-color);
           opacity: .7;
         }
       }
 
       .dark-background & {
-        color: var(--fourth-color);
+        color: var(--third-color);
         opacity: .7;
       }
 
@@ -314,7 +314,7 @@ body {
         }
 
         .dark-background & {
-          color: var(--fourth-color);
+          color: var(--third-color);
           opacity: 1;
         }
       }
@@ -394,23 +394,23 @@ body {
   .menu-item a {
     &::after {
       .dark-background & {
-        background-color: var(--fourth-color);
+        background-color: var(--third-color);
       }
     }
 
     .dark-background & {
-      color: var(--fourth-color);
+      color: var(--third-color);
     }
     // scss-lint:disable NestingDepth
 
     &.active {
       .dark-background & {
-        color: var(--fourth-color);
+        color: var(--third-color);
       }
 
       &::before {
         .dark-background & {
-          border-color: var(--fourth-color);
+          border-color: var(--third-color);
         }
       }
       &:hover {
@@ -419,7 +419,7 @@ body {
         svg,
         path {
           .dark-background & {
-            fill: var(--fourth-color);
+            fill: var(--third-color);
           }
         }
       }
@@ -427,19 +427,19 @@ body {
 
     &:hover {
       .dark-background & {
-        color: var(--fourth-color);
+        color: var(--third-color);
       }
 
       &::before {
         .dark-background & {
-          border-color: var(--fourth-color);
+          border-color: var(--third-color);
         }
       }
     }
 
     &::before {
       .dark-background & {
-        border-color: var(--fourth-color);
+        border-color: var(--third-color);
       }
     }
   }
@@ -497,7 +497,7 @@ body {
     fill: var(--primary-color);
 
     .dark-background & {
-      fill: var(--fourth-color);
+      fill: var(--third-color);
     }
   }
 }
@@ -516,23 +516,46 @@ body {
 
 
   .dark-background & {
-    color: var(--fourth-color);
+    color: var(--third-color);
   }
+
+  .horizontal-scroll {
+    border-left: 1px dashed var(--content-body-color);
+    border-right: 1px dashed var(--content-body-color);
+
+    .dark-background & {
+      border-left: 1px dashed var(--third-color);
+      border-right: 1px dashed var(--third-color);
+    }
+  }
+
+  table {
+    td {
+      border-top: 1px solid var(--content-body-color);
+      border-bottom: 1px solid var(--content-body-color);
+
+      .dark-background & {
+        border-top: 1px solid var(--third-color);
+        border-bottom: 1px solid var(--third-color);
+      }
+    }
+  }
+
   // Styling rules for the editable content area headings.
   // scss-lint:disable SingleLinePerSelector
   h1, h2, h3, h4, h5, h6 {
     color: var(--secondary-color);
 
     .dark-background & {
-      color: var(--fourth-color);
+      color: var(--third-color);
     }
   }
 
   .edy-content-social-button {
     svg, path {
       .dark-background & {
-        fill: var(--fourth-color);
-        border-color: var(--fourth-color);
+        fill: var(--third-color);
+        border-color: var(--third-color);
       }
     }
   }
@@ -621,7 +644,7 @@ body {
     text-transform: var(--content-link-text-transform);
 
     .dark-background & {
-      color: var(--fourth-color);
+      color: var(--third-color);
     }
 
     &:hover {
@@ -633,7 +656,7 @@ body {
 
       // scss-lint:disable NestingDepth
       .dark-background & {
-        color: var(--fourth-color);
+        color: var(--third-color);
       }
       // scss-lint:enable NestingDepth
     }
@@ -651,7 +674,7 @@ body {
     hyphens: var(--header-site-title-hyphens);
 
     .dark-background & {
-      color: var(--fourth-color);
+      color: var(--third-color);
     }
 
     a, p, h1, h2, h3, h4, h5, h6 {
@@ -665,7 +688,7 @@ body {
       hyphens: var(--header-site-title-hyphens);
 
       .dark-background & {
-        color: var(--fourth-color);
+        color: var(--third-color);
       }
     }
   }
@@ -683,7 +706,7 @@ body {
     background-color: var(--button-background-color);
 
     .dark-background & {
-      border: 1px solid var(--fourth-color);
+      border: 1px solid var(--third-color);
     }
 
     &:hover {
@@ -742,11 +765,11 @@ body {
     .form_field_textfield,
     .form_field_textarea,
     .form_field_select {
-      color: var(--fourth-color);
-      border-color: var(--fourth-color);
+      color: var(--third-color);
+      border-color: var(--third-color);
 
       &::placeholder {
-        color: var(--fourth-color);
+        color: var(--third-color);
       }
     }
   }

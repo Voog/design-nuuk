@@ -132,7 +132,7 @@
 
       <div class="pad_container p-rel">
         {% if editmode %}
-          <div class="bg-picker-top">
+          <div class="mar_t-32 p-rel">
             <button
               class="voog-bg-picker-btn body_bg-picker--btn bg-picker {{bodyBgKey}}-picker"
               data-bg_key="{{bodyBgKey}}"
@@ -155,8 +155,9 @@
         </div>
       </div>
     </div>
+    {% include "footer" %}
   </div>
-  {% include "footer" %}
+
   {% include "site-signout" %}
   {% include 'settings-popover', _frontPage: true %}
   {% include "javascripts" %}

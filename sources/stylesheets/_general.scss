@@ -15,12 +15,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  min-height: 100vh;
   box-sizing: border-box;
-
-  .editmode & {
-    min-height: calc(100vh - 72px);
-  }
 
   @media screen and (max-width: $tablet-3) {
     .semimodal-open & {
@@ -86,12 +81,24 @@ body {
   width: 100%;
   box-sizing: border-box;
   transform: translate3d(0, 0, 0);
+  width: 100%;
 
   a {
     text-decoration: none;
 
     img {
       border: none;
+    }
+  }
+
+  &_wrap {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    .editmode & {
+      height: calc(100vh - 72px);
     }
   }
 

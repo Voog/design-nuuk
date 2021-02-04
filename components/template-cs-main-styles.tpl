@@ -55,17 +55,7 @@
       "--content-link-color"
     ]
   */
-  --third-color: #D5AFB6;
-  /* VoogStyle
-    "pathI18n": ["main_styles", "colors"],
-    "titleI18n": "fourth_color",
-    "editor": "colorPicker",
-    "featured": true,
-    "scope": "global",
-    "boundVariables": [
-    ]
-  */
-  --fourth-color: white;
+  --third-color: white;
   /* VoogStyle
     "pathI18n": ["main_styles"],
     "titleI18n": "background_color",
