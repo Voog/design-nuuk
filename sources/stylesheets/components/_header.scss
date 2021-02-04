@@ -160,13 +160,29 @@
       @include transition(transform 200ms);
 
       @include query($tablet-1, 'min-width') {
-        .menu-top & {
+        .menu-top &,
+        .semimodal-absolute:not(.semimodal-open) & {
           flex-wrap: wrap;
 
-          .header_title,
-          .header_components {
+          .header_components,
+          .menu-btn {
             width: 20%;
             flex: auto;
+          }
+        }
+
+        .menu-top & {
+          .menu {
+            flex-wrap: wrap;
+          }
+
+          .header_title {
+            width: 20%;
+            text-align: left;
+
+            h1,h2,h3,h4,h5,h6,p {
+              text-align: left;
+            }
           }
 
           .menu-main-wrapper {
@@ -174,9 +190,17 @@
             display: flex;
             justify-content: center;
           }
+        }
 
-          .menu {
-            flex-wrap: wrap;
+        .semimodal-absolute:not(.semimodal-open) & {
+          .header_title {
+            width: 60%;
+            justify-content: center;
+            text-align: center;
+
+            h1,h2,h3,h4,h5,h6,p {
+              text-align: center;
+            }
           }
         }
       }

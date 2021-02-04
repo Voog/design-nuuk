@@ -2702,16 +2702,28 @@ body.edy-checkout-button-visible {
           backface-visibility: hidden;
 }
 @media screen and (min-width: 900px) {
-  .menu-top .header_fixed-content {
+  .menu-top .header_fixed-content, .semimodal-absolute:not(.semimodal-open) .header_fixed-content {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .menu-top .header_fixed-content .header_title,
-  .menu-top .header_fixed-content .header_components {
+  .menu-top .header_fixed-content .header_components,
+  .menu-top .header_fixed-content .menu-btn, .semimodal-absolute:not(.semimodal-open) .header_fixed-content .header_components,
+  .semimodal-absolute:not(.semimodal-open) .header_fixed-content .menu-btn {
     width: 20%;
     -webkit-box-flex: 1;
         -ms-flex: auto;
             flex: auto;
+  }
+  .menu-top .header_fixed-content .menu {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .menu-top .header_fixed-content .header_title {
+    width: 20%;
+    text-align: left;
+  }
+  .menu-top .header_fixed-content .header_title h1, .menu-top .header_fixed-content .header_title h2, .menu-top .header_fixed-content .header_title h3, .menu-top .header_fixed-content .header_title h4, .menu-top .header_fixed-content .header_title h5, .menu-top .header_fixed-content .header_title h6, .menu-top .header_fixed-content .header_title p {
+    text-align: left;
   }
   .menu-top .header_fixed-content .menu-main-wrapper {
     width: 60%;
@@ -2722,9 +2734,15 @@ body.edy-checkout-button-visible {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .menu-top .header_fixed-content .menu {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+  .semimodal-absolute:not(.semimodal-open) .header_fixed-content .header_title {
+    width: 60%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+  .semimodal-absolute:not(.semimodal-open) .header_fixed-content .header_title h1, .semimodal-absolute:not(.semimodal-open) .header_fixed-content .header_title h2, .semimodal-absolute:not(.semimodal-open) .header_fixed-content .header_title h3, .semimodal-absolute:not(.semimodal-open) .header_fixed-content .header_title h4, .semimodal-absolute:not(.semimodal-open) .header_fixed-content .header_title h5, .semimodal-absolute:not(.semimodal-open) .header_fixed-content .header_title h6, .semimodal-absolute:not(.semimodal-open) .header_fixed-content .header_title p {
+    text-align: center;
   }
 }
 .front-page .header_fixed {
