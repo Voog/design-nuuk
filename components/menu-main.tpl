@@ -12,8 +12,10 @@
           <ul class="menu">
             {% for subitem in item.visible_children %}
               {% if subitem.layout_title == product_layout %}
-                {% if menuSettings.product_page_hidden %}
+                {% if menuSettings.is_product_page_visible != true %}
                   {%- assign menuItemDisplayClass = 'hidden' -%}
+                {% else %}
+                  {%- assign menuItemDisplayClass = 'visible' -%}
                 {% endif %}
 
                 <div class="menu-item-product {{menuItemDisplayClass}}">

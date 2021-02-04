@@ -23,6 +23,10 @@
         valuesObj.positioning = 'is_side_absolute';
       }
 
+      if (!('is_product_page_visible' in valuesObj)) {
+        valuesObj.is_product_page_visible = true;
+      }
+
       {%- assign sideMenuTr = value -%}
 
       initSettingsEditor(
@@ -63,9 +67,9 @@
               "placeholder": {{ sideMenuCombinedTr | json }}
             },
             {
-              "titleI18n": {{ "hide_product_pages_in_menu" | lce | json }},
+              "titleI18n": {{ "show_product_pages_in_menu" | lce | json }},
               "type": "checkbox",
-              "key": "product_page_hidden",
+              "key": "is_product_page_visible",
               "states": {
                 "on": true,
                 "off": false
@@ -128,10 +132,10 @@
               }
             }
 
-            if (data.product_page_hidden == true) {
-              $('.menu-item-product').addClass('hidden');
-            } else {
+            if (data.is_product_page_visible == true) {
               $('.menu-item-product').removeClass('hidden');
+            } else {
+              $('.menu-item-product').addClass('hidden');
             }
 
             {%- if menuSettings.max_width != blank -%}

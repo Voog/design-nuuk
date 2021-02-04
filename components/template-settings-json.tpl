@@ -16,7 +16,7 @@
       "value": {
         "positioning": "is_side_absolute",
         "max_width": null,
-        "product_page_hidden": false
+        "is_product_page_visible": true
       }
     },
     "semimodal_bg": {
