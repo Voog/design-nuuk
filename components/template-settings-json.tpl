@@ -15,7 +15,8 @@
       "key": "PREFIX_menu_settings",
       "value": {
         "positioning": "is_side_absolute",
-        "max_width": null
+        "max_width": null,
+        "product_page_hidden": false
       }
     },
     "semimodal_bg": {

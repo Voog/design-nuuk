@@ -152,10 +152,10 @@ body.dark-background {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 .editmode .container_wrap {
-  height: calc(100vh - 72px);
+  min-height: calc(100vh - 72px);
 }
 .semimodal-relative .container {
   margin-top: 48px;
@@ -4487,6 +4487,10 @@ article.post_wrapper .date-separator.hide-separator {
   right: 6px;
   margin: 0;
   bottom: -38px;
+}
+
+.menu-item-product.hidden {
+  display: none;
 }
 
 .w-100p {

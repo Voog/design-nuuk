@@ -11,7 +11,18 @@
         <div class="menu-sub js-menu-sub{% if item.selected? %} active{% endif %}{% if _menuTop %} d-none{% endif %}">
           <ul class="menu">
             {% for subitem in item.visible_children %}
-              {% menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
+              {% if subitem.layout_title == product_layout %}
+                {% if menuSettings.product_page_hidden %}
+                  {%- assign menuItemDisplayClass = 'hidden' -%}
+                {% endif %}
+
+                <div class="menu-item-product {{menuItemDisplayClass}}">
+                  {% menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
+                </div>
+              {% else %}
+                {% menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
+              {% endif %}
+
             {% endfor %}
             {% if item.hidden_children.size > 0 %}
               <li class="edit-btn">{% menubtn item.hidden_children %}</li>

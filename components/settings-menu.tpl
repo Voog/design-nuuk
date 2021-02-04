@@ -62,6 +62,15 @@
               "key": "max_width",
               "placeholder": {{ sideMenuCombinedTr | json }}
             },
+            {
+              "titleI18n": {{ "hide_product_pages_in_menu" | lce | json }},
+              "type": "toggle",
+              "key": "product_page_hidden",
+              "states": {
+                "on": true,
+                "off": false
+              },
+            },
           ],
           dataKey: '{{menuSettingsKey}}',
           values: valuesObj,
@@ -117,6 +126,12 @@
               if ($('.semimodal-relative').length <= 0) {
                 $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos});
               }
+            }
+
+            if (data.product_page_hidden == true) {
+              $('.menu-item-product').addClass('hidden');
+            } else {
+              $('.menu-item-product').removeClass('hidden');
             }
 
             {%- if menuSettings.max_width != blank -%}
