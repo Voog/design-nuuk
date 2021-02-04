@@ -64,7 +64,7 @@
             },
             {
               "titleI18n": {{ "hide_product_pages_in_menu" | lce | json }},
-              "type": "toggle",
+              "type": "checkbox",
               "key": "product_page_hidden",
               "states": {
                 "on": true,

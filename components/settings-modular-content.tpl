@@ -112,35 +112,6 @@
         {%- endif %}
       }
 
-      var setMinWidth = function() {
-        var colItem = $(".column-container-{{id}} .col-item");
-
-        if (parseFloat(colItem.css('min-width')) >= colItem.closest(".editor_default-container").width()) {
-          colItem.css('min-width', '100%');
-        } else {
-          colItem.css('min-width', valuesObj.col_min_width);
-        }
-      }
-
-      setMinWidth();
-
-      $(window).resize(function() {
-        setMinWidth();
-
-        if ($(window).width() >= 540) {
-          $('.block-{{ id }}').css({
-            width: valuesObj.block_max_width + '%'
-          });
-        } else {
-          $('.block-{{ id }}').css({
-            width: '100%'
-          });
-          $('.column-container-{{ id }} .col-item').css({
-            'max-width': '100%'
-          });
-        }
-      });
-
       initSettingsEditor(
         {
           settingsBtn: document.querySelector('.js-column-settings-btn-{{ id }}'),
