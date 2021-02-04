@@ -6,7 +6,7 @@
 </div>
 
 <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
+  window.addEventListener('DOMContentLoaded', function(event) {
     {% if site.data.article_settings %}
       var globalDataValues = {{ site.data.article_settings | json }};
     {% else %}

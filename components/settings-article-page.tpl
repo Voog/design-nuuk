@@ -5,7 +5,7 @@
 </div>
 
 <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
+  window.addEventListener('DOMContentLoaded', function(event) {
     {% if articleSettingsData %}
       var articleDataValues = {{ articleSettingsData | json }};
     {% else %}

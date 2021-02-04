@@ -8,7 +8,7 @@
 </div>
 <script>
   {%- if editmode -%}
-    window.addEventListener('DOMContentLoaded', (event) => {
+    window.addEventListener('DOMContentLoaded', function(event) {
       {%- if menuSettings -%}
         var valuesObj = {{ menuSettings | json }};
       {%- else -%}

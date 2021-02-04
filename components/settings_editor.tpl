@@ -62,7 +62,7 @@
     });
   }
 
-  window.addEventListener('DOMContentLoaded', (event) => {
+  window.addEventListener('DOMContentLoaded', function(event) {
     var shadowDom = document.querySelector(".edy-next-shadowdom").shadowRoot;
     var setSettingsBtn = setInterval(function() {
       if (shadowDom.querySelectorAll('div[class^="toolbar__"]').length) {

@@ -13,7 +13,7 @@
 
 <script>
   {% if editmode %}
-    window.addEventListener('DOMContentLoaded', (event) => {
+    window.addEventListener('DOMContentLoaded', function(event) {
       {% if productPageSettings %}
         var valuesObj = {{ productPageSettings | json }};
       {% else %}

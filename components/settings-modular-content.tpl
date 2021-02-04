@@ -6,7 +6,7 @@
 </div>
 
 <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
+  window.addEventListener('DOMContentLoaded', function(event) {
     {%- if _blockSettings %}
       var valuesObj = {{ _blockSettings | json }};
     {%- else %}
@@ -157,7 +157,7 @@
                 {"title": "5", "value": 5}
               ]
             },
-            {%- assign blockMaxWidthTr = "block_max_width" | lce -%}
+            {%- assign blockMaxWidthTr = "max_width" | lce -%}
             {%- assign blockMaxWidthCombinedTr = blockMaxWidthTr | append: ' (%)' -%}
             {
               "title": {{ blockMaxWidthCombinedTr| json }},
@@ -218,7 +218,7 @@
               "key": "col_min_width",
               "placeholder": {{ colMinWidthCombinedTr | json }}
             },
-            {%- assign colHPadTr = "col_h_padding" | lce -%}
+            {%- assign colHPadTr = "vertical_spacing" | lce -%}
             {%- assign pxTr = "units.px" | lce -%}
             {%- assign colHPadCombinedTr = colHPadTr | append: ' (' | append: pxTr | append: ')' -%}
             {

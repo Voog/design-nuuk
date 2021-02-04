@@ -6,7 +6,7 @@
 </div>
 
 <script>
-  window.addEventListener('DOMContentLoaded', (event) => {
+  window.addEventListener('DOMContentLoaded', function(event) {
     {% if page.data[swiperSettingsKey] %}
       var valuesObj = {{ page.data[swiperSettingsKey] | json }};
     {% else %}
