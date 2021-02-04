@@ -20,7 +20,7 @@
     "featured": true,
     "scope": "global"
   */
-  --content-body-font-size: 18px;
+  --content-body-font-size: 16px;
   /* VoogStyle
     "pathI18n": ["content", "text"],
     "titleI18n": "color",
