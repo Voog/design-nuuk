@@ -12,6 +12,7 @@
     box-sizing: border-box;
     @include transition(all 600ms);
 
+
     .semimodal-relative & {
       box-shadow: none !important;
     }
@@ -155,9 +156,30 @@
 
     &-content {
       display: flex;
-      justify-content: space-between;
       width: 100%;
       @include transition(transform 200ms);
+
+      @include query($tablet-1, 'min-width') {
+        .menu-top & {
+          flex-wrap: wrap;
+
+          .header_title,
+          .header_components {
+            width: 20%;
+            flex: auto;
+          }
+
+          .menu-main-wrapper {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+          }
+
+          .menu {
+            flex-wrap: wrap;
+          }
+        }
+      }
     }
 
     .front-page & {
@@ -194,12 +216,9 @@
 
   &components {
     display: flex;
-    margin-left: 32px;
     position: relative;
-
-    @include query($tablet-1) {
-      margin-left: 0;
-    }
+    justify-content: flex-end;
+    flex: auto;
 
     &-desktop {
       display: flex;
@@ -225,12 +244,11 @@
   }
 
   &title {
-    margin-right: 32px;
     min-width: 72px;
 
     @include query($tablet-1) {
-      margin-right: 16px;
-      margin-left: 16px;
+      padding-right: 16px;
+      padding-left: 16px;
     }
 
     .semimodal-relative & {

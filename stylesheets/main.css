@@ -2687,9 +2687,6 @@ body.edy-checkout-button-visible {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 100%;
   -webkit-transition: -webkit-transform 200ms;
   transition: -webkit-transform 200ms;
@@ -2703,6 +2700,32 @@ body.edy-checkout-button-visible {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+@media screen and (min-width: 900px) {
+  .menu-top .header_fixed-content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .menu-top .header_fixed-content .header_title,
+  .menu-top .header_fixed-content .header_components {
+    width: 20%;
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+  }
+  .menu-top .header_fixed-content .menu-main-wrapper {
+    width: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .menu-top .header_fixed-content .menu {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 .front-page .header_fixed {
   position: fixed;
@@ -2735,13 +2758,13 @@ body.edy-checkout-button-visible {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 32px;
   position: relative;
-}
-@media screen and (max-width: 900px) {
-  .header_components {
-    margin-left: 0;
-  }
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
 }
 .header_components-desktop {
   display: -webkit-box;
@@ -2773,13 +2796,12 @@ body.edy-checkout-button-visible {
   }
 }
 .header_title {
-  margin-right: 32px;
   min-width: 72px;
 }
 @media screen and (max-width: 900px) {
   .header_title {
-    margin-right: 16px;
-    margin-left: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 }
 .semimodal-relative .header_title {

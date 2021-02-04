@@ -3,7 +3,7 @@
   {%- assign menuTop = true -%}
 {% endif %}
 
-<header class="header_fixed{% if menuPos == 'is_top_fixed'%} relative{% endif %}">
+<header class="header_fixed{% if menuPos == 'is_top_fixed'%} relative{% endif %}{% if menuTop %} menu-top{% endif %}">
   <div class="header_fixed-content">
     <button class="menu-btn js-menu-btn js-prevent-sideclick{% if menuTop == true %} hidden-desktop{% endif %}">
       <div>
@@ -17,7 +17,7 @@
       {%- editable site.header -%}
     </div>
 
-    <div class="js-menu-main-wrapper{% if menuTop == true %} hidden-tablet{% else %} hidden-tablet hidden-desktop{% endif %}">
+    <div class="js-menu-main-wrapper menu-main-wrapper{% if menuTop == true %} hidden-tablet{% else %} hidden-tablet hidden-desktop{% endif %}">
       {%- include "menu-main", _menuTop: menuTop -%}
     </div>
 
