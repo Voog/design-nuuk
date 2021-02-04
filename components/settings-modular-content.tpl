@@ -216,7 +216,7 @@
               "type": "number",
               "min": 1,
               "key": "col_min_width",
-              "placeholder": {{ colMinWidthCombinedT | json }}
+              "placeholder": {{ colMinWidthCombinedTr | json }}
             },
             {%- assign colHPadTr = "col_h_padding" | lce -%}
             {%- assign pxTr = "units.px" | lce -%}
