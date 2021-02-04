@@ -23,7 +23,7 @@
     {% endcapture %}
 
     {%- capture post_details -%}
-      <div class="post_details mar_b-32 mar_t-16">
+      <div class="post_details mar_b-32 mar_t-16 content-formatted">
         <time class="post_date{% if show_article_date == false %} hide-post-date{% endif %}{% if article_data_show_date_defined != true %} site-data{% endif %}"
           datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}
         </time>
