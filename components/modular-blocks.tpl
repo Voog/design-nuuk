@@ -148,7 +148,7 @@
       var setMinWidth = function() {
         var colItem = $(".column-container-{{id}} .col-item");
 
-        if (parseFloat(colItem.css('min-width')) >= colItem.closest(".editor_default-container").width()) {
+        if (parseFloat(colItem.css('min-width')) > colItem.closest(".editor_default-container").width()) {
           colItem.css('min-width', '100%');
         } else {
           colItem.css('min-width', "{{minWidth}}");
