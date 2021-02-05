@@ -138,8 +138,6 @@
     }
 
     .menu-item a {
-      font-size: 16px;
-      line-height: 194%;
       max-width: 160px;
     }
 
@@ -238,8 +236,6 @@
               background-color: $black;
               color: $white;
               width: 100%;
-              font-size: 16px;
-              line-height: 194%;
               @include transition(background-color 200ms);
 
               &:hover {
@@ -306,8 +302,6 @@
       margin: 8px 0;
 
       .menu-item a {
-        font-size: 16px;
-        line-height: 194%;
         padding-left: 16px;
 
         &:before {
@@ -319,8 +313,6 @@
     .edit-btn {
       position: relative;
       left: 16px;
-      font-size: 16px;
-      line-height: 194%;
     }
 
     .menu {

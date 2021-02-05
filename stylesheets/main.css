@@ -675,8 +675,6 @@ p {
   display: inline-block;
   color: white;
   padding: 4px 16px;
-  font-size: 16px;
-  line-height: 194%;
   text-align: center;
 }
 .content-formatted .edy-buy-button-container .edy-buy-button-variants {
@@ -4276,8 +4274,6 @@ article.post_wrapper .date-separator.hide-separator {
   display: none;
 }
 .menu_top.menu-main .menu .menu-item a {
-  font-size: 16px;
-  line-height: 194%;
   max-width: 160px;
 }
 @media screen and (max-width: 900px) {
@@ -4388,8 +4384,6 @@ article.post_wrapper .date-separator.hide-separator {
   background-color: #000000;
   color: #ffffff;
   width: 100%;
-  font-size: 16px;
-  line-height: 194%;
   -webkit-transition: background-color 200ms;
   -o-transition: background-color 200ms;
   transition: background-color 200ms;
@@ -4449,8 +4443,6 @@ article.post_wrapper .date-separator.hide-separator {
   margin: 8px 0;
 }
 .menu-main .menu-sub.active .menu-item a {
-  font-size: 16px;
-  line-height: 194%;
   padding-left: 16px;
 }
 .menu-main .menu-sub.active .menu-item a:before {
@@ -4459,8 +4451,6 @@ article.post_wrapper .date-separator.hide-separator {
 .menu-main .menu-sub .edit-btn {
   position: relative;
   left: 16px;
-  font-size: 16px;
-  line-height: 194%;
 }
 .menu-main .menu-sub .menu {
   -webkit-box-orient: vertical;
