@@ -1,7 +1,3 @@
-{% unless _entityData.data[itemImageKey] != blank %}
-  {% assign item_image_state = "without-image" %}
-{% endunless %}
-
 {% if _buyButton.product != blank %}
   {%- assign buyButtonImage = _buyButton.product.image -%}
 {% else %}
@@ -14,6 +10,16 @@
   {%- assign productImage = _entityData.data[itemImageKey] -%}
 {%- endif -%}
 
+{% unless productImage != blank %}
+  {% assign item_image_state = "without-image" %}
+{% endunless %}
+
+{% if _entityData.data[itemImageCropStateKey] %}
+  {%- assign imageClass = 'item-image ' | append: _entityData.data[itemImageCropStateKey] -%}
+{% else %}
+  {%- assign imageClass = 'item-image not-cropped' -%}
+{% endif %}
+
 <a class="content-item-box {{item_image_state}}" href="{{ _entityData.url }}">
   <div class="item-top p-rel">
     <div class="top-inner of-hidden">
@@ -22,7 +28,8 @@
         _entityData.data[itemImageAltAttrKey],
         _data: productImage,
         _targetWidth: '700',
-        _className: "item-image is-cropped" %}
+        _className: imageClass
+      %}
     </div>
   </div>
 </a>
