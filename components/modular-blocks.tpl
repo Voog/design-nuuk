@@ -22,22 +22,22 @@
   {%- endif -%}
 
   {%- if blockColumnsSettings.col_h_padding != blank -%}
-    {%- assign hPadding = blockColumnsSettings.col_h_padding -%}
+    {%- assign hPadding = blockColumnsSettings.col_h_padding | plus: 0 -%}
   {%- else -%}
     {%- if _defaultBlockObj[blockColumnsSettingsKey].col_h_padding -%}
-      {%- assign hPadding = _defaultBlockObj[blockColumnsSettingsKey].col_h_padding -%}
+      {%- assign hPadding = _defaultBlockObj[blockColumnsSettingsKey].col_h_padding | plus: 0 -%}
     {%- else -%}
-      {%- assign hPadding = _defaultBlockObj.default.col_h_padding -%}
+      {%- assign hPadding = _defaultBlockObj.default.col_h_padding | plus: 0 -%}
     {%- endif -%}
   {%- endif -%}
 
   {%- if blockColumnsSettings.block_v_padding != blank -%}
-    {%- assign vPadding = blockColumnsSettings.block_v_padding -%}
+    {%- assign vPadding = blockColumnsSettings.block_v_padding | plus: 0 -%}
   {%- else -%}
     {%- if _defaultBlockObj[blockColumnsSettingsKey].block_v_padding -%}
-      {%- assign vPadding = _defaultBlockObj[blockColumnsSettingsKey].block_v_padding -%}
+      {%- assign vPadding = _defaultBlockObj[blockColumnsSettingsKey].block_v_padding | plus: 0 -%}
     {%- else -%}
-      {%- assign vPadding = _defaultBlockObj.default.block_v_padding -%}
+      {%- assign vPadding = _defaultBlockObj.default.block_v_padding | plus: 0 -%}
     {%- endif -%}
   {%- endif -%}
 
@@ -110,7 +110,7 @@
       width: 100%;
     }
 
-    @media screen and (min-width: 540px) {
+    @media screen and (min-width: 720px) {
       .block-{{ id }} {
         width: {{maxBlockWidth}}%;
       }
@@ -137,7 +137,28 @@
       max-width: {%- if col_max_width == "none" -%}none{%- else -%}{{col_max_width}}px{%- endif -%};
     }
 
-    @media screen and (max-width: 540px) {
+    @media screen and (max-width: 720px) {
+      {%- if vPadding > 32 -%}
+        {%- assign vPadding = vPadding | divided_by: 2 -%}
+      {%- endif -%}
+
+      {%- if hPadding > 32 -%}
+        {%- assign hPadding = hPadding | divided_by: 2 -%}
+      {%- endif -%}
+
+      .column-container-{{ id }} {
+        margin: 0 -{{hPadding}}px -32px;
+        padding: {{vPadding}}px 0;
+      }
+
+      .column-container-{{ id }} .col-item {
+        padding: 0 {{hPadding}}px 32px;
+      }
+
+      .column-container-{{blockColumnsCount}}-{{ id }} .col-item {
+        width: calc(100% / {{blockColumnsCount}} - {{hPadding}}*2px);
+      }
+
       .column-container-{{blockColumnsCount}}-{{ id }} .col-item {
         max-width: 100%;
       }
@@ -159,7 +180,7 @@
 
       $(window).resize(function() {
         setMinWidth();
-        if ($(window).width() >= 540) {
+        if ($(window).width() >= 720) {
           $('.block-{{ id }}').css({
             width: "{{maxBlockWidth}}%"
           });

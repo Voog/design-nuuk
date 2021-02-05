@@ -171,7 +171,7 @@
             },
             {%- assign colMaxWidthTr = "col_max_width" | lce -%}
             {%- assign pxTr = "units.px" | lce -%}
-            {%- assign colMaxWidthCombinedTr = verticalSpacingTr | append: ' (' | append: pxTr | append: ')' -%}
+            {%- assign colMaxWidthCombinedTr = colMaxWidthTr | append: ' (' | append: pxTr | append: ')' -%}
             {
               "title": {{ colMaxWidthCombinedTr | json }},
               "type": "number",
@@ -189,7 +189,7 @@
               "key": "col_min_width",
               "placeholder": {{ colMinWidthCombinedTr | json }}
             },
-            {%- assign colHPadTr = "vertical_spacing" | lce -%}
+            {%- assign colHPadTr = "space_between_columns" | lce -%}
             {%- assign pxTr = "units.px" | lce -%}
             {%- assign colHPadCombinedTr = colHPadTr | append: ' (' | append: pxTr | append: ')' -%}
             {
@@ -227,7 +227,7 @@
             {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
 
             if (data.block_max_width >= 1) {
-              if ($(window).width() >= 540) {
+              if ($(window).width() >= 720) {
                 $('.block-{{ id }}').css({
                   width: data.block_max_width + '%'
                 });
@@ -246,14 +246,23 @@
 
             if (parseInt(data.col_h_padding) >= 0) {
               var col_h_padding = '0 ' + data.col_h_padding + 'px 32px';
+              if ($(window).width() <= 720 && data.block_v_padding > 32) {
+                $('.column-container-{{ id }} .col-item').css({
+                  padding: col_h_padding / 2, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.col_h_padding + 'px)'
+                });
 
-              $('.column-container-{{ id }} .col-item').css({
-                padding: col_h_padding, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.col_h_padding * 2 + 'px)'
-              });
+                $('.column-container-{{ id }}').css({
+                  'margin': '0 -' + data.col_h_padding / 2 + 'px -32px'
+                });
+              } else {
+                $('.column-container-{{ id }} .col-item').css({
+                  padding: col_h_padding, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.col_h_padding * 2 + 'px)'
+                });
 
-              $('.column-container-{{ id }}').css({
-                'margin': '0 -' + data.col_h_padding + 'px -32px'
-              });
+                $('.column-container-{{ id }}').css({
+                  'margin': '0 -' + data.col_h_padding + 'px -32px'
+                });
+              }
             } else {
               $('.column-container-{{ id }} .col-item').css({
                 padding: '0 0 32px', width: 'calc(100% / {{rowSettings.block_count}})'
@@ -265,9 +274,19 @@
             }
 
             if (parseInt(data.block_v_padding) >= 0) {
-              $('.column-container-{{ id }}').css({
-                padding: data.block_v_padding + 'px 0'
-              });
+              if ($(window).width() <= 720 && data.block_v_padding > 32) {
+                $('.column-container-{{ id }}').css({
+                  padding: data.block_v_padding / 2 + 'px 0'
+                });
+              } else {
+                $('.column-container-{{ id }}').css({
+                  padding: data.block_v_padding + 'px 0'
+                });
+
+                $('.column-container-{{ id }}').css({
+                  padding: data.block_v_padding + 'px 0'
+                });
+              }
             }
 
             if (data.col_justification) {
@@ -276,7 +295,7 @@
               });
             }
 
-            if ($(window).width() <= 540) {
+            if ($(window).width() <= 720) {
               $('.column-container-{{ id }} .col-item').css({
                 'max-width': '100%'
               });
