@@ -31,9 +31,9 @@
         {% if editmode %}
 
           <div class="edit-btn mar_b-16">
-            {% assign add_product_label = 'add_product' | lc %}
-            {% assign add_product_title = 'add_product_page' | lc %}
-            {% menuadd parent="item" label=add_product_label lable=add_product_title layout_title="Product" %}
+            {% assign add_product_label = 'add_product' | lce %}
+            {% assign add_product_title = 'add_product_page' | lce %}
+            {% menuadd parent="page.menuitem" label=add_product_label lable=add_product_title layout_title="Product" %}
           </div>
         {% endif %}
 
