@@ -260,6 +260,8 @@ body {
       font-style: var(--header-mainmenu-font-style);
       font-size: var(--header-mainmenu-font-size);
       hyphens: var(--header-mainmenu-hyphens);
+      line-height: var(--header-mainmenu-line-height);
+      text-transform: var(--header-mainmenu-text-transform);
 
       .dark-background & {
         color: var(--third-color);
@@ -291,6 +293,8 @@ body {
       font-weight: var(--header-mainmenu-active-font-weight);
       text-decoration: var(--header-mainmenu-active-decoration);
       font-style: var(--header-mainmenu-active-font-style);
+      line-height: var(--header-mainmenu-line-height);
+      text-transform: var(--header-mainmenu-text-transform);
 
       &::before {
         background-color: var(--header-mainmenu-active-color);
@@ -309,6 +313,8 @@ body {
       &:hover {
         color: var(--header-mainmenu-hover-color);
         text-decoration: var(--header-mainmenu-hover-decoration);
+        text-transform: var(--header-mainmenu-text-transform);
+
         &::before {
           background-color: var(--header-mainmenu-hover-color);
         }
@@ -316,6 +322,67 @@ body {
         .dark-background & {
           color: var(--third-color);
           opacity: 1;
+        }
+      }
+    }
+
+    .menu-sub {
+      .menu-item a {
+        color: var(--menu-sub-color);
+        text-decoration: var(--menu-sub-text-decoration);
+        font-weight: var(--menu-sub-font-weight);
+        font-style: var(--menu-sub-font-style);
+        font-size: var(--menu-sub-font-size);
+        line-height: var(--menu-sub-line-height);
+        text-transform: var(--menu-sub-text-transform);
+
+        &::after {
+          background-color: var(--menu-sub-color);
+        }
+        // scss-lint:disable NestingDepth
+
+        &.active {
+          color: var(--menu-sub-hover-color);
+          text-decoration: var(--menu-sub-active-text-decoration);
+          font-weight: var(--menu-sub-active-font-weight);
+          font-style: var(--menu-sub-active-font-style);
+          font-size: var(--menu-sub-active-font-size);
+          line-height: var(--menu-sub-active-line-height);
+          text-transform: var(--menu-sub-active-text-transform);
+
+          &::before {
+            border-color: var(--menu-sub-active-color);
+          }
+
+          &:hover {
+            color: var(--menu-sub-color);
+            text-decoration: var(--menu-sub-text-decoration);
+            font-weight: var(--menu-sub-font-weight);
+            font-style: var(--menu-sub-font-style);
+            line-height: var(--menu-sub-line-height);
+
+            svg,
+            path {
+              fill: var(--menu-sub-color);
+            }
+          }
+        }
+
+        &:hover {
+          color: var(--menu-sub-hover-color);
+          text-decoration: var(--menu-sub-hover-decoration);
+          font-weight: var(--menu-sub-hover-font-weight);
+          font-style: var(--menu-sub-hover-font-style);
+          line-height: var(--menu-sub-hover-line-height);
+          text-transform: var(--menu-sub-hover-text-transform);
+
+          &::before {
+            border-color: var(--menu-sub-hover-color);
+          }
+        }
+
+        &::before {
+          border-color: var(--menu-sub-hover-color);
         }
       }
     }
@@ -386,6 +453,46 @@ body {
           }
         }
       }
+
+      .menu-sub {
+        .menu-item a {
+          color: var(--menu-sub-color);
+
+          &::after {
+            background-color: var(--menu-sub-color);
+          }
+          // scss-lint:disable NestingDepth
+
+          &.active {
+            color: var(--menu-sub-hover-color);
+
+            &::before {
+              border-color: var(--menu-sub-active-color);
+            }
+
+            &:hover {
+              color: var(--menu-sub-color);
+
+              svg,
+              path {
+                fill: var(--menu-sub-color);
+              }
+            }
+          }
+
+          &:hover {
+            color: var(--menu-sub-hover-color);
+
+            &::before {
+              border-color: var(--menu-sub-hover-color);
+            }
+          }
+
+          &::before {
+            border-color: var(--menu-sub-hover-color);
+          }
+        }
+      }
     }
   }
 }
@@ -441,49 +548,6 @@ body {
       .dark-background & {
         border-color: var(--third-color);
       }
-    }
-  }
-}
-
-.menu-sub {
-  .menu-item a {
-    color: var(--header-mainmenu-color);
-    text-decoration: var(--header-mainmenu-decoration);
-    font-size: var(--header-mainmenu-font-size);
-
-    &::after {
-      background-color: var(--header-mainmenu-color);
-    }
-    // scss-lint:disable NestingDepth
-
-    &.active {
-      color: var(--header-mainmenu-active-color);
-      font-weight: var(--header-mainmenu-active-font-weight);
-      text-decoration: var(--header-mainmenu-active-decoration);
-
-      &::before {
-        border-color: var(--header-mainmenu-active-color);
-      }
-      &:hover {
-        color: var(--header-mainmenu-color);
-        text-decoration: var(--header-mainmenu-hover-decoration);
-        svg,
-        path {
-          fill: var(--header-mainmenu-color);
-        }
-      }
-    }
-
-    &:hover {
-      color: var(--header-mainmenu-hover-color);
-
-      &::before {
-        border-color: var(--header-mainmenu-hover-color);
-      }
-    }
-
-    &::before {
-      border-color: var(--header-mainmenu-color);
     }
   }
 }

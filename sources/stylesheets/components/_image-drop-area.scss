@@ -44,7 +44,7 @@
     margin-top: 10px;
     margin-left: 10px;
     cursor: pointer;
-    color: rgba($white, 1);
+    color: $white;
 
     &.is-visible {
       display: block;

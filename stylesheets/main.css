@@ -2227,7 +2227,7 @@ article .item-top > .aspect-ratio-inner {
   margin-top: 10px;
   margin-left: 10px;
   cursor: pointer;
-  color: white;
+  color: #ffffff;
 }
 .item-top .bg-crop-btn.is-visible {
   display: block;
@@ -2838,7 +2838,7 @@ body.edy-checkout-button-visible {
   font-size: 14px;
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.53);
+  border-color: rgba(0, 0, 0, 0.5);
   border-radius: 3px;
 }
 .site-search .search-submit {
@@ -4291,6 +4291,9 @@ article.post_wrapper .date-separator.hide-separator {
   .menu_top.menu-main .menu .menu-item.lvl-1:nth-of-type(n+6) {
     display: initial;
   }
+}
+.semimodal .menu .menu-item {
+  padding-bottom: 16px;
 }
 .menu .menu-item a {
   display: block;

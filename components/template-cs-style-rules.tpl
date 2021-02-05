@@ -173,6 +173,8 @@ body.dark-background {
   -webkit-hyphens: var(--header-mainmenu-hyphens);
       -ms-hyphens: var(--header-mainmenu-hyphens);
           hyphens: var(--header-mainmenu-hyphens);
+  line-height: var(--header-mainmenu-line-height);
+  text-transform: var(--header-mainmenu-text-transform);
 }
 .dark-background .menu-main .menu .menu-item a {
   color: var(--third-color);
@@ -200,6 +202,8 @@ body.dark-background {
   -webkit-text-decoration: var(--header-mainmenu-active-decoration);
           text-decoration: var(--header-mainmenu-active-decoration);
   font-style: var(--header-mainmenu-active-font-style);
+  line-height: var(--header-mainmenu-line-height);
+  text-transform: var(--header-mainmenu-text-transform);
 }
 .menu-main .menu .menu-item.active a::before {
   background-color: var(--header-mainmenu-active-color);
@@ -216,6 +220,7 @@ body.dark-background {
   color: var(--header-mainmenu-hover-color);
   -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
           text-decoration: var(--header-mainmenu-hover-decoration);
+  text-transform: var(--header-mainmenu-text-transform);
 }
 .menu-main .menu .menu-item.active a:hover::before {
   background-color: var(--header-mainmenu-hover-color);
@@ -223,6 +228,59 @@ body.dark-background {
 .dark-background .menu-main .menu .menu-item.active a:hover {
   color: var(--third-color);
   opacity: 1;
+}
+.menu-main .menu .menu-sub .menu-item a {
+  color: var(--menu-sub-color);
+  -webkit-text-decoration: var(--menu-sub-text-decoration);
+          text-decoration: var(--menu-sub-text-decoration);
+  font-weight: var(--menu-sub-font-weight);
+  font-style: var(--menu-sub-font-style);
+  font-size: var(--menu-sub-font-size);
+  line-height: var(--menu-sub-line-height);
+  text-transform: var(--menu-sub-text-transform);
+}
+.menu-main .menu .menu-sub .menu-item a::after {
+  background-color: var(--menu-sub-color);
+}
+.menu-main .menu .menu-sub .menu-item a.active {
+  color: var(--menu-sub-hover-color);
+  -webkit-text-decoration: var(--menu-sub-active-text-decoration);
+          text-decoration: var(--menu-sub-active-text-decoration);
+  font-weight: var(--menu-sub-active-font-weight);
+  font-style: var(--menu-sub-active-font-style);
+  font-size: var(--menu-sub-active-font-size);
+  line-height: var(--menu-sub-active-line-height);
+  text-transform: var(--menu-sub-active-text-transform);
+}
+.menu-main .menu .menu-sub .menu-item a.active::before {
+  border-color: var(--menu-sub-active-color);
+}
+.menu-main .menu .menu-sub .menu-item a.active:hover {
+  color: var(--menu-sub-color);
+  -webkit-text-decoration: var(--menu-sub-text-decoration);
+          text-decoration: var(--menu-sub-text-decoration);
+  font-weight: var(--menu-sub-font-weight);
+  font-style: var(--menu-sub-font-style);
+  line-height: var(--menu-sub-line-height);
+}
+.menu-main .menu .menu-sub .menu-item a.active:hover svg,
+.menu-main .menu .menu-sub .menu-item a.active:hover path {
+  fill: var(--menu-sub-color);
+}
+.menu-main .menu .menu-sub .menu-item a:hover {
+  color: var(--menu-sub-hover-color);
+  -webkit-text-decoration: var(--menu-sub-hover-decoration);
+          text-decoration: var(--menu-sub-hover-decoration);
+  font-weight: var(--menu-sub-hover-font-weight);
+  font-style: var(--menu-sub-hover-font-style);
+  line-height: var(--menu-sub-hover-line-height);
+  text-transform: var(--menu-sub-hover-text-transform);
+}
+.menu-main .menu .menu-sub .menu-item a:hover::before {
+  border-color: var(--menu-sub-hover-color);
+}
+.menu-main .menu .menu-sub .menu-item a::before {
+  border-color: var(--menu-sub-hover-color);
 }
 
 .dark-background .light-background .header_components-tablet,
@@ -304,6 +362,34 @@ body.dark-background {
 .dark-background .light-background .menu-main .menu .menu-item.active a:hover::before {
   background-color: var(--header-mainmenu-hover-color);
 }
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a {
+  color: var(--menu-sub-color);
+}
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a::after {
+  background-color: var(--menu-sub-color);
+}
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active {
+  color: var(--menu-sub-hover-color);
+}
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active::before {
+  border-color: var(--menu-sub-active-color);
+}
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover {
+  color: var(--menu-sub-color);
+}
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover svg,
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover path {
+  fill: var(--menu-sub-color);
+}
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a:hover {
+  color: var(--menu-sub-hover-color);
+}
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a:hover::before {
+  border-color: var(--menu-sub-hover-color);
+}
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a::before {
+  border-color: var(--menu-sub-hover-color);
+}
 
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a::after {
   background-color: var(--third-color);
@@ -334,43 +420,6 @@ body.dark-background {
 }
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a::before {
   border-color: var(--third-color);
-}
-
-.menu-sub .menu-item a {
-  color: var(--header-mainmenu-color);
-  -webkit-text-decoration: var(--header-mainmenu-decoration);
-          text-decoration: var(--header-mainmenu-decoration);
-  font-size: var(--header-mainmenu-font-size);
-}
-.menu-sub .menu-item a::after {
-  background-color: var(--header-mainmenu-color);
-}
-.menu-sub .menu-item a.active {
-  color: var(--header-mainmenu-active-color);
-  font-weight: var(--header-mainmenu-active-font-weight);
-  -webkit-text-decoration: var(--header-mainmenu-active-decoration);
-          text-decoration: var(--header-mainmenu-active-decoration);
-}
-.menu-sub .menu-item a.active::before {
-  border-color: var(--header-mainmenu-active-color);
-}
-.menu-sub .menu-item a.active:hover {
-  color: var(--header-mainmenu-color);
-  -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
-          text-decoration: var(--header-mainmenu-hover-decoration);
-}
-.menu-sub .menu-item a.active:hover svg,
-.menu-sub .menu-item a.active:hover path {
-  fill: var(--header-mainmenu-color);
-}
-.menu-sub .menu-item a:hover {
-  color: var(--header-mainmenu-hover-color);
-}
-.menu-sub .menu-item a:hover::before {
-  border-color: var(--header-mainmenu-hover-color);
-}
-.menu-sub .menu-item a::before {
-  border-color: var(--header-mainmenu-color);
 }
 
 .footer .voog-reference svg path {

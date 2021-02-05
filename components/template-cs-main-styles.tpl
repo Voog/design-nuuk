@@ -55,7 +55,7 @@
       "--content-link-color"
     ]
   */
-  --third-color: white;
+  --third-color: #ffffff;
   /* VoogStyle
     "pathI18n": ["main_styles"],
     "titleI18n": "background_color",

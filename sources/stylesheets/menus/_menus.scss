@@ -151,6 +151,9 @@
   }
 
   .menu-item {
+    .semimodal & {
+      padding-bottom: 16px;
+    }
     a {
       display: block;
       word-break: break-word;
