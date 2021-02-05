@@ -8,11 +8,14 @@
     });
 
     function initSwiper() {
-      {%- if editmode or swiperSettingsData.is_autoplay != true -%}
+      {%- if editmode -%}
         var conditionalBool = false;
-        var autoPlay = false;
       {%- else -%}
         var conditionalBool = true;
+      {%- endif -%}
+      {%- if editmode or swiperSettingsData.is_autoplay != true -%}
+        var autoPlay = false;
+      {%- else -%}
         var autoPlay = {delay: {%- if swiperSettingsData.autoplay_interval >= 1 -%}
           {{swiperSettingsData.autoplay_interval}}
         {%- else -%}
