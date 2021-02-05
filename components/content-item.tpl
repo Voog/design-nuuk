@@ -25,7 +25,7 @@
     <div class="image_settings js-prevent-sideclick"{% if _imageData == blank %} style="display: none;"{% endif %}>
       <div class="image_settings-buttons">
         <div class="image_settings-button--title mar_r-8">{{ "image" | lc }}</div>
-          <button class="bg_img-contain image_settings-button mar_r-8 btn-no-style js-toggle-image-settings" {%- if _isProductImage == true %} style="display: none;"{% endif %}>
+          <button class="bg_img-contain image_settings-button mar_r-8 btn-no-style js-toggle-image-settings">
           </button>
         <button class="bg_img-contain image_settings-expand mar_r-8 btn-no-style js-toggle-crop-state">
         </button>
@@ -33,7 +33,7 @@
         </button>
       </div>
 
-      <div class="settings_popover js-image-settings-popover" {%- if _isProductImage == true %} style="display: none;"{% endif %}>
+      <div class="settings_popover js-image-settings-popover">
         <div class="settings_popover-arrow--up"></div>
         <div class="product_alt-attr {{ item_image_state }}">
           <div class="form_field-cms">

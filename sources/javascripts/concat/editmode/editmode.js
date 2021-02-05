@@ -362,13 +362,13 @@
 
   var bindProductListeners = function(placeholderText, pageId) {
     document.addEventListener('voog:ecommerce:buttonproductsave', function(event) {
-      var partialId = $('.js-buy-btn-content .partial:first-child .edy-buy-button-container').data( "component-id" );
+      var partialId = $('.js-buy-btn-content:first-child .edy-buy-button-container').data( "component-id" );
       if (event.detail.buyButton.id === partialId) {
         var productImageEl = $('.js-product-page-image .image-drop-area');
 
         if (event.detail.product.image) {
           $('.image_settings').css('display', 'flex');
-          $('.js-toggle-image-settings, .js-remove-image, .js-image-settings-popover').css('display', 'none');
+          $('.js-remove-image').css('display', 'none');
           $('.edy-img-drop-area-placeholder').remove();
           removeImagePlaceholder(productImageEl.closest('.js-content-item-box'), productImageEl.find('.js-toggle-crop-state'))
           productImageEl.css('background-image', 'url(' + event.detail.product.image.url+ ')');
@@ -381,7 +381,7 @@
           }).then(function(response) {
             if (response.data.nuuk_item_image) {
               productImageEl.css('background-image', 'url(' + response.data.nuuk_item_image.url + ')');
-              $('.js-toggle-image-settings, .js-remove-image, .js-image-settings-popover').css('display', 'flex');
+              $('.js-remove-image').css('display', 'flex');
             } else {
               addProductImagePlaceholder($('.js-product-page-image .image-drop-area'), placeholderText);
             }
