@@ -105,6 +105,12 @@ body {
     .editmode & {
       min-height: calc(100vh - 72px);
     }
+
+    .edy-bar-open & {
+      .editmode & {
+        min-height: calc(100vh - 200px);
+      }
+    }
   }
 
   .semimodal-relative & {

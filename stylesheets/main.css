@@ -163,6 +163,9 @@ body.dark-background {
 .editmode .container_wrap {
   min-height: calc(100vh - 72px);
 }
+.editmode .edy-bar-open .container_wrap {
+  min-height: calc(100vh - 200px);
+}
 .semimodal-relative .container {
   margin-top: 48px;
 }
@@ -1541,9 +1544,6 @@ html:not(.semimodal-relative) .semimodal {
   position: absolute;
   top: -72px;
   left: 0;
-}
-.front-page .semimodal_picker-btn {
-  top: 0;
 }
 
 body .edy-popover {
