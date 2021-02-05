@@ -2429,6 +2429,11 @@ body.edy-checkout-button-visible {
 .footer_content {
   z-index: 1;
 }
+.footer .footer_content-hidden {
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+}
 @media screen and (max-width: 752px) {
   .footer {
     padding: 0 16px 32px;

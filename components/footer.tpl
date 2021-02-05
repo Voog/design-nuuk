@@ -7,6 +7,12 @@
     {%- assign footerBlocColumnskCount = template_settings.site.footer_block_columns_settings.value.col_count -%}
 
     {%- for i in (1..footerBlocskCount) -%}
+
+      {%- for id in (1..footerBlocColumnskCount) -%}
+        {%- capture variable -%}
+
+        {%- endcapture -%}
+      {%- endfor -%}
       <div class="flex_row flex_row-{{footerBlocColumnskCount}} mar_0-8-neg flex_j-space-between">
         {%- for id in (1..footerBlocColumnskCount) -%}
           {%- assign name = "footer_row-" | append: i | append: "-" | append: id -%}
@@ -19,11 +25,9 @@
             {% assign footer_item_has_content = false %}
           {% endunless %}
 
-          {%- if editmode or footer_item_has_content == true -%}
-            <div class="flex_row-{{footerBlocColumnskCount}}--item footer_content">
-              <div class="content-formatted mar_0-8">{% xcontent name=name %}</div>
-            </div>
-          {%- endif -%}
+          <div class="flex_row-{{footerBlocColumnskCount}}--item footer_content{%- unless editmode or footer_item_has_content == true %} footer_content-hidden{%- endunless -%}" >
+            <div class="content-formatted mar_0-8">{% xcontent name=name %}</div>
+          </div>
 
         {%- endfor -%}
       </div>
