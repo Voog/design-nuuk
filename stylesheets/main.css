@@ -109,6 +109,11 @@ body.dark-background {
 .semimodal-relative .bg-picker-top {
   top: 24px;
 }
+@media screen and (max-width: 900px) {
+  .semimodal-relative .bg-picker-top {
+    display: none;
+  }
+}
 
 .body-bg_color {
   position: fixed;
@@ -134,6 +139,7 @@ body.dark-background {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   width: 100%;
+  z-index: 1;
 }
 .container a {
   text-decoration: none;
@@ -1381,7 +1387,6 @@ html:not(.semimodal-relative) .semimodal {
 .content_wrap {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  overflow: hidden;
   position: relative;
 }
 
@@ -2427,7 +2432,7 @@ body.edy-checkout-button-visible {
   width: calc(100% - 64px);
 }
 .footer_content {
-  z-index: 1;
+  z-index: 0;
 }
 .footer .footer_content-hidden {
   height: 0;
@@ -2925,6 +2930,7 @@ body.edy-checkout-button-visible {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: none;
+  width: 100%;
 }
 .search-input::-ms-clear {
   display: none;
