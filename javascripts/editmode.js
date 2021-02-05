@@ -362,7 +362,7 @@
 
   var bindProductListeners = function(placeholderText, pageId) {
     document.addEventListener('voog:ecommerce:buttonproductsave', function(event) {
-      var partialId = $('.js-buy-btn-content .partial:first-child .edy-buy-button-container').data( "component-id" );
+      var partialId = $('.js-buy-btn-content .edy-buy-button-container').data( "component-id" );
       if (event.detail.buyButton.id === partialId) {
         var productImageEl = $('.js-product-page-image .image-drop-area');
 
