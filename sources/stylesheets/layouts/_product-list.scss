@@ -1,5 +1,7 @@
 .product_ {
   &item {
+    overflow: hidden;
+
     &-wrap {
       .product_item-title,
       .product_item-btn,
@@ -95,6 +97,7 @@
       border: 1px solid;
       display: flex;
       box-sizing: border-box;
+      white-space: nowrap;
     }
   }
 
