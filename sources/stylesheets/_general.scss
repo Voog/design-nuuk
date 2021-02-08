@@ -16,6 +16,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   box-sizing: border-box;
+  overflow-x: hidden;
 
   @media screen and (max-width: $tablet-3) {
     .semimodal-open & {
