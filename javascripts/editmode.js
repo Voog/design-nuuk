@@ -362,7 +362,8 @@
 
   var bindProductListeners = function(placeholderText, pageId) {
     document.addEventListener('voog:ecommerce:buttonproductsave', function(event) {
-      var partialId = $('.js-buy-btn-content:first-child .edy-buy-button-container').data( "component-id" );
+      var partialId = $('.js-buy-btn-content  .partial .edy-buy-button-container').data( "component-id" );
+
       if (event.detail.buyButton.id === partialId) {
         var productImageEl = $('.js-product-page-image .image-drop-area');
 
@@ -379,8 +380,8 @@
             url: '/admin/api/pages/' + pageId,
             dataType: 'json'
           }).then(function(response) {
-            if (response.data.nuuk_item_image) {
-              productImageEl.css('background-image', 'url(' + response.data.nuuk_item_image.url + ')');
+            if (response.data.item_image) {
+              productImageEl.css('background-image', 'url(' + response.data.item_image.url + ')');
               $('.js-remove-image').css('display', 'flex');
             } else {
               addProductImagePlaceholder($('.js-product-page-image .image-drop-area'), placeholderText);

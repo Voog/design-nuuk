@@ -5,9 +5,9 @@
 {% endunless %}
 
 {% if _entityData.data[itemImageCropStateKey] %}
-  {% assign item_image_crop_state = _entityData.data[itemImageCropStateKey] %}
+  {% assign image_crop_state = _entityData.data[itemImageCropStateKey] %}
 {% else %}
-  {% assign item_image_crop_state = "not-cropped" %}
+  {% assign image_crop_state = "not-cropped" %}
 {% endif %}
 
 {%- if _staticItem == true -%}
@@ -54,7 +54,7 @@
     {% include 'image_src_variable', _data: _imageData, _targetWidth: _targetWidth %}
 
     <div class="item-top{% if blog_listing_page == true or blog_article_page == true %} max-h-344{% endif %}">
-      <div class="top-inner aspect-ratio-inner image-drop-area {{ item_image_crop_state }} js-content-item-img-drop-area js-lazyload"
+      <div class="top-inner aspect-ratio-inner image-drop-area {{ image_crop_state }} js-content-item-img-drop-area js-lazyload"
         data-image="{{ _src }}"
         {%- if _isProductImage == true -%}
           {% if _src != blank -%}
@@ -70,7 +70,7 @@
       <div class="top-inner of-hidden">
         {% if _imageData != blank %}
           <div class="loader js-loader"></div>
-          {%- assign imageClass = "item-image " | append: item_image_crop_state -%}
+          {%- assign imageClass = "item-image " | append: image_crop_state -%}
           {% include "lazy-image", _altAttr: _entityData.data[itemImageAltAttrKey], _data: _imageData, _targetWidth: _targetWidth, _className: imageClass  %}
         {% else %}
           <div class="item-image-placeholder"></div>

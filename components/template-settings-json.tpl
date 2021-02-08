@@ -77,15 +77,15 @@
       "value": {}
     },
     "item_image": {
-      "key": "PREFIX_item_image",
+      "key": "item_image",
       "value": {}
     },
-    "item_image_crop_state": {
-      "key": "PREFIX_item_image_crop_state",
+    "image_crop_state": {
+      "key": "image_crop_state",
       "value": ""
     },
-    "item_image_alt_attr": {
-      "key": "PREFIX_item_image_alt_attr",
+    "image_alt_attr": {
+      "key": "image_alt_attr",
       "value": ""
     },
     "product_layout_settings": {
