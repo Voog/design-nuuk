@@ -4255,9 +4255,6 @@ article.post_wrapper .date-separator.hide-separator {
   left: 24px;
   height: 32px;
 }
-.semimodal_inner .menu-main .edit-btn {
-  margin-top: 16px;
-}
 @media screen and (max-width: 752px) {
   .menu-main .edit-btn {
     margin-right: 0;
@@ -4309,14 +4306,6 @@ article.post_wrapper .date-separator.hide-separator {
 .menu .menu-item a {
   display: block;
   word-break: break-word;
-  color: #0066bb;
-}
-.menu .menu-item a.untranslated {
-  color: #cc0000;
-  color: rgba(204, 0, 0, 0.5);
-}
-.menu .menu-item a:hover {
-  color: black;
 }
 
 .menu-main {
@@ -4352,12 +4341,6 @@ article.post_wrapper .date-separator.hide-separator {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-}
-.menu-main .menu .menu-item a.untranslated {
-  color: #cc0000;
-}
-.menu-main .menu .menu-item a:hover {
-  color: #C4C4C4;
 }
 .menu-main .menu .menu_popover {
   opacity: 0;

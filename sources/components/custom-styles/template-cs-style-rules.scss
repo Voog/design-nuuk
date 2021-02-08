@@ -263,6 +263,10 @@ body {
       line-height: var(--header-mainmenu-line-height);
       text-transform: var(--header-mainmenu-text-transform);
 
+      &.untranslated {
+        color: $red;
+      }
+
       .dark-background & {
         color: var(--third-color);
       }
@@ -295,6 +299,10 @@ body {
       font-style: var(--header-mainmenu-active-font-style);
       line-height: var(--header-mainmenu-line-height);
       text-transform: var(--header-mainmenu-text-transform);
+
+      &.untranslated {
+        color: $red;
+      }
 
       &::before {
         background-color: var(--header-mainmenu-active-color);
@@ -336,6 +344,10 @@ body {
         line-height: var(--menu-sub-line-height);
         text-transform: var(--menu-sub-text-transform);
 
+        &.untranslated {
+          color: $red;
+        }
+
         &::after {
           background-color: var(--menu-sub-color);
         }
@@ -366,6 +378,10 @@ body {
         font-size: var(--menu-sub-active-font-size);
         line-height: var(--menu-sub-active-line-height);
         text-transform: var(--menu-sub-active-text-transform);
+
+        &.untranslated {
+          color: $red;
+        }
 
         &::before {
           border-color: var(--menu-sub-active-color);

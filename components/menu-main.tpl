@@ -6,8 +6,10 @@
 
     {% for item in site.visible_menuitems %}
       {% menulink item wrapper-tag="li" wrapper-class="menu-item lvl-1" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
-
-      {% if item.children? %}
+      {%- if item.selected? and editmode and _semimodalMenu -%}
+        <li class="edit-btn mar_b-16">{% menuadd parent="item" %}</li>
+      {%- endif -%}
+      {% if item.children? or editmode %}
         <div class="menu-sub js-menu-sub{% if item.selected? %} active{% endif %}{% if _menuTop %} d-none{% endif %}">
           <ul class="menu">
             {% for subitem in item.visible_children %}
@@ -27,10 +29,7 @@
 
             {% endfor %}
             {% if item.hidden_children.size > 0 %}
-              <li class="edit-btn">{% menubtn item.hidden_children %}</li>
-            {% endif %}
-            {% if editmode %}
-              <li class="edit-btn">{% menuadd parent="item" %}</li>
+              <li class="edit-btn mar_t-16">{% menubtn item.hidden_children %}</li>
             {% endif %}
           </ul>
         </div>
@@ -53,10 +52,10 @@
 
     {%- capture menuSettingsBtns -%}
       {% if site.hidden_menuitems.size > 0 %}
-        <li class="edit-btn">{% menubtn site.hidden_menuitems %}</li>
+        <li class="edit-btn mar_t-16">{% menubtn site.hidden_menuitems %}</li>
       {% endif %}
 
-      <li class="edit-btn" {{ edy_intro_add_page }}>{% menuadd %}</li>
+      <li class="edit-btn mar_t-16" {{ edy_intro_add_page }}>{% menuadd %}</li>
     {%- endcapture -%}
 
     {%- if _semimodalMenu -%}

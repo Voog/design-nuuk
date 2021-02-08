@@ -108,10 +108,6 @@
     left: 24px;
     height: 32px;
 
-    .semimodal_inner & {
-      margin-top: 16px;
-    }
-
     @include query($tablet-2) {
       margin-right: 0;
     }
@@ -157,16 +153,6 @@
     a {
       display: block;
       word-break: break-word;
-
-      @include color($blue-1);
-
-      &.untranslated {
-        @include color($red, 0.5);
-      }
-
-      &:hover {
-        @include color($primary-color, 1);
-      }
     }
   }
 }
@@ -197,14 +183,6 @@
         padding-left: 24px;
         align-items: center;
         position: relative;
-
-        &.untranslated {
-          color: $red;
-        }
-
-        &:hover {
-          color: #C4C4C4;
-        }
       }
     }
 

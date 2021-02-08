@@ -176,6 +176,9 @@ body.dark-background {
   line-height: var(--header-mainmenu-line-height);
   text-transform: var(--header-mainmenu-text-transform);
 }
+.menu-main .menu .menu-item a.untranslated {
+  color: #cc0000;
+}
 .dark-background .menu-main .menu .menu-item a {
   color: var(--third-color);
 }
@@ -204,6 +207,9 @@ body.dark-background {
   font-style: var(--header-mainmenu-active-font-style);
   line-height: var(--header-mainmenu-line-height);
   text-transform: var(--header-mainmenu-text-transform);
+}
+.menu-main .menu .menu-item.active a.untranslated {
+  color: #cc0000;
 }
 .menu-main .menu .menu-item.active a::before {
   background-color: var(--header-mainmenu-active-color);
@@ -239,6 +245,9 @@ body.dark-background {
   line-height: var(--menu-sub-line-height);
   text-transform: var(--menu-sub-text-transform);
 }
+.menu-main .menu .menu-sub .menu-item a.untranslated {
+  color: #cc0000;
+}
 .menu-main .menu .menu-sub .menu-item a::after {
   background-color: var(--menu-sub-color);
 }
@@ -266,6 +275,9 @@ body.dark-background {
   font-size: var(--menu-sub-active-font-size);
   line-height: var(--menu-sub-active-line-height);
   text-transform: var(--menu-sub-active-text-transform);
+}
+.menu-main .menu .menu-sub .menu-item.active a.untranslated {
+  color: #cc0000;
 }
 .menu-main .menu .menu-sub .menu-item.active a::before {
   border-color: var(--menu-sub-active-color);

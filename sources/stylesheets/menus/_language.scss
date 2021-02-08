@@ -158,7 +158,7 @@
       }
 
       &.untranslated {
-        color: rgba($red, 1);
+        color: $red;
       }
 
       // scss-lint:disable SelectorDepth
