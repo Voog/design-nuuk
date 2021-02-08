@@ -4,7 +4,7 @@
 .content-formatted {
   word-break: break-word;
 
-  &:empty {
+  &:empty:not(.header_title) {
     display: none;
   }
 

@@ -855,7 +855,7 @@ p {
 .content-formatted {
   word-break: break-word;
 }
-.content-formatted:empty {
+.content-formatted:empty:not(.header_title) {
   display: none;
 }
 .dark-background .content-formatted {
