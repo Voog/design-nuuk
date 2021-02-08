@@ -4,10 +4,12 @@
   {%- assign buyButtonImage = null -%}
 {% endif %}
 
-{%- if buyButtonImage != blank -%}
+{%- if _entityData.data[itemImageKey] != blank -%}
+  {%- assign productImage = _entityData.data[itemImageKey] -%}
+{%- elsif buyButtonImage != blank -%}
   {%- assign productImage = buyButtonImage -%}
 {%- else -%}
-  {%- assign productImage = _entityData.data[itemImageKey] -%}
+  {%- assign productImage = _entityData.page.image -%}
 {%- endif -%}
 
 {% unless productImage != blank %}

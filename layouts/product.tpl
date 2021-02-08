@@ -48,11 +48,14 @@
                   {%- assign buyButtonImage = buy_button.product.image -%}
                 {% endif %}
 
-                {%- if buyButtonImage != blank -%}
+                {%- if page.data[itemImageKey] != blank -%}
+                  {%- assign productImage = page.data[itemImageKey] -%}
+                  {%- assign isProductImage = false -%}
+                {%- elsif buyButtonImage != blank -%}
                   {%- assign productImage = buyButtonImage -%}
                   {%- assign isProductImage = true -%}
                 {%- else -%}
-                  {%- assign productImage = page.data[itemImageKey] -%}
+                  {%- assign productImage = page.image -%}
                   {%- assign isProductImage = false -%}
                 {%- endif -%}
 

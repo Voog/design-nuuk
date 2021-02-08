@@ -20,7 +20,6 @@
   <div class="content-item-box p-rel {{ item_image_state }} js-content-item-box not-loaded"
     data-item-type="{{_itemType}}"
     data-item-id="{{ _id }}"
-    {%- if _isProductImage == true %} data-image-type="product_image"{%- endif -%}
   >
     <div class="image_settings js-prevent-sideclick"{% if _imageData == blank %} style="display: none;"{% endif %}>
       <div class="image_settings-buttons">

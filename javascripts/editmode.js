@@ -177,78 +177,98 @@
             id: itemId
           });
 
-      if (itemImageType != 'product_image') {
-        var imgDropArea = new Edicy.ImgDropArea($imgDropAreaTarget, {
-          positionable: false,
-          target_width: 2048,
-          placeholder: '<div class="edy-img-drop-area-placeholder">' + placeholderText + '</div>',
-          removeBtn: '<div class="edy-img-drop-area-remove-image">' +
-                        '<div class="edy-img-drop-area-remove-image-ico">' +
-                          '<svg width="16" height="20" viewBox="0 0 26 30" xmlns="http://www.w3.org/2000/svg">' +
-                            '<g fill-rule="nonzero" fill="currentColor">' +
-                              '<g transform="translate(2 5)">' +
-                                '<path d="M0 .997h2V21c0 1 1 2 2 2h14c1 0 2-1 2-2V1h2v20c0 2.25-1.75 4-4 4H4c-2.25 0-4-1.75-4-4V.997z"/>' +
-                                '<rect x="10" y="4" width="2" height="16" rx="1"/>' +
-                                '<rect x="5" y="4" width="2" height="16" rx="1"/>' +
-                                '<rect x="15" y="4" width="2" height="16" rx="1"/>' +
-                              '</g>' +
-                              '<path d="M26 4v2H0V4h7V2c0-1 1-2 2-2h8c1 0 2 1 2 2v2h7zM9 4h8V3c0-.5-.5-1-1-1h-6c-.5 0-1 .5-1 1v1z"/>' +
+      var imgDropArea = new Edicy.ImgDropArea($imgDropAreaTarget, {
+        positionable: false,
+        target_width: 2048,
+        placeholder: '<div class="edy-img-drop-area-placeholder">' + placeholderText + '</div>',
+        removeBtn: '<div class="edy-img-drop-area-remove-image">' +
+                      '<div class="edy-img-drop-area-remove-image-ico">' +
+                        '<svg width="16" height="20" viewBox="0 0 26 30" xmlns="http://www.w3.org/2000/svg">' +
+                          '<g fill-rule="nonzero" fill="currentColor">' +
+                            '<g transform="translate(2 5)">' +
+                              '<path d="M0 .997h2V21c0 1 1 2 2 2h14c1 0 2-1 2-2V1h2v20c0 2.25-1.75 4-4 4H4c-2.25 0-4-1.75-4-4V.997z"/>' +
+                              '<rect x="10" y="4" width="2" height="16" rx="1"/>' +
+                              '<rect x="5" y="4" width="2" height="16" rx="1"/>' +
+                              '<rect x="15" y="4" width="2" height="16" rx="1"/>' +
                             '</g>' +
-                          '</svg>' +
-                        '</div>' +
-                      '</div>',
+                            '<path d="M26 4v2H0V4h7V2c0-1 1-2 2-2h8c1 0 2 1 2 2v2h7zM9 4h8V3c0-.5-.5-1-1-1h-6c-.5 0-1 .5-1 1v1z"/>' +
+                          '</g>' +
+                        '</svg>' +
+                      '</div>' +
+                    '</div>',
 
-          change: function(image) {
-            var $cropToggleButton = $contentItemBox.find('.js-toggle-crop-state');
-            $imgDropAreaTarget
-              .removeClass('is-cropped')
-              .addClass('not-cropped')
-              .css('opacity', .1)
+        change: function(image) {
+          var $cropToggleButton = $contentItemBox.find('.js-toggle-crop-state');
+          $imgDropAreaTarget
+            .removeClass('is-cropped')
+            .addClass('not-cropped')
+            .css('opacity', .1)
+          ;
+
+          if (image) {
+            removeImagePlaceholder($contentItemBox, $cropToggleButton);
+            $('.js-remove-image').css('display', 'flex');
+          } else {
+            $contentItemBox.find('.image_settings').hide();
+
+            $contentItemBox
+              .removeClass('with-image is-loaded with-error')
+              .addClass('without-image not-loaded')
             ;
 
-            if (image) {
-              removeImagePlaceholder($contentItemBox, $cropToggleButton)
-            } else {
-              $contentItemBox.find('.image_settings').hide();
-
-              $contentItemBox
-                .removeClass('with-image is-loaded with-error')
-                .addClass('without-image not-loaded')
-              ;
-
-              $cropToggleButton
-                .addClass('is-hidden')
-                .removeClass('is-visible')
-              ;
-              $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 0);
-            }
-
-            var itemId = $contentItemBox.data('item-id');
-            var itemType = $contentItemBox.data('item-type');
-            var itemData = new Edicy.CustomData({
-              type: itemType,
-              id: itemId
-            });
-
-            itemData.set({[cropStateKey]: 'not-cropped', [itemImageKey]: image});
-            $contentItemBox.removeClass('not-loaded with-error').addClass('is-loaded');
-            $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 1);
-            $imgDropAreaTarget.css('opacity', 1);
+            $cropToggleButton
+              .addClass('is-hidden')
+              .removeClass('is-visible')
+            ;
+            $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 0);
           }
-        });
-      }
+
+
+          var itemType = $contentItemBox.data('item-type');
+          var itemData = new Edicy.CustomData({
+            type: itemType,
+            id: itemId
+          });
+
+          itemData.set({[cropStateKey]: 'not-cropped', [itemImageKey]: image});
+          $contentItemBox.removeClass('not-loaded with-error').addClass('is-loaded');
+          $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 1);
+          $imgDropAreaTarget.css('opacity', 1);
+        }
+      });
 
       $removeBtn.on('click', function() {
         var $el = $(this);
-        itemData.remove(itemImageKey, {
+        itemData.get({
           success: function(data) {
-            itemData.remove(cropStateKey, {
-              success: function(data) {
+            if (data.item_image) {
+              itemData.remove(itemImageKey, {
+                success: function(data) {
+                  itemData.remove(cropStateKey, {
+                    success: function(data) {
+                      if (itemType !== 'article') {
+                        handleProductImage(placeholderText, itemId, null, itemData);
+                      } else {
+                        addProductImagePlaceholder($el, placeholderText);
+                      }
+                    }
+                  });
+                }
+              });
+            } else {
+              $.ajax({
+                type: 'PUT',
+                contentType: 'application/json',
+                url: '/admin/api/pages/' + itemId,
+                dataType: 'json',
+                data: JSON.stringify({"image_id": null})
+              }).then(function(product) {
                 addProductImagePlaceholder($el, placeholderText);
-              }
-            });
+              });
+            }
           }
         });
+
       });
     });
   };
@@ -360,35 +380,60 @@
     edy.push(['texteditorStyles', {name: 'Button', tagname:'a', attribute: {'href': '#'}, classname: 'custom-btn', toggle: true}]);
   };
 
-  var bindProductListeners = function(placeholderText, pageId) {
-    document.addEventListener('voog:ecommerce:buttonproductsave', function(event) {
-      var partialId = $('.js-buy-btn-content  .partial .edy-buy-button-container').data( "component-id" );
+  handleProductImage = function(placeholderText, pageId, event, itemData) {
+    var partialId = $('.js-buy-btn-content  .partial .edy-buy-button-container').data( "component-id" );
+    var productId = $('.js-buy-btn-content  .partial .edy-buy-button-container').data( "product-id" );
+    var productImageEl = $('.js-product-page-image .image-drop-area');
 
-      if (event.detail.buyButton.id === partialId) {
-        var productImageEl = $('.js-product-page-image .image-drop-area');
-
-        if (event.detail.product.image) {
+    $.ajax({
+      type: 'GET',
+      contentType: 'application/json',
+      url: '/admin/api/pages/' + pageId,
+      dataType: 'json'
+    }).then(function(page) {
+      if (event) {
+        if (page.data.item_image) {
+          productImageEl.css('background-image', 'url(' + page.data.item_image.url + ')');
+          $('.js-remove-image').css('display', 'flex');
+        } else if (event.detail.product.image) {
           $('.image_settings').css('display', 'flex');
           $('.js-remove-image').css('display', 'none');
           $('.edy-img-drop-area-placeholder').remove();
           removeImagePlaceholder(productImageEl.closest('.js-content-item-box'), productImageEl.find('.js-toggle-crop-state'))
           productImageEl.css('background-image', 'url(' + event.detail.product.image.url+ ')');
+        } else if (page.image) {
+          productImageEl.css('background-image', 'url(' + page.image.public_url + ')');
+          $('.js-remove-image').css('display', 'flex');
         } else {
-          $.ajax({
-            type: 'GET',
-            contentType: 'application/json',
-            url: '/admin/api/pages/' + pageId,
-            dataType: 'json'
-          }).then(function(response) {
-            if (response.data.item_image) {
-              productImageEl.css('background-image', 'url(' + response.data.item_image.url + ')');
-              $('.js-remove-image').css('display', 'flex');
-            } else {
-              addProductImagePlaceholder($('.js-product-page-image .image-drop-area'), placeholderText);
-            }
-          });
+          addProductImagePlaceholder($('.js-product-page-image .image-drop-area'), placeholderText);
         }
+      } else {
+        $.ajax({
+          type: 'GET',
+          contentType: 'application/json',
+          url: '/admin/api/ecommerce/v1/products/' + productId + '?include=details',
+          dataType: 'json'
+        }).then(function(product) {
+          if (product.image) {
+            $('.image_settings').css('display', 'flex');
+            $('.js-remove-image').css('display', 'none');
+            $('.edy-img-drop-area-placeholder').remove();
+            removeImagePlaceholder(productImageEl.closest('.js-content-item-box'), productImageEl.find('.js-toggle-crop-state'))
+            productImageEl.css('background-image', 'url(' + product.image.url+ ')');
+          } else if (page.image) {
+            productImageEl.css('background-image', 'url(' + page.image.public_url + ')');
+            $('.js-remove-image').css('display', 'flex');
+          } else {
+            addProductImagePlaceholder($('.js-product-page-image .image-drop-area'), placeholderText);
+          }
+        });
       }
+    });
+  };
+
+  var bindProductListeners = function(placeholderText, pageId) {
+    document.addEventListener('voog:ecommerce:buttonproductsave', function(event) {
+      handleProductImage(placeholderText, pageId, event);
     });
   };
 

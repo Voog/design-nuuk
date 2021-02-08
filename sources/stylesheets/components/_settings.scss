@@ -238,7 +238,7 @@ body .edy-settings-editor:not(.editor_default) {
 .body_bg-picker--btn bg-picker .edy-bgpicker-toggle-button {
   left: 0px;
 
-  @include query($desktop-1) {
+  @include query($tablet-1) {
     display: none;
   }
 }
@@ -250,6 +250,10 @@ body .edy-bgpicker-toggle-button {
   height: 40px;
   border-radius: 4px;
   margin: 16px 0 0 0;
+
+  @include query($tablet-1) {
+    margin: 32px 0 0 0;
+  }
 
   &:hover {
     opacity: .7;
