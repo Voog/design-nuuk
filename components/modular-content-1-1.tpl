@@ -1,3 +1,4 @@
+<br/>
 <div class="edy-texteditor-container image-container edy-positionable-container-center" contenteditable="false" unselectable="on" style="width: 984px; max-width: 100%; text-align: left; display: block; float: none; overflow: hidden; position: relative; margin-left: auto; margin-right: auto;" data-image-id="143402">
   <div class="edy-padding-resizer-wrapper" style="padding-bottom: 42.73%; position: relative; overflow: hidden;">
       <picture title="" style="position: absolute; display: block; max-width: none; width: 100%; height: auto; left: 0%; top: -28.02%;">

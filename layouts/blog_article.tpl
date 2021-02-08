@@ -146,7 +146,7 @@
                       <span class="mar_l-8 mar_r-8{%- if articleSettingsData.has_share_on_facebook_btn != true and articleSettingsData.has_share_on_twitter_btn != true or articleSettingsData.has_share_on_linkedin_btn == true %} d-none{%- endif -%}">
                         &bull;
                       </span>
-                    <{{sharerTag}} class="menu-link twitter{%- if articleSettingsData.has_share_on_twitter_btn != true %} d-none{%- endif -%}"{% unless previewmode %} href="#" onclick="javascript:popup_share('http://twitter.com/home?status={{ article.title }} {{ site.url }}{{ article.url }}',800,320)"{% endunless %}>
+                    <{{sharerTag}} class="menu-link twitter{%- if articleSettingsData.has_share_on_twitter_btn != true %} d-none{%- endif -%}"{% unless previewmode %} href="#" onclick="javascript:popup_share('https://twitter.com/home?status={{ article.title }} {{ site.url }}{{ article.url }}',800,320)"{% endunless %}>
                       Twitter
                     </{{sharerTag}}>
                       <span class="mar_l-8 mar_r-8{%- if articleSettingsData.has_share_on_twitter_btn != true and articleSettingsData.has_share_on_linkedin_btn != true %} d-none{%- endif -%}">
