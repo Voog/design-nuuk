@@ -325,7 +325,7 @@ h4 {
 }
 
 h5 {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   margin-top: 16px;
@@ -392,7 +392,7 @@ p {
 }
 
 .bold {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .grey {
@@ -917,7 +917,7 @@ p {
   color: #8d9091;
 }
 .content-formatted a.bold {
-  font-weight: 600;
+  font-weight: 700;
 }
 .content-formatted h1 {
   font-size: 72px;
@@ -972,7 +972,7 @@ p {
   }
 }
 .content-formatted h5 {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   margin-top: 16px;
@@ -1069,7 +1069,7 @@ p {
 }
 .content-formatted b,
 .content-formatted strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 .content-formatted code {
   display: inline-block;
@@ -1689,7 +1689,7 @@ body.front-page .edy-bgpicker-toggle-button {
   background: #1B2124;
   color: #ffffff;
   padding: 8px 16px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 24px;
   position: relative;
   font-size: 14px;
@@ -1989,7 +1989,7 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
 .form_field-cms.with-input label {
   top: -8px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   background-color: #fff;
   color: #000;
 }
@@ -3620,7 +3620,7 @@ article.post_wrapper .date-separator.hide-separator {
 }
 .product_item-btn {
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
 }
 .product_item-btn:hover {
   opacity: .7;
