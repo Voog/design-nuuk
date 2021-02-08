@@ -3742,7 +3742,7 @@ article.post_wrapper .date-separator.hide-separator {
   right: 0;
   opacity: 0;
   pointer-events: none;
-  padding-top: 16px;
+  padding-top: 8px;
   -webkit-transition: opacity 200ms;
   -o-transition: opacity 200ms;
   transition: opacity 200ms;

@@ -242,31 +242,6 @@ body.dark-background {
 .menu-main .menu .menu-sub .menu-item a::after {
   background-color: var(--menu-sub-color);
 }
-.menu-main .menu .menu-sub .menu-item a.active {
-  color: var(--menu-sub-hover-color);
-  -webkit-text-decoration: var(--menu-sub-active-text-decoration);
-          text-decoration: var(--menu-sub-active-text-decoration);
-  font-weight: var(--menu-sub-active-font-weight);
-  font-style: var(--menu-sub-active-font-style);
-  font-size: var(--menu-sub-active-font-size);
-  line-height: var(--menu-sub-active-line-height);
-  text-transform: var(--menu-sub-active-text-transform);
-}
-.menu-main .menu .menu-sub .menu-item a.active::before {
-  border-color: var(--menu-sub-active-color);
-}
-.menu-main .menu .menu-sub .menu-item a.active:hover {
-  color: var(--menu-sub-color);
-  -webkit-text-decoration: var(--menu-sub-text-decoration);
-          text-decoration: var(--menu-sub-text-decoration);
-  font-weight: var(--menu-sub-font-weight);
-  font-style: var(--menu-sub-font-style);
-  line-height: var(--menu-sub-line-height);
-}
-.menu-main .menu .menu-sub .menu-item a.active:hover svg,
-.menu-main .menu .menu-sub .menu-item a.active:hover path {
-  fill: var(--menu-sub-color);
-}
 .menu-main .menu .menu-sub .menu-item a:hover {
   color: var(--menu-sub-hover-color);
   -webkit-text-decoration: var(--menu-sub-hover-decoration);
@@ -281,6 +256,31 @@ body.dark-background {
 }
 .menu-main .menu .menu-sub .menu-item a::before {
   border-color: var(--menu-sub-hover-color);
+}
+.menu-main .menu .menu-sub .menu-item.active a {
+  color: var(--menu-sub-active-color);
+  -webkit-text-decoration: var(--menu-sub-active-text-decoration);
+          text-decoration: var(--menu-sub-active-text-decoration);
+  font-weight: var(--menu-sub-active-font-weight);
+  font-style: var(--menu-sub-active-font-style);
+  font-size: var(--menu-sub-active-font-size);
+  line-height: var(--menu-sub-active-line-height);
+  text-transform: var(--menu-sub-active-text-transform);
+}
+.menu-main .menu .menu-sub .menu-item.active a::before {
+  border-color: var(--menu-sub-active-color);
+}
+.menu-main .menu .menu-sub .menu-item.active a:hover {
+  color: var(--menu-sub-color);
+  -webkit-text-decoration: var(--menu-sub-text-decoration);
+          text-decoration: var(--menu-sub-text-decoration);
+  font-weight: var(--menu-sub-font-weight);
+  font-style: var(--menu-sub-font-style);
+  line-height: var(--menu-sub-line-height);
+}
+.menu-main .menu .menu-sub .menu-item.active a:hover svg,
+.menu-main .menu .menu-sub .menu-item.active a:hover path {
+  fill: var(--menu-sub-color);
 }
 
 .dark-background .light-background .header_components-tablet,

@@ -339,34 +339,6 @@ body {
         &::after {
           background-color: var(--menu-sub-color);
         }
-        // scss-lint:disable NestingDepth
-
-        &.active {
-          color: var(--menu-sub-hover-color);
-          text-decoration: var(--menu-sub-active-text-decoration);
-          font-weight: var(--menu-sub-active-font-weight);
-          font-style: var(--menu-sub-active-font-style);
-          font-size: var(--menu-sub-active-font-size);
-          line-height: var(--menu-sub-active-line-height);
-          text-transform: var(--menu-sub-active-text-transform);
-
-          &::before {
-            border-color: var(--menu-sub-active-color);
-          }
-
-          &:hover {
-            color: var(--menu-sub-color);
-            text-decoration: var(--menu-sub-text-decoration);
-            font-weight: var(--menu-sub-font-weight);
-            font-style: var(--menu-sub-font-style);
-            line-height: var(--menu-sub-line-height);
-
-            svg,
-            path {
-              fill: var(--menu-sub-color);
-            }
-          }
-        }
 
         &:hover {
           color: var(--menu-sub-hover-color);
@@ -383,6 +355,33 @@ body {
 
         &::before {
           border-color: var(--menu-sub-hover-color);
+        }
+      }
+
+      .menu-item.active a {
+        color: var(--menu-sub-active-color);
+        text-decoration: var(--menu-sub-active-text-decoration);
+        font-weight: var(--menu-sub-active-font-weight);
+        font-style: var(--menu-sub-active-font-style);
+        font-size: var(--menu-sub-active-font-size);
+        line-height: var(--menu-sub-active-line-height);
+        text-transform: var(--menu-sub-active-text-transform);
+
+        &::before {
+          border-color: var(--menu-sub-active-color);
+        }
+
+        &:hover {
+          color: var(--menu-sub-color);
+          text-decoration: var(--menu-sub-text-decoration);
+          font-weight: var(--menu-sub-font-weight);
+          font-style: var(--menu-sub-font-style);
+          line-height: var(--menu-sub-line-height);
+
+          svg,
+          path {
+            fill: var(--menu-sub-color);
+          }
         }
       }
     }
