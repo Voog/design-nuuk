@@ -93,7 +93,8 @@
     &-box--label {
       padding: 2px 8px;
       border: 1px solid;
-      display: inline-flex;
+      display: flex;
+      box-sizing: border-box;
     }
   }
 
