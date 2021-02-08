@@ -48,7 +48,7 @@
 {%- endcapture -%}
 
 <div class="product_item-details--wrap mar_t-16">
-  <div>
+  <div class="flex_auto">
     {%- capture look_closer_btn -%}
       <a class="product_item-btn{%- if productSettingsData.product_label != blank or _buyButton.product.price != blank %} p-abs{%- else %} p-rel{%- endif -%}" href="{{ _entityData.url }}">
         {{ "look_closer" | lc | escape_once }}
@@ -94,9 +94,9 @@
     {%- endif -%}
   </div>
   {%- if buy_button.product.out_of_stock? -%}
-    <div class="product_item-box--label">{{ "out_of_stock" | lc | escape_once }}</div>
+    <div class="product_item-box--label flex_auto">{{ "out_of_stock" | lc | escape_once }}</div>
   {%- elsif isBoxLabel -%}
-    <div class="product_item-box--label">
+    <div class="product_item-box--label flex_auto">
       {{productSettingsData.product_label}}
     </div>
   {%- endif -%}
