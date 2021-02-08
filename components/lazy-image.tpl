@@ -21,7 +21,7 @@
 {% include 'image_src_variable', _data: _data, _targetWidth: _maxWidth %}
 
 <img class="{% if disableLazyLoad != true %}js-lazyload{% endif %} {{ _className }}"
-  data-src="{{_src}}" data-sizes="{{sizes}}" {% if _altAttr != blank %}title="{{_altAttr | escape}}"{ alt="{{_altAttr | escape}}"{% endif %}
+  data-src="{{_src}}" data-sizes="{{sizes}}" {% if _altAttr != blank %}title="{{_altAttr  | escape_once }}"{ alt="{{_altAttr  | escape_once }}"{% endif %}
   {% if _src == blank %}style="display: none;"{%- endif -%}
   {% if _data[imageSizes] != blank -%}
     {%- if _data[imageSizes].size >= 1 %}
