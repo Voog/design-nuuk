@@ -48,7 +48,7 @@
 {%- endcapture -%}
 
 <div class="product_item-details--wrap mar_t-16">
-  <div class="flex_auto">
+  <div>
     {%- capture look_closer_btn -%}
       <a class="product_item-btn{%- if productSettingsData.product_label != blank or _buyButton.product.price != blank %} p-abs{%- else %} p-rel{%- endif -%}" href="{{ _entityData.url }}">
         {{ "look_closer" | lc | escape_once }}
