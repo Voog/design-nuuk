@@ -24,7 +24,7 @@
                     </div>
                   </a>
                   <div class="flex_box product_item-details">
-                    <a class="product_item-btn p-rel" href="{{ item_child.url }}">LOOK CLOSER</a>
+                    <a class="product_item-btn p-rel" href="{{ item_child.url }}">{{ "look_closer" | lc | escape_once }}</a>
                   </div>
                 {%- else -%}
                   {% include 'product-item', _buyButton: buy_button, _entityData: item_child %}
