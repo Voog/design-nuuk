@@ -23,25 +23,11 @@
 
     @include query($tablet-1) {
       background-color: $white;
-
-      :not(.menu_popover-item).menu-item,
-      .header_title {
-        a, p, h1, h2, h3, h4, h5, h6 {
-          color: var(--header-mainmenu-color)!important;
-        }
-      }
     }
 
     .semimodal-open:not(.semimodal-relative) &,
     &.scroll  {
       background-color: $white;
-
-      :not(.menu_popover-item).menu-item,
-      .header_title {
-        a, p, h1, h2, h3, h4, h5, h6 {
-          color: var(--header-mainmenu-color)!important;
-        }
-      }
     }
 
     &.scroll {

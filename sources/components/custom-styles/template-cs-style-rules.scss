@@ -132,32 +132,58 @@ body {
 .menu-btn {
   color: var(--header-mainmenu-active-color);
 
-  .dark-background & {
+  :not(.scroll).dark-background & {
     color: var(--third-color);
   }
 
   .menu-stripe {
     background-color: var(--header-mainmenu-active-color);
 
-    .dark-background & {
-      background-color: var(--third-color);
+    @include query($tablet-1, 'min-width') {
+      :not(.scroll).dark-background & {
+        background-color: var(--third-color);
+      }
     }
   }
 
   &:hover {
     color: var(--header-mainmenu-active-color);
 
-    .dark-background & {
-      color: var(--third-color);
-      opacity: .7;
+    @include query($tablet-1, 'min-width') {
+      :not(.scroll).dark-background & {
+        color: var(--third-color);
+        opacity: .7;
+      }
     }
 
     .menu-stripe {
       background-color: var(--header-mainmenu-color);
 
-      .dark-background & {
-        background-color: var(--third-color);
+      @include query($tablet-1, 'min-width') {
+        :not(.scroll).dark-background & {
+          background-color: var(--third-color);
+        }
       }
+    }
+  }
+}
+
+.scroll.dark-background {
+  .menu-main :not(.menu_popover-item).menu-item,
+  .content-formatted.header_title {
+    color: var(--header-mainmenu-color);
+
+    a, p, h1, h2, h3, h4, h5, h6 {
+      color: var(--header-mainmenu-color);
+    }
+
+    a:hover,
+    &.active a {
+      color: var(--header-mainmenu-color);
+    }
+
+    a:hover {
+      opacity: .7;
     }
   }
 }
@@ -167,8 +193,10 @@ body {
 .edy-ecommerce-custom-ico svg path {
   fill: var(--header-mainmenu-active-color);
 
-  .dark-background & {
-    fill: var(--third-color);
+  @include query($tablet-1, 'min-width') {
+    :not(.scroll).dark-background & {
+      fill: var(--third-color);
+    }
   }
 }
 
@@ -177,9 +205,11 @@ body {
 .edy-ecommerce-custom-ico:hover svg path  {
   fill: var(--header-mainmenu-color);
 
-  .dark-background & {
-    opacity: .7;
-    fill: var(--third-color);
+  @include query($tablet-1, 'min-width') {
+    :not(.scroll).dark-background & {
+      opacity: .7;
+      fill: var(--third-color);
+    }
   }
 }
 
@@ -187,17 +217,20 @@ body {
     svg path {
     fill: var(--header-mainmenu-color);
 
-    .dark-background & {
-      fill: var(--third-color);
+    @include query($tablet-1, 'min-width') {
+      :not(.scroll).dark-background & {
+        fill: var(--third-color);
+      }
     }
   }
 
   &:hover svg path {
     fill: var(--header-mainmenu-hover-color);
-
-    .dark-background & {
-      opacity: .7;
-      fill: var(--third-color);
+    @include query($tablet-1, 'min-width') {
+      :not(.scroll).dark-background & {
+        opacity: .7;
+        fill: var(--third-color);
+      }
     }
   }
 }
@@ -207,15 +240,20 @@ body {
   color: var(--header-mainmenu-active-color);
 
   svg path {
-    stroke: var(--header-mainmenu-active-color);
+    stroke: var(--header-mainmenu-act
+    ive-color);
 
-    .dark-background & {
-      stroke: var(--third-color);
+    @include query($tablet-1, 'min-width') {
+      :not(.scroll).dark-background & {
+        stroke: var(--third-color);
+      }
     }
   }
 
-  .dark-background & {
-    color: var(--third-color);
+  @include query($tablet-1, 'min-width') {
+    :not(.scroll).dark-background & {
+      color: var(--third-color);
+    }
   }
 
   &:hover {
@@ -224,15 +262,19 @@ body {
     svg path {
       stroke: var(--header-mainmenu-color);
 
-      .dark-background & {
-        opacity: .7;
-        stroke: var(--third-color);
+      @include query($tablet-1, 'min-width') {
+        :not(.scroll).dark-background & {
+          opacity: .7;
+          stroke: var(--third-color);
+        }
       }
     }
 
-    .dark-background & {
-      opacity: .7;
-      color: var(--third-color);
+    @include query($tablet-1, 'min-width') {
+      :not(.scroll).dark-background & {
+        opacity: .7;
+        color: var(--third-color);
+      }
     }
   }
 }
@@ -240,8 +282,10 @@ body {
 .edy-ecommerce-product-count {
   color: var(--header-mainmenu-active-color);
 
-  .dark-background & {
-    color: var(--third-color);
+  @include query($tablet-1, 'min-width') {
+    :not(.scroll).dark-background & {
+      color: var(--third-color);
+    }
   }
 }
 
@@ -249,8 +293,10 @@ body {
   .edy-ecommerce-product-count {
     color: var(--header-mainmenu-color);
 
-    .dark-background & {
-      color: var(--third-color);
+    @include query($tablet-1, 'min-width') {
+      :not(.scroll).dark-background & {
+        color: var(--third-color);
+      }
     }
   }
 }

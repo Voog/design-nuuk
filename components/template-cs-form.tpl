@@ -31,7 +31,7 @@
     "unit": "",
     "scope": "global"
   */
-  --form-field-line-height: 1.3;
+  --form-field-line-height: 1.9;
   /* VoogStyle
     "pathI18n": ["form"],
     "titleI18n": "font_weight",

@@ -9,7 +9,7 @@
     "unit": "",
     "scope": "global"
   */
-  --content-body-line-height: 1.3;
+  --content-body-line-height: 1.9;
   /* VoogStyle
     "pathI18n": ["content", "text"],
     "titleI18n": "size",

@@ -47,9 +47,7 @@
       {%- assign isPostImageStatic = true -%}
     {% endif %}
     {%- if article.data[itemImageKey] != blank or editmode -%}
-      <div class="mar_b-48">
-        {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic, _targetWidth: '2999' %}
-      </div>
+      {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic, _targetWidth: '2999' %}
     {%- endif -%}
 
     {% if post-box != "article" %}

@@ -17,7 +17,7 @@
     "unit": "",
     "scope": "global"
   */
-  --headings-title-line-height: 83px;
+  --headings-title-line-height: 1.2;
   /* VoogStyle
     "pathI18n": ["headings", "title"],
     "titleI18n": "size",
@@ -115,7 +115,7 @@
     "unit": "",
     "scope": "global"
   */
-  --headings-heading-line-height: 64px;
+  --headings-heading-line-height: 1.2;
   /* VoogStyle
     "pathI18n": ["headings", "heading"],
     "titleI18n": "size",
@@ -213,7 +213,7 @@
     "unit": "",
     "scope": "global"
   */
-  --headings-subheading-line-height: 41px;
+  --headings-subheading-line-height: 1.2;
   /* VoogStyle
     "pathI18n": ["headings", "subheading"],
     "titleI18n": "size",

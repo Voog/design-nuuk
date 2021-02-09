@@ -29,11 +29,12 @@
       {%- endif -%}
       <div class="container flex_col flex_j-space-between">
         {% if editmode %}
-
-          <div class="edit-btn mar_b-16">
-            {% assign add_product_label = 'add_product' | lce %}
-            {% assign add_product_title = 'add_product_page' | lce %}
-            {% menuadd parent="page.menuitem" label=add_product_label lable=add_product_title layout_title="Product" %}
+          <div class="add_product-page">
+            <div class="edit-btn mar_b-16">
+              {% assign add_product_label = 'add_product' | lce %}
+              {% assign add_product_title = 'add_product_page' | lce %}
+              {% menuadd parent="page.menuitem" label=add_product_label lable=add_product_title layout_title="Product" %}
+            </div>
           </div>
         {% endif %}
 

@@ -6,11 +6,9 @@
 
     {% for item in site.visible_menuitems %}
       {% menulink item wrapper-tag="li" wrapper-class="menu-item lvl-1" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
-      {%- if item.selected? and editmode and _semimodalMenu -%}
-        <li class="edit-btn mar_b-16">{% menuadd parent="item" %}</li>
-      {%- endif -%}
+
       {% if item.children? or editmode %}
-        <div class="menu-sub js-menu-sub{% if item.selected? %} active{% endif %}{% if _menuTop %} d-none{% endif %}">
+        <div class="menu-sub js-menu-sub{% if item.children?%} mar_8-0{% endif %}{% if item.selected? %} active{% endif %}{% if _menuTop %} d-none{% endif %}">
           <ul class="menu">
             {% for subitem in item.visible_children %}
               {% if subitem.layout_title == product_layout %}
@@ -34,6 +32,9 @@
           </ul>
         </div>
       {% endif %}
+      {%- if item.selected? and editmode and _semimodalMenu -%}
+        <li class="edit-btn mar_b-16">{% menuadd parent="item" %}</li>
+      {%- endif -%}
     {% endfor %}
 
     {%- if site.visible_menuitems.size > 5 -%}

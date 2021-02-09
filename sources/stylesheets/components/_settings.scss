@@ -260,6 +260,12 @@ body .edy-bgpicker-toggle-button {
   }
 }
 
+body .product_list-page .edy-bgpicker-toggle-button {
+  @include query($tablet-1) {
+    margin: 40px 0 0 0;
+  }
+}
+
 body.front-page .edy-bgpicker-toggle-button {
   z-index: $zindex-semimodal - 1;
   left: 0;
@@ -600,5 +606,11 @@ body {
         border-bottom-color: transparent;
       }
     }
+  }
+}
+
+.add_product-page .edit-btn {
+  @include query($tablet-1) {
+    margin-left: 64px;
   }
 }

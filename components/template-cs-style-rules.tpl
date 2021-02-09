@@ -64,75 +64,118 @@ body.dark-background {
 .menu-btn {
   color: var(--header-mainmenu-active-color);
 }
-.dark-background .menu-btn {
+:not(.scroll).dark-background .menu-btn {
   color: var(--third-color);
 }
 .menu-btn .menu-stripe {
   background-color: var(--header-mainmenu-active-color);
 }
-.dark-background .menu-btn .menu-stripe {
-  background-color: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .menu-btn .menu-stripe {
+    background-color: var(--third-color);
+  }
 }
 .menu-btn:hover {
   color: var(--header-mainmenu-active-color);
 }
-.dark-background .menu-btn:hover {
-  color: var(--third-color);
-  opacity: .7;
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .menu-btn:hover {
+    color: var(--third-color);
+    opacity: .7;
+  }
 }
 .menu-btn:hover .menu-stripe {
   background-color: var(--header-mainmenu-color);
 }
-.dark-background .menu-btn:hover .menu-stripe {
-  background-color: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .menu-btn:hover .menu-stripe {
+    background-color: var(--third-color);
+  }
+}
+
+.scroll.dark-background .menu-main :not(.menu_popover-item).menu-item,
+.scroll.dark-background .content-formatted.header_title {
+  color: var(--header-mainmenu-color);
+}
+.scroll.dark-background .menu-main :not(.menu_popover-item).menu-item a, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item p, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h1, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h2, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h3, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h4, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h5, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h6,
+.scroll.dark-background .content-formatted.header_title a,
+.scroll.dark-background .content-formatted.header_title p,
+.scroll.dark-background .content-formatted.header_title h1,
+.scroll.dark-background .content-formatted.header_title h2,
+.scroll.dark-background .content-formatted.header_title h3,
+.scroll.dark-background .content-formatted.header_title h4,
+.scroll.dark-background .content-formatted.header_title h5,
+.scroll.dark-background .content-formatted.header_title h6 {
+  color: var(--header-mainmenu-color);
+}
+.scroll.dark-background .menu-main :not(.menu_popover-item).menu-item a:hover, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item.active a,
+.scroll.dark-background .content-formatted.header_title a:hover,
+.scroll.dark-background .content-formatted.header_title.active a {
+  color: var(--header-mainmenu-color);
+}
+.scroll.dark-background .menu-main :not(.menu_popover-item).menu-item a:hover,
+.scroll.dark-background .content-formatted.header_title a:hover {
+  opacity: .7;
 }
 
 .search-btn svg g, .edy-ecommerce-custom-ico svg g, .edy-ecommerce-custom-ico svg path {
   fill: var(--header-mainmenu-active-color);
 }
-.dark-background .search-btn svg g,
-.dark-background .edy-ecommerce-custom-ico svg g,
-.dark-background .edy-ecommerce-custom-ico svg path {
-  fill: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .search-btn svg g,
+  :not(.scroll).dark-background .edy-ecommerce-custom-ico svg g,
+  :not(.scroll).dark-background .edy-ecommerce-custom-ico svg path {
+    fill: var(--third-color);
+  }
 }
 
 .search-btn:hover svg g, .edy-ecommerce-custom-ico:hover svg g, .edy-ecommerce-custom-ico:hover svg path {
   fill: var(--header-mainmenu-color);
 }
-.dark-background .search-btn:hover svg g,
-.dark-background .edy-ecommerce-custom-ico:hover svg g,
-.dark-background .edy-ecommerce-custom-ico:hover svg path {
-  opacity: .7;
-  fill: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .search-btn:hover svg g,
+  :not(.scroll).dark-background .edy-ecommerce-custom-ico:hover svg g,
+  :not(.scroll).dark-background .edy-ecommerce-custom-ico:hover svg path {
+    opacity: .7;
+    fill: var(--third-color);
+  }
 }
 
 .menu_popover-btn svg path {
   fill: var(--header-mainmenu-color);
 }
-.dark-background .menu_popover-btn svg path {
-  fill: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .menu_popover-btn svg path {
+    fill: var(--third-color);
+  }
 }
 .menu_popover-btn:hover svg path {
   fill: var(--header-mainmenu-hover-color);
 }
-.dark-background .menu_popover-btn:hover svg path {
-  opacity: .7;
-  fill: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .menu_popover-btn:hover svg path {
+    opacity: .7;
+    fill: var(--third-color);
+  }
 }
 
 .menu-language-btn, .menu-language-name {
   color: var(--header-mainmenu-active-color);
 }
 .menu-language-btn svg path, .menu-language-name svg path {
-  stroke: var(--header-mainmenu-active-color);
+  stroke: var(--header-mainmenu-act ive-color);
 }
-.dark-background .menu-language-btn svg path,
-.dark-background .menu-language-name svg path {
-  stroke: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .menu-language-btn svg path,
+  :not(.scroll).dark-background .menu-language-name svg path {
+    stroke: var(--third-color);
+  }
 }
-.dark-background .menu-language-btn,
-.dark-background .menu-language-name {
-  color: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .menu-language-btn,
+  :not(.scroll).dark-background .menu-language-name {
+    color: var(--third-color);
+  }
 }
 .menu-language-btn:hover, .menu-language-name:hover {
   color: var(--header-mainmenu-color);
@@ -140,27 +183,35 @@ body.dark-background {
 .menu-language-btn:hover svg path, .menu-language-name:hover svg path {
   stroke: var(--header-mainmenu-color);
 }
-.dark-background .menu-language-btn:hover svg path, .dark-background .menu-language-name:hover svg path {
-  opacity: .7;
-  stroke: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .menu-language-btn:hover svg path, :not(.scroll).dark-background .menu-language-name:hover svg path {
+    opacity: .7;
+    stroke: var(--third-color);
+  }
 }
-.dark-background .menu-language-btn:hover, .dark-background .menu-language-name:hover {
-  opacity: .7;
-  color: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .menu-language-btn:hover, :not(.scroll).dark-background .menu-language-name:hover {
+    opacity: .7;
+    color: var(--third-color);
+  }
 }
 
 .edy-ecommerce-product-count {
   color: var(--header-mainmenu-active-color);
 }
-.dark-background .edy-ecommerce-product-count {
-  color: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .edy-ecommerce-product-count {
+    color: var(--third-color);
+  }
 }
 
 .edy-ecommerce-shopping-cart-button:hover .edy-ecommerce-product-count {
   color: var(--header-mainmenu-color);
 }
-.dark-background .edy-ecommerce-shopping-cart-button:hover .edy-ecommerce-product-count {
-  color: var(--third-color);
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .edy-ecommerce-shopping-cart-button:hover .edy-ecommerce-product-count {
+    color: var(--third-color);
+  }
 }
 
 .menu-main .menu .menu-item a {

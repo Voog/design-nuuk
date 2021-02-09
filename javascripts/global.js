@@ -824,8 +824,10 @@ MMCQ = (function() {
 
       if (window.scrollY > wrapperHeight) {
         $('.header_fixed:not(.relative)').addClass('scroll');
+        $('body').addClass('scroll');
       } else {
         $('.header_fixed').removeClass('scroll');
+        $('body').removeClass('scroll');
       }
     });
   };
