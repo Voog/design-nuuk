@@ -7,8 +7,8 @@
         <option value="price-default">{{ "default" | lc }}</option>
         <option value="price-ascending">{{ "sort_by_price" | lc }} {{ "low_to_high" | lc }}</option>
         <option value="price-descending">{{ "sort_by_price" | lc }} {{ "high_to_low" | lc }}</option>
-        <option value="title-ascending">{{ "sort_by_price" | lc }} {{ "a_to_z" | lc }}</option>
-        <option value="title-descending">{{ "sort_by_price" | lc }} {{ "z_to_a" | lc }}</option>
+        <option value="title-ascending">{{ "sort_by_title" | lc }} {{ "a_to_z" | lc }}</option>
+        <option value="title-descending">{{ "sort_by_title" | lc }} {{ "z_to_a" | lc }}</option>
       </select>
     </div>
   </div>
