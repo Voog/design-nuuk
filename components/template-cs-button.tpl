@@ -88,7 +88,7 @@
     "icon": "uppercase",
     "scope": "global"
   */
-  --button-text-transform: uppercase;
+  --button-text-transform: none;
   /* VoogStyle
     "pathI18n": ["button", "normal"],
     "titleI18n": "hyphens",
@@ -186,5 +186,5 @@
     "icon": "uppercase",
     "scope": "global"
   */
-  --button-hover-text-transform: uppercase;
+  --button-hover-text-transform: none;
 }

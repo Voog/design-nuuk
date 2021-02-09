@@ -821,6 +821,7 @@ MMCQ = (function() {
   var handleWindowScroll = function() {
     window.addEventListener('scroll', function(e) {
       var wrapperHeight = $('.header_fixed').height();
+      $('.t-sticky').css('top', $('.header_fixed').outerHeight() + 32);
 
       if (window.scrollY > wrapperHeight) {
         $('.header_fixed:not(.relative)').addClass('scroll');

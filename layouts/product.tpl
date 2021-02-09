@@ -40,9 +40,9 @@
           {% else %}
             {%- assign isPostImageStatic = true -%}
           {% endif %}
-          <div class="flex_row flex_row-2 mar_0-24-neg mar_b-32">
-            <div class="flex_row-2--item">
-              <div class="mar_0-24 p-rel">
+          <div class="flex_row flex_row-2 mar_0-32-neg mar_b-32">
+            <div class="flex_row-2--item-60">
+              <div class="mar_0-32 p-rel">
                 {%- load buy_button to "buy_button" q.content.parent_id=page.id q.content.parent_type="page" -%}
                 {% if buy_button.product != blank %}
                   {%- assign buyButtonImage = buy_button.product.image -%}
@@ -65,13 +65,13 @@
                   </div>
                 {%- endif -%}
               </div>
-              <section class="content-body content-formatted mar_0-24 mar_t-32" data-search-indexing-allowed="true">
+              <section class="content-body content-formatted mar_0-32 mar_t-32" data-search-indexing-allowed="true">
                 {% content name="gallery" %}
               </section>
             </div>
 
-            <div class="flex_row-2--item">
-              <div class="mar_0-24 flex_col">
+            <div class="flex_row-2--item-40">
+              <div class="mar_0-32 flex_col t-sticky">
                 <div class="content-body content-formatted mar_b-16" data-search-indexing-allowed="true">
                   {% contentblock name="page_title" publish_default_content="true" %}
                     <h3>{{page.title}}</h3>
@@ -81,13 +81,13 @@
 
 
                   {%- if buy_button.product.out_of_stock? -%}
-                    <div class="product_item-box--label mar_t-32">OUT OF STOCK</div>
+                    <div class="product_item-box--label mar_t-32">{{ "out_of_stock" | lc | escape_once }}</div>
                   {%- elsif productSettingsData.product_label != blank and isBoxLabel != true -%}
-                    <div class="mar_t-32{% if productSettingsData.is_product_label_line_through == true %} td-lt{% endif %}">
+                    <div class="mar_t-16{% if productSettingsData.is_product_label_line_through == true %} td-lt{% endif %}">
                       {{productSettingsData.product_label}}
                     </div>
                   {%- elsif productSettingsData.product_label != blank and isBoxLabel == true -%}
-                    <div class="product_item-box--label mar_t-32">
+                    <div class="product_item-box--label mar_t-16">
                       {{productSettingsData.product_label}}
                     </div>
                   {%- endif -%}

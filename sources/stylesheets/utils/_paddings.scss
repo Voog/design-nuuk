@@ -1,7 +1,9 @@
 .pad_ {
   &container {
-    overflow-x: hidden;
     padding: 40px 32px 32px;
+    .front-page & {
+      overflow-x: hidden;
+    }
 
     @include query($tablet-2) {
       padding: 24px 16px;
