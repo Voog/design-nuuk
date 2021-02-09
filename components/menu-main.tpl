@@ -67,6 +67,8 @@
   </ul>
 
   {%- if _semimodalMenu != true -%}
-    <ul class="menu-edy-btns">{{menuSettingsBtns}}</ul>
+    {% if editmode %}
+      <ul class="menu-edy-btns">{{menuSettingsBtns}}</ul>
+    {% endif %}
   {%- endif -%}
 </nav>

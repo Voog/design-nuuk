@@ -145,7 +145,7 @@ body {
   }
 
   &:hover {
-    color: var(--header-mainmenu-active-hover-color);
+    color: var(--header-mainmenu-active-color);
 
     .dark-background & {
       color: var(--third-color);
@@ -153,7 +153,7 @@ body {
     }
 
     .menu-stripe {
-      background-color: var(--header-mainmenu-hover-color);
+      background-color: var(--header-mainmenu-color);
 
       .dark-background & {
         background-color: var(--third-color);
@@ -175,7 +175,7 @@ body {
 .search-btn:hover svg g,
 .edy-ecommerce-custom-ico:hover svg g,
 .edy-ecommerce-custom-ico:hover svg path  {
-  fill: var(--header-mainmenu-hover-color);
+  fill: var(--header-mainmenu-color);
 
   .dark-background & {
     opacity: .7;
@@ -183,14 +183,16 @@ body {
   }
 }
 
-.menu_popover-btn svg path {
-  fill: var(--header-mainmenu-active-color);
+.menu_popover-btn {
+    svg path {
+    fill: var(--header-mainmenu-color);
 
-  .dark-background & {
-    fill: var(--third-color);
+    .dark-background & {
+      fill: var(--third-color);
+    }
   }
 
-  &:hover {
+  &:hover svg path {
     fill: var(--header-mainmenu-hover-color);
 
     .dark-background & {
@@ -217,10 +219,10 @@ body {
   }
 
   &:hover {
-    color: var(--header-mainmenu-hover-color);
+    color: var(--header-mainmenu-color);
 
     svg path {
-      stroke: var(--header-mainmenu-hover-color);
+      stroke: var(--header-mainmenu-color);
 
       .dark-background & {
         opacity: .7;
@@ -240,6 +242,16 @@ body {
 
   .dark-background & {
     color: var(--third-color);
+  }
+}
+
+.edy-ecommerce-shopping-cart-button:hover {
+  .edy-ecommerce-product-count {
+    color: var(--header-mainmenu-color);
+
+    .dark-background & {
+      color: var(--third-color);
+    }
   }
 }
 

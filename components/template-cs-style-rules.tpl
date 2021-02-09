@@ -74,14 +74,14 @@ body.dark-background {
   background-color: var(--third-color);
 }
 .menu-btn:hover {
-  color: var(--header-mainmenu-active-hover-color);
+  color: var(--header-mainmenu-active-color);
 }
 .dark-background .menu-btn:hover {
   color: var(--third-color);
   opacity: .7;
 }
 .menu-btn:hover .menu-stripe {
-  background-color: var(--header-mainmenu-hover-color);
+  background-color: var(--header-mainmenu-color);
 }
 .dark-background .menu-btn:hover .menu-stripe {
   background-color: var(--third-color);
@@ -97,7 +97,7 @@ body.dark-background {
 }
 
 .search-btn:hover svg g, .edy-ecommerce-custom-ico:hover svg g, .edy-ecommerce-custom-ico:hover svg path {
-  fill: var(--header-mainmenu-hover-color);
+  fill: var(--header-mainmenu-color);
 }
 .dark-background .search-btn:hover svg g,
 .dark-background .edy-ecommerce-custom-ico:hover svg g,
@@ -107,15 +107,15 @@ body.dark-background {
 }
 
 .menu_popover-btn svg path {
-  fill: var(--header-mainmenu-active-color);
+  fill: var(--header-mainmenu-color);
 }
 .dark-background .menu_popover-btn svg path {
   fill: var(--third-color);
 }
-.menu_popover-btn svg path:hover {
+.menu_popover-btn:hover svg path {
   fill: var(--header-mainmenu-hover-color);
 }
-.dark-background .menu_popover-btn svg path:hover {
+.dark-background .menu_popover-btn:hover svg path {
   opacity: .7;
   fill: var(--third-color);
 }
@@ -135,10 +135,10 @@ body.dark-background {
   color: var(--third-color);
 }
 .menu-language-btn:hover, .menu-language-name:hover {
-  color: var(--header-mainmenu-hover-color);
+  color: var(--header-mainmenu-color);
 }
 .menu-language-btn:hover svg path, .menu-language-name:hover svg path {
-  stroke: var(--header-mainmenu-hover-color);
+  stroke: var(--header-mainmenu-color);
 }
 .dark-background .menu-language-btn:hover svg path, .dark-background .menu-language-name:hover svg path {
   opacity: .7;
@@ -153,6 +153,13 @@ body.dark-background {
   color: var(--header-mainmenu-active-color);
 }
 .dark-background .edy-ecommerce-product-count {
+  color: var(--third-color);
+}
+
+.edy-ecommerce-shopping-cart-button:hover .edy-ecommerce-product-count {
+  color: var(--header-mainmenu-color);
+}
+.dark-background .edy-ecommerce-shopping-cart-button:hover .edy-ecommerce-product-count {
   color: var(--third-color);
 }
 
