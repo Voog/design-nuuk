@@ -66,22 +66,6 @@
         </div>
       {%- endif -%}
 
-      <div class="header_components-tablet">
-        {% if show_language_menu_popover %}
-          <div class="js-toggle-menu-language menu-language-toggle js-prevent-sideclick p-rel" tabindex=0>
-            <button class="menu-language-btn ico-flags ico-flag-{{ page.language_code }} js-menu-language-popover-btn" data-lang-code="{{ page.language_locale }}" {{ edy_intro_add_lang }}>
-              <span>{{ current_language_title }}</span>
-            </button>
-            {% if show_language_menu_popover %}
-              {% include "menu-language-popover", _semimodal: true %}
-            {% endif %}
-          </div>
-        {% endif %}
-
-        {% include "menu-language-list" %}
-        {%- if site.search.enabled -%}<div class="js-prevent-sideclick">{%- include "search-btn" -%}</div>{%- endif -%}
-      </div>
-
       {%- include "menu-main", _semimodalMenu: true -%}
       {%- comment -%}
         <div class="content-formatted semimodal_bottom-content">

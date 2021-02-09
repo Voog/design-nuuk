@@ -30,56 +30,6 @@
           color: var(--header-mainmenu-color)!important;
         }
       }
-
-      .menu-btn {
-        color: var(--header-mainmenu-color)!important;
-        .menu-stripe {
-          background-color: var(--header-mainmenu-color)!important;
-        }
-
-        &:hover {
-          color: var(--header-mainmenu-hover-color)!important;
-
-          .menu-stripe {
-            background-color: var(--header-mainmenu-hover-color)!important;
-          }
-        }
-      }
-
-      .search-btn svg g,
-      .edy-ecommerce-custom-ico svg g,
-      .edy-ecommerce-custom-ico svg path {
-        fill: var(--header-mainmenu-color)!important;
-      }
-
-      .edy-ecommerce-product-count {
-        color: var(--header-mainmenu-color)!important;
-      }
-
-      .search-btn svg g {
-        fill: var(--header-mainmenu-color)!important;
-      }
-
-      .search-btn:hover svg g {
-        fill: var(--header-mainmenu-hover-color)!important;
-      }
-
-      .menu_popover-btn svg path {
-        fill: var(--header-mainmenu-color)!important;
-
-        &:hover {
-          fill: var(--header-mainmenu-hover-color)!important;
-        }
-      }
-
-      .menu-language-btn,
-      .menu-language-name {
-        color: var(--header-mainmenu-color)!important;
-
-        &:hover {
-          color: var(--header-mainmenu-hover-color)!important;
-        }
-      }
     }
 
     .semimodal-open:not(.semimodal-relative) &,
@@ -90,56 +40,6 @@
       .header_title {
         a, p, h1, h2, h3, h4, h5, h6 {
           color: var(--header-mainmenu-color)!important;
-        }
-      }
-
-      .edy-ecommerce-product-count {
-        color: var(--header-mainmenu-color)!important;
-      }
-
-      .search-btn svg g,
-      .edy-ecommerce-custom-ico svg g,
-      .edy-ecommerce-custom-ico svg path {
-        fill: var(--header-mainmenu-color)!important;
-      }
-
-      .menu-btn {
-        color: var(--header-mainmenu-color)!important;
-        .menu-stripe {
-          background-color: var(--header-mainmenu-color)!important;
-        }
-
-        &:hover {
-          color: var(--header-mainmenu-hover-color)!important;
-
-          .menu-stripe {
-            background-color: var(--header-mainmenu-hover-color)!important;
-          }
-        }
-      }
-
-      .search-btn svg g {
-        fill: var(--header-mainmenu-color)!important;
-      }
-
-      .search-btn:hover svg g {
-        fill: var(--header-mainmenu-hover-color)!important;
-      }
-
-      .menu_popover-btn svg path {
-        fill: var(--header-mainmenu-color)!important;
-
-        &:hover {
-          fill: var(--header-mainmenu-hover-color)!important;
-        }
-      }
-
-      .menu-language-btn,
-      .menu-language-name {
-        color: var(--header-mainmenu-color)!important;
-
-        &:hover {
-          color: var(--header-mainmenu-hover-color)!important;
         }
       }
     }
@@ -156,52 +56,70 @@
 
     &-content {
       display: flex;
+      align-items: center;
       width: 100%;
       @include transition(transform 200ms);
 
-      @include query($tablet-1, 'min-width') {
-        .menu-top &,
-        .semimodal-absolute:not(.semimodal-open) & {
+      .header_components,
+      .menu-btn {
+        width: 20%;
+        flex: auto;
+      }
+
+      .header_title {
+        width: 60%;
+        justify-content: center;
+        text-align: center;
+
+        h1,h2,h3,h4,h5,h6,p {
+          text-align: center;
+        }
+      }
+
+      .menu-top & {
+        flex-wrap: wrap;
+
+        .header_components,
+        .menu-btn {
+          width: 20%;
+          flex: auto;
+        }
+      }
+
+      .menu-top & {
+        .menu {
           flex-wrap: wrap;
-
-          .header_components,
-          .menu-btn {
-            width: 20%;
-            flex: auto;
-          }
         }
 
-        .menu-top & {
-          .menu {
-            flex-wrap: wrap;
-          }
+        .header_title {
+          width: 20%;
+          text-align: left;
 
-          .header_title {
-            width: 20%;
+          h1,h2,h3,h4,h5,h6,p {
             text-align: left;
-
-            h1,h2,h3,h4,h5,h6,p {
-              text-align: left;
-            }
-          }
-
-          .menu-main-wrapper {
-            width: 60%;
-            display: flex;
-            justify-content: center;
           }
         }
 
-        .semimodal-absolute:not(.semimodal-open) & {
-          .header_title {
-            width: 60%;
-            justify-content: center;
-            text-align: center;
+        .menu-main-wrapper {
+          width: 60%;
+          display: flex;
+          justify-content: center;
+        }
 
-            h1,h2,h3,h4,h5,h6,p {
-              text-align: center;
-            }
+        @include query($tablet-1) {
+          .menu-main-wrapper {
+            display: none;
           }
+        }
+      }
+
+      .header_title {
+        width: 60%;
+        justify-content: center;
+        text-align: center;
+
+        h1,h2,h3,h4,h5,h6,p {
+          text-align: center;
         }
       }
     }
@@ -246,10 +164,6 @@
 
     &-desktop {
       display: flex;
-
-      @include query($tablet-1) {
-        display: none;
-      }
     }
 
     &-tablet {
@@ -275,8 +189,10 @@
       padding-left: 16px;
     }
 
-    .semimodal-relative & {
-      display: none;
+    @include query($tablet-1, 'min-width') {
+      .semimodal-relative & {
+        display: none;
+      }
     }
   }
 }

@@ -4,12 +4,20 @@
 // Menu button. Only visible on smaller screens.
 .menu-btn {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding: 8px;
   background: none;
   border: none;
   cursor: pointer;
   transition: top .6s ease-in;
+
+  @include query($tablet-1) {
+    padding: 0 16px 0;
+
+    .semimodal & {
+      padding: 16px 16px 0;
+    }
+  }
 
   .semimodal-relative & {
     pointer-events: none;
@@ -30,6 +38,7 @@
   label {
     font-size: 16px;
     margin-left: 16px;
+    cursor: pointer;
 
     @include query($tablet-1) {
       display: none;
@@ -47,30 +56,32 @@
 
   .menu-stripe {
     display: block;
-    width: 32px;
-    height: 3px;
+    width: 24px;
+    height: 2px;
     color: $primary-color;
-    border-radius: 2px;
+    margin-bottom: 2px;
     @include transition(transform 200ms);
 
     &:first-child {
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .semimodal-open:not(.semimodal-relative) & {
-      transform: rotate(45deg) translate(-5px, -5px);
+      width: 14px;
+      transform: rotate(45deg) translate(-3px, -3px);
 
       &:first-child {
-        transform: rotate(-45deg) translate(-5px, 5px);
+        transform: rotate(-45deg) translate(-3px, 3px);
       }
     }
 
     @include query($tablet-1) {
       .semimodal-open.semimodal-relative & {
-        transform: rotate(45deg) translate(-5px, -5px);
+        width: 14px;
+        transform: rotate(45deg) translate(-3px, -3px);
 
         &:first-child {
-          transform: rotate(-45deg) translate(-5px, 5px);
+          transform: rotate(-45deg) translate(-3px, 3px);
         }
       }
     }
@@ -183,6 +194,10 @@
         padding-left: 24px;
         align-items: center;
         position: relative;
+
+        @include query($tablet-1) {
+          padding-left: 16px;
+        }
       }
     }
 

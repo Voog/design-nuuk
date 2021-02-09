@@ -130,14 +130,14 @@ body {
 // =============================================================================
 // Menu button. Only visible on smaller screens.
 .menu-btn {
-  color: var(--header-mainmenu-color);
+  color: var(--header-mainmenu-active-color);
 
   .dark-background & {
     color: var(--third-color);
   }
 
   .menu-stripe {
-    background-color: var(--header-mainmenu-color);
+    background-color: var(--header-mainmenu-active-color);
 
     .dark-background & {
       background-color: var(--third-color);
@@ -145,7 +145,7 @@ body {
   }
 
   &:hover {
-    color: var(--header-mainmenu-hover-color);
+    color: var(--header-mainmenu-active-hover-color);
 
     .dark-background & {
       color: var(--third-color);
@@ -165,7 +165,7 @@ body {
 .search-btn svg g,
 .edy-ecommerce-custom-ico svg g,
 .edy-ecommerce-custom-ico svg path {
-  fill: var(--header-mainmenu-color);
+  fill: var(--header-mainmenu-active-color);
 
   .dark-background & {
     fill: var(--third-color);
@@ -184,7 +184,7 @@ body {
 }
 
 .menu_popover-btn svg path {
-  fill: var(--header-mainmenu-color);
+  fill: var(--header-mainmenu-active-color);
 
   .dark-background & {
     fill: var(--third-color);
@@ -202,10 +202,10 @@ body {
 
 .menu-language-btn,
 .menu-language-name {
-  color: var(--header-mainmenu-color);
+  color: var(--header-mainmenu-active-color);
 
   svg path {
-    stroke: var(--header-mainmenu-color);
+    stroke: var(--header-mainmenu-active-color);
 
     .dark-background & {
       stroke: var(--third-color);
@@ -236,7 +236,7 @@ body {
 }
 
 .edy-ecommerce-product-count {
-  color: var(--header-mainmenu-color);
+  color: var(--header-mainmenu-active-color);
 
   .dark-background & {
     color: var(--third-color);
@@ -646,14 +646,14 @@ body {
     hyphens: var(--headings-title-hyphens);
 
     @include query($tablet-1) {
-      font-size: calc(var(--headings-title-font-size) / 1.4);
-      line-height: calc(var(--headings-title-line-height) / 1.4);
+      font-size: calc(var(--headings-title-font-size) / 2);
+      line-height: calc(var(--headings-title-line-height) / 2);
     }
 
     .semimodal-relative & {
       @include query($desktop-1) {
-        font-size: calc(var(--headings-title-font-size) / 1.4);
-        line-height: calc(var(--headings-title-line-height) / 1.4);
+        font-size: calc(var(--headings-title-font-size) / 2);
+        line-height: calc(var(--headings-title-line-height) / 2);
       }
     }
   }
@@ -670,14 +670,14 @@ body {
     hyphens: var(--headings-heading-hyphens);
 
     @include query($tablet-1) {
-      font-size: calc(var(--headings-heading-font-size) / 1.4);
-      line-height: calc(var(--headings-heading-line-height) / 1.4);
+      font-size: calc(var(--headings-heading-font-size) / 1.8);
+      line-height: calc(var(--headings-heading-line-height) / 1.8);
     }
 
     .semimodal-relative & {
       @include query($desktop-1) {
-        font-size: calc(var(--headings-heading-font-size) / 1.4);
-        line-height: calc(var(--headings-heading-line-height) / 1.4);
+        font-size: calc(var(--headings-heading-font-size) / 1.8);
+        line-height: calc(var(--headings-heading-line-height) / 1.8);
       }
     }
   }
@@ -695,14 +695,14 @@ body {
     hyphens: var(--headings-subheading-hyphens);
 
     @include query($tablet-1) {
-      font-size: calc(var(--headings-subheading-font-size) / 1.4);
-      line-height: calc(var(--headings-subheading-line-height) / 1.4);
+      font-size: calc(var(--headings-subheading-font-size) / 1.8);
+      line-height: calc(var(--headings-subheading-line-height) / 1.8);
     }
 
     .semimodal-relative & {
       @include query($desktop-1) {
-        font-size: calc(var(--headings-subheading-font-size) / 1.4);
-        line-height: calc(var(--headings-subheading-line-height) / 1.4);
+        font-size: calc(var(--headings-subheading-font-size) / 1.8);
+        line-height: calc(var(--headings-subheading-line-height) / 1.8);
       }
     }
   }

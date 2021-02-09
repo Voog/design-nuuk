@@ -14,7 +14,9 @@
     </button>
 
     <div class="header_title content-formatted">
-      {%- editable site.header -%}
+      {% contentblock name="site_title" xpage="true"  publish_default_content="true" %}
+        {{site.header}}
+      {% endcontentblock %}
     </div>
 
     <div class="js-menu-main-wrapper menu-main-wrapper{% if menuTop == true %} hidden-tablet{% else %} hidden-tablet hidden-desktop{% endif %}">

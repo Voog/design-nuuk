@@ -62,19 +62,19 @@ body.dark-background {
 }
 
 .menu-btn {
-  color: var(--header-mainmenu-color);
+  color: var(--header-mainmenu-active-color);
 }
 .dark-background .menu-btn {
   color: var(--third-color);
 }
 .menu-btn .menu-stripe {
-  background-color: var(--header-mainmenu-color);
+  background-color: var(--header-mainmenu-active-color);
 }
 .dark-background .menu-btn .menu-stripe {
   background-color: var(--third-color);
 }
 .menu-btn:hover {
-  color: var(--header-mainmenu-hover-color);
+  color: var(--header-mainmenu-active-hover-color);
 }
 .dark-background .menu-btn:hover {
   color: var(--third-color);
@@ -88,7 +88,7 @@ body.dark-background {
 }
 
 .search-btn svg g, .edy-ecommerce-custom-ico svg g, .edy-ecommerce-custom-ico svg path {
-  fill: var(--header-mainmenu-color);
+  fill: var(--header-mainmenu-active-color);
 }
 .dark-background .search-btn svg g,
 .dark-background .edy-ecommerce-custom-ico svg g,
@@ -107,7 +107,7 @@ body.dark-background {
 }
 
 .menu_popover-btn svg path {
-  fill: var(--header-mainmenu-color);
+  fill: var(--header-mainmenu-active-color);
 }
 .dark-background .menu_popover-btn svg path {
   fill: var(--third-color);
@@ -121,10 +121,10 @@ body.dark-background {
 }
 
 .menu-language-btn, .menu-language-name {
-  color: var(--header-mainmenu-color);
+  color: var(--header-mainmenu-active-color);
 }
 .menu-language-btn svg path, .menu-language-name svg path {
-  stroke: var(--header-mainmenu-color);
+  stroke: var(--header-mainmenu-active-color);
 }
 .dark-background .menu-language-btn svg path,
 .dark-background .menu-language-name svg path {
@@ -150,7 +150,7 @@ body.dark-background {
 }
 
 .edy-ecommerce-product-count {
-  color: var(--header-mainmenu-color);
+  color: var(--header-mainmenu-active-color);
 }
 .dark-background .edy-ecommerce-product-count {
   color: var(--third-color);
@@ -489,14 +489,14 @@ body.dark-background {
 }
 @media screen and (max-width: 900px) {
   .content-formatted h1, .content-formatted .product_item-btn h1, .content-formatted p h1 {
-    font-size: calc(var(--headings-title-font-size) / 1.4);
-    line-height: calc(var(--headings-title-line-height) / 1.4);
+    font-size: calc(var(--headings-title-font-size) / 2);
+    line-height: calc(var(--headings-title-line-height) / 2);
   }
 }
 @media screen and (max-width: 1024px) {
   .semimodal-relative .content-formatted h1, .semimodal-relative .content-formatted .product_item-btn h1, .semimodal-relative .content-formatted p h1 {
-    font-size: calc(var(--headings-title-font-size) / 1.4);
-    line-height: calc(var(--headings-title-line-height) / 1.4);
+    font-size: calc(var(--headings-title-font-size) / 2);
+    line-height: calc(var(--headings-title-line-height) / 2);
   }
 }
 .content-formatted h2, .content-formatted .product_item-btn h2, .content-formatted p h2 {
@@ -515,14 +515,14 @@ body.dark-background {
 }
 @media screen and (max-width: 900px) {
   .content-formatted h2, .content-formatted .product_item-btn h2, .content-formatted p h2 {
-    font-size: calc(var(--headings-heading-font-size) / 1.4);
-    line-height: calc(var(--headings-heading-line-height) / 1.4);
+    font-size: calc(var(--headings-heading-font-size) / 1.8);
+    line-height: calc(var(--headings-heading-line-height) / 1.8);
   }
 }
 @media screen and (max-width: 1024px) {
   .semimodal-relative .content-formatted h2, .semimodal-relative .content-formatted .product_item-btn h2, .semimodal-relative .content-formatted p h2 {
-    font-size: calc(var(--headings-heading-font-size) / 1.4);
-    line-height: calc(var(--headings-heading-line-height) / 1.4);
+    font-size: calc(var(--headings-heading-font-size) / 1.8);
+    line-height: calc(var(--headings-heading-line-height) / 1.8);
   }
 }
 .content-formatted h3, .content-formatted .product_item-btn h3, .content-formatted p h3 {
@@ -541,14 +541,14 @@ body.dark-background {
 }
 @media screen and (max-width: 900px) {
   .content-formatted h3, .content-formatted .product_item-btn h3, .content-formatted p h3 {
-    font-size: calc(var(--headings-subheading-font-size) / 1.4);
-    line-height: calc(var(--headings-subheading-line-height) / 1.4);
+    font-size: calc(var(--headings-subheading-font-size) / 1.8);
+    line-height: calc(var(--headings-subheading-line-height) / 1.8);
   }
 }
 @media screen and (max-width: 1024px) {
   .semimodal-relative .content-formatted h3, .semimodal-relative .content-formatted .product_item-btn h3, .semimodal-relative .content-formatted p h3 {
-    font-size: calc(var(--headings-subheading-font-size) / 1.4);
-    line-height: calc(var(--headings-subheading-line-height) / 1.4);
+    font-size: calc(var(--headings-subheading-font-size) / 1.8);
+    line-height: calc(var(--headings-subheading-line-height) / 1.8);
   }
 }
 .content-formatted a:not(.custom-btn), .content-formatted .product_item-btn a:not(.custom-btn), .content-formatted p a:not(.custom-btn) {
