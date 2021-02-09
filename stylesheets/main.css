@@ -4630,9 +4630,6 @@ article.post_wrapper .date-separator.hide-separator {
 .pad_container {
   padding: 40px 32px 32px;
 }
-.front-page .pad_container {
-  overflow-x: hidden;
-}
 @media screen and (max-width: 752px) {
   .pad_container {
     padding: 24px 16px;
