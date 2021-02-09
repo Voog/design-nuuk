@@ -548,13 +548,11 @@ body.dark-background {
 @media screen and (max-width: 900px) {
   .content-formatted h1, .content-formatted .product_item-btn h1, .content-formatted p h1 {
     font-size: calc(var(--headings-title-font-size) / 2);
-    line-height: calc(var(--headings-title-line-height) / 2);
   }
 }
 @media screen and (max-width: 1024px) {
   .semimodal-relative .content-formatted h1, .semimodal-relative .content-formatted .product_item-btn h1, .semimodal-relative .content-formatted p h1 {
     font-size: calc(var(--headings-title-font-size) / 2);
-    line-height: calc(var(--headings-title-line-height) / 2);
   }
 }
 .content-formatted h2, .content-formatted .product_item-btn h2, .content-formatted p h2 {
@@ -574,13 +572,11 @@ body.dark-background {
 @media screen and (max-width: 900px) {
   .content-formatted h2, .content-formatted .product_item-btn h2, .content-formatted p h2 {
     font-size: calc(var(--headings-heading-font-size) / 1.8);
-    line-height: calc(var(--headings-heading-line-height) / 1.8);
   }
 }
 @media screen and (max-width: 1024px) {
   .semimodal-relative .content-formatted h2, .semimodal-relative .content-formatted .product_item-btn h2, .semimodal-relative .content-formatted p h2 {
     font-size: calc(var(--headings-heading-font-size) / 1.8);
-    line-height: calc(var(--headings-heading-line-height) / 1.8);
   }
 }
 .content-formatted h3, .content-formatted .product_item-btn h3, .content-formatted p h3 {
