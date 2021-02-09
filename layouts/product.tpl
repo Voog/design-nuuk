@@ -8,6 +8,12 @@
   {%- assign product_page = true -%}
 </head>
 
+{% capture bottom_content_html %}{% unless editmode %}{% name="content" %}{% endunless %}{% endcapture %}
+{% capture bottom_content_size %}{{ bottom_content_html | size | minus: 1 }}{% endcapture %}
+{% unless bottom_content_size contains "-" %}
+  {% assign bottom_content_has_content = true %}
+{% endunless %}
+
 <body class="product-page body-bg_picker--area {{ body_bg_type }}">
   {% include "template-svg-spritesheet" %}
   <div class="body-bg_color"></div>
@@ -40,7 +46,7 @@
           {% else %}
             {%- assign isPostImageStatic = true -%}
           {% endif %}
-          <div class="flex_row flex_row-2 mar_0-32-neg mar_b-32">
+          <div class="flex_row flex_row-2 mar_0-32-neg>
             <div class="flex_row-2--item-60">
               <div class="mar_0-32 p-rel">
                 {%- load buy_button to "buy_button" q.content.parent_id=page.id q.content.parent_type="page" -%}
@@ -99,7 +105,9 @@
             </div>
           </div>
 
-          <section class="content-body content-formatted" data-search-indexing-allowed="true">{% content name="content" %}</section>
+          {%- if bottom_content_has_content == true -%}
+            <section class="content-body content-formatted  mar_b-32" data-search-indexing-allowed="true">{% content name="content" %}</section>
+          {%- endif -%}
 
           <div>
             {%- assign pageIdsArr = "" | split: ',' -%}
