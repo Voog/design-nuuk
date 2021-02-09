@@ -1,14 +1,27 @@
 {%- capture swiper_bg_json -%}
   {
-    "image":"{{images_path}}/front-header-bg.jpg",
-    "width":3504,
-    "height":1584,
-    "imageSizes":[
-      {"url":"{{images_path}}/front-header-bg.jpg","height":1584,"width":3504},
-      {"url":"{{images_path}}/front-header-bg_huge.jpg","height":926,"width":2048},
-      {"url":"{{images_path}}/front-header-bg_large.jpg","height":579,"width":1280},
-      {"url":"{{images_path}}/front-header-bg_block.jpg","height":271,"width":600},
-      {"url":"{{images_path}}/front-header-bg_medium.jpg","height":68,"width":150}
+    "image": "//static.voog.com/voogstock/arch-door-couch-00095.jpg",
+    "width": 1333,
+    "height": 1999,
+    "imageSizes": [
+      {
+        "url": "//static.voog.com/voogstock/arch-door-couch-00095.jpg",
+        "height": 1999,
+        "width": 1333
+      },
+      {
+        "url": "//static.voog.com/voogstock/arch-door-couch-00095_large.jpg",
+        "height": 1280,
+        "width": 854
+      },
+      {
+        "url": "//static.voog.com/voogstock/arch-door-couch-00095_block.jpg",
+        "height": 600,
+        "width": 400
+      },
+      {
+        "url": "//static.voog.com/voogstock/arch-door-couch-00095_medium.jpg"
+      }
     ]
   }
 {%- endcapture -%}
