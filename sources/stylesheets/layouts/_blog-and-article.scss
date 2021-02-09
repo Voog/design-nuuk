@@ -212,7 +212,6 @@
       &--inner {
       display: flex;
       align-items: center;
-
         &.without-image {
           flex-direction: column;
           align-items: baseline;
@@ -280,6 +279,10 @@
         &:hover {
           &.without-image {
             opacity: .7;
+
+            &.static {
+              opacity: 1;
+            }
           }
 
           .post_nav-image {

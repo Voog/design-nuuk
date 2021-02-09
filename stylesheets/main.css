@@ -3452,6 +3452,9 @@ body.edy-checkout-button-visible {
 .post_nav-link--inner:hover.without-image {
   opacity: .7;
 }
+.post_nav-link--inner:hover.without-image.static {
+  opacity: 1;
+}
 .post_nav-link--inner:hover .post_nav-image {
   opacity: 1;
 }
