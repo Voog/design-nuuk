@@ -1338,7 +1338,7 @@ html:not(.semimodal-relative) .semimodal {
 .semimodal-relative .semimodal {
   -webkit-box-shadow: none;
           box-shadow: none;
-  border-right: 1px solid;
+  border-right: 1px solid rgba(141, 144, 145, 0.2);
 }
 @media screen and (max-width: 900px) {
   .semimodal-relative .semimodal {
@@ -2045,8 +2045,6 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
 
 .swiper-container {
   width: 100%;
-  -webkit-box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
   overflow: unset !important;
   position: relative;
 }
@@ -4429,8 +4427,8 @@ article.post_wrapper .date-separator.hide-separator {
   .menu-main:not(.menu_top) .menu .menu-item.active a:before {
     content: '';
     border: 1px solid;
-    height: 8px;
-    width: 8px;
+    height: 6px;
+    width: 6px;
     position: absolute;
     left: 0px;
   }

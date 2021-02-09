@@ -95,7 +95,7 @@
 
   .semimodal-relative & {
     box-shadow: none;
-    border-right: 1px solid;
+    border-right: 1px solid rgba(141,144,145,0.2);
 
     @include query($tablet-1) {
       transform: translateX(-100%);
