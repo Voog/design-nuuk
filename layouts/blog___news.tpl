@@ -18,6 +18,7 @@
 
     <div class="pad_container p-rel">
     {% if editmode %}
+      <div class="mar_b-32">
         <div class="bg-picker-top">
           <button
             class="voog-bg-picker-btn body_bg-picker--btn bg-picker {{bodyBgKey}}-picker"
@@ -30,11 +31,12 @@
             data-bg-color="{{ body_bg_color }}"
           ></button>
         </div>
+        <div class="mar_b-16 add-page">{% addbutton %}</div>
+      </div>
     {% endif %}
       <div class="container">
-        <div class="mar_b-16">{% addbutton %}</div>
         <main class="content" role="main" data-search-indexing-allowed="true">
-          <section class="content-body content-formatted post_intro-content" {{ edy_intro_edit_text }}>{% content %}</section>
+          <section class="content-body content-formatted post_intro-content mar_b-16" {{ edy_intro_edit_text }}>{% content %}</section>
           {% include "blog-news-tags" %}
           <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
             {% for article in articles %}

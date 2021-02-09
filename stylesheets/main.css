@@ -1539,7 +1539,7 @@ html:not(.semimodal-relative) .semimodal {
 .semimodal_picker-btn {
   z-index: 101;
   position: absolute;
-  top: -72px;
+  top: -106px;
   left: 0;
 }
 
@@ -1664,12 +1664,10 @@ body .edy-bgpicker-toggle-button {
   opacity: 1;
   height: 40px;
   border-radius: 4px;
-  margin: 16px 0 0 0;
+  margin: 24px 0 0 0;
 }
-@media screen and (max-width: 900px) {
-  body .edy-bgpicker-toggle-button {
-    margin: 32px 0 0 0;
-  }
+.semimodal-relative body .edy-bgpicker-toggle-button {
+  margin: 16px 0 0 0;
 }
 body .edy-bgpicker-toggle-button:hover {
   opacity: .7;
@@ -1685,6 +1683,10 @@ body.front-page .edy-bgpicker-toggle-button {
   z-index: 100;
   left: 0;
   top: -60px;
+}
+
+body.front-page .semimodal .edy-bgpicker-toggle-button {
+  top: 0px;
 }
 
 .admin_btn {
@@ -2045,10 +2047,14 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   border-bottom-color: transparent;
 }
 
-@media screen and (max-width: 900px) {
-  .add_product-page .edit-btn {
-    margin-left: 64px;
-  }
+.edit-btn.add-page, .blog-page .add-page {
+  position: absolute;
+  top: 10px;
+  margin-left: 64px;
+}
+.semimodal-relative .edit-btn.add-page,
+.semimodal-relative .blog-page .add-page {
+  top: 48px;
 }
 
 .swiper-container {

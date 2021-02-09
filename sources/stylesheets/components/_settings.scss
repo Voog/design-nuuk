@@ -138,7 +138,7 @@
   &picker-btn {
     z-index: $zindex-semimodal;
     position: absolute;
-    top: -72px;
+    top: -106px;
     left: 0;
   }
 }
@@ -249,10 +249,10 @@ body .edy-bgpicker-toggle-button {
   opacity: 1;
   height: 40px;
   border-radius: 4px;
-  margin: 16px 0 0 0;
+  margin: 24px 0 0 0;
 
-  @include query($tablet-1) {
-    margin: 32px 0 0 0;
+  .semimodal-relative & {
+    margin: 16px 0 0 0;
   }
 
   &:hover {
@@ -270,6 +270,10 @@ body.front-page .edy-bgpicker-toggle-button {
   z-index: $zindex-semimodal - 1;
   left: 0;
   top: -60px;
+}
+
+body.front-page .semimodal .edy-bgpicker-toggle-button {
+  top: 0px;
 }
 
 .admin_btn {
@@ -609,8 +613,13 @@ body {
   }
 }
 
-.add_product-page .edit-btn {
-  @include query($tablet-1) {
-    margin-left: 64px;
+.edit-btn.add-page,
+.blog-page .add-page {
+  position: absolute;
+  top: 10px;
+  margin-left: 64px;
+
+  .semimodal-relative & {
+    top: 48px;
   }
 }

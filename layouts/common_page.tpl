@@ -13,6 +13,7 @@
   <div class="container_wrap">
     {%- include "header" -%}
     <div class="pad_container p-rel">
+      <div class="mar_b-32">
       {%- if editmode -%}
         <div class="bg-picker-top">
           <button
@@ -26,15 +27,12 @@
             data-bg-color="{{ body_bg_color }}"
           ></button>
         </div>
+        <div class="edit-btn add-page">{% menuadd parent="page" %}</div>
+      </div>
       {%- endif -%}
       <div class="container">
-        {%- if editmode -%}
-          <div class=" mar_t-16 mar_b-16">
-            <div class="edit-btn">{% menuadd parent="page" %}</div>
-          </div>
-        {%- endif -%}
         <main class="content" role="main" data-search-indexing-allowed="true">
-          <div class="content-body content-formatted mar_b-32">
+          <div class="content-body content-formatted mar_b-16">
             {% contentblock name="page_title" publish_default_content="true" %}
               <h1>{{page.title}}</h1>
             {% endcontentblock %}
