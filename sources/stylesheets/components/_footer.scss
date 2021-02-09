@@ -7,6 +7,10 @@
   width: calc(100% - 64px);
   z-index: 0;
 
+  &:hover {
+    z-index: 1;
+  }
+
   &_content {
     &-hidden {
       .footer & {

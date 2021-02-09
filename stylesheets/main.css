@@ -2484,6 +2484,9 @@ body.edy-checkout-button-visible {
   width: calc(100% - 64px);
   z-index: 0;
 }
+.footer:hover {
+  z-index: 1;
+}
 .footer .footer_content-hidden {
   height: 0;
   margin: 0;
@@ -4632,6 +4635,8 @@ article.post_wrapper .date-separator.hide-separator {
 
 .pad_container {
   padding: 40px 32px 32px;
+}
+.pad_container:hover {
   z-index: 1;
 }
 @media screen and (max-width: 752px) {
