@@ -104,6 +104,7 @@
         >
           {%- assign imageClass = "image_fit-cover img-absolute front_header-image-1" -%}
           {% include "lazy-image", _data: swiper_bg_1, _targetWidth: '2048', _className: imageClass  %}
+          {% assign swiperDataKey = swiperBgKey | append: 1 %}
 
           {% if editmode %}
             <button
@@ -114,15 +115,15 @@
               data-color_elem=".front_header-color-1"
               data-picker_area_elem=".front-header-bg_picker--area-1"
               data-picker_elem=".front-header-bg_picker-1"
-              data-bg_key="{{swiperBg1Key}}"
+              data-bg_key="{{swiperDataKey}}"
               data-bg="{{ swiper_bg_1 | json | escape }}"
               data-wrapper_class="image_header"
             ></button>
           {% endif %}
 
           <div class="w-100p h-100p front_header-color-1 bg_color-absolute js-background-type"
-            {% if page.data.swiper_bg_1.color != blank %}
-              style="background-color: {{ page.data.swiper_bg_1.color }};"
+            {% if page.data[swiperDataKey].color != blank %}
+              style="background-color: {{ page.data[swiperDataKey].color }};"
             {% endif %}
           ></div>
 
