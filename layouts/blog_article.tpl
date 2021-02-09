@@ -90,7 +90,7 @@
                 {%- if article.older.data[itemImageKey] != blank -%}
                   {%- assign isOldArticleImage = true -%}
                 {% endif %}
-                <a class="post_nav-link{% if article.newer %} post_nav-link--older{% else %} post_nav-link--one{% endif %}" href="{{ article.older.url }}">
+                <a class="post_nav-link post_nav-link--older" href="{{ article.older.url }}">
                   <div class="post_nav-link--inner{%- if isOldArticleImage != true %} without-image{%- endif -%}">
                     <h4 class="post_nav-direction">{{ "previous" | lc }}</h4>
                     {%- if isOldArticleImage == true -%}
@@ -117,7 +117,7 @@
                 {%- if article.newer.data[itemImageKey] != blank -%}
                   {%- assign isNewArticleImage = true -%}
                 {% endif %}
-                <a class="post_nav-link{% if article.older %} post_nav-link--newer{% else %} post_nav-link--one{% endif %}" href="{{ article.newer.url }}">
+                <a class="post_nav-link post_nav-link--newer" href="{{ article.newer.url }}">
                   <div class="post_nav-link--inner{%- if isNewArticleImage != true %} without-image{%- endif -%}">
                     <h4 class="post_nav-direction">{{ "next" | lc }}</h4>
                     {%- if isNewArticleImage == true -%}

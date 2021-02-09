@@ -3277,14 +3277,6 @@ body.edy-checkout-button-visible {
     margin-left: 0;
   }
 }
-.post_nav-link.post_nav-link--one .post_nav-image {
-  margin-left: 32px;
-}
-@media screen and (max-width: 480px) {
-  .post_nav-link.post_nav-link--one .post_nav-image {
-    margin-left: 0;
-  }
-}
 .post_nav-link--inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4779,6 +4771,14 @@ body .animate_translated-x--0 {
     margin-bottom: 24px;
   }
 }
+.mar_b-64 {
+  margin-bottom: 64px;
+}
+@media screen and (max-width: 900px) {
+  .mar_b-64 {
+    margin-bottom: 32px;
+  }
+}
 .mar_t-0 {
   margin-top: 0 !important;
 }
@@ -4791,8 +4791,18 @@ body .animate_translated-x--0 {
 .mar_t-48 {
   margin-top: 48px;
 }
+@media screen and (max-width: 900px) {
+  .mar_t-48 {
+    margin-top: 24px;
+  }
+}
 .mar_t-96 {
   margin-top: 96px;
+}
+@media screen and (max-width: 900px) {
+  .mar_t-96 {
+    margin-top: 32px;
+  }
 }
 .mar_l-8 {
   margin-left: 8px;

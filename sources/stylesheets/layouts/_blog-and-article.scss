@@ -200,15 +200,6 @@
         }
       }
 
-      &.post_nav-link--one {
-        .post_nav-image {
-          margin-left: 32px;
-          @include query($mobile-1) {
-            margin-left: 0;
-          }
-        }
-      }
-
       &--inner {
       display: flex;
       align-items: center;
