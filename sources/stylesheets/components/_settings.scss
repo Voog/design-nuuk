@@ -621,5 +621,9 @@ body {
 
   .semimodal-relative & {
     top: 48px;
+
+    @include query($tablet-1) {
+      top: 24px;
+    }
   }
 }

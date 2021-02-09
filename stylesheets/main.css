@@ -108,7 +108,7 @@ body.dark-background {
 }
 @media screen and (max-width: 900px) {
   .semimodal-relative .bg-picker-top {
-    display: none;
+    top: 0;
   }
 }
 
@@ -2084,6 +2084,12 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
 .semimodal-relative .blog-page .add-page {
   top: 48px;
 }
+@media screen and (max-width: 900px) {
+  .semimodal-relative .edit-btn.add-page,
+  .semimodal-relative .blog-page .add-page {
+    top: 24px;
+  }
+}
 
 .swiper-container {
   width: 100%;
@@ -2476,6 +2482,7 @@ body.edy-checkout-button-visible {
   padding: 0 32px 32px;
   margin: auto auto 0;
   width: calc(100% - 64px);
+  z-index: 0;
 }
 .footer .footer_content-hidden {
   height: 0;
@@ -4625,6 +4632,7 @@ article.post_wrapper .date-separator.hide-separator {
 
 .pad_container {
   padding: 40px 32px 32px;
+  z-index: 1;
 }
 @media screen and (max-width: 752px) {
   .pad_container {

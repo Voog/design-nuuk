@@ -51,7 +51,7 @@ body {
     top: 24px;
 
     @include query($tablet-1) {
-      display: none;
+      top: 0;
     }
   }
 }
