@@ -24,7 +24,7 @@
   <div class="container_wrap">
     {% include "header" %}
 
-    <div class="flex_col content_wrap of-hidden">
+    <div class="flex_col content_wrap">
       {% capture header_content %}
         <div class="swiper-content content-formatted" data-search-indexing-allowed="true">
           <div class="swiper-content-area">

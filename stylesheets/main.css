@@ -136,7 +136,6 @@ body.dark-background {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   width: 100%;
-  z-index: 1;
 }
 .container a {
   text-decoration: none;
@@ -2477,9 +2476,6 @@ body.edy-checkout-button-visible {
   padding: 0 32px 32px;
   margin: auto auto 0;
   width: calc(100% - 64px);
-}
-.footer_content {
-  z-index: 0;
 }
 .footer .footer_content-hidden {
   height: 0;
