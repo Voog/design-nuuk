@@ -14,7 +14,7 @@
 {% endif %}
 
 {% comment %}STYLESHEETS{% endcomment %}
-{% stylesheet_link "main.min.css?nuuk=7.5" %}
+{% stylesheet_link "main.min.css?nuuk=7.6" %}
 {% if editmode %}
   <link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">
 {% endif %}

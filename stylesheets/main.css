@@ -133,8 +133,6 @@ body.dark-background {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
   width: 100%;
 }
 .container a {
