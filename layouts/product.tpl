@@ -46,9 +46,9 @@
           {% else %}
             {%- assign isPostImageStatic = true -%}
           {% endif %}
-          <div class="flex_row flex_row-2 mar_0-32-neg">
+          <div class="flex_row flex_row-2 reverse-col-tablet mar_0-32-neg">
             <div class="flex_row-2--item-60">
-              <div class="mar_0-32 p-rel">
+              <div class="mar_0-32 p-rel js-product-page-image-wrap">
                 {%- load buy_button to "buy_button" q.content.parent_id=page.id q.content.parent_type="page" -%}
                 {% if buy_button.product != blank %}
                   {%- assign buyButtonImage = buy_button.product.image -%}
@@ -66,12 +66,12 @@
                 {%- endif -%}
 
                 {%- if productImage != blank or editmode -%}
-                  <div class="js-product-page-image">
+                  <div class="js-product-page-image  mar_b-32">
                     {% include 'content-item', _isProductImage: isProductImage, _imageData: productImage, _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic, _targetWidth: '1280' %}
                   </div>
                 {%- endif -%}
               </div>
-              <section class="content-body content-formatted mar_0-32 mar_t-32" data-search-indexing-allowed="true">
+              <section class="content-body content-formatted mar_0-32" data-search-indexing-allowed="true">
                 {% content name="gallery" %}
               </section>
             </div>
@@ -143,6 +143,9 @@
 
   {% include "site-signout" %}
   {% include "javascripts", _productPage: true %}
+  <script>
+    site.handleProductPageContent();
+  </script>
   {% include 'settings-popover', _productPage: true %}
 </body>
 </html>

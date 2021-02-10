@@ -37,6 +37,8 @@
 
 
   .form_field_select {
+    background-image: url('../assets/chevron-down-black.svg');
+
     .dark-background & {
       background-image: url('../assets/chevron-down-white.svg');
     }

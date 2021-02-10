@@ -422,6 +422,9 @@ p {
 .content-formatted .form_field_required .form_field_label:after {
   content: '*';
 }
+.content-formatted .form_field_select {
+  background-image: url("../assets/chevron-down-black.svg");
+}
 .dark-background .content-formatted .form_field_select {
   background-image: url("../assets/chevron-down-white.svg");
 }
@@ -687,6 +690,10 @@ p {
 }
 .content-formatted .edy-buy-button-container .edy-buy-button-variants {
   padding-bottom: 16px;
+  padding-top: 16px;
+}
+.content-formatted .edy-buy-button-container .edy-buy-button-variants .publicmode {
+  padding-top: 24px;
 }
 .content-formatted .edy-buy-button-variants .form_field {
   padding-top: 5px;
@@ -4906,6 +4913,14 @@ body .animate_translated-x--0 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+@media screen and (max-width: 752px) {
+  .flex_row.reverse-col-tablet {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
 }
 .flex_row-4 {
   -ms-flex-wrap: wrap;
