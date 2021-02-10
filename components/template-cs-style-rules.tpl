@@ -595,14 +595,36 @@ body.dark-background {
 }
 @media screen and (max-width: 900px) {
   .content-formatted h3, .content-formatted .product_item-btn h3, .content-formatted p h3 {
-    font-size: calc(var(--headings-subheading-font-size) / 1.8);
-    line-height: calc(var(--headings-subheading-line-height) / 1.8);
+    font-size: calc(var(--headings-subheading-font-size) / 1.4);
   }
 }
 @media screen and (max-width: 1024px) {
   .semimodal-relative .content-formatted h3, .semimodal-relative .content-formatted .product_item-btn h3, .semimodal-relative .content-formatted p h3 {
-    font-size: calc(var(--headings-subheading-font-size) / 1.8);
-    line-height: calc(var(--headings-subheading-line-height) / 1.8);
+    font-size: calc(var(--headings-subheading-font-size) / 1.4);
+  }
+}
+.content-formatted h4, .content-formatted .product_item-btn h4, .content-formatted p h4 {
+  font-size: var(--headings-heading-4-font-size);
+  font-style: var(--headings-heading-4-font-style);
+  font-weight: var(--headings-heading-4-font-weight);
+  line-height: var(--headings-heading-4-line-height);
+  color: var(--headings-heading-4-color);
+  text-align: var(--headings-heading-4-text-alignment);
+  -webkit-text-decoration: var(--headings-heading-4-text-decoration);
+          text-decoration: var(--headings-heading-4-text-decoration);
+  text-transform: var(--headings-heading-4-text-transform);
+  -webkit-hyphens: var(--headings-heading-4-hyphens);
+      -ms-hyphens: var(--headings-heading-4-hyphens);
+          hyphens: var(--headings-heading-4-hyphens);
+}
+@media screen and (max-width: 900px) {
+  .content-formatted h4, .content-formatted .product_item-btn h4, .content-formatted p h4 {
+    font-size: calc(var(--headings-heading-4-font-size) / 1.2);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .semimodal-relative .content-formatted h4, .semimodal-relative .content-formatted .product_item-btn h4, .semimodal-relative .content-formatted p h4 {
+    font-size: calc(var(--headings-heading-4-font-size) / 1.2);
   }
 }
 .content-formatted a:not(.custom-btn), .content-formatted .product_item-btn a:not(.custom-btn), .content-formatted p a:not(.custom-btn) {

@@ -749,14 +749,34 @@ body {
     hyphens: var(--headings-subheading-hyphens);
 
     @include query($tablet-1) {
-      font-size: calc(var(--headings-subheading-font-size) / 1.8);
-      line-height: calc(var(--headings-subheading-line-height) / 1.8);
+      font-size: calc(var(--headings-subheading-font-size) / 1.4);
     }
 
     .semimodal-relative & {
       @include query($desktop-1) {
-        font-size: calc(var(--headings-subheading-font-size) / 1.8);
-        line-height: calc(var(--headings-subheading-line-height) / 1.8);
+        font-size: calc(var(--headings-subheading-font-size) / 1.4);
+      }
+    }
+  }
+
+  h4 {
+    font-size: var(--headings-heading-4-font-size);
+    font-style: var(--headings-heading-4-font-style);
+    font-weight: var(--headings-heading-4-font-weight);
+    line-height: var(--headings-heading-4-line-height);
+    color: var(--headings-heading-4-color);
+    text-align: var(--headings-heading-4-text-alignment);
+    text-decoration: var(--headings-heading-4-text-decoration);
+    text-transform: var(--headings-heading-4-text-transform);
+    hyphens: var(--headings-heading-4-hyphens);
+
+    @include query($tablet-1) {
+      font-size: calc(var(--headings-heading-4-font-size) / 1.2);
+    }
+
+    .semimodal-relative & {
+      @include query($desktop-1) {
+        font-size: calc(var(--headings-heading-4-font-size) / 1.2);
       }
     }
   }
