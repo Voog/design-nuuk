@@ -225,6 +225,8 @@
 
 
           var itemType = $contentItemBox.data('item-type');
+          var itemId = $contentItemBox.data('item-id');
+
           var itemData = new Edicy.CustomData({
             type: itemType,
             id: itemId
