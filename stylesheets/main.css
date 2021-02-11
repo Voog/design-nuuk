@@ -4648,6 +4648,7 @@ article.post_wrapper .date-separator.hide-separator {
 
 .pad_container {
   padding: 40px 32px 32px;
+  z-index: 0;
 }
 .pad_container:hover {
   z-index: 1;
