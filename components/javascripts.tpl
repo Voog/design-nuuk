@@ -6,7 +6,7 @@
 <script src="{{ javascripts_path }}/global.min.js?nuuk=1.4"></script>
 
 {%- if editmode -%}
-  <script src="{{ javascripts_path }}/editmode.min.js?nuuk=2.0"></script>
+  <script src="{{ javascripts_path }}/editmode.min.js?nuuk=2.1"></script>
 {%- endif -%}
 
 {% comment %}Site search related javascript components.{% endcomment %}

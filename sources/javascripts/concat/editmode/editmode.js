@@ -472,10 +472,10 @@
           var positionPopover = function() {
             var settingsPopover = $('.js-layout_settings-popover');
             var settingsPopoverArrow = $('.layout_settings-arrow');
-            var arrowWidth = 32;
+
             if ($( window ).width() > 768) {
               settingsPopover.css({right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (settingsPopover.width() / 2)})
-              settingsPopoverArrow.css({right: settingsPopover.width() / 2 + arrowWidth / 2});
+              settingsPopoverArrow.css({right: settingsPopover.width() / 2});
             } else {
               settingsPopover.css({right: 0});
               settingsPopoverArrow.css({right: 72});
