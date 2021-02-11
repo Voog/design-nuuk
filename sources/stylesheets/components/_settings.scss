@@ -253,6 +253,10 @@ body .edy-bgpicker-toggle-button {
 
   .semimodal-relative & {
     margin: 16px 0 0 0;
+
+    @include query($tablet-1) {
+      margin: 0 0 0 0;
+    }
   }
 
   &:hover {
@@ -623,7 +627,7 @@ body {
     top: 48px;
 
     @include query($tablet-1) {
-      top: 24px;
+      top: 10px;
     }
   }
 }

@@ -33,12 +33,6 @@
 
       site.bindContentItemImgDropAreas('{{ dropAreaPlaceholder }}', "{{itemImageKey}}", "{{itemImageCropStateKey}}");
       site.bindContentItemImageCropToggle("{{itemImageCropStateKey}}");
-
-      {% if site.data.settings_root_item %}
-        rootItemValuesObj = {{ site.data.settings_root_item | json }};
-      {% else %}
-        rootItemValuesObj = {};
-      {% endif %};
     </script>
 
     <script>

@@ -143,6 +143,7 @@
     {% endif %}
   {% endfor %}
 
+  {% assign blog_news_layout = "Blog & News" %}
   {% assign product_list_layout = "Product list" %}
   {% assign product_layout = "Product" %}
 

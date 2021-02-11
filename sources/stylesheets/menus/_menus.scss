@@ -367,6 +367,9 @@
   bottom: -38px;
 }
 
-.menu-item-product.hidden {
-  display: none;
+.menu-item-product,
+.menu-item-product-list {
+  &.hidden {
+    display: none!important;
+  }
 }

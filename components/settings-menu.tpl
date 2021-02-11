@@ -27,6 +27,10 @@
         valuesObj.is_product_page_visible = true;
       }
 
+      if (!('is_product_list_page_visible' in valuesObj)) {
+        valuesObj.is_product_list_page_visible = true;
+      }
+
       {%- assign sideMenuTr = value -%}
 
       initSettingsEditor(
@@ -75,6 +79,15 @@
                 "off": false
               },
             },
+            {
+              "titleI18n": {{ "show_product_list_pages_in_menu" | lce | json }},
+              "type": "checkbox",
+              "key": "is_product_list_page_visible",
+              "states": {
+                "on": true,
+                "off": false
+              },
+            }
           ],
           dataKey: '{{menuSettingsKey}}',
           values: valuesObj,
@@ -138,8 +151,18 @@
 
             if (data.is_product_page_visible == true) {
               $('.menu-item-product').removeClass('hidden');
+              $('.menu-item-product').addClass('visible');
             } else {
               $('.menu-item-product').addClass('hidden');
+              $('.menu-item-product').addClass('hidden');
+            }
+
+            if (data.is_product_list_page_visible == true) {
+              $('.menu-item-product-list').removeClass('hidden');
+              $('.menu-item-product-list').addClass('visible');
+            } else {
+              $('.menu-item-product-list').removeClass('visible');
+              $('.menu-item-product-list').addClass('hidden');
             }
 
             {%- if menuSettings.max_width != blank -%}
