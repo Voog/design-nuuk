@@ -154,7 +154,7 @@
               $('.menu-item-product').addClass('visible');
             } else {
               $('.menu-item-product').addClass('hidden');
-              $('.menu-item-product').addClass('hidden');
+              $('.menu-item-product').removeClass('visible');
             }
 
             if (data.is_product_list_page_visible == true) {

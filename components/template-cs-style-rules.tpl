@@ -250,7 +250,7 @@ body.dark-background {
   color: var(--third-color);
   opacity: .7;
 }
-.menu-main .menu .menu-item.active a {
+.menu-main .menu .menu-item a.active {
   color: var(--header-mainmenu-active-color);
   font-weight: var(--header-mainmenu-active-font-weight);
   -webkit-text-decoration: var(--header-mainmenu-active-decoration);
@@ -259,30 +259,30 @@ body.dark-background {
   line-height: var(--header-mainmenu-line-height);
   text-transform: var(--header-mainmenu-text-transform);
 }
-.menu-main .menu .menu-item.active a.untranslated {
+.menu-main .menu .menu-item a.active.untranslated {
   color: #cc0000;
 }
-.menu-main .menu .menu-item.active a::before {
+.menu-main .menu .menu-item a.active::before {
   background-color: var(--header-mainmenu-active-color);
 }
-.dark-background .menu-main .menu .menu-item.active a::before {
+.dark-background .menu-main .menu .menu-item a.active::before {
   background-color: var(--third-color);
   opacity: .7;
 }
-.dark-background .menu-main .menu .menu-item.active a {
+.dark-background .menu-main .menu .menu-item a.active {
   color: var(--third-color);
   opacity: .7;
 }
-.menu-main .menu .menu-item.active a:hover {
+.menu-main .menu .menu-item a.active:hover {
   color: var(--header-mainmenu-hover-color);
   -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
           text-decoration: var(--header-mainmenu-hover-decoration);
   text-transform: var(--header-mainmenu-text-transform);
 }
-.menu-main .menu .menu-item.active a:hover::before {
+.menu-main .menu .menu-item a.active:hover::before {
   background-color: var(--header-mainmenu-hover-color);
 }
-.dark-background .menu-main .menu .menu-item.active a:hover {
+.dark-background .menu-main .menu .menu-item a.active:hover {
   color: var(--third-color);
   opacity: 1;
 }

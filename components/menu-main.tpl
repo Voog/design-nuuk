@@ -1,40 +1,47 @@
 <nav class="menu-main p-rel js-menu-main js-popover js-prevent-sideclick{% if _menuTop %} menu_top{% endif %}">
+  {%- if menuSettings.is_product_list_page_visible == false -%}
+    {%- assign isProductListItemVisible = false -%}
+  {% else %}
+    {%- assign isProductListItemVisible = true -%}
+  {% endif %}
+
+  {%- if menuSettings.is_product_page_visible == false -%}
+    {%- assign isProductItemVisible = false -%}
+  {% else %}
+    {%- assign isProductItemVisible = true -%}
+  {% endif %}
+
   <ul class="menu">
     {% unless site.root_item.hidden? %}
       {% menulink site.root_item wrapper-tag="li" wrapper-class="menu-item lvl-1" current-class="active" %}
     {% endunless %}
 
     {% for item in site.visible_menuitems %}
-      {%- if item.layout_title == product_list_layout -%}
-        {%- assign itemClass = 'menu-item-product-list' -%}
-
-        {%- if menuSettings.is_product_list_page_visible == false -%}
-          {%- assign isProductListItemVisible = false -%}
-        {%- else -%}
-          {%- assign isProductListItemVisible = true -%}
-        {%- endif -%}
-      {%- elsif item.layout_title == product_layout -%}
-        {%- assign itemClass = 'menu-item-product' -%}
-
-        {%- if menuSettings.is_product_page_visible == false -%}
-          {%- assign isProductItemVisible = false -%}
-        {%- else -%}
-          {%- assign isProductItemVisible = true -%}
-        {%- endif -%}
-      {%- endif -%}
-
-      {% if isProductListItemVisible == false or isProductItemVisible == false %}
-        {%- assign menuItemDisplayClass = 'hidden' -%}
-      {% else %}
-        {%- assign menuItemDisplayClass = 'visible' -%}
-      {% endif %}
-
       {%- if item.layout_title == product_list_layout or item.layout_title == product_layout -%}
-        <div class="{{itemClass}} {{menuItemDisplayClass}}">
-          {% menulink item wrapper-tag="li" wrapper-class="menu-item lvl-1" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
-        </div>
+        {%- if item.layout_title == product_list_layout -%}
+          {%- assign itemClass = 'menu-item-product-list' -%}
+          {% if isProductListItemVisible == false %}
+            {%- assign menuItemDisplayClass = 'hidden' -%}
+          {% else %}
+            {%- assign menuItemDisplayClass = 'visible' -%}
+          {% endif %}
+
+        {%- elsif item.layout_title == product_layout -%}
+          {% if isProductItemVisible == false %}
+            {%- assign menuItemDisplayClass = 'hidden' -%}
+          {% else %}
+            {%- assign menuItemDisplayClass = 'visible' -%}
+          {% endif %}
+          {%- assign itemClass = 'menu-item-product' -%}
+        {%- endif -%}
+
+        <li class="{{itemClass}} menu-item lvl-1 {{menuItemDisplayClass}}">
+          {% menulink item current-class="active" wrapper-class="menu-item lvl-1" untranslated-class="untranslated fci-editor-menuadd" %}
+        </li>
       {%- else -%}
-        {% menulink item wrapper-tag="li" wrapper-class="menu-item lvl-1" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
+        <li class="menu-item lvl-1">
+          {% menulink item current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
+        </li>
       {%- endif -%}
 
       {% if item.children? or editmode %}
@@ -44,31 +51,25 @@
               <ul class="menu">
                 {% for subitem in item.visible_children %}
                   {% if subitem.layout_title == product_list_layout or subitem.layout_title == product_layout %}
+
                     {%- if subitem.layout_title == product_list_layout -%}
                       {%- assign subItemClass = 'menu-item-product-list' -%}
+                      {% if isProductListItemVisible == false %}
+                        {%- assign menuSubItemDisplayClass = 'hidden' -%}
+                      {% else %}
+                        {%- assign menuSubItemDisplayClass = 'visible' -%}
+                      {% endif %}
 
-                      {%- if menuSettings.is_product_list_page_visible == false -%}
-                        {%- assign isSubItemProductListItemVisible = false -%}
-                      {%- else -%}
-                        {%- assign isSubItemProductListItemVisible = true -%}
-                      {%- endif -%}
                     {%- elsif subitem.layout_title == product_layout -%}
+                      {% if isProductItemVisible == false %}
+                        {%- assign menuSubItemDisplayClass = 'hidden' -%}
+                      {% else %}
+                        {%- assign menuSubItemDisplayClass = 'visible' -%}
+                      {% endif %}
                       {%- assign subItemClass = 'menu-item-product' -%}
-
-                      {%- if menuSettings.is_product_page_visible == false -%}
-                        {%- assign isSubItemProductItemVisible = false -%}
-                      {%- else -%}
-                        {%- assign isSubItemProductItemVisible = true -%}
-                      {%- endif -%}
                     {%- endif -%}
 
-                    {% if isSubItemProductListItemVisible == false or isSubItemProductItemVisible == false %}
-                      {%- assign menuItemDisplayClass = 'hidden' -%}
-                    {% else %}
-                      {%- assign menuItemDisplayClass = 'visible' -%}
-                    {% endif %}
-
-                    <div class="{{subItemClass}} {{menuItemDisplayClass}}">
+                    <div class="{{subItemClass}} {{menuSubItemDisplayClass}}">
                       {% menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
                     </div>
                   {% else %}

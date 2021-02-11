@@ -4490,9 +4490,11 @@ article.post_wrapper .date-separator.hide-separator {
 
 .menu-edy-btns {
   position: absolute;
-  right: 6px;
+  bottom: -46px;
   margin: 0;
-  bottom: -38px;
+  padding: 0;
+  left: 0;
+  list-style: none;
 }
 
 .menu-item-product.hidden,

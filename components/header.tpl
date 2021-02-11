@@ -1,8 +1,8 @@
 
+{%- assign menuSettings = site.data[menuSettingsKey] -%}
+
 {% include "site-search" %}
 {% include 'header-fixed' %}
-
-{%- assign menuSettings = site.data[menuSettingsKey] -%}
 
 {%- if menuSettings.max_width >= 1 -%}
   <style>
