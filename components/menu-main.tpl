@@ -83,12 +83,13 @@
           </div>
         {% endunless %}
       {% endif %}
+
       {% unless item.blog? %}
-        <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{menuItemDisplayClass}}{%- endif -%}">
           {%- if item.selected? and editmode and _semimodalMenu -%}
-            <li class="edit-btn mar_b-16">{% menuadd parent="item" %}</li>
+            <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{menuItemDisplayClass}}{%- endif -%}">
+              <li class="edit-btn mar_b-16">{% menuadd parent="item" %}</li>
+            </div>
           {%- endif -%}
-        </div>
       {% endunless %}
     {% endfor %}
 
