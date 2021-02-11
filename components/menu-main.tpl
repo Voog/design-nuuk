@@ -45,30 +45,30 @@
                 {% for subitem in item.visible_children %}
                   {% if subitem.layout_title == product_list_layout or subitem.layout_title == product_layout %}
                     {%- if subitem.layout_title == product_list_layout -%}
-                      {%- assign itemClass = 'menu-item-product-list' -%}
+                      {%- assign subItemClass = 'menu-item-product-list' -%}
 
                       {%- if menuSettings.is_product_list_page_visible == false -%}
-                        {%- assign isProductListItemVisible = false -%}
+                        {%- assign isSubItemProductListItemVisible = false -%}
                       {%- else -%}
-                        {%- assign isProductListItemVisible = true -%}
+                        {%- assign isSubItemProductListItemVisible = true -%}
                       {%- endif -%}
                     {%- elsif subitem.layout_title == product_layout -%}
-                      {%- assign itemClass = 'menu-item-product' -%}
+                      {%- assign subItemClass = 'menu-item-product' -%}
 
                       {%- if menuSettings.is_product_page_visible == false -%}
-                        {%- assign isProductItemVisible = false -%}
+                        {%- assign isSubItemProductItemVisible = false -%}
                       {%- else -%}
-                        {%- assign isProductItemVisible = true -%}
+                        {%- assign isSubItemProductItemVisible = true -%}
                       {%- endif -%}
                     {%- endif -%}
 
-                    {% if isProductListItemVisible == false or isProductItemVisible == false %}
+                    {% if isSubItemProductListItemVisible == false or isSubItemProductItemVisible == false %}
                       {%- assign menuItemDisplayClass = 'hidden' -%}
                     {% else %}
                       {%- assign menuItemDisplayClass = 'visible' -%}
                     {% endif %}
 
-                    <div class="{{itemClass}} {{menuItemDisplayClass}}">
+                    <div class="{{subItemClass}} {{menuItemDisplayClass}}">
                       {% menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
                     </div>
                   {% else %}
