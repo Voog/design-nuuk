@@ -70,9 +70,7 @@
           width: 20%;
           flex: auto;
         }
-      }
 
-      .menu-top & {
         .menu {
           flex-wrap: wrap;
         }
@@ -96,16 +94,37 @@
           .menu-main-wrapper {
             display: none;
           }
+
+          .header_title {
+            width: 100%;
+            padding: 16px 0 0 0;
+            text-align: center;
+          }
+
+          .header_components {
+            width: 100%;
+            justify-content: flex-start;
+          }
         }
       }
 
-      .header_title {
-        width: 60%;
-        justify-content: center;
-        text-align: center;
+      @include query($tablet-1) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
 
-        h1,h2,h3,h4,h5,h6,p {
+        .header_title {
+          width: 100%;
+          padding: 16px 0 0 0;
           text-align: center;
+        }
+
+        .menu-btn {
+          padding: 0;
+        }
+
+        .header_components {
+          width: 100%;
+          justify-content: flex-start;
         }
       }
     }

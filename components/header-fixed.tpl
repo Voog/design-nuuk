@@ -5,7 +5,7 @@
 
 <header class="header_fixed{% if menuPos == 'is_top_fixed'%} relative{% endif %}{% if menuTop %} menu-top{% endif %}">
   <div class="header_fixed-content">
-    <button class="menu-btn js-menu-btn js-prevent-sideclick{% if menuTop == true %} hidden-desktop{% endif %}">
+    <button class="menu-btn js-menu-btn js-prevent-sideclick hidden-tablet {% if menuTop == true %} hidden-desktop{% endif %}">
       <div>
         <span class="menu-stripe"></span>
         <span class="menu-stripe"></span>
@@ -24,6 +24,16 @@
     </div>
 
     <div class="header_components">
+      <div class="hidden-desktop mar_r-auto">
+        <button class="menu-btn js-menu-btn js-prevent-sideclick">
+          <div>
+            <span class="menu-stripe"></span>
+            <span class="menu-stripe"></span>
+          </div>
+          <label>{{ 'menu' | lc }}</label>
+        </button>
+      </div>
+
       <div class="header_components-desktop">
         {% if show_language_menu_popover %}
           <div class="js-toggle-menu-language menu-language-toggle js-prevent-sideclick p-rel" tabindex=0>
