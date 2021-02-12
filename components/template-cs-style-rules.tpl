@@ -296,11 +296,11 @@ body.dark-background {
   line-height: var(--menu-sub-line-height);
   text-transform: var(--menu-sub-text-transform);
 }
+.dark-background .menu-main .menu .menu-sub .menu-item a {
+  color: var(--third-color);
+}
 .menu-main .menu .menu-sub .menu-item a.untranslated {
   color: #cc0000;
-}
-.menu-main .menu .menu-sub .menu-item a::after {
-  background-color: var(--menu-sub-color);
 }
 .menu-main .menu .menu-sub .menu-item a:hover {
   color: var(--menu-sub-hover-color);
@@ -311,11 +311,20 @@ body.dark-background {
   line-height: var(--menu-sub-hover-line-height);
   text-transform: var(--menu-sub-hover-text-transform);
 }
+.dark-background .menu-main .menu .menu-sub .menu-item a:hover {
+  color: var(--third-color);
+}
 .menu-main .menu .menu-sub .menu-item a:hover::before {
   border-color: var(--menu-sub-hover-color);
 }
+.dark-background .menu-main .menu .menu-sub .menu-item a:hover::before {
+  border-color: var(--third-color);
+}
 .menu-main .menu .menu-sub .menu-item a::before {
   border-color: var(--menu-sub-hover-color);
+}
+.dark-background .menu-main .menu .menu-sub .menu-item a::before {
+  border-color: var(--third-color);
 }
 .menu-main .menu .menu-sub .menu-item.active a {
   color: var(--menu-sub-active-color);
@@ -329,8 +338,14 @@ body.dark-background {
 .menu-main .menu .menu-sub .menu-item.active a.untranslated {
   color: #cc0000;
 }
+.dark-background .menu-main .menu .menu-sub .menu-item.active a {
+  color: var(--third-color);
+}
 .menu-main .menu .menu-sub .menu-item.active a::before {
   border-color: var(--menu-sub-active-color);
+}
+.dark-background .menu-main .menu .menu-sub .menu-item.active a::before {
+  border-color: var(--third-color);
 }
 .menu-main .menu .menu-sub .menu-item.active a:hover {
   color: var(--menu-sub-color);
@@ -340,9 +355,12 @@ body.dark-background {
   font-style: var(--menu-sub-font-style);
   line-height: var(--menu-sub-line-height);
 }
-.menu-main .menu .menu-sub .menu-item.active a:hover svg,
-.menu-main .menu .menu-sub .menu-item.active a:hover path {
+.menu-main .menu .menu-sub .menu-item.active a:hover svg, .menu-main .menu .menu-sub .menu-item.active a:hover path {
   fill: var(--menu-sub-color);
+}
+.dark-background .menu-main .menu .menu-sub .menu-item.active a:hover svg,
+.dark-background .menu-main .menu .menu-sub .menu-item.active a:hover path {
+  fill: var(--third-color);
 }
 
 .dark-background .light-background .header_components-tablet,

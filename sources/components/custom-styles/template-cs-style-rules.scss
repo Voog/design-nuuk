@@ -395,12 +395,12 @@ body {
         line-height: var(--menu-sub-line-height);
         text-transform: var(--menu-sub-text-transform);
 
-        &.untranslated {
-          color: $red;
+        .dark-background & {
+          color: var(--third-color);
         }
 
-        &::after {
-          background-color: var(--menu-sub-color);
+        &.untranslated {
+          color: $red;
         }
 
         &:hover {
@@ -411,13 +411,25 @@ body {
           line-height: var(--menu-sub-hover-line-height);
           text-transform: var(--menu-sub-hover-text-transform);
 
+          .dark-background & {
+            color: var(--third-color);
+          }
+
           &::before {
             border-color: var(--menu-sub-hover-color);
+
+            .dark-background & {
+              border-color: var(--third-color);
+            }
           }
         }
 
         &::before {
           border-color: var(--menu-sub-hover-color);
+
+          .dark-background & {
+            border-color: var(--third-color);
+          }
         }
       }
 
@@ -433,8 +445,16 @@ body {
           color: $red;
         }
 
+        .dark-background & {
+          color: var(--third-color);
+        }
+
         &::before {
           border-color: var(--menu-sub-active-color);
+
+          .dark-background & {
+            border-color: var(--third-color);
+          }
         }
 
         &:hover {
@@ -447,6 +467,10 @@ body {
           svg,
           path {
             fill: var(--menu-sub-color);
+
+            .dark-background & {
+              fill: var(--third-color);
+            }
           }
         }
       }
