@@ -36,7 +36,7 @@
     {%- endcapture -%}
 
     {% if post-box == "article" %}
-      <div class="post_narrow mar_b-56">
+      <div class="post_narrow{%- if article.data[itemImageKey] != blank or editmode %} mar_b-56{%- endif -%}">
         {{ post_title }}
         {{ post_details }}
       </div>
