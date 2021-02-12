@@ -110,13 +110,26 @@
   &filters {
     display: flex;
     align-items: baseline;
-    border-bottom: 1px solid;
-    padding-bottom: 8px;
     padding-top: 32px;
+    border-bottom: 1px solid;
+    flex-wrap: nowrap;
+
+    @include query($tablet-1) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      border-bottom: none;
+    }
 
     &-item {
       display: flex;
       align-items: baseline;
+      padding-bottom: 16px;
+
+      @include query($tablet-1) {
+        border-bottom: 1px solid;
+        flex: auto;
+        padding-bottom: 8px;
+      }
     }
 
     &.content-formatted {

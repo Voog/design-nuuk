@@ -1,6 +1,6 @@
 <div class="product_filters flex_row flex_row-3 content-formatted d-none">
   <div class="product_filters-item">
-    <span class="mar_r-8">{{ "sort" | lc }}</span>
+    <span class="mar_r-8 op-0-5 no-wrap">{{ "sort" | lc }}:</span>
     <div class="form_field mar_r-32">
       <label class="form_field_label" for="field_field_filter"></label>
       <select class="form_field_select product_list-filter" id="field_field_filter">
@@ -14,7 +14,7 @@
   </div>
 
   <div class="product_filters-item">
-    <span class="mar_r-8">{{ "search" | lc }}:</span>
+    <span class="mar_r-8 op-0-5 no-wrap">{{ "search" | lc }}:</span>
     <div class="form_field" style="padding-top: 0;">
       <label for="product-list-search" class="form_field_label"></label>
       <input type="search" placeholder='{{ "search_product" | lc | escape_once }}&#8230;' id="product-list-search" class="form_field_textfield input_option product_list-search">

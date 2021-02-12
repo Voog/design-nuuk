@@ -30,6 +30,10 @@
     flex-direction: column;
     overflow: auto;
 
+    .editmode & {
+      min-height: calc(100vh - 72px);
+    }
+
     @include query($tablet-1) {
       overflow: unset;
       padding: 16px;
@@ -39,6 +43,7 @@
       min-width: 100% !important;
       max-width: 100% !important;
       overflow: auto;
+      overflow-x: hidden;
     }
 
     transform: translateX(-100%);
