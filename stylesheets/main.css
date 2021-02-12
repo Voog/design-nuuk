@@ -4459,20 +4459,23 @@ article.post_wrapper .date-separator.hide-separator {
 .menu-main .menu .menu-item.active a {
   color: #000000;
 }
+.semimodal .menu-main .menu .menu-item {
+  margin-right: 0;
+}
 .menu-main .menu .menu-item a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 16px;
-  line-height: 36px;
-  padding-left: 24px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   position: relative;
 }
+.semimodal .menu-main .menu .menu-item a {
+  padding-left: 24px;
+}
 @media screen and (max-width: 900px) {
-  .menu-main .menu .menu-item a {
+  .semimodal .menu-main .menu .menu-item a {
     padding-left: 16px;
   }
 }

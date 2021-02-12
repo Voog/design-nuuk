@@ -187,16 +187,23 @@
         color: #000000;
       }
 
+      .semimodal & {
+        margin-right: 0;
+      }
+
       a {
         display: flex;
-        font-size: 16px;
-        line-height: 36px;
-        padding-left: 24px;
         align-items: center;
         position: relative;
 
-        @include query($tablet-1) {
-          padding-left: 16px;
+
+
+        .semimodal & {
+          padding-left: 24px;
+
+          @include query($tablet-1) {
+            padding-left: 16px;
+          }
         }
       }
     }
