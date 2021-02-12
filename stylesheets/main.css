@@ -685,6 +685,13 @@ p {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: auto;
+}
+.product-page .content-formatted .edy-buy-button {
+  width: 100%;
 }
 .content-formatted .edy-buy-button-container .edy-buy-button-variants {
   padding-bottom: 16px;
@@ -692,6 +699,24 @@ p {
 }
 .content-formatted .edy-buy-button-container .edy-buy-button-variants .publicmode {
   padding-top: 24px;
+}
+.content-formatted .edy-buy-button-align-right .edy-buy-button-variants .form_field {
+  margin: 0 0 0 auto;
+}
+.content-formatted .edy-buy-button-align-center .edy-buy-button-variants .form_field {
+  margin: 0 auto;
+}
+.content-formatted .edy-buy-button-variants {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+.product-page .content-formatted .edy-buy-button-variants {
+  display: block;
 }
 .content-formatted .edy-buy-button-variants .form_field {
   padding-top: 5px;
@@ -703,6 +728,7 @@ p {
       align-self: center;
   border-top: 1px solid var(--secondary-color);
   border-bottom: 1px solid var(--secondary-color);
+  margin: 0 auto 0 0;
 }
 .content-formatted .edy-buy-button-variants .form_field .form_field_label {
   margin-bottom: 0;
