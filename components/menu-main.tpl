@@ -13,7 +13,9 @@
 
   <ul class="menu">
     {% unless site.root_item.hidden? %}
-      {% menulink site.root_item wrapper-tag="li" wrapper-class="menu-item lvl-1" current-class="active" %}
+      <li class="menu-item lvl-1">
+        {% menulink site.root_item current-class="active" %}
+      </li>
     {% endunless %}
 
     {% for item in site.visible_menuitems %}

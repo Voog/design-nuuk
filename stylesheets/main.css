@@ -4433,7 +4433,7 @@ article.post_wrapper .date-separator.hide-separator {
   display: none;
 }
 @media screen and (min-width: 900px) {
-  .menu-main:not(.menu_top) .menu .menu-item.active a:before {
+  .menu-main:not(.menu_top) .menu .menu-item a.active:before {
     content: '';
     border: 1px solid;
     height: 6px;
@@ -4525,6 +4525,9 @@ article.post_wrapper .date-separator.hide-separator {
 
 .menu-sub.menu-breadcrumbs .menu-item a {
   font-size: 14px;
+}
+.menu-sub.menu-breadcrumbs .menu-item a.active {
+  font-weight: 700;
 }
 
 .menu-edy-btns {

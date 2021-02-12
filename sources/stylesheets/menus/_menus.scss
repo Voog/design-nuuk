@@ -264,7 +264,7 @@
     &:not(.menu_top) {
       .menu {
         .menu-item {
-          &.active a {
+          a.active {
             &:before {
               content: '';
               border: 1px solid;
@@ -275,6 +275,7 @@
             }
           }
         }
+
         .menu-sub {
           .menu-item.active a {
             &:before {
@@ -357,6 +358,10 @@
 .menu-sub.menu-breadcrumbs {
   .menu-item a {
     font-size: 14px;
+
+    &.active {
+      font-weight: 700;
+    }
   }
 }
 
