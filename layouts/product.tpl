@@ -14,7 +14,7 @@
   {% assign bottom_content_has_content = true %}
 {% endunless %}
 
-<body class="product-page body-bg_picker--area" {{ body_bg_type }}">
+<body class="product-page body-bg_picker--area {{ body_bg_type }}">
   {% include "template-svg-spritesheet" %}
   <div class="body-bg_color"></div>
 
