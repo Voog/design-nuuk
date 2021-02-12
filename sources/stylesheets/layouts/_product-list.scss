@@ -129,6 +129,22 @@
         border-bottom: 1px solid;
         flex: auto;
         padding-bottom: 8px;
+        margin-bottom: 8px;
+      }
+
+      &:first-child {
+        .form_field {
+          margin-right: 32px;
+
+          @include query($tablet-1) {
+            margin-right: 0;
+            width: 100%;
+
+            .form_field_select {
+              width: 100%;
+            }
+          }
+        }
       }
     }
 
