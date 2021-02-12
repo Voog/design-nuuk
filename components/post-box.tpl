@@ -47,7 +47,18 @@
       {%- assign isPostImageStatic = true -%}
     {% endif %}
     {%- if article.data[itemImageKey] != blank or editmode -%}
-      {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic, _targetWidth: '2999' %}
+      <div class="p-rel">
+        <div {% unless article.published? or post-box == "article" %}class="post_unpublished"{%- endunless -%}>
+          {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic, _targetWidth: '2999' %}
+        </div>
+        {%- unless article.published? or post-box == "article" -%}
+          <div class="post_unpublished-overlay">
+            <div class="post_unpublished-overlay--box">
+              {{ "draft" | lce  | escape_once }}
+            </div>
+          </div>
+        {%- endunless -%}
+      </div>
     {%- endif -%}
 
     {% if post-box != "article" %}

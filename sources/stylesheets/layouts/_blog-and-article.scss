@@ -13,50 +13,87 @@
     }
 
     &item {
-      width: calc(50% - 32px);
-      flex: auto;
+      width: calc(35% - 32px);
       padding: 0 16px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
 
       &:first-child {
-        width: 100%;
+        width: calc(70% - 32px);
+      }
+
+      &:nth-child(2) {
+        width: calc(30% - 32px);
       }
 
       .post_wrapper {
-        margin-bottom: 16px;
-        padding-bottom: 32px;
-
-        @media screen and (max-width: $tablet-1) {
-          margin-bottom: 16px;
-          padding-bottom: 16px;
-        }
-
         .post_excerpt {
-          margin-bottom: 10px;
+          margin-bottom: 8px;
         }
       }
 
-      &:nth-last-child(-n+2) {
+      &:nth-child(n+2) {
         .post_wrapper {
           border-bottom: none;
           h3 {
-            font-size: 18px;
-            line-height: 24px;
+            font-size: 18px !important;
+            line-height: 24px !important;
           }
         }
       }
 
-      @media screen and (max-width: $tablet-1) {
+      @include query($tablet-1) {
         width: 100%;
         padding: 0;
+        padding-bottom: 16px;
+
+        &:first-child {
+          width: 100%;
+        }
+
+        &:nth-child(2) {
+          width: 100%;
+        }
 
         h3 {
           font-size: 18px;
           line-height: 24px;
         }
+      }
 
-        &:nth-last-child(2) {
-          .post {
-            border-bottom: 1px solid;
+
+      .semimodal-relative & {
+        @include query($desktop-2) {
+          width: calc(50% - 32px);
+
+          &:first-child {
+            width: 100%;
+          }
+
+          &:nth-child(2) {
+            width: calc(50% - 32px);
+          }
+        }
+
+        @include query($desktop-1) {
+          width: 100%;
+          padding: 0;
+          padding-bottom: 16px;
+
+          width: 100%;
+
+          &:first-child {
+            width: 100%;
+          }
+
+          &:nth-child(2) {
+            width: 100%;
+          }
+
+
+          h3 {
+            font-size: 18px;
+            line-height: 24px;
           }
         }
       }
@@ -105,6 +142,33 @@
 
     &body {
       margin-top: 16px;
+    }
+  }
+
+  &unpublished {
+    opacity: .1;
+    @include transition(opacity 300ms);
+
+    .post_wrapper:hover & {
+      opacity: 1;
+    }
+
+    &-overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      &--box {
+        font-size: 12px;
+        padding: 8px;
+        border: 2px solid $primary-color;
+        display: inline-flex;
+      }
     }
   }
 
