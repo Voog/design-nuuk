@@ -316,7 +316,7 @@
       "--menu-sub-active-font-size"
     ]
   */
-  --menu-sub-active-font-size: 16px;
+  --menu-sub-font-size: 16px;
   /* VoogStyle
     "pathI18n": ["header", "sub_menu", "normal"],
     "titleI18n": "line_height",
