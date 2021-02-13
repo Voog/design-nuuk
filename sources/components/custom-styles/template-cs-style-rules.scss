@@ -861,6 +861,21 @@ body {
       }
     }
   }
+
+  @include query($tablet-1) {
+    &.header_title {
+      .dark-background & {
+        color: var(--header-site-title-color);
+      }
+
+      a, p, h1, h2, h3, h4, h5, h6 {
+        .dark-background & {
+          color: var(--header-site-title-color);
+        }
+      }
+    }
+  }
+
   // Code blocks and preformatted content.
   .custom-btn,
   .form_submit input {
