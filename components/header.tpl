@@ -64,7 +64,12 @@
     </div>
 
     <div class="site_title content-formatted">
-      {% contentblock name="site_title" xpage="true"  publish_default_content="true" %}
+      {%- if menuSettings.positioning ==  "is_side_always_open" -%}
+        {% assign isReadOnly = false %}
+      {%- else -%}
+        {% assign isReadOnly = true %}
+      {%- endif -%}
+      {% contentblock name="site_title" xpage="true"  publish_default_content="true" readonly=isReadOnly %}
         {{site.header}}
       {% endcontentblock %}
     </div>

@@ -2512,9 +2512,9 @@ body .edy-ecommerce-shopping-cart-button .edy-ecommerce-total-price {
 }
 @media screen and (max-width: 900px) {
   .cart_btn-container {
-    position: fixed;
-    bottom: -38px;
-    right: -100%;
+    position: absolute;
+    bottom: -62px;
+    right: -100px;
     background: white;
     border-radius: 28px;
     padding: 2px;
@@ -2531,6 +2531,9 @@ body .edy-ecommerce-shopping-cart-button .edy-ecommerce-total-price {
             justify-content: center;
     -webkit-box-shadow: 0 0px 10px #0000001a, 0 0 5px #0000001a;
             box-shadow: 0 0px 10px #0000001a, 0 0 5px #0000001a;
+  }
+  .edtmode .cart_btn-container {
+    display: none;
   }
 }
 
@@ -2815,7 +2818,6 @@ body.edy-checkout-button-visible {
     -webkit-box-flex: 0;
         -ms-flex: none;
             flex: none;
-    position: fixed;
   }
 }
 .front-page .header_fixed {

@@ -55,9 +55,13 @@ body .edy-ecommerce-shopping-cart-button {
   }
 
   @include query($tablet-1) {
-    position: fixed;
-    bottom: -38px;
-    right: -100%;
+    .edtmode & {
+      display: none;
+    }
+
+    position: absolute;
+    bottom: -62px;
+    right: -100px;
     background: white;
     border-radius: 28px;
     padding: 2px;
