@@ -8,7 +8,7 @@
     right: 0;
     width: 100%;
     z-index: $zindex-header-fixed;
-    padding: 32px;
+    padding: 16px 32px;
     box-sizing: border-box;
     @include transition(all 600ms);
 
@@ -18,10 +18,6 @@
     }
 
     .semimodal-open:not(.semimodal-relative) & {
-      background-color: $white;
-    }
-
-    @include query($tablet-1) {
       background-color: $white;
     }
 
@@ -38,6 +34,7 @@
 
     @include query($tablet-1) {
       padding: 16px;
+      background-color: $white;
     }
 
     &-content {
@@ -65,7 +62,6 @@
       .menu-top & {
         flex-wrap: wrap;
 
-        .header_components,
         .menu-btn {
           width: 20%;
           flex: auto;
@@ -90,41 +86,55 @@
           justify-content: center;
         }
 
+        @include query($tablet-1, 'min-width') {
+          .header_components {
+            width: 20%;
+            flex: auto;
+          }
+        }
+
         @include query($tablet-1) {
+          flex-wrap: nowrap;
+
           .menu-main-wrapper {
             display: none;
           }
 
           .header_title {
-            width: 100%;
-            padding: 16px 0 0 0;
+            width: calc(100% - 28px);
+            padding: 0;
             text-align: center;
           }
 
-          .header_components {
-            width: 100%;
-            justify-content: flex-start;
+          .menu-btn {
+            padding: 0;
+            margin-right: 16px;
+            width: 28px;
           }
         }
       }
 
       @include query($tablet-1) {
-        flex-direction: column-reverse;
-        align-items: flex-start;
+        flex-wrap: nowrap;
 
         .header_title {
-          width: 100%;
-          padding: 16px 0 0 0;
+          width: calc(100% - 28px);
+          padding: 0;
           text-align: center;
         }
 
         .menu-btn {
           padding: 0;
+          margin-right: 16px;
+          width: 28px;
         }
 
         .header_components {
-          width: 100%;
-          justify-content: flex-start;
+          width: 0;
+          margin: 0;
+          padding: 0;
+          flex: none;
+          position: fixed;
         }
       }
     }
@@ -169,15 +179,17 @@
 
     &-desktop {
       display: flex;
+
+      @include query($tablet-1) {
+        display: none;
+      }
     }
 
     &-tablet {
       display: flex;
       width: 100%;
-      justify-content: space-between;
-      border-bottom: 1px solid;
-      padding: 16px;
-      margin-bottom: 16px;
+      justify-content: flex-end;
+      padding: 0;
       box-sizing: border-box;
 
       @include query($tablet-1, 'min-width') {

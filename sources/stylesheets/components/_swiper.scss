@@ -1,7 +1,10 @@
 .swiper-container {
   width: 100%;
-  overflow: unset !important;
   position: relative;
+
+  .editmode & {
+    overflow: unset !important;
+  }
 
   .swiper-wrapper {
     width: 100%;
