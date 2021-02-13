@@ -52,7 +52,7 @@
                 <span>{{ current_language_title }}</span><span class="mar_l-8">{% include 'ico-chevron-down' %}</span>
               </button>
               {% if show_language_menu_popover %}
-                {% include "menu-language-popover" %}
+                {% include "menu-language-popover", _semimodal: true %}
               {% endif %}
             </div>
           {% endif %}

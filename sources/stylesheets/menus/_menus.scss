@@ -159,6 +159,12 @@
     .semimodal & {
       padding-bottom: 16px;
     }
+
+    .lang_menu-popover & {
+      .semimodal & {
+        padding-bottom: 8px;
+      }
+    }
     a {
       display: block;
       word-break: break-word;
