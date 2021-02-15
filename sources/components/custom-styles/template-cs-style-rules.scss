@@ -356,6 +356,11 @@ body {
       line-height: var(--header-mainmenu-line-height);
       text-transform: var(--header-mainmenu-text-transform);
 
+      @include query($tablet-1) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+
       &.untranslated {
         color: $red;
       }
@@ -456,6 +461,11 @@ body {
         font-style: var(--menu-sub-active-font-style);
         line-height: var(--menu-sub-active-line-height);
         text-transform: var(--menu-sub-active-text-transform);
+
+        @include query($tablet-1) {
+          font-size: 18px;
+          line-height: 21px;
+        }
 
         &.untranslated {
           color: $red;

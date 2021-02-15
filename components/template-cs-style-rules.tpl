@@ -265,6 +265,12 @@ body.dark-background {
   line-height: var(--header-mainmenu-line-height);
   text-transform: var(--header-mainmenu-text-transform);
 }
+@media screen and (max-width: 900px) {
+  .menu-main .menu .menu-item a.active {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
 .menu-main .menu .menu-item a.active.untranslated {
   color: #cc0000;
 }
@@ -349,6 +355,12 @@ body.dark-background {
   font-style: var(--menu-sub-active-font-style);
   line-height: var(--menu-sub-active-line-height);
   text-transform: var(--menu-sub-active-text-transform);
+}
+@media screen and (max-width: 900px) {
+  .menu-main .menu .menu-sub .menu-item.active a {
+    font-size: 18px;
+    line-height: 21px;
+  }
 }
 .menu-main .menu .menu-sub .menu-item.active a.untranslated {
   color: #cc0000;
