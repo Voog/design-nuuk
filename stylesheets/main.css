@@ -4603,7 +4603,7 @@ article.post_wrapper .date-separator.hide-separator {
   }
 }
 .semimodal .menu .menu-item {
-  padding-bottom: 16px;
+  padding-bottom: 8px;
 }
 .semimodal .lang_menu-popover .menu .menu-item {
   padding-bottom: 8px;
@@ -4659,7 +4659,7 @@ article.post_wrapper .date-separator.hide-separator {
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  top: 40px;
+  top: calc((var(--header-mainmenu-font-size) * var(--header-mainmenu-line-height)) + 8px);
   right: 0;
   -webkit-transition: opacity 200ms;
   -o-transition: opacity 200ms;

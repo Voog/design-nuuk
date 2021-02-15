@@ -325,7 +325,6 @@ body.dark-background {
           text-decoration: var(--menu-sub-hover-decoration);
   font-weight: var(--menu-sub-hover-font-weight);
   font-style: var(--menu-sub-hover-font-style);
-  line-height: var(--menu-sub-hover-line-height);
   text-transform: var(--menu-sub-hover-text-transform);
 }
 .dark-background .menu-main .menu .menu-sub .menu-item a:hover {

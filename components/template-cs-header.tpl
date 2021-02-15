@@ -94,13 +94,13 @@
     "pathI18n": ["header", "main_menu", "normal"],
     "titleI18n": "line_height",
     "editor": "rangePicker",
-    "min": 8,
-    "max": 60,
+    "min": 1,
+    "max": 3,
     "step": 0.1,
     "unit": "",
     "scope": "global"
   */
-  --header-mainmenu-line-height: 24px;
+  --header-mainmenu-line-height: 1.5;
   /* VoogStyle
     "pathI18n": ["header", "main_menu", "normal"],
     "titleI18n": "text_color",
@@ -321,13 +321,13 @@
     "pathI18n": ["header", "sub_menu", "normal"],
     "titleI18n": "line_height",
     "editor": "rangePicker",
-    "min": 8,
-    "max": 60,
+    "min": 1,
+    "max": 3,
     "step": 0.1,
     "unit": "",
     "scope": "global"
   */
-  --header-mainmenu-line-height: 24px;
+  --menu-sub-line-height: 1.5;
   /* VoogStyle
     "pathI18n": ["header", "sub_menu", "normal"],
     "titleI18n": "font_size",

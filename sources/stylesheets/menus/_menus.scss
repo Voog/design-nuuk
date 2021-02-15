@@ -157,7 +157,7 @@
 
   .menu-item {
     .semimodal & {
-      padding-bottom: 16px;
+      padding-bottom: 8px;
     }
 
     .lang_menu-popover & {
@@ -217,7 +217,7 @@
         opacity: 0;
         pointer-events: none;
         position: absolute;
-        top: 40px;
+        top: calc((var(--header-mainmenu-font-size) * var(--header-mainmenu-line-height)) + 8px);
         right: 0;
         @include transition(opacity 200ms);
 
