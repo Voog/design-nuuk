@@ -17,6 +17,22 @@
       box-shadow: none !important;
     }
 
+    .front-page & {
+      position: fixed;
+
+      @include query($tablet-1) {
+        position: sticky;
+      }
+    }
+
+    &.relative {
+      position: relative;
+
+      @include query($tablet-1) {
+        position: sticky;
+      }
+    }
+
     .semimodal-open:not(.semimodal-relative) & {
       background-color: $white;
     }
@@ -136,14 +152,6 @@
           flex: none;
         }
       }
-    }
-
-    .front-page & {
-      position: fixed;
-    }
-
-    &.relative {
-      position: relative;
     }
 
     @include query($tablet-1, 'min-width') {

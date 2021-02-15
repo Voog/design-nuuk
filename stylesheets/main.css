@@ -2674,6 +2674,24 @@ body.edy-checkout-button-visible {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
+.front-page .header_fixed {
+  position: fixed;
+}
+@media screen and (max-width: 900px) {
+  .front-page .header_fixed {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+.header_fixed.relative {
+  position: relative;
+}
+@media screen and (max-width: 900px) {
+  .header_fixed.relative {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
 .semimodal-open:not(.semimodal-relative) .header_fixed {
   background-color: #ffffff;
 }
@@ -2819,12 +2837,6 @@ body.edy-checkout-button-visible {
         -ms-flex: none;
             flex: none;
   }
-}
-.front-page .header_fixed {
-  position: fixed;
-}
-.header_fixed.relative {
-  position: relative;
 }
 @media screen and (min-width: 900px) {
   .semimodal-relative .header_fixed {
