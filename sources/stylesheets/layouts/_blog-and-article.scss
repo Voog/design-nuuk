@@ -124,16 +124,26 @@
       bottom: 0;
       left: 0;
       right: 0;
-      @include transition(opacity 300ms);
+      transform: translatey(32px);
+      @include transition(all 300ms);
     }
+
+    .post_title,
+      .post_content {
+        opacity: 1;
+        @include transition(opacity 300ms);
+      }
 
     &:hover {
       .post_title,
       .post_content {
         opacity: .6;
+        @include transition(all 300ms);
       }
       .post_image-overlay {
         opacity: 1;
+        transform: translatey(0);
+        @include transition(all 300ms);
 
         &--box {
           width: 56px;
@@ -185,10 +195,11 @@
 
   &unpublished {
     opacity: .1;
-    @include transition(opacity 300ms);
+    @include transition(opacity 600ms);
 
     .post_wrapper:hover & {
       opacity: 1;
+      @include transition(opacity 600ms);
     }
 
     &-overlay {
