@@ -3231,7 +3231,7 @@ body.edy-checkout-button-visible {
   margin-bottom: 16px;
   padding-bottom: 16px;
 }
-.blog_listing-item:first-child {
+.blog_listing-item:first-child, .blog_listing-item:last-child:nth-child(odd) {
   width: calc(70% - 32px);
 }
 .blog_listing-item:nth-child(2) {
@@ -3253,7 +3253,7 @@ body.edy-checkout-button-visible {
     padding: 0;
     padding-bottom: 16px;
   }
-  .blog_listing-item:first-child {
+  .blog_listing-item:first-child, .blog_listing-item:last-child:nth-child(odd) {
     width: 100%;
   }
   .blog_listing-item:nth-child(2) {
