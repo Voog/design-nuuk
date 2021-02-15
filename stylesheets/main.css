@@ -3455,6 +3455,12 @@ body.edy-checkout-button-visible {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.post_nav-link.post_nav-link--older .post_nav-link--inner.without-image.static {
+  opacity: .5;
 }
 @media screen and (max-width: 480px) {
   .post_nav-link.post_nav-link--older .post_nav-link--inner {
@@ -3495,6 +3501,12 @@ body.edy-checkout-button-visible {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.post_nav-link.post_nav-link--newer .post_nav-link--inner.without-image.static {
+  opacity: .5;
 }
 @media screen and (max-width: 480px) {
   .post_nav-link.post_nav-link--newer .post_nav-link--inner {
@@ -3534,7 +3546,7 @@ body.edy-checkout-button-visible {
 @media screen and (min-width: 480px) {
   .post_nav-link--inner.without-image {
     position: absolute;
-    top: 82px;
+    height: 100%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -3599,7 +3611,7 @@ body.edy-checkout-button-visible {
   opacity: .7;
 }
 .post_nav-link--inner:hover.without-image.static {
-  opacity: 1;
+  opacity: .5;
 }
 .post_nav-link--inner:hover .post_nav-image {
   opacity: 1;

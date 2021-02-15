@@ -68,18 +68,23 @@
 
             <div class="flex_row flex_row-3 mar_0-16-neg related_posts mar_t-32">
               {%- load articles to "articles" q.article.tag$in=article.tags -%}
+              {%- assign relatedArticleCounter = 0 -%}
+
               {% for article in articles %}
-                {%- if article.id != current_article_id -%}
+                {%- if article.id != current_article_id and article.published? -%}
                   <div class="flex_row-3--item">
                     <div class="mar_0-16">
                       {% include "post-box" %}
                     </div>
                   </div>
-                  {%- if forloop.index == 3 -%}
-                    {% break %}
-                  {%- endif -%}
+                  {% assign relatedArticleCounter = relatedArticleCounter | plus: 1 %}
+                {%- endif -%}
+                {%- if relatedArticleCounter == 3 -%}
+                  {% break %}
                 {%- endif -%}
               {% endfor %}
+
+              {%- assign relatedArticleCounter = 0 -%}
             </div>
           </div>
 

@@ -216,6 +216,11 @@
 
           &.without-image {
             align-items: flex-end;
+            justify-content: center;
+
+            &.static {
+              opacity: .5;
+            }
           }
 
           @include query($mobile-1) {
@@ -248,6 +253,11 @@
 
           &.without-image {
             align-items: flex-start;
+            justify-content: center;
+
+            &.static {
+              opacity: .5;
+            }
           }
 
           @include query($mobile-1) {
@@ -275,7 +285,7 @@
 
           @include query($mobile-1, 'min-width') {
             position: absolute;
-            top: 82px;
+            height: 100%;
           }
 
 
@@ -338,7 +348,7 @@
             opacity: .7;
 
             &.static {
-              opacity: 1;
+              opacity: .5;
             }
           }
 
