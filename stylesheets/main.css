@@ -1287,10 +1287,7 @@ p {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  height: 100vh;
-}
-.editmode .semimodal {
-  height: calc(100vh - 72px);
+  height: 100%;
 }
 .semimodal.dark-background {
   color: white;
@@ -1303,7 +1300,7 @@ p {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 32px;
-  min-height: 100vh;
+  min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1328,12 +1325,11 @@ p {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-.editmode .semimodal .semimodal_inner {
-  min-height: calc(100vh - 72px);
-}
 @media screen and (max-width: 900px) {
   .semimodal .semimodal_inner {
-    overflow: unset;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
     padding: 24px 16px 40px;
   }
 }
@@ -1341,8 +1337,6 @@ p {
   .semimodal .semimodal_inner {
     min-width: 100% !important;
     max-width: 100% !important;
-    overflow: auto;
-    overflow-x: hidden;
   }
 }
 .semimodal-open .semimodal .semimodal_inner, .semimodal-relative .semimodal .semimodal_inner {
@@ -1368,7 +1362,6 @@ p {
   position: -webkit-sticky;
   position: sticky;
   top: 64px;
-  padding-bottom: 72px;
 }
 .semimodal .semimodal_bottom-content {
   margin-top: 32px;
@@ -1378,7 +1371,7 @@ p {
 @media screen and (max-width: 900px) {
   .semimodal .semimodal_bottom {
     margin-top: 32px !important;
-    margin-bottom: 94px;
+    margin-bottom: 40px;
     top: 0 !important;
     padding: 0 24px;
   }
@@ -1413,7 +1406,7 @@ html:not(.semimodal-relative) .semimodal {
 .semimodal-relative .semimodal .site_title {
   display: block;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 900px) {
   .semimodal-relative .semimodal .site_title {
     display: none;
   }
