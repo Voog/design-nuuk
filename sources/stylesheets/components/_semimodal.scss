@@ -36,7 +36,7 @@
 
     @include query($tablet-1) {
       overflow: unset;
-      padding: 24px 16px;
+      padding: 24px 16px 40px;
     }
 
     @include query($mobile-1) {
@@ -76,6 +76,7 @@
       margin-top: 32px !important;
       margin-bottom: 94px;
       top: 0 !important;
+      padding: 0 24px;
     }
   }
 
@@ -107,8 +108,8 @@
     .site_title {
       display: block;
 
-      @include query($tablet-1) {
-        margin-top: 32px;
+      @include query($mobile-1) {
+        display: none;
       }
     }
   }

@@ -227,6 +227,12 @@ body.dark-background {
   line-height: var(--header-mainmenu-line-height);
   text-transform: var(--header-mainmenu-text-transform);
 }
+@media screen and (max-width: 900px) {
+  .menu-main .menu .menu-item a {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
 .menu-main .menu .menu-item a.untranslated {
   color: #cc0000;
 }
@@ -286,6 +292,9 @@ body.dark-background {
   color: var(--third-color);
   opacity: 1;
 }
+.semimodal .menu-main .menu .menu-sub .menu-item {
+  border-left: 1px solid var(--menu-sub-color);
+}
 .menu-main .menu .menu-sub .menu-item a {
   color: var(--menu-sub-color);
   -webkit-text-decoration: var(--menu-sub-text-decoration);
@@ -295,6 +304,12 @@ body.dark-background {
   font-size: var(--menu-sub-font-size);
   line-height: var(--menu-sub-line-height);
   text-transform: var(--menu-sub-text-transform);
+}
+@media screen and (max-width: 900px) {
+  .menu-main .menu .menu-sub .menu-item a {
+    font-size: 18px;
+    line-height: 21px;
+  }
 }
 .dark-background .menu-main .menu .menu-sub .menu-item a {
   color: var(--third-color);
@@ -430,16 +445,18 @@ body.dark-background {
 .dark-background .light-background .menu-main .menu .menu-item a:hover {
   color: var(--header-mainmenu-hover-color);
 }
-.dark-background .light-background .menu-main .menu .menu-item.active a {
+.dark-background .light-background .menu-main .menu .menu-item a.active {
   color: var(--header-mainmenu-active-color);
+  opacity: 1;
 }
-.dark-background .light-background .menu-main .menu .menu-item.active a::before {
+.dark-background .light-background .menu-main .menu .menu-item a.active::before {
   background-color: var(--header-mainmenu-active-color);
+  opacity: 1;
 }
-.dark-background .light-background .menu-main .menu .menu-item.active a:hover {
+.dark-background .light-background .menu-main .menu .menu-item a.active:hover {
   color: var(--header-mainmenu-hover-color);
 }
-.dark-background .light-background .menu-main .menu .menu-item.active a:hover::before {
+.dark-background .light-background .menu-main .menu .menu-item a.active:hover::before {
   background-color: var(--header-mainmenu-hover-color);
 }
 .dark-background .light-background .menu-main .menu .menu-sub .menu-item a {

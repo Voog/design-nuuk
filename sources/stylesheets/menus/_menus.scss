@@ -206,7 +206,7 @@
           padding-left: 24px;
 
           @include query($tablet-1) {
-            padding-left: 16px;
+            padding-left: 0;
           }
         }
       }
@@ -278,9 +278,8 @@
           a.active {
             &:before {
               content: '';
-              border: 1px solid;
-              height: 6px;
-              width: 6px;
+              height: 8px;
+              width: 8px;
               position: absolute;
               left: 0px;
             }
@@ -306,7 +305,10 @@
       flex-direction: column;
       left: 24px;
       position: relative;
-      border-left: 1px solid #c4c4c4b8;
+
+      @include query($tablet-1) {
+        left: 0;
+      }
 
       .menu-item a {
         padding-left: 16px;
@@ -362,6 +364,11 @@
           }
         }
       }
+    }
+
+    .menu-item-sub:last-child {
+      margin-bottom: 16px;
+      padding-bottom: 0;
     }
   }
 }

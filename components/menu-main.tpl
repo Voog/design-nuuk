@@ -55,7 +55,7 @@
                   {% if subitem.layout_title == product_list_layout or subitem.layout_title == product_layout %}
 
                     {%- if subitem.layout_title == product_list_layout -%}
-                      {%- assign subItemClass = 'menu-item-product-list' -%}
+                      {%- assign subItemClass = 'menu-item-product-list menu-item-sub' -%}
                       {% if isProductListItemVisible == false %}
                         {%- assign menuSubItemDisplayClass = 'hidden' -%}
                       {% else %}
@@ -68,14 +68,14 @@
                       {% else %}
                         {%- assign menuSubItemDisplayClass = 'visible' -%}
                       {% endif %}
-                      {%- assign subItemClass = 'menu-item-product' -%}
+                      {%- assign subItemClass = 'menu-item-product menu-item-sub' -%}
                     {%- endif -%}
 
                     <div class="{{subItemClass}} {{menuSubItemDisplayClass}}">
                       {% menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
                     </div>
                   {% else %}
-                    {% menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
+                    {% menulink subitem wrapper-tag="li" wrapper-class="menu-item menu-item-sub" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
                   {% endif %}
                 {% endfor %}
                 {% if item.hidden_children.size > 0 %}

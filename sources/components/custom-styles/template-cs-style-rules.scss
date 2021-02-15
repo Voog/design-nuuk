@@ -314,6 +314,11 @@ body {
       line-height: var(--header-mainmenu-line-height);
       text-transform: var(--header-mainmenu-text-transform);
 
+      @include query($tablet-1) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+
       &.untranslated {
         color: $red;
       }
@@ -386,33 +391,52 @@ body {
     }
 
     .menu-sub {
-      .menu-item a {
-        color: var(--menu-sub-color);
-        text-decoration: var(--menu-sub-text-decoration);
-        font-weight: var(--menu-sub-font-weight);
-        font-style: var(--menu-sub-font-style);
-        font-size: var(--menu-sub-font-size);
-        line-height: var(--menu-sub-line-height);
-        text-transform: var(--menu-sub-text-transform);
-
-        .dark-background & {
-          color: var(--third-color);
+      .menu-item {
+        .semimodal & {
+          border-left: 1px solid var(--menu-sub-color);
         }
 
-        &.untranslated {
-          color: $red;
-        }
+        a {
+          color: var(--menu-sub-color);
+          text-decoration: var(--menu-sub-text-decoration);
+          font-weight: var(--menu-sub-font-weight);
+          font-style: var(--menu-sub-font-style);
+          font-size: var(--menu-sub-font-size);
+          line-height: var(--menu-sub-line-height);
+          text-transform: var(--menu-sub-text-transform);
 
-        &:hover {
-          color: var(--menu-sub-hover-color);
-          text-decoration: var(--menu-sub-hover-decoration);
-          font-weight: var(--menu-sub-hover-font-weight);
-          font-style: var(--menu-sub-hover-font-style);
-          line-height: var(--menu-sub-hover-line-height);
-          text-transform: var(--menu-sub-hover-text-transform);
+          @include query($tablet-1) {
+            font-size: 18px;
+            line-height: 21px;
+          }
 
           .dark-background & {
             color: var(--third-color);
+          }
+
+          &.untranslated {
+            color: $red;
+          }
+
+          &:hover {
+            color: var(--menu-sub-hover-color);
+            text-decoration: var(--menu-sub-hover-decoration);
+            font-weight: var(--menu-sub-hover-font-weight);
+            font-style: var(--menu-sub-hover-font-style);
+            line-height: var(--menu-sub-hover-line-height);
+            text-transform: var(--menu-sub-hover-text-transform);
+
+            .dark-background & {
+              color: var(--third-color);
+            }
+
+            &::before {
+              border-color: var(--menu-sub-hover-color);
+
+              .dark-background & {
+                border-color: var(--third-color);
+              }
+            }
           }
 
           &::before {
@@ -421,14 +445,6 @@ body {
             .dark-background & {
               border-color: var(--third-color);
             }
-          }
-        }
-
-        &::before {
-          border-color: var(--menu-sub-hover-color);
-
-          .dark-background & {
-            border-color: var(--third-color);
           }
         }
       }
@@ -527,11 +543,13 @@ body {
         }
       }
 
-      .menu-item.active a {
+      .menu-item a.active {
         color: var(--header-mainmenu-active-color);
+        opacity: 1;
 
         &::before {
           background-color: var(--header-mainmenu-active-color);
+          opacity: 1;
         }
 
         &:hover {
