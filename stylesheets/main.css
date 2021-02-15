@@ -2493,13 +2493,11 @@ body .edy-ecommerce-shopping-cart-button .edy-ecommerce-total-price {
   display: -ms-flexbox;
   display: flex;
   max-width: 0px;
-  overflow: hidden;
-  -webkit-transition-delay: .2s;
-       -o-transition-delay: .2s;
-          transition-delay: .2s;
-  -webkit-transition: all 600ms;
-  -o-transition: all 600ms;
-  transition: all 600ms;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  -o-transition: transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
   -webkit-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
        -o-transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
           transition-timing-function: cubic-bezier(0, 0.6, 0.25, 1);
@@ -2515,15 +2513,19 @@ body .edy-ecommerce-shopping-cart-button .edy-ecommerce-total-price {
   .cart_btn-container {
     position: absolute;
     bottom: -62px;
-    right: -100px;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+    pointer-events: none;
     background: white;
     border-radius: 28px;
     padding: 2px;
     height: 45px;
     width: 45px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2544,7 +2546,10 @@ body .edy-ecommerce-shopping-cart-button .edy-ecommerce-total-price {
 }
 @media screen and (max-width: 900px) {
   .edy-checkout-button-visible .cart_btn-container {
-    right: -8px;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    pointer-events: all;
   }
 }
 

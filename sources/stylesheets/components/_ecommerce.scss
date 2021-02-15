@@ -46,9 +46,7 @@ body .edy-ecommerce-shopping-cart-button {
 .cart_btn-container {
   display: flex;
   max-width: 0px;
-  overflow: hidden;
-  transition-delay: .2s;
-  @include transition(all 600ms);
+  @include transition(transform 300ms);
 
   &:hover {
     opacity: .7;
@@ -61,13 +59,15 @@ body .edy-ecommerce-shopping-cart-button {
 
     position: absolute;
     bottom: -62px;
-    right: -100px;
+    right: 0;
+    display: flex;
+    transform: scale(0);
+    pointer-events: none;
     background: white;
     border-radius: 28px;
     padding: 2px;
     height: 45px;
     width: 45px;
-    display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0px 10px #0000001a, 0 0 5px #0000001a;
@@ -79,7 +79,8 @@ body .edy-ecommerce-shopping-cart-button {
   overflow: unset;
 
   @include query($tablet-1) {
-    right: -8px;
+    transform: scale(1);
+    pointer-events: all;
   }
 }
 
