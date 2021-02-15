@@ -58,6 +58,13 @@
             </div>
           </div>
         {%- endunless -%}
+
+        {%- unless post-box == "article" -%}
+          <div class="post_image-overlay">
+            <div class="post_image-overlay--box">
+            </div>
+          </div>
+        {%- endunless -%}
       </div>
     {%- endif -%}
 

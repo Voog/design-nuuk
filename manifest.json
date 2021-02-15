@@ -561,6 +561,12 @@
     },
     {
       "content_type": "image/svg+xml",
+      "file": "assets/ico-search-white.svg",
+      "kind": "assets",
+      "filename": "ico-search-white.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
       "file": "assets/ico-delete.svg",
       "kind": "assets",
       "filename": "ico-delete.svg"

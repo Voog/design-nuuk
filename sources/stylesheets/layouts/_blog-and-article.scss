@@ -113,6 +113,42 @@
     overflow: hidden;
   }
 
+  &wrapper {
+    .post_image-overlay {
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      @include transition(opacity 300ms);
+    }
+
+    &:hover {
+      .post_title,
+      .post_content {
+        opacity: .6;
+      }
+      .post_image-overlay {
+        opacity: 1;
+
+        &--box {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background-color: $black;
+          background-size: 20px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-image: url('../assets/ico-search-white.svg');
+        }
+      }
+    }
+  }
+
   &tags {
     padding: 24px 0;
     border-top: 1px solid;
@@ -166,6 +202,10 @@
       right: 0;
 
       &--box {
+        .post_wrapper:hover & {
+          opacity: 0;
+        }
+
         font-size: 12px;
         padding: 8px;
         border: 2px solid $primary-color;

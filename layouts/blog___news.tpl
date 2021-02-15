@@ -40,7 +40,7 @@
           {% include "blog-news-tags" %}
           <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
             {% for article in articles %}
-              <div class="blog_listing-item hover">
+              <div class="blog_listing-item">
                 <a href="{{ article.url }}">
                 {% include "article-settings-variables" %}
                 {% include "post-box" %}
