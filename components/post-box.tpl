@@ -4,7 +4,7 @@
   {% assign article_date_format = "long" %}
 {% endif %}
 
-<article class="post_wrapper post">
+<article class="post_wrapper post{%- unless post-box == "article" %} listing_item{%- endunless -%}">
   <header class="post_header">
 
     {% if post-box == "article" %}

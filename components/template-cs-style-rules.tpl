@@ -20,10 +20,6 @@ body.dark-background {
   color: var(--article-comment-area-color);
   border-color: var(--article-comment-area-color);
 }
-.comments .comment_form .form_area .form_submit input {
-  background-color: var(--article-comment-area-color);
-  color: var(--article-comment-area-backgroundcolor);
-}
 
 .post .post_title, .post .post_title a {
   color: var(--primary-color);
