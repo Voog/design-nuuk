@@ -3315,7 +3315,7 @@ body.edy-checkout-button-visible {
 }
 .blog_listing-item h3 {
   font-size: 36px;
-  line-height: 1.3px;
+  line-height: 1.3;
 }
 .blog_listing-item:nth-child(n+2) .post_wrapper {
   border-bottom: none;
