@@ -696,6 +696,9 @@ p {
 .product-page .content-formatted .edy-buy-button {
   width: 100%;
 }
+.content-formatted .edy-buy-button-container {
+  margin-bottom: 16px;
+}
 .content-formatted .edy-buy-button-container .edy-buy-button-variants {
   padding-bottom: 16px;
   padding-top: 16px;
