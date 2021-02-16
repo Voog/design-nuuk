@@ -198,7 +198,7 @@
 {%- endfor -%}
 
 {%- for id in (1..blockCount) -%}
-  <section class="block-container-{{ id }} content-body content-formatted content-formatted--overflowed-images">
+  <section class="block-container-{{ id }} content-body content-formatted">
     <div class="block-{{ id }} editor_default-container">
       {%- if editmode -%}
         <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">{{ "block" | lce  | escape_once }} {{ id }}</button>
@@ -221,7 +221,7 @@
       <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap flex_j-center-mobile">
         {%- for i in (1..columnCount) -%}
           {%- assign name = "content-" | append: i | append: "-" | append: id -%}
-          <div class="col-item flex_auto b-box" data-search-indexing-allowed="true">
+          <div class="col-item flex_auto b-box {% if id == 1 and i == 1 %} content-formatted--overflowed-images{% endif %}" data-search-indexing-allowed="true">
             {%- if id == 1 and i == 1 -%}
               {% contentblock name=name %}
                 {% include 'modular-content-1-1' %}
