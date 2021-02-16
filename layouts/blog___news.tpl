@@ -41,7 +41,7 @@
           <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
             {% for article in articles %}
               <div class="blog_listing-item">
-                <a href="{{ article.url }}">
+                <a class="blog_listing-link animate_wrap" href="{{ article.url }}">
                 {% include "article-settings-variables" %}
                 {% include "post-box" %}
                 </a>

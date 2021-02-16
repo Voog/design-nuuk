@@ -198,7 +198,7 @@
 {%- endfor -%}
 
 {%- for id in (1..blockCount) -%}
-  <section class="block-container-{{ id }} content-body content-formatted">
+  <section class="block-container-{{ id }} content-body content-formatted content-formatted--overflowed-images">
     <div class="block-{{ id }} editor_default-container">
       {%- if editmode -%}
         <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">{{ "block" | lce  | escape_once }} {{ id }}</button>

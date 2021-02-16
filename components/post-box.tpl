@@ -5,42 +5,44 @@
 {% endif %}
 
 <article class="post_wrapper post{%- unless post-box == "article" %} listing_item{%- endunless -%}">
-  <header class="post_header">
-
-    {% if post-box == "article" %}
-      {%- assign titleTag = 'h2' -%}
-    {% else %}
-      {%- assign titleTag = 'h3' -%}
-    {% endif %}
-    {% capture post_title %}
-      <{{titleTag}} class="post_title{%- unless article.data[itemImageKey] != blank or editmode %} mar_t-0{%- endunless -%}">
+  {% if post-box == "article" %}
+    {%- assign titleTag = 'h2' -%}
+  {% else %}
+    {%- assign titleTag = 'h3' -%}
+  {% endif %}
+  {% capture post_title %}
+    <{{titleTag}} class="post_title{%- unless article.data[itemImageKey] != blank or editmode %} mar_t-0{%- endunless -%}">
+      <span {% if post-box != "article" %}class="animate_border-bottom"{% endif %}>
         {% if post-box == "article" %}
           {% editable article.title %}
         {% else %}
           {{ article.title }}
         {% endif %}
-      </{{titleTag}}>
-    {% endcapture %}
+      </span>
+    </{{titleTag}}>
+  {% endcapture %}
 
-    {%- capture post_details -%}
-      <div class="post_details mar_b-32 mar_t-16 content-formatted">
-        <time class="post_date{% if show_article_date == false %} hide-post-date{% endif %}{% if article_data_show_date_defined != true %} site-data{% endif %}"
-          datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}
-        </time>
-        <span class="date-separator{% if show_article_author == false or show_article_date == false %} hide-separator{% endif %}"> - </span>
+  {%- capture post_details -%}
+    <div class="post_details mar_b-32 content-formatted">
+      <time class="post_date{% if show_article_date == false %} hide-post-date{% endif %}{% if article_data_show_date_defined != true %} site-data{% endif %}"
+        datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}
+      </time>
+      <span class="date-separator{% if show_article_author == false or show_article_date == false %} hide-separator{% endif %}"> - </span>
 
-        <div class="post_author{% if show_article_author == false %} hide-post-author{% endif %}{% if article_data_show_author_defined != true %} site-data{% endif %}">
-          {{ article.author.name }}
-        </div>
+      <div class="post_author{% if show_article_author == false %} hide-post-author{% endif %}{% if article_data_show_author_defined != true %} site-data{% endif %}">
+        {{ article.author.name }}
       </div>
-    {%- endcapture -%}
+    </div>
+  {%- endcapture -%}
 
-    {% if post-box == "article" %}
-      <div class="post_narrow{%- if article.data[itemImageKey] != blank or editmode %} mar_b-56{%- endif -%}">
-        {{ post_title }}
-        {{ post_details }}
-      </div>
-    {% endif %}
+  {% if post-box == "article" %}
+    <div class="post_narrow{%- if article.data[itemImageKey] != blank or editmode %} mar_b-40{%- endif -%}">
+      {{ post_title }}
+      {{ post_details }}
+    </div>
+  {% endif %}
+
+  <header class="post_header">
     {% if post-box == "article" and editmode == true %}
       {%- assign isPostImageStatic = false -%}
     {% else %}
@@ -79,9 +81,9 @@
     {% endunless %}
 
     {% if post-box == "article" %}
-      <div class="post_excerpt content-formatted mar_t-48 mar_b-64" {{ edy_intro_edit_text }}>{% editable article.excerpt %}</div>
-      <div class="post_body content-formatted mar_b-64">{% editable article.body %}</div>
-      <div class="post_body content-formatted">{% content name="additional_body" bind="Article" %}</div>
+      <div class="post_excerpt content-formatted content-formatted--overflowed-images mar_t-48 mar_b-64" {{ edy_intro_edit_text }}>{% editable article.excerpt %}</div>
+      <div class="post_body content-formatted content-formatted--overflowed-images mar_b-64">{% editable article.body %}</div>
+      <div class="post_body content-formatted content-formatted--overflowed-images">{% content name="additional_body" bind="Article" %}</div>
     {% endif %}
 
     {% assign article_year = article.created_at | format_date: "%Y" | to_num %}

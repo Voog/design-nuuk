@@ -12,6 +12,42 @@
       }
     }
 
+    &link {
+      .post_image-overlay {
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translatey(32px);
+        @include transition(all 300ms);
+      }
+
+      &:hover,
+      &:focus {
+        .post_image-overlay {
+          opacity: 1;
+          transform: translatey(0);
+          @include transition(all 300ms);
+
+          &--box {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: $black;
+            background-size: 20px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('../assets/ico-search-white.svg');
+          }
+        }
+      }
+    }
+
     &item {
       width: calc(35% - 32px);
       padding: 0 16px;
@@ -29,7 +65,8 @@
 
       .post_wrapper {
         .post_excerpt {
-          margin-bottom: 8px;
+          margin-bottom: 16px;
+          margin-bottom: 0;
         }
       }
 
@@ -110,54 +147,10 @@
 
 .post_ {
   &header {
-    overflow: hidden;
-  }
-
-  &wrapper {
-    &.listing_item {
-      .post_image-overlay {
-        opacity: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        transform: translatey(32px);
-        @include transition(all 300ms);
-      }
-
-      .post_title,
-      .post_content {
-        opacity: 1;
-        @include transition(opacity 300ms);
-      }
-
-      &:hover {
-        .post_title,
-        .post_content {
-          opacity: .6;
-          @include transition(all 300ms);
-        }
-        .post_image-overlay {
-          opacity: 1;
-          transform: translatey(0);
-          @include transition(all 300ms);
-
-          &--box {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background-color: $black;
-            background-size: 20px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-image: url('../assets/ico-search-white.svg');
-          }
-        }
-      }
+    .post_page & {
+      max-width: 132%;
+      margin-right: -16%;
+      margin-left: -16%;
     }
   }
 
@@ -169,8 +162,8 @@
 
   &narrow {
     .post_page & {
-      margin-left: 124px;
-      margin-right: 124px;
+      margin-left: 15%;
+      margin-right: 15%;
       @include query($desktop-1) {
         margin: 0;
       }
@@ -179,7 +172,7 @@
 
   &title {
     margin-top: 24px;
-    margin-bottom: 0px;
+    padding-bottom: 8px;
   }
 
   &details {
@@ -188,10 +181,10 @@
   }
 
   &content {
-    margin-top: 16px;
+    margin-top: 8px;
 
-    &body {
-      margin-top: 16px;
+    .blog_listing-item & {
+      margin-top: 0;
     }
   }
 

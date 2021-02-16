@@ -74,7 +74,7 @@
                 {%- if article.id != current_article_id and article.published? -%}
                   <div class="flex_row-3--item">
                     <div class="mar_0-16">
-                      <a href="{{ article.url }}">
+                      <a class="blog_listing-link animate_wrap" href="{{ article.url }}">
                         {% include "post-box" %}
                       </a>
                     </div>

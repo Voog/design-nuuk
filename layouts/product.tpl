@@ -106,7 +106,7 @@
           </div>
 
           {%- if bottom_content_has_content == true or editmode -%}
-            <section class="content-body content-formatted  mar_b-32" data-search-indexing-allowed="true">{% content name="content" %}</section>
+            <section class="content-body content-formatted content-formatted--overflowed-images mar_b-32" data-search-indexing-allowed="true">{% content name="content" %}</section>
           {%- endif -%}
 
           <div>

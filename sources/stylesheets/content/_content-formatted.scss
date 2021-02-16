@@ -4,6 +4,16 @@
 .content-formatted {
   word-break: break-word;
 
+  &--overflowed-images {
+    .edy-positionable-container-maxwidth {
+      // scss-lint:disable ImportantRule
+      max-width: 132%!important;
+      // scss-lint:enable ImportantRule
+      margin-right: -16%;
+      margin-left: -16%;
+    }
+  }
+
   &:empty:not(.header_title) {
     display: none;
   }
