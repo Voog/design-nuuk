@@ -63,6 +63,11 @@
         width: calc(30% - 32px);
       }
 
+      h3 {
+        font-size: 36px;
+        line-height: 1.3px;
+      }
+
       &:nth-child(n+2) {
         .post_wrapper {
           border-bottom: none;
@@ -461,14 +466,13 @@ article.post_wrapper {
   .post_excerpt,
   .post_details {
     font-size: 16px !important;
-    font-size: 16px;
-    line-height: 194%;
+    line-height: 194% !important;
   }
 }
 
 .related_posts {
   h3 {
     font-size: 18px !important;
-    font-weight: bold;
+    font-weight: bold !important;
   }
 }

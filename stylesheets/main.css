@@ -3313,6 +3313,10 @@ body.edy-checkout-button-visible {
 .blog_listing-item:nth-child(2) {
   width: calc(30% - 32px);
 }
+.blog_listing-item h3 {
+  font-size: 36px;
+  line-height: 1.3px;
+}
 .blog_listing-item:nth-child(n+2) .post_wrapper {
   border-bottom: none;
 }
@@ -3739,13 +3743,12 @@ article.post_wrapper .date-separator.hide-separator {
 .blog_listing-item .post_excerpt,
 .blog_listing-item .post_details {
   font-size: 16px !important;
-  font-size: 16px;
-  line-height: 194%;
+  line-height: 194% !important;
 }
 
 .related_posts h3 {
   font-size: 18px !important;
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 .product_item-wrap .product_item-title, .product_item-wrap .product_item-btn, .product_item-wrap .product_item-price, .product_item-wrap .product_item-box--label {
@@ -5047,7 +5050,7 @@ article.post_wrapper .date-separator.hide-separator {
 }
 
 .animate_border-bottom {
-  padding-bottom: 4px;
+  padding-bottom: 3px;
   text-decoration: none;
   background-image: -webkit-gradient(linear, left top, left bottom, from(var(--secondary-color)), to(var(--secondary-color)));
   background-image: -webkit-linear-gradient(var(--secondary-color), var(--secondary-color));
