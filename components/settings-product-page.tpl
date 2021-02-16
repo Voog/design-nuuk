@@ -20,7 +20,19 @@
         var valuesObj = {product_note_input_count: "1"};
       {% endif %}
 
-      var productsPageList = [];
+      if (!('is_related_product_1' in valuesObj)) {
+        valuesObj.is_related_product_1 = 0;
+      }
+
+      if (!('is_related_product_2' in valuesObj)) {
+        valuesObj.is_related_product_2 = 0;
+      }
+
+      if (!('is_related_product_3' in valuesObj)) {
+        valuesObj.is_related_product_3 = 0;
+      }
+
+      var productsPageList = [{"title": '---',"value": 0}];
 
       $.ajax({
         type: 'GET',

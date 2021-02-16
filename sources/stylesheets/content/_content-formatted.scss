@@ -172,16 +172,6 @@
     line-height: 18px;
   }
 
-  ul {
-    li {
-    }
-  }
-
-  ol {
-    li {
-    }
-  }
-
   a:not(.custom-btn) {
     @include color($blue-1, 1);
 

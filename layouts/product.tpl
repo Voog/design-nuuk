@@ -113,27 +113,31 @@
             {%- assign pageIdsArr = "" | split: ',' -%}
             {%- for i in (1..3) -%}
               {%- assign relatedProductKey = 'is_related_product_' | append: i -%}
-              {%- assign relatedProductPageId = page.data[productLayoutSettingsKey][relatedProductKey] -%}
-              {%- assign pageIdsArr = pageIdsArr | push: relatedProductPageId -%}
-              {%- assign pageIdCompactArr = pageIdsArr | compact -%}
+              {%- assign relatedProductPageId = page.data[productLayoutSettingsKey][relatedProductKey] | plus: 0 -%}
+              {%- if relatedProductPageId >= 1 -%}
+                {%- assign pageIdsArr = pageIdsArr | push: relatedProductPageId -%}
+                {%- assign pageIdCompactArr = pageIdsArr | compact -%}
+              {%- endif -%}
             {%- endfor -%}
 
-            <h3 class="visits-title mar_t-48"{% if pageIdCompactArr.size <= 0 %} style="display: none;"{% endif %}>
-              {{ "related_products" | lc | escape_once }}
-            </h3>
+            {% if pageIdCompactArr != blank or pageIdCompactArr.size >= 1 %}
+              <h3 class="visits-title mar_t-48">
+                {{ "related_products" | lc | escape_once }}
+              </h3>
 
-            <div class="product_list content-formatted flex_row flex_row-3 mar_0-8-neg mar_t-48">
-              {%- for id in pageIdCompactArr -%}
-                <div class="product_item js-product-item flex_row-3--item" data-path="{{page.path}}">
-                  <div class="mar_0-8">
-                    <div class="product_item-wrap">
-                      {%- load buy_button to "buy_button" q.content.parent_id=id q.content.parent_type="page" -%}
-                      {% include 'product-item', _buyButton: buy_button, _entityData: _buyButton.content.parent %}
+              <div class="product_list flex_row flex_row-3 mar_0-8-neg mar_t-48">
+                {%- for id in pageIdCompactArr -%}
+                  <div class="product_item js-product-item flex_row-3--item" data-path="{{page.path}}">
+                    <div class="mar_0-8">
+                      <div class="product_item-wrap">
+                        {%- load buy_button to "buy_button" q.content.parent_id=id q.content.parent_type="page" -%}
+                        {% include 'product-item', _buyButton: buy_button, _entityData: _buyButton.content.parent %}
+                      </div>
                     </div>
                   </div>
-                </div>
-              {%- endfor -%}
-            </div>
+                {%- endfor -%}
+              </div>
+            {% endif %}
           </div>
         </main>
       </div>

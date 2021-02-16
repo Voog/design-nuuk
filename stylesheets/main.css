@@ -4831,6 +4831,13 @@ article.post_wrapper .date-separator.hide-separator {
   padding-bottom: 0;
 }
 
+.menu-sub.menu-breadcrumbs .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
 .menu-sub.menu-breadcrumbs .menu-item a {
   font-size: 14px;
 }

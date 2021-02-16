@@ -374,6 +374,10 @@
 }
 
 .menu-sub.menu-breadcrumbs {
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .menu-item a {
     font-size: 14px;
 
