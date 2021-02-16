@@ -39,16 +39,20 @@
     margin-bottom: -32px;
   }
 
-  &b-16 {
-    margin-bottom: 16px;
-  }
-
   &32-0 {
     margin: 32px 0;
 
     @include query($tablet-1) {
       margin: 16px 0;
     }
+  }
+
+  &b-8 {
+    margin-bottom: 8px;
+  }
+
+  &b-16 {
+    margin-bottom: 16px;
   }
 
   &b-32 {

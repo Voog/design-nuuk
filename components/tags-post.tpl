@@ -4,8 +4,8 @@
     <div class="tags-editor mar_t-32">{% editable article.tags %}</div>
   {% else %}
     {% unless article.tags == empty %}
-      <nav class="post_tags mar_t-32 menu-sub">
-        <ul class="menu">
+      <nav class="post_tags mar_t-32 content-formatted menu-sub">
+        <ul class="menu flex_wrap">
           {% for tag in article.tags %}
             <li class="menu-item">
               <a class="menu-link" href="/{{ article.page.path_with_lang }}/tagged/{{ tag.path }}">

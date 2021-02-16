@@ -4,7 +4,7 @@
   {% assign article_date_format = "long" %}
 {% endif %}
 
-<article class="post_wrapper post{%- unless post-box == "article" %} listing_item{%- endunless -%}">
+<article class="post_wrapper post {%- if post-box == "article" %} article_item {% else %} listing_item{%- endif -%}">
   {% if post-box == "article" %}
     {%- assign titleTag = 'h2' -%}
   {% else %}
@@ -23,7 +23,7 @@
   {% endcapture %}
 
   {%- capture post_details -%}
-    <div class="post_details mar_b-32 content-formatted">
+    <div class="post_details mar_b-32">
       <time class="post_date{% if show_article_date == false %} hide-post-date{% endif %}{% if article_data_show_date_defined != true %} site-data{% endif %}"
         datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}
       </time>
@@ -36,13 +36,13 @@
   {%- endcapture -%}
 
   {% if post-box == "article" %}
-    <div class="post_narrow{%- if article.data[itemImageKey] != blank or editmode %} mar_b-40{%- endif -%}">
+    <div class="post_narrow content-formatted{%- if article.data[itemImageKey] != blank or editmode %} mar_b-40{%- endif -%}">
       {{ post_title }}
       {{ post_details }}
     </div>
   {% endif %}
 
-  <header class="post_header">
+  <header class="post_header{% if post-box == "article" %} post_header-stretch{% endif %}">
     {% if post-box == "article" and editmode == true %}
       {%- assign isPostImageStatic = false -%}
     {% else %}
@@ -77,7 +77,7 @@
 
   <div class="post_content{% if post-box == "article" %} post_narrow{% endif %}">
     {% unless post-box == "article" %}
-      <div class="post_excerpt content-formatted">{{ article.excerpt }}</div>
+      <div class="post_excerpt mar_b-16">{{ article.excerpt }}</div>
     {% endunless %}
 
     {% if post-box == "article" %}

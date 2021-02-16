@@ -348,7 +348,6 @@ body.dark-background {
           text-decoration: var(--menu-sub-active-text-decoration);
   font-weight: var(--menu-sub-active-font-weight);
   font-style: var(--menu-sub-active-font-style);
-  line-height: var(--menu-sub-active-line-height);
   text-transform: var(--menu-sub-active-text-transform);
 }
 @media screen and (max-width: 900px) {
@@ -541,9 +540,25 @@ body.dark-background {
       -ms-hyphens: var(--content-body-hyphens);
           hyphens: var(--content-body-hyphens);
 }
-.dark-background .content-formatted,
-.dark-background .content-formatted .product_item-btn,
-.dark-background .content-formatted p {
+.post_page .article_item .post_content .content-formatted,
+.post_page .article_item .content-formatted .post_details,
+.post_page
+.article_item .post_content .content-formatted .product_item-btn,
+.post_page
+.article_item .content-formatted .product_item-btn .post_details,
+.post_page
+.article_item
+.post_content .content-formatted p,
+.post_page
+.article_item .content-formatted p .post_details {
+  font-size: var(--blog-body-font-size);
+  line-height: var(--blog-body-line-height);
+}
+.post_page .content-formatted.post_tags .menu a, .post_page .content-formatted .product_item-btn.post_tags .menu a, .post_page .content-formatted p.post_tags .menu a {
+  font-size: var(--blog-body-font-size);
+  line-height: var(--blog-body-line-height);
+}
+.dark-background .content-formatted, .dark-background .content-formatted .product_item-btn, .dark-background .content-formatted p {
   color: var(--third-color);
 }
 .content-formatted .horizontal-scroll, .content-formatted .product_item-btn .horizontal-scroll, .content-formatted p .horizontal-scroll {

@@ -453,7 +453,6 @@ body {
         text-decoration: var(--menu-sub-active-text-decoration);
         font-weight: var(--menu-sub-active-font-weight);
         font-style: var(--menu-sub-active-font-style);
-        line-height: var(--menu-sub-active-line-height);
         text-transform: var(--menu-sub-active-text-transform);
 
         @include query($tablet-1) {
@@ -690,6 +689,22 @@ body {
   hyphens: var(--content-body-hyphens);
 
 
+  .post_content &,
+  .post_details {
+    .article_item & {
+      .post_page & {
+        font-size: var(--blog-body-font-size);
+        line-height: var(--blog-body-line-height);
+      }
+    }
+  }
+
+  &.post_tags .menu a {
+    .post_page & {
+      font-size: var(--blog-body-font-size);
+      line-height: var(--blog-body-line-height);
+    }
+  }
   .dark-background & {
     color: var(--third-color);
   }
