@@ -2734,7 +2734,6 @@ body.edy-checkout-button-visible {
   }
   .menu-top .header_fixed-content .header_title {
     width: calc(100% - 28px);
-    margin-right: 28px;
     padding: 0;
     text-align: center;
     display: -webkit-box;
@@ -2782,12 +2781,9 @@ body.edy-checkout-button-visible {
     width: 28px;
   }
   .header_fixed-content .header_components {
-    width: 0;
+    width: 28px;
     margin: 0;
     padding: 0;
-    -webkit-box-flex: 0;
-        -ms-flex: none;
-            flex: none;
   }
 }
 @media screen and (min-width: 900px) {
