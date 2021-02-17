@@ -40,6 +40,22 @@
   background-color: $white;
   @include transition(transform 300ms);
 
+  &_desktop {
+    @include query($tablet-1) {
+      display: none;
+    }
+  }
+
+  &_mobile {
+    .search-btn {
+      margin-left: 4px;
+    }
+
+    @include query($tablet-1, 'min-width') {
+      display: none;
+    }
+  }
+
   &.active {
     display: block;
     pointer-events: all;

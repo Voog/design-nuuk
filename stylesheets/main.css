@@ -2644,7 +2644,7 @@ body.edy-checkout-button-visible {
 }
 @media screen and (max-width: 900px) {
   .header_fixed {
-    padding: 24px 16px;
+    padding: 16px;
     background-color: #ffffff;
   }
 }
@@ -2737,12 +2737,18 @@ body.edy-checkout-button-visible {
     margin-right: 28px;
     padding: 0;
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 @media screen and (max-width: 900px) and (max-width: 480px) {
   .menu-top .header_fixed-content .header_title h1, .menu-top .header_fixed-content .header_title h2, .menu-top .header_fixed-content .header_title h3, .menu-top .header_fixed-content .header_title h4, .menu-top .header_fixed-content .header_title h5, .menu-top .header_fixed-content .header_title h6, .menu-top .header_fixed-content .header_title p, .menu-top .header_fixed-content .header_title a, .menu-top .header_fixed-content .header_title b {
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 24px;
   }
 }
 @media screen and (max-width: 900px) {
@@ -2759,7 +2765,6 @@ body.edy-checkout-button-visible {
   }
   .header_fixed-content .header_title {
     width: calc(100% - 28px);
-    margin-right: 28px;
     padding: 0;
     text-align: center;
   }
@@ -2906,6 +2911,19 @@ body.edy-checkout-button-visible {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+@media screen and (max-width: 900px) {
+  .search_desktop {
+    display: none;
+  }
+}
+.search_mobile .search-btn {
+  margin-left: 4px;
+}
+@media screen and (min-width: 900px) {
+  .search_mobile {
+    display: none;
+  }
 }
 .search.active {
   display: block;
@@ -4423,7 +4441,6 @@ article.post_wrapper .date-separator.hide-separator {
   width: 32px;
   height: 2px;
   color: black;
-  margin-bottom: 2px;
   -webkit-transition: -webkit-transform 200ms;
   transition: -webkit-transform 200ms;
   -o-transition: transform 200ms;
@@ -4451,6 +4468,9 @@ article.post_wrapper .date-separator.hide-separator {
           transform: rotate(-45deg) translate(-4px, 4px);
 }
 @media screen and (max-width: 900px) {
+  .menu-btn .menu-stripe {
+    width: 24px;
+  }
   .semimodal-open.semimodal-relative .menu-btn .menu-stripe {
     -webkit-transform: rotate(45deg) translate(-4px, -4px);
         -ms-transform: rotate(45deg) translate(-4px, -4px);

@@ -44,7 +44,7 @@
         <label>{{ 'menu' | lc }}</label>
       </button>
 
-      {%- if show_language_menu_popover or site.search.enabled -%}
+      {%- if show_language_menu_popover -%}
         <div class="header_components-tablet">
           {% if show_language_menu_popover %}
             <div class="js-toggle-menu-language menu-language-toggle js-prevent-sideclick p-rel" tabindex=0>
@@ -58,7 +58,6 @@
           {% endif %}
 
           {% include "menu-language-list" %}
-          {%- if site.search.enabled -%}<div class="js-prevent-sideclick">{%- include "search-btn" -%}</div>{%- endif -%}
         </div>
       {%- endif -%}
     </div>

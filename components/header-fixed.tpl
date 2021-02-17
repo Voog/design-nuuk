@@ -40,10 +40,10 @@
             {% endif %}
           </div>
         {% endif %}
-
+        {%- if site.search.enabled -%}<div class="js-prevent-sideclick search_desktop">{%- include "search-btn" -%}</div>{%- endif -%}
         {% include "menu-language-list" %}
-        {%- if site.search.enabled -%}<div class="js-prevent-sideclick">{%- include "search-btn" -%}</div>{%- endif -%}
       </div>
+      {%- if site.search.enabled -%}<div class="js-prevent-sideclick search_mobile">{%- include "search-btn" -%}</div>{%- endif -%}
       <div class="cart_btn-container"></div>
     </div>
   </div>

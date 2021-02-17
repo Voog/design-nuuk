@@ -63,7 +63,6 @@
     width: 32px;
     height: 2px;
     color: $primary-color;
-    margin-bottom: 2px;
     @include transition(transform 200ms);
 
     &:first-child {
@@ -79,6 +78,8 @@
     }
 
     @include query($tablet-1) {
+      width: 24px;
+
       .semimodal-open.semimodal-relative & {
         transform: rotate(45deg) translate(-4px, -4px);
 
