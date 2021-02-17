@@ -394,6 +394,10 @@ body {
       .menu-item {
         .semimodal & {
           border-left: 1px solid var(--menu-sub-color);
+
+          @include query($tablet-1) {
+            border-left: none;
+          }
         }
 
         a {

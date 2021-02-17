@@ -297,6 +297,11 @@ body.dark-background {
 .semimodal .menu-main .menu .menu-sub .menu-item {
   border-left: 1px solid var(--menu-sub-color);
 }
+@media screen and (max-width: 900px) {
+  .semimodal .menu-main .menu .menu-sub .menu-item {
+    border-left: none;
+  }
+}
 .menu-main .menu .menu-sub .menu-item a {
   color: var(--menu-sub-color);
   -webkit-text-decoration: var(--menu-sub-text-decoration);

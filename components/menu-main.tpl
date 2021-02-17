@@ -49,7 +49,7 @@
       {% if item.children? or editmode %}
         {% unless item.blog? %}
           <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{menuItemDisplayClass}}{%- endif -%}">
-            <div class="menu-sub js-menu-sub{% if item.children?%} mar_8-0{% endif %}{% if item.selected? %} active{% endif %}{% if _menuTop %} d-none{% endif %}">
+            <div class="menu-sub js-menu-sub{% if item.selected? %} active{% endif %}{% if _menuTop %} d-none{% endif %}">
               <ul class="menu">
                 {% for subitem in item.visible_children %}
                   {% if subitem.layout_title == product_list_layout or subitem.layout_title == product_layout %}

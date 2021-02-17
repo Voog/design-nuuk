@@ -11,6 +11,10 @@
   cursor: pointer;
   transition: top .6s ease-in;
 
+  .semimodal & {
+    padding: 0px;
+  }
+
   @include query($tablet-1) {
     padding: 0 16px 0;
 
@@ -139,6 +143,10 @@
   .menu-item {
     .semimodal & {
       padding-bottom: 8px;
+
+      @include query($tablet-1) {
+        padding-bottom: 16px;
+      }
     }
 
     .lang_menu-popover & {
@@ -294,6 +302,10 @@
       .menu-item a {
         padding-left: 16px;
 
+        @include query($tablet-1) {
+          padding-left: 0;
+        }
+
         &:before {
           content: none;
         }
@@ -316,6 +328,14 @@
   .menu {
     display: flex;
     flex-direction: row;
+
+    .semimodal & {
+      margin: 8px 0;
+
+      @include query($tablet-1) {
+        margin: 0 0 8px;
+      }
+    }
 
     .menu-item {
       display: flex;
