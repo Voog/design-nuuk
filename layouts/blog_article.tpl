@@ -62,16 +62,13 @@
             </div>
           </div>
 
-          <div class="content-formatted mar_t-48 js-related-articles{%- if articleSettingsData.show_related_articles != true %} d-none{%- endif -%}">
-            {% assign current_article_id = article.id %}
-            <h4 class="post_narrow">{{ "continue_reading" | lc }}</h4>
+          {%- load articles to "articles" tag=article.tag_names q.article.published_at.$not_eq="" q.article.id.$not_eq=article.id limit=3 -%}
+          {% if articles.size >= 1 %}
+            <div class="content-formatted mar_t-48 js-related-articles{%- if articleSettingsData.show_related_articles != true %} d-none{%- endif -%}">
+              <h4 class="post_narrow">{{ "continue_reading" | lc }}</h4>
 
-            <div class="flex_row flex_row-3 mar_0-16-neg related_posts mar_t-32">
-              {%- load articles to "articles" q.article.tag$in=article.tags -%}
-              {%- assign relatedArticleCounter = 0 -%}
-
-              {% for article in articles %}
-                {%- if article.id != current_article_id and article.published? -%}
+              <div class="flex_row flex_row-3 mar_0-16-neg related_posts mar_t-32">
+                {% for article in articles %}
                   <div class="flex_row-3--item">
                     <div class="mar_0-16">
                       <a class="blog_listing-link animate_wrap" href="{{ article.url }}">
@@ -79,17 +76,10 @@
                       </a>
                     </div>
                   </div>
-                  {% assign relatedArticleCounter = relatedArticleCounter | plus: 1 %}
-                {%- endif -%}
-                {%- if relatedArticleCounter == 3 -%}
-                  {% break %}
-                {%- endif -%}
-              {% endfor %}
-
-              {%- assign relatedArticleCounter = 0 -%}
+                {% endfor %}
+              </div>
             </div>
-          </div>
-
+          {% endif %}
 
           <div class="post_nav content-formatted">
             <div class="post_nav-inner">
