@@ -67,19 +67,19 @@
     }
 
     .semimodal-open:not(.semimodal-relative) & {
-      transform: rotate(45deg) translate(-5px, -5px);
+      transform: rotate(45deg) translate(-4px, -4px);
 
       &:first-child {
-        transform: rotate(-45deg) translate(-5px, 5px);
+        transform: rotate(-45deg) translate(-4px, 4px);
       }
     }
 
     @include query($tablet-1) {
       .semimodal-open.semimodal-relative & {
-        transform: rotate(45deg) translate(-5px, -5px);
+        transform: rotate(45deg) translate(-4px, -4px);
 
         &:first-child {
-          transform: rotate(-45deg) translate(-5px, 5px);
+          transform: rotate(-45deg) translate(-4px, 4px);
         }
       }
     }
