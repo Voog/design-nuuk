@@ -4683,7 +4683,7 @@ article.post_wrapper .date-separator.hide-separator {
           flex-direction: row;
 }
 .semimodal .menu-sub .menu {
-  margin: 8px 0;
+  margin: 8px 0 16px;
 }
 @media screen and (max-width: 900px) {
   .semimodal .menu-sub .menu {
@@ -4729,6 +4729,11 @@ article.post_wrapper .date-separator.hide-separator {
 .menu-sub .menu .menu-item-sub:last-child {
   margin-bottom: 16px;
   padding-bottom: 0;
+}
+@media screen and (max-width: 900px) {
+  .menu-sub .menu .menu-item-sub:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .menu-sub.menu-breadcrumbs .menu {
