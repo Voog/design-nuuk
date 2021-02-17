@@ -113,8 +113,9 @@
     padding-top: 32px;
     border-bottom: 1px solid;
     flex-wrap: nowrap;
+    flex-direction: row;
 
-    @include query($tablet-1) {
+    @include query($tablet-2) {
       flex-wrap: wrap;
       flex-direction: column;
       border-bottom: none;
@@ -122,21 +123,33 @@
 
     &-item {
       display: flex;
-      align-items: baseline;
+      align-items: flex-end;
       padding-bottom: 16px;
 
-      @include query($tablet-1) {
+      @include query($tablet-2) {
+        width: 100%;
         border-bottom: 1px solid;
         flex: auto;
         padding-bottom: 8px;
         margin-bottom: 8px;
       }
 
+      .form_field {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+
+        input,
+        select {
+          padding: 0;
+        }
+      }
+
       &:first-child {
         .form_field {
           margin-right: 32px;
 
-          @include query($tablet-1) {
+          @include query($tablet-2) {
             margin-right: 0;
             width: 100%;
 

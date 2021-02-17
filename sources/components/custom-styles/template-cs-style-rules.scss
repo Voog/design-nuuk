@@ -48,6 +48,13 @@ body {
     color: var(--article-comment-area-color);
     border-color: var(--article-comment-area-color);
   }
+
+  .form_field_with_errors {
+    .form_field_textfield,
+    .form_field_textarea {
+      border-color: $red;
+    }
+  }
 }
 
 .post {
@@ -982,7 +989,14 @@ body {
       text-decoration: var(--form-field-text-decoration);
       text-transform: var(--form-field-text-transform);
       font-style: var(--form-field-font-style);
-      font-weight: var(--form-field-font-weight);
+      font-weight: 600;
+    }
+
+    &.form_field_with_errors {
+      .form_field_label,
+      .edy-fe-label {
+        color: $red;
+      }
     }
   }
 
@@ -993,6 +1007,7 @@ body {
   label:not(.form_field_label) {
     font-weight: var(--form-field-font-weight);
     font-size: var(--form-field-font-size);
+    line-height: var(--form-field-line-height);
   }
 
   .dark-background & {
@@ -1016,14 +1031,6 @@ body {
 
       &::placeholder {
         color: var(--primary-color);
-      }
-    }
-  }
-
-  .form_field_radio {
-    + .form_control_indicator {
-      &:before {
-        background-color: var(--primary-color);
       }
     }
   }

@@ -8,9 +8,11 @@
   }
 
   .form_field {
-    padding-bottom: 16px;
+    padding-bottom: 8px;
     position: relative;
-    padding-top: 8px;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
 
     &:first-child {
       padding-top: 0;
@@ -139,6 +141,19 @@
   .form_error,
   .form_field_error {
     @include color($red);
+    width: 100%;
+    font-size: var(--form-label-font-size);
+    line-height: var(--form-field-line-height);
+    margin-top: 8px;
+
+
+  }
+
+  .comment_form {
+    .form_error,
+    .form_field_error {
+      margin-top: 0;
+    }
   }
 
   .form_field_with_errors {
@@ -162,7 +177,7 @@
     display: inline-block;
     margin-right: 10px;
     vertical-align: middle;
-    border: 1px solid;
+    border: 1px solid var(--secondary-color);
   }
 
   .dark-background & {
@@ -178,22 +193,25 @@
     border-radius: 100%;
 
     &:before {
-      @include size(12px);
-      transform: scale(0);
-      transition: transform .15s ease;
+      @include size(10px);
       position: absolute;
-      top: 3px;
-      left: 3px;
+      top: 0px;
+      left: 0px;
       content: '';
       border-radius: 100%;
+      transition: border-color .15s ease;
+      border: none;
+      border: 4px solid;
+      border-color: transparent;
     }
   }
 
   &:checked {
     + .form_control_indicator {
+      border: 1px solid var(--primary-color);
+
       &:before {
-        transform: scale(1);
-        transition: transform .15s ease;
+        border-color: var(--primary-color);
       }
     }
   }
@@ -216,9 +234,9 @@
     &:before {
       transform: scale(0) rotate(45deg);
       display: block;
-      width: 5px;
-      height: 10px;
-      margin: 1px 0 0 6px;
+      width: 4px;
+      height: 7px;
+      margin: 3px 5px 0px 7px;
       content: '';
       transition: transform .15s ease 0s;
       border: 1px solid;
@@ -228,6 +246,8 @@
 
   &:checked {
     + .form_control_indicator {
+      border: 1px solid var(--primary-color);
+
       &:before {
         transform: scale(1) rotate(45deg);
         transition: transform .15s ease;

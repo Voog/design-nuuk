@@ -9,7 +9,7 @@
     "scope": "global",
     "featured": true
   */
-  --form-label-font-size: 14px;
+  --form-label-font-size: 12px;
   /* VoogStyle
     "pathI18n": ["form"],
     "titleI18n": "field_size",
@@ -20,7 +20,7 @@
     "scope": "global",
     "featured": true
   */
-  --form-field-font-size: 16px;
+  --form-field-font-size: 14px;
   /* VoogStyle
     "pathI18n": ["form"],
     "titleI18n": "line_height",

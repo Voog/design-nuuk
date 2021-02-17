@@ -20,6 +20,10 @@ body.dark-background {
   color: var(--article-comment-area-color);
   border-color: var(--article-comment-area-color);
 }
+.comments .comment_form .form_area .form_field_with_errors .form_field_textfield,
+.comments .comment_form .form_area .form_field_with_errors .form_field_textarea {
+  border-color: #C5292A;
+}
 
 .post .post_title, .post .post_title a {
   color: var(--primary-color);
@@ -230,7 +234,7 @@ body.dark-background {
   }
 }
 .menu-main .menu .menu-item a.untranslated {
-  color: #cc0000;
+  color: #C5292A;
 }
 .dark-background .menu-main .menu .menu-item a {
   color: var(--third-color);
@@ -268,7 +272,7 @@ body.dark-background {
   }
 }
 .menu-main .menu .menu-item a.active.untranslated {
-  color: #cc0000;
+  color: #C5292A;
 }
 .menu-main .menu .menu-item a.active::before {
   background-color: var(--header-mainmenu-active-color);
@@ -322,7 +326,7 @@ body.dark-background {
   color: var(--third-color);
 }
 .menu-main .menu .menu-sub .menu-item a.untranslated {
-  color: #cc0000;
+  color: #C5292A;
 }
 .menu-main .menu .menu-sub .menu-item a:hover {
   color: var(--menu-sub-hover-color);
@@ -362,7 +366,7 @@ body.dark-background {
   }
 }
 .menu-main .menu .menu-sub .menu-item.active a.untranslated {
-  color: #cc0000;
+  color: #C5292A;
 }
 .dark-background .menu-main .menu .menu-sub .menu-item.active a {
   color: var(--third-color);
@@ -812,7 +816,11 @@ body.dark-background {
           text-decoration: var(--form-field-text-decoration);
   text-transform: var(--form-field-text-transform);
   font-style: var(--form-field-font-style);
-  font-weight: var(--form-field-font-weight);
+  font-weight: 600;
+}
+.content-formatted .form_field.form_field_with_errors .form_field_label,
+.content-formatted .form_field.form_field_with_errors .edy-fe-label {
+  color: #C5292A;
 }
 .content-formatted .form_field_textfield,
 .content-formatted .form_field_textarea,
@@ -821,6 +829,7 @@ body.dark-background {
 .content-formatted label:not(.form_field_label) {
   font-weight: var(--form-field-font-weight);
   font-size: var(--form-field-font-size);
+  line-height: var(--form-field-line-height);
 }
 .dark-background .content-formatted .form_field_textfield,
 .dark-background .content-formatted .form_field_textarea,
@@ -872,7 +881,4 @@ body.dark-background {
 .light-background .content-formatted .form_field_textarea::placeholder,
 .light-background .content-formatted .form_field_select::placeholder {
   color: var(--primary-color);
-}
-.content-formatted .form_field_radio + .form_control_indicator:before {
-  background-color: var(--primary-color);
 }

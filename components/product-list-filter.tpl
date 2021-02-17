@@ -1,4 +1,4 @@
-<div class="product_filters flex_row flex_row-3 content-formatted d-none">
+<div class="product_filters flex_row-3 content-formatted d-none">
   <div class="product_filters-item">
     <span class="mar_r-8 op-0-5 no-wrap">{{ "sort" | lc }}:</span>
     <div class="form_field mar_r-32">
