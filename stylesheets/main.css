@@ -634,6 +634,24 @@ p {
 .comments .comment_form {
   margin-top: 25px;
 }
+.comments .comment_date {
+  color: var(--secondary-color);
+}
+.comments .comment_comment_messages {
+  display: none;
+}
+.comments .comment_count-separator {
+  font-size: 16px;
+  padding-left: 4px;
+}
+.comments .comment_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .comments .comment_form .form_field_with_errors label {
   color: #C5292A;
 }

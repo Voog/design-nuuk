@@ -11,6 +11,24 @@
   }
 
   .comment_ {
+    &date {
+      color: var(--secondary-color);
+    }
+
+    &comment_messages {
+      display: none;
+    }
+
+    &count-separator {
+      font-size: 16px;
+      padding-left: 4px;
+    }
+
+    &title {
+      display: flex;
+      align-items: center;
+    }
+
     &form {
       .form_field_with_errors {
         label {

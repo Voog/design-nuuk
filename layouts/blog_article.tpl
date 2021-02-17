@@ -42,7 +42,10 @@
             {% include "tags-post" %}
             <div id="comments" class="comments content-formatted{% if show_article_comments == false %} hide-post-comments{% endif %}" data-search-indexing-allowed="false">
               {% if article.comments_count > 0 %}
-                <h4 class="comment_title js-comments">{{ "comments_for_count" | lc }}: <span class="edy-site-blog-comments-count">{{ article.comments_count }}</span></h4>
+                <h4 class="comment_title js-comments">{{ "comments_for_count" | lc }}
+                  <span class="comment_count-separator">&#9642;</span>
+                  <span class="edy-site-blog-comments-count">{{ article.comments_count }}</span>
+                </h4>
 
                 <div class="comment_messages content-formatted">
                   {% for comment in article.comments reversed %}
