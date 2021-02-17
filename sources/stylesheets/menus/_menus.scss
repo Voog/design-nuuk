@@ -56,52 +56,33 @@
 
   .menu-stripe {
     display: block;
-    width: 24px;
+    width: 32px;
     height: 2px;
     color: $primary-color;
     margin-bottom: 2px;
     @include transition(transform 200ms);
 
     &:first-child {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .semimodal-open:not(.semimodal-relative) & {
-      transform: rotate(45deg) translate(-3px, -3px);
+      transform: rotate(45deg) translate(-5px, -5px);
 
       &:first-child {
-        transform: rotate(-45deg) translate(-3px, 3px);
+        transform: rotate(-45deg) translate(-5px, 5px);
       }
     }
 
     @include query($tablet-1) {
       .semimodal-open.semimodal-relative & {
-        transform: rotate(45deg) translate(-3px, -3px);
+        transform: rotate(45deg) translate(-5px, -5px);
 
         &:first-child {
-          transform: rotate(-45deg) translate(-3px, 3px);
+          transform: rotate(-45deg) translate(-5px, 5px);
         }
       }
     }
-  }
-}
-
-.close-menu-btn {
-  position: absolute;
-  right: 32px;
-  top: 32px;
-  width: 32px;
-  height: 32px;
-  background-image: url('../assets/ico-close.svg');
-  cursor: pointer;
-  display: none;
-
-  &:hover {
-    opacity: .7;
-  }
-
-  @include query($tablet-1) {
-    display: block;
   }
 }
 
