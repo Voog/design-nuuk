@@ -687,11 +687,16 @@ body {
 // =============================================================================
 // Styling rules for the site's footer. These rules affect the entire site.
 .footer {
-  .voog-reference svg path {
-    fill: var(--primary-color);
+  .content-formatted {
+    font-size: var(--layout-footer-font-size);
+    line-height: var(--layout-footer-line-height);
 
-    .dark-background & {
-      fill: var(--third-color);
+    .voog-reference svg path {
+      fill: var(--primary-color);
+
+      .dark-background & {
+        fill: var(--third-color);
+      }
     }
   }
 }

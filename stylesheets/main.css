@@ -2516,11 +2516,7 @@ body.edy-checkout-button-visible {
 .dark-background .footer_separator {
   border-color: #ffffff;
 }
-.footer .content-formatted {
-  font-size: 14px;
-  line-height: 1.5;
-}
-.footer .content-formatted .edy-texteditor-view {
+.footer.content-formatted .edy-texteditor-view {
   min-height: 18px;
 }
 .footer .voog-reference {

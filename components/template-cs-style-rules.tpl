@@ -539,10 +539,14 @@ body.dark-background {
   border-color: var(--third-color);
 }
 
-.footer .voog-reference svg path {
+.footer .content-formatted {
+  font-size: var(--layout-footer-font-size);
+  line-height: var(--layout-footer-line-height);
+}
+.footer .content-formatted .voog-reference svg path {
   fill: var(--primary-color);
 }
-.dark-background .footer .voog-reference svg path {
+.dark-background .footer .content-formatted .voog-reference svg path {
   fill: var(--third-color);
 }
 

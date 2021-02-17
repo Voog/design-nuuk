@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/site-search.tpl",
-      "layout_name": "site-search",
-      "title": "site-search"
+      "file": "components/tags-post.tpl",
+      "layout_name": "tags-post",
+      "title": "tags-post"
     },
     {
       "content_type": "component",
@@ -137,6 +137,13 @@
       "file": "components/semimodal-class-names.tpl",
       "layout_name": "semimodal-class-names",
       "title": "semimodal-class-names"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-cs-footer.tpl",
+      "layout_name": "template-cs-footer",
+      "title": "template-cs-footer"
     },
     {
       "content_type": "component",
@@ -344,16 +351,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/tags-post.tpl",
-      "layout_name": "tags-post",
-      "title": "tags-post"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/site-search.tpl",
+      "layout_name": "site-search",
+      "title": "site-search"
     },
     {
       "content_type": "component",
