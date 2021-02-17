@@ -36,7 +36,7 @@
       {%- endif -%}
       <div class="container flex_col flex_j-space-between">
         <main class="content" role="main">
-          <div class="content-body content-formatted mar_b-16" data-search-indexing-allowed="true">
+          <div class="content-body content-formatted mar_b-64" data-search-indexing-allowed="true">
             {% contentblock name="page_title" publish_default_content="true" %}
               <h1>{{page.title}}</h1>
             {% endcontentblock %}

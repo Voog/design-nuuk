@@ -78,7 +78,7 @@
 
             <div class="flex_row-2--item-40">
               <div class="mar_0-32 flex_col t-sticky">
-                <div class="content-body content-formatted mar_b-16" data-search-indexing-allowed="true">
+                <div class="content-body content-formatted mar_b-64" data-search-indexing-allowed="true">
                   {% contentblock name="page_title" publish_default_content="true" %}
                     <h3>{{page.title}}</h3>
                   {% endcontentblock %}

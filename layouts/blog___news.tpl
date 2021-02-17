@@ -36,7 +36,7 @@
     {% endif %}
       <div class="container">
         <main class="content" role="main" data-search-indexing-allowed="true">
-          <section class="content-body content-formatted post_intro-content mar_b-16" {{ edy_intro_edit_text }}>{% content %}</section>
+          <section class="content-body content-formatted mar_b-64" {{ edy_intro_edit_text }}>{% content %}</section>
           {% include "blog-news-tags" %}
           <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
             {% for article in articles %}

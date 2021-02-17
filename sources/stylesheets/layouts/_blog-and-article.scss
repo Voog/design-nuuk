@@ -63,11 +63,6 @@
         width: calc(30% - 32px);
       }
 
-      h3 {
-        font-size: 36px;
-        line-height: 1.3;
-      }
-
       &:nth-child(n+2) {
         .post_wrapper {
           border-bottom: none;
@@ -137,11 +132,6 @@
     }
   }
 }
-
-.post_intro-content {
-  padding-bottom: 25px;
-}
-
 
 .post_ {
   &header {

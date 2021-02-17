@@ -3228,10 +3228,6 @@ body.edy-checkout-button-visible {
 .blog_listing-item:nth-child(2) {
   width: calc(30% - 32px);
 }
-.blog_listing-item h3 {
-  font-size: 36px;
-  line-height: 1.3;
-}
 .blog_listing-item:nth-child(n+2) .post_wrapper {
   border-bottom: none;
 }
@@ -3284,10 +3280,6 @@ body.edy-checkout-button-visible {
     font-size: 18px;
     line-height: 24px;
   }
-}
-
-.post_intro-content {
-  padding-bottom: 25px;
 }
 
 .post_header-stretch {
