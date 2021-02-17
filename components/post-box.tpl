@@ -77,7 +77,7 @@
 
   <div class="post_content{% if post-box == "article" %} post_narrow{% endif %}">
     {% unless post-box == "article" %}
-      <div class="post_excerpt mar_b-16">{{ article.excerpt }}</div>
+      <div class="post_excerpt mar_b-16"><p>{{ article.excerpt }}</p></div>
     {% endunless %}
 
     {% if post-box == "article" %}

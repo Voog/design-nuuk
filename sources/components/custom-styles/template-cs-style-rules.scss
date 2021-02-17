@@ -631,12 +631,11 @@ body {
         }
       }
       &:hover {
-        color: var(--header-mainmenu-color);
-        text-decoration: var(--header-mainmenu-hover-decoration);
+        color: var(--secondary-color);
         svg,
         path {
           .dark-background & {
-            fill: var(--third-color);
+            fill: var(--secondary-color);
           }
         }
       }
@@ -645,11 +644,21 @@ body {
     &:hover {
       .dark-background & {
         color: var(--third-color);
+        opacity: .7;
+
+        svg,
+        path {
+          .dark-background & {
+            fill: var(--third-color);
+            opacity: .7;
+          }
+        }
       }
 
       &::before {
         .dark-background & {
           border-color: var(--third-color);
+          opacity: .7;
         }
       }
     }

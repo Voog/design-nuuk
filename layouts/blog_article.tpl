@@ -64,7 +64,7 @@
 
           {%- load articles to "articles" tag=article.tag_names q.article.published_at.$not_eq="" q.article.id.$not_eq=article.id limit=3 -%}
           {% if articles.size >= 1 %}
-            <div class="content-formatted mar_t-48 js-related-articles{%- if articleSettingsData.show_related_articles != true %} d-none{%- endif -%}">
+            <div class="mar_t-48 js-related-articles{%- if articleSettingsData.show_related_articles != true %} d-none{%- endif -%}">
               <h4 class="post_narrow">{{ "continue_reading" | lc }}</h4>
 
               <div class="flex_row flex_row-3 mar_0-16-neg related_posts mar_t-32">

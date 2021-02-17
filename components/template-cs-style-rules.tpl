@@ -507,19 +507,24 @@ body.dark-background {
   border-color: var(--third-color);
 }
 .menu-breadcrumbs.menu-sub .menu-item a.active:hover {
-  color: var(--header-mainmenu-color);
-  -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
-          text-decoration: var(--header-mainmenu-hover-decoration);
+  color: var(--secondary-color);
 }
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a.active:hover svg,
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a.active:hover path {
-  fill: var(--third-color);
+  fill: var(--secondary-color);
 }
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a:hover {
   color: var(--third-color);
+  opacity: .7;
+}
+.dark-background .dark-background .menu-breadcrumbs.menu-sub .menu-item a:hover svg,
+.dark-background .dark-background .menu-breadcrumbs.menu-sub .menu-item a:hover path {
+  fill: var(--third-color);
+  opacity: .7;
 }
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a:hover::before {
   border-color: var(--third-color);
+  opacity: .7;
 }
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a::before {
   border-color: var(--third-color);

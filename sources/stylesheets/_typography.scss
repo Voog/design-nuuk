@@ -1,73 +1,77 @@
 h1 {
   font-size: 72px;
-  line-height: 83px;
+  line-height: 1.2;
   margin-top: 32px;
   margin-bottom: 8px;
+  font-weight: 500;
 
   @include query($tablet-1) {
     font-size: 56px;
-    line-height: 64px;
   }
 }
 
 h2 {
   font-size: 56px;
-  line-height: 64px;
+  line-height: 1.2;
   margin-top: 24px;
   margin-bottom: 8px;
+  font-weight: 500;
 
   @include query($tablet-1) {
     font-size: 36px;
-    line-height: 40px;
   }
 }
 
 h3 {
   font-size: 36px;
-  line-height: 40px;
+  line-height: 1.2;
   margin-top: 16px;
   margin-bottom: 8px;
+  font-weight: 500;
 
   @include query($tablet-1) {
     font-size: 24px;
-    line-height: 28px;
   }
 }
 
 h4 {
   font-size: 24px;
-  line-height: 28px;
+  line-height: 1.2;
   margin-top: 16px;
   margin-bottom: 8px;
+  font-weight: 500;
 
   @include query($tablet-1) {
     font-size: 20px;
-    line-height: 24px;
   }
 }
 
 h5 {
   font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 1.2;
   margin-top: 16px;
   margin-bottom: 8px;
 
   @include query($tablet-1) {
     font-size: 18px;
-    line-height: 24px;
   }
 }
 
 a {
-  color: black;
+  color: var(--primary-color);
+
+  &:hover {
+    color: var(--secondary-color);
+  }
 }
 
 p {
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 194%;
-  color: black;
+  color: var(--primary-color);
+  margin-top: 16px;
 }
 
 .p18 {
@@ -82,9 +86,7 @@ p {
 
 .p14 {
   font-size: 14px;
-  text-align: left;
-  line-height: 20px;
-  font-weight: 300;
+  line-height: 194%;
 }
 
 .p12 {
