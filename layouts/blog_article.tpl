@@ -48,7 +48,7 @@
                 </h4>
 
                 <div class="comment_messages content-formatted">
-                  {% for comment in article.comments reversed %}
+                  {% for comment in article.comments reversed limit: 2 %}
                     <div class="comment edy-site-blog-comment">
                       <div class="flex_box">
                         <span class="comment_author bold">{{ comment.author }}</span>
@@ -58,6 +58,23 @@
                       <span class="comment_delete">{% removebutton %}</span>
                     </div>
                   {% endfor %}
+
+                  <div class="comments_secondary comments_hidden">
+                    {% for comment in article.comments reversed  offset: 2 %}
+                      <div class="comment edy-site-blog-comment">
+                        <div class="flex_box">
+                          <span class="comment_author bold">{{ comment.author }}</span>
+                          <span class="comment_date mar_l-8">{{ comment.created_at | format_date: "long" }}</span>
+                        </div>
+                        <span class="comment_body">{{ comment.body_html }}</span>
+                        <span class="comment_delete">{% removebutton %}</span>
+                      </div>
+                    {% endfor %}
+                  </div>
+
+                  {%- if article.comments.size >= 3 -%}
+                    <div class="comment_more-btn js-read-more-comments">{{ "read_more" | lc }} </div>
+                  {%- endif -%}
                 </div>
               {% endif %}
 

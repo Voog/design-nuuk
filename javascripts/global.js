@@ -669,6 +669,22 @@ MMCQ = (function() {
       $('.search-btn').removeClass('open');
     }
 
+    $('.js-read-more-comments').click(function() {
+      togglecomments();
+    });
+
+    var togglecomments = function() {
+      var hiddenComments = $('.comments_secondary .comment');
+      var hiddenCommentsHeight = hiddenComments.outerHeight() * hiddenComments.length;
+      $('.comments_secondary').toggleClass('comments_hidden');
+
+      if ($('.comments_secondary.comments_hidden').length) {
+        $('.comments_secondary').css('max-height', 0);
+      } else {
+        $('.comments_secondary').css('max-height', hiddenCommentsHeight);
+      }
+    }
+
     $('.js-cart-btn').click(function() {
       if ($(this).data('product-id')) {
         Voog.ShoppingCart.addProductById($(this).data('product-id'))
