@@ -54,7 +54,7 @@
 }
 @font-face {
   font-family: 'Avenir Next';
-  src: url("../assets/avenir-next-demi.woff2") format("woff2"), url("../assets/avenir-next-demi.woff") format("woff"), url("../assets/avenir-next-demi.ttf") format("truetype");
+  src: url("../assets/avenir-next-demi-bold.woff2") format("woff2"), url("../assets/avenir-next-demi-bold.woff") format("woff"), url("../assets/avenir-next-demi-bold.ttf") format("truetype");
   font-weight: 600;
 }
 @font-face {
@@ -390,7 +390,7 @@ p {
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .grey {
@@ -1075,7 +1075,7 @@ p {
   color: #8d9091;
 }
 .content-formatted a.bold {
-  font-weight: 700;
+  font-weight: 600;
 }
 .content-formatted a:not(.custom-btn) {
   color: #0066bb;
@@ -1123,7 +1123,7 @@ p {
 }
 .content-formatted b,
 .content-formatted strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 .content-formatted code {
   display: inline-block;
@@ -1796,7 +1796,7 @@ body.front-page .semimodal .edy-bgpicker-toggle-button {
   background: #1B2124;
   color: #ffffff;
   padding: 8px 16px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 24px;
   position: relative;
   font-size: 14px;
@@ -2096,7 +2096,7 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
 .form_field-cms.with-input label {
   top: -8px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   background-color: #fff;
   color: #000;
 }
@@ -3910,7 +3910,7 @@ article.post_wrapper .date-separator.hide-separator {
 }
 .product_item-btn {
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 600;
 }
 .product_item-btn:hover {
   opacity: .7;
@@ -4901,7 +4901,7 @@ article.post_wrapper .date-separator.hide-separator {
   font-size: 14px;
 }
 .menu-sub.menu-breadcrumbs .menu-item a.active {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .menu-edy-btns {
@@ -4918,6 +4918,30 @@ article.post_wrapper .date-separator.hide-separator {
   display: none !important;
 }
 
+@media screen and (max-width: 900px) {
+  .semimodal .menu-sub {
+    margin-bottom: 24px;
+  }
+  .semimodal .menu-main {
+    width: 100%;
+  }
+  .semimodal .menu-main .menu {
+    width: 100%;
+  }
+  .semimodal .menu-main .menu a.selected {
+    background-repeat: no-repeat;
+    background-position: 100% 41%;
+    width: 100%;
+    padding-right: 16px;
+    background-image: url("../assets/chevron-down-black.svg");
+  }
+  .dark-background .semimodal .menu-main .menu a.selected {
+    background-image: url("../assets/chevron-down-white.svg");
+  }
+  .light-background .semimodal .menu-main .menu a.selected {
+    background-image: url("../assets/chevron-down-black.svg");
+  }
+}
 .w-100p {
   width: 100%;
 }

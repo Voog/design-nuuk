@@ -16,7 +16,7 @@
     "type": "button",
     "editor": "toggleIcon",
     "states": {
-      "on": "700",
+      "on": "600",
       "off": "400"
     },
     "icon": "bold",
@@ -115,7 +115,7 @@
     "type": "button",
     "editor": "toggleIcon",
     "states": {
-      "on": "700",
+      "on": "600",
       "off": "400"
     },
     "icon": "bold",
@@ -194,7 +194,7 @@
     "type": "button",
     "editor": "toggleIcon",
     "states": {
-      "on": "700",
+      "on": "600",
       "off": "400"
     },
     "icon": "bold",
@@ -256,13 +256,13 @@
     "type": "button",
     "editor": "toggleIcon",
     "states": {
-      "on": "700",
+      "on": "600",
       "off": "400"
     },
     "icon": "bold",
     "scope": "global"
   */
-  --header-mainmenu-active-font-weight: 700;
+  --header-mainmenu-active-font-weight: 600;
   /* VoogStyle
     "pathI18n": ["header", "main_menu", "active"],
     "titleI18n": "font_style",
@@ -334,7 +334,7 @@
     "type": "button",
     "editor": "toggleIcon",
     "states": {
-      "on": "700",
+      "on": "600",
       "off": "400"
     },
     "icon": "bold",
@@ -351,7 +351,7 @@
     "type": "button",
     "editor": "toggleIcon",
     "states": {
-      "on": "700",
+      "on": "600",
       "off": "400"
     },
     "icon": "bold",
@@ -367,7 +367,7 @@
     "type": "button",
     "editor": "toggleIcon",
     "states": {
-      "on": "700",
+      "on": "600",
       "off": "400"
     },
     "icon": "bold",

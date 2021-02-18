@@ -350,7 +350,7 @@ body {
       }
     }
 
-    .menu-item a.active {
+    .menu-item a.selected {
       color: var(--header-mainmenu-active-color);
       font-weight: var(--header-mainmenu-active-font-weight);
       text-decoration: var(--header-mainmenu-active-decoration);
@@ -492,7 +492,6 @@ body {
           text-decoration: var(--menu-sub-text-decoration);
           font-weight: var(--menu-sub-font-weight);
           font-style: var(--menu-sub-font-style);
-          line-height: var(--menu-sub-line-height);
 
           svg,
           path {
@@ -557,7 +556,7 @@ body {
         }
       }
 
-      .menu-item a.active {
+      .menu-item a.selected {
         color: var(--header-mainmenu-active-color);
         opacity: 1;
 

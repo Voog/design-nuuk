@@ -43,7 +43,7 @@
     "type": "button",
     "editor": "toggleIcon",
     "states": {
-      "on": "700",
+      "on": "600",
       "off": "400"
     },
     "icon": "bold",
@@ -141,7 +141,7 @@
     "type": "button",
     "editor": "toggleIcon",
     "states": {
-      "on": "700",
+      "on": "600",
       "off": "400"
     },
     "icon": "bold",

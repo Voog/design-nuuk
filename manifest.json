@@ -490,12 +490,6 @@
     },
     {
       "content_type": "application/font-woff",
-      "file": "assets/avenir-next-demi.woff",
-      "kind": "assets",
-      "filename": "avenir-next-demi.woff"
-    },
-    {
-      "content_type": "application/font-woff",
       "file": "assets/avenir-next-regular.woff",
       "kind": "assets",
       "filename": "avenir-next-regular.woff"
@@ -511,6 +505,18 @@
       "file": "assets/ico-expand.svg",
       "kind": "assets",
       "filename": "ico-expand.svg"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/avenir-next-demi-bold.ttf",
+      "kind": "assets",
+      "filename": "avenir-next-demi-bold.ttf"
+    },
+    {
+      "content_type": "application/font-woff",
+      "file": "assets/avenir-next-demi-bold.woff",
+      "kind": "assets",
+      "filename": "avenir-next-demi-bold.woff"
     },
     {
       "content_type": "application/font-sfnt",
@@ -621,22 +627,16 @@
       "filename": "ico-cart.svg"
     },
     {
-      "content_type": "application/font-sfnt",
-      "file": "assets/avenir-next-demi.ttf",
-      "kind": "assets",
-      "filename": "avenir-next-demi.ttf"
-    },
-    {
-      "content_type": "application/font-woff",
-      "file": "assets/avenir-next-demi.woff2",
-      "kind": "assets",
-      "filename": "avenir-next-demi.woff2"
-    },
-    {
       "content_type": "image/svg+xml",
       "file": "assets/chevron-down-white.svg",
       "kind": "assets",
       "filename": "chevron-down-white.svg"
+    },
+    {
+      "content_type": "application/font-woff",
+      "file": "assets/avenir-next-demi-bold.woff2",
+      "kind": "assets",
+      "filename": "avenir-next-demi-bold.woff2"
     },
     {
       "content_type": "application/font-woff",

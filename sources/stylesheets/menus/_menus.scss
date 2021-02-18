@@ -388,7 +388,7 @@
     font-size: 14px;
 
     &.active {
-      font-weight: 700;
+      font-weight: 600;
     }
   }
 }
@@ -406,5 +406,36 @@
 .menu-item-product-list {
   &.hidden {
     display: none!important;
+  }
+}
+
+@include query($tablet-1) {
+  .semimodal {
+    .menu-sub {
+      margin-bottom: 24px;
+    }
+
+    .menu-main {
+      width: 100%;
+      .menu {
+        width: 100%;
+
+        a.selected {
+          background-repeat: no-repeat;
+          background-position: 100% 41%;
+          width: 100%;
+          padding-right: 16px;
+          background-image: url('../assets/chevron-down-black.svg');
+
+          .dark-background & {
+            background-image: url('../assets/chevron-down-white.svg');
+          }
+
+          .light-background & {
+            background-image: url('../assets/chevron-down-black.svg');
+          }
+        }
+      }
+    }
   }
 }

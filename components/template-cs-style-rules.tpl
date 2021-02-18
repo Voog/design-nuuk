@@ -256,7 +256,7 @@ body.dark-background {
   color: var(--third-color);
   opacity: .7;
 }
-.menu-main .menu .menu-item a.active {
+.menu-main .menu .menu-item a.selected {
   color: var(--header-mainmenu-active-color);
   font-weight: var(--header-mainmenu-active-font-weight);
   -webkit-text-decoration: var(--header-mainmenu-active-decoration);
@@ -266,35 +266,35 @@ body.dark-background {
   text-transform: var(--header-mainmenu-text-transform);
 }
 @media screen and (max-width: 900px) {
-  .menu-main .menu .menu-item a.active {
+  .menu-main .menu .menu-item a.selected {
     font-size: 24px;
     line-height: 28px;
   }
 }
-.menu-main .menu .menu-item a.active.untranslated {
+.menu-main .menu .menu-item a.selected.untranslated {
   color: #C5292A;
 }
-.menu-main .menu .menu-item a.active::before {
+.menu-main .menu .menu-item a.selected::before {
   background-color: var(--header-mainmenu-active-color);
 }
-.dark-background .menu-main .menu .menu-item a.active::before {
+.dark-background .menu-main .menu .menu-item a.selected::before {
   background-color: var(--third-color);
   opacity: .7;
 }
-.dark-background .menu-main .menu .menu-item a.active {
+.dark-background .menu-main .menu .menu-item a.selected {
   color: var(--third-color);
   opacity: .7;
 }
-.menu-main .menu .menu-item a.active:hover {
+.menu-main .menu .menu-item a.selected:hover {
   color: var(--header-mainmenu-hover-color);
   -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
           text-decoration: var(--header-mainmenu-hover-decoration);
   text-transform: var(--header-mainmenu-text-transform);
 }
-.menu-main .menu .menu-item a.active:hover::before {
+.menu-main .menu .menu-item a.selected:hover::before {
   background-color: var(--header-mainmenu-hover-color);
 }
-.dark-background .menu-main .menu .menu-item a.active:hover {
+.dark-background .menu-main .menu .menu-item a.selected:hover {
   color: var(--third-color);
   opacity: 1;
 }
@@ -383,7 +383,6 @@ body.dark-background {
           text-decoration: var(--menu-sub-text-decoration);
   font-weight: var(--menu-sub-font-weight);
   font-style: var(--menu-sub-font-style);
-  line-height: var(--menu-sub-line-height);
 }
 .menu-main .menu .menu-sub .menu-item.active a:hover svg, .menu-main .menu .menu-sub .menu-item.active a:hover path {
   fill: var(--menu-sub-color);
@@ -460,18 +459,18 @@ body.dark-background {
 .dark-background .light-background .menu-main .menu .menu-item a:hover {
   color: var(--header-mainmenu-hover-color);
 }
-.dark-background .light-background .menu-main .menu .menu-item a.active {
+.dark-background .light-background .menu-main .menu .menu-item a.selected {
   color: var(--header-mainmenu-active-color);
   opacity: 1;
 }
-.dark-background .light-background .menu-main .menu .menu-item a.active::before {
+.dark-background .light-background .menu-main .menu .menu-item a.selected::before {
   background-color: var(--header-mainmenu-active-color);
   opacity: 1;
 }
-.dark-background .light-background .menu-main .menu .menu-item a.active:hover {
+.dark-background .light-background .menu-main .menu .menu-item a.selected:hover {
   color: var(--header-mainmenu-hover-color);
 }
-.dark-background .light-background .menu-main .menu .menu-item a.active:hover::before {
+.dark-background .light-background .menu-main .menu .menu-item a.selected:hover::before {
   background-color: var(--header-mainmenu-hover-color);
 }
 .dark-background .light-background .menu-main .menu .menu-sub .menu-item a {
