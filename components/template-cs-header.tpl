@@ -61,7 +61,7 @@
     "icon": "uppercase",
     "scope": "global"
   */
-  --header-site-title-text-transform: uppercase;
+  --header-site-title-text-transform: none;
   /* VoogStyle
     "pathI18n": ["header", "title"],
     "titleI18n": "color",
