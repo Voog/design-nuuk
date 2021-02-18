@@ -74,7 +74,7 @@
         @include transition(all 300ms);
 
         @include query($tablet-2) {
-          padding: 0;
+          padding: 16px;
         }
 
         .form_fields {

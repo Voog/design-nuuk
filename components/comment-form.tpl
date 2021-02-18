@@ -30,7 +30,7 @@
         </div>
 
         <div class="form_field-wrap">
-          <div class="form_field{% if comment_body_error %} form_field_with_errors{% endif %}">
+          <div class="form_field flex_col{% if comment_body_error %} form_field_with_errors{% endif %}">
             <label class="form_field_label" for="comment_form-body">{{ "comment" | lc }}</label>
             <textarea id="comment_form-body" class="form_field_textarea form_field_size_medium" name="comment[body]" rows="5">{{ comment.body }}</textarea>
           </div>
