@@ -587,14 +587,6 @@ body.dark-background {
   border-left: 1px dashed var(--third-color);
   border-right: 1px dashed var(--third-color);
 }
-.content-formatted table td, .content-formatted .product_item-btn table td, .content-formatted p table td {
-  border-top: 1px solid var(--content-body-color);
-  border-bottom: 1px solid var(--content-body-color);
-}
-.dark-background .content-formatted table td, .dark-background .content-formatted .product_item-btn table td, .dark-background .content-formatted p table td {
-  border-top: 1px solid var(--third-color);
-  border-bottom: 1px solid var(--third-color);
-}
 .content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6, .content-formatted .product_item-btn h1, .content-formatted .product_item-btn h2, .content-formatted .product_item-btn h3, .content-formatted .product_item-btn h4, .content-formatted .product_item-btn h5, .content-formatted .product_item-btn h6, .content-formatted p h1, .content-formatted p h2, .content-formatted p h3, .content-formatted p h4, .content-formatted p h5, .content-formatted p h6 {
   color: var(--secondary-color);
 }

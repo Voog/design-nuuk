@@ -460,7 +460,6 @@
       }
     }
 
-
     $(document).ready(function() {
       handleActivLangMenu();
       handleMenuTopPos();

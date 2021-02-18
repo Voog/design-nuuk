@@ -90,7 +90,7 @@
 
   iframe,
   pre {
-    margin-top: 25px;
+    margin-top: 24px;
   }
 
   // Code blocks and preformatted content.
@@ -140,7 +140,7 @@
   }
 
   blockquote {
-    margin: 20px 40px 20px 0;
+    margin: 24px 40px 24px 0;
     padding-left: 16px;
     border-left: 2px solid;
   }
@@ -206,8 +206,8 @@
   .edy-texteditor-container-wrapper-center,
   .edy-texteditor-container-wrapper-left-block,
   .edy-texteditor-container-wrapper-right-block {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 24px;
+    margin-bottom: 24px;
 
     &:first-child {
       margin-top: 0;
@@ -225,11 +225,11 @@
   }
 
   .edy-positionable-container-left {
-    margin-right: 20px;
+    margin-right: 24px;
   }
 
   .edy-positionable-container-right {
-    margin-left: 20px;
+    margin-left: 24px;
   }
 
   // Content area image title
@@ -247,7 +247,7 @@
   // Styling rules for the site's editable content area tables.
   // Container around editable content-area table.
   .table-container {
-    margin-top: 20px;
+    margin-top: 24px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -256,12 +256,60 @@
 
   table {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 24px;
     font-size: 16px;
     border-collapse: collapse;
 
+    tr {
+      border-top: 1px solid $grey-bg;
+      background-color: $white;
+      .dark-background & {
+        border-top: 1px solid var(--third-color);
+      }
+
+      &:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.02);
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $grey-bg;
+        .dark-background & {
+          border-bottom: 1px solid var(--third-color);
+        }
+      }
+    }
+
     td {
-      padding: 10px;
+      padding: 24px 24px 24px 0;
+      font-size: 14px;
+      line-height: 24px;
+
+      &:first-child {
+        padding-left: 24px;
+      }
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 32px;
+
+    li {
+      font-size: 14px;
+      line-height: 20px;
+      padding-bottom: 8px;
+
+      ul {
+        padding-left: 32px;
+        li {
+          list-style: disc;
+        }
+      }
+
+      ol,
+      ul {
+        padding-top: 8px;
+      }
     }
   }
 

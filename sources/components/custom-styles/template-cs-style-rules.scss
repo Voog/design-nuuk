@@ -744,18 +744,6 @@ body {
     }
   }
 
-  table {
-    td {
-      border-top: 1px solid var(--content-body-color);
-      border-bottom: 1px solid var(--content-body-color);
-
-      .dark-background & {
-        border-top: 1px solid var(--third-color);
-        border-bottom: 1px solid var(--third-color);
-      }
-    }
-  }
-
   // Styling rules for the editable content area headings.
   // scss-lint:disable SingleLinePerSelector
   h1, h2, h3, h4, h5, h6 {

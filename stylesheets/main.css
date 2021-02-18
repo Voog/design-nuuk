@@ -1096,7 +1096,7 @@ p {
 }
 .content-formatted iframe,
 .content-formatted pre {
-  margin-top: 25px;
+  margin-top: 24px;
 }
 .content-formatted pre, .content-formatted code {
   font-size: 13px;
@@ -1144,7 +1144,7 @@ p {
   border-radius: 0;
 }
 .content-formatted blockquote {
-  margin: 20px 40px 20px 0;
+  margin: 24px 40px 24px 0;
   padding-left: 16px;
   border-left: 2px solid;
 }
@@ -1202,8 +1202,8 @@ p {
 .content-formatted .edy-texteditor-container-wrapper-center,
 .content-formatted .edy-texteditor-container-wrapper-left-block,
 .content-formatted .edy-texteditor-container-wrapper-right-block {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 .content-formatted .edy-positionable-container-center:first-child,
 .content-formatted .edy-positionable-container-left-block:first-child,
@@ -1226,10 +1226,10 @@ p {
   width: 45%;
 }
 .content-formatted .edy-positionable-container-left {
-  margin-right: 20px;
+  margin-right: 24px;
 }
 .content-formatted .edy-positionable-container-right {
-  margin-left: 20px;
+  margin-left: 24px;
 }
 .content-formatted .edy-image-container-with-title:after {
   display: block;
@@ -1240,18 +1240,63 @@ p {
   opacity: .7;
 }
 .content-formatted .table-container {
-  margin-top: 20px;
+  margin-top: 24px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 .content-formatted table {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 24px;
   font-size: 16px;
   border-collapse: collapse;
 }
+.content-formatted table tr {
+  border-top: 1px solid #F2F2F2;
+  background-color: #ffffff;
+}
+.dark-background .content-formatted table tr {
+  border-top: 1px solid var(--third-color);
+}
+.content-formatted table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+.content-formatted table tr:last-child {
+  border-bottom: 1px solid #F2F2F2;
+}
+.dark-background .content-formatted table tr:last-child {
+  border-bottom: 1px solid var(--third-color);
+}
 .content-formatted table td {
-  padding: 10px;
+  padding: 24px 24px 24px 0;
+  font-size: 14px;
+  line-height: 24px;
+}
+.content-formatted table td:first-child {
+  padding-left: 24px;
+}
+.content-formatted ul,
+.content-formatted ol {
+  padding-left: 32px;
+}
+.content-formatted ul li,
+.content-formatted ol li {
+  font-size: 14px;
+  line-height: 20px;
+  padding-bottom: 8px;
+}
+.content-formatted ul li ul,
+.content-formatted ol li ul {
+  padding-left: 32px;
+}
+.content-formatted ul li ul li,
+.content-formatted ol li ul li {
+  list-style: disc;
+}
+.content-formatted ul li ol,
+.content-formatted ul li ul,
+.content-formatted ol li ol,
+.content-formatted ol li ul {
+  padding-top: 8px;
 }
 .content-formatted .edy-texteditor-view {
   min-height: 32px;

@@ -1001,7 +1001,6 @@ MMCQ = (function() {
       }
     }
 
-
     $(document).ready(function() {
       handleActivLangMenu();
       handleMenuTopPos();
