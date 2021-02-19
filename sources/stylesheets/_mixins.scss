@@ -84,7 +84,7 @@
 
 @mixin transition($prop) {
   transition: $prop;
-  transition-timing-function: $bezier-medium;
+  transition-timing-function: $bezier-fast;
   perspective: 1000;
   backface-visibility: hidden;
 }
