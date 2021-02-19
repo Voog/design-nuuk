@@ -54,7 +54,7 @@
           "col_count": 1,
           "block_max_width": 100,
           "block_justification": "center",
-          "block_v_padding": 16,
+          "block_v_padding": 0,
           "col_max_width": "none",
           "col_justification": "between",
           "col_min_width": 400,
