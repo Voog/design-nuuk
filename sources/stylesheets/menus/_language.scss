@@ -81,21 +81,25 @@
     box-shadow: 0 2px 10px rgba($primary-color, .07);
 
     .menu {
-      padding: 14px 0;
+      padding: 16px 0;
 
-      .menu-item a {
-        font-size: 16px;
-        line-height: 194%;
+      .menu-item {
+        a {
+          font-size: 16px;
+          line-height: 24px;
 
-        &:hover {
-          background-color: $grey-bg;
-          opacity: 1;
-        }
+          &:hover {
+            background-color: $grey-bg;
+            opacity: 1;
+          }
 
-        .menu-language-popover-name {
-          .language-flags-enabled & {
-            padding: 4px 16px 4px 52px;
+          .menu-language-popover-name {
+            padding: 8px 16px;
             display: block;
+
+            .language-flags-enabled & {
+              padding: 8px 16px 8px 52px;
+            }
           }
         }
       }
@@ -163,15 +167,6 @@
 
       &.untranslated {
         color: $red;
-      }
-
-      // scss-lint:disable SelectorDepth
-      .language-menu-mode-popover.language-flags-enabled & {
-        padding-right: 16px;
-      }
-
-      .language-menu-mode-popover.language-flags-disabled & {
-        padding: 4px 16px;
       }
 
       .language-menu-mode-popover.language-flags-enabled.language-names-disabled & {
