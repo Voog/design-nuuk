@@ -755,7 +755,7 @@ body.dark-background {
   }
 }
 .content-formatted .custom-btn, .content-formatted .form_submit input, .content-formatted .product_item-btn .custom-btn, .content-formatted .product_item-btn .form_submit input, .content-formatted p .custom-btn, .content-formatted p .form_submit input {
-  padding: calc(var(--button-padding) - 8px) var(--button-padding) calc(var(--button-padding) - 7px);
+  padding: var(--button-padding);
   color: var(--button-color);
   font-size: var(--button-font-size);
   font-style: var(--button-font-style);
@@ -777,7 +777,7 @@ body.dark-background {
   border: 1px solid var(--third-color);
 }
 .content-formatted .custom-btn:hover, .content-formatted .form_submit input:hover, .content-formatted .product_item-btn .custom-btn:hover, .content-formatted .product_item-btn .form_submit input:hover, .content-formatted p .custom-btn:hover, .content-formatted p .form_submit input:hover {
-  padding: calc(var(--button-hover-padding) - 8px) var(--button-hover-padding) calc(var(--button-hover-padding) - 7px);
+  padding: var(--button-hover-padding);
   color: var(--button-hover-color);
   font-size: var(--button-hover-font-size);
   font-style: var(--button-hover-font-style);

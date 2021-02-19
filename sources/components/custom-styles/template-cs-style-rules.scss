@@ -928,7 +928,7 @@ body {
   // Code blocks and preformatted content.
   .custom-btn,
   .form_submit input {
-    padding: calc(var(--button-padding) - 8px) var(--button-padding) calc(var(--button-padding) - 7px);
+    padding: var(--button-padding);
     color: var(--button-color);
     font-size: var(--button-font-size);
     font-style: var(--button-font-style);
@@ -943,7 +943,7 @@ body {
     }
 
     &:hover {
-      padding: calc(var(--button-hover-padding) - 8px) var(--button-hover-padding) calc(var(--button-hover-padding) - 7px);
+      padding: var(--button-hover-padding);
       color: var(--button-hover-color);
       font-size: var(--button-hover-font-size);
       font-style: var(--button-hover-font-style);
