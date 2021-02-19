@@ -37,11 +37,11 @@
           {%- assign itemClass = 'menu-item-product' -%}
         {%- endif -%}
 
-        <li class="{{itemClass}} menu-item lvl-1 {{menuItemDisplayClass}}">
+        <li class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %} {{menuItemDisplayClass}}">
           {% menulink item current-class="active" wrapper-class="menu-item lvl-1" untranslated-class="untranslated fci-editor-menuadd" %}
         </li>
       {%- else -%}
-        <li class="menu-item lvl-1">
+        <li class="menu-item{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %} lvl-1">
           {% menulink item current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
         </li>
       {%- endif -%}

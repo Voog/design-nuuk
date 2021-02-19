@@ -251,6 +251,10 @@ body .edy-bgpicker-toggle-button {
   border-radius: 4px;
   margin: 24px 0 0 24px;
 
+  @include query($tablet-1) {
+    margin: 24px 0 0 0;
+  }
+
   .semimodal-relative & {
     margin: 16px 0 0 0;
 

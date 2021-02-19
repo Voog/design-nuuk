@@ -412,7 +412,7 @@
       .menu {
         width: 100%;
 
-        a.selected {
+        .has-children a {
           background-repeat: no-repeat;
           background-position: 100% 41%;
           width: 100%;
@@ -425,6 +425,18 @@
 
           .light-background & {
             background-image: url('../assets/chevron-down-black.svg');
+          }
+
+          &.selected {
+            background-image: url('../assets/chevron-up-black.svg');
+
+            .dark-background & {
+              background-image: url('../assets/chevron-up-white.svg');
+            }
+
+            .light-background & {
+              background-image: url('../assets/chevron-up-black.svg');
+            }
           }
         }
       }

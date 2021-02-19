@@ -483,6 +483,12 @@
       "filename": "avenir-next-regular.woff2"
     },
     {
+      "content_type": "image/svg+xml",
+      "file": "assets/chevron-up-black.svg",
+      "kind": "assets",
+      "filename": "chevron-up-black.svg"
+    },
+    {
       "content_type": "application/font-woff",
       "file": "assets/avenir-next-medium.woff2",
       "kind": "assets",
@@ -553,6 +559,12 @@
       "file": "assets/avenir-next-medium.ttf",
       "kind": "assets",
       "filename": "avenir-next-medium.ttf"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/chevron-up-white.svg",
+      "kind": "assets",
+      "filename": "chevron-up-white.svg"
     },
     {
       "content_type": "image/svg+xml",

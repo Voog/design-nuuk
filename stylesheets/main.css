@@ -1773,6 +1773,11 @@ body .edy-bgpicker-toggle-button {
   border-radius: 4px;
   margin: 24px 0 0 24px;
 }
+@media screen and (max-width: 900px) {
+  body .edy-bgpicker-toggle-button {
+    margin: 24px 0 0 0;
+  }
+}
 .semimodal-relative body .edy-bgpicker-toggle-button {
   margin: 16px 0 0 0;
 }
@@ -4922,18 +4927,27 @@ article.post_wrapper .date-separator.hide-separator {
   .semimodal .menu-main .menu {
     width: 100%;
   }
-  .semimodal .menu-main .menu a.selected {
+  .semimodal .menu-main .menu .has-children a {
     background-repeat: no-repeat;
     background-position: 100% 41%;
     width: 100%;
     padding-right: 16px;
     background-image: url("../assets/chevron-down-black.svg");
   }
-  .dark-background .semimodal .menu-main .menu a.selected {
+  .dark-background .semimodal .menu-main .menu .has-children a {
     background-image: url("../assets/chevron-down-white.svg");
   }
-  .light-background .semimodal .menu-main .menu a.selected {
+  .light-background .semimodal .menu-main .menu .has-children a {
     background-image: url("../assets/chevron-down-black.svg");
+  }
+  .semimodal .menu-main .menu .has-children a.selected {
+    background-image: url("../assets/chevron-up-black.svg");
+  }
+  .dark-background .semimodal .menu-main .menu .has-children a.selected {
+    background-image: url("../assets/chevron-up-white.svg");
+  }
+  .light-background .semimodal .menu-main .menu .has-children a.selected {
+    background-image: url("../assets/chevron-up-black.svg");
   }
 }
 .w-100p {
