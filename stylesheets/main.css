@@ -91,6 +91,14 @@ body {
 body.dark-background {
   color: white;
 }
+body * ::-moz-selection {
+  background: black;
+  color: white;
+}
+body * ::selection {
+  background: black;
+  color: white;
+}
 
 .voog-bg-picker-btn, .bg-picker {
   position: absolute;
