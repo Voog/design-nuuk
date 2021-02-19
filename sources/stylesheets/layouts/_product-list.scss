@@ -22,7 +22,7 @@
       .product_item-btn {
         white-space: nowrap;
         opacity: 0;
-        transform: translateY(-100%);
+        transform: translateY(100%);
         pointer-events: none;
         top: 0;
         @include transition(all 300ms);
