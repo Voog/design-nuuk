@@ -143,7 +143,7 @@
             {
               "title": {{verticalSpacingCombinedTr | json }},
               "type": "number",
-              "min": 1,
+              "min": 0,
               "key": "block_v_padding",
               "placeholder": {{verticalSpacingCombinedTr | json }}
             },
@@ -195,7 +195,7 @@
             {
               "title": {{ colHPadCombinedTr | json }},
               "type": "number",
-              "min": 1,
+              "min": 0,
               "key": "col_h_padding",
               "placeholder": {{ colHPadCombinedTr | json }}
             },
