@@ -850,6 +850,7 @@ p {
   font-weight: 400;
   font-size: 14px;
   line-height: 194%;
+  width: 50%;
 }
 .content-formatted .edy-buy-button-variants .form_field + .form_field {
   border-top: none;
@@ -4017,10 +4018,7 @@ article.post_wrapper .date-separator.hide-separator {
     width: 100%;
   }
   .product_filters-item:first-child .form_field .form_field_select {
-    width: 50%;
-    -webkit-box-flex: 1;
-        -ms-flex: auto;
-            flex: auto;
+    width: 100%;
   }
 }
 .product_filters.content-formatted .product_list-filter,
