@@ -1002,19 +1002,18 @@ p {
   padding: 0px 8px;
 }
 
-.edy-content-social-button {
-  margin-right: 8px;
-}
 .edy-content-social-button svg {
-  border: 1px solid var(--secondary-color);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  margin-right: 2px;
 }
 .edy-content-social-button svg:last-child {
   margin-right: 0;
+}
+.edy-content-social-button svg circle,
+.edy-content-social-button svg path:first-child {
+  color: var(--secondary-color);
+}
+.edy-content-social-button svg path:last-child {
+  color: currentColor;
 }
 
 .content-formatted {
