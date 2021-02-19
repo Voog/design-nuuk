@@ -33,7 +33,7 @@
         {% if show_language_menu_popover %}
           <div class="js-toggle-menu-language menu-language-toggle js-prevent-sideclick p-rel" tabindex=0>
             <button class="menu-language-btn ico-flags ico-flag-{{ page.language_code }} js-menu-language-popover-btn" data-lang-code="{{ page.language_locale }}" {{ edy_intro_add_lang }}>
-              <span>{{ current_language_title }}</span><span class="mar_l-8">{% include 'ico-chevron-down' %}</span>
+              <span>{{ current_language_title }}</span><span class="mar_l-4">{% include 'ico-chevron-down' %}</span>
             </button>
             {% if show_language_menu_popover %}
               {% include "menu-language-popover" %}

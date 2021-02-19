@@ -45,15 +45,11 @@
     &:hover {
       border-color: rgba($primary-color, .5);
     }
-  }
 
-  .language-flags-enabled.language-names-enabled.language-menu-mode-popover & {
-    width: auto;
-    height: auto;
-    padding-right: 16px;
-    white-space: nowrap;
-    padding-left: 37px;
-    font-size: 16px;
+    svg {
+      height: 8px;
+      width: 10px;
+    }
   }
 
   .language-flags-enabled.language-names-disabled.language-menu-mode-popover & {
@@ -73,11 +69,6 @@
       right: 0;
       top: 2px;
     }
-
-    .language-flags-enabled.language-names-enabled.language-menu-mode-popover & {
-      right: auto;
-      left: 0px;
-    }
   }
 }
 
@@ -90,7 +81,24 @@
     box-shadow: 0 2px 10px rgba($primary-color, .07);
 
     .menu {
-      padding: 8px 0;
+      padding: 14px 0;
+
+      .menu-item a {
+        font-size: 16px;
+        line-height: 194%;
+
+        &:hover {
+          background-color: $grey-bg;
+          opacity: 1;
+        }
+
+        .menu-language-popover-name {
+          .language-flags-enabled & {
+            padding: 4px 16px 4px 52px;
+            display: block;
+          }
+        }
+      }
     }
 
     &--wrap {
@@ -134,18 +142,14 @@
       text-align: left;
       white-space: nowrap;
 
-      .language-names-disabled & {
-        font-size: 0;
-      }
-
       // scss-lint:disable NestingDepth
       &::before,
       &::after {
-        top: 6px;
+        top: 10px;
 
         // scss-lint:disable SelectorDepth
         .language-menu-mode-popover.language-flags-enabled & {
-          right: 15px;
+          left: 15px;
         }
       }
 
@@ -167,13 +171,7 @@
       }
 
       .language-menu-mode-popover.language-flags-disabled & {
-        padding: 4px 24px 4px 16px;
-      }
-
-      .language-menu-mode-popover.language-flags-enabled.language-names-enabled & {
-        padding-top: 8px;
-        padding-bottom: 8px;
-        padding-left: 48px;
+        padding: 4px 16px;
       }
 
       .language-menu-mode-popover.language-flags-enabled.language-names-disabled & {
@@ -181,8 +179,6 @@
         padding: 0;
         margin-right: 0;
         margin-left: auto;
-        height: 24px;
-        min-width: 48px;
       }
     }
   }
