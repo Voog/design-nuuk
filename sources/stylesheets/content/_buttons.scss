@@ -21,6 +21,12 @@
     top: 2px;
   }
 
+  &.custom-btn-disabled {
+    &:active {
+      top: 0;
+    }
+  }
+
   &.p-abs {
     position: absolute;
 

@@ -65,13 +65,13 @@
     position: relative;
 
     &:active {
-      background-color: $secondary-color;
+      background-color: var(--secondary-color);
       top: 2px;
       transition: all  0.3s $bezier-default;
     }
 
     &:hover {
-      background-color: $secondary-color;
+      background-color: var(--secondary-color);
       transition: all  0.3s $bezier-default;
     }
   }

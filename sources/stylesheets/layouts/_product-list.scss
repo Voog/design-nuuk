@@ -37,7 +37,7 @@
         @include transition(all 300ms);
         display: flex;
         flex-wrap: wrap;
-        color: $grey-1;
+        color: var(--secondary-color);
       }
 
       .product_item-title {

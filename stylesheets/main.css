@@ -460,14 +460,14 @@ p {
   position: relative;
 }
 .content-formatted .form_submit input:active {
-  background-color: #8d9091;
+  background-color: var(--secondary-color);
   top: 2px;
   -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
   -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
   transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
 }
 .content-formatted .form_submit input:hover {
-  background-color: #8d9091;
+  background-color: var(--secondary-color);
   -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
   -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
   transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
@@ -972,6 +972,10 @@ p {
   background-color: #8D9091;
   top: 2px;
 }
+.content-formatted .custom-btn.custom-btn-disabled:active,
+.custom-btn.custom-btn-disabled:active {
+  top: 0;
+}
 .content-formatted .custom-btn.p-abs,
 .custom-btn.p-abs {
   position: absolute;
@@ -1155,6 +1159,7 @@ p {
   margin: 24px 40px 24px 0;
   padding-left: 16px;
   border-left: 2px solid;
+  color: var(--secondary-color);
 }
 .content-formatted .custom-btn {
   cursor: pointer;
@@ -2625,7 +2630,7 @@ body.edy-checkout-button-visible {
 .footer_separator {
   width: 100%;
   opacity: 0.2;
-  border: 2px solid var(--secondary-color);
+  border: 1px solid var(--secondary-color);
   margin-bottom: 48px;
 }
 @media screen and (max-width: 900px) {
@@ -3845,7 +3850,7 @@ article.post_wrapper .date-separator.hide-separator {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  color: #8D9091;
+  color: var(--secondary-color);
 }
 .product_item-wrap .product_item-title {
   text-align: var(--product-list-item__alignment);
