@@ -42,19 +42,12 @@
         success: function(data) {
           for (var i = 0; i < data.length; i++) {
             if (data[i].product) {
-              var productExists = productsPageList.some(function(product) {
-                return product.id === data[i].product.id;
-              });
-
-              if (!productExists) {
-                productsPageList.push(
-                  {
-                    "title": data[i].product.name,
-                    "value": data[i].parent.id,
-                    "id": data[i].product.id
-                  }
-                );
-              }
+              productsPageList.push(
+                {
+                  "title": data[i].product.name + " (" + data[i].parent.title + ")",
+                  "value": data[i].parent.id
+                }
+              );
             }
           };
         }
