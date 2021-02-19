@@ -1774,7 +1774,7 @@ body .edy-bgpicker-toggle-button {
   margin: 24px 0 0 24px;
 }
 .semimodal-relative body .edy-bgpicker-toggle-button {
-  margin: 16px 0 0 24px;
+  margin: 16px 0 0 0;
 }
 @media screen and (max-width: 900px) {
   .semimodal-relative body .edy-bgpicker-toggle-button {
