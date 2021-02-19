@@ -17,9 +17,11 @@
     display: inline-flex;
     width: auto;
 
-    .product-page & {
-      width: 100%;
-    }
+
+  }
+
+  &.js-buy-btn-content .edy-buy-button {
+    width: 100%;
   }
 
   .edy-buy-button-container {
