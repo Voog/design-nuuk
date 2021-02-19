@@ -37,7 +37,7 @@
       $.ajax({
         type: 'GET',
         contentType: 'application/json',
-        url: '/admin/api/buy_buttons?q.content.parent_type=page&q.content.language_id={{page.language_id}}&per_page=100',
+        url: '/admin/api/buy_buttons?q.content.parent_type=page&q.content.language_id={{page.language_id}}&per_page=250',
         dataType: 'json',
         success: function(data) {
           for (var i = 0; i < data.length; i++) {
