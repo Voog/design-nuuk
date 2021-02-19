@@ -1265,7 +1265,7 @@ p {
 }
 .content-formatted table tr {
   border-top: 1px solid #F2F2F2;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 .dark-background .content-formatted table tr {
   border-top: 1px solid var(--third-color);
