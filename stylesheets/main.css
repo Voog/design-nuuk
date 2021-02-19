@@ -4892,6 +4892,7 @@ article.post_wrapper .date-separator.hide-separator {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-left: 0px;
 }
 .menu-sub.menu-breadcrumbs .menu-item a {
   font-size: 14px;
