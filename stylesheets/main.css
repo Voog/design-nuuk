@@ -1350,7 +1350,7 @@ p {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 32px;
+  padding: 32px 32px 32px 8px;
   min-height: 100%;
   display: block;
   overflow: auto;
@@ -1369,6 +1369,9 @@ p {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+.semimodal-absolute .semimodal .semimodal_inner {
+  padding: 32px;
 }
 @media screen and (max-width: 900px) {
   .semimodal .semimodal_inner {
@@ -1449,6 +1452,7 @@ html:not(.semimodal-relative) .semimodal {
 }
 .semimodal-relative .semimodal .site_title {
   display: block;
+  padding-left: 24px;
 }
 @media screen and (max-width: 900px) {
   .semimodal-relative .semimodal .site_title {
@@ -1464,8 +1468,8 @@ html:not(.semimodal-relative) .semimodal {
 }
 .semimodal-relative .semimodal {
   width: 100%;
-  min-width: 320px;
-  max-width: 320px;
+  min-width: 270px;
+  max-width: 270px;
   pointer-events: all;
 }
 @media screen and (max-width: 900px) {
@@ -1767,10 +1771,10 @@ body .edy-bgpicker-toggle-button {
   opacity: 1;
   height: 40px;
   border-radius: 4px;
-  margin: 24px 0 0 0;
+  margin: 24px 0 0 24px;
 }
 .semimodal-relative body .edy-bgpicker-toggle-button {
-  margin: 16px 0 0 0;
+  margin: 16px 0 0 24px;
 }
 @media screen and (max-width: 900px) {
   .semimodal-relative body .edy-bgpicker-toggle-button {
@@ -4496,7 +4500,10 @@ article.post_wrapper .date-separator.hide-separator {
   transition: top .6s ease-in;
 }
 .semimodal .menu-btn {
-  padding: 0px;
+  padding: 0px 0px 0px 24px;
+}
+.semimodal-absolute .semimodal .menu-btn {
+  padding: 0 16px 0 0;
 }
 @media screen and (max-width: 900px) {
   .menu-btn {

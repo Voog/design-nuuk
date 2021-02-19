@@ -12,7 +12,11 @@
   transition: top .6s ease-in;
 
   .semimodal & {
-    padding: 0px;
+    padding: 0px 0px 0px 24px;
+
+    .semimodal-absolute & {
+      padding: 0 16px 0 0;
+    }
   }
 
   @include query($tablet-1) {

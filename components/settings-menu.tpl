@@ -16,7 +16,7 @@
       {%- endif -%}
 
       if (!('max_width' in valuesObj)) {
-        valuesObj.max_width = 320;
+        valuesObj.max_width = 270;
       }
 
       if (!('positioning' in valuesObj)) {
