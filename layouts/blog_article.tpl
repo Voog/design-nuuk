@@ -41,12 +41,14 @@
           <div class="post_narrow">
             {% include "tags-post" %}
             <div id="comments" class="comments content-formatted{% if show_article_comments == false %} hide-post-comments{% endif %}" data-search-indexing-allowed="false">
-              {% if article.comments_count > 0 %}
-                <h4 class="comment_title js-comments">{{ "comments_for_count" | lc }}
+              <h4 class="comment_title js-comments">
+                {{ "comments_for_count" | lc }}
+                {% if article.comments_count > 0 %}
                   <span class="comment_count-separator">&#9642;</span>
                   <span class="edy-site-blog-comments-count">{{ article.comments_count }}</span>
-                </h4>
-
+                {% endif %}
+              </h4>
+              {% if article.comments_count > 0 %}
                 <div class="comment_messages content-formatted">
                   {% for comment in article.comments reversed limit: 2 %}
                     <div class="comment edy-site-blog-comment">

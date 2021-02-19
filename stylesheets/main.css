@@ -455,7 +455,7 @@ p {
 }
 .content-formatted .form_submit input {
   border: none;
-  line-height: 1.7;
+  line-height: 1.25;
   outline: none;
   position: relative;
 }
@@ -644,7 +644,7 @@ p {
 .comments .comment_title,
 .comments .comment,
 .comments .comment_form {
-  padding-top: 24px;
+  padding-top: 16px;
 }
 .comments .comment {
   -webkit-transition: all 300ms;
