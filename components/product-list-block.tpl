@@ -3,7 +3,7 @@
   {% if site.root_item.selected? %}
     {% for level_1 in site.visible_menuitems_with_data %}
       {% if level_1.layout_title == product_list_layout or level_1.layout_title == product_layout %}
-        {%- load buy_button to "buy_button" q.content.parent_id=level_1.page_id q.content.parent_type="page" -%}
+        {%- load buy_button to "buy_button" q.content.parent_id=level_1.page_id q.content.parent_type="page" q.content.name="body" s="content.position" -%}
         {%- assign product = buy_button.product -%}
         <div class="product_item js-product-item flex_row-3--item{% if product != blank %} js-product-whith-data{% endif %}"
           data-title="{{level_1.title | escape }}"
@@ -37,7 +37,7 @@
       {%- if item.current? -%}
         {%- for item_child in item.visible_children_with_data -%}
           {%- if item_child.layout_title == product_list_layout or item_child.layout_title == product_layout -%}
-            {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" -%}
+            {%- load buy_button to "buy_button" q.content.parent_id=item_child.page_id q.content.parent_type="page" q.content.name="body" s="content.position" -%}
             {%- assign product = buy_button.product -%}
             <div class="product_item js-product-item flex_row-3--item{% if product != blank %} js-product-whith-data{% endif %}"
               data-title="{{item_child.title | escape }}"

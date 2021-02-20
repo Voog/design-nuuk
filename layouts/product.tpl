@@ -49,7 +49,7 @@
           <div class="flex_row flex_row-2 reverse-col-tablet mar_0-32-neg">
             <div class="flex_row-2--item-60">
               <div class="mar_0-32 p-rel js-product-page-image-wrap">
-                {%- load buy_button to "buy_button" q.content.parent_id=page.id q.content.parent_type="page" -%}
+                {%- load buy_button to "buy_button" q.content.parent_id=page.id q.content.parent_type="page" q.content.name="body" s="content.position" -%}
                 {% if buy_button.product != blank %}
                   {%- assign buyButtonImage = buy_button.product.image -%}
                 {% endif %}
@@ -130,7 +130,7 @@
                   <div class="product_item js-product-item flex_row-3--item" data-path="{{page.path}}">
                     <div class="mar_0-8">
                       <div class="product_item-wrap">
-                        {%- load buy_button to "buy_button" q.content.parent_id=id q.content.parent_type="page" -%}
+                        {%- load buy_button to "buy_button" q.content.parent_id=id q.content.parent_type="page" q.content.name="body" s="content.position" -%}
                         {% include 'product-item', _buyButton: buy_button, _entityData: _buyButton.content.parent %}
                       </div>
                     </div>
