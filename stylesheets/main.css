@@ -478,7 +478,7 @@ p {
   border-bottom: 1px solid #8d9091;
   padding-right: 32px;
   background-repeat: no-repeat;
-  background-position: 100% 41%;
+  background-position: 100% 50%;
 }
 .content-formatted .form_field_textfield,
 .content-formatted .form_field_textarea,
@@ -1773,11 +1773,6 @@ body .edy-bgpicker-toggle-button {
   height: 40px;
   border-radius: 4px;
   margin: 24px 0 0 0;
-}
-@media screen and (max-width: 900px) {
-  body .edy-bgpicker-toggle-button {
-    margin: 24px 0 0 0;
-  }
 }
 .semimodal-relative body .edy-bgpicker-toggle-button {
   margin: 16px 0 0 0;
@@ -4011,6 +4006,9 @@ article.post_wrapper .date-separator.hide-separator {
 }
 .product_filters-item:first-child .form_field {
   margin-right: 32px;
+}
+.product_filters-item:first-child .form_field .form_field_select {
+  margin: 0;
 }
 @media screen and (max-width: 752px) {
   .product_filters-item:first-child .form_field {

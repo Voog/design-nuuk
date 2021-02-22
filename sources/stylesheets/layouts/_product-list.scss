@@ -150,6 +150,10 @@
         .form_field {
           margin-right: 32px;
 
+          .form_field_select {
+            margin: 0;
+          }
+
           @include query($tablet-2) {
             margin-right: 0;
             width: 100%;
