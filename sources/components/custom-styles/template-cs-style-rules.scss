@@ -619,6 +619,19 @@ body {
 
 .menu-breadcrumbs.menu-sub {
   .menu-item a {
+    color: var(--secondary-color);
+
+    &:hover {
+      color: var(--primary-color);
+
+      svg,
+      path {
+        .dark-background & {
+          fill: var(--primary-color);
+        }
+      }
+    }
+
     &::after {
       .dark-background & {
         background-color: var(--third-color);
@@ -631,6 +644,8 @@ body {
     // scss-lint:disable NestingDepth
 
     &.active {
+      color: var(--secondary-color);
+
       .dark-background & {
         color: var(--third-color);
       }
@@ -641,11 +656,11 @@ body {
         }
       }
       &:hover {
-        color: var(--secondary-color);
+        color: var(--primary-color);
         svg,
         path {
           .dark-background & {
-            fill: var(--secondary-color);
+            fill: var(--primary-color);
           }
         }
       }

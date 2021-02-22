@@ -502,11 +502,24 @@ body.dark-background {
   border-color: var(--menu-sub-hover-color);
 }
 
+.menu-breadcrumbs.menu-sub .menu-item a {
+  color: var(--secondary-color);
+}
+.menu-breadcrumbs.menu-sub .menu-item a:hover {
+  color: var(--primary-color);
+}
+.dark-background .menu-breadcrumbs.menu-sub .menu-item a:hover svg,
+.dark-background .menu-breadcrumbs.menu-sub .menu-item a:hover path {
+  fill: var(--primary-color);
+}
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a::after {
   background-color: var(--third-color);
 }
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a {
   color: var(--third-color);
+}
+.menu-breadcrumbs.menu-sub .menu-item a.active {
+  color: var(--secondary-color);
 }
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a.active {
   color: var(--third-color);
@@ -515,11 +528,11 @@ body.dark-background {
   border-color: var(--third-color);
 }
 .menu-breadcrumbs.menu-sub .menu-item a.active:hover {
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a.active:hover svg,
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a.active:hover path {
-  fill: var(--secondary-color);
+  fill: var(--primary-color);
 }
 .dark-background .menu-breadcrumbs.menu-sub .menu-item a:hover {
   color: var(--third-color);

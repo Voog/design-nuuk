@@ -4900,9 +4900,7 @@ article.post_wrapper .date-separator.hide-separator {
 }
 .menu-sub.menu-breadcrumbs .menu-item a {
   font-size: 14px;
-}
-.menu-sub.menu-breadcrumbs .menu-item a.active {
-  font-weight: 600;
+  line-height: 194%;
 }
 
 .menu-edy-btns {
