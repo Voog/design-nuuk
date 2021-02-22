@@ -1772,7 +1772,7 @@ body .edy-bgpicker-toggle-button {
   opacity: 1;
   height: 40px;
   border-radius: 4px;
-  margin: 24px 0 0 24px;
+  margin: 24px 0 0 0;
 }
 @media screen and (max-width: 900px) {
   body .edy-bgpicker-toggle-button {
