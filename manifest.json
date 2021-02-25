@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/tags-post.tpl",
-      "layout_name": "tags-post",
-      "title": "tags-post"
+      "file": "components/site-search.tpl",
+      "layout_name": "site-search",
+      "title": "site-search"
     },
     {
       "content_type": "component",
@@ -295,6 +295,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/product-page-nav.tpl",
+      "layout_name": "product-page-nav",
+      "title": "product-page-nav"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-cs-main-menu.tpl",
       "layout_name": "template-cs-main-menu",
       "title": "template-cs-main-menu"
@@ -351,16 +358,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/tags-post.tpl",
+      "layout_name": "tags-post",
+      "title": "tags-post"
     },
     {
       "content_type": "component",
       "component": true,
-      "file": "components/site-search.tpl",
-      "layout_name": "site-search",
-      "title": "site-search"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
@@ -493,6 +500,12 @@
       "file": "assets/avenir-next-medium.woff2",
       "kind": "assets",
       "filename": "avenir-next-medium.woff2"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-arrow-right.svg",
+      "kind": "assets",
+      "filename": "ico-arrow-right.svg"
     },
     {
       "content_type": "application/font-woff",

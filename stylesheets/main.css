@@ -3937,6 +3937,40 @@ article.post_wrapper .date-separator.hide-separator {
           box-sizing: border-box;
   white-space: nowrap;
 }
+.product_page-nav--wrap {
+  position: absolute;
+  right: -32px;
+  top: 64px;
+}
+@media screen and (max-width: 752px) {
+  .product_page-nav--wrap {
+    right: 0;
+    top: -96px;
+  }
+}
+.product_page-nav--link {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
+  background-color: rgba(196, 196, 196, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+}
+.product_page-nav--link:hover {
+  opacity: .7;
+}
+.product_page-nav--right {
+  background-image: url("../assets/ico-arrow-right.svg");
+}
+.product_page-nav--left {
+  margin-top: 16px;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-image: url("../assets/ico-arrow-right.svg");
+}
 .product_alt-attr {
   display: none;
 }
