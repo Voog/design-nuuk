@@ -428,9 +428,7 @@ p {
   position: relative;
   display: block;
   margin-bottom: 4px;
-  -webkit-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
-  -o-transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
-  transition: all 0.3s cubic-bezier(0.1, 0.6, 0, 1);
+  opacity: 0;
 }
 .content-formatted .form_field_required .form_field_label:after {
   content: '*';

@@ -490,15 +490,12 @@
   };
 
   var setFormLabelState  = function() {
-    var handleLabel = function(el) {
-      var label = el.closest('.form_field').find('.edy-fe-label, .form_field_label');
-      label.css({transform: "translateY("+ label.height() +"px)", "pointer-events": "none"});
-    };
-
     $('.form_field_textarea, .form_field_textfield').each(function() {
+      var label = $(this).closest('.form_field').find('.edy-fe-label, .form_field_label');
       if (!$(this).val()) {
-        handleLabel($(this));
+        label.css({transform: "translateY("+ label.height() +"px)", "pointer-events": "none", opacity: 1});
       }
+      label.css({opacity: 1});
     });
   }
 
@@ -522,7 +519,7 @@
 
     $('.form_field_textfield, .form_field_textarea').focus(function() {
       var label = $(this).closest('.form_field').find('.edy-fe-label, .form_field_label');
-      label.css({transform: "translateY(0)", "pointer-events": "all"});
+      label.css({transform: "translateY(0)", "pointer-events": "all", transition: "all 0.3s cubic-bezier(0.1, 0.6, 0, 1)"});
     });
 
     if (!editmode()) {
