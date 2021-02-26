@@ -597,7 +597,6 @@ MMCQ = (function() {
         $('body').removeClass('layout_settings-visible');
         $('.editor_default-container').removeClass('active');
         $('.js-image-settings-popover').toggleClass('active');
-        setFormLabelState();
       };
     });
 
@@ -1061,6 +1060,10 @@ MMCQ = (function() {
     $('.form_field_textfield, .form_field_textarea').focus(function() {
       var label = $(this).closest('.form_field').find('.edy-fe-label, .form_field_label');
       label.css({transform: "translateY(0)", "pointer-events": "all", transition: "all 0.3s cubic-bezier(0.1, 0.6, 0, 1)"});
+    });
+
+    $('.form_field_textfield, .form_field_textarea').blur(function() {
+      setFormLabelState();
     });
 
     if (!editmode()) {
