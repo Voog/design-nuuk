@@ -597,6 +597,7 @@ MMCQ = (function() {
         $('body').removeClass('layout_settings-visible');
         $('.editor_default-container').removeClass('active');
         $('.js-image-settings-popover').toggleClass('active');
+        setFormLabelState();
       };
     });
 
@@ -1029,6 +1030,21 @@ MMCQ = (function() {
     }
   };
 
+  var setFormLabelState  = function() {
+    var handleLabel = function(el) {
+      var label = el.closest('.form_field').find('.edy-fe-label, .form_field_label');
+      label.css({transform: "translateY("+ label.height() +"px)", "pointer-events": "none"});
+    };
+
+    if (!$('.form_field_textarea').val()) {
+      handleLabel($('.form_field_textarea'));
+    }
+
+    if (!$('.form_field_textfield').val()) {
+      handleLabel($('.form_field_textfield'));
+    }
+  }
+
   var init = function() {
     // Add site wide functions here.
     bindSideClicks();
@@ -1043,6 +1059,13 @@ MMCQ = (function() {
 
     $(document).on('voog:shoppingcart:button:created', function() {
       buildCustomShoppingCartIcon();
+    });
+
+    setFormLabelState();
+
+    $('.form_field_textfield, .form_field_textarea').focus(function() {
+      var label = $(this).closest('.form_field').find('.edy-fe-label, .form_field_label');
+      label.css({transform: "translateY(0)", "pointer-events": "all"});
     });
 
     if (!editmode()) {
