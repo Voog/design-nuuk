@@ -1036,13 +1036,11 @@ MMCQ = (function() {
       label.css({transform: "translateY("+ label.height() +"px)", "pointer-events": "none"});
     };
 
-    if (!$('.form_field_textarea').val()) {
-      handleLabel($('.form_field_textarea'));
-    }
-
-    if (!$('.form_field_textfield').val()) {
-      handleLabel($('.form_field_textfield'));
-    }
+    $('.form_field_textarea, .form_field_textfield').each(function() {
+      if (!$(this).val()) {
+        handleLabel($(this));
+      }
+    });
   }
 
   var init = function() {
