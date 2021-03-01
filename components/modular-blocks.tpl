@@ -222,19 +222,17 @@
           {%- assign name = "content-" | append: i | append: "-" | append: id -%}
           <div class="col-item flex_auto b-box {% if columnCount == 1 %} content-formatted--overflowed-images{% endif %}" data-search-indexing-allowed="true">
           {%- if id == 1 and i == 1 -%}
-            {% capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture %}
-            {% if first_block_html != blank %}
-              {% assign first_block_has_content = true %}
-            {% else %}
-              {% assign first_block_has_content = false %}
-            {% endif %}
+            {%- comment -%}
+              For better migration use content with name "body" because older templates common page layout uses content with name "body".
+            {%- endcomment -%}
 
-            {% if first_block_has_content == false %}
-              {% capture body_html %}{% content readonly=editmode %}{% endcapture %}
-              {% if body_html != blank %}
-                {%- assign name = "body" -%}
+            {%- capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture -%}
+            {%- if first_block_html == blank -%}
+              {% capture first_block_html %}{% content readonly=editmode %}{% endcapture %}
+              {% if first_block_html != blank %}
+                {% assign name = "body" %}
               {% endif %}
-            {% endif %}
+            {%- endif -%}
 
             {% contentblock name=name %}
               {% include 'modular-content-1-1' %}
