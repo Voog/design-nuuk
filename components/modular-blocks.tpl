@@ -221,13 +221,27 @@
         {%- for i in (1..columnCount) -%}
           {%- assign name = "content-" | append: i | append: "-" | append: id -%}
           <div class="col-item flex_auto b-box {% if columnCount == 1 %} content-formatted--overflowed-images{% endif %}" data-search-indexing-allowed="true">
-            {%- if id == 1 and i == 1 -%}
-              {% contentblock name=name %}
-                {% include 'modular-content-1-1' %}
-              {% endcontentblock %}
-            {%- else -%}
-              {%- content name=name -%}
-            {%- endif -%}
+          {%- if id == 1 and i == 1 -%}
+            {% capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture %}
+            {% if first_block_html != blank %}
+              {% assign first_block_has_content = true %}
+            {% else %}
+              {% assign first_block_has_content = false %}
+            {% endif %}
+
+            {% if first_block_has_content == false %}
+              {% capture body_html %}{% content readonly=editmode %}{% endcapture %}
+              {% if body_html != blank %}
+                {%- assign name = "body" -%}
+              {% endif %}
+            {% endif %}
+
+            {% contentblock name=name %}
+              {% include 'modular-content-1-1' %}
+            {% endcontentblock %}
+          {%- else -%}
+            {%- content name=name -%}
+          {%- endif -%}
           </div>
         {%- endfor -%}
       </div>
