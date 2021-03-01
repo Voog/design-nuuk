@@ -228,10 +228,7 @@
 
             {%- capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture -%}
             {%- if first_block_html == blank -%}
-              {% capture first_block_html %}{% content readonly=editmode %}{% endcapture %}
-              {% if first_block_html != blank %}
-                {% assign name = "body" %}
-              {% endif %}
+              {% assign name = "body" %}
             {%- endif -%}
 
             {% contentblock name=name %}
