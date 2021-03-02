@@ -488,6 +488,16 @@
     }
   };
 
+  var setFormLabelState  = function() {
+    $('.form_field_textarea, .form_field_textfield').each(function() {
+      var label = $(this).closest('.form_field').find('.edy-fe-label, .form_field_label');
+      if (!$(this).val()) {
+        label.css({transform: "translateY("+ label.height() +"px)", "pointer-events": "none", opacity: 1});
+      }
+      label.css({opacity: 1});
+    });
+  }
+
   var init = function() {
     // Add site wide functions here.
     bindSideClicks();
@@ -502,6 +512,17 @@
 
     $(document).on('voog:shoppingcart:button:created', function() {
       buildCustomShoppingCartIcon();
+    });
+
+    setFormLabelState();
+
+    $('.form_field_textfield, .form_field_textarea').focus(function() {
+      var label = $(this).closest('.form_field').find('.edy-fe-label, .form_field_label');
+      label.css({transform: "translateY(0)", "pointer-events": "all", transition: "all 0.3s cubic-bezier(0.1, 0.6, 0, 1)"});
+    });
+
+    $('.form_field_textfield, .form_field_textarea').blur(function() {
+      setFormLabelState();
     });
 
     if (!editmode()) {

@@ -428,6 +428,7 @@ p {
   position: relative;
   display: block;
   margin-bottom: 4px;
+  opacity: 0;
 }
 .content-formatted .form_field_required .form_field_label:after {
   content: '*';
