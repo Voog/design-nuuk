@@ -9,13 +9,18 @@
 
   {% for url in productPageUrls %}
     {% if page.url == url %}
-      {% assign nextIndex = forloop.index %}
-      {% assign prevIndex = nextIndex| minus: 2 %}
+      {% unless forloop.first %}
+        {% assign prevIndex = forloop.index | minus: 2 %}
+      {% endunless %}
+      {% unless forloop.last %}
+        {% assign nextIndex = forloop.index %}
+      {% endunless %}
+      {% break %}
     {% endif %}
   {% endfor %}
 
   <div class="product_page-nav--wrap">
-    {%- if nextIndex < productPageUrls.size -%}
+    {%- if nextIndex >= 0 -%}
       <a class="product_page-nav--link product_page-nav--right" href="{{productPageUrls[nextIndex]}}"></a>
     {%- endif -%}
     {%- if prevIndex >= 0 -%}
