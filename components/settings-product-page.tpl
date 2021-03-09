@@ -1,16 +1,9 @@
-<div class="js-prevent-sideclick content_settings-btn layout_settings-btn">
-  <button class="js-product-page-settings-btn js-settings-editor-btn edy-cbtn">
-    <span>
-      <span class="edy-cbtn-content">
-        <span class="edy-cbtn-ico"></span>
-        <span>
-          <div class="bold">{{ "product_page" | lce }}</div>
-          <div class="grey">{{ "edit_product_page" | lce }}</div>
-        </span>
-      </span>
-    </span>
-  </button>
-</div>
+{% include 'settings-editor-button',
+  _titleKey: "product_page",
+  _descriptionKey: "edit_product_page",
+  _className: "js-product-page-settings-btn",
+  _wrapClassName: "content_settings-btn"
+%}
 
 {%- assign productNoteInputCount = 1 -%}
 {%- assign productPageSettings = page.data[productLayoutSettingsKey] -%}
