@@ -122,6 +122,10 @@
         border-radius: 50%;
         display: block;
 
+        .dark-background & {
+          background-color: $white;
+        }
+
         &:hover {
           opacity: .7;
         }

@@ -21,10 +21,10 @@
 
   <div class="product_page-nav--wrap">
     {%- if nextIndex >= 0 -%}
-      <a class="product_page-nav--link product_page-nav--right" href="{{productPageUrls[nextIndex]}}"></a>
+      <a class="product_page-nav--link product_page-nav--right"  title="{{ "next" | lce | escape_once }}" href="{{productPageUrls[nextIndex]}}"></a>
     {%- endif -%}
     {%- if prevIndex >= 0 -%}
-      <a class="product_page-nav--link product_page-nav--left" href="{{productPageUrls[prevIndex]}}"></a>
+      <a class="product_page-nav--link product_page-nav--left" title="{{ "previous" | lce | escape_once }}" href="{{productPageUrls[prevIndex]}}"></a>
     {%- endif -%}
   </div>
 {%- endif -%}
