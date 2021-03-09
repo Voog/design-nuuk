@@ -14,7 +14,7 @@
 {% endif %}
 
 {% comment %}STYLESHEETS{% endcomment %}
-{% stylesheet_link "main.min.css?nuuk=1.1.24" %}
+{% stylesheet_link "main.min.css?nuuk=1.2.0" %}
 {% if editmode %}
   <link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">
 {% endif %}
