@@ -3944,8 +3944,7 @@ article.post_wrapper .date-separator.hide-separator {
 }
 @media screen and (max-width: 752px) {
   .product_page-nav--wrap {
-    right: 0;
-    top: -96px;
+    display: none;
   }
 }
 .product_page-nav--link {
