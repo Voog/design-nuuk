@@ -812,7 +812,7 @@ MMCQ = (function() {
   };
 
   // ===========================================================================
-  // Load article cover images only when they are close or appearing in the
+  // Load images only when they are close or appearing in the
   // viewport.
   // ===========================================================================
   var callback_loaded = function (element) {
@@ -821,7 +821,7 @@ MMCQ = (function() {
   };
 
   var bindContentItemImageLazyload = new LazyLoad({
-    threshold : 500,
+    threshold : 300,
     elements_selector: ".js-lazyload",
     callback_loaded: callback_loaded
   });

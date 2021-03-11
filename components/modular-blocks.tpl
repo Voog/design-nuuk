@@ -5,7 +5,13 @@
   {%- assign blockCount = _defaultBlockObj.size -%}
 {%- endif -%}
 
-{%- for id in (1..blockCount) -%}
+{%- if editmode -%}
+  {%- assign blockCounter = 5 -%}
+{%- else -%}
+  {%- assign blockCounter = blockCount -%}
+{%- endif -%}
+
+{%- for id in (1..blockCounter) -%}
   {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
   {%- assign blockColumnsSettings = page.data[blockColumnsSettingsKey] -%}
 
@@ -197,52 +203,63 @@
   </script>
 {%- endfor -%}
 
-{%- for id in (1..blockCount) -%}
-  <section class="block-container-{{ id }} content-body content-formatted">
-    <div class="block-{{ id }} editor_default-container">
-      {%- if editmode -%}
-        <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">{{ "block" | lce  | escape_once }} {{ id }}</button>
-      {%- endif -%}
-      {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
-      {%- assign blockColumnsCount = page.data[blockColumnsSettingsKey].block_columns -%}
+<div class="block-container-wrap">
+  {%- for id in (1..blockCounter) -%}
+    <section class="block-container-{{ id }} block-container content-body content-formatted{% if blockCount < id %} d-none js-lazyload{% endif %}">
+      <div class="block-{{ id }} editor_default-container">
+        {%- if editmode -%}
+          <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">{{ "block" | lce  | escape_once }} {{ id }}</button>
+        {%- endif -%}
+        {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
+        {%- assign blockColumnsCount = page.data[blockColumnsSettingsKey].block_columns -%}
 
 
-      {%- if blockColumnsCount -%}
-        {%- assign columnCount = blockColumnsCount | to_num -%}
-      {%- else -%}
-        {%- if _defaultBlockObj[blockColumnsSettingsKey].col_count %}
-          {%- assign columnCount = _defaultBlockObj[blockColumnsSettingsKey].col_count -%}
-        {%- else %}
-          {%- assign columnCount = _defaultBlockObj.default.col_count -%}
-        {%- endif %}
-      {%- endif -%}
+        {%- if blockColumnsCount -%}
+          {%- assign columnCount = blockColumnsCount | to_num -%}
+        {%- else -%}
+          {%- if _defaultBlockObj[blockColumnsSettingsKey].col_count %}
+            {%- assign columnCount = _defaultBlockObj[blockColumnsSettingsKey].col_count -%}
+          {%- else %}
+            {%- assign columnCount = _defaultBlockObj.default.col_count -%}
+          {%- endif %}
+        {%- endif -%}
 
-      <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap flex_j-center-mobile">
-        {%- for i in (1..columnCount) -%}
-          {%- assign name = "content-" | append: i | append: "-" | append: id -%}
-          <div class="col-item flex_auto b-box {% if columnCount == 1 %} content-formatted--overflowed-images{% endif %}" data-search-indexing-allowed="true">
-          {%- if id == 1 and i == 1 -%}
-            {%- comment -%}
-              For better migration use content with name "body" because older templates common page layout uses content with name "body".
-            {%- endcomment -%}
+        {%- if editmode -%}
+          {%- assign columnCounter = 5 -%}
+        {%- else -%}
+          {%- assign columnCounter = columnCount -%}
+        {%- endif -%}
 
-            {%- capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture -%}
-            {%- if first_block_html == blank -%}
-              {% assign name = "body" %}
+        <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap flex_j-center-mobile">
+          {%- for i in (1..columnCounter) -%}
+            {%- assign name = "content-" | append: i | append: "-" | append: id -%}
+            <div
+              class="col-item flex_auto b-box{% if columnCount < i %} d-none js-lazyload{% endif %}{% if columnCount == 1 %} content-formatted--overflowed-images{% endif %}"
+              data-search-indexing-allowed="true"
+            >
+            {%- if id == 1 and i == 1 -%}
+              {%- comment -%}
+                For better migration use content with name "body" because older templates common page layout uses content with name "body".
+              {%- endcomment -%}
+
+              {%- capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture -%}
+              {%- if first_block_html == blank -%}
+                {% assign name = "body" %}
+              {%- endif -%}
+
+              {% contentblock name=name %}
+                {% include 'modular-content-1-1' %}
+              {% endcontentblock %}
+            {%- else -%}
+              {%- content name=name -%}
             {%- endif -%}
-
-            {% contentblock name=name %}
-              {% include 'modular-content-1-1' %}
-            {% endcontentblock %}
-          {%- else -%}
-            {%- content name=name -%}
-          {%- endif -%}
-          </div>
-        {%- endfor -%}
+            </div>
+          {%- endfor -%}
+        </div>
       </div>
-    </div>
-  </section>
-{%- endfor -%}
+    </section>
+  {%- endfor -%}
+</div>
 
 {% include 'settings-popover',
   _blockSettings: _blockSettings, _commonPage: _commonPage,

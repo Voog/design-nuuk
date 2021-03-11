@@ -36,11 +36,23 @@
         ],
         dataKey: '{{blockSettingsKey}}',
         containerClass: ['bottom-settings-popover', 'first', 'editor_default'],
-        values: valuesObj
+        values: valuesObj,
+        noReload: true,
+        prevFunc: function(data) {
+          if (data.block_count >= 1) {
+              $('.block-container-wrap .block-container:nth-child(n+'+ data.block_count +')').addClass('d-none');
+              $('.block-container-wrap .block-container:nth-child(-n'+ data.block_count +')').removeClass('d-none');
+            }
+        }
       }
     )
+    {%- if editmode -%}
+      {%- assign blockCounter = 5 -%}
+    {%- else -%}
+      {%- assign blockCounter = _blockCount -%}
+    {%- endif -%}
 
-    {% for id in (1.._blockCount) %}
+    {% for id in (1..blockCounter) %}
       {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
 
       {%- if page.data[blockColumnsSettingsKey] %}
@@ -221,10 +233,12 @@
           ],
           dataKey: '{{blockColumnsSettingsKey}}',
           values: valuesObj,
+          noReload: true,
           containerClass: ['block-settings-popover-{{ id }}', 'editor_default'],
           prevFunc: function(data) {
             {%- assign rowSettingsKey = id | append: '_block_columns' -%}
             {%- assign rowSettings = _blockSettings[rowSettingsKey] -%}
+            var colItem = $('.column-container-{{ id }} .col-item');
 
             if (data.block_max_width >= 1) {
               if ($(window).width() >= 720) {
@@ -238,6 +252,17 @@
               }
             }
 
+            if (data.block_columns >= 1) {
+              $('.column-container-{{ id }} .col-item:nth-child(n+'+ data.block_columns +')').addClass('d-none');
+              $('.column-container-{{ id }} .col-item:nth-child(-n'+ data.block_columns +')').removeClass('d-none');
+
+              if (data.block_columns == 1) {
+                colItem.addClass('content-formatted--overflowed-images');
+              } else {
+                colItem.removeClass('content-formatted--overflowed-images');
+              }
+            }
+
             if (data.block_justification) {
               $('.block-container-{{ id }}').css({
                 'justify-content': data.block_justification
@@ -247,7 +272,7 @@
             if (parseInt(data.col_h_padding) >= 0) {
               var col_h_padding = '0 ' + data.col_h_padding + 'px 32px';
               if ($(window).width() <= 720 && data.block_v_padding > 32) {
-                $('.column-container-{{ id }} .col-item').css({
+                colItem.css({
                   padding: col_h_padding / 2, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.col_h_padding + 'px)'
                 });
 
@@ -255,7 +280,7 @@
                   'margin': '0 -' + data.col_h_padding / 2 + 'px -32px'
                 });
               } else {
-                $('.column-container-{{ id }} .col-item').css({
+                colItem.css({
                   padding: col_h_padding, width: 'calc(100% / {{rowSettings.block_count}} - ' + data.col_h_padding * 2 + 'px)'
                 });
 
@@ -264,7 +289,7 @@
                 });
               }
             } else {
-              $('.column-container-{{ id }} .col-item').css({
+              colItem.css({
                 padding: '0 0 32px', width: 'calc(100% / {{rowSettings.block_count}})'
               });
 
@@ -296,16 +321,16 @@
             }
 
             if ($(window).width() <= 720) {
-              $('.column-container-{{ id }} .col-item').css({
+              colItem.css({
                 'max-width': '100%'
               });
             } else {
               if (parseInt(data.col_max_width) >= 1) {
-                $('.column-container-{{ id }} .col-item').css({
+                colItem.css({
                   'max-width': data.col_max_width + 'px'
                 });
               } else {
-                $('.column-container-{{ id }} .col-item').css({
+                colItem.css({
                   'max-width': 'initial'
                 });
               }
@@ -313,11 +338,11 @@
 
 
             if (data.col_min_width >= 1) {
-              $('.column-container-{{ id }} .col-item').css({
+              colItem.css({
                 'min-width': data.col_min_width + 'px'
               });
             } else {
-              $('.column-container-{{ id }} .col-item').css({
+              colItem.css({
                 'min-width': 'initial'
               });
             }
