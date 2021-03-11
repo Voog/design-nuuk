@@ -830,6 +830,7 @@ p {
   border-top: 1px solid var(--secondary-color);
   border-bottom: 1px solid var(--secondary-color);
   margin: 0 auto 0 0;
+  width: 100%;
 }
 .content-formatted .edy-buy-button-variants .form_field .form_field_label {
   margin-bottom: 0;
@@ -837,6 +838,7 @@ p {
   font-weight: 400;
   font-size: 14px;
   line-height: 194%;
+  word-break: normal;
 }
 .content-formatted .edy-buy-button-variants .form_field .form_field_select {
   padding-bottom: 0;
