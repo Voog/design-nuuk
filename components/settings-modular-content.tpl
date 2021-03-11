@@ -40,9 +40,9 @@
         noReload: true,
         prevFunc: function(data) {
           if (data.block_count >= 1) {
-              $('.block-container-wrap .block-container:nth-child(n+'+ data.block_count +')').addClass('d-none');
-              $('.block-container-wrap .block-container:nth-child(-n'+ data.block_count +')').removeClass('d-none');
-            }
+            $('.block-container-wrap .block-container:nth-child(n+'+ data.block_count +')').addClass('d-none');
+            $('.block-container-wrap .block-container:nth-child(-n'+ data.block_count +')').removeClass('d-none');
+          }
         }
       }
     )

@@ -171,35 +171,37 @@
     }
   </style>
   <script>
-    window.addEventListener('DOMContentLoaded', function(event) {
-      var setMinWidth = function() {
-        var colItem = $(".column-container-{{id}} .col-item");
+    if ({{blockCount}} >= {{id}}) {
+      window.addEventListener('DOMContentLoaded', function(event) {
+        var setMinWidth = function() {
+          var colItem = $(".column-container-{{id}} .col-item");
 
-        if (parseFloat(colItem.css('min-width')) > colItem.closest(".editor_default-container").width()) {
-          colItem.css('min-width', '100%');
-        } else {
-          colItem.css('min-width', "{{minWidth}}");
+          if (parseFloat(colItem.css('min-width')) > colItem.closest(".editor_default-container").width()) {
+            colItem.css('min-width', '100%');
+          } else {
+            colItem.css('min-width', "{{minWidth}}");
+          }
         }
-      }
 
-      setMinWidth();
-
-      $(window).resize(function() {
         setMinWidth();
-        if ($(window).width() >= 720) {
-          $('.block-{{ id }}').css({
-            width: "{{maxBlockWidth}}%"
-          });
-        } else {
-          $('.block-{{ id }}').css({
-            width: '100%'
-          });
-          $('.column-container-{{ id }} .col-item').css({
-            'max-width': '100%'
-          });
-        }
+
+        $(window).resize(function() {
+          setMinWidth();
+          if ($(window).width() >= 720) {
+            $('.block-{{ id }}').css({
+              width: "{{maxBlockWidth}}%"
+            });
+          } else {
+            $('.block-{{ id }}').css({
+              width: '100%'
+            });
+            $('.column-container-{{ id }} .col-item').css({
+              'max-width': '100%'
+            });
+          }
+        });
       });
-    });
+    }
   </script>
 {%- endfor -%}
 
