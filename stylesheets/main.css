@@ -2080,11 +2080,7 @@ body.front-page .semimodal .edy-bgpicker-toggle-button {
 }
 
 .menu-item-cms-settings {
-  margin: 8px;
-}
-
-.menu-item-cms-add {
-  margin: 0 8px;
+  margin: 8px 0;
 }
 
 .lang_menu-popover .menu.menu-cms {
@@ -4663,6 +4659,10 @@ article.post_wrapper .date-separator.hide-separator {
   padding: 16px 0;
 }
 
+.language-flags-enabled .lang_menu-popover .menu {
+  padding: 8px 0;
+}
+
 .lang_menu-popover .menu .menu-item a {
   font-size: 16px;
   line-height: 24px;
@@ -4680,6 +4680,10 @@ article.post_wrapper .date-separator.hide-separator {
 
 .language-flags-enabled .lang_menu-popover .menu .menu-item a .menu-language-popover-name {
   padding: 8px 16px 8px 52px;
+}
+
+.language-names-disabled .lang_menu-popover .menu .menu-item a .menu-language-popover-name {
+  display: none;
 }
 
 .lang_menu-popover--wrap {
@@ -4738,7 +4742,13 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
 }
 
 .language-menu-mode-popover.language-flags-enabled .menu-language .menu-item a::before, .language-menu-mode-popover.language-flags-enabled .menu-language .menu-item a::after {
-  left: 15px;
+  left: unset;
+  right: 12px;
+  top: 6px;
+}
+
+.language-menu-mode-popover.language-flags-enabled.editmode .menu-language .menu-item a::before, .language-menu-mode-popover.language-flags-enabled.editmode .menu-language .menu-item a::after {
+  right: 16px;
 }
 
 .menu-language .menu-item a:hover {
@@ -4754,6 +4764,8 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
   padding: 0;
   margin-right: 0;
   margin-left: auto;
+  min-height: 32px;
+  min-width: 48px;
 }
 
 .language-names-disabled.language-flags-enabled .menu-language .menu-language-name {
