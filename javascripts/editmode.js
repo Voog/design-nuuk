@@ -464,20 +464,39 @@
 
           shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
             "click", function(e){
+              console.log("Enter");
               document.querySelector('body').classList.toggle('layout_settings-visible');
               e.stopImmediatePropagation();
+            }
+          );
+
+          shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
+            "mouseenter", function(e){
+              $('.layout_settings-tooltip').addClass('visible');
+              positionPopover();
+              console.log("Hover");
+              console.log(settingsBtn.getBoundingClientRect());
+            }
+          );
+          shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
+            "mouseleave", function(e){
+              console.log('mouseleacve');
+              $('.layout_settings-tooltip').removeClass('visible');
             }
           );
 
           var positionPopover = function() {
             var settingsPopover = $('.js-layout_settings-popover');
             var settingsPopoverArrow = $('.layout_settings-arrow');
+            var tooltipPopover = $('.layout_settings-tooltip');
 
             if ($( window ).width() > 768) {
-              settingsPopover.css({right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (settingsPopover.width() / 2)})
+              settingsPopover.css({right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (settingsPopover.width() / 2)});
+              tooltipPopover.css({right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (tooltipPopover.width() / 2) - (settingsBtn.getBoundingClientRect().width / 2)});
               settingsPopoverArrow.css({right: settingsPopover.width() / 2});
             } else {
               settingsPopover.css({right: 0});
+              tooltipPopover.css({right: 0});
               settingsPopoverArrow.css({right: 72});
             }
           }
@@ -492,8 +511,11 @@
       }, 500);
 
       $('body').append($('.js-layout_settings-popover'));
+
     });
   }
+
+  //$('body').append("<div class='layout_settings-tooltip'>ERISEADED</div>");
 
   var bindProductListeners = function(placeholderText, pageId) {
     document.addEventListener('voog:ecommerce:buttonproductsave', function(event) {
