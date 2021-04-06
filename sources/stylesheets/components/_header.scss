@@ -59,6 +59,10 @@
       width: 100%;
       @include transition(transform 200ms);
 
+      .add-submenu {
+        display: none;
+      }
+
       .header_components,
       .menu-btn {
         width: 20%;

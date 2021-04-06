@@ -1,8 +1,15 @@
 
 {%- assign menuSettings = site.data[menuSettingsKey] -%}
+{%- assign menuPos = menuSettings.positioning -%}
+{% if menuPos == 'is_top' or menuPos == 'is_top_fixed' %}
+  {%- assign menuTop = true -%}
+{% else %}
+  {%- assign menuTop = false -%}
+{% endif %}
 
+{% include 'menu-main-iteration', _menuTop: menuTop %}
 {% include "site-search" %}
-{% include 'header-fixed' %}
+{% include 'header-fixed', _menuTop: menuTop %}
 
 {%- if menuSettings.max_width >= 1 -%}
   <style>
@@ -22,7 +29,7 @@
 
 <div class="
   semimodal js-prevent-sideclick semimodal-bg_picker--area {{semimodal_bg_type}}
-  {% if menuSettings.positioning == 'is_top' or menuSettings.positioning == 'is_top_fixed' %} hidden-desktop{% endif %}
+  {% if menuTop == true %} hidden-desktop{% endif %}
   "
 >
   {%- assign imageClass = "image_fit-cover image_abs semimodal-bg_image" -%}
@@ -91,11 +98,6 @@
       {%- endif -%}
 
       {%- include "menu-main", _semimodalMenu: true -%}
-      {%- comment -%}
-        <div class="content-formatted semimodal_bottom-content">
-          {% content name="menu_bottom" xpage="true" %}
-        </div>
-      {%- endcomment -%}
     </div>
   </header>
 </div>

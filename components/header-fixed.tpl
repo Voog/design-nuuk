@@ -1,11 +1,7 @@
-{%- assign menuPos = site.data[menuSettingsKey].positioning -%}
-{% if menuPos == 'is_top' or menuPos == 'is_top_fixed'%}
-  {%- assign menuTop = true -%}
-{% endif %}
 
-<header class="header_fixed{% if menuPos == 'is_top_fixed'%} relative{% endif %}{% if menuTop %} menu-top{% endif %}">
+<header class="header_fixed{% if menuPos == 'is_top_fixed'%} relative{% endif %}{% if _menuTop == true %} menu-top{% endif %}">
   <div class="header_fixed-content">
-    <button class="menu-btn js-menu-btn js-prevent-sideclick{% if menuTop == true %} hidden-desktop{% endif %}">
+    <button class="menu-btn js-menu-btn js-prevent-sideclick{% if _menuTop == true %} hidden-desktop{% endif %}">
       <div>
         <span class="menu-stripe"></span>
         <span class="menu-stripe"></span>
@@ -24,8 +20,8 @@
       {% endcontentblock %}
     </div>
 
-    <div class="p-rel js-menu-main-wrapper menu-main-wrapper{% if menuTop == true %} hidden-tablet{% else %} hidden-tablet hidden-desktop{% endif %}">
-      {%- include "menu-main", _menuTop: menuTop -%}
+    <div class="p-rel js-menu-main-wrapper menu-main-wrapper{% if _menuTop == true %} hidden-tablet{% else %} hidden-tablet hidden-desktop{% endif %}">
+      {%- include "menu-main", _menuTop: _menuTop -%}
     </div>
 
     <div class="header_components">

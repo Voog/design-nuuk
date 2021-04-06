@@ -3151,6 +3151,10 @@ body.edy-checkout-button-visible {
           backface-visibility: hidden;
 }
 
+.header_fixed-content .add-submenu {
+  display: none;
+}
+
 .header_fixed-content .header_components,
 .header_fixed-content .menu-btn {
   width: 20%;
