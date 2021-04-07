@@ -1,4 +1,4 @@
-<nav class="menu-main p-rel js-menu-main js-popover js-prevent-sideclick{% if _menuTop %} menu_top{% endif %}">
+<nav class="menu-main p-rel js-menu-main js-popover js-prevent-sideclick{% if _menuTop == true %} menu_top{% endif %}">
   <ul class="menu">
 
     {%- unless site.root_item.hidden? %}
@@ -6,10 +6,12 @@
         {%- menulink site.root_item current-class="active" -%}
       </li>
     {%- endunless -%}
-    {%- if _renderSemimodalMenu -%}
+    {%- if _renderSemimodalMenu == true -%}
       {{menu_main}}
     {% elsif _renderMenuTop == true %}
-      {{menu_main_lvl_1}}
+      {%- if editmode or _menuTop == true -%}
+        {{menu_main_lvl_1}}
+      {%- endif -%}
     {% endif -%}
 
     {% if editmode or _menuTop == true -%}
