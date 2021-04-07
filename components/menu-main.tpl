@@ -1,10 +1,27 @@
 <nav class="menu-main p-rel js-menu-main js-popover js-prevent-sideclick{% if _menuTop %} menu_top{% endif %}">
   <ul class="menu">
-    {{menu_main}}
+
+    {%- unless site.root_item.hidden? %}
+      <li class="menu-item lvl-1">
+        {%- menulink site.root_item current-class="active" -%}
+      </li>
+    {%- endunless -%}
+    {%- if _renderSemimodalMenu -%}
+      {{menu_main}}
+    {% elsif _renderMenuTop == true %}
+      {{menu_main_lvl_1}}
+    {% endif -%}
+
+    {% if editmode or _menuTop == true -%}
+      <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
+        <ul class="menu menu_popover-list">
+          {{menu_main_lvl_1}}
+        </ul>
+      </li>
+    {%- endif %}
     <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= 5 %} d-none{% endif %}" data-count="{{menuItemCount}}">
       {% include 'ico-ellipsis' %}
     </div>
-
     {%- capture menuSettingsBtns -%}
       {% if site.hidden_menuitems.size > 0 %}
         <li class="edit-btn mar_t-16">{% menubtn site.hidden_menuitems %}</li>
@@ -13,17 +30,15 @@
       <li class="edit-btn mar_t-16" {{ edy_intro_add_page }}>{% menuadd %}</li>
     {%- endcapture -%}
 
-    {%- if _semimodalMenu -%}
+    {%- if _renderSemimodalMenu -%}
       {% if editmode %}
         {{menuSettingsBtns}}
       {% endif %}
     {%- endif -%}
-
   </ul>
-
-  {%- if _semimodalMenu != true -%}
+  {% if _renderSemimodalMenu != true -%}
     {% if editmode %}
       <ul class="menu-edy-btns">{{menuSettingsBtns}}</ul>
     {% endif %}
-  {%- endif -%}
+  {%- endif %}
 </nav>

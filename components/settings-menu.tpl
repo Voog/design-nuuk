@@ -101,7 +101,6 @@
               $('.js-menu-main-wrapper').removeClass('hidden-desktop');
               $('.js-menu-main').addClass('menu_top');
               $('.js-menu-popover, .js-menu-popover').removeClass('d-none');
-              $('.js-menu-sub').addClass('d-none');
               $('html').removeClass('semimodal-open');
             } else {
               $('.js-menu-btn, .semimodal').removeClass('hidden-desktop');
@@ -109,7 +108,6 @@
               $('.js-menu-main-wrapper').addClass('hidden-desktop');
               $('.js-menu-main').removeClass('menu_top');
               $('.js-menu-popover, .js-menu-popover').addClass('d-none');
-              $('.js-menu-sub').removeClass('d-none');
             }
 
             if (data.positioning === 'is_top') {

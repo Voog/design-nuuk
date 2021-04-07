@@ -989,6 +989,14 @@ MMCQ = (function() {
       if ($('.semimodal-relative').length <= 0) {
         $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos + 16});
       }
+
+      if ($('.js-menu-language').length >= 1) {
+        $('.header_components-desktop').prepend($('.js-menu-language'));
+      }
+    } else {
+      if ($('.js-menu-language').length >= 1) {
+        $('.header_components-tablet').append($('.js-menu-language'));
+      }
     }
   };
 
