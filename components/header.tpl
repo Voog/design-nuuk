@@ -7,7 +7,7 @@
   {%- assign menuTop = false -%}
 {%- endif -%}
 
-{%- include 'menu-main-iteration', _menuTop: menuTop -%}
+{%- include 'menu-main-iteration' -%}
 {%- include "site-search" %}
   {% include 'header-fixed', _menuTop: menuTop -%}
 

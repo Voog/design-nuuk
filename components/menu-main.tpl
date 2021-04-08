@@ -1,25 +1,32 @@
-<nav class="menu-main p-rel js-menu-main js-popover js-prevent-sideclick{% if _menuTop == true %} menu_top{% endif %}">
+<nav class="menu-main p-rel js-menu-main js-popover js-prevent-sideclick{% if _renderMenuTop == true %} menu_top{% endif %}">
   <ul class="menu">
 
-    {%- unless site.root_item.hidden? %}
-      <li class="menu-item lvl-1">
-        {%- menulink site.root_item current-class="active" -%}
-      </li>
-    {%- endunless -%}
+    {%- capture root_menu_item -%}
+      {%- unless site.root_item.hidden? %}
+        <li data-visible=true class="menu-item lvl-1">
+          {%- menulink site.root_item current-class="active" -%}
+        </li>
+      {%- endunless -%}
+    {%- endcapture -%}
+
     {%- if _renderSemimodalMenu == true -%}
-      {{menu_main}}
+      <ul class="menu menu_semimodal-list">
+        {{root_menu_item}}
+        {{menu_main}}
+      </ul>
     {% elsif _renderMenuTop == true %}
       {%- if editmode or _menuTop == true -%}
-        {{menu_main_lvl_1_top_main}}
+        <ul class="menu menu_top-list">
+          {{root_menu_item}}
+          {{menu_main_lvl_1_top_main}}
+        </ul>
+        <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
+          <ul class="menu menu_popover-list"></ul>
+        </li>
       {%- endif -%}
     {% endif -%}
 
-    {% if editmode or _menuTop == true -%}
-      <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
-        <ul class="menu menu_popover-list"></ul>
-      </li>
-    {%- endif %}
-    <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= 5 %} d-none{% endif %}" data-count="{{menuItemCount}}">
+    <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount < 5 %} d-none{% endif %}" data-count="{{menuItemCount}}">
       {% include 'ico-ellipsis' %}
     </div>
     {%- capture menuSettingsBtns -%}

@@ -1,15 +1,22 @@
-{%- assign menuItemCount = 0 -%}
-{%- assign menu_main_lvl_1 = '' -%}
+{%- unless site.root_item.hidden? %}
+  {%- assign menuItemCount = 1 -%}
+{%- else -%}
+  {%- assign menuItemCount = 0 -%}
+{%- endunless -%}
+
+{%- assign menu_main_lvl_1_top_popover = '' -%}
 {%- assign menu_main_lvl_1_top_main = '' -%}
+{%- assign isMenuItemVisible = true -%}
+
 {%- if menuSettings.is_product_list_page_visible == false -%}
   {%- assign isProductListItemVisible = false -%}
-{% else %}
+{%- else -%}
   {%- assign isProductListItemVisible = true -%}
-{% endif %}
+{%- endif -%}
 
 {%- if menuSettings.is_product_page_visible == false -%}
   {%- assign isProductItemVisible = false -%}
-{% else %}
+{%- else -%}
   {%- assign isProductItemVisible = true -%}
 {%- endif -%}
 
@@ -21,40 +28,50 @@
         {%- if item.layout_title == product_list_layout -%}
           {%- assign itemClass = 'menu-item-product-list' -%}
           {%- if isProductListItemVisible == false -%}
-            {%- assign menuItemDisplayClass = 'hidden' -%}
+            {%- assign isMenuItemVisible = false -%}
           {%- else -%}
-            {%- assign menuItemCount = menuItemCount | plus: 1 -%}
-            {%- assign menuItemDisplayClass = 'visible' -%}
+            {%- assign isMenuItemVisible = true -%}
           {%- endif -%}
 
         {%- elsif item.layout_title == product_layout -%}
           {% if isProductItemVisible == false -%}
-            {%- assign menuItemDisplayClass = 'hidden' -%}
+            {%- assign isMenuItemVisible = false -%}
           {%- else -%}
-            {%- assign menuItemDisplayClass = 'visible' -%}
-            {%- assign menuItemCount = menuItemCount | plus: 1 -%}
+            {%- assign isMenuItemVisible = true -%}
           {%- endif -%}
           {%- assign itemClass = 'menu-item-product' -%}
         {%- endif -%}
 
-        <li class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %} {{menuItemDisplayClass}}">
-          {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" untranslated-class="untranslated fci-editor-menuadd" -%}
-        </li>
+        {% if editmode or isMenuItemVisible == true %}
+          {%- assign menuItemCount = menuItemCount | plus: 1 -%}
+          {% if isMenuItemVisible != true %}
+            {%- assign itemTag = 'div' -%}
+          {% else %}
+            {%- assign itemTag = 'li' -%}
+          {% endif %}
+          <{{itemTag}}
+            data-visible={{isMenuItemVisible}}
+            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}"
+          >
+            {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" untranslated-class="untranslated fci-editor-menuadd" -%}
+          </{{itemTag}}>
+        {% endif %}
       {% else %}
-        <li class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1">
+        {%- assign menuItemCount = menuItemCount | plus: 1 -%}
+        <li
+          data-visible=true
+          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1">
           {%- menulink item current-class="active" untranslated-class="untranslated fci-editor-menuadd" -%}
         </li>
-        {%- assign menuItemCount = menuItemCount | plus: 1 -%}
       {% endif -%}
     {%- endcapture -%}
-
     {%- if editmode -%}
       {%- comment -%}Possible comibination 5 product, product list or other layouts{%- endcomment -%}
-      {%- if forloop.index <= 14 -%}
+      {%- if menuItemCount <= 15 -%}
         {%- assign menu_main_lvl_1_top_main = menu_main_lvl_1_top_main | append: menu_main_lvl_1_item  -%}
       {%- endif -%}
-    {%- else -%}
-      {%- if forloop.index <= 4 -%}
+    {%- elsif isMenuItemVisible == true -%}
+      {%- if menuItemCount <= 5 -%}
         {%- assign menu_main_lvl_1_top_main = menu_main_lvl_1_top_main | append: menu_main_lvl_1_item  -%}
       {%- endif -%}
     {%- endif -%}
@@ -64,7 +81,7 @@
 
     {%- if item.children? or editmode -%}
       {%- unless item.blog? %}
-        <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{menuItemDisplayClass}}{%- endif -%}">
+        <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{isMenuItemVisible}}{%- endif -%}">
           <div class="menu-sub{% if item.selected? %} active{% endif %}">
             <ul class="menu">
               {% for subitem in item.visible_children %}
@@ -72,16 +89,16 @@
                   {%- if subitem.layout_title == product_list_layout -%}
                     {%- assign subItemClass = 'menu-item-product-list menu-item-sub' -%}
                     {% if isProductListItemVisible == false %}
-                      {%- assign menuSubItemDisplayClass = 'hidden' -%}
+                      {%- assign menuSubItemDisplayClass = false -%}
                     {% else %}
-                      {%- assign menuSubItemDisplayClass = 'visible' -%}
+                      {%- assign menuSubItemDisplayClass = true -%}
                     {% endif %}
 
                   {%- elsif subitem.layout_title == product_layout -%}
                     {% if isProductItemVisible == false %}
-                      {%- assign menuSubItemDisplayClass = 'hidden' -%}
+                      {%- assign menuSubItemDisplayClass = false -%}
                     {% else %}
-                      {%- assign menuSubItemDisplayClass = 'visible' -%}
+                      {%- assign menuSubItemDisplayClass = true -%}
                     {% endif %}
                     {%- assign subItemClass = 'menu-item-product menu-item-sub' -%}
                   {%- endif -%}
@@ -103,7 +120,7 @@
     {%- endif -%}
     {%- unless item.blog? -%}
       {%- if item.selected? and editmode -%}
-        <div class="add-submenu {% if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{menuItemDisplayClass}}{%- endif -%}">
+        <div class="add-submenu {% if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{isMenuItemVisible}}{%- endif -%}">
           <li class="edit-btn mar_b-16">{% menuadd parent="item" %}</li>
         </div>
       {%- endif -%}

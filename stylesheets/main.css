@@ -5252,24 +5252,36 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
           align-items: center;
 }
 
-.menu_top.menu-main .menu .menu-item.lvl-1:nth-of-type(n+6) {
+.menu_top.menu-main .menu.menu_top-list .menu-item.lvl-1 {
   display: none;
 }
 
-.menu_top.menu-main .menu .menu-item a {
-  max-width: 160px;
+.menu_top.menu-main .menu.menu_top-list li.menu-item.lvl-1:nth-of-type(-n+5) {
+  display: initial;
+}
+
+.menu_top.menu-main .menu.menu_top-popover .menu-item.lvl-1 {
+  display: none;
+}
+
+.menu_top.menu-main .menu.menu_top-popover li.menu-item.lvl-1:nth-of-type(-n+5) {
+  display: initial;
 }
 
 @media screen and (max-width: 900px) {
-  .menu_top.menu-main .menu {
+  .menu_top.menu-main .menu.menu_top-popover {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .menu_top.menu-main .menu .menu-item.lvl-1:nth-of-type(n+6) {
+  .menu_top.menu-main .menu.menu_top-popover .menu-item.lvl-1:nth-of-type(n+6) {
     display: initial;
   }
+}
+
+.menu_top.menu-main .menu .menu-item a {
+  max-width: 160px;
 }
 
 .semimodal .menu .menu-item {
@@ -5368,15 +5380,25 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
 .menu-main .menu .menu_popover .menu .menu-item {
   margin: 0;
   width: 100%;
+  display: none;
+}
+
+.menu-main .menu .menu_popover .menu .menu-item:nth-of-type(n+6) {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
 @media screen and (max-width: 900px) {
-  .menu-main .menu .menu_popover .menu .menu-item {
+  .menu-main .menu .menu_popover .menu .menu-item:nth-of-type(n+6) {
     display: none;
   }
+}
+
+.publicmode .menu-main .menu .menu_popover .menu .menu-item {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .menu-main .menu .menu_popover .menu .menu-item a,
@@ -5763,6 +5785,10 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
 
 .no-wrap {
   white-space: nowrap;
+}
+
+[data-visible=false] {
+  display: none !important;
 }
 
 .pad_container {

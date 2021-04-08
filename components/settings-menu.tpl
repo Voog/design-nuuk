@@ -145,20 +145,32 @@
               }
             }
 
+            //Used for css nth-of-type() selector
+            function replaceElementTag(targetSelector, newTagString) {
+              $(targetSelector).each(function(){
+                var newElem = $(newTagString, {html: $(this).html()});
+                $.each(this.attributes, function() {
+                  newElem.attr(this.name, this.value);
+                });
+                $(this).replaceWith(newElem);
+              });
+            }
+
+
             if (data.is_product_page_visible == true) {
-              $('.menu-item-product').removeClass('hidden');
-              $('.menu-item-product').addClass('visible');
+              replaceElementTag('.menu-item-product', '<li></li>');
+              $('.menu-item-product').attr('data-visible', true);
             } else {
-              $('.menu-item-product').addClass('hidden');
-              $('.menu-item-product').removeClass('visible');
+              replaceElementTag('.menu-item-product', '<div></div>');
+              $('.menu-item-product').attr('data-visible', false);
             }
 
             if (data.is_product_list_page_visible == true) {
-              $('.menu-item-product-list').removeClass('hidden');
-              $('.menu-item-product-list').addClass('visible');
+              replaceElementTag('.menu-item-product-list', '<li></li>');
+              $('.menu-item-product-list').attr('data-visible', true);
             } else {
-              $('.menu-item-product-list').removeClass('visible');
-              $('.menu-item-product-list').addClass('hidden');
+              replaceElementTag('.menu-item-product-list', '<div></div>');
+              $('.menu-item-product-list').attr('data-visible', false);
             }
 
             {%- if menuSettings.max_width != blank -%}
@@ -170,12 +182,9 @@
             {%- endif -%}
 
             var menuCount = $('.js-menu-popover-btn').data('count');
-            var visibleListItemCount = $('.lvl-1.menu-item-product-list.visible').length / 4;
-            var visibleProductItemCount = $('.lvl-1.menu-item-product.visible').length / 4;
-            var menuCountWithHidden = menuCount + visibleListItemCount + visibleProductItemCount;
 
             if (data.positioning === 'is_top' || data.positioning === 'is_top_fixed') {
-              if (menuCountWithHidden <= 5) {
+              if (menuCount <= 5) {
                 $('.js-menu-popover-btn').addClass('d-none');
               } else {
                 $('.js-menu-popover-btn').removeClass('d-none');
