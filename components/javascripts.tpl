@@ -7,7 +7,7 @@
 {% sitejs_include %}
 
 {%- if editmode -%}
-  <script src="{{ javascripts_path }}/editmode.min.js?nuuk=2.1"></script>
+  <script src="{{ javascripts_path }}/editmode.min.js?nuuk=2.2"></script>
 {%- endif -%}
 
 {% comment %}Site search related javascript components.{% endcomment %}
