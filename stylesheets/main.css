@@ -5268,18 +5268,6 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
   display: initial;
 }
 
-@media screen and (max-width: 900px) {
-  .menu_top.menu-main .menu.menu_top-popover {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .menu_top.menu-main .menu.menu_top-popover .menu-item.lvl-1:nth-of-type(n+6) {
-    display: initial;
-  }
-}
-
 .menu_top.menu-main .menu .menu-item a {
   max-width: 160px;
 }

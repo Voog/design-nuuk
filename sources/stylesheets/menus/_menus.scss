@@ -146,14 +146,6 @@
       li.menu-item.lvl-1:nth-of-type(-n+5) {
         display: initial;
       }
-
-      @include query($tablet-1) {
-        flex-direction: column;
-
-        .menu-item.lvl-1:nth-of-type(n+6) {
-          display: initial;
-        }
-      }
     }
 
 
