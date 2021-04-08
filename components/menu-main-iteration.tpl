@@ -79,44 +79,46 @@
 
     {{menu_main_lvl_1_item}}
 
-    {%- if item.children? or editmode -%}
-      {%- unless item.blog? %}
-        <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{isMenuItemVisible}}{%- endif -%}">
-          <div class="menu-sub{% if item.selected? %} active{% endif %}">
-            <ul class="menu">
-              {% for subitem in item.visible_children %}
-                {%- if subitem.layout_title == product_list_layout or subitem.layout_title == product_layout -%}
-                  {%- if subitem.layout_title == product_list_layout -%}
-                    {%- assign subItemClass = 'menu-item-product-list menu-item-sub' -%}
-                    {% if isProductListItemVisible == false %}
-                      {%- assign menuSubItemDisplayClass = false -%}
-                    {% else %}
-                      {%- assign menuSubItemDisplayClass = true -%}
-                    {% endif %}
+    {%- if item.selected? -%}
+      {%- if item.children? or editmode -%}
+        {%- unless item.blog? %}
+          <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{isMenuItemVisible}}{%- endif -%}">
+            <div class="menu-sub active">
+              <ul class="menu">
+                {% for subitem in item.visible_children %}
+                  {%- if subitem.layout_title == product_list_layout or subitem.layout_title == product_layout -%}
+                    {%- if subitem.layout_title == product_list_layout -%}
+                      {%- assign subItemClass = 'menu-item-product-list menu-item-sub' -%}
+                      {% if isProductListItemVisible == false %}
+                        {%- assign menuSubItemDisplayClass = false -%}
+                      {% else %}
+                        {%- assign menuSubItemDisplayClass = true -%}
+                      {% endif %}
 
-                  {%- elsif subitem.layout_title == product_layout -%}
-                    {% if isProductItemVisible == false %}
-                      {%- assign menuSubItemDisplayClass = false -%}
-                    {% else %}
-                      {%- assign menuSubItemDisplayClass = true -%}
-                    {% endif %}
-                    {%- assign subItemClass = 'menu-item-product menu-item-sub' -%}
-                  {%- endif -%}
+                    {%- elsif subitem.layout_title == product_layout -%}
+                      {% if isProductItemVisible == false %}
+                        {%- assign menuSubItemDisplayClass = false -%}
+                      {% else %}
+                        {%- assign menuSubItemDisplayClass = true -%}
+                      {% endif %}
+                      {%- assign subItemClass = 'menu-item-product menu-item-sub' -%}
+                    {%- endif -%}
 
-                  <div class="{{subItemClass}} {{menuSubItemDisplayClass}}">
-                    {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" -%}
-                  </div>
-                {% else %}
-                  {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item menu-item-sub" current-class="active" untranslated-class="untranslated fci-editor-menuadd" -%}
-                {% endif %}
-              {%- endfor %}
-              {%- if item.hidden_children.size > 0 -%}
-                <li class="edit-btn mar_t-16">{% menubtn item.hidden_children %}</li>
-              {%- endif %}
-            </ul>
+                    <div class="{{subItemClass}} {{menuSubItemDisplayClass}}">
+                      {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" -%}
+                    </div>
+                  {% else %}
+                    {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item menu-item-sub" current-class="active" untranslated-class="untranslated fci-editor-menuadd" -%}
+                  {% endif %}
+                {%- endfor %}
+                {%- if item.hidden_children.size > 0 -%}
+                  <li class="edit-btn mar_t-16">{% menubtn item.hidden_children %}</li>
+                {%- endif %}
+              </ul>
+            </div>
           </div>
-        </div>
-      {%- endunless -%}
+        {%- endunless -%}
+      {%- endif -%}
     {%- endif -%}
     {%- unless item.blog? -%}
       {%- if item.selected? and editmode -%}
