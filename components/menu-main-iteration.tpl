@@ -1,5 +1,6 @@
 {%- assign menuItemCount = 0 -%}
 {%- assign menu_main_lvl_1 = '' -%}
+{%- assign menu_main_lvl_1_top_main = '' -%}
 {%- if menuSettings.is_product_list_page_visible == false -%}
   {%- assign isProductListItemVisible = false -%}
 {% else %}
@@ -46,8 +47,21 @@
         {%- assign menuItemCount = menuItemCount | plus: 1 -%}
       {% endif -%}
     {%- endcapture -%}
-    {%- assign menu_main_lvl_1 = menu_main_lvl_1 | append: menu_main_lvl_1_item  -%}
+
+    {%- if editmode -%}
+      {%- comment -%}Possible comibination 5 product, product list or other layouts{%- endcomment -%}
+      {%- if forloop.index <= 14 -%}
+        {%- assign menu_main_lvl_1_top_main = menu_main_lvl_1_top_main | append: menu_main_lvl_1_item  -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- if forloop.index <= 4 -%}
+        {%- assign menu_main_lvl_1_top_main = menu_main_lvl_1_top_main | append: menu_main_lvl_1_item  -%}
+      {%- endif -%}
+    {%- endif -%}
+
+
     {{menu_main_lvl_1_item}}
+
     {%- if item.children? or editmode -%}
       {%- unless item.blog? %}
         <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{menuItemDisplayClass}}{%- endif -%}">

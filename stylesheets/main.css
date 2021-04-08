@@ -5368,17 +5368,13 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
 .menu-main .menu .menu_popover .menu .menu-item {
   margin: 0;
   width: 100%;
-  display: none;
-}
-
-.menu-main .menu .menu_popover .menu .menu-item:nth-child(n+5) {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
 @media screen and (max-width: 900px) {
-  .menu-main .menu .menu_popover .menu .menu-item:nth-child(n+5) {
+  .menu-main .menu .menu_popover .menu .menu-item {
     display: none;
   }
 }

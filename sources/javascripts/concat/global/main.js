@@ -170,6 +170,7 @@
 
     var toggleMenuPopover = function() {
       $('.menu_popover').toggleClass('active');
+
     }
 
     $('.js-menu-popover-btn').click(function() {
@@ -474,6 +475,10 @@
 
       $('.header_title').keyup(function(e) {
         handleMenuTopPos();
+      });
+
+      $('.js-menu-popover-btn').one( "click", function() {
+        $('.semimodal_bottom .menu .menu-item.lvl-1').clone().appendTo('.menu_popover-list');
       });
 
       $('.form_field-cms input').keyup(function(e) {

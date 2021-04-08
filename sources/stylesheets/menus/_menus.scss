@@ -221,14 +221,10 @@
           .menu-item {
             margin: 0;
             width: 100%;
-            display: none;
+            display: inline-flex;
 
-            &:nth-child(n+5) {
-              display: inline-flex;
-
-              @include query($tablet-1) {
-                display: none;
-              }
+            @include query($tablet-1) {
+              display: none;
             }
 
             a,

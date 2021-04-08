@@ -10,15 +10,13 @@
       {{menu_main}}
     {% elsif _renderMenuTop == true %}
       {%- if editmode or _menuTop == true -%}
-        {{menu_main_lvl_1}}
+        {{menu_main_lvl_1_top_main}}
       {%- endif -%}
     {% endif -%}
 
     {% if editmode or _menuTop == true -%}
       <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
-        <ul class="menu menu_popover-list">
-          {{menu_main_lvl_1}}
-        </ul>
+        <ul class="menu menu_popover-list"></ul>
       </li>
     {%- endif %}
     <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= 5 %} d-none{% endif %}" data-count="{{menuItemCount}}">
