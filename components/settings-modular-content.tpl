@@ -46,7 +46,7 @@
         }
       }
     )
-    {%- if editmode -%}
+    {%- if editmode and _blockCount < 5 -%}
       {%- assign blockCounter = 5 -%}
     {%- else -%}
       {%- assign blockCounter = _blockCount -%}
