@@ -400,6 +400,12 @@
       url: '/admin/api/pages/' + pageId,
       dataType: 'json'
     }).then(function(page) {
+      var addPlaceholder = function() {
+        if (el.closest('.content-item-box').find('.edy-img-drop-area-placeholder').length < 1) {
+          addProductImagePlaceholder(el, placeholderText);
+        }
+      }
+
       if (event) {
         if (page.data.item_image) {
           productImageEl.css('background-image', 'url(' + page.data.item_image.url + ')');
@@ -414,7 +420,9 @@
           productImageEl.css('background-image', 'url(' + page.image.public_url + ')');
           $('.js-remove-image').css('display', 'flex');
         } else {
-          addProductImagePlaceholder(productImageEl, placeholderText);
+          if ($('.edy-img-drop-area-placeholder').length < 1) {
+            addProductImagePlaceholder(productImageEl, placeholderText);
+          }
         }
       } else if (productId) {
         $.ajax({
@@ -433,11 +441,11 @@
             productImageEl.css('background-image', 'url(' + page.image.public_url + ')');
             $('.js-remove-image').css('display', 'flex');
           } else {
-            addProductImagePlaceholder(el, placeholderText);
+            addPlaceholder();
           }
         });
       } else {
-        addProductImagePlaceholder(el, placeholderText);
+        addPlaceholder();
       }
     });
   };
