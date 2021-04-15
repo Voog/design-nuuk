@@ -191,8 +191,8 @@ body {
 }
 
 .search-btn svg g,
-.edy-ecommerce-custom-ico svg g,
-.edy-ecommerce-custom-ico svg path {
+.cart_btn svg g,
+.cart_btn svg path {
   fill: var(--header-mainmenu-active-color);
 
   @include query($tablet-1, 'min-width') {
@@ -203,8 +203,8 @@ body {
 }
 
 .search-btn:hover svg g,
-.edy-ecommerce-custom-ico:hover svg g,
-.edy-ecommerce-custom-ico:hover svg path  {
+.cart_btn:hover svg g,
+.cart_btn:hover svg path  {
   fill: var(--header-mainmenu-color);
 
   @include query($tablet-1, 'min-width') {
@@ -291,7 +291,7 @@ body {
   }
 }
 
-.edy-ecommerce-shopping-cart-button:hover {
+.edy-ecommerce-shopping-cart_btn:hover {
   .edy-ecommerce-product-count {
     color: var(--header-mainmenu-color);
 
@@ -529,14 +529,14 @@ body {
   }
 
   .search-btn svg g,
-  .edy-ecommerce-custom-ico svg g,
-  .edy-ecommerce-custom-ico svg path {
+  .cart_btn svg g,
+  .cart_btn svg path {
     fill: var(--header-mainmenu-color);
   }
 
   .search-btn:hover svg g,
-  .edy-ecommerce-custom-ico:hover svg g,
-  .edy-ecommerce-custom-ico:hover svg path  {
+  .cart_btn:hover svg g,
+  .cart_btn:hover svg path  {
     fill: var(--header-mainmenu-hover-color);
   }
 
@@ -923,6 +923,10 @@ body {
       .dark-background & {
         color: var(--third-color);
       }
+    }
+
+    @include query($tablet-1) {
+      font-size: 24px;
     }
   }
 

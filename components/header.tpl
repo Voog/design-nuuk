@@ -3,6 +3,7 @@
 
 {% include "site-search" %}
 {% include 'header-fixed' %}
+{% include 'cart-popover' %}
 
 {%- if menuSettings.max_width >= 1 -%}
   <style>

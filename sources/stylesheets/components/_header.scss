@@ -117,7 +117,7 @@
           }
 
           .header_title {
-            width: calc(100% - 28px);
+            width: auto;
             padding: 0;
             text-align: center;
 
@@ -132,7 +132,7 @@
           .menu-btn {
             padding: 0;
             margin-right: 16px;
-            width: 28px;
+            width: auto;
           }
         }
       }
@@ -141,14 +141,14 @@
         flex-wrap: nowrap;
 
         .header_title {
-          width: calc(100% - 28px);
+          width: auto;
           padding: 0;
           text-align: center;
 
           @include query($mobile-1) {
             h1,h2,h3,h4,h5,h6,p,a,b {
               font-size: 24px;
-              line-height: 28px;
+              line-height: auto;
             }
           }
         }
@@ -156,11 +156,11 @@
         .menu-btn {
           padding: 0;
           margin-right: 16px;
-          width: 28px;
+          width: auto;
         }
 
         .header_components {
-          width: 28px;
+          width: auto;
           margin: 0;
           padding: 0;
         }

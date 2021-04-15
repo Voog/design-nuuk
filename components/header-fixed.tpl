@@ -29,22 +29,23 @@
     </div>
 
     <div class="header_components">
-      <div class="header_components-desktop">
-        {% if show_language_menu_popover %}
-          <div class="js-toggle-menu-language menu-language-toggle js-prevent-sideclick p-rel" tabindex=0>
-            <button class="menu-language-btn ico-flags ico-flag-{{ page.language_code }} js-menu-language-popover-btn" data-lang-code="{{ page.language_locale }}" {{ edy_intro_add_lang }}>
-              <span>{{ current_language_title }}</span><span class="mar_l-4">{% include 'ico-chevron-down' %}</span>
-            </button>
-            {% if show_language_menu_popover %}
-              {% include "menu-language-popover" %}
-            {% endif %}
-          </div>
-        {% endif %}
-        {%- if site.search.enabled -%}<div class="js-prevent-sideclick search_desktop">{%- include "search-btn" -%}</div>{%- endif -%}
-        {% include "menu-language-list" %}
-      </div>
-      {%- if site.search.enabled -%}<div class="js-prevent-sideclick search_mobile">{%- include "search-btn" -%}</div>{%- endif -%}
-      <div class="cart_btn-container"></div>
+      {% if show_language_menu_popover %}
+        <div class="hidden-tablet js-toggle-menu-language menu-language-toggle js-prevent-sideclick p-rel" tabindex=0>
+          <button class="menu-language-btn ico-flags ico-flag-{{ page.language_code }} js-menu-language-popover-btn" data-lang-code="{{ page.language_locale }}" {{ edy_intro_add_lang }}>
+            <span>{{ current_language_title }}</span><span class="mar_l-4">{% include 'ico-chevron-down' %}</span>
+          </button>
+          {% if show_language_menu_popover %}
+            {% include "menu-language-popover" %}
+          {% endif %}
+          {% include "menu-language-list" %}
+        </div>
+      {% endif %}
+      {%- if site.search.enabled -%}<div class="js-prevent-sideclick">{%- include "search-btn" -%}</div>{%- endif -%}
+      <div class="cart_btn">
+        <div class="cart_btn-icon">
+          {% include 'ico-cart' %}
+        </div>
+      <div class="cart_btn-count"></div>
     </div>
   </div>
 </header>

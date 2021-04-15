@@ -2822,62 +2822,118 @@ article .item-top > .aspect-ratio-inner {
 }
 
 body .edy-ecommerce-shopping-cart-button {
+  display: none;
+  max-height: 0;
   position: relative;
-  padding: 0;
-  margin-left: 16px;
-  top: 0;
-  right: 0px;
-  left: auto;
-  width: auto;
-  font-size: 0;
-  line-height: 1.7;
-  text-align: right;
-  border-width: 0;
-  background-color: transparent;
-  position: relative;
+  top: unset;
+  bottom: 0;
+}
+
+body.edy-checkout-button-visible {
+  padding-top: 0;
+}
+
+.cart_btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000000;
+  max-width: 0;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+  -webkit-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+       -o-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+          transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  margin-left: 16px;
 }
 
 @media screen and (max-width: 900px) {
-  body .edy-ecommerce-shopping-cart-button {
+  .cart_btn {
     margin-left: 8px;
   }
 }
 
-body .edy-ecommerce-shopping-cart-button:hover {
+.cart_btn.visible {
   opacity: 1;
+  max-width: 36px;
+  pointer-events: all;
 }
 
-body .edy-ecommerce-shopping-cart-button .edy-ecommerce-product-count {
-  position: relative;
+.cart_btn svg {
+  fill: #000000;
+}
+
+.cart_btn:hover {
+  opacity: .7;
+}
+
+.cart_btn-count {
   font-size: 14px;
+  line-height: 20px;
 }
 
-body .edy-ecommerce-shopping-cart-button .edy-ecommerce-product-count::before, body .edy-ecommerce-shopping-cart-button .edy-ecommerce-product-count::after {
-  content: none;
-}
-
-body .edy-ecommerce-shopping-cart-button .edy-ecommerce-shopping-cart-button-flash,
-body .edy-ecommerce-shopping-cart-button .edy-ecommerce-total-price {
-  display: none;
-}
-
-.cart_btn-container {
+.cart_popover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 0px;
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  -o-transition: transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.cart_popover-wrap {
+  position: fixed;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+  top: 48px;
+  right: 32px;
+  width: 100%;
+  opacity: 0;
+  max-width: 0;
+  pointer-events: none;
+  z-index: 105;
+  -webkit-transition: opacity 600ms;
+  -o-transition: opacity 600ms;
+  transition: opacity 600ms;
+  -webkit-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+       -o-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+          transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .cart_popover-wrap {
+    right: 8px;
+  }
+}
+
+.cart_popover-wrap:hover {
+  opacity: .7;
+}
+
+.cart_popover-wrap.visible {
+  opacity: 1;
+  max-width: 360px;
+  pointer-events: all;
+  -webkit-transition: opacity 600ms;
+  -o-transition: opacity 600ms;
+  transition: opacity 600ms;
   -webkit-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
        -o-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
           transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
@@ -2887,57 +2943,35 @@ body .edy-ecommerce-shopping-cart-button .edy-ecommerce-total-price {
           backface-visibility: hidden;
 }
 
-.cart_btn-container:hover {
-  opacity: .7;
+.cart_popover-icon {
+  padding: 24px;
+  background-color: black;
 }
 
-@media screen and (max-width: 900px) {
-  .cart_btn-container {
-    position: absolute;
-    bottom: -62px;
-    right: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-            transform: scale(0);
-    pointer-events: none;
-    background: white;
-    border-radius: 28px;
-    padding: 2px;
-    height: 45px;
-    width: 45px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-shadow: 0 0px 10px #0000001a, 0 0 5px #0000001a;
-            box-shadow: 0 0px 10px #0000001a, 0 0 5px #0000001a;
-  }
-  .edtmode .cart_btn-container {
-    display: none;
-  }
+.cart_popover-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px 24px;
 }
 
-.edy-checkout-button-visible .cart_btn-container {
-  max-width: 100px;
-  overflow: unset;
+.cart_popover-content--name {
+  color: #000000;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
 }
 
-@media screen and (max-width: 900px) {
-  .edy-checkout-button-visible .cart_btn-container {
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-    pointer-events: all;
-  }
-}
-
-body.edy-checkout-button-visible {
-  padding-top: 0;
+.cart_popover-content--view {
+  color: #8D9091;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+  margin-left: 8px;
 }
 
 /* FOOTER */
@@ -3225,7 +3259,7 @@ body.edy-checkout-button-visible {
     display: none;
   }
   .menu-top .header_fixed-content .header_title {
-    width: calc(100% - 28px);
+    width: auto;
     padding: 0;
     text-align: center;
   }
@@ -3242,7 +3276,7 @@ body.edy-checkout-button-visible {
   .menu-top .header_fixed-content .menu-btn {
     padding: 0;
     margin-right: 16px;
-    width: 28px;
+    width: auto;
   }
 }
 
@@ -3252,7 +3286,7 @@ body.edy-checkout-button-visible {
         flex-wrap: nowrap;
   }
   .header_fixed-content .header_title {
-    width: calc(100% - 28px);
+    width: auto;
     padding: 0;
     text-align: center;
   }
@@ -3261,7 +3295,7 @@ body.edy-checkout-button-visible {
 @media screen and (max-width: 900px) and (max-width: 480px) {
   .header_fixed-content .header_title h1, .header_fixed-content .header_title h2, .header_fixed-content .header_title h3, .header_fixed-content .header_title h4, .header_fixed-content .header_title h5, .header_fixed-content .header_title h6, .header_fixed-content .header_title p, .header_fixed-content .header_title a, .header_fixed-content .header_title b {
     font-size: 24px;
-    line-height: 28px;
+    line-height: auto;
   }
 }
 
@@ -3269,10 +3303,10 @@ body.edy-checkout-button-visible {
   .header_fixed-content .menu-btn {
     padding: 0;
     margin-right: 16px;
-    width: 28px;
+    width: auto;
   }
   .header_fixed-content .header_components {
-    width: 28px;
+    width: auto;
     margin: 0;
     padding: 0;
   }
@@ -3413,22 +3447,6 @@ body.edy-checkout-button-visible {
           backface-visibility: hidden;
 }
 
-@media screen and (max-width: 900px) {
-  .search_desktop {
-    display: none;
-  }
-}
-
-.search_mobile .search-btn {
-  margin-left: 4px;
-}
-
-@media screen and (min-width: 900px) {
-  .search_mobile {
-    display: none;
-  }
-}
-
 .search.active {
   display: block;
   pointer-events: all;
@@ -3525,6 +3543,12 @@ body.edy-checkout-button-visible {
   height: 24px;
   font-size: 0;
   margin-left: 16px;
+}
+
+@media screen and (max-width: 900px) {
+  .search-btn {
+    margin-left: 8px;
+  }
 }
 
 .header-options .search-btn svg {

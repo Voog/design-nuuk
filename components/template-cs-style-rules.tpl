@@ -145,29 +145,29 @@ body.dark-background {
 }
 
 .search-btn svg g,
-.edy-ecommerce-custom-ico svg g,
-.edy-ecommerce-custom-ico svg path {
+.cart_btn svg g,
+.cart_btn svg path {
   fill: var(--header-mainmenu-active-color);
 }
 
 @media screen and (min-width: 900px) {
   :not(.scroll).dark-background .search-btn svg g, :not(.scroll).dark-background
-  .edy-ecommerce-custom-ico svg g, :not(.scroll).dark-background
-  .edy-ecommerce-custom-ico svg path {
+  .cart_btn svg g, :not(.scroll).dark-background
+  .cart_btn svg path {
     fill: var(--third-color);
   }
 }
 
 .search-btn:hover svg g,
-.edy-ecommerce-custom-ico:hover svg g,
-.edy-ecommerce-custom-ico:hover svg path {
+.cart_btn:hover svg g,
+.cart_btn:hover svg path {
   fill: var(--header-mainmenu-color);
 }
 
 @media screen and (min-width: 900px) {
   :not(.scroll).dark-background .search-btn:hover svg g, :not(.scroll).dark-background
-  .edy-ecommerce-custom-ico:hover svg g, :not(.scroll).dark-background
-  .edy-ecommerce-custom-ico:hover svg path {
+  .cart_btn:hover svg g, :not(.scroll).dark-background
+  .cart_btn:hover svg path {
     opacity: .7;
     fill: var(--third-color);
   }
@@ -254,12 +254,12 @@ body.dark-background {
   }
 }
 
-.edy-ecommerce-shopping-cart-button:hover .edy-ecommerce-product-count {
+.edy-ecommerce-shopping-cart_btn:hover .edy-ecommerce-product-count {
   color: var(--header-mainmenu-color);
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .edy-ecommerce-shopping-cart-button:hover .edy-ecommerce-product-count {
+  :not(.scroll).dark-background .edy-ecommerce-shopping-cart_btn:hover .edy-ecommerce-product-count {
     color: var(--third-color);
   }
 }
@@ -533,14 +533,14 @@ body.dark-background {
 }
 
 .dark-background .light-background .search-btn svg g,
-.dark-background .light-background .edy-ecommerce-custom-ico svg g,
-.dark-background .light-background .edy-ecommerce-custom-ico svg path {
+.dark-background .light-background .cart_btn svg g,
+.dark-background .light-background .cart_btn svg path {
   fill: var(--header-mainmenu-color);
 }
 
 .dark-background .light-background .search-btn:hover svg g,
-.dark-background .light-background .edy-ecommerce-custom-ico:hover svg g,
-.dark-background .light-background .edy-ecommerce-custom-ico:hover svg path {
+.dark-background .light-background .cart_btn:hover svg g,
+.dark-background .light-background .cart_btn:hover svg path {
   fill: var(--header-mainmenu-hover-color);
 }
 
@@ -1047,6 +1047,16 @@ body.dark-background {
 .content-formatted p.site_title h5, .dark-background
 .content-formatted p.site_title h6 {
   color: var(--third-color);
+}
+
+@media screen and (max-width: 900px) {
+  .content-formatted.header_title, .content-formatted.site_title,
+  .content-formatted .product_item-btn.header_title,
+  .content-formatted .product_item-btn.site_title,
+  .content-formatted p.header_title,
+  .content-formatted p.site_title {
+    font-size: 24px;
+  }
 }
 
 @media screen and (max-width: 900px) {
