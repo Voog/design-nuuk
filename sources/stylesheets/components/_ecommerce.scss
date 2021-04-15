@@ -64,7 +64,7 @@ body {
       right: 32px;
       width: 100%;
       opacity: 0;
-      max-width: 0;
+      max-width: 360px;
       pointer-events: none;
       z-index: $zindex-cart-popover;
       @include transition(opacity 600ms);
@@ -80,7 +80,6 @@ body {
 
       &.visible {
         opacity: 1;
-        max-width: 360px;
         pointer-events: all;
         @include transition(opacity 600ms);
       }
