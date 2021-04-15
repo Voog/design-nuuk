@@ -55,14 +55,19 @@
 
     &-content {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       width: 100%;
       @include transition(transform 200ms);
+
+      .add-submenu {
+        display: none;
+      }
 
       .header_components,
       .menu-btn {
         width: 20%;
         flex: auto;
+        height: 24px;
       }
 
       .header_title {
@@ -196,13 +201,10 @@
     position: relative;
     justify-content: flex-end;
     flex: auto;
+    align-items: center;
 
     &-desktop {
       display: flex;
-
-      @include query($tablet-1) {
-        display: none;
-      }
     }
 
     &-tablet {
