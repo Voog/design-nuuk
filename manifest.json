@@ -302,6 +302,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/product-page-nav.tpl",
+      "layout_name": "product-page-nav",
+      "title": "product-page-nav"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-cs-main-menu.tpl",
       "layout_name": "template-cs-main-menu",
       "title": "template-cs-main-menu"
@@ -500,6 +507,12 @@
       "file": "assets/avenir-next-medium.woff2",
       "kind": "assets",
       "filename": "avenir-next-medium.woff2"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-arrow-right.svg",
+      "kind": "assets",
+      "filename": "ico-arrow-right.svg"
     },
     {
       "content_type": "application/font-woff",

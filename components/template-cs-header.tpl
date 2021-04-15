@@ -243,12 +243,12 @@
     ]
   */
   --header-mainmenu-hover-text-transform: none;
- /* VoogStyle
-  "pathI18n": ["header", "main_menu", "active"],
-  "titleI18n": "text_color",
-  "editor": "colorPicker",
-  "scope": "global"
-*/
+  /* VoogStyle
+    "pathI18n": ["header", "main_menu", "active"],
+    "titleI18n": "text_color",
+    "editor": "colorPicker",
+    "scope": "global"
+  */
   --header-mainmenu-active-color: black;
   /* VoogStyle
     "pathI18n": ["header", "main_menu", "active"],

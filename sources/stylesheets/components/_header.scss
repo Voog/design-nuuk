@@ -120,8 +120,6 @@
             width: calc(100% - 28px);
             padding: 0;
             text-align: center;
-            display: flex;
-            align-items: center;
 
             @include query($mobile-1) {
               h1,h2,h3,h4,h5,h6,p,a,b {

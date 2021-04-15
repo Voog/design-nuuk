@@ -96,19 +96,47 @@
       {% endunless %}
     {% endfor %}
 
-    {%- if site.visible_menuitems.size > 5 -%}
-      <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true %} d-none{% endif %}">
-        {% include 'ico-ellipsis' %}
-      </div>
-    {%- endif -%}
-
     <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
       <ul class="menu">
+        {% assign menuItemCount = 0 %}
         {% for item in site.visible_menuitems %}
-          {% menulink item wrapper-tag="li" wrapper-class="menu-item menu_popover-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
+            {%- if item.layout_title == product_list_layout or item.layout_title == product_layout -%}
+              {%- if item.layout_title == product_list_layout -%}
+                {%- assign itemClass = 'menu-item-product-list' -%}
+                {% if isProductListItemVisible == false %}
+                  {%- assign menuItemDisplayClass = 'hidden' -%}
+                {% else %}
+                  {% assign menuItemCount = menuItemCount | plus: 1 %}
+                  {%- assign menuItemDisplayClass = 'visible' -%}
+                {% endif %}
+
+              {%- elsif item.layout_title == product_layout -%}
+                {% if isProductItemVisible == false %}
+                  {%- assign menuItemDisplayClass = 'hidden' -%}
+                {% else %}
+                  {%- assign menuItemDisplayClass = 'visible' -%}
+                  {% assign menuItemCount = menuItemCount | plus: 1 %}
+                {% endif %}
+                {%- assign itemClass = 'menu-item-product' -%}
+              {%- endif -%}
+
+              <li class="{{itemClass}} menu-item lvl-1 menu_popover-item {{menuItemDisplayClass}}">
+                {% menulink item current-class="active" wrapper-class="menu-item lvl-1" untranslated-class="untranslated fci-editor-menuadd" %}
+              </li>
+            {%- else -%}
+              <li class="menu-item menu_popover-item lvl-1">
+                {% menulink item current-class="active" untranslated-class="untranslated fci-editor-menuadd" %}
+              </li>
+              {% assign menuItemCount = menuItemCount | plus: 1 %}
+            {%- endif -%}
         {% endfor %}
       </ul>
     </li>
+
+
+    <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= 5 %} d-none{% endif %}" data-count="{{menuItemCount}}">
+      {% include 'ico-ellipsis' %}
+    </div>
 
     {%- capture menuSettingsBtns -%}
       {% if site.hidden_menuitems.size > 0 %}

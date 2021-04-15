@@ -100,6 +100,49 @@
     }
   }
 
+  &page {
+    &-nav {
+      &--wrap {
+        position: absolute;
+        right: -32px;
+        top: 64px;
+
+        @include query($tablet-2) {
+          display: none;
+        }
+      }
+
+      &--link {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px;
+        background-color: rgba($grey-2, .2);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: block;
+
+        .dark-background & {
+          background-color: $white;
+        }
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+
+      &--right {
+        background-image: url('../assets/ico-arrow-right.svg');
+      }
+
+      &--left {
+        margin-top: 16px;
+        transform: rotate(180deg);
+        background-image: url('../assets/ico-arrow-right.svg');
+      }
+    }
+  }
+
   &alt-attr {
     display: none;
 
