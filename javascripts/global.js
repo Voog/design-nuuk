@@ -926,6 +926,7 @@ MMCQ = (function() {
 
     $(document).on('voog:shoppingcart:changequantity', function() {
       var timer;
+
       clearTimeout(timer);
       $('.cart_popover-wrap').addClass('visible');
       if (getCartItemsCount() >= 1) {
@@ -934,7 +935,7 @@ MMCQ = (function() {
         $('.cart_btn .cart_btn-count').removeClass('visible');
       }
 
-      timer = setInterval(function () {
+      timer = setTimeout(function () {
         $('.cart_popover-wrap').removeClass('visible');
       }, 3000);
     });
