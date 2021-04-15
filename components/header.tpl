@@ -1,8 +1,15 @@
 
 {%- assign menuSettings = site.data[menuSettingsKey] -%}
+{%- assign menuPos = menuSettings.positioning -%}
+{%- if menuPos == 'is_top' or menuPos == 'is_top_fixed' -%}
+  {%- assign menuTop = true -%}
+{%- else -%}
+  {%- assign menuTop = false -%}
+{%- endif -%}
 
-{% include "site-search" %}
-{% include 'header-fixed' %}
+{%- include 'menu-main-iteration' -%}
+{%- include "site-search" %}
+  {% include 'header-fixed', _menuTop: menuTop -%}
 
 {%- if menuSettings.max_width >= 1 -%}
   <style>
@@ -22,7 +29,7 @@
 
 <div class="
   semimodal js-prevent-sideclick semimodal-bg_picker--area {{semimodal_bg_type}}
-  {% if menuSettings.positioning == 'is_top' or menuSettings.positioning == 'is_top_fixed' %} hidden-desktop{% endif %}
+  {%- if menuTop == true %} hidden-desktop{% endif -%}
   "
 >
   {%- assign imageClass = "image_fit-cover image_abs semimodal-bg_image" -%}
@@ -45,20 +52,7 @@
       </button>
 
       {%- if show_language_menu_popover -%}
-        <div class="header_components-tablet">
-          {% if show_language_menu_popover %}
-            <div class="js-toggle-menu-language menu-language-toggle js-prevent-sideclick p-rel" tabindex=0>
-              <button class="menu-language-btn ico-flags ico-flag-{{ page.language_code }} js-menu-language-popover-btn" data-lang-code="{{ page.language_locale }}" {{ edy_intro_add_lang }}>
-                <span>{{ current_language_title }}</span><span class="mar_l-4">{% include 'ico-chevron-down' %}</span>
-              </button>
-              {% if show_language_menu_popover %}
-                {% include "menu-language-popover", _semimodal: true %}
-              {% endif %}
-            </div>
-          {% endif %}
-
-          {% include "menu-language-list" %}
-        </div>
+        <div class="header_components-tablet"></div>
       {%- endif -%}
     </div>
 
@@ -90,12 +84,7 @@
         </div>
       {%- endif -%}
 
-      {%- include "menu-main", _semimodalMenu: true -%}
-      {%- comment -%}
-        <div class="content-formatted semimodal_bottom-content">
-          {% content name="menu_bottom" xpage="true" %}
-        </div>
-      {%- endcomment -%}
+      {%- include "menu-main", _renderSemimodalMenu: true -%}
     </div>
   </header>
 </div>
