@@ -1,11 +1,11 @@
 {%- assign menuSettings = site.data[menuSettingsKey] -%}
+{% include 'settings-editor-button',
+  _titleKey: "navigation",
+  _descriptionKey: "change_menu_settings",
+  _className: "js-menu-settings-btn",
+  _wrapClassName: "menu_settings-btn"
+%}
 
-<div class="menu_settings-btn layout_settings-btn js-prevent-sideclick">
-  <button disabled class="js-menu-settings-btn js-settings-editor-btn">
-    <div class="bold">{{ "navigation" | lce }}</div>
-    <div class="grey">{{ "change_menu_settings" | lce }}</div>
-  </button>
-</div>
 <script>
   {%- if editmode -%}
     window.addEventListener('DOMContentLoaded', function(event) {

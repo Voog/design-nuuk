@@ -22,7 +22,7 @@
 {% if editmode %}
   {% editorjsblock %}
     <script src="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.js"></script>
-    {% include "settings_editor" %}
+    {% include "settings-editor" %}
     {% include "bg-picker-scripts" %}
     <script>
       {%- if page.layout_title == product_list_layout or page.layout_title == product_layout -%}
