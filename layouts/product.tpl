@@ -85,16 +85,12 @@
                   {% endcontentblock %}
                   {%- assign productSettingsData = page.data[productLayoutSettingsKey] -%}
                   {%- assign isBoxLabel = productSettingsData.is_product_label_box -%}
-
+                  {%- assign isLabelLineThrough = productSettingsData.is_product_label_line_through -%}
 
                   {%- if buy_button.product.out_of_stock? -%}
                     <div class="product_item-box--label mar_t-32">{{ "out_of_stock" | lc | escape_once }}</div>
-                  {%- elsif productSettingsData.product_label != blank and isBoxLabel != true -%}
-                    <div class="mar_t-16{% if productSettingsData.is_product_label_line_through == true %} td-lt{% endif %}">
-                      {{productSettingsData.product_label}}
-                    </div>
-                  {%- elsif productSettingsData.product_label != blank and isBoxLabel == true -%}
-                    <div class="product_item-box--label mar_t-16">
+                  {%- elsif productSettingsData.product_label != blank -%}
+                    <div class="mar_t-16{% if isBoxLabel == true %} product_item-box--label{% endif %}{% if isLabelLineThrough == true %} td-lt{% endif %}">
                       {{productSettingsData.product_label}}
                     </div>
                   {%- endif -%}
