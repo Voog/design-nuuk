@@ -58,8 +58,6 @@ body {
 
     &-wrap {
       position: fixed;
-      background: $white;
-      box-shadow: $box-shadow;
       top: 48px;
       right: 32px;
       width: 100%;
@@ -74,26 +72,40 @@ body {
         right: 8px;
       }
 
-      &:hover {
-        opacity: .7;
-      }
-
       &.visible {
         opacity: 1;
         pointer-events: all;
         @include transition(opacity 600ms);
+
+        &:hover {
+          opacity: .7;
+        }
       }
     }
 
     &-icon {
       padding: 24px;
-      background-color: black;
+      display: flex;
+      background-color: $black;
+      box-shadow: $box-shadow;
+      z-index: 1;
     }
 
     &-content {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 16px 24px;
+      background: $white;
+      box-shadow: $box-shadow;
+      width: 100%;
+      transform: translateX(-72px);
+      @include transition(transform 600ms);
+
+      .visible & {
+        transform: translateX(0);
+        @include transition(transform 600ms);
+      }
 
       &--info {
         color: $black;

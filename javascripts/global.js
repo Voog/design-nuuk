@@ -918,7 +918,6 @@ MMCQ = (function() {
     // Emitted when the shopping cart button element is added to the DOM.
     $(document).on('voog:shoppingcart:button:created', function() {
       if (getCartItemsCount() >= 1) {
-        console.log('created');
         $('.cart_btn').addClass('visible');
         $('.cart_btn .cart_btn-count').text(getCartItemsCount());
       } else {
@@ -927,23 +926,29 @@ MMCQ = (function() {
     });
 
     var handleProductCountChange = function (e, addProduct) {
-      console.log(addProduct, $('.cart_popover-wrap'), this.timer);
+      var itemsCount = getCartItemsCount();
+      var counterElement = $('.cart_btn .cart_btn-count');
+      var prevCount = parseInt(counterElement.text()) || 0;
 
-      if (getCartItemsCount() >= 1 || addProduct == true) {
-        $('.cart_popover-content--product').text(e.detail.product_name);
-        $('.cart_popover-wrap').addClass('visible');
-        $('.cart_btn .cart_btn-count').text(getCartItemsCount());
-
+      if (itemsCount >= 1 || addProduct == true) {
         if (this.timer != null) {
           clearTimeout(this.timer);
         }
 
-        this.timer = setTimeout(function () {
-          $('.cart_popover-wrap').removeClass('visible');
-        }, 3000);
+        if (itemsCount > prevCount) {
+          $('.cart_popover-content--product').text(e.detail.product_name);
+          $('.cart_popover-wrap').addClass('visible');
+
+          this.timer = setTimeout(function () {
+            $('.cart_popover-wrap').removeClass('visible');
+          }, 3000);
+        }
+
+        $('.cart_btn').addClass('visible');
+        counterElement.text(itemsCount);
       } else {
         $('.cart_btn').removeClass('visible');
-        $('.cart_btn .cart_btn-count').text('');
+        counterElement.text('');
       }
     }
 

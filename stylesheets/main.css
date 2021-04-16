@@ -2894,9 +2894,6 @@ body.edy-checkout-button-visible {
 
 .cart_popover-wrap {
   position: fixed;
-  background: #ffffff;
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
   top: 48px;
   right: 32px;
   width: 100%;
@@ -2923,10 +2920,6 @@ body.edy-checkout-button-visible {
   }
 }
 
-.cart_popover-wrap:hover {
-  opacity: .7;
-}
-
 .cart_popover-wrap.visible {
   opacity: 1;
   pointer-events: all;
@@ -2942,9 +2935,19 @@ body.edy-checkout-button-visible {
           backface-visibility: hidden;
 }
 
+.cart_popover-wrap.visible:hover {
+  opacity: .7;
+}
+
 .cart_popover-icon {
   padding: 24px;
-  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #000000;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+  z-index: 1;
 }
 
 .cart_popover-content {
@@ -2954,7 +2957,47 @@ body.edy-checkout-button-visible {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 16px 24px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+  width: 100%;
+  -webkit-transform: translateX(-72px);
+      -ms-transform: translateX(-72px);
+          transform: translateX(-72px);
+  -webkit-transition: -webkit-transform 600ms;
+  transition: -webkit-transform 600ms;
+  -o-transition: transform 600ms;
+  transition: transform 600ms;
+  transition: transform 600ms, -webkit-transform 600ms;
+  -webkit-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+       -o-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+          transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.visible .cart_popover-content {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 600ms;
+  transition: -webkit-transform 600ms;
+  -o-transition: transform 600ms;
+  transition: transform 600ms;
+  transition: transform 600ms, -webkit-transform 600ms;
+  -webkit-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+       -o-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+          transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .cart_popover-content--info {
