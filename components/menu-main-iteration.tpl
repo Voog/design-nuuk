@@ -43,10 +43,10 @@
         {%- endif -%}
 
         {% if editmode or isMenuItemVisible == true %}
-          {%- assign menuItemCount = menuItemCount | plus: 1 -%}
           {% if isMenuItemVisible != true %}
             {%- assign itemTag = 'div' -%}
           {% else %}
+            {%- assign menuItemCount = menuItemCount | plus: 1 -%}
             {%- assign itemTag = 'li' -%}
           {% endif %}
           <{{itemTag}}
@@ -58,6 +58,7 @@
         {% endif %}
       {% else %}
         {%- assign menuItemCount = menuItemCount | plus: 1 -%}
+        {%- assign isMenuItemVisible = true -%}
         <li
           data-visible=true
           class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1">
