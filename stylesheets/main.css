@@ -2957,11 +2957,15 @@ body.edy-checkout-button-visible {
   padding: 16px 24px;
 }
 
-.cart_popover-content--name {
+.cart_popover-content--info {
   color: #000000;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
+}
+
+.cart_popover-content--product {
+  text-transform: capitalize;
 }
 
 .cart_popover-content--view {

@@ -914,9 +914,10 @@ MMCQ = (function() {
   }
 
   var buildCustomShoppingCartIcon = function() {
+    // Emitted when the shopping cart button element is added to the DOM.
     $(document).on('voog:shoppingcart:button:created', function() {
-
       if (getCartItemsCount() >= 1) {
+        console.log('created');
         $('.cart_btn').addClass('visible');
         $('.cart_btn .cart_btn-count').text(getCartItemsCount());
       } else {
@@ -924,20 +925,40 @@ MMCQ = (function() {
       }
     });
 
-    $(document).on('voog:shoppingcart:changequantity', function() {
-      var timer;
+    var handleProductCountChange = function (e, addProduct) {
+      console.log(addProduct, $('.cart_popover-wrap'), this.timer);
 
-      clearTimeout(timer);
-      $('.cart_popover-wrap').addClass('visible');
-      if (getCartItemsCount() >= 1) {
+      if (getCartItemsCount() >= 1 || addProduct == true) {
+        $('.cart_popover-content--product').text(e.detail.product_name);
+        $('.cart_popover-wrap').addClass('visible');
         $('.cart_btn .cart_btn-count').text(getCartItemsCount());
-      } else {
-        $('.cart_btn .cart_btn-count').removeClass('visible');
-      }
 
-      timer = setTimeout(function () {
-        $('.cart_popover-wrap').removeClass('visible');
-      }, 3000);
+        if (this.timer != null) {
+          clearTimeout(this.timer);
+        }
+
+        this.timer = setTimeout(function () {
+          $('.cart_popover-wrap').removeClass('visible');
+        }, 3000);
+      } else {
+        $('.cart_btn').removeClass('visible');
+        $('.cart_btn .cart_btn-count').text('');
+      }
+    }
+
+    // Emitted when a product is removed from the shopping cart
+    $(document).on('voog:shoppingcart:removeproduct', function(e) {
+      handleProductCountChange(e, false);
+    });
+
+    // Emitted when a product's quantity changes
+    $(document).on('voog:shoppingcart:changequantity', function(e) {
+      handleProductCountChange(e, true);
+    });
+
+    // Emitted when a new product is added to the cart
+    $(document).on('voog:shoppingcart:addproduct', function(e) {
+      handleProductCountChange(e, true);
     });
 
     $('.cart_btn, .cart_popover-wrap').click(function() {
