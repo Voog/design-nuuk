@@ -503,11 +503,11 @@
       }
 
       if ($('.js-menu-language').length >= 1) {
-        $('.header_components-desktop').prepend($('.js-menu-language'));
+        $('.header_components-menu--top').prepend($('.js-menu-language'));
       }
     } else {
       if ($('.js-menu-language').length >= 1) {
-        $('.header_components-tablet').append($('.js-menu-language'));
+        $('.header_components-semimodal').append($('.js-menu-language'));
       }
     }
   };
@@ -550,11 +550,11 @@
 
   var handleActivLangMenu = function() {
     if ($( window ).width() >= 900) {
-      $('.header_components-tablet .menu-language-toggle').removeClass('js-toggle-menu-language');
-      $('.header_components-desktop .menu-language-toggle').addClass('js-toggle-menu-language');
+      $('.header_components-semimodal .menu-language-toggle').removeClass('js-toggle-menu-language');
+      $('.header_components-menu--top .menu-language-toggle').addClass('js-toggle-menu-language');
     } else {
-      $('.header_components-desktop .menu-language-toggle').removeClass('js-toggle-menu-language');
-      $('.header_components-tablet .menu-language-toggle').addClass('js-toggle-menu-language');
+      $('.header_components-menu--top .menu-language-toggle').removeClass('js-toggle-menu-language');
+      $('.header_components-semimodal .menu-language-toggle').addClass('js-toggle-menu-language');
     }
   };
 

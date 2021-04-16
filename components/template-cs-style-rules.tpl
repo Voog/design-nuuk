@@ -494,7 +494,7 @@ body.dark-background {
   fill: var(--third-color);
 }
 
-.dark-background .light-background .header_components-tablet,
+.dark-background .light-background .header_components-semimodal,
 .dark-background .light-background .site_title.content-formatted,
 .dark-background .light-background .semimodal_bottom-content,
 .dark-background .light-background .menu-language-btn,
@@ -502,7 +502,7 @@ body.dark-background {
   color: var(--header-mainmenu-color);
 }
 
-.dark-background .light-background .header_components-tablet a, .dark-background .light-background .header_components-tablet p, .dark-background .light-background .header_components-tablet h1, .dark-background .light-background .header_components-tablet h2, .dark-background .light-background .header_components-tablet h3, .dark-background .light-background .header_components-tablet h4, .dark-background .light-background .header_components-tablet h5, .dark-background .light-background .header_components-tablet h6,
+.dark-background .light-background .header_components-semimodal a, .dark-background .light-background .header_components-semimodal p, .dark-background .light-background .header_components-semimodal h1, .dark-background .light-background .header_components-semimodal h2, .dark-background .light-background .header_components-semimodal h3, .dark-background .light-background .header_components-semimodal h4, .dark-background .light-background .header_components-semimodal h5, .dark-background .light-background .header_components-semimodal h6,
 .dark-background .light-background .site_title.content-formatted a,
 .dark-background .light-background .site_title.content-formatted p,
 .dark-background .light-background .site_title.content-formatted h1,

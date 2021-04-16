@@ -3360,13 +3360,13 @@ body.edy-checkout-button-visible {
           align-items: center;
 }
 
-.header_components-desktop {
+.header_components-menu--top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.header_components-tablet {
+.header_components-semimodal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3380,7 +3380,7 @@ body.edy-checkout-button-visible {
 }
 
 @media screen and (min-width: 900px) {
-  .header_components-tablet {
+  .header_components-semimodal {
     display: none;
   }
 }

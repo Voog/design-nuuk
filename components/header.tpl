@@ -53,7 +53,7 @@
       </button>
 
       {%- if show_language_menu_popover -%}
-        <div class="header_components-tablet"></div>
+        <div class="header_components-semimodal"></div>
       {%- endif -%}
     </div>
 
