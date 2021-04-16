@@ -26,7 +26,7 @@
       {%- endif -%}
     {% endif -%}
 
-    <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount < 5 %} d-none{% endif %}" data-count="{{menuItemCount}}">
+    <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= 5 %} d-none{% endif %}" data-count="{{menuItemCount}}">
       {% include 'ico-ellipsis' %}
     </div>
     {%- capture menuSettingsBtns -%}
