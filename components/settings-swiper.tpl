@@ -1,9 +1,9 @@
-<div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
-  <button disabled class="js-swiper-settings-btn js-settings-editor-btn">
-    <div class="bold">{{ "front_page_header" | lce }}</div>
-    <div class="grey">{{ "change_slider_settings" | lce }}</div>
-  </button>
-</div>
+{% include 'settings-editor-button',
+  _titleKey: "front_page_header",
+  _descriptionKey: "change_slider_settings",
+  _className: "js-swiper-settings-btn",
+  _wrapClassName: "content_settings-btn"
+%}
 
 <script>
   window.addEventListener('DOMContentLoaded', function(event) {

@@ -171,7 +171,7 @@ body {
 }
 
 .scroll.dark-background {
-  .menu-main :not(.menu_popover-item).menu-item,
+  .menu-main .menu .menu-item,
   .content-formatted.header_title {
     color: var(--header-mainmenu-color);
 
@@ -179,13 +179,27 @@ body {
       color: var(--header-mainmenu-color);
     }
 
-    a:hover,
-    &.active a {
-      color: var(--header-mainmenu-color);
+    &.active a,
+    a.selected {
+      color: var(--header-mainmenu-active-color);
     }
 
     a:hover {
+      color: var(--header-mainmenu-color);
       opacity: .7;
+    }
+  }
+
+  .menu-main .menu_popover .menu .menu-item {
+    color: var(--third-color);
+
+    a, p, h1, h2, h3, h4, h5, h6 {
+      color: var(--third-color);
+    }
+
+    a:hover,
+    &.active a {
+      color: var(--third-color);
     }
   }
 }

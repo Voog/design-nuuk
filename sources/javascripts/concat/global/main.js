@@ -170,6 +170,7 @@
 
     var toggleMenuPopover = function() {
       $('.menu_popover').toggleClass('active');
+
     }
 
     $('.js-menu-popover-btn').click(function() {
@@ -500,6 +501,14 @@
       if ($('.semimodal-relative').length <= 0) {
         $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos + 16});
       }
+
+      if ($('.js-menu-language').length >= 1) {
+        $('.header_components-desktop').prepend($('.js-menu-language'));
+      }
+    } else {
+      if ($('.js-menu-language').length >= 1) {
+        $('.header_components-tablet').append($('.js-menu-language'));
+      }
     }
   };
 
@@ -518,6 +527,15 @@
 
       $('.header_title').keyup(function(e) {
         handleMenuTopPos();
+      });
+
+      $('.js-menu-popover-btn').one( "click", function() {
+        if (editmode()) {
+          $('.semimodal_bottom .menu .menu-item.lvl-1').clone().appendTo('.menu_popover-list');
+        } else {
+          // Popover has items starting from 6th
+          $('.semimodal_bottom .menu .menu-item.lvl-1:nth-of-type(n+6)').clone().appendTo('.menu_popover-list');
+        }
       });
 
       $('.form_field-cms input').keyup(function(e) {

@@ -1,23 +1,37 @@
 {
-  "description": "Modular layout",
-  "name": "Nuuk",
+  "description": "New design",
+  "name": "New design",
   "preview_medium": "",
   "preview_small": "",
-  "author": "Stefan Hiienurm",
+  "author": "",
   "layouts": [
     {
       "content_type": "page",
       "component": false,
       "file": "layouts/product.tpl",
-      "layout_name": "product",
+      "layout_name": "page_default",
       "title": "Product"
     },
     {
       "content_type": "page",
       "component": false,
       "file": "layouts/front_page.tpl",
-      "layout_name": "page_front",
+      "layout_name": "page_default",
       "title": "Front page"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/blog___news.tpl",
+      "layout_name": "page_default",
+      "title": "Blog   news"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/product_list.tpl",
+      "layout_name": "page_default",
+      "title": "Product list"
     },
     {
       "content_type": "page",
@@ -29,22 +43,8 @@
     {
       "content_type": "page",
       "component": false,
-      "file": "layouts/product_list.tpl",
-      "layout_name": "product_list",
-      "title": "Product list"
-    },
-    {
-      "content_type": "blog",
-      "component": false,
-      "file": "layouts/blog___news.tpl",
-      "layout_name": "blog",
-      "title": "Blog & news"
-    },
-    {
-      "content_type": "blog_article",
-      "component": false,
       "file": "layouts/blog_article.tpl",
-      "layout_name": "blog_article",
+      "layout_name": "page_default",
       "title": "Blog article"
     },
     {
@@ -64,13 +64,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/settings_editor.tpl",
-      "layout_name": "settings_editor",
-      "title": "settings_editor"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/template-cs-headings.tpl",
       "layout_name": "template-cs-headings",
       "title": "template-cs-headings"
@@ -81,6 +74,13 @@
       "file": "components/template-meta.tpl",
       "layout_name": "template-meta",
       "title": "template-meta"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/settings-editor.tpl",
+      "layout_name": "settings-editor",
+      "title": "settings-editor"
     },
     {
       "content_type": "component",
@@ -176,13 +176,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/menu-language-list.tpl",
-      "layout_name": "menu-language-list",
-      "title": "menu-language-list"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/blog-news-tags.tpl",
       "layout_name": "blog-news-tags",
       "title": "blog-news-tags"
@@ -242,6 +235,13 @@
       "file": "components/template-cs-blog-list.tpl",
       "layout_name": "template-cs-blog-list",
       "title": "template-cs-blog-list"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/settings-editor-button.tpl",
+      "layout_name": "settings-editor-button",
+      "title": "settings-editor-button"
     },
     {
       "content_type": "component",
@@ -401,8 +401,8 @@
       "content_type": "component",
       "component": true,
       "file": "components/image_src_variable.tpl",
-      "layout_name": "image_src_variable",
-      "title": "image_src_variable"
+      "layout_name": "image src variable",
+      "title": "image src variable"
     },
     {
       "content_type": "component",
@@ -424,6 +424,13 @@
       "file": "components/product-item.tpl",
       "layout_name": "product-item",
       "title": "product-item"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-main-iteration.tpl",
+      "layout_name": "menu-main-iteration",
+      "title": "menu-main-iteration"
     },
     {
       "content_type": "component",

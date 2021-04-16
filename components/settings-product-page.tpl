@@ -1,9 +1,9 @@
-<div class="js-prevent-sideclick content_settings-btn layout_settings-btn">
-  <button disabled class="js-product-page-settings-btn js-settings-editor-btn">
-    <div class="bold">{{ "product_page" | lce }}</div>
-    <div class="grey">{{ "edit_product_page" | lce }}</div>
-  </button>
-</div>
+{% include 'settings-editor-button',
+  _titleKey: "product_page",
+  _descriptionKey: "edit_product_page",
+  _className: "js-product-page-settings-btn",
+  _wrapClassName: "content_settings-btn"
+%}
 
 {%- assign productNoteInputCount = 1 -%}
 {%- assign productPageSettings = page.data[productLayoutSettingsKey] -%}
@@ -34,76 +34,78 @@
 
       var productsPageList = [{"title": '---',"value": 0}];
 
-      $.ajax({
-        type: 'GET',
-        contentType: 'application/json',
-        url: '/admin/api/buy_buttons?q.content.parent_type=page&q.content.language_id={{page.language_id}}&per_page=250',
-        dataType: 'json',
-        success: function(data) {
-          for (var i = 0; i < data.length; i++) {
-            if (data[i].product) {
-              productsPageList.push(
-                {
-                  "title": data[i].product.name + " (" + data[i].parent.title + ")",
-                  "value": data[i].parent.id
-                }
-              );
-            }
-          };
-        }
-      }).then(function() {
-        initSettingsEditor(
-          {
-            settingsBtn: document.querySelector('.js-product-page-settings-btn'),
-            menuItems: [
-              {
-                "title": {{ "select_related_product" | lce | json }},
-                "type": "select",
-                "key": "is_related_product_1",
-                "list": productsPageList,
-              },
-              {
-                "title": {{ "select_related_product" | lce | json }},
-                "type": "select",
-                "key": "is_related_product_2",
-                "list": productsPageList,
-              },
-              {
-                "title": {{ "select_related_product" | lce | json }},
-                "type": "select",
-                "key": "is_related_product_3",
-                "list": productsPageList,
-              },
-              {
-                "title": {{ "add_product_label" | lce | json }},
-                "type": "text",
-                "key": "product_label",
-                "placeholder": {{ "add_product_label" | lce | json }}
-              },
-              {
-                "title": {{ "cross_out_label" | lce | json }},
-                "type": "checkbox",
-                "key": "is_product_label_line_through",
-                "states": {
-                  "on": true,
-                  "off": false
-                }
-              },
-              {
-                "title": {{ "border_around_label" | lce | json }},
-                "type": "checkbox",
-                "key": "is_product_label_box",
-                "states": {
-                  "on": true,
-                  "off": false
-                }
+      $('.js-layout_settings-btn').one( "click", function(e) {
+        $.ajax({
+          type: 'GET',
+          contentType: 'application/json',
+          url: '/admin/api/buy_buttons?q.content.parent_type=page&q.content.language_id={{page.language_id}}&per_page=250',
+          dataType: 'json',
+          success: function(data) {
+            for (var i = 0; i < data.length; i++) {
+              if (data[i].product) {
+                productsPageList.push(
+                  {
+                    "title": data[i].product.name + " (" + data[i].parent.title + ")",
+                    "value": data[i].parent.id
+                  }
+                );
               }
-            ],
-            dataKey: '{{productLayoutSettingsKey}}',
-            containerClass: ['bottom-settings-popover', 'first', 'editor_default'],
-            values: valuesObj
+            };
           }
-        )
+        }).then(function() {
+          initSettingsEditor(
+            {
+              settingsBtn: document.querySelector('.js-product-page-settings-btn'),
+              menuItems: [
+                {
+                  "title": {{ "select_related_product" | lce | json }},
+                  "type": "select",
+                  "key": "is_related_product_1",
+                  "list": productsPageList,
+                },
+                {
+                  "title": {{ "select_related_product" | lce | json }},
+                  "type": "select",
+                  "key": "is_related_product_2",
+                  "list": productsPageList,
+                },
+                {
+                  "title": {{ "select_related_product" | lce | json }},
+                  "type": "select",
+                  "key": "is_related_product_3",
+                  "list": productsPageList,
+                },
+                {
+                  "title": {{ "add_product_label" | lce | json }},
+                  "type": "text",
+                  "key": "product_label",
+                  "placeholder": {{ "add_product_label" | lce | json }}
+                },
+                {
+                  "title": {{ "cross_out_label" | lce | json }},
+                  "type": "checkbox",
+                  "key": "is_product_label_line_through",
+                  "states": {
+                    "on": true,
+                    "off": false
+                  }
+                },
+                {
+                  "title": {{ "border_around_label" | lce | json }},
+                  "type": "checkbox",
+                  "key": "is_product_label_box",
+                  "states": {
+                    "on": true,
+                    "off": false
+                  }
+                }
+              ],
+              dataKey: '{{productLayoutSettingsKey}}',
+              containerClass: ['bottom-settings-popover', 'first', 'editor_default'],
+              values: valuesObj
+            }
+          )
+        });
       });
     });
   {% endif %}

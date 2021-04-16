@@ -115,12 +115,12 @@ body.dark-background {
   }
 }
 
-.scroll.dark-background .menu-main :not(.menu_popover-item).menu-item,
+.scroll.dark-background .menu-main .menu .menu-item,
 .scroll.dark-background .content-formatted.header_title {
   color: var(--header-mainmenu-color);
 }
 
-.scroll.dark-background .menu-main :not(.menu_popover-item).menu-item a, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item p, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h1, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h2, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h3, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h4, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h5, .scroll.dark-background .menu-main :not(.menu_popover-item).menu-item h6,
+.scroll.dark-background .menu-main .menu .menu-item a, .scroll.dark-background .menu-main .menu .menu-item p, .scroll.dark-background .menu-main .menu .menu-item h1, .scroll.dark-background .menu-main .menu .menu-item h2, .scroll.dark-background .menu-main .menu .menu-item h3, .scroll.dark-background .menu-main .menu .menu-item h4, .scroll.dark-background .menu-main .menu .menu-item h5, .scroll.dark-background .menu-main .menu .menu-item h6,
 .scroll.dark-background .content-formatted.header_title a,
 .scroll.dark-background .content-formatted.header_title p,
 .scroll.dark-background .content-formatted.header_title h1,
@@ -132,16 +132,30 @@ body.dark-background {
   color: var(--header-mainmenu-color);
 }
 
-.scroll.dark-background .menu-main :not(.menu_popover-item).menu-item a:hover,
-.scroll.dark-background .menu-main :not(.menu_popover-item).menu-item.active a,
-.scroll.dark-background .content-formatted.header_title a:hover,
-.scroll.dark-background .content-formatted.header_title.active a {
-  color: var(--header-mainmenu-color);
+.scroll.dark-background .menu-main .menu .menu-item.active a,
+.scroll.dark-background .menu-main .menu .menu-item a.selected,
+.scroll.dark-background .content-formatted.header_title.active a,
+.scroll.dark-background .content-formatted.header_title a.selected {
+  color: var(--header-mainmenu-active-color);
 }
 
-.scroll.dark-background .menu-main :not(.menu_popover-item).menu-item a:hover,
+.scroll.dark-background .menu-main .menu .menu-item a:hover,
 .scroll.dark-background .content-formatted.header_title a:hover {
+  color: var(--header-mainmenu-color);
   opacity: .7;
+}
+
+.scroll.dark-background .menu-main .menu_popover .menu .menu-item {
+  color: var(--third-color);
+}
+
+.scroll.dark-background .menu-main .menu_popover .menu .menu-item a, .scroll.dark-background .menu-main .menu_popover .menu .menu-item p, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h1, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h2, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h3, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h4, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h5, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h6 {
+  color: var(--third-color);
+}
+
+.scroll.dark-background .menu-main .menu_popover .menu .menu-item a:hover,
+.scroll.dark-background .menu-main .menu_popover .menu .menu-item.active a {
+  color: var(--third-color);
 }
 
 .search-btn svg g,
