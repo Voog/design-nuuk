@@ -2916,7 +2916,15 @@ body.edy-checkout-button-visible {
 
 @media screen and (max-width: 900px) {
   .cart_popover-wrap {
-    right: 8px;
+    right: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cart_popover-wrap {
+    right: 0;
+    left: 0;
+    top: 0;
   }
 }
 
@@ -2940,10 +2948,16 @@ body.edy-checkout-button-visible {
 }
 
 .cart_popover-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   padding: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #000000;
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
@@ -2966,6 +2980,7 @@ body.edy-checkout-button-visible {
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
   width: 100%;
+  margin-left: 72px;
   -webkit-transform: translateX(-72px);
       -ms-transform: translateX(-72px);
           transform: translateX(-72px);

@@ -69,7 +69,13 @@ body {
       cursor: pointer;
 
       @include query($tablet-1) {
-        right: 8px;
+        right: 16px;
+      }
+
+      @include query($mobile-1) {
+        right: 0;
+        left: 0;
+        top: 0;
       }
 
       &.visible {
@@ -84,8 +90,12 @@ body {
     }
 
     &-icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
       padding: 24px;
       display: flex;
+      align-items: center;
       background-color: $black;
       box-shadow: $box-shadow;
       z-index: 1;
@@ -100,6 +110,7 @@ body {
       background: $white;
       box-shadow: $box-shadow;
       width: 100%;
+      margin-left: 72px;
       transform: translateX(-72px);
       @include transition(transform 600ms);
 
