@@ -929,15 +929,16 @@ MMCQ = (function() {
       var itemsCount = getCartItemsCount();
       var counterElement = $('.cart_btn .cart_btn-count');
       var prevCount = parseInt(counterElement.text()) || 0;
+      var isCartModalOpen = $('.edy-ecommerce-modal-open').length >= 1;
 
       if (itemsCount >= 1 || addProduct == true) {
         if (this.timer != null) {
           clearTimeout(this.timer);
         }
 
-        if (itemsCount > prevCount) {
+        if (itemsCount > prevCount && !isCartModalOpen) {
           $('.cart_popover-content--product').text(e.detail.product_name);
-          $('.cart_popover-wrap').addClass('visible');
+          $(':not(body.edy-ecommerce-modal-open) .cart_popover-wrap').addClass('visible');
 
           this.timer = setTimeout(function () {
             $('.cart_popover-wrap').removeClass('visible');
