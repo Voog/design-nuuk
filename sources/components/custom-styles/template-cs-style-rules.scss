@@ -940,7 +940,8 @@ body {
     }
 
     @include query($tablet-1) {
-      font-size: 24px;
+      font-size: 18px;
+      line-height: 18px;
     }
   }
 

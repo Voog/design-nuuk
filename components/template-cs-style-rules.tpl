@@ -1069,7 +1069,8 @@ body.dark-background {
   .content-formatted .product_item-btn.site_title,
   .content-formatted p.header_title,
   .content-formatted p.site_title {
-    font-size: 24px;
+    font-size: 18px;
+    line-height: 18px;
   }
 }
 

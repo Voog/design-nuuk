@@ -45,9 +45,14 @@ body {
       opacity: .7;
     }
 
+    &-icon {
+      display: flex;
+    }
+
     &-count {
       font-size: 14px;
-      line-height: 20px;
+      display: flex;
+      align-items: center;
     }
   }
 

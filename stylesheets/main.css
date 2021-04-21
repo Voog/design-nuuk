@@ -2877,9 +2877,20 @@ body.edy-checkout-button-visible {
   opacity: .7;
 }
 
+.cart_btn-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .cart_btn-count {
   font-size: 14px;
-  line-height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cart_popover {
@@ -3262,10 +3273,14 @@ body.edy-checkout-button-visible {
 
 .header_fixed-content .header_title {
   width: 60%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   text-align: center;
+  min-height: 24px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .header_fixed-content .header_title h1, .header_fixed-content .header_title h2, .header_fixed-content .header_title h3, .header_fixed-content .header_title h4, .header_fixed-content .header_title h5, .header_fixed-content .header_title h6, .header_fixed-content .header_title p {
