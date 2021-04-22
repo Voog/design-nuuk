@@ -151,6 +151,10 @@
 
     .menu-item a {
       max-width: 160px;
+
+      &:hover {
+        @include transition(opacity 200ms, ease-in);
+      }
     }
   }
 

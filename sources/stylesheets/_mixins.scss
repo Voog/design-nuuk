@@ -82,9 +82,9 @@
   }
 }
 
-@mixin transition($prop) {
+@mixin transition($prop, $timing: $bezier-fast) {
   transition: $prop;
-  transition-timing-function: $bezier-fast;
+  transition-timing-function: $timing;
   perspective: 1000;
   backface-visibility: hidden;
 }
@@ -92,7 +92,6 @@
 
 @mixin language-flag-icon-position($x-medium, $y-medium, $x-medium-up, $y-medium-up) {
   &::after {
-    content: '';
     background-position: $x-medium $y-medium;
   }
 }
