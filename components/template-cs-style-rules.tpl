@@ -158,33 +158,53 @@ body.dark-background {
   color: var(--third-color);
 }
 
+.search-btn svg path,
 .search-btn svg g,
-.cart_btn svg g,
-.cart_btn svg path {
+.cart_btn svg path,
+.cart_btn svg g {
   fill: var(--header-mainmenu-active-color);
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .search-btn svg g, :not(.scroll).dark-background
-  .cart_btn svg g, :not(.scroll).dark-background
-  .cart_btn svg path {
+  :not(.scroll).dark-background .search-btn svg path, :not(.scroll).dark-background
+  .search-btn svg g, :not(.scroll).dark-background
+  .cart_btn svg path, :not(.scroll).dark-background
+  .cart_btn svg g {
     fill: var(--third-color);
   }
 }
 
+.search-btn:hover svg path,
 .search-btn:hover svg g,
-.cart_btn:hover svg g,
-.cart_btn:hover svg path {
+.cart_btn:hover svg path,
+.cart_btn:hover svg g {
   fill: var(--header-mainmenu-color);
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .search-btn:hover svg g, :not(.scroll).dark-background
-  .cart_btn:hover svg g, :not(.scroll).dark-background
-  .cart_btn:hover svg path {
+  :not(.scroll).dark-background .search-btn:hover svg path, :not(.scroll).dark-background
+  .search-btn:hover svg g, :not(.scroll).dark-background
+  .cart_btn:hover svg path, :not(.scroll).dark-background
+  .cart_btn:hover svg g {
     opacity: .7;
     fill: var(--third-color);
   }
+}
+
+.cart_btn .cart_btn-count {
+  color: var(--header-mainmenu-active-color);
+}
+
+@media screen and (min-width: 900px) {
+  :not(.scroll).dark-background .cart_btn .cart_btn-count {
+    color: var(--third-color);
+  }
+}
+
+.cart_btn:hover svg path,
+.cart_btn:hover svg g {
+  color: var(--header-mainmenu-color);
+  opacity: .7;
 }
 
 .menu_popover-btn svg path {
@@ -264,16 +284,6 @@ body.dark-background {
 
 @media screen and (min-width: 900px) {
   :not(.scroll).dark-background .edy-ecommerce-product-count {
-    color: var(--third-color);
-  }
-}
-
-.edy-ecommerce-shopping-cart_btn:hover .edy-ecommerce-product-count {
-  color: var(--header-mainmenu-color);
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .edy-ecommerce-shopping-cart_btn:hover .edy-ecommerce-product-count {
     color: var(--third-color);
   }
 }
