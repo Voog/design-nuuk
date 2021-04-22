@@ -1,6 +1,6 @@
 {
-  "description": "New design",
-  "name": "New design",
+  "description": "Modular design",
+  "name": "Nuuk",
   "preview_medium": "",
   "preview_small": "",
   "author": "Stefan Hiienurm",
@@ -9,42 +9,42 @@
       "content_type": "page",
       "component": false,
       "file": "layouts/product.tpl",
-      "layout_name": "page_default",
+      "layout_name": "product",
       "title": "Product"
     },
     {
       "content_type": "page",
       "component": false,
       "file": "layouts/front_page.tpl",
-      "layout_name": "page_default",
+      "layout_name": "page_front",
       "title": "Front page"
     },
     {
       "content_type": "page",
       "component": false,
-      "file": "layouts/blog___news.tpl",
-      "layout_name": "page_default",
-      "title": "Blog   news"
-    },
-    {
-      "content_type": "page",
-      "component": false,
-      "file": "layouts/product_list.tpl",
-      "layout_name": "page_default",
-      "title": "Product list"
-    },
-    {
-      "content_type": "page",
-      "component": false,
       "file": "layouts/common_page.tpl",
-      "layout_name": "page_default",
+      "layout_name": "common_page",
       "title": "Common page"
     },
     {
       "content_type": "page",
       "component": false,
+      "file": "layouts/product_list.tpl",
+      "layout_name": "product_list",
+      "title": "Product list"
+    },
+    {
+      "content_type": "blog",
+      "component": false,
+      "file": "layouts/blog___news.tpl",
+      "layout_name": "blog___news",
+      "title": "Blog & news"
+    },
+    {
+      "content_type": "blog_article",
+      "component": false,
       "file": "layouts/blog_article.tpl",
-      "layout_name": "page_default",
+      "layout_name": "blog_article",
       "title": "Blog article"
     },
     {
@@ -693,13 +693,13 @@
     {
       "content_type": "image/png",
       "file": "images/ico-check.png",
-      "kind": "images",
+      "kind": "image",
       "filename": "ico-check.png"
     },
     {
       "content_type": "image/png",
       "file": "images/ico-flags.png",
-      "kind": "images",
+      "kind": "image",
       "filename": "ico-flags.png"
     },
     {
