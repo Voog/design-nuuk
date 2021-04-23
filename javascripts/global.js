@@ -1029,6 +1029,41 @@ MMCQ = (function() {
     }
   };
 
+  var handleModularBlocksWidth = function (params) {
+    window.addEventListener('DOMContentLoaded', function(event) {
+      var setBlockWidth = function() {
+        $('.js-block').each(function () {
+          var id = $(this).data('id');
+          var maxWidth = $(this).data('max-width');
+          var minWidth = $(this).data('min-width');
+          var colItem = $('.column-container-' + id + ' .col-item');
+
+            if (parseFloat(colItem.css('min-width')) > colItem.closest(".editor_default-container").width()) {
+              colItem.css('min-width', '100%');
+            } else {
+              colItem.css('min-width', minWidth);
+            }
+
+          if ($(window).width() >= 720) {
+            $('.block-' + id).css({
+              width: maxWidth + '%'
+            });
+          } else {
+            $('.block-' + id).css({
+              width: '100%'
+            });
+          }
+        });
+      };
+
+      setBlockWidth();
+
+      $(window).resize(function() {
+        setBlockWidth()
+      });
+    });
+  }
+
   var init = function() {
     // Add site wide functions here.
     bindSideClicks();
@@ -1040,6 +1075,7 @@ MMCQ = (function() {
     handleWindowScroll();
     bindLanguageMenuButttons();
     handleDocument();
+    handleModularBlocksWidth();
 
     $(document).on('voog:shoppingcart:button:created', function() {
       buildCustomShoppingCartIcon();
