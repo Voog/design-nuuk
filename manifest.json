@@ -23,7 +23,7 @@
       "content_type": "page",
       "component": false,
       "file": "layouts/common_page.tpl",
-      "layout_name": "common_page",
+      "layout_name": "page_default",
       "title": "Common page"
     },
     {
@@ -693,13 +693,13 @@
     {
       "content_type": "image/png",
       "file": "images/ico-check.png",
-      "kind": "image",
+      "kind": "images",
       "filename": "ico-check.png"
     },
     {
       "content_type": "image/png",
       "file": "images/ico-flags.png",
-      "kind": "image",
+      "kind": "images",
       "filename": "ico-flags.png"
     },
     {
