@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% include "template-settings" %}
 {% include "template-variables" %}
-<html class="{% include "language-menu-class-names" %} {% if editmode %}editmode{% else %}public{% endif %} {% include 'semimodal-class-names' %}" lang="{{ page.language_code }}">
+<html class="{% include "language-menu-class-names" %} {% if editmode %}editmode{% else %}publicmode{% endif %} {% include 'semimodal-class-names' %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
   {%- assign swiperSettingsData = page.data[swiperSettingsKey] -%}
   {% include "html-head" %}
