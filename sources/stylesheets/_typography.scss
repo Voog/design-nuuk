@@ -60,9 +60,11 @@ h5 {
 
 a {
   color: var(--primary-color);
+  @include transition(all 300ms, ease-in);
 
   &:hover {
     color: var(--secondary-color);
+    @include transition(all 300ms, ease-in);
   }
 }
 

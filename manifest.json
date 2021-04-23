@@ -50,9 +50,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-style-rules.tpl",
-      "layout_name": "template-cs-style-rules",
-      "title": "template-cs-style-rules"
+      "file": "components/site-search.tpl",
+      "layout_name": "site-search",
+      "title": "site-search"
     },
     {
       "content_type": "component",
@@ -365,16 +365,16 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/site-search.tpl",
-      "layout_name": "site-search",
-      "title": "site-search"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/template-cs-style-rules.tpl",
+      "layout_name": "template-cs-style-rules",
+      "title": "template-cs-style-rules"
     },
     {
       "content_type": "component",

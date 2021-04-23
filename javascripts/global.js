@@ -999,6 +999,8 @@ MMCQ = (function() {
         $('.header_components-tablet').append($('.js-menu-language'));
       }
     }
+
+    $('.menu-language').show();
   };
 
   var handleDocument = function() {
