@@ -40,8 +40,11 @@
         noReload: true,
         prevFunc: function(data) {
           if (data.block_count >= 1) {
-            $('.block-container-wrap .block-container:nth-child(n+'+ data.block_count +')').addClass('d-none');
-            $('.block-container-wrap .block-container:nth-child(-n'+ data.block_count +')').removeClass('d-none');
+            console.log($('.block-container-wrap .block-container:nth-of-type(n+'+ data.block_count +')'));
+            console.log($('.block-container-wrap .block-container:nth-of-type(-n+'+ data.block_count +')'));
+            $('.block-container-wrap .block-container:nth-of-type(n+'+ data.block_count + 1 +')').addClass('d-none');
+            $('.block-container-wrap .block-container:nth-of-type(-n+'+ data.block_count +')').removeClass('d-none');
+            site.setBlockColumnsWidth();
           }
         }
       }
@@ -253,8 +256,8 @@
             }
 
             if (data.block_columns >= 1) {
-              $('.column-container-{{ id }} .col-item:nth-child(n+'+ data.block_columns +')').addClass('d-none');
-              $('.column-container-{{ id }} .col-item:nth-child(-n'+ data.block_columns +')').removeClass('d-none');
+              $('.column-container-{{ id }} .col-item:nth-child(n+'+ data.block_columns + 1 +')').addClass('d-none');
+              $('.column-container-{{ id }} .col-item:nth-child(-n+'+ data.block_columns +')').removeClass('d-none');
 
               if (data.block_columns == 1) {
                 colItem.addClass('content-formatted--overflowed-images');

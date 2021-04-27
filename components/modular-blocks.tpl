@@ -10,6 +10,7 @@
 {%- else -%}
   {%- assign blockCounter = blockCount -%}
 {%- endif -%}
+
 <div class="block-container-wrap">
   {%- for id in (1..blockCounter) -%}
     {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
@@ -204,22 +205,22 @@
               class="col-item flex_auto b-box{% if columnCount < i %} d-none js-lazyload{% endif %}{% if columnCount == 1 %} content-formatted--overflowed-images{% endif %}"
               data-search-indexing-allowed="true"
             >
-            {%- if id == 1 and i == 1 -%}
-              {%- comment -%}
-                For better migration use content with name "body" because older templates common page layout uses content with name "body".
-              {%- endcomment -%}
+              {%- if id == 1 and i == 1 -%}
+                {%- comment -%}
+                  For better migration use content with name "body" because older templates common page layout uses content with name "body".
+                {%- endcomment -%}
 
-              {%- capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture -%}
-              {%- if first_block_html == blank -%}
-                {% assign name = "body" %}
+                {%- capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture -%}
+                {%- if first_block_html == blank -%}
+                  {% assign name = "body" %}
+                {%- endif -%}
+
+                {% contentblock name=name %}
+                  {% include 'modular-content-1-1' %}
+                {% endcontentblock %}
+              {%- else -%}
+                {%- content name=name -%}
               {%- endif -%}
-
-              {% contentblock name=name %}
-                {% include 'modular-content-1-1' %}
-              {% endcontentblock %}
-            {%- else -%}
-              {%- content name=name -%}
-            {%- endif -%}
             </div>
           {%- endfor -%}
         </div>

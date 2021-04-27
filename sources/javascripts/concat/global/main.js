@@ -487,38 +487,37 @@
       $('.header_components-tablet .menu-language-toggle').addClass('js-toggle-menu-language');
     }
   };
+  var setBlockColumnsWidth = function() {
+    $('.js-block').each(function () {
+      var id = $(this).data('id');
+      var maxWidth = $(this).data('max-width');
+      var minWidth = $(this).data('min-width');
+      var colItem = $('.column-container-' + id + ' .col-item');
 
-  var handleModularBlocksWidth = function (params) {
-    window.addEventListener('DOMContentLoaded', function(event) {
-      var setBlockWidth = function() {
-        $('.js-block').each(function () {
-          var id = $(this).data('id');
-          var maxWidth = $(this).data('max-width');
-          var minWidth = $(this).data('min-width');
-          var colItem = $('.column-container-' + id + ' .col-item');
+        if (parseFloat(colItem.css('min-width')) > colItem.closest(".editor_default-container").width()) {
+          colItem.css('min-width', '100%');
+        } else {
+          colItem.css('min-width', minWidth);
+        }
 
-            if (parseFloat(colItem.css('min-width')) > colItem.closest(".editor_default-container").width()) {
-              colItem.css('min-width', '100%');
-            } else {
-              colItem.css('min-width', minWidth);
-            }
-
-          if ($(window).width() >= 720) {
-            $('.block-' + id).css({
-              width: maxWidth + '%'
-            });
-          } else {
-            $('.block-' + id).css({
-              width: '100%'
-            });
-          }
+      if ($(window).width() >= 720) {
+        $('.block-' + id).css({
+          width: maxWidth + '%'
         });
-      };
+      } else {
+        $('.block-' + id).css({
+          width: '100%'
+        });
+      }
+    });
+  };
 
-      setBlockWidth();
+  var handleBlockColumnsWidth = function (params) {
+    window.addEventListener('DOMContentLoaded', function(event) {
+      setBlockColumnsWidth();
 
       $(window).resize(function() {
-        setBlockWidth()
+        setBlockColumnsWidth()
       });
     });
   }
@@ -534,7 +533,7 @@
     handleWindowScroll();
     bindLanguageMenuButttons();
     handleDocument();
-    handleModularBlocksWidth();
+    handleBlockColumnsWidth();
 
     $(document).on('voog:shoppingcart:button:created', function() {
       buildCustomShoppingCartIcon();
@@ -551,7 +550,8 @@
     initProductListPage: initProductListPage,
     bindSiteSearch: bindSiteSearch,
     bindLanguageMenuSettings: bindLanguageMenuSettings,
-    handleProductPageContent: handleProductPageContent
+    handleProductPageContent: handleProductPageContent,
+    setBlockColumnsWidth: setBlockColumnsWidth
   });
 
   // Initiates site wide functions.
