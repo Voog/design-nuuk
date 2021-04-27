@@ -1,4 +1,4 @@
-{% if site.search.enabled %}
+{%- if site.search.enabled %}
   <div class="search js-search js-prevent-sideclick">
     <div class="search-middle">
       <div class="search-inner js-search-inner">
@@ -13,4 +13,4 @@
       </button>
     </div>
   </div>
-{% endif %}
+{%- endif %}

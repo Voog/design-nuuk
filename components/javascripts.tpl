@@ -3,11 +3,11 @@
 <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.11.0/intersection-observer.js" integrity="sha256-LkCt8+MalJg9nIGzDMmSEJzqyssPhY1VCvqaGNBNng8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.1.3/lazyload.min.js" integrity="sha512-V3DZ9ZAJrv8ZYY5Zarlfjusec9J6S8htRT3bJDKTdEgq0g9OhbHQUjK+vsBkE6CH0J5VJtBCzPSXJ0ZCVpjPdQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js" integrity="sha512-7taFZYSf0eAWyi1UvMzNrBoPVuvLU7KX6h10e4AzyHVnPjzuxeGWbXYX+ED9zXVVq+r9Xox5WqvABACBSCevmg==" crossorigin="anonymous"></script>
-<script src="{{ javascripts_path }}/global.min.js?nuuk=1.5"></script>
+<script src="{{ javascripts_path }}/global.min.js?nuuk=1.6"></script>
 {% sitejs_include %}
 
 {%- if editmode -%}
-  <script src="{{ javascripts_path }}/editmode.min.js?nuuk=2.2"></script>
+  <script src="{{ javascripts_path }}/editmode.min.js?nuuk=2.3"></script>
 {%- endif -%}
 
 {% comment %}Site search related javascript components.{% endcomment %}
@@ -22,7 +22,7 @@
 {% if editmode %}
   {% editorjsblock %}
     <script src="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.js"></script>
-    {% include "settings_editor" %}
+    {% include "settings-editor" %}
     {% include "bg-picker-scripts" %}
     <script>
       {%- if page.layout_title == product_list_layout or page.layout_title == product_layout -%}

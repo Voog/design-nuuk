@@ -1,9 +1,10 @@
-<div class="content_settings-btn js-prevent-sideclick layout_settings-btn">
-  <button disabled class="js-content-area-settings-btn js-settings-editor-btn">
-    <div class="bold">{{ "blocks_settings" | lce }}</div>
-    <div class="grey">{{ "set_the_number_of_blocks" | lce }}</div>
-  </button>
-</div>
+{% include 'settings-editor-button',
+  _titleKey: "blocks_settings",
+  _descriptionKey: "set_the_number_of_blocks",
+  _className: "js-content-area-settings-btn",
+  _wrapClassName: "content_settings-btn"
+%}
+
 
 <script>
   window.addEventListener('DOMContentLoaded', function(event) {
