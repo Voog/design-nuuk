@@ -47,7 +47,8 @@
         <div class="cart_btn-icon">
           {% include 'ico-cart' %}
         </div>
-      <div class="cart_btn-count"></div>
+        <div class="cart_btn-count"></div>
+      </div>
     </div>
   </div>
 </header>
