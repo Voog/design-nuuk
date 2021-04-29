@@ -813,7 +813,7 @@ MMCQ = (function() {
   };
 
   // ===========================================================================
-  // Load article cover images only when they are close or appearing in the
+  // Load images only when they are close or appearing in the
   // viewport.
   // ===========================================================================
   var callback_loaded = function (element) {
@@ -822,7 +822,7 @@ MMCQ = (function() {
   };
 
   var bindContentItemImageLazyload = new LazyLoad({
-    threshold : 500,
+    threshold : 300,
     elements_selector: ".js-lazyload",
     callback_loaded: callback_loaded
   });
@@ -1046,6 +1046,40 @@ MMCQ = (function() {
       $('.header_components-tablet .menu-language-toggle').addClass('js-toggle-menu-language');
     }
   };
+  var setBlockColumnsWidth = function() {
+    $('.js-block').each(function () {
+      var id = $(this).data('id');
+      var maxWidth = $(this).data('max-width');
+      var minWidth = $(this).data('min-width');
+      var colItem = $('.column-container-' + id + ' .col-item');
+
+        if (parseFloat(colItem.css('min-width')) > colItem.closest(".editor_default-container").width()) {
+          colItem.css('min-width', '100%');
+        } else {
+          colItem.css('min-width', minWidth);
+        }
+
+      if ($(window).width() >= 720) {
+        $('.block-' + id).css({
+          width: maxWidth + '%'
+        });
+      } else {
+        $('.block-' + id).css({
+          width: '100%'
+        });
+      }
+    });
+  };
+
+  var handleBlockColumnsWidth = function (params) {
+    window.addEventListener('DOMContentLoaded', function(event) {
+      setBlockColumnsWidth();
+
+      $(window).resize(function() {
+        setBlockColumnsWidth()
+      });
+    });
+  }
 
   var init = function() {
     // Add site wide functions here.
@@ -1058,6 +1092,7 @@ MMCQ = (function() {
     handleWindowScroll();
     bindLanguageMenuButttons();
     handleDocument();
+    handleBlockColumnsWidth();
 
     $(document).on('voog:shoppingcart:button:created', function() {
       buildCustomShoppingCartIcon();
@@ -1074,7 +1109,8 @@ MMCQ = (function() {
     initProductListPage: initProductListPage,
     bindSiteSearch: bindSiteSearch,
     bindLanguageMenuSettings: bindLanguageMenuSettings,
-    handleProductPageContent: handleProductPageContent
+    handleProductPageContent: handleProductPageContent,
+    setBlockColumnsWidth: setBlockColumnsWidth
   });
 
   // Initiates site wide functions.
