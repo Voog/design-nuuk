@@ -2854,19 +2854,20 @@ body.edy-checkout-button-visible {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  margin-left: 16px;
-}
-
-@media screen and (max-width: 900px) {
-  .cart_btn {
-    margin-left: 8px;
-  }
+  pointer-events: none;
 }
 
 .cart_btn.visible {
   opacity: 1;
   max-width: 36px;
   pointer-events: all;
+  margin-left: 16px;
+}
+
+@media screen and (max-width: 900px) {
+  .cart_btn.visible {
+    margin-left: 8px;
+  }
 }
 
 .cart_btn svg {
@@ -2874,6 +2875,10 @@ body.edy-checkout-button-visible {
 }
 
 .cart_btn:hover {
+  opacity: .7;
+}
+
+.cart_btn:hover .cart_btn-count {
   opacity: .7;
 }
 
