@@ -144,12 +144,6 @@
       }
     }
 
-    $('.js-cart-btn').click(function() {
-      if ($(this).data('product-id')) {
-        Voog.ShoppingCart.addProductById($(this).data('product-id'))
-      }
-    });
-
     var toggleSearch = function() {
       $('html').removeClass('mobilemenu-open');
       $('.js-search').toggleClass('active');
@@ -382,6 +376,12 @@
       } else {
         $('.cart_btn').removeClass('visible');
       }
+
+      $('.js-cart-btn').click(function() {
+        if ($(this).data('product-id')) {
+          Voog.ShoppingCart.addProductById($(this).data('product-id'))
+        }
+      });
     });
 
     var handleProductCountChange = function (e, addProduct) {
