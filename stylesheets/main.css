@@ -3217,6 +3217,11 @@ body.edy-checkout-button-visible {
   height: 24px;
 }
 
+.semimodal-relative .header_fixed-content .header_components, .semimodal-relative
+.header_fixed-content .menu-btn {
+  width: auto;
+}
+
 .header_fixed-content .header_title {
   width: 60%;
   text-align: center;

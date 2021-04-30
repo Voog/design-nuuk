@@ -67,6 +67,10 @@
       .menu-btn {
         width: 20%;
         height: 24px;
+
+        .semimodal-relative & {
+          width: auto;
+        }
       }
 
       .header_title {
