@@ -3214,9 +3214,6 @@ body.edy-checkout-button-visible {
 .header_fixed-content .header_components,
 .header_fixed-content .menu-btn {
   width: 20%;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
   height: 24px;
 }
 
@@ -3224,12 +3221,9 @@ body.edy-checkout-button-visible {
   width: 60%;
   text-align: center;
   min-height: 24px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
 }
 
 .header_fixed-content .header_title h1, .header_fixed-content .header_title h2, .header_fixed-content .header_title h3, .header_fixed-content .header_title h4, .header_fixed-content .header_title h5, .header_fixed-content .header_title h6, .header_fixed-content .header_title p {
@@ -3243,9 +3237,6 @@ body.edy-checkout-button-visible {
 
 .menu-top .header_fixed-content .menu-btn {
   width: 20%;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
 }
 
 .menu-top .header_fixed-content .menu {
@@ -3275,9 +3266,6 @@ body.edy-checkout-button-visible {
 @media screen and (min-width: 900px) {
   .menu-top .header_fixed-content .header_components {
     width: 20%;
-    -webkit-box-flex: 1;
-        -ms-flex: auto;
-            flex: auto;
   }
 }
 
@@ -3375,9 +3363,6 @@ body.edy-checkout-button-visible {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
