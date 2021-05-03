@@ -9,7 +9,8 @@
 
 {%- include 'menu-main-iteration' -%}
 {%- include "site-search" %}
-  {% include 'header-fixed', _menuTop: menuTop -%}
+{% include 'header-fixed', _menuTop: menuTop -%}
+{% include 'cart-popover' %}
 
 {%- if menuSettings.max_width >= 1 -%}
   <style>
@@ -52,7 +53,7 @@
       </button>
 
       {%- if show_language_menu_popover -%}
-        <div class="header_components-tablet"></div>
+        <div class="header_components-semimodal"></div>
       {%- endif -%}
     </div>
 

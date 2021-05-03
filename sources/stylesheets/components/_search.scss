@@ -134,6 +134,10 @@
   font-size: 0;
   margin-left: 16px;
 
+  @include query($tablet-1) {
+    margin-left: 8px;
+  }
+
   svg {
     .header-options & {
       fill: rgba($black, .7);

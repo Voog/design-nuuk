@@ -204,30 +204,54 @@ body {
   }
 }
 
-.search-btn svg g,
-.edy-ecommerce-custom-ico svg g,
-.edy-ecommerce-custom-ico svg path {
-  fill: var(--header-mainmenu-active-color);
+.search-btn,
+.cart_btn {
+  svg path,
+  svg g {
+    fill: var(--header-mainmenu-active-color);
 
-  @include query($tablet-1, 'min-width') {
-    :not(.scroll).dark-background & {
-      fill: var(--third-color);
+    @include query($tablet-1, 'min-width') {
+      :not(.scroll).dark-background & {
+        fill: var(--third-color);
+      }
+    }
+  }
+
+  &:hover {
+    svg path,
+    svg g {
+      fill: var(--header-mainmenu-color);
+
+      @include query($tablet-1, 'min-width') {
+        :not(.scroll).dark-background & {
+          opacity: .7;
+          fill: var(--third-color);
+        }
+      }
     }
   }
 }
 
-.search-btn:hover svg g,
-.edy-ecommerce-custom-ico:hover svg g,
-.edy-ecommerce-custom-ico:hover svg path  {
-  fill: var(--header-mainmenu-color);
+.cart_btn {
+  .cart_btn-count {
+    color: var(--header-mainmenu-active-color);
 
-  @include query($tablet-1, 'min-width') {
-    :not(.scroll).dark-background & {
+    @include query($tablet-1, 'min-width') {
+      :not(.scroll).dark-background & {
+        color: var(--third-color);
+      }
+    }
+  }
+
+  &:hover {
+    svg path,
+    svg g {
+      color: var(--header-mainmenu-color);
       opacity: .7;
-      fill: var(--third-color);
     }
   }
 }
+
 
 .menu_popover-btn {
     svg path {
@@ -301,18 +325,6 @@ body {
   @include query($tablet-1, 'min-width') {
     :not(.scroll).dark-background & {
       color: var(--third-color);
-    }
-  }
-}
-
-.edy-ecommerce-shopping-cart-button:hover {
-  .edy-ecommerce-product-count {
-    color: var(--header-mainmenu-color);
-
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        color: var(--third-color);
-      }
     }
   }
 }
@@ -522,7 +534,7 @@ body {
 }
 
 .dark-background .light-background {
-  .header_components-tablet,
+  .header_components-semimodal,
   .site_title.content-formatted,
   .semimodal_bottom-content,
   .menu-language-btn,
@@ -543,14 +555,14 @@ body {
   }
 
   .search-btn svg g,
-  .edy-ecommerce-custom-ico svg g,
-  .edy-ecommerce-custom-ico svg path {
+  .cart_btn svg g,
+  .cart_btn svg path {
     fill: var(--header-mainmenu-color);
   }
 
   .search-btn:hover svg g,
-  .edy-ecommerce-custom-ico:hover svg g,
-  .edy-ecommerce-custom-ico:hover svg path  {
+  .cart_btn:hover svg g,
+  .cart_btn:hover svg path  {
     fill: var(--header-mainmenu-hover-color);
   }
 
@@ -937,6 +949,11 @@ body {
       .dark-background & {
         color: var(--third-color);
       }
+    }
+
+    @include query($tablet-1) {
+      font-size: 18px;
+      line-height: 18px;
     }
   }
 

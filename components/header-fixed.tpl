@@ -26,7 +26,7 @@
     {% endif %}
 
     <div class="header_components">
-      <div class="header_components-desktop">
+      <div class="header_components-menu--top">
         {% if show_language_menu_popover %}
           <div class="js-menu-language">
             <div class="js-toggle-menu-language menu-language-toggle js-prevent-sideclick p-rel" tabindex=0>
@@ -43,7 +43,12 @@
           <div class="js-prevent-sideclick">{%- include "search-btn" -%}</div>
         {%- endif -%}
       </div>
-      <div class="cart_btn-container"></div>
+      <div class="cart_btn">
+        <div class="cart_btn-icon">
+          {% include 'ico-cart' %}
+        </div>
+        <div class="cart_btn-count"></div>
+      </div>
     </div>
   </div>
 </header>

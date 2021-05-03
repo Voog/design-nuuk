@@ -2766,62 +2766,134 @@ article .item-top > .aspect-ratio-inner {
 }
 
 body .edy-ecommerce-shopping-cart-button {
+  display: none;
+  max-height: 0;
   position: relative;
-  padding: 0;
-  margin-left: 16px;
-  top: 0;
-  right: 0px;
-  left: auto;
-  width: auto;
-  font-size: 0;
-  line-height: 1.7;
-  text-align: right;
-  border-width: 0;
-  background-color: transparent;
-  position: relative;
+  top: unset;
+  bottom: 0;
+}
+
+body.edy-checkout-button-visible {
+  padding-top: 0;
+}
+
+.cart_btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000000;
+  max-width: 0;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+  -webkit-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+       -o-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+          transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.cart_btn.visible {
+  opacity: 1;
+  max-width: 36px;
+  pointer-events: all;
+  margin-left: 16px;
 }
 
 @media screen and (max-width: 900px) {
-  body .edy-ecommerce-shopping-cart-button {
+  .cart_btn.visible {
     margin-left: 8px;
   }
 }
 
-body .edy-ecommerce-shopping-cart-button:hover {
-  opacity: 1;
+.cart_btn svg {
+  fill: #000000;
 }
 
-body .edy-ecommerce-shopping-cart-button .edy-ecommerce-product-count {
-  position: relative;
-  font-size: 14px;
+.cart_btn:hover {
+  opacity: .7;
 }
 
-body .edy-ecommerce-shopping-cart-button .edy-ecommerce-product-count::before, body .edy-ecommerce-shopping-cart-button .edy-ecommerce-product-count::after {
-  content: none;
+.cart_btn:hover .cart_btn-count {
+  opacity: .7;
 }
 
-body .edy-ecommerce-shopping-cart-button .edy-ecommerce-shopping-cart-button-flash,
-body .edy-ecommerce-shopping-cart-button .edy-ecommerce-total-price {
-  display: none;
-}
-
-.cart_btn-container {
+.cart_btn-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 0px;
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  -o-transition: transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.cart_btn-count {
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart_popover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.cart_popover-wrap {
+  position: fixed;
+  top: 48px;
+  right: 32px;
+  width: 100%;
+  opacity: 0;
+  max-width: 360px;
+  pointer-events: none;
+  z-index: 105;
+  -webkit-transition: opacity 600ms;
+  -o-transition: opacity 600ms;
+  transition: opacity 600ms;
+  -webkit-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+       -o-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+          transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .cart_popover-wrap {
+    right: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cart_popover-wrap {
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+}
+
+.cart_popover-wrap.visible {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transition: opacity 600ms;
+  -o-transition: opacity 600ms;
+  transition: opacity 600ms;
   -webkit-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
        -o-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
           transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
@@ -2831,57 +2903,97 @@ body .edy-ecommerce-shopping-cart-button .edy-ecommerce-total-price {
           backface-visibility: hidden;
 }
 
-.cart_btn-container:hover {
+.cart_popover-wrap.visible:hover {
   opacity: .7;
 }
 
-@media screen and (max-width: 900px) {
-  .cart_btn-container {
-    position: absolute;
-    bottom: -62px;
-    right: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-            transform: scale(0);
-    pointer-events: none;
-    background: white;
-    border-radius: 28px;
-    padding: 2px;
-    height: 45px;
-    width: 45px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-shadow: 0 0px 10px #0000001a, 0 0 5px #0000001a;
-            box-shadow: 0 0px 10px #0000001a, 0 0 5px #0000001a;
-  }
-  .edtmode .cart_btn-container {
-    display: none;
-  }
+.cart_popover-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #000000;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+  z-index: 1;
 }
 
-.edy-checkout-button-visible .cart_btn-container {
-  max-width: 100px;
-  overflow: unset;
+.cart_popover-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 16px 24px;
+  min-height: 40px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 25px 35px rgba(0, 0, 0, 0.03);
+  width: 100%;
+  margin-left: 72px;
+  -webkit-transform: translateX(-72px);
+      -ms-transform: translateX(-72px);
+          transform: translateX(-72px);
+  -webkit-transition: -webkit-transform 600ms;
+  transition: -webkit-transform 600ms;
+  -o-transition: transform 600ms;
+  transition: transform 600ms;
+  transition: transform 600ms, -webkit-transform 600ms;
+  -webkit-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+       -o-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+          transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
-@media screen and (max-width: 900px) {
-  .edy-checkout-button-visible .cart_btn-container {
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-    pointer-events: all;
-  }
+.visible .cart_popover-content {
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 600ms;
+  transition: -webkit-transform 600ms;
+  -o-transition: transform 600ms;
+  transition: transform 600ms;
+  transition: transform 600ms, -webkit-transform 600ms;
+  -webkit-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+       -o-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+          transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
-body.edy-checkout-button-visible {
-  padding-top: 0;
+.cart_popover-content--info {
+  color: #000000;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.cart_popover-content--product {
+  text-transform: capitalize;
+}
+
+.cart_popover-content--view {
+  color: #8D9091;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+  margin-left: 8px;
 }
 
 /* FOOTER */
@@ -3102,18 +3214,21 @@ body.edy-checkout-button-visible {
 .header_fixed-content .header_components,
 .header_fixed-content .menu-btn {
   width: 20%;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
   height: 24px;
+}
+
+.semimodal-relative .header_fixed-content .header_components, .semimodal-relative
+.header_fixed-content .menu-btn {
+  width: auto;
 }
 
 .header_fixed-content .header_title {
   width: 60%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   text-align: center;
+  min-height: 24px;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
 }
 
 .header_fixed-content .header_title h1, .header_fixed-content .header_title h2, .header_fixed-content .header_title h3, .header_fixed-content .header_title h4, .header_fixed-content .header_title h5, .header_fixed-content .header_title h6, .header_fixed-content .header_title p {
@@ -3127,9 +3242,6 @@ body.edy-checkout-button-visible {
 
 .menu-top .header_fixed-content .menu-btn {
   width: 20%;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
 }
 
 .menu-top .header_fixed-content .menu {
@@ -3159,9 +3271,6 @@ body.edy-checkout-button-visible {
 @media screen and (min-width: 900px) {
   .menu-top .header_fixed-content .header_components {
     width: 20%;
-    -webkit-box-flex: 1;
-        -ms-flex: auto;
-            flex: auto;
   }
 }
 
@@ -3174,7 +3283,7 @@ body.edy-checkout-button-visible {
     display: none;
   }
   .menu-top .header_fixed-content .header_title {
-    width: calc(100% - 28px);
+    width: auto;
     padding: 0;
     text-align: center;
   }
@@ -3191,7 +3300,7 @@ body.edy-checkout-button-visible {
   .menu-top .header_fixed-content .menu-btn {
     padding: 0;
     margin-right: 16px;
-    width: 28px;
+    width: auto;
   }
 }
 
@@ -3201,7 +3310,7 @@ body.edy-checkout-button-visible {
         flex-wrap: nowrap;
   }
   .header_fixed-content .header_title {
-    width: calc(100% - 28px);
+    width: auto;
     padding: 0;
     text-align: center;
   }
@@ -3210,7 +3319,7 @@ body.edy-checkout-button-visible {
 @media screen and (max-width: 900px) and (max-width: 480px) {
   .header_fixed-content .header_title h1, .header_fixed-content .header_title h2, .header_fixed-content .header_title h3, .header_fixed-content .header_title h4, .header_fixed-content .header_title h5, .header_fixed-content .header_title h6, .header_fixed-content .header_title p, .header_fixed-content .header_title a, .header_fixed-content .header_title b {
     font-size: 24px;
-    line-height: 28px;
+    line-height: auto;
   }
 }
 
@@ -3218,10 +3327,10 @@ body.edy-checkout-button-visible {
   .header_fixed-content .menu-btn {
     padding: 0;
     margin-right: 16px;
-    width: 28px;
+    width: auto;
   }
   .header_fixed-content .header_components {
-    width: 28px;
+    width: auto;
     margin: 0;
     padding: 0;
   }
@@ -3259,21 +3368,18 @@ body.edy-checkout-button-visible {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.header_components-desktop {
+.header_components-menu--top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.header_components-tablet {
+.header_components-semimodal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3287,7 +3393,7 @@ body.edy-checkout-button-visible {
 }
 
 @media screen and (min-width: 900px) {
-  .header_components-tablet {
+  .header_components-semimodal {
     display: none;
   }
 }
@@ -3455,6 +3561,12 @@ body.edy-checkout-button-visible {
   height: 24px;
   font-size: 0;
   margin-left: 16px;
+}
+
+@media screen and (max-width: 900px) {
+  .search-btn {
+    margin-left: 8px;
+  }
 }
 
 .header-options .search-btn svg {

@@ -50,7 +50,7 @@
       </div>
     </div>
 
-    {% include 'image_src_variable', _data: _imageData, _targetWidth: _targetWidth %}
+    {% include 'image-src-variable', _data: _imageData, _targetWidth: _targetWidth %}
 
     <div class="item-top{% if blog_listing_page == true or blog_article_page == true %} max-h-464{% endif %}">
       <div class="top-inner aspect-ratio-inner image-drop-area {{ image_crop_state }} js-content-item-img-drop-area js-lazyload"
