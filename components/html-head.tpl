@@ -17,8 +17,12 @@
 {% comment %}STYLESHEETS{% endcomment %}
 =======
 {%- comment -%}STYLESHEETS{%- endcomment -%}
+<<<<<<< HEAD
 >>>>>>> master
 {% stylesheet_link "main.min.css?nuuk=1.2.3" %}
+=======
+{% stylesheet_link "main.min.css?nuuk=1.3.0" %}
+>>>>>>> master
 {% if editmode %}
   <link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">
 {% endif %}

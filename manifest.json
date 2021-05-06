@@ -1,5 +1,5 @@
 {
-  "description": "Modular layout",
+  "description": "Modular design",
   "name": "Nuuk",
   "preview_medium": "",
   "preview_small": "",
@@ -51,10 +51,16 @@
       "content_type": "component",
       "component": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       "file": "components/template-cs-style-rules.tpl",
       "layout_name": "template-cs-style-rules",
       "title": "template-cs-style-rules"
+=======
+      "file": "components/menu-main.tpl",
+      "layout_name": "menu-main",
+      "title": "menu-main"
+>>>>>>> master
     },
     {
       "content_type": "component",
@@ -109,6 +115,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/cart-popover.tpl",
+      "layout_name": "cart-popover",
+      "title": "cart-popover"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/product-list-filter.tpl",
       "layout_name": "product-list-filter",
       "title": "product-list-filter"
@@ -154,6 +167,13 @@
       "file": "components/modular-blocks.tpl",
       "layout_name": "modular-blocks",
       "title": "modular-blocks"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/image-src-variable.tpl",
+      "layout_name": "image-src-variable",
+      "title": "image-src-variable"
     },
     {
       "content_type": "component",
@@ -245,6 +265,13 @@
       "file": "components/menu-lang.tpl",
       "layout_name": "menu-lang",
       "title": "menu-lang"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/ico-cart.tpl",
+      "layout_name": "ico-cart",
+      "title": "ico-cart"
     },
     {
       "content_type": "component",
@@ -354,9 +381,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/menu-main.tpl",
-      "layout_name": "menu-main",
-      "title": "menu-main"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
@@ -375,9 +402,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/template-cs-style-rules.tpl",
+      "layout_name": "template-cs-style-rules",
+      "title": "template-cs-style-rules"
     },
     {
       "content_type": "component",
@@ -385,13 +412,6 @@
       "file": "components/template-styles.tpl",
       "layout_name": "template-styles",
       "title": "template-styles"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/image_src_variable.tpl",
-      "layout_name": "image_src_variable",
-      "title": "image_src_variable"
     },
     {
       "content_type": "component",

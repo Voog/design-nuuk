@@ -13,22 +13,22 @@
   <div class="container_wrap">
     {%- include "header" -%}
     <div class="pad_container p-rel">
-      <div class="mar_b-32">
       {%- if editmode -%}
-        <div class="bg-picker-top">
-          <button
-            class="voog-bg-picker-btn body_bg-picker--btn bg-picker {{bodyBgKey}}-picker"
-            data-bg_key="{{bodyBgKey}}"
-            data-type_picture="false"
-            data-type_color="true"
-            data-color_elem=".body-bg_color"
-            data-picker_area_elem=".body-bg_picker--area"
-            data-picker_elem =".{{bodyBgKey}}-picker"
-            data-bg-color="{{ body_bg_color }}"
-          ></button>
+        <div class="mar_b-32">
+          <div class="bg-picker-top">
+            <button
+              class="voog-bg-picker-btn body_bg-picker--btn bg-picker {{bodyBgKey}}-picker"
+              data-bg_key="{{bodyBgKey}}"
+              data-type_picture="false"
+              data-type_color="true"
+              data-color_elem=".body-bg_color"
+              data-picker_area_elem=".body-bg_picker--area"
+              data-picker_elem =".{{bodyBgKey}}-picker"
+              data-bg-color="{{ body_bg_color }}"
+            ></button>
+          </div>
+          <div class="edit-btn add-page">{% menuadd parent="page" %}</div>
         </div>
-        <div class="edit-btn add-page">{% menuadd parent="page" %}</div>
-      </div>
       {%- endif -%}
       <div class="container">
         <main class="content" role="main" data-search-indexing-allowed="true">

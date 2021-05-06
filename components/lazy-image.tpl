@@ -18,7 +18,7 @@
   {%- assign sizes = '100vw' -%}
 {%- endif -%}
 
-{% include 'image_src_variable', _data: _data, _targetWidth: _maxWidth %}
+{% include 'image-src-variable', _data: _data, _targetWidth: _maxWidth %}
 
 <img class="{% if disableLazyLoad != true %}js-lazyload{% endif %} {{ _className }}"
   data-src="{{_src}}" data-sizes="{{sizes}}" {% if _altAttr != blank %}title="{{_altAttr  | escape_once }}"{ alt="{{_altAttr  | escape_once }}"{% endif %}

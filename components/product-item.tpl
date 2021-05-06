@@ -81,7 +81,7 @@
           {%- endif -%}
           <div class="product_item-price">
             <span{% if product_label != blank %} class="mar_r-16"{% endif %}>
-            {{ _buyButton.product.price_with_tax | money_with_currency: product.currency }}
+            {{ _buyButton.product.price_with_tax | money_with_currency: _buyButton.product.currency }}
             </span>
             {{product_label}}
           </div>
