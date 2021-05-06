@@ -1,9 +1,9 @@
-<div class="content_settings-btn layout_settings-btn js-prevent-sideclick">
-  <button class="js-blog-settings-editor js-settings-editor-btn">
-    <div class="bold">{{ "blog" | lce }}</div>
-    <div class="grey">{{ "edit_blog_settings" | lce }}</div>
-  </button>
-</div>
+{% include 'settings-editor-button',
+  _titleKey: "blog",
+  _descriptionKey: "edit_blog_settings",
+  _className: "js-blog-settings-editor",
+  _wrapClassName: "content_settings-btn"
+%}
 
 <script>
   window.addEventListener('DOMContentLoaded', function(event) {

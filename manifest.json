@@ -50,6 +50,44 @@
     {
       "content_type": "component",
       "component": true,
+<<<<<<< HEAD
+=======
+      "file": "components/template-cs-style-rules.tpl",
+      "layout_name": "template-cs-style-rules",
+      "title": "template-cs-style-rules"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-cs-header.tpl",
+      "layout_name": "template-cs-header",
+      "title": "template-cs-header"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-cs-headings.tpl",
+      "layout_name": "template-cs-headings",
+      "title": "template-cs-headings"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-meta.tpl",
+      "layout_name": "template-meta",
+      "title": "template-meta"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/settings-editor.tpl",
+      "layout_name": "settings-editor",
+      "title": "settings-editor"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+>>>>>>> master
       "file": "components/template-cs-product-list.tpl",
       "layout_name": "template-cs-product-list",
       "title": "template-cs-product-list"
@@ -134,13 +172,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/menu-language-list.tpl",
-      "layout_name": "menu-language-list",
-      "title": "menu-language-list"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/blog-news-tags.tpl",
       "layout_name": "blog-news-tags",
       "title": "blog-news-tags"
@@ -200,6 +231,13 @@
       "file": "components/template-cs-blog-list.tpl",
       "layout_name": "template-cs-blog-list",
       "title": "template-cs-blog-list"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/settings-editor-button.tpl",
+      "layout_name": "settings-editor-button",
+      "title": "settings-editor-button"
     },
     {
       "content_type": "component",
@@ -337,9 +375,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-style-rules.tpl",
-      "layout_name": "template-cs-style-rules",
-      "title": "template-cs-style-rules"
+      "file": "components/template-cs-content.tpl",
+      "layout_name": "template-cs-content",
+      "title": "template-cs-content"
     },
     {
       "content_type": "component",
@@ -375,6 +413,13 @@
       "file": "components/product-item.tpl",
       "layout_name": "product-item",
       "title": "product-item"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-main-iteration.tpl",
+      "layout_name": "menu-main-iteration",
+      "title": "menu-main-iteration"
     },
     {
       "content_type": "component",

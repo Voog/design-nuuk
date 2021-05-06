@@ -2780,6 +2780,10 @@ article .item-top > .aspect-ratio-inner {
   display: none !important;
 }
 
+.item-top .image-drop-area .edy-img-drop-area-placeholder {
+  color: #000000;
+}
+
 @media screen and (max-width: 480px) {
   .item-top .image-drop-area .edy-img-drop-area-placeholder {
     font-size: 13px;
@@ -3157,9 +3161,9 @@ body.edy-checkout-button-visible {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 100%;
   -webkit-transition: -webkit-transform 200ms;
   transition: -webkit-transform 200ms;
@@ -3175,12 +3179,17 @@ body.edy-checkout-button-visible {
           backface-visibility: hidden;
 }
 
+.header_fixed-content .add-submenu {
+  display: none;
+}
+
 .header_fixed-content .header_components,
 .header_fixed-content .menu-btn {
   width: 20%;
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
+  height: 24px;
 }
 
 .header_fixed-content .header_title {
@@ -3252,12 +3261,6 @@ body.edy-checkout-button-visible {
     width: calc(100% - 28px);
     padding: 0;
     text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
 }
 
@@ -3343,18 +3346,15 @@ body.edy-checkout-button-visible {
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header_components-desktop {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-@media screen and (max-width: 900px) {
-  .header_components-desktop {
-    display: none;
-  }
 }
 
 .header_components-tablet {
@@ -3441,22 +3441,6 @@ body.edy-checkout-button-visible {
           perspective: 1000;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-}
-
-@media screen and (max-width: 900px) {
-  .search_desktop {
-    display: none;
-  }
-}
-
-.search_mobile .search-btn {
-  margin-left: 4px;
-}
-
-@media screen and (min-width: 900px) {
-  .search_mobile {
-    display: none;
-  }
 }
 
 .search.active {
@@ -4816,10 +4800,6 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
   margin-left: 16px;
 }
 
-.language-menu-mode-popover .menu-language-list {
-  display: none;
-}
-
 .menu-language-list .menu-item-cms-settings {
   margin-left: 16px;
 }
@@ -5294,24 +5274,24 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
           align-items: center;
 }
 
-.menu_top.menu-main .menu .menu-item.lvl-1:nth-of-type(n+6) {
+.menu_top.menu-main .menu.menu_top-list .menu-item.lvl-1 {
   display: none;
+}
+
+.menu_top.menu-main .menu.menu_top-list li.menu-item.lvl-1:nth-of-type(-n+5) {
+  display: initial;
+}
+
+.menu_top.menu-main .menu.menu_top-popover .menu-item.lvl-1 {
+  display: none;
+}
+
+.menu_top.menu-main .menu.menu_top-popover li.menu-item.lvl-1:nth-of-type(-n+5) {
+  display: initial;
 }
 
 .menu_top.menu-main .menu .menu-item a {
   max-width: 160px;
-}
-
-@media screen and (max-width: 900px) {
-  .menu_top.menu-main .menu {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .menu_top.menu-main .menu .menu-item.lvl-1:nth-of-type(n+6) {
-    display: initial;
-  }
 }
 
 .semimodal .menu .menu-item {
@@ -5413,16 +5393,22 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
   display: none;
 }
 
-.menu-main .menu .menu_popover .menu .menu-item:nth-child(n+5) {
+.menu-main .menu .menu_popover .menu .menu-item:nth-of-type(n+6) {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
 @media screen and (max-width: 900px) {
-  .menu-main .menu .menu_popover .menu .menu-item:nth-child(n+5) {
+  .menu-main .menu .menu_popover .menu .menu-item:nth-of-type(n+6) {
     display: none;
   }
+}
+
+.publicmode .menu-main .menu .menu_popover .menu .menu-item {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .menu-main .menu .menu_popover .menu .menu-item a,
@@ -5809,6 +5795,10 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
 
 .no-wrap {
   white-space: nowrap;
+}
+
+[data-visible=false] {
+  display: none !important;
 }
 
 .pad_container {
