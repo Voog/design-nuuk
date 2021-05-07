@@ -97,8 +97,10 @@
   {%- if buy_button.product.out_of_stock? -%}
     <div class="product_item-box--label">{{ "out_of_stock" | lc | escape_once }}</div>
   {%- elsif productSettingsData.product_label != blank -%}
-    <div class="{% if isBoxLabel == true %}product_item-box--label{% endif %}{% if isLabelLineThrough == true %} td-lt{% endif %}">
-      {{productSettingsData.product_label}}
-    </div>
+    {%- if _buyButton.product == blank or _buyButton.available? != true or isBoxLabel == true -%}
+      <div class="{% if isBoxLabel == true %}product_item-box--label{% endif %}{% if isLabelLineThrough == true %} td-lt{% endif %}">
+        {{productSettingsData.product_label}}
+      </div>
+    {%- endif -%}
   {%- endif -%}
 </div>
