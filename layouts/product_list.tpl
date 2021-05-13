@@ -7,12 +7,6 @@
   {%- include "template-styles" -%}
 </head>
 
-{% capture bottom_content_html %}{% unless editmode %}{% content name="bottom_content" %}{% endunless %}{% endcapture %}
-{% capture bottom_content_size %}{{ bottom_content_html | size | minus: 1 }}{% endcapture %}
-{% unless bottom_content_size contains "-" %}
-  {% assign bottom_content_has_content = true %}
-{% endunless %}
-
 <body class="product_list-page body-bg_picker--area {{ body_bg_type }}">
   {% include "template-svg-spritesheet" %}
   <div class="body-bg_color"></div>
@@ -51,9 +45,10 @@
           {% include 'product-list-filter' %}
           {% include 'product-list-block' %}
 
-          {%- if bottom_content_has_content == true or editmode -%}
+          {%- capture _bottom_content_html %}{% content name="bottom_content" %}{% endcapture -%}
+          {%- if _bottom_content_html != blank -%}
             <div class="content-body content-formatted content-formatted--overflowed-images mar_b-56" data-search-indexing-allowed="true">
-              {% content name="bottom_content" %}
+              {{ _bottom_content_html }}
             </div>
           {%- endif -%}
         </main>
