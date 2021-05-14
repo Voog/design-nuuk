@@ -44,6 +44,13 @@
 
           {% include 'product-list-filter' %}
           {% include 'product-list-block' %}
+
+          {%- capture _bottom_content_html %}{% content name="bottom_content" %}{% endcapture -%}
+          {%- if _bottom_content_html != blank -%}
+            <div class="content-body content-formatted content-formatted--overflowed-images mar_b-56" data-search-indexing-allowed="true">
+              {{ _bottom_content_html }}
+            </div>
+          {%- endif -%}
         </main>
       </div>
     </div>
