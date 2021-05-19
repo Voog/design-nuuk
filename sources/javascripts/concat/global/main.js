@@ -570,11 +570,11 @@
       var minWidth = $(this).data('min-width');
       var colItem = $('.column-container-' + id + ' .col-item');
 
-        if (parseFloat(colItem.css('min-width')) > colItem.closest(".editor_default-container").width()) {
-          colItem.css('min-width', '100%');
-        } else {
-          colItem.css('min-width', minWidth);
-        }
+      if (minWidth > colItem.closest(".editor_default-container").width()) {
+        colItem.css('min-width', '100%');
+      } else {
+        colItem.css('min-width', minWidth);
+      }
 
       if ($(window).width() >= 720) {
         $('.block-' + id).css({
