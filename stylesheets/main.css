@@ -2444,7 +2444,7 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   background-color: black;
 }
 
-.swiper-slide {
+.swiper-container .swiper-slide {
   text-align: center;
   font-size: 18px;
   display: -webkit-box;
@@ -2457,19 +2457,20 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  height: auto;
   overflow: hidden;
   min-height: 528px;
   position: relative;
 }
 
 @media screen and (max-width: 900px) {
-  .swiper-slide {
+  .swiper-container .swiper-slide {
     min-height: 400px;
   }
 }
 
 @media screen and (max-width: 506px) {
-  .swiper-slide {
+  .swiper-container .swiper-slide {
     min-height: 336px;
   }
 }
