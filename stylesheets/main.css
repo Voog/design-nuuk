@@ -1162,8 +1162,8 @@ p {
 @media screen and (max-width: 752px) {
   .content-formatted--overflowed-images .edy-positionable-container-maxwidth {
     max-width: 100% !important;
-    margin-right: -16px;
-    margin-left: -16px;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
