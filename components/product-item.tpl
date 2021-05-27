@@ -39,6 +39,11 @@
 {%- assign productSettingsData = _entityData.data[productLayoutSettingsKey] -%}
 {%- assign isBoxLabel = productSettingsData.is_product_label_box -%}
 {%- assign isLabelLineThrough = productSettingsData.is_product_label_line_through -%}
+{% if productSettingsData.product_label == blank or _buyButton.product != blank and _buyButton.available? and isBoxLabel != true %}
+  {%- assign alignmentClassName = 'product_item-details--alignment' -%}
+{% else %}
+  {%- assign alignmentClassName = null -%}
+{% endif %}
 
 {%- capture product_label -%}
   {%- if productSettingsData.product_label != blank and isBoxLabel != true and buy_button.product.out_of_stock? != true -%}
@@ -49,7 +54,7 @@
 {%- endcapture -%}
 
 <div class="product_item-details--wrap mar_t-16">
-  <div class="flex_auto">
+  <div class="flex_auto{% if alignmentClassName != blank %} {{alignmentClassName}}{% endif %}">
     {%- capture look_closer_btn -%}
       <a class="product_item-btn{%- if productSettingsData.product_label != blank or _buyButton.product.price != blank %} p-abs{%- else %} p-rel{%- endif -%}" href="{{ _entityData.url }}">
         {{ "look_closer" | lc | escape_once }}
@@ -60,7 +65,7 @@
       {{ _entityData.title }}
     </a>
     {%- if _buyButton.product != blank and _buyButton.available? -%}
-      <div class="product_item-details flex_col">
+      <div class="product_item-details">
         {%- if _buyButton.product.uses_variants == true -%}
           {{look_closer_btn}}
           <div class="product_item-price">
