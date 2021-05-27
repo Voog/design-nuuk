@@ -132,6 +132,12 @@
       togglecomments();
     });
 
+    $('.js-cart-btn').click(function() {
+      if ($(this).data('product-id')) {
+        Voog.ShoppingCart.addProductById($(this).data('product-id'))
+      }
+    });
+
     var togglecomments = function() {
       var hiddenComments = $('.comments_secondary .comment');
       var hiddenCommentsHeight = hiddenComments.outerHeight() * hiddenComments.length;
@@ -376,12 +382,6 @@
       } else {
         $('.cart_btn').removeClass('visible');
       }
-
-      $('.js-cart-btn').click(function() {
-        if ($(this).data('product-id')) {
-          Voog.ShoppingCart.addProductById($(this).data('product-id'))
-        }
-      });
     });
 
     var handleProductCountChange = function (e, addProduct) {
@@ -570,11 +570,11 @@
       var minWidth = $(this).data('min-width');
       var colItem = $('.column-container-' + id + ' .col-item');
 
-        if (parseFloat(colItem.css('min-width')) > colItem.closest(".editor_default-container").width()) {
-          colItem.css('min-width', '100%');
-        } else {
-          colItem.css('min-width', minWidth);
-        }
+      if (minWidth > colItem.closest(".editor_default-container").width()) {
+        colItem.css('min-width', '100%');
+      } else {
+        colItem.css('min-width', minWidth);
+      }
 
       if ($(window).width() >= 720) {
         $('.block-' + id).css({

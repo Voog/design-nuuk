@@ -33,25 +33,26 @@
   .swiper-pagination-bullet {
     background-color: $primary-color;
   }
-}
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  overflow: hidden;
-  min-height: 528px;
-  position: relative;
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-height: 528px;
+    position: relative;
 
-  @include query($tablet-1) {
-    min-height: 400px;
-  }
+    @include query($tablet-1) {
+      min-height: 400px;
+    }
 
-  @include query($tablet-3) {
-    min-height: 336px;
+    @include query($tablet-3) {
+      min-height: 336px;
+    }
   }
 }
 

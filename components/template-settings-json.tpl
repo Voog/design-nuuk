@@ -121,5 +121,6 @@
       "has_share_on_linkedin_btn": false,
       "show_related_articles": false
     }
-  }
+  },
+  "version": "nuuk-1.3.5"
 }

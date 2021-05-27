@@ -30,7 +30,7 @@
           <div class="edit-btn add-page mar_b-16">
             {% assign add_product_label = 'add_product' | lce %}
             {% assign add_product_title = 'add_product_page' | lce %}
-            {% menuadd parent="page.menuitem" label=add_product_label lable=add_product_title layout_title="Product" %}
+            {% menuadd parent="page.menuitem" label=add_product_label title=add_product_title layout_title="Product" %}
           </div>
         </div>
       {%- endif -%}
@@ -44,6 +44,13 @@
 
           {% include 'product-list-filter' %}
           {% include 'product-list-block' %}
+
+          {%- capture _bottom_content_html %}{% content name="bottom_content" %}{% endcapture -%}
+          {%- if _bottom_content_html != blank -%}
+            <div class="content-body content-formatted content-formatted--overflowed-images mar_b-56" data-search-indexing-allowed="true">
+              {{ _bottom_content_html }}
+            </div>
+          {%- endif -%}
         </main>
       </div>
     </div>

@@ -1159,6 +1159,14 @@ p {
   margin-left: -16%;
 }
 
+@media screen and (max-width: 752px) {
+  .content-formatted--overflowed-images .edy-positionable-container-maxwidth {
+    max-width: 100% !important;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 .content-formatted:empty:not(.header_title) {
   display: none;
 }
@@ -2471,7 +2479,7 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   background-color: black;
 }
 
-.swiper-slide {
+.swiper-container .swiper-slide {
   text-align: center;
   font-size: 18px;
   display: -webkit-box;
@@ -2484,19 +2492,20 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  height: auto;
   overflow: hidden;
   min-height: 528px;
   position: relative;
 }
 
 @media screen and (max-width: 900px) {
-  .swiper-slide {
+  .swiper-container .swiper-slide {
     min-height: 400px;
   }
 }
 
 @media screen and (max-width: 506px) {
-  .swiper-slide {
+  .swiper-container .swiper-slide {
     min-height: 336px;
   }
 }
@@ -2827,6 +2836,7 @@ body.edy-checkout-button-visible {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .cart_btn.visible {
