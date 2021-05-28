@@ -197,6 +197,7 @@
     {% include "footer" %}
   </div>
 
+  {% include 'template-tooltips' %}
   {% include "site-signout" %}
   {% include 'settings-popover', _articlePage: true %}
   {% include "javascripts" %}

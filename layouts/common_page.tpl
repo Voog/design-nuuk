@@ -49,6 +49,7 @@
     {%- include "footer" -%}
   </div>
 
+  {% include 'template-tooltips' %}
   {%- include "site-signout" -%}
   {%- include "javascripts" -%}
 </body>

@@ -142,6 +142,7 @@
     {% include "footer" %}
   </div>
 
+  {% include 'template-tooltips' %}
   {% include "site-signout" %}
   {% include "javascripts", _productPage: true %}
   <script>
