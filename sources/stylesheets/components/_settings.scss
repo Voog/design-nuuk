@@ -60,6 +60,32 @@
       }
     }
 
+    &-tooltip {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 6px;
+      bottom: 54px;
+      position: fixed;
+      pointer-events: none;
+      white-space: nowrap;
+      color: white;
+      background: #1B2124;
+      border: 1px solid transparent;
+      opacity: 0;
+      border-radius: 4px;
+      z-index: $zindex-settings-popover + 1;
+
+      &.visible {
+        opacity: 1;
+        pointer-events: all;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .29);
+        z-index: $zindex-settings-popover + 1;
+        transition: opacity 0.6s $bezier-medium;
+        transition-delay: .6s;
+      }
+    }
+
     &-popover {
       position: fixed;
       background: $white;

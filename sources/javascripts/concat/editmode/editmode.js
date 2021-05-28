@@ -480,15 +480,30 @@
             }
           );
 
+          shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
+            "mouseenter", function(e){
+              $('.layout_settings-tooltip').addClass('visible');
+              positionPopover();
+            }
+          );
+          shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
+            "mouseleave", function(e){
+              $('.layout_settings-tooltip').removeClass('visible');
+            }
+          );
+
           var positionPopover = function() {
             var settingsPopover = $('.js-layout_settings-popover');
             var settingsPopoverArrow = $('.layout_settings-arrow');
+            var tooltipPopover = $('.layout_settings-tooltip');
 
             if ($( window ).width() > 768) {
-              settingsPopover.css({right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (settingsPopover.width() / 2)})
+              settingsPopover.css({right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (settingsPopover.width() / 2)});
+              tooltipPopover.css({right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (tooltipPopover.width() / 2) - (settingsBtn.getBoundingClientRect().width / 2)});
               settingsPopoverArrow.css({right: settingsPopover.width() / 2});
             } else {
               settingsPopover.css({right: 0});
+              tooltipPopover.css({right: 0});
               settingsPopoverArrow.css({right: 72});
             }
           }
@@ -503,6 +518,7 @@
       }, 500);
 
       $('body').append($('.js-layout_settings-popover'));
+
     });
   }
 
