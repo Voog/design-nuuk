@@ -57,6 +57,7 @@
     {%- include "footer" -%}
   </div>
 
+  {% include 'template-tooltips' %}
   {% include 'settings-popover' %}
   {%- include "site-signout" -%}
   {%- include "javascripts" -%}
