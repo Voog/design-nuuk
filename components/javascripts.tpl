@@ -25,18 +25,20 @@
     {% include "settings-editor" %}
     {% include "bg-picker-scripts" %}
     <script>
-      {%- if page.layout_title == product_list_layout or page.layout_title == product_layout -%}
-        {%- assign dropAreaPlaceholder = "drag_picture_for_product_here" | lc: editor_locale | escape -%}
+      {%- if page.layout_title == product_list_layout or _productPage -%}
+        {%- assign dropAreaPlaceholder = "drag_picture_for_product_here" | lce | escape_once -%}
+        {%- if _productPage -%}
+          site.bindProductListeners("{{dropAreaPlaceholder}}", {{page.id}});
+        {%- endif -%}
       {%- else -%}
-        {%- assign dropAreaPlaceholder = "drag_picture_here" | lc: editor_locale | escape -%}
+        {%- assign dropAreaPlaceholder = "drag_picture_here" | lce | escape_once -%}
       {%- endif -%}
-
 
       site.bindContentItemImgDropAreas('{{ dropAreaPlaceholder }}', "{{itemImageKey}}", "{{itemImageCropStateKey}}");
       site.bindContentItemImageCropToggle("{{itemImageCropStateKey}}");
-    </script>
 
-    <script>
+      site.bindCustomTexteditorStyles('{{ "button" | lce | escape_once }}');
+
       //==========================================================================
       // Initiates the language menu mode toggleing popover.
       //==========================================================================
@@ -48,10 +50,5 @@
 
       site.bindLanguageMenuSettings(languageMenuValuesObj, "{{languageMenuSettingsKey}}");
     </script>
-
-    {%- if _productPage -%}
-      {%- assign dropAreaPlaceholder = "drag_picture_for_product_here" | lc: editor_locale | escape -%}
-      <script>site.bindProductListeners("{{dropAreaPlaceholder}}", {{page.id}});</script>
-    {%- endif -%}
   {% endeditorjsblock %}
 {% endif %}

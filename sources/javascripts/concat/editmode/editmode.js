@@ -370,9 +370,9 @@
     });
   };
 
-  var bindCustomTexteditorStyles = function() {
+  var bindCustomTexteditorStyles = function(buttonTranslation) {
     window.edy = window.edy || [];
-    edy.push(['texteditorStyles', {name: 'Button', tagname:'a', attribute: {'href': '#'}, classname: 'custom-btn', toggle: true}]);
+    edy.push(['texteditorStyles', {name: buttonTranslation, tagname:'a', attribute: {'href': '#'}, classname: 'custom-btn', toggle: true}]);
   };
 
   handleProductImage = function(placeholderText, pageId, event, el) {
@@ -529,15 +529,28 @@
   };
 
   var handleDocument = function() {
-    window.addEventListener('DOMContentLoaded', function(event) {
-      $('#fc_frame').css('display', 'block!important;');
+    if ($('.form_field-cms input').length) {
+      if ($('.form_field-cms input').val().length >= 1) {
+        $('.form_field-cms input').closest('.form_field-cms').addClass('with-input');
+      } else {
+        $('.form_field-cms input').closest('.form_field-cms').removeClass('with-input');
+      }
+    }
+
+    $(document).ready(function() {
+      $('.form_field-cms input').keyup(function(e) {
+        if ($(this).val().length >= 1) {
+          $(this).closest('.form_field-cms').addClass('with-input');
+        } else {
+          $(this).closest('.form_field-cms').removeClass('with-input');
+        }
+      });
     });
   };
 
   var init = function() {
-    bindCustomTexteditorStyles();
     bindCustomDataItem();
-    //handleDocument();
+    handleDocument();
   };
 
   // Enables the usage of the initiations outside this file.
@@ -548,7 +561,8 @@
     bindContentItemImgDropAreas: bindContentItemImgDropAreas,
     bindContentItemImageCropToggle: bindContentItemImageCropToggle,
     bindProductListeners: bindProductListeners,
-    initSettingsEditorBtn: initSettingsEditorBtn
+    initSettingsEditorBtn: initSettingsEditorBtn,
+    bindCustomTexteditorStyles: bindCustomTexteditorStyles
   });
 
   // Initiates site wide functions.
