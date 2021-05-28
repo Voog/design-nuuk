@@ -122,5 +122,5 @@
       "show_related_articles": false
     }
   },
-  "version": "nuuk-1.3.2.1"
+  "version": "nuuk-1.3.2.2"
 }
