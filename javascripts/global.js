@@ -1060,14 +1060,6 @@ MMCQ = (function() {
   };
 
   var handleDocument = function() {
-    if ($('.form_field-cms input').length) {
-      if ($('.form_field-cms input').val().length >= 1) {
-        $('.form_field-cms input').closest('.form_field-cms').addClass('with-input');
-      } else {
-        $('.form_field-cms input').closest('.form_field-cms').removeClass('with-input');
-      }
-    }
-
     $(document).ready(function() {
       handleActivLangMenu();
       handleMenuTopPos();
@@ -1082,14 +1074,6 @@ MMCQ = (function() {
         } else {
           // Popover has items starting from 6th
           $('.semimodal_bottom .menu .menu-item.lvl-1:nth-of-type(n+6)').clone().appendTo('.menu_popover-list');
-        }
-      });
-
-      $('.form_field-cms input').keyup(function(e) {
-        if ($(this).val().length >= 1) {
-          $(this).closest('.form_field-cms').addClass('with-input');
-        } else {
-          $(this).closest('.form_field-cms').removeClass('with-input');
         }
       });
     });
