@@ -1805,12 +1805,6 @@ html:not(.semimodal-relative) .semimodal {
   background: #1B2124;
   border: 1px solid transparent;
   opacity: 0;
-  -webkit-transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
-  -o-transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
-  transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
-  -webkit-transition-delay: .6s;
-       -o-transition-delay: .6s;
-          transition-delay: .6s;
   border-radius: 4px;
   z-index: 56502;
 }
@@ -1821,6 +1815,12 @@ html:not(.semimodal-relative) .semimodal {
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.29);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.29);
   z-index: 56502;
+  -webkit-transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
+  -o-transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
+  transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-transition-delay: .6s;
+       -o-transition-delay: .6s;
+          transition-delay: .6s;
 }
 
 .layout_settings-popover {

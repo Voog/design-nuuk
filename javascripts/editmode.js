@@ -522,8 +522,6 @@
     });
   }
 
-  //$('body').append("<div class='layout_settings-tooltip'>ERISEADED</div>");
-
   var bindProductListeners = function(placeholderText, pageId) {
     document.addEventListener('voog:ecommerce:buttonproductsave', function(event) {
       handleProductImage(placeholderText, pageId, event);
