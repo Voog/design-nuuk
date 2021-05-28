@@ -16,13 +16,15 @@
             <div class="product_item-wrap product_item_list p-rel">
               {%- if level_1.layout_title == product_list_layout -%}
                 {% include 'content-item', _imageData: level_1.data[itemImageKey], _entityData: level_1, _itemType: 'page', _id: level_1.page_id, _targetWidth: '600' %}
-                <a class="p14 mar_t-16" href="{{ level_1.url }}">
-                  <div class="p14 mar_t-16 bold product_item-title">
-                    {{ level_1.title }}
+                <div class="product_item-details--alignment">
+                  <a class="p14 mar_t-16" href="{{ level_1.url }}">
+                    <div class="p14 mar_t-16 bold product_item-title">
+                      {{ level_1.title }}
+                    </div>
+                  </a>
+                  <div class="flex_box product_item-details">
+                    <a class="product_item-btn p-rel" href="{{ level_1.url }}">{{ "look_closer" | lc | escape_once }}</a>
                   </div>
-                </a>
-                <div class="flex_box product_item-details">
-                  <a class="product_item-btn p-rel" href="{{ level_1.url }}">{{ "look_closer" | lc | escape_once }}</a>
                 </div>
               {%- else -%}
                 {% include 'product-item', _buyButton: buy_button, _entityData: level_1 %}
@@ -50,13 +52,15 @@
                 <div class="product_item-wrap product_item_list p-rel">
                   {%- if item_child.layout_title == product_list_layout -%}
                     {% include 'content-item', _imageData: item_child.data[itemImageKey], _entityData: item_child, _itemType: 'page', _id: item_child.page_id, _targetWidth: '600' %}
-                    <a class="p14 mar_t-16" href="{{ item_child.url }}">
-                      <div class="p14 mar_t-16 bold product_item-title">
-                        {{ item_child.title }}
+                    <div class="product_item-details--alignment">
+                      <a class="p14 mar_t-16" href="{{ item_child.url }}">
+                        <div class="p14 mar_t-16 bold product_item-title">
+                          {{ item_child.title }}
+                        </div>
+                      </a>
+                      <div class="flex_box product_item-details">
+                        <a class="product_item-btn p-rel" href="{{ item_child.url }}">{{ "look_closer" | lc | escape_once }}</a>
                       </div>
-                    </a>
-                    <div class="flex_box product_item-details">
-                      <a class="product_item-btn p-rel" href="{{ item_child.url }}">{{ "look_closer" | lc | escape_once }}</a>
                     </div>
                   {%- else -%}
                     {% include 'product-item', _buyButton: buy_button, _entityData: item_child %}

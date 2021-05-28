@@ -40,10 +40,6 @@
         color: var(--secondary-color);
       }
 
-      .product_item-title {
-        text-align: var(--product-list-item__alignment);
-      }
-
       &:hover {
         .product_image,
         .item-top,
@@ -69,15 +65,27 @@
     }
 
     &-details {
+      display: flex;
+      flex-direction: column;
       position: relative;
       overflow: hidden;
-      text-align: var(--product-list-item__alignment);
+      width: 100%;
 
       &--wrap {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+      }
+
+      &--alignment {
+        display: flex;
+        flex-direction: column;
+        align-items: var(--product-list-item__alignment);
+
+        .product_item-details {
+          align-items: var(--product-list-item__alignment);
+        }
       }
     }
 
