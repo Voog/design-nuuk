@@ -475,7 +475,6 @@
 
           shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
             "click", function(e){
-              console.log("Enter");
               document.querySelector('body').classList.toggle('layout_settings-visible');
               e.stopImmediatePropagation();
             }
@@ -489,7 +488,6 @@
           );
           shadowDom.querySelector(".js-layout_settings-btn").addEventListener(
             "mouseleave", function(e){
-              console.log('mouseleacve');
               $('.layout_settings-tooltip').removeClass('visible');
             }
           );

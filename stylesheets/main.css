@@ -1808,6 +1808,9 @@ html:not(.semimodal-relative) .semimodal {
   -webkit-transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
   -o-transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
   transition: opacity 0.6s cubic-bezier(0, 0.6, 0.25, 1);
+  -webkit-transition-delay: .6s;
+       -o-transition-delay: .6s;
+          transition-delay: .6s;
   border-radius: 4px;
   z-index: 56502;
 }

@@ -8,6 +8,13 @@
     {
       "content_type": "page",
       "component": false,
+      "file": "layouts/front_page.tpl",
+      "layout_name": "page_front",
+      "title": "Front page"
+    },
+    {
+      "content_type": "page",
+      "component": false,
       "file": "layouts/product_list.tpl",
       "layout_name": "product_list",
       "title": "Product list"
@@ -18,13 +25,6 @@
       "file": "layouts/common_page.tpl",
       "layout_name": "page_default",
       "title": "Common page"
-    },
-    {
-      "content_type": "page",
-      "component": false,
-      "file": "layouts/front_page.tpl",
-      "layout_name": "page_front",
-      "title": "Front page"
     },
     {
       "content_type": "page",
@@ -50,50 +50,6 @@
     {
       "content_type": "component",
       "component": true,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      "file": "components/template-cs-style-rules.tpl",
-      "layout_name": "template-cs-style-rules",
-      "title": "template-cs-style-rules"
-=======
-      "file": "components/menu-main.tpl",
-      "layout_name": "menu-main",
-      "title": "menu-main"
->>>>>>> master
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/template-cs-header.tpl",
-      "layout_name": "template-cs-header",
-      "title": "template-cs-header"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/template-cs-headings.tpl",
-      "layout_name": "template-cs-headings",
-      "title": "template-cs-headings"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/template-meta.tpl",
-      "layout_name": "template-meta",
-      "title": "template-meta"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/settings-editor.tpl",
-      "layout_name": "settings-editor",
-      "title": "settings-editor"
-    },
-    {
-      "content_type": "component",
-      "component": true,
->>>>>>> master
       "file": "components/template-cs-product-list.tpl",
       "layout_name": "template-cs-product-list",
       "title": "template-cs-product-list"
@@ -381,9 +337,9 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
-      "layout_name": "template-cs-content",
-      "title": "template-cs-content"
+      "file": "components/menu-main.tpl",
+      "layout_name": "menu-main",
+      "title": "menu-main"
     },
     {
       "content_type": "component",
@@ -528,13 +484,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/settings_editor.tpl",
-      "layout_name": "settings_editor",
-      "title": "settings_editor"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/template-cs-headings.tpl",
       "layout_name": "template-cs-headings",
       "title": "template-cs-headings"
@@ -545,6 +494,13 @@
       "file": "components/template-meta.tpl",
       "layout_name": "template-meta",
       "title": "template-meta"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/settings-editor.tpl",
+      "layout_name": "settings-editor",
+      "title": "settings-editor"
     }
   ],
   "assets": [
