@@ -51,7 +51,7 @@
     {%- if article.data[itemImageKey] != blank or editmode -%}
       <div class="p-rel">
         <div {% unless article.published? or post-box == "article" %}class="post_unpublished"{%- endunless -%}>
-          {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic, _targetWidth: '2999' %}
+          {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic %}
         </div>
         {%- unless article.published? or post-box == "article" -%}
           <div class="post_unpublished-overlay">
