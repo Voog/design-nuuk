@@ -12,7 +12,7 @@
   {% endif %}
   {% capture post_title %}
     <{{titleTag}} class="post_title{%- unless article.data[itemImageKey] != blank or editmode %} mar_t-0{%- endunless -%}">
-      <span {% if post-box != "article" %}class="animate_border-bottom"{% endif %}>
+      <span {% if _isArticle != true %}class="animate_border-bottom"{% endif %}>
         {% if _isArticle == true %}
           {% editable article.title %}
         {% else %}
@@ -70,7 +70,7 @@
       </div>
     {%- endif -%}
 
-    {% if post-box != "article" %}
+    {% if _isArticle != true %}
       {{ post_title }}
     {% endif %}
   </header>
@@ -88,7 +88,7 @@
 
     {% assign article_year = article.created_at | format_date: "%Y" | to_num %}
 
-    {% if post-box != "article" %}
+    {% if _isArticle != true %}
       {{ post_details }}
     {% endif %}
   </div>
