@@ -4,8 +4,8 @@
   {% assign article_date_format = "long" %}
 {% endif %}
 
-<article class="post_wrapper post {%- if post-box == "article" %} article_item {% else %} listing_item{%- endif -%}">
-  {% if post-box == "article" %}
+<article class="post_wrapper post {%- if _isArticle == true %} article_item {% else %} listing_item{%- endif -%}">
+  {% if _isArticle == true %}
     {%- assign titleTag = 'h2' -%}
   {% else %}
     {%- assign titleTag = 'h3' -%}
@@ -13,7 +13,7 @@
   {% capture post_title %}
     <{{titleTag}} class="post_title{%- unless article.data[itemImageKey] != blank or editmode %} mar_t-0{%- endunless -%}">
       <span {% if post-box != "article" %}class="animate_border-bottom"{% endif %}>
-        {% if post-box == "article" %}
+        {% if _isArticle == true %}
           {% editable article.title %}
         {% else %}
           {{ article.title }}
@@ -35,25 +35,25 @@
     </div>
   {%- endcapture -%}
 
-  {% if post-box == "article" %}
+  {% if _isArticle == true %}
     <div class="post_narrow content-formatted{%- if article.data[itemImageKey] != blank or editmode %} mar_b-40{%- endif -%}">
       {{ post_title }}
       {{ post_details }}
     </div>
   {% endif %}
 
-  <header class="post_header{% if post-box == "article" %} post_header-stretch{% endif %}">
-    {% if post-box == "article" and editmode == true %}
+  <header class="post_header{% if _isArticle == true %} post_header-stretch{% endif %}">
+    {% if _isArticle == true and editmode == true %}
       {%- assign isPostImageStatic = false -%}
     {% else %}
       {%- assign isPostImageStatic = true -%}
     {% endif %}
     {%- if article.data[itemImageKey] != blank or editmode -%}
       <div class="p-rel">
-        <div {% unless article.published? or post-box == "article" %}class="post_unpublished"{%- endunless -%}>
-          {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic %}
+        <div {% unless article.published? or _isArticle == true %}class="post_unpublished"{%- endunless -%}>
+          {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic, _targetWidth: _targetWidth %}
         </div>
-        {%- unless article.published? or post-box == "article" -%}
+        {%- unless article.published? or _isArticle == true -%}
           <div class="post_unpublished-overlay">
             <div class="post_unpublished-overlay--box">
               {{ "draft" | lce  | escape_once }}
@@ -61,7 +61,7 @@
           </div>
         {%- endunless -%}
 
-        {%- unless post-box == "article" -%}
+        {%- unless _isArticle == true -%}
           <div class="post_image-overlay">
             <div class="post_image-overlay--box">
             </div>
@@ -75,12 +75,12 @@
     {% endif %}
   </header>
 
-  <div class="post_content{% if post-box == "article" %} post_narrow{% endif %}">
-    {% unless post-box == "article" %}
+  <div class="post_content{% if _isArticle == true %} post_narrow{% endif %}">
+    {% unless _isArticle == true %}
       <div class="post_excerpt mar_b-16"><p>{{ article.excerpt }}</p></div>
     {% endunless %}
 
-    {% if post-box == "article" %}
+    {% if _isArticle == true %}
       <div class="post_excerpt content-formatted content-formatted--overflowed-images mar_t-48 mar_b-64" {{ edy_intro_edit_text }}>{% editable article.excerpt %}</div>
       <div class="post_body content-formatted content-formatted--overflowed-images mar_b-64">{% editable article.body %}</div>
       <div class="post_body content-formatted content-formatted--overflowed-images">{% content name="additional_body" bind="Article" %}</div>

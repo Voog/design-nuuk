@@ -36,7 +36,7 @@
       <div class="container">
         <main class="content" role="main" data-search-indexing-allowed="true">
 
-          {% include "post-box" with "article" %}
+          {% include "post-box", _isArticle: true, _targetWidth: '2048' %}
 
           <div class="post_narrow">
             {% include "tags-post" %}
@@ -94,7 +94,7 @@
                   <div class="flex_row-3--item">
                     <div class="mar_0-16">
                       <a class="blog_listing-link animate_wrap" href="{{ article.url }}">
-                        {% include "post-box" %}
+                        {% include "post-box", _targetWidth: '600' %}
                       </a>
                     </div>
                   </div>
