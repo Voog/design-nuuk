@@ -43,7 +43,12 @@
               <div class="blog_listing-item">
                 <a class="blog_listing-link animate_wrap" href="{{ article.url }}">
                 {% include "article-settings-variables" %}
-                {% include "post-box" %}
+                {%- if forloop.index == 1 -%}
+                  {%- assign targetWidth = '1280' -%}
+                {%- else -%}
+                  {%- assign targetWidth = '600' -%}
+                {%- endif -%}
+                {% include "post-box", _targetWidth: targetWidth %}
                 </a>
               </div>
             {% endfor %}
