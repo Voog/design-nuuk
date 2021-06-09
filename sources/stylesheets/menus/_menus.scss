@@ -74,10 +74,10 @@
     }
 
     .semimodal-open:not(.semimodal-relative) & {
-      transform: rotate(45deg) translate(-4px, -4px);
+      transform: rotate(45deg) translate(-3.5px, -3.5px);
 
       &:first-child {
-        transform: rotate(-45deg) translate(-4px, 4px);
+        transform: rotate(-45deg) translate(-3.5px, 3.5px);
       }
     }
 
@@ -85,10 +85,10 @@
       width: 24px;
 
       .semimodal-open.semimodal-relative & {
-        transform: rotate(45deg) translate(-4px, -4px);
+        transform: rotate(45deg) translate(-3.5px, -3.5px);
 
         &:first-child {
-          transform: rotate(-45deg) translate(-4px, 4px);
+          transform: rotate(-45deg) translate(-3.5px, 3.5px);
         }
       }
     }
