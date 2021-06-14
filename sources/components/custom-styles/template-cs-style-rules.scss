@@ -127,198 +127,6 @@ body {
   }
 }
 
-// =============================================================================
-// NAVIGATION MENUS
-// =============================================================================
-// Menu button. Only visible on smaller screens.
-.menu-btn {
-  color: var(--header-mainmenu-active-color);
-
-  :not(.scroll).dark-background & {
-    color: var(--third-color);
-  }
-
-  .menu-stripe {
-    background-color: var(--header-mainmenu-active-color);
-
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        background-color: var(--third-color);
-      }
-    }
-  }
-
-  &:hover {
-    color: var(--header-mainmenu-active-color);
-
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        color: var(--third-color);
-        opacity: .7;
-      }
-    }
-
-    .menu-stripe {
-      background-color: var(--header-mainmenu-color);
-
-      @include query($tablet-1, 'min-width') {
-        :not(.scroll).dark-background & {
-          background-color: var(--third-color);
-        }
-      }
-    }
-  }
-}
-
-.scroll.dark-background {
-  .menu-main .menu .menu-item,
-  .content-formatted.header_title {
-    color: var(--header-mainmenu-color);
-
-    a, p, h1, h2, h3, h4, h5, h6 {
-      color: var(--header-mainmenu-color);
-    }
-
-    &.active a,
-    a.selected {
-      color: var(--header-mainmenu-active-color);
-    }
-
-    a:hover {
-      color: var(--header-mainmenu-color);
-      opacity: .7;
-    }
-  }
-
-  .menu-main .menu_popover .menu .menu-item {
-    color: var(--third-color);
-
-    a, p, h1, h2, h3, h4, h5, h6 {
-      color: var(--third-color);
-    }
-
-    a:hover,
-    &.active a {
-      color: var(--third-color);
-    }
-  }
-}
-
-.search-btn,
-.cart_btn {
-  svg path,
-  svg g {
-    fill: var(--header-mainmenu-active-color);
-
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        fill: var(--third-color);
-      }
-    }
-  }
-
-  &:hover {
-    svg path,
-    svg g {
-      fill: var(--header-mainmenu-color);
-
-      @include query($tablet-1, 'min-width') {
-        :not(.scroll).dark-background & {
-          opacity: .7;
-          fill: var(--third-color);
-        }
-      }
-    }
-  }
-}
-
-.cart_btn {
-  .cart_btn-count {
-    color: var(--header-mainmenu-active-color);
-
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        color: var(--third-color);
-      }
-    }
-  }
-
-  &:hover {
-    svg path,
-    svg g {
-      color: var(--header-mainmenu-color);
-      opacity: .7;
-    }
-  }
-}
-
-
-.menu_popover-btn {
-    svg path {
-    fill: var(--header-mainmenu-color);
-
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        fill: var(--third-color);
-      }
-    }
-  }
-
-  &:hover svg path {
-    fill: var(--header-mainmenu-hover-color);
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        opacity: .7;
-        fill: var(--third-color);
-      }
-    }
-  }
-}
-
-.menu-language-btn,
-.menu-language-name {
-  color: var(--header-mainmenu-active-color);
-
-  svg path {
-    stroke: var(--header-mainmenu-act
-    ive-color);
-
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        stroke: var(--third-color);
-      }
-    }
-  }
-
-  @include query($tablet-1, 'min-width') {
-    :not(.scroll).dark-background & {
-      color: var(--third-color);
-    }
-  }
-
-  &:hover {
-    color: var(--header-mainmenu-color);
-
-    svg path {
-      stroke: var(--header-mainmenu-color);
-
-      @include query($tablet-1, 'min-width') {
-        :not(.scroll).dark-background & {
-          opacity: .7;
-          stroke: var(--third-color);
-        }
-      }
-    }
-
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        opacity: .7;
-        color: var(--third-color);
-      }
-    }
-  }
-}
-
 .edy-ecommerce-product-count {
   color: var(--header-mainmenu-active-color);
 
@@ -351,16 +159,8 @@ body {
         color: $red;
       }
 
-      .dark-background & {
-        color: var(--third-color);
-      }
-
       &::before {
         background-color: var(--header-mainmenu-color);
-
-        .dark-background & {
-          background-color: var(--third-color);
-        }
       }
       // scss-lint:disable NestingDepth
       &:hover {
@@ -368,11 +168,6 @@ body {
         text-decoration: var(--header-mainmenu-hover-decoration);
         font-weight: var(--header-mainmenu-hover-font-weight);
         font-style: var(--header-mainmenu-hover-font-style);
-
-        .dark-background & {
-          color: var(--third-color);
-          opacity: .7;
-        }
       }
     }
 
@@ -395,16 +190,6 @@ body {
 
       &::before {
         background-color: var(--header-mainmenu-active-color);
-
-        .dark-background & {
-          background-color: var(--third-color);
-          opacity: .7;
-        }
-      }
-
-      .dark-background & {
-        color: var(--third-color);
-        opacity: .7;
       }
 
       &:hover {
@@ -414,11 +199,6 @@ body {
 
         &::before {
           background-color: var(--header-mainmenu-hover-color);
-        }
-
-        .dark-background & {
-          color: var(--third-color);
-          opacity: 1;
         }
       }
     }
@@ -447,10 +227,6 @@ body {
             line-height: 21px;
           }
 
-          .dark-background & {
-            color: var(--third-color);
-          }
-
           &.untranslated {
             color: $red;
           }
@@ -462,25 +238,13 @@ body {
             font-style: var(--menu-sub-hover-font-style);
             text-transform: var(--menu-sub-hover-text-transform);
 
-            .dark-background & {
-              color: var(--third-color);
-            }
-
             &::before {
               border-color: var(--menu-sub-hover-color);
-
-              .dark-background & {
-                border-color: var(--third-color);
-              }
             }
           }
 
           &::before {
             border-color: var(--menu-sub-hover-color);
-
-            .dark-background & {
-              border-color: var(--third-color);
-            }
           }
         }
       }
@@ -501,16 +265,8 @@ body {
           color: $red;
         }
 
-        .dark-background & {
-          color: var(--third-color);
-        }
-
         &::before {
           border-color: var(--menu-sub-active-color);
-
-          .dark-background & {
-            border-color: var(--third-color);
-          }
         }
 
         &:hover {
@@ -522,120 +278,6 @@ body {
           svg,
           path {
             fill: var(--menu-sub-color);
-
-            .dark-background & {
-              fill: var(--third-color);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.dark-background .light-background {
-  .header_components-semimodal,
-  .site_title.content-formatted,
-  .semimodal_bottom-content,
-  .menu-language-btn,
-  .menu-language-name {
-    color: var(--header-mainmenu-color);
-
-    a, p, h1, h2, h3, h4, h5, h6 {
-      color: var(--header-mainmenu-color);
-    }
-  }
-
-  .menu-btn {
-    color: var(--header-mainmenu-color);
-
-    .menu-stripe {
-      background-color: var(--header-mainmenu-color);
-    }
-  }
-
-  .search-btn svg g,
-  .cart_btn svg g,
-  .cart_btn svg path {
-    fill: var(--header-mainmenu-color);
-  }
-
-  .search-btn:hover svg g,
-  .cart_btn:hover svg g,
-  .cart_btn:hover svg path  {
-    fill: var(--header-mainmenu-hover-color);
-  }
-
-
-  .menu-main {
-    .menu {
-      .menu-item a {
-        color: var(--header-mainmenu-color);
-
-        &::before {
-          background-color: var(--header-mainmenu-color);
-
-        }
-        // scss-lint:disable NestingDepth
-        &:hover {
-          color: var(--header-mainmenu-hover-color);
-        }
-      }
-
-      .menu-item a.selected {
-        color: var(--header-mainmenu-active-color);
-        opacity: 1;
-
-        &::before {
-          background-color: var(--header-mainmenu-active-color);
-          opacity: 1;
-        }
-
-        &:hover {
-          color: var(--header-mainmenu-hover-color);
-
-          &::before {
-            background-color: var(--header-mainmenu-hover-color);
-          }
-        }
-      }
-
-      .menu-sub {
-        .menu-item a {
-          color: var(--menu-sub-color);
-
-          &::after {
-            background-color: var(--menu-sub-color);
-          }
-          // scss-lint:disable NestingDepth
-
-          &.active {
-            color: var(--menu-sub-hover-color);
-
-            &::before {
-              border-color: var(--menu-sub-active-color);
-            }
-
-            &:hover {
-              color: var(--menu-sub-color);
-
-              svg,
-              path {
-                fill: var(--menu-sub-color);
-              }
-            }
-          }
-
-          &:hover {
-            color: var(--menu-sub-hover-color);
-
-            &::before {
-              border-color: var(--menu-sub-hover-color);
-            }
-          }
-
-          &::before {
-            border-color: var(--menu-sub-hover-color);
           }
         }
       }
@@ -932,10 +574,6 @@ body {
     color: var(--header-site-title-color);
     hyphens: var(--header-site-title-hyphens);
 
-    .dark-background & {
-      color: var(--third-color);
-    }
-
     a, p, h1, h2, h3, h4, h5, h6 {
       font-size: var(--header-site-title-font-size);
       line-height: var(--header-site-title-font-size);
@@ -945,29 +583,11 @@ body {
       text-transform: var(--header-site-title-text-transform);
       color: var(--header-site-title-color);
       hyphens: var(--header-site-title-hyphens);
-
-      .dark-background & {
-        color: var(--third-color);
-      }
     }
 
     @include query($tablet-1) {
       font-size: 18px;
       line-height: 18px;
-    }
-  }
-
-  @include query($tablet-1) {
-    &.header_title {
-      .dark-background & {
-        color: var(--header-site-title-color);
-      }
-
-      a, p, h1, h2, h3, h4, h5, h6 {
-        .dark-background & {
-          color: var(--header-site-title-color);
-        }
-      }
     }
   }
 
@@ -1074,4 +694,270 @@ body {
   }
 }
 
-// scss-lint:enable SelectorFormat
+.light-background,
+.light-background .light-background,
+.dark-background .light-background,
+.scroll.dark-background .dark-background,
+.scroll.light-background .dark-background,
+* {
+  .swiper-container {
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      color: var(--header-mainmenu-active-color);
+    }
+
+    .swiper-pagination-bullet {
+      background-color: var(--header-mainmenu-active-color);
+    }
+  }
+
+  .site_title.content-formatted,
+  .header_title.content-formatted {
+    color: var(--header-site-title-color);
+
+    a, p, h1, h2, h3, h4, h5, h6 {
+      color: var(--header-mainmenu-color);
+    }
+  }
+
+
+  .search-btn svg path,
+  .cart_btn svg g,
+  .cart_btn svg path,
+  .menu_popover-btn svg path {
+    fill: var(--header-mainmenu-active-color);
+  }
+
+  .search-btn:hover svg path,
+  .cart_btn:hover svg g,
+  .cart_btn:hover svg path,
+  .menu_popover-btn:hover svg path  {
+    fill: var(--header-mainmenu-hover-color);
+  }
+
+  .menu-btn {
+    color: var(--header-mainmenu-active-color);
+    .menu-stripe {
+      background-color: var(--header-mainmenu-active-color);
+    }
+
+    &:hover {
+      color: var(--header-mainmenu-color);
+
+      .menu-stripe {
+        background-color: var(--header-mainmenu-color);
+      }
+    }
+  }
+
+  .menu-language-btn,
+  .menu-language-name,
+  .cart_btn .cart_btn-count {
+    color: var(--header-mainmenu-active-color);
+    svg path {
+      stroke: var(--header-mainmenu-active-color);
+    }
+
+    &:hover {
+      color: var(--header-mainmenu-color);
+
+      svg path {
+        stroke: var(--header-mainmenu-color);
+      }
+    }
+  }
+
+  .menu-main {
+    .menu {
+      .menu-item a {
+        color: var(--header-mainmenu-color);
+
+        &::before {
+          background-color: var(--header-mainmenu-color);
+        }
+        // scss-lint:disable NestingDepth
+        &:hover {
+          color: var(--header-mainmenu-hover-color);
+        }
+      }
+
+      .menu-item a.selected {
+        color: var(--header-mainmenu-active-color);
+        opacity: 1;
+
+        &::before {
+          background-color: var(--header-mainmenu-active-color);
+          opacity: 1;
+        }
+
+        &:hover {
+          color: var(--header-mainmenu-hover-color);
+
+          &::before {
+            background-color: var(--header-mainmenu-hover-color);
+          }
+        }
+      }
+
+      .menu-sub {
+        .menu-item a {
+          color: var(--menu-sub-color);
+
+          &::after {
+            background-color: var(--menu-sub-color);
+          }
+
+          &.active {
+            color: var(--menu-sub-hover-color);
+
+            &::before {
+              border-color: var(--menu-sub-active-color);
+            }
+
+            &:hover {
+              color: var(--menu-sub-color);
+
+              svg,
+              path {
+                fill: var(--menu-sub-color);
+              }
+            }
+          }
+
+          &:hover {
+            color: var(--menu-sub-hover-color);
+
+            &::before {
+              border-color: var(--menu-sub-hover-color);
+            }
+          }
+
+          &::before {
+            border-color: var(--menu-sub-hover-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+.dark-background .dark-background,
+.light-background .dark-background,
+.dark-background {
+  .swiper-container {
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      color: var(--third-color);
+    }
+
+    .swiper-pagination-bullet {
+      background-color: var(--third-color);
+    }
+  }
+
+  .site_title.content-formatted,
+  .header_title.content-formatted {
+    color: var(--third-color);
+
+    a, p, h1, h2, h3, h4, h5, h6 {
+      color: var(--third-color);
+    }
+  }
+
+
+  .search-btn svg path,
+  .cart_btn svg g,
+  .cart_btn svg path,
+  .menu_popover-btn svg path {
+    fill: var(--third-color);
+  }
+
+  .search-btn:hover svg path,
+  .cart_btn:hover svg g,
+  .cart_btn:hover svg path,
+  .menu_popover-btn:hover svg path  {
+    opacity: .7;
+  }
+
+  .menu-btn {
+    color: var(--third-color);
+    .menu-stripe {
+      background-color: var(--third-color);
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .menu-language-btn,
+  .menu-language-name,
+  .cart_btn .cart_btn-count {
+    color: var(--third-color);
+    svg path {
+      stroke: var(--third-color);
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .menu-main {
+    .menu {
+      .menu-item a {
+        color: var(--third-color);
+
+        &::before {
+          background-color: var(--third-color);
+        }
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+
+      .menu-item a.selected {
+        color: var(--third-color);
+
+        &::before {
+          background-color: var(--third-color);
+        }
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+
+      .menu-sub {
+        .menu-item a {
+          color: var(--third-color);
+
+          &::after {
+            background-color: var(--third-color);
+          }
+
+          &.active {
+            color: var(--third-color);
+
+            &::before {
+              border-color: var(--menu-sub-active-color);
+            }
+
+            &:hover {
+              opacity: .7;
+            }
+          }
+
+          &:hover {
+            opacity: .7;
+          }
+
+          &::before {
+            border-color: var(--third-color);
+          }
+        }
+      }
+    }
+  }
+}
