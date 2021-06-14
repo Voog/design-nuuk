@@ -145,6 +145,7 @@
 
   {% assign product_list_layout = "Product list" %}
   {% assign product_layout = "Product" %}
+  {% assign front_page_layout = "Front page" %}
 
   {% comment %}=================================================================
   | Design editor variables.

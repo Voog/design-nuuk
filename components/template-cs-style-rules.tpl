@@ -76,208 +76,6 @@ body.dark-background {
   color: var(--third-color);
 }
 
-.menu-btn {
-  color: var(--header-mainmenu-active-color);
-}
-
-:not(.scroll).dark-background .menu-btn {
-  color: var(--third-color);
-}
-
-.menu-btn .menu-stripe {
-  background-color: var(--header-mainmenu-active-color);
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-btn .menu-stripe {
-    background-color: var(--third-color);
-  }
-}
-
-.menu-btn:hover {
-  color: var(--header-mainmenu-active-color);
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-btn:hover {
-    color: var(--third-color);
-    opacity: .7;
-  }
-}
-
-.menu-btn:hover .menu-stripe {
-  background-color: var(--header-mainmenu-color);
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-btn:hover .menu-stripe {
-    background-color: var(--third-color);
-  }
-}
-
-.scroll.dark-background .menu-main .menu .menu-item,
-.scroll.dark-background .content-formatted.header_title {
-  color: var(--header-mainmenu-color);
-}
-
-.scroll.dark-background .menu-main .menu .menu-item a, .scroll.dark-background .menu-main .menu .menu-item p, .scroll.dark-background .menu-main .menu .menu-item h1, .scroll.dark-background .menu-main .menu .menu-item h2, .scroll.dark-background .menu-main .menu .menu-item h3, .scroll.dark-background .menu-main .menu .menu-item h4, .scroll.dark-background .menu-main .menu .menu-item h5, .scroll.dark-background .menu-main .menu .menu-item h6,
-.scroll.dark-background .content-formatted.header_title a,
-.scroll.dark-background .content-formatted.header_title p,
-.scroll.dark-background .content-formatted.header_title h1,
-.scroll.dark-background .content-formatted.header_title h2,
-.scroll.dark-background .content-formatted.header_title h3,
-.scroll.dark-background .content-formatted.header_title h4,
-.scroll.dark-background .content-formatted.header_title h5,
-.scroll.dark-background .content-formatted.header_title h6 {
-  color: var(--header-mainmenu-color);
-}
-
-.scroll.dark-background .menu-main .menu .menu-item.active a,
-.scroll.dark-background .menu-main .menu .menu-item a.selected,
-.scroll.dark-background .content-formatted.header_title.active a,
-.scroll.dark-background .content-formatted.header_title a.selected {
-  color: var(--header-mainmenu-active-color);
-}
-
-.scroll.dark-background .menu-main .menu .menu-item a:hover,
-.scroll.dark-background .content-formatted.header_title a:hover {
-  color: var(--header-mainmenu-color);
-  opacity: .7;
-}
-
-.scroll.dark-background .menu-main .menu_popover .menu .menu-item {
-  color: var(--third-color);
-}
-
-.scroll.dark-background .menu-main .menu_popover .menu .menu-item a, .scroll.dark-background .menu-main .menu_popover .menu .menu-item p, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h1, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h2, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h3, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h4, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h5, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h6 {
-  color: var(--third-color);
-}
-
-.scroll.dark-background .menu-main .menu_popover .menu .menu-item a:hover,
-.scroll.dark-background .menu-main .menu_popover .menu .menu-item.active a {
-  color: var(--third-color);
-}
-
-.search-btn svg path,
-.search-btn svg g,
-.cart_btn svg path,
-.cart_btn svg g {
-  fill: var(--header-mainmenu-active-color);
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .search-btn svg path, :not(.scroll).dark-background
-  .search-btn svg g, :not(.scroll).dark-background
-  .cart_btn svg path, :not(.scroll).dark-background
-  .cart_btn svg g {
-    fill: var(--third-color);
-  }
-}
-
-.search-btn:hover svg path,
-.search-btn:hover svg g,
-.cart_btn:hover svg path,
-.cart_btn:hover svg g {
-  fill: var(--header-mainmenu-color);
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .search-btn:hover svg path, :not(.scroll).dark-background
-  .search-btn:hover svg g, :not(.scroll).dark-background
-  .cart_btn:hover svg path, :not(.scroll).dark-background
-  .cart_btn:hover svg g {
-    opacity: .7;
-    fill: var(--third-color);
-  }
-}
-
-.cart_btn .cart_btn-count {
-  color: var(--header-mainmenu-active-color);
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .cart_btn .cart_btn-count {
-    color: var(--third-color);
-  }
-}
-
-.cart_btn:hover svg path,
-.cart_btn:hover svg g {
-  color: var(--header-mainmenu-color);
-  opacity: .7;
-}
-
-.menu_popover-btn svg path {
-  fill: var(--header-mainmenu-color);
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu_popover-btn svg path {
-    fill: var(--third-color);
-  }
-}
-
-.menu_popover-btn:hover svg path {
-  fill: var(--header-mainmenu-hover-color);
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu_popover-btn:hover svg path {
-    opacity: .7;
-    fill: var(--third-color);
-  }
-}
-
-.menu-language-btn,
-.menu-language-name {
-  color: var(--header-mainmenu-active-color);
-}
-
-.menu-language-btn svg path,
-.menu-language-name svg path {
-  stroke: var(--header-mainmenu-act ive-color);
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn svg path, :not(.scroll).dark-background
-  .menu-language-name svg path {
-    stroke: var(--third-color);
-  }
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn, :not(.scroll).dark-background
-  .menu-language-name {
-    color: var(--third-color);
-  }
-}
-
-.menu-language-btn:hover,
-.menu-language-name:hover {
-  color: var(--header-mainmenu-color);
-}
-
-.menu-language-btn:hover svg path,
-.menu-language-name:hover svg path {
-  stroke: var(--header-mainmenu-color);
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn:hover svg path, :not(.scroll).dark-background
-  .menu-language-name:hover svg path {
-    opacity: .7;
-    stroke: var(--third-color);
-  }
-}
-
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn:hover, :not(.scroll).dark-background
-  .menu-language-name:hover {
-    opacity: .7;
-    color: var(--third-color);
-  }
-}
-
 .edy-ecommerce-product-count {
   color: var(--header-mainmenu-active-color);
 }
@@ -313,16 +111,8 @@ body.dark-background {
   color: #C5292A;
 }
 
-.dark-background .menu-main .menu .menu-item a {
-  color: var(--third-color);
-}
-
 .menu-main .menu .menu-item a::before {
   background-color: var(--header-mainmenu-color);
-}
-
-.dark-background .menu-main .menu .menu-item a::before {
-  background-color: var(--third-color);
 }
 
 .menu-main .menu .menu-item a:hover {
@@ -331,11 +121,6 @@ body.dark-background {
           text-decoration: var(--header-mainmenu-hover-decoration);
   font-weight: var(--header-mainmenu-hover-font-weight);
   font-style: var(--header-mainmenu-hover-font-style);
-}
-
-.dark-background .menu-main .menu .menu-item a:hover {
-  color: var(--third-color);
-  opacity: .7;
 }
 
 .menu-main .menu .menu-item a.selected {
@@ -363,16 +148,6 @@ body.dark-background {
   background-color: var(--header-mainmenu-active-color);
 }
 
-.dark-background .menu-main .menu .menu-item a.selected::before {
-  background-color: var(--third-color);
-  opacity: .7;
-}
-
-.dark-background .menu-main .menu .menu-item a.selected {
-  color: var(--third-color);
-  opacity: .7;
-}
-
 .menu-main .menu .menu-item a.selected:hover {
   color: var(--header-mainmenu-hover-color);
   -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
@@ -382,11 +157,6 @@ body.dark-background {
 
 .menu-main .menu .menu-item a.selected:hover::before {
   background-color: var(--header-mainmenu-hover-color);
-}
-
-.dark-background .menu-main .menu .menu-item a.selected:hover {
-  color: var(--third-color);
-  opacity: 1;
 }
 
 .semimodal .menu-main .menu .menu-sub .menu-item {
@@ -417,10 +187,6 @@ body.dark-background {
   }
 }
 
-.dark-background .menu-main .menu .menu-sub .menu-item a {
-  color: var(--third-color);
-}
-
 .menu-main .menu .menu-sub .menu-item a.untranslated {
   color: #C5292A;
 }
@@ -434,24 +200,12 @@ body.dark-background {
   text-transform: var(--menu-sub-hover-text-transform);
 }
 
-.dark-background .menu-main .menu .menu-sub .menu-item a:hover {
-  color: var(--third-color);
-}
-
 .menu-main .menu .menu-sub .menu-item a:hover::before {
   border-color: var(--menu-sub-hover-color);
 }
 
-.dark-background .menu-main .menu .menu-sub .menu-item a:hover::before {
-  border-color: var(--third-color);
-}
-
 .menu-main .menu .menu-sub .menu-item a::before {
   border-color: var(--menu-sub-hover-color);
-}
-
-.dark-background .menu-main .menu .menu-sub .menu-item a::before {
-  border-color: var(--third-color);
 }
 
 .menu-main .menu .menu-sub .menu-item.active a {
@@ -474,16 +228,8 @@ body.dark-background {
   color: #C5292A;
 }
 
-.dark-background .menu-main .menu .menu-sub .menu-item.active a {
-  color: var(--third-color);
-}
-
 .menu-main .menu .menu-sub .menu-item.active a::before {
   border-color: var(--menu-sub-active-color);
-}
-
-.dark-background .menu-main .menu .menu-sub .menu-item.active a::before {
-  border-color: var(--third-color);
 }
 
 .menu-main .menu .menu-sub .menu-item.active a:hover {
@@ -497,142 +243,6 @@ body.dark-background {
 .menu-main .menu .menu-sub .menu-item.active a:hover svg,
 .menu-main .menu .menu-sub .menu-item.active a:hover path {
   fill: var(--menu-sub-color);
-}
-
-.dark-background .menu-main .menu .menu-sub .menu-item.active a:hover svg, .dark-background
-.menu-main .menu .menu-sub .menu-item.active a:hover path {
-  fill: var(--third-color);
-}
-
-.dark-background .light-background .header_components-semimodal,
-.dark-background .light-background .site_title.content-formatted,
-.dark-background .light-background .semimodal_bottom-content,
-.dark-background .light-background .menu-language-btn,
-.dark-background .light-background .menu-language-name {
-  color: var(--header-mainmenu-color);
-}
-
-.dark-background .light-background .header_components-semimodal a, .dark-background .light-background .header_components-semimodal p, .dark-background .light-background .header_components-semimodal h1, .dark-background .light-background .header_components-semimodal h2, .dark-background .light-background .header_components-semimodal h3, .dark-background .light-background .header_components-semimodal h4, .dark-background .light-background .header_components-semimodal h5, .dark-background .light-background .header_components-semimodal h6,
-.dark-background .light-background .site_title.content-formatted a,
-.dark-background .light-background .site_title.content-formatted p,
-.dark-background .light-background .site_title.content-formatted h1,
-.dark-background .light-background .site_title.content-formatted h2,
-.dark-background .light-background .site_title.content-formatted h3,
-.dark-background .light-background .site_title.content-formatted h4,
-.dark-background .light-background .site_title.content-formatted h5,
-.dark-background .light-background .site_title.content-formatted h6,
-.dark-background .light-background .semimodal_bottom-content a,
-.dark-background .light-background .semimodal_bottom-content p,
-.dark-background .light-background .semimodal_bottom-content h1,
-.dark-background .light-background .semimodal_bottom-content h2,
-.dark-background .light-background .semimodal_bottom-content h3,
-.dark-background .light-background .semimodal_bottom-content h4,
-.dark-background .light-background .semimodal_bottom-content h5,
-.dark-background .light-background .semimodal_bottom-content h6,
-.dark-background .light-background .menu-language-btn a,
-.dark-background .light-background .menu-language-btn p,
-.dark-background .light-background .menu-language-btn h1,
-.dark-background .light-background .menu-language-btn h2,
-.dark-background .light-background .menu-language-btn h3,
-.dark-background .light-background .menu-language-btn h4,
-.dark-background .light-background .menu-language-btn h5,
-.dark-background .light-background .menu-language-btn h6,
-.dark-background .light-background .menu-language-name a,
-.dark-background .light-background .menu-language-name p,
-.dark-background .light-background .menu-language-name h1,
-.dark-background .light-background .menu-language-name h2,
-.dark-background .light-background .menu-language-name h3,
-.dark-background .light-background .menu-language-name h4,
-.dark-background .light-background .menu-language-name h5,
-.dark-background .light-background .menu-language-name h6 {
-  color: var(--header-mainmenu-color);
-}
-
-.dark-background .light-background .menu-btn {
-  color: var(--header-mainmenu-color);
-}
-
-.dark-background .light-background .menu-btn .menu-stripe {
-  background-color: var(--header-mainmenu-color);
-}
-
-.dark-background .light-background .search-btn svg g,
-.dark-background .light-background .cart_btn svg g,
-.dark-background .light-background .cart_btn svg path {
-  fill: var(--header-mainmenu-color);
-}
-
-.dark-background .light-background .search-btn:hover svg g,
-.dark-background .light-background .cart_btn:hover svg g,
-.dark-background .light-background .cart_btn:hover svg path {
-  fill: var(--header-mainmenu-hover-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-item a {
-  color: var(--header-mainmenu-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-item a::before {
-  background-color: var(--header-mainmenu-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-item a:hover {
-  color: var(--header-mainmenu-hover-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-item a.selected {
-  color: var(--header-mainmenu-active-color);
-  opacity: 1;
-}
-
-.dark-background .light-background .menu-main .menu .menu-item a.selected::before {
-  background-color: var(--header-mainmenu-active-color);
-  opacity: 1;
-}
-
-.dark-background .light-background .menu-main .menu .menu-item a.selected:hover {
-  color: var(--header-mainmenu-hover-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-item a.selected:hover::before {
-  background-color: var(--header-mainmenu-hover-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a {
-  color: var(--menu-sub-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a::after {
-  background-color: var(--menu-sub-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active {
-  color: var(--menu-sub-hover-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active::before {
-  border-color: var(--menu-sub-active-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover {
-  color: var(--menu-sub-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover svg,
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover path {
-  fill: var(--menu-sub-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a:hover {
-  color: var(--menu-sub-hover-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a:hover::before {
-  border-color: var(--menu-sub-hover-color);
-}
-
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a::before {
-  border-color: var(--menu-sub-hover-color);
 }
 
 .menu-breadcrumbs.menu-sub .menu-item a {
@@ -983,14 +593,6 @@ body.dark-background {
           hyphens: var(--header-site-title-hyphens);
 }
 
-.dark-background .content-formatted.header_title, .dark-background .content-formatted.site_title, .dark-background
-.content-formatted .product_item-btn.header_title, .dark-background
-.content-formatted .product_item-btn.site_title, .dark-background
-.content-formatted p.header_title, .dark-background
-.content-formatted p.site_title {
-  color: var(--third-color);
-}
-
 .content-formatted.header_title a, .content-formatted.header_title p, .content-formatted.header_title h1, .content-formatted.header_title h2, .content-formatted.header_title h3, .content-formatted.header_title h4, .content-formatted.header_title h5, .content-formatted.header_title h6, .content-formatted.site_title a, .content-formatted.site_title p, .content-formatted.site_title h1, .content-formatted.site_title h2, .content-formatted.site_title h3, .content-formatted.site_title h4, .content-formatted.site_title h5, .content-formatted.site_title h6,
 .content-formatted .product_item-btn.header_title a,
 .content-formatted .product_item-btn.header_title p,
@@ -1037,42 +639,6 @@ body.dark-background {
           hyphens: var(--header-site-title-hyphens);
 }
 
-.dark-background .content-formatted.header_title a, .dark-background .content-formatted.header_title p, .dark-background .content-formatted.header_title h1, .dark-background .content-formatted.header_title h2, .dark-background .content-formatted.header_title h3, .dark-background .content-formatted.header_title h4, .dark-background .content-formatted.header_title h5, .dark-background .content-formatted.header_title h6, .dark-background .content-formatted.site_title a, .dark-background .content-formatted.site_title p, .dark-background .content-formatted.site_title h1, .dark-background .content-formatted.site_title h2, .dark-background .content-formatted.site_title h3, .dark-background .content-formatted.site_title h4, .dark-background .content-formatted.site_title h5, .dark-background .content-formatted.site_title h6, .dark-background
-.content-formatted .product_item-btn.header_title a, .dark-background
-.content-formatted .product_item-btn.header_title p, .dark-background
-.content-formatted .product_item-btn.header_title h1, .dark-background
-.content-formatted .product_item-btn.header_title h2, .dark-background
-.content-formatted .product_item-btn.header_title h3, .dark-background
-.content-formatted .product_item-btn.header_title h4, .dark-background
-.content-formatted .product_item-btn.header_title h5, .dark-background
-.content-formatted .product_item-btn.header_title h6, .dark-background
-.content-formatted .product_item-btn.site_title a, .dark-background
-.content-formatted .product_item-btn.site_title p, .dark-background
-.content-formatted .product_item-btn.site_title h1, .dark-background
-.content-formatted .product_item-btn.site_title h2, .dark-background
-.content-formatted .product_item-btn.site_title h3, .dark-background
-.content-formatted .product_item-btn.site_title h4, .dark-background
-.content-formatted .product_item-btn.site_title h5, .dark-background
-.content-formatted .product_item-btn.site_title h6, .dark-background
-.content-formatted p.header_title a, .dark-background
-.content-formatted p.header_title p, .dark-background
-.content-formatted p.header_title h1, .dark-background
-.content-formatted p.header_title h2, .dark-background
-.content-formatted p.header_title h3, .dark-background
-.content-formatted p.header_title h4, .dark-background
-.content-formatted p.header_title h5, .dark-background
-.content-formatted p.header_title h6, .dark-background
-.content-formatted p.site_title a, .dark-background
-.content-formatted p.site_title p, .dark-background
-.content-formatted p.site_title h1, .dark-background
-.content-formatted p.site_title h2, .dark-background
-.content-formatted p.site_title h3, .dark-background
-.content-formatted p.site_title h4, .dark-background
-.content-formatted p.site_title h5, .dark-background
-.content-formatted p.site_title h6 {
-  color: var(--third-color);
-}
-
 @media screen and (max-width: 900px) {
   .content-formatted.header_title, .content-formatted.site_title,
   .content-formatted .product_item-btn.header_title,
@@ -1081,33 +647,6 @@ body.dark-background {
   .content-formatted p.site_title {
     font-size: 18px;
     line-height: 18px;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .dark-background .content-formatted.header_title, .dark-background
-  .content-formatted .product_item-btn.header_title, .dark-background
-  .content-formatted p.header_title {
-    color: var(--header-site-title-color);
-  }
-  .dark-background .content-formatted.header_title a, .dark-background .content-formatted.header_title p, .dark-background .content-formatted.header_title h1, .dark-background .content-formatted.header_title h2, .dark-background .content-formatted.header_title h3, .dark-background .content-formatted.header_title h4, .dark-background .content-formatted.header_title h5, .dark-background .content-formatted.header_title h6, .dark-background
-  .content-formatted .product_item-btn.header_title a, .dark-background
-  .content-formatted .product_item-btn.header_title p, .dark-background
-  .content-formatted .product_item-btn.header_title h1, .dark-background
-  .content-formatted .product_item-btn.header_title h2, .dark-background
-  .content-formatted .product_item-btn.header_title h3, .dark-background
-  .content-formatted .product_item-btn.header_title h4, .dark-background
-  .content-formatted .product_item-btn.header_title h5, .dark-background
-  .content-formatted .product_item-btn.header_title h6, .dark-background
-  .content-formatted p.header_title a, .dark-background
-  .content-formatted p.header_title p, .dark-background
-  .content-formatted p.header_title h1, .dark-background
-  .content-formatted p.header_title h2, .dark-background
-  .content-formatted p.header_title h3, .dark-background
-  .content-formatted p.header_title h4, .dark-background
-  .content-formatted p.header_title h5, .dark-background
-  .content-formatted p.header_title h6 {
-    color: var(--header-site-title-color);
   }
 }
 
@@ -1258,4 +797,691 @@ body.dark-background {
 .light-background .content-formatted .form_field_textarea::placeholder,
 .light-background .content-formatted .form_field_select::placeholder {
   color: var(--primary-color);
+}
+
+.light-background .swiper-container .swiper-button-next:after,
+.light-background .swiper-container .swiper-button-prev:after,
+.light-background .light-background .swiper-container .swiper-button-next:after,
+.light-background .light-background .swiper-container .swiper-button-prev:after,
+.dark-background .light-background .swiper-container .swiper-button-next:after,
+.dark-background .light-background .swiper-container .swiper-button-prev:after,
+.scroll.dark-background .dark-background .swiper-container .swiper-button-next:after,
+.scroll.dark-background .dark-background .swiper-container .swiper-button-prev:after,
+.scroll.light-background .dark-background .swiper-container .swiper-button-next:after,
+.scroll.light-background .dark-background .swiper-container .swiper-button-prev:after,
+* .swiper-container .swiper-button-next:after,
+* .swiper-container .swiper-button-prev:after {
+  color: var(--header-mainmenu-active-color);
+}
+
+.light-background .swiper-container .swiper-pagination-bullet,
+.light-background .light-background .swiper-container .swiper-pagination-bullet,
+.dark-background .light-background .swiper-container .swiper-pagination-bullet,
+.scroll.dark-background .dark-background .swiper-container .swiper-pagination-bullet,
+.scroll.light-background .dark-background .swiper-container .swiper-pagination-bullet,
+* .swiper-container .swiper-pagination-bullet {
+  background-color: var(--header-mainmenu-active-color);
+}
+
+.light-background .site_title.content-formatted,
+.light-background .header_title.content-formatted,
+.light-background .light-background .site_title.content-formatted,
+.light-background .light-background .header_title.content-formatted,
+.dark-background .light-background .site_title.content-formatted,
+.dark-background .light-background .header_title.content-formatted,
+.scroll.dark-background .dark-background .site_title.content-formatted,
+.scroll.dark-background .dark-background .header_title.content-formatted,
+.scroll.light-background .dark-background .site_title.content-formatted,
+.scroll.light-background .dark-background .header_title.content-formatted,
+* .site_title.content-formatted,
+* .header_title.content-formatted {
+  color: var(--header-site-title-color);
+}
+
+.light-background .site_title.content-formatted a, .light-background .site_title.content-formatted p, .light-background .site_title.content-formatted h1, .light-background .site_title.content-formatted h2, .light-background .site_title.content-formatted h3, .light-background .site_title.content-formatted h4, .light-background .site_title.content-formatted h5, .light-background .site_title.content-formatted h6,
+.light-background .header_title.content-formatted a,
+.light-background .header_title.content-formatted p,
+.light-background .header_title.content-formatted h1,
+.light-background .header_title.content-formatted h2,
+.light-background .header_title.content-formatted h3,
+.light-background .header_title.content-formatted h4,
+.light-background .header_title.content-formatted h5,
+.light-background .header_title.content-formatted h6,
+.light-background .light-background .site_title.content-formatted a,
+.light-background .light-background .site_title.content-formatted p,
+.light-background .light-background .site_title.content-formatted h1,
+.light-background .light-background .site_title.content-formatted h2,
+.light-background .light-background .site_title.content-formatted h3,
+.light-background .light-background .site_title.content-formatted h4,
+.light-background .light-background .site_title.content-formatted h5,
+.light-background .light-background .site_title.content-formatted h6,
+.light-background .light-background .header_title.content-formatted a,
+.light-background .light-background .header_title.content-formatted p,
+.light-background .light-background .header_title.content-formatted h1,
+.light-background .light-background .header_title.content-formatted h2,
+.light-background .light-background .header_title.content-formatted h3,
+.light-background .light-background .header_title.content-formatted h4,
+.light-background .light-background .header_title.content-formatted h5,
+.light-background .light-background .header_title.content-formatted h6,
+.dark-background .light-background .site_title.content-formatted a,
+.dark-background .light-background .site_title.content-formatted p,
+.dark-background .light-background .site_title.content-formatted h1,
+.dark-background .light-background .site_title.content-formatted h2,
+.dark-background .light-background .site_title.content-formatted h3,
+.dark-background .light-background .site_title.content-formatted h4,
+.dark-background .light-background .site_title.content-formatted h5,
+.dark-background .light-background .site_title.content-formatted h6,
+.dark-background .light-background .header_title.content-formatted a,
+.dark-background .light-background .header_title.content-formatted p,
+.dark-background .light-background .header_title.content-formatted h1,
+.dark-background .light-background .header_title.content-formatted h2,
+.dark-background .light-background .header_title.content-formatted h3,
+.dark-background .light-background .header_title.content-formatted h4,
+.dark-background .light-background .header_title.content-formatted h5,
+.dark-background .light-background .header_title.content-formatted h6,
+.scroll.dark-background .dark-background .site_title.content-formatted a,
+.scroll.dark-background .dark-background .site_title.content-formatted p,
+.scroll.dark-background .dark-background .site_title.content-formatted h1,
+.scroll.dark-background .dark-background .site_title.content-formatted h2,
+.scroll.dark-background .dark-background .site_title.content-formatted h3,
+.scroll.dark-background .dark-background .site_title.content-formatted h4,
+.scroll.dark-background .dark-background .site_title.content-formatted h5,
+.scroll.dark-background .dark-background .site_title.content-formatted h6,
+.scroll.dark-background .dark-background .header_title.content-formatted a,
+.scroll.dark-background .dark-background .header_title.content-formatted p,
+.scroll.dark-background .dark-background .header_title.content-formatted h1,
+.scroll.dark-background .dark-background .header_title.content-formatted h2,
+.scroll.dark-background .dark-background .header_title.content-formatted h3,
+.scroll.dark-background .dark-background .header_title.content-formatted h4,
+.scroll.dark-background .dark-background .header_title.content-formatted h5,
+.scroll.dark-background .dark-background .header_title.content-formatted h6,
+.scroll.light-background .dark-background .site_title.content-formatted a,
+.scroll.light-background .dark-background .site_title.content-formatted p,
+.scroll.light-background .dark-background .site_title.content-formatted h1,
+.scroll.light-background .dark-background .site_title.content-formatted h2,
+.scroll.light-background .dark-background .site_title.content-formatted h3,
+.scroll.light-background .dark-background .site_title.content-formatted h4,
+.scroll.light-background .dark-background .site_title.content-formatted h5,
+.scroll.light-background .dark-background .site_title.content-formatted h6,
+.scroll.light-background .dark-background .header_title.content-formatted a,
+.scroll.light-background .dark-background .header_title.content-formatted p,
+.scroll.light-background .dark-background .header_title.content-formatted h1,
+.scroll.light-background .dark-background .header_title.content-formatted h2,
+.scroll.light-background .dark-background .header_title.content-formatted h3,
+.scroll.light-background .dark-background .header_title.content-formatted h4,
+.scroll.light-background .dark-background .header_title.content-formatted h5,
+.scroll.light-background .dark-background .header_title.content-formatted h6,
+* .site_title.content-formatted a,
+* .site_title.content-formatted p,
+* .site_title.content-formatted h1,
+* .site_title.content-formatted h2,
+* .site_title.content-formatted h3,
+* .site_title.content-formatted h4,
+* .site_title.content-formatted h5,
+* .site_title.content-formatted h6,
+* .header_title.content-formatted a,
+* .header_title.content-formatted p,
+* .header_title.content-formatted h1,
+* .header_title.content-formatted h2,
+* .header_title.content-formatted h3,
+* .header_title.content-formatted h4,
+* .header_title.content-formatted h5,
+* .header_title.content-formatted h6 {
+  color: var(--header-mainmenu-color);
+}
+
+.light-background .search-btn svg path,
+.light-background .cart_btn svg g,
+.light-background .cart_btn svg path,
+.light-background .menu_popover-btn svg path,
+.light-background .light-background .search-btn svg path,
+.light-background .light-background .cart_btn svg g,
+.light-background .light-background .cart_btn svg path,
+.light-background .light-background .menu_popover-btn svg path,
+.dark-background .light-background .search-btn svg path,
+.dark-background .light-background .cart_btn svg g,
+.dark-background .light-background .cart_btn svg path,
+.dark-background .light-background .menu_popover-btn svg path,
+.scroll.dark-background .dark-background .search-btn svg path,
+.scroll.dark-background .dark-background .cart_btn svg g,
+.scroll.dark-background .dark-background .cart_btn svg path,
+.scroll.dark-background .dark-background .menu_popover-btn svg path,
+.scroll.light-background .dark-background .search-btn svg path,
+.scroll.light-background .dark-background .cart_btn svg g,
+.scroll.light-background .dark-background .cart_btn svg path,
+.scroll.light-background .dark-background .menu_popover-btn svg path,
+* .search-btn svg path,
+* .cart_btn svg g,
+* .cart_btn svg path,
+* .menu_popover-btn svg path {
+  fill: var(--header-mainmenu-active-color);
+}
+
+.light-background .search-btn:hover svg path,
+.light-background .cart_btn:hover svg g,
+.light-background .cart_btn:hover svg path,
+.light-background .menu_popover-btn:hover svg path,
+.light-background .light-background .search-btn:hover svg path,
+.light-background .light-background .cart_btn:hover svg g,
+.light-background .light-background .cart_btn:hover svg path,
+.light-background .light-background .menu_popover-btn:hover svg path,
+.dark-background .light-background .search-btn:hover svg path,
+.dark-background .light-background .cart_btn:hover svg g,
+.dark-background .light-background .cart_btn:hover svg path,
+.dark-background .light-background .menu_popover-btn:hover svg path,
+.scroll.dark-background .dark-background .search-btn:hover svg path,
+.scroll.dark-background .dark-background .cart_btn:hover svg g,
+.scroll.dark-background .dark-background .cart_btn:hover svg path,
+.scroll.dark-background .dark-background .menu_popover-btn:hover svg path,
+.scroll.light-background .dark-background .search-btn:hover svg path,
+.scroll.light-background .dark-background .cart_btn:hover svg g,
+.scroll.light-background .dark-background .cart_btn:hover svg path,
+.scroll.light-background .dark-background .menu_popover-btn:hover svg path,
+* .search-btn:hover svg path,
+* .cart_btn:hover svg g,
+* .cart_btn:hover svg path,
+* .menu_popover-btn:hover svg path {
+  fill: var(--header-mainmenu-hover-color);
+}
+
+.light-background .menu-btn,
+.light-background .light-background .menu-btn,
+.dark-background .light-background .menu-btn,
+.scroll.dark-background .dark-background .menu-btn,
+.scroll.light-background .dark-background .menu-btn,
+* .menu-btn {
+  color: var(--header-mainmenu-active-color);
+}
+
+.light-background .menu-btn .menu-stripe,
+.light-background .light-background .menu-btn .menu-stripe,
+.dark-background .light-background .menu-btn .menu-stripe,
+.scroll.dark-background .dark-background .menu-btn .menu-stripe,
+.scroll.light-background .dark-background .menu-btn .menu-stripe,
+* .menu-btn .menu-stripe {
+  background-color: var(--header-mainmenu-active-color);
+}
+
+.light-background .menu-btn:hover,
+.light-background .light-background .menu-btn:hover,
+.dark-background .light-background .menu-btn:hover,
+.scroll.dark-background .dark-background .menu-btn:hover,
+.scroll.light-background .dark-background .menu-btn:hover,
+* .menu-btn:hover {
+  color: var(--header-mainmenu-color);
+}
+
+.light-background .menu-btn:hover .menu-stripe,
+.light-background .light-background .menu-btn:hover .menu-stripe,
+.dark-background .light-background .menu-btn:hover .menu-stripe,
+.scroll.dark-background .dark-background .menu-btn:hover .menu-stripe,
+.scroll.light-background .dark-background .menu-btn:hover .menu-stripe,
+* .menu-btn:hover .menu-stripe {
+  background-color: var(--header-mainmenu-color);
+}
+
+.light-background .menu-language-btn,
+.light-background .menu-language-name,
+.light-background .cart_btn .cart_btn-count,
+.light-background .light-background .menu-language-btn,
+.light-background .light-background .menu-language-name,
+.light-background .light-background .cart_btn .cart_btn-count,
+.dark-background .light-background .menu-language-btn,
+.dark-background .light-background .menu-language-name,
+.dark-background .light-background .cart_btn .cart_btn-count,
+.scroll.dark-background .dark-background .menu-language-btn,
+.scroll.dark-background .dark-background .menu-language-name,
+.scroll.dark-background .dark-background .cart_btn .cart_btn-count,
+.scroll.light-background .dark-background .menu-language-btn,
+.scroll.light-background .dark-background .menu-language-name,
+.scroll.light-background .dark-background .cart_btn .cart_btn-count,
+* .menu-language-btn,
+* .menu-language-name,
+* .cart_btn .cart_btn-count {
+  color: var(--header-mainmenu-active-color);
+}
+
+.light-background .menu-language-btn svg path,
+.light-background .menu-language-name svg path,
+.light-background .cart_btn .cart_btn-count svg path,
+.light-background .light-background .menu-language-btn svg path,
+.light-background .light-background .menu-language-name svg path,
+.light-background .light-background .cart_btn .cart_btn-count svg path,
+.dark-background .light-background .menu-language-btn svg path,
+.dark-background .light-background .menu-language-name svg path,
+.dark-background .light-background .cart_btn .cart_btn-count svg path,
+.scroll.dark-background .dark-background .menu-language-btn svg path,
+.scroll.dark-background .dark-background .menu-language-name svg path,
+.scroll.dark-background .dark-background .cart_btn .cart_btn-count svg path,
+.scroll.light-background .dark-background .menu-language-btn svg path,
+.scroll.light-background .dark-background .menu-language-name svg path,
+.scroll.light-background .dark-background .cart_btn .cart_btn-count svg path,
+* .menu-language-btn svg path,
+* .menu-language-name svg path,
+* .cart_btn .cart_btn-count svg path {
+  stroke: var(--header-mainmenu-active-color);
+}
+
+.light-background .menu-language-btn:hover,
+.light-background .menu-language-name:hover,
+.light-background .cart_btn .cart_btn-count:hover,
+.light-background .light-background .menu-language-btn:hover,
+.light-background .light-background .menu-language-name:hover,
+.light-background .light-background .cart_btn .cart_btn-count:hover,
+.dark-background .light-background .menu-language-btn:hover,
+.dark-background .light-background .menu-language-name:hover,
+.dark-background .light-background .cart_btn .cart_btn-count:hover,
+.scroll.dark-background .dark-background .menu-language-btn:hover,
+.scroll.dark-background .dark-background .menu-language-name:hover,
+.scroll.dark-background .dark-background .cart_btn .cart_btn-count:hover,
+.scroll.light-background .dark-background .menu-language-btn:hover,
+.scroll.light-background .dark-background .menu-language-name:hover,
+.scroll.light-background .dark-background .cart_btn .cart_btn-count:hover,
+* .menu-language-btn:hover,
+* .menu-language-name:hover,
+* .cart_btn .cart_btn-count:hover {
+  color: var(--header-mainmenu-color);
+}
+
+.light-background .menu-language-btn:hover svg path,
+.light-background .menu-language-name:hover svg path,
+.light-background .cart_btn .cart_btn-count:hover svg path,
+.light-background .light-background .menu-language-btn:hover svg path,
+.light-background .light-background .menu-language-name:hover svg path,
+.light-background .light-background .cart_btn .cart_btn-count:hover svg path,
+.dark-background .light-background .menu-language-btn:hover svg path,
+.dark-background .light-background .menu-language-name:hover svg path,
+.dark-background .light-background .cart_btn .cart_btn-count:hover svg path,
+.scroll.dark-background .dark-background .menu-language-btn:hover svg path,
+.scroll.dark-background .dark-background .menu-language-name:hover svg path,
+.scroll.dark-background .dark-background .cart_btn .cart_btn-count:hover svg path,
+.scroll.light-background .dark-background .menu-language-btn:hover svg path,
+.scroll.light-background .dark-background .menu-language-name:hover svg path,
+.scroll.light-background .dark-background .cart_btn .cart_btn-count:hover svg path,
+* .menu-language-btn:hover svg path,
+* .menu-language-name:hover svg path,
+* .cart_btn .cart_btn-count:hover svg path {
+  stroke: var(--header-mainmenu-color);
+}
+
+.light-background .menu-main .menu .menu-item a,
+.light-background .light-background .menu-main .menu .menu-item a,
+.dark-background .light-background .menu-main .menu .menu-item a,
+.scroll.dark-background .dark-background .menu-main .menu .menu-item a,
+.scroll.light-background .dark-background .menu-main .menu .menu-item a,
+* .menu-main .menu .menu-item a {
+  color: var(--header-mainmenu-color);
+}
+
+.light-background .menu-main .menu .menu-item a::before,
+.light-background .light-background .menu-main .menu .menu-item a::before,
+.dark-background .light-background .menu-main .menu .menu-item a::before,
+.scroll.dark-background .dark-background .menu-main .menu .menu-item a::before,
+.scroll.light-background .dark-background .menu-main .menu .menu-item a::before,
+* .menu-main .menu .menu-item a::before {
+  background-color: var(--header-mainmenu-color);
+}
+
+.light-background .menu-main .menu .menu-item a:hover,
+.light-background .light-background .menu-main .menu .menu-item a:hover,
+.dark-background .light-background .menu-main .menu .menu-item a:hover,
+.scroll.dark-background .dark-background .menu-main .menu .menu-item a:hover,
+.scroll.light-background .dark-background .menu-main .menu .menu-item a:hover,
+* .menu-main .menu .menu-item a:hover {
+  color: var(--header-mainmenu-hover-color);
+}
+
+.light-background .menu-main .menu .menu-item a.selected,
+.light-background .light-background .menu-main .menu .menu-item a.selected,
+.dark-background .light-background .menu-main .menu .menu-item a.selected,
+.scroll.dark-background .dark-background .menu-main .menu .menu-item a.selected,
+.scroll.light-background .dark-background .menu-main .menu .menu-item a.selected,
+* .menu-main .menu .menu-item a.selected {
+  color: var(--header-mainmenu-active-color);
+  opacity: 1;
+}
+
+.light-background .menu-main .menu .menu-item a.selected::before,
+.light-background .light-background .menu-main .menu .menu-item a.selected::before,
+.dark-background .light-background .menu-main .menu .menu-item a.selected::before,
+.scroll.dark-background .dark-background .menu-main .menu .menu-item a.selected::before,
+.scroll.light-background .dark-background .menu-main .menu .menu-item a.selected::before,
+* .menu-main .menu .menu-item a.selected::before {
+  background-color: var(--header-mainmenu-active-color);
+  opacity: 1;
+}
+
+.light-background .menu-main .menu .menu-item a.selected:hover,
+.light-background .light-background .menu-main .menu .menu-item a.selected:hover,
+.dark-background .light-background .menu-main .menu .menu-item a.selected:hover,
+.scroll.dark-background .dark-background .menu-main .menu .menu-item a.selected:hover,
+.scroll.light-background .dark-background .menu-main .menu .menu-item a.selected:hover,
+* .menu-main .menu .menu-item a.selected:hover {
+  color: var(--header-mainmenu-hover-color);
+}
+
+.light-background .menu-main .menu .menu-item a.selected:hover::before,
+.light-background .light-background .menu-main .menu .menu-item a.selected:hover::before,
+.dark-background .light-background .menu-main .menu .menu-item a.selected:hover::before,
+.scroll.dark-background .dark-background .menu-main .menu .menu-item a.selected:hover::before,
+.scroll.light-background .dark-background .menu-main .menu .menu-item a.selected:hover::before,
+* .menu-main .menu .menu-item a.selected:hover::before {
+  background-color: var(--header-mainmenu-hover-color);
+}
+
+.light-background .menu-main .menu .menu-sub .menu-item a,
+.light-background .light-background .menu-main .menu .menu-sub .menu-item a,
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a,
+.scroll.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a,
+.scroll.light-background .dark-background .menu-main .menu .menu-sub .menu-item a,
+* .menu-main .menu .menu-sub .menu-item a {
+  color: var(--menu-sub-color);
+}
+
+.light-background .menu-main .menu .menu-sub .menu-item a::after,
+.light-background .light-background .menu-main .menu .menu-sub .menu-item a::after,
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a::after,
+.scroll.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a::after,
+.scroll.light-background .dark-background .menu-main .menu .menu-sub .menu-item a::after,
+* .menu-main .menu .menu-sub .menu-item a::after {
+  background-color: var(--menu-sub-color);
+}
+
+.light-background .menu-main .menu .menu-sub .menu-item a.active,
+.light-background .light-background .menu-main .menu .menu-sub .menu-item a.active,
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active,
+.scroll.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a.active,
+.scroll.light-background .dark-background .menu-main .menu .menu-sub .menu-item a.active,
+* .menu-main .menu .menu-sub .menu-item a.active {
+  color: var(--menu-sub-hover-color);
+}
+
+.light-background .menu-main .menu .menu-sub .menu-item a.active::before,
+.light-background .light-background .menu-main .menu .menu-sub .menu-item a.active::before,
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active::before,
+.scroll.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a.active::before,
+.scroll.light-background .dark-background .menu-main .menu .menu-sub .menu-item a.active::before,
+* .menu-main .menu .menu-sub .menu-item a.active::before {
+  border-color: var(--menu-sub-active-color);
+}
+
+.light-background .menu-main .menu .menu-sub .menu-item a.active:hover,
+.light-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover,
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover,
+.scroll.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a.active:hover,
+.scroll.light-background .dark-background .menu-main .menu .menu-sub .menu-item a.active:hover,
+* .menu-main .menu .menu-sub .menu-item a.active:hover {
+  color: var(--menu-sub-color);
+}
+
+.light-background .menu-main .menu .menu-sub .menu-item a.active:hover svg,
+.light-background .menu-main .menu .menu-sub .menu-item a.active:hover path,
+.light-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover svg,
+.light-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover path,
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover svg,
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover path,
+.scroll.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a.active:hover svg,
+.scroll.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a.active:hover path,
+.scroll.light-background .dark-background .menu-main .menu .menu-sub .menu-item a.active:hover svg,
+.scroll.light-background .dark-background .menu-main .menu .menu-sub .menu-item a.active:hover path,
+* .menu-main .menu .menu-sub .menu-item a.active:hover svg,
+* .menu-main .menu .menu-sub .menu-item a.active:hover path {
+  fill: var(--menu-sub-color);
+}
+
+.light-background .menu-main .menu .menu-sub .menu-item a:hover,
+.light-background .light-background .menu-main .menu .menu-sub .menu-item a:hover,
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a:hover,
+.scroll.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a:hover,
+.scroll.light-background .dark-background .menu-main .menu .menu-sub .menu-item a:hover,
+* .menu-main .menu .menu-sub .menu-item a:hover {
+  color: var(--menu-sub-hover-color);
+}
+
+.light-background .menu-main .menu .menu-sub .menu-item a:hover::before,
+.light-background .light-background .menu-main .menu .menu-sub .menu-item a:hover::before,
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a:hover::before,
+.scroll.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a:hover::before,
+.scroll.light-background .dark-background .menu-main .menu .menu-sub .menu-item a:hover::before,
+* .menu-main .menu .menu-sub .menu-item a:hover::before {
+  border-color: var(--menu-sub-hover-color);
+}
+
+.light-background .menu-main .menu .menu-sub .menu-item a::before,
+.light-background .light-background .menu-main .menu .menu-sub .menu-item a::before,
+.dark-background .light-background .menu-main .menu .menu-sub .menu-item a::before,
+.scroll.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a::before,
+.scroll.light-background .dark-background .menu-main .menu .menu-sub .menu-item a::before,
+* .menu-main .menu .menu-sub .menu-item a::before {
+  border-color: var(--menu-sub-hover-color);
+}
+
+.dark-background .dark-background .swiper-container .swiper-button-next:after,
+.dark-background .dark-background .swiper-container .swiper-button-prev:after,
+.light-background .dark-background .swiper-container .swiper-button-next:after,
+.light-background .dark-background .swiper-container .swiper-button-prev:after,
+.dark-background .swiper-container .swiper-button-next:after,
+.dark-background .swiper-container .swiper-button-prev:after {
+  color: var(--third-color);
+}
+
+.dark-background .dark-background .swiper-container .swiper-pagination-bullet,
+.light-background .dark-background .swiper-container .swiper-pagination-bullet,
+.dark-background .swiper-container .swiper-pagination-bullet {
+  background-color: var(--third-color);
+}
+
+.dark-background .dark-background .site_title.content-formatted,
+.dark-background .dark-background .header_title.content-formatted,
+.light-background .dark-background .site_title.content-formatted,
+.light-background .dark-background .header_title.content-formatted,
+.dark-background .site_title.content-formatted,
+.dark-background .header_title.content-formatted {
+  color: var(--third-color);
+}
+
+.dark-background .dark-background .site_title.content-formatted a, .dark-background .dark-background .site_title.content-formatted p, .dark-background .dark-background .site_title.content-formatted h1, .dark-background .dark-background .site_title.content-formatted h2, .dark-background .dark-background .site_title.content-formatted h3, .dark-background .dark-background .site_title.content-formatted h4, .dark-background .dark-background .site_title.content-formatted h5, .dark-background .dark-background .site_title.content-formatted h6,
+.dark-background .dark-background .header_title.content-formatted a,
+.dark-background .dark-background .header_title.content-formatted p,
+.dark-background .dark-background .header_title.content-formatted h1,
+.dark-background .dark-background .header_title.content-formatted h2,
+.dark-background .dark-background .header_title.content-formatted h3,
+.dark-background .dark-background .header_title.content-formatted h4,
+.dark-background .dark-background .header_title.content-formatted h5,
+.dark-background .dark-background .header_title.content-formatted h6,
+.light-background .dark-background .site_title.content-formatted a,
+.light-background .dark-background .site_title.content-formatted p,
+.light-background .dark-background .site_title.content-formatted h1,
+.light-background .dark-background .site_title.content-formatted h2,
+.light-background .dark-background .site_title.content-formatted h3,
+.light-background .dark-background .site_title.content-formatted h4,
+.light-background .dark-background .site_title.content-formatted h5,
+.light-background .dark-background .site_title.content-formatted h6,
+.light-background .dark-background .header_title.content-formatted a,
+.light-background .dark-background .header_title.content-formatted p,
+.light-background .dark-background .header_title.content-formatted h1,
+.light-background .dark-background .header_title.content-formatted h2,
+.light-background .dark-background .header_title.content-formatted h3,
+.light-background .dark-background .header_title.content-formatted h4,
+.light-background .dark-background .header_title.content-formatted h5,
+.light-background .dark-background .header_title.content-formatted h6,
+.dark-background .site_title.content-formatted a,
+.dark-background .site_title.content-formatted p,
+.dark-background .site_title.content-formatted h1,
+.dark-background .site_title.content-formatted h2,
+.dark-background .site_title.content-formatted h3,
+.dark-background .site_title.content-formatted h4,
+.dark-background .site_title.content-formatted h5,
+.dark-background .site_title.content-formatted h6,
+.dark-background .header_title.content-formatted a,
+.dark-background .header_title.content-formatted p,
+.dark-background .header_title.content-formatted h1,
+.dark-background .header_title.content-formatted h2,
+.dark-background .header_title.content-formatted h3,
+.dark-background .header_title.content-formatted h4,
+.dark-background .header_title.content-formatted h5,
+.dark-background .header_title.content-formatted h6 {
+  color: var(--third-color);
+}
+
+.dark-background .dark-background .search-btn svg path,
+.dark-background .dark-background .cart_btn svg g,
+.dark-background .dark-background .cart_btn svg path,
+.dark-background .dark-background .menu_popover-btn svg path,
+.light-background .dark-background .search-btn svg path,
+.light-background .dark-background .cart_btn svg g,
+.light-background .dark-background .cart_btn svg path,
+.light-background .dark-background .menu_popover-btn svg path,
+.dark-background .search-btn svg path,
+.dark-background .cart_btn svg g,
+.dark-background .cart_btn svg path,
+.dark-background .menu_popover-btn svg path {
+  fill: var(--third-color);
+}
+
+.dark-background .dark-background .search-btn:hover svg path,
+.dark-background .dark-background .cart_btn:hover svg g,
+.dark-background .dark-background .cart_btn:hover svg path,
+.dark-background .dark-background .menu_popover-btn:hover svg path,
+.light-background .dark-background .search-btn:hover svg path,
+.light-background .dark-background .cart_btn:hover svg g,
+.light-background .dark-background .cart_btn:hover svg path,
+.light-background .dark-background .menu_popover-btn:hover svg path,
+.dark-background .search-btn:hover svg path,
+.dark-background .cart_btn:hover svg g,
+.dark-background .cart_btn:hover svg path,
+.dark-background .menu_popover-btn:hover svg path {
+  opacity: .7;
+}
+
+.dark-background .dark-background .menu-btn,
+.light-background .dark-background .menu-btn,
+.dark-background .menu-btn {
+  color: var(--third-color);
+}
+
+.dark-background .dark-background .menu-btn .menu-stripe,
+.light-background .dark-background .menu-btn .menu-stripe,
+.dark-background .menu-btn .menu-stripe {
+  background-color: var(--third-color);
+}
+
+.dark-background .dark-background .menu-btn:hover,
+.light-background .dark-background .menu-btn:hover,
+.dark-background .menu-btn:hover {
+  opacity: .7;
+}
+
+.dark-background .dark-background .menu-language-btn,
+.dark-background .dark-background .menu-language-name,
+.dark-background .dark-background .cart_btn .cart_btn-count,
+.light-background .dark-background .menu-language-btn,
+.light-background .dark-background .menu-language-name,
+.light-background .dark-background .cart_btn .cart_btn-count,
+.dark-background .menu-language-btn,
+.dark-background .menu-language-name,
+.dark-background .cart_btn .cart_btn-count {
+  color: var(--third-color);
+}
+
+.dark-background .dark-background .menu-language-btn svg path,
+.dark-background .dark-background .menu-language-name svg path,
+.dark-background .dark-background .cart_btn .cart_btn-count svg path,
+.light-background .dark-background .menu-language-btn svg path,
+.light-background .dark-background .menu-language-name svg path,
+.light-background .dark-background .cart_btn .cart_btn-count svg path,
+.dark-background .menu-language-btn svg path,
+.dark-background .menu-language-name svg path,
+.dark-background .cart_btn .cart_btn-count svg path {
+  stroke: var(--third-color);
+}
+
+.dark-background .dark-background .menu-language-btn:hover,
+.dark-background .dark-background .menu-language-name:hover,
+.dark-background .dark-background .cart_btn .cart_btn-count:hover,
+.light-background .dark-background .menu-language-btn:hover,
+.light-background .dark-background .menu-language-name:hover,
+.light-background .dark-background .cart_btn .cart_btn-count:hover,
+.dark-background .menu-language-btn:hover,
+.dark-background .menu-language-name:hover,
+.dark-background .cart_btn .cart_btn-count:hover {
+  opacity: .7;
+}
+
+.dark-background .dark-background .menu-main .menu .menu-item a,
+.light-background .dark-background .menu-main .menu .menu-item a,
+.dark-background .menu-main .menu .menu-item a {
+  color: var(--third-color);
+}
+
+.dark-background .dark-background .menu-main .menu .menu-item a::before,
+.light-background .dark-background .menu-main .menu .menu-item a::before,
+.dark-background .menu-main .menu .menu-item a::before {
+  background-color: var(--third-color);
+}
+
+.dark-background .dark-background .menu-main .menu .menu-item a:hover,
+.light-background .dark-background .menu-main .menu .menu-item a:hover,
+.dark-background .menu-main .menu .menu-item a:hover {
+  opacity: .7;
+}
+
+.dark-background .dark-background .menu-main .menu .menu-item a.selected,
+.light-background .dark-background .menu-main .menu .menu-item a.selected,
+.dark-background .menu-main .menu .menu-item a.selected {
+  color: var(--third-color);
+}
+
+.dark-background .dark-background .menu-main .menu .menu-item a.selected::before,
+.light-background .dark-background .menu-main .menu .menu-item a.selected::before,
+.dark-background .menu-main .menu .menu-item a.selected::before {
+  background-color: var(--third-color);
+}
+
+.dark-background .dark-background .menu-main .menu .menu-item a.selected:hover,
+.light-background .dark-background .menu-main .menu .menu-item a.selected:hover,
+.dark-background .menu-main .menu .menu-item a.selected:hover {
+  opacity: .7;
+}
+
+.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a,
+.light-background .dark-background .menu-main .menu .menu-sub .menu-item a,
+.dark-background .menu-main .menu .menu-sub .menu-item a {
+  color: var(--third-color);
+}
+
+.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a::after,
+.light-background .dark-background .menu-main .menu .menu-sub .menu-item a::after,
+.dark-background .menu-main .menu .menu-sub .menu-item a::after {
+  background-color: var(--third-color);
+}
+
+.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a.active,
+.light-background .dark-background .menu-main .menu .menu-sub .menu-item a.active,
+.dark-background .menu-main .menu .menu-sub .menu-item a.active {
+  color: var(--third-color);
+}
+
+.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a.active::before,
+.light-background .dark-background .menu-main .menu .menu-sub .menu-item a.active::before,
+.dark-background .menu-main .menu .menu-sub .menu-item a.active::before {
+  border-color: var(--menu-sub-active-color);
+}
+
+.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a.active:hover,
+.light-background .dark-background .menu-main .menu .menu-sub .menu-item a.active:hover,
+.dark-background .menu-main .menu .menu-sub .menu-item a.active:hover {
+  opacity: .7;
+}
+
+.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a:hover,
+.light-background .dark-background .menu-main .menu .menu-sub .menu-item a:hover,
+.dark-background .menu-main .menu .menu-sub .menu-item a:hover {
+  opacity: .7;
+}
+
+.dark-background .dark-background .menu-main .menu .menu-sub .menu-item a::before,
+.light-background .dark-background .menu-main .menu .menu-sub .menu-item a::before,
+.dark-background .menu-main .menu .menu-sub .menu-item a::before {
+  border-color: var(--third-color);
 }

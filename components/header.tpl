@@ -9,7 +9,9 @@
 
 {%- include 'menu-main-iteration' -%}
 {%- include "site-search" %}
-{% include 'header-fixed', _menuTop: menuTop -%}
+<div{% if _className != blank %} class="{{_className}}"{% endif %}>
+  {% include 'header-fixed', _menuTop: menuTop -%}
+</div>
 {% include 'cart-popover' %}
 
 {%- if menuSettings.max_width >= 1 -%}

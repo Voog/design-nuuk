@@ -53,6 +53,14 @@
           allowTouchMove: conditionalBool,
           slideToClickedSlide: conditionalBool
         });
+
+        swiper.on('realIndexChange', function () {
+          var slideIndex = swiper.realIndex + 1;
+          var headerWrapper = $('.front-page_header[class*="front-header-bg_picker--area--"]');
+          var activeSlideBgType = $('.front-header-bg_picker--area--' + slideIndex).data('bg-type');
+
+          headerWrapper.attr('class', 'front-page_header front-header-bg_picker--area--' + slideIndex + ' ' + activeSlideBgType);
+        });
       }
     }
   </script>
