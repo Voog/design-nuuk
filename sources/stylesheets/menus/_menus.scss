@@ -175,7 +175,6 @@
   }
 }
 
-
 // Styling rules for the site's main menu.
 .menu-main {
   height: 100%;
@@ -203,8 +202,6 @@
         align-items: center;
         position: relative;
 
-
-
         .semimodal & {
           padding-left: 24px;
 
@@ -212,6 +209,15 @@
             padding-left: 0;
           }
         }
+      }
+
+        header.menu-top &:not(:nth-of-type(n+6)).dd-arrow {
+        padding-right: 16px;
+        background-image: url('/assets/chevron-down-black.svg');
+        background-size: 10px 8px;
+        background-repeat: no-repeat;
+        background-position: right center;
+        cursor: pointer;
       }
     }
 
@@ -278,6 +284,7 @@
       }
     }
   }
+
   @include query($tablet-1, 'min-width') {
     &:not(.menu_top) {
       .menu {
@@ -449,6 +456,65 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+.dropdown_menu {
+  &-popover {
+    position: relative;
+    width: 216px;
+    background-color: rgba($black, 1);
+    border-color: rgba($primary-color, .1);
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 2px 10px rgba($primary-color, .07);
+
+    .menu {
+      padding: 16px 0;
+
+      &-vertical {
+        display: flex;
+        flex-direction: column !important;
+      }
+
+      .menu-item {
+        padding: 0 24px;
+        margin-right: 0;
+        width: calc(100% - 48px);
+
+        &:hover {
+          background-color: #383A3A;
+          opacity: 1;
+        }
+
+        a {
+          color: $white !important;
+          height: 40px;
+          font-size: 18px;
+          line-height: 36px;
+        }
+      }
+    }
+
+    &--wrap {
+      position: absolute;
+      top: calc((var(--header-mainmenu-font-size) * var(--header-mainmenu-line-height)));
+      opacity: 0;
+      pointer-events: none;
+      padding-top: 8px;
+      @include transition(opacity 200ms);
+
+      .semimodal_bottom & {
+        right: unset;
+        left: 0;
+      }
+
+      &:hover, &.active, .menu.item.lvl-1.dd-arrow:hover {
+        z-index: 2;
+        opacity: 1;
+        pointer-events: all;
       }
     }
   }

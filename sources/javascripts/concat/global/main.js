@@ -170,8 +170,19 @@
 
     var toggleMenuPopover = function() {
       $('.menu_popover').toggleClass('active');
-
     }
+
+    var toggleMenuDropdown = function(data_url) {
+      $('nav[data-url="'+ data_url +'"]').parent().toggleClass("active");
+    }
+
+    $('.dd-arrow').hover(function () {
+      if ($('header').hasClass('menu-top')) {
+        $this = $(this);
+        let data_url = $this.data('url');
+        toggleMenuDropdown(data_url);
+      }
+    })
 
     $('.js-menu-popover-btn').click(function() {
       toggleMenuPopover();

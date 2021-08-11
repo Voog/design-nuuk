@@ -20,7 +20,6 @@
   {%- assign isProductItemVisible = true -%}
 {%- endif -%}
 
-
 {%- capture menu_main -%}
   {% for item in site.visible_menuitems %}
     {% capture menu_main_lvl_1_item %}
@@ -43,6 +42,7 @@
         {%- endif -%}
 
         {% if editmode or isMenuItemVisible == true %}
+
           {% if isMenuItemVisible != true %}
             {%- assign itemTag = 'div' -%}
           {% else %}
@@ -50,12 +50,17 @@
             {%- assign itemTag = 'li' -%}
           {% endif %}
           <{{itemTag}}
+            data-url={{item.url}}
             data-visible={{isMenuItemVisible}}
-            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}"
+            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if item.visible_children.size > 0 %} dd-arrow{% endif %}"
           >
-            {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" untranslated-class="untranslated fci-editor-menuadd" -%}
+          {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" untranslated-class="untranslated fci-editor-menuadd" -%}
+          {% if item.visible_children.size > 0 %}
+            {% include "menu-dropdown-popover" %}
+          {% endif %}
           </{{itemTag}}>
         {% endif %}
+
       {% else %}
         {%- assign menuItemCount = menuItemCount | plus: 1 -%}
         {%- assign isMenuItemVisible = true -%}
