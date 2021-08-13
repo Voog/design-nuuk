@@ -20,9 +20,22 @@
   {%- assign isProductItemVisible = true -%}
 {%- endif -%}
 
+{%- if item.layout_title == product_layout and isProductItemVisible-%}
+  {%- assign displayArrow = "dd-arrow" -%}
+{%- elsif item.layout_title == product_list_layout and isProductListItemVisible -%}
+  {%- assign displayArrow = "dd-arrow" -%}
+{%- else -%}
+  {%- assign displayArrow = "dd-arrow" -%}
+{%- endif -%}
+
 {%- capture menu_main -%}
   {% for item in site.visible_menuitems %}
     {% capture menu_main_lvl_1_item %}
+      {% capture menu_dropdown %}
+        {% if item.visible_children.size > 0 %}
+          {% include "menu-dropdown-popover" %}
+        {% endif %}
+      {% endcapture %}
       {%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}
         {%- if item.layout_title == product_list_layout -%}
           {%- assign itemClass = 'menu-item-product-list' -%}
@@ -50,13 +63,13 @@
             {%- assign itemTag = 'li' -%}
           {% endif %}
           <{{itemTag}}
-            data-url={{item.url}}
+            data-url="{{ item.url }}"
             data-visible={{isMenuItemVisible}}
-            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if item.visible_children.size > 0 %} dd-arrow{% endif %}"
+            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %} {% if dd_menuitems != blank and item.visible_children.size > 0 %}{{ displayArrow }}{% endif %}"
           >
           {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" untranslated-class="untranslated fci-editor-menuadd" -%}
-          {% if item.visible_children.size > 0 %}
-            {% include "menu-dropdown-popover" %}
+          {% if dd_menuitems != blank %}
+            {{ menu_dropdown }}
           {% endif %}
           </{{itemTag}}>
         {% endif %}
@@ -65,9 +78,13 @@
         {%- assign menuItemCount = menuItemCount | plus: 1 -%}
         {%- assign isMenuItemVisible = true -%}
         <li
+          data-url="{{ item.url }}"
           data-visible=true
-          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1">
+          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1 {% if dd_menuitems != blank and item.visible_children.size > 0 %}{{ displayArrow }}{% endif %}">
           {%- menulink item current-class="active" untranslated-class="untranslated fci-editor-menuadd" -%}
+          {% if dd_menuitems != blank %}
+            {{ menu_dropdown }}
+          {% endif %}
         </li>
       {% endif -%}
     {%- endcapture -%}

@@ -213,7 +213,7 @@
 
         header.menu-top &:not(:nth-of-type(n+6)).dd-arrow {
         padding-right: 16px;
-        background-image: url('/assets/chevron-down-black.svg');
+        background-image: url('../assets/chevron-down-black.svg');
         background-size: 10px 8px;
         background-repeat: no-repeat;
         background-position: right center;
@@ -491,7 +491,7 @@
 
         a {
           color: $white !important;
-          height: 40px;
+          min-height: 40px;
           font-size: 18px;
           line-height: 36px;
         }

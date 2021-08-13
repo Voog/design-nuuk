@@ -5455,7 +5455,7 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
 
 header.menu-top .menu-main .menu .menu-item:not(:nth-of-type(n+6)).dd-arrow {
   padding-right: 16px;
-  background-image: url("/assets/chevron-down-black.svg");
+  background-image: url("../assets/chevron-down-black.svg");
   background-size: 10px 8px;
   background-repeat: no-repeat;
   background-position: right center;
@@ -5769,7 +5769,7 @@ header.menu-top .menu-main .menu .menu-item:not(:nth-of-type(n+6)).dd-arrow {
 
 .dropdown_menu-popover .menu .menu-item a {
   color: #ffffff !important;
-  height: 40px;
+  min-height: 40px;
   font-size: 18px;
   line-height: 36px;
 }
