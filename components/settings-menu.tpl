@@ -102,12 +102,18 @@
               $('.js-menu-main').addClass('menu_top');
               $('.js-menu-popover, .js-menu-popover').removeClass('d-none');
               $('html').removeClass('semimodal-open');
+              if (!$('html').hasClass('semimodal-open')) {
+                $('.dd-arrow').attr('data-arrow', 'active');
+              }
             } else {
               $('.js-menu-btn, .semimodal').removeClass('hidden-desktop');
               $('.js-menu-main-wrapper').addClass('hidden-tablet');
               $('.js-menu-main-wrapper').addClass('hidden-desktop');
               $('.js-menu-main').removeClass('menu_top');
               $('.js-menu-popover, .js-menu-popover').addClass('d-none');
+              if ($('html').hasClass('semimodal-open')) {
+                $('.dd-arrow').attr('data-arrow', 'inactive');
+              }
             }
 
             if (data.positioning === 'is_top') {

@@ -181,14 +181,17 @@
       }
     });
 
+    $('.js-menu-popover-btn').on('click', function(e) {
+      e.preventDefault();
+      setTimeout(function() {
+        toggleMenuPopover();
+        checkIfDropdownEmpty();
+      })
+    });
+
     var toggleMenuPopover = function() {
       $('.menu_popover').toggleClass('active');
     }
-
-    $('.js-menu-popover-btn').on('click', function() {
-      toggleMenuPopover();
-      checkIfDropdownEmpty();
-    });
 
     $('.editor_default-btn').click(function() {
       $(this).closest('.editor_default-container').addClass('active');
