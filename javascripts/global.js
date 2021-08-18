@@ -709,24 +709,26 @@ MMCQ = (function() {
 
     handleFocus($('.js-toggle-image-settings'), toggleImageSettingsPopover);
 
+    var toggleMenuDropdown = function(data_url) {
+      $('div[data-url="'+ data_url +'"]:visible').toggleClass("active");
+    }
+
+    $('.menu-main').on('mouseenter mouseleave', '.dd-arrow', function() {
+      let popoverDiv = $(this).children()[1];
+
+      if ($('header').hasClass('menu-top') && window.innerWidth > 900 && $(popoverDiv).find('.menu').children(':visible').length > 0) {
+        let data_url = $(this).data('url');
+        toggleMenuDropdown(data_url);
+      }
+    });
+
     var toggleMenuPopover = function() {
       $('.menu_popover').toggleClass('active');
     }
 
-    var toggleMenuDropdown = function(data_url) {
-      $('nav[data-url="'+ data_url +'"]').parent().toggleClass("active");
-    }
-
-    $('.dd-arrow').hover(function () {
-      if ($('header').hasClass('menu-top')) {
-        $this = $(this);
-        let data_url = $this.data('url');
-        toggleMenuDropdown(data_url);
-      }
-    })
-
-    $('.js-menu-popover-btn').click(function() {
+    $('.js-menu-popover-btn').on('click', function() {
       toggleMenuPopover();
+      checkIfDropdownEmpty();
     });
 
     $('.editor_default-btn').click(function() {
@@ -864,6 +866,17 @@ MMCQ = (function() {
         }
       }
     }
+  }
+
+  var checkIfDropdownEmpty = function () {
+    $.each($('.dd-arrow'), function() {
+      let popoverDiv = $(this).children()[1];
+      if ($(popoverDiv).find('.dropdown_menu-popover .menu').children(':visible').length > 0) {
+        $(this).attr('data-arrow', 'active');
+      } else {
+        $(this).attr('data-arrow', 'inactive');
+      }
+    })
   }
 
   // Initiates the table horisontal scroll function when window is resized.
@@ -1147,6 +1160,8 @@ MMCQ = (function() {
     handleDocument();
     buildCustomShoppingCartIcon();
     handleBlockColumnsWidth();
+    checkIfDropdownEmpty();
+
 
     if (!editmode()) {
       wrapTables();

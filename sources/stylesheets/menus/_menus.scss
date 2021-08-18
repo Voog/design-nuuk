@@ -131,6 +131,14 @@
     &.menu_top-list {
       .menu-item.lvl-1 {
         display: none;
+
+        &:nth-of-type(-n+5).dd-arrow[data-arrow="active"] {
+          padding-right: 16px;
+        }
+
+        &:nth-of-type(-n+5).dd-arrow[data-arrow="inactive"] {
+          padding-right: 0;
+        }
       }
 
       li.menu-item.lvl-1:nth-of-type(-n+5) {
@@ -152,6 +160,7 @@
     .menu-item a {
       max-width: 160px;
     }
+
   }
 
   .menu-item {
@@ -211,30 +220,42 @@
         }
       }
 
-        header.menu-top &:not(:nth-of-type(n+6)).dd-arrow {
-        padding-right: 16px;
-        background-image: url('../assets/chevron-down-black.svg');
-        background-size: 10px 8px;
-        background-repeat: no-repeat;
-        background-position: right center;
-        cursor: pointer;
+      @include query($tablet-1, 'min-width') {
+        &:not(.menu-popover).dd-arrow {
+          &[data-arrow="active"] {
+            background-image: url('../assets/chevron-down-black.svg');
+            background-size: 10px 8px;
+            background-repeat: no-repeat;
+            background-position: right center;
+            cursor: pointer;
+          }
+          &[data-arrow="inactive"] {
+            background: none;
+          }
+        }
       }
     }
 
     .menu_ {
       &popover {
         opacity: 0;
+        width: 216px;
         pointer-events: none;
         position: absolute;
         top: calc((var(--header-mainmenu-font-size) * var(--header-mainmenu-line-height)) + 8px);
         right: 0;
         @include transition(opacity 200ms);
 
+        &-list {
+          background-color: $black;
+          padding: 16px 0;
+        }
+
         .menu {
           flex-direction: column;
 
           .menu-item {
-            margin: 0;
+
             width: 100%;
             display: none;
 
@@ -246,6 +267,18 @@
               }
             }
 
+            .dropdown_menu-popover {
+              &--wrap {
+                top: 0;
+                left: 100%;
+                padding: 0 0 0 8px;
+              }
+
+              .menu-item {
+                display: inline-flex;
+              }
+            }
+
             .publicmode & {
               display: inline-flex;
             }
@@ -253,15 +286,30 @@
             a,
             .settings-btn {
               padding: 8px 40px 8px 24px;
-              background-color: $black;
               color: $white;
               width: 100%;
               @include transition(background-color 200ms);
 
               &:hover {
-                background-color: $grey;
                 color: $white;
               }
+            }
+
+            &.dd-arrow[data-arrow="active"] {
+              background-image: url('../assets/ico-arrow-right-white-small.svg');
+              background-repeat: no-repeat;
+              background-size: 10px 8px;
+              background-position: 90% center;
+              cursor: pointer;
+            }
+
+            &.dd-arrow[data-arrow="inactive"] {
+              background-image: none;
+            }
+
+            &:hover {
+              background-color: #383A3A;
+              color: $white;
             }
           }
         }
@@ -269,7 +317,6 @@
         &.active {
           opacity: 1;
           pointer-events: all;
-          background-color: $white;
         }
 
         &-btn {
@@ -280,6 +327,10 @@
           .semimodal_inner & {
             display: none;
           }
+        }
+
+        .dropdown_menu-popover {
+          .menu-item { padding: 0; }
         }
       }
     }
@@ -477,6 +528,7 @@
       &-vertical {
         display: flex;
         flex-direction: column !important;
+        align-items: flex-start !important;
       }
 
       .menu-item {
