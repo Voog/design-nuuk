@@ -20,15 +20,13 @@
   {%- assign isProductItemVisible = true -%}
 {%- endif -%}
 
-{% if menuSettings.positioning == "is_top" or menuSettings.positioning == "is_top_fixed" %}
-  {%- if item.layout_title == product_layout and isProductItemVisible -%}
-    {%- assign displayArrow = "dd-arrow" -%}
-  {%- elsif item.layout_title == product_list_layout and isProductListItemVisible -%}
-    {%- assign displayArrow = "dd-arrow" -%}
-  {%- else -%}
-    {%- assign displayArrow = "dd-arrow" -%}
-  {%- endif -%}
-{% endif %}
+{%- if item.layout_title == product_layout and isProductItemVisible -%}
+  {%- assign displayArrow = "dd-arrow" -%}
+{%- elsif item.layout_title == product_list_layout and isProductListItemVisible -%}
+  {%- assign displayArrow = "dd-arrow" -%}
+{%- else -%}
+  {%- assign displayArrow = "dd-arrow" -%}
+{%- endif -%}
 
 {%- capture menu_main -%}
   {% for item in site.visible_menuitems %}
