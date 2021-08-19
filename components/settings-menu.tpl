@@ -161,7 +161,7 @@
 
 
             function checkIfDropdownEmpty() {
-              $.each($('.dd-arrow'), function() {
+              $.each($('.dd-arrow'), function () {
                 let popoverDiv = $(this).children()[1];
                 if ($(popoverDiv).find('.menu').children(':visible').length === 0) {
                   $(this).attr('data-arrow', 'inactive');
@@ -169,26 +169,31 @@
                   $(this).attr('data-arrow', 'active');
                 }
               })
+              if ($('.menu-popover-list').children(':visible').length > 0) {
+                $('.menu_popover-list').attr('style', 'padding: 16px 0');
+              } else {
+                $('.menu_popover-list').attr('style', 'padding: 0');
+              }
             }
 
             if (data.is_product_page_visible == true) {
               replaceElementTag('.menu-item-product', '<li></li>');
               $('.menu-item-product').attr('data-visible', true);
-              checkIfDropdownEmpty()
+              checkIfDropdownEmpty();
             } else {
               replaceElementTag('.menu-item-product', '<div></div>');
               $('.menu-item-product').attr('data-visible', false);
-              checkIfDropdownEmpty()
+              checkIfDropdownEmpty();
             }
 
             if (data.is_product_list_page_visible == true) {
               replaceElementTag('.menu-item-product-list', '<li></li>');
               $('.menu-item-product-list').attr('data-visible', true);
-              checkIfDropdownEmpty()
+              checkIfDropdownEmpty();
             } else {
               replaceElementTag('.menu-item-product-list', '<div></div>');
               $('.menu-item-product-list').attr('data-visible', false);
-              checkIfDropdownEmpty()
+              checkIfDropdownEmpty();
             }
 
             {%- if menuSettings.max_width != blank -%}
