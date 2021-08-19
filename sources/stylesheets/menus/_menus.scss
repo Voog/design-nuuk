@@ -290,8 +290,8 @@
               width: 100%;
               @include transition(background-color 200ms);
 
-              &:hover {
-                color: $white;
+              &.untranslated {
+                color: $red;
               }
             }
 
@@ -546,6 +546,10 @@
           min-height: 40px;
           font-size: 18px;
           line-height: 36px;
+
+          &.untranslated {
+            color: $red !important;
+          }
         }
       }
     }

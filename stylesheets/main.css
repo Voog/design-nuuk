@@ -5557,9 +5557,9 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
           backface-visibility: hidden;
 }
 
-.menu-main .menu .menu_popover .menu .menu-item a:hover,
-.menu-main .menu .menu_popover .menu .menu-item .settings-btn:hover {
-  color: #ffffff;
+.menu-main .menu .menu_popover .menu .menu-item a.untranslated,
+.menu-main .menu .menu_popover .menu .menu-item .settings-btn.untranslated {
+  color: #C5292A;
 }
 
 .menu-main .menu .menu_popover .menu .menu-item.dd-arrow[data-arrow="active"] {
@@ -5822,6 +5822,10 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
   min-height: 40px;
   font-size: 18px;
   line-height: 36px;
+}
+
+.dropdown_menu-popover .menu .menu-item a.untranslated {
+  color: #C5292A !important;
 }
 
 .dropdown_menu-popover--wrap {

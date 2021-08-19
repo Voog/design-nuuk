@@ -34,7 +34,9 @@
   {% for item in site.visible_menuitems %}
     {% capture menu_main_lvl_1_item %}
       {% capture menu_dropdown %}
-        {% include "menu-dropdown-popover" item: item %}
+        {%- if item.translated? -%}
+          {% include "menu-dropdown-popover" item: item %}
+        {%- endif -%}
       {% endcapture %}
       {%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}
         {%- if item.layout_title == product_list_layout -%}
@@ -68,7 +70,7 @@
             data-visible={{isMenuItemVisible}}
             class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %} {% if menu_dropdown != blank and item.visible_children.size > 0 %}{{ displayArrow }}{% endif %}"
           >
-          {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" untranslated-class="untranslated fci-editor-menuadd" -%}
+          {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" -%}
           {% if menu_dropdown != blank %}
             {{ menu_dropdown }}
           {% endif %}
@@ -83,7 +85,7 @@
           data-url="{{ item.url }}"
           data-visible=true
           class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1 {% if menu_dropdown != blank and item.visible_children.size > 0 %}{{ displayArrow }}{% endif %}">
-          {%- menulink item current-class="active" untranslated-class="untranslated fci-editor-menuadd" -%}
+          {%- menulink item current-class="active" -%}
           {% if menu_dropdown != blank %}
             {{ menu_dropdown }}
           {% endif %}
@@ -130,13 +132,13 @@
                     {%- endif -%}
 
                     <div class="{{subItemClass}} {{menuSubItemDisplayClass}}">
-                      {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" untranslated-class="untranslated fci-editor-menuadd" -%}
+                      {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" -%}
                       {% if menu_dropdown != blank %}
                         {{ menu_dropdown }}
                       {% endif %}
                     </div>
                   {% else %}
-                    {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item menu-item-sub" current-class="active" untranslated-class="untranslated fci-editor-menuadd" -%}
+                    {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item menu-item-sub" current-class="active" -%}
                   {% endif %}
                 {%- endfor %}
                 {%- if item.hidden_children.size > 0 -%}
