@@ -20,6 +20,12 @@
   {%- assign isProductItemVisible = true -%}
 {%- endif -%}
 
+{%- if menuSettings.positioning == 'is_top' or menuSettings.positioning == 'is_top_fixed' -%}
+  {%- assign menuPos = true -%}
+{%- else -%}
+  {%- assign menuPos = false -%}
+{%- endif -%}
+
 {%- capture menu_main -%}
   {% for item in site.visible_menuitems %}
     {% capture menu_main_lvl_1_item %}
@@ -55,10 +61,10 @@
             {%- assign itemTag = 'li' -%}
           {% endif %}
           <{{itemTag}}
-            data-arrow=""
+            data-arrow="active"
             data-url="{{ item.url }}"
             {% if editmode %}data-visible={{isMenuItemVisible}}{% endif %}
-            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank %} dd-arrow{% endif %}"
+            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPos == true %} dd-arrow{% endif %}"
           >
           {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" -%}
           {% if menu_dropdown != blank %}
@@ -71,10 +77,10 @@
         {%- assign menuItemCount = menuItemCount | plus: 1 -%}
         {%- assign isMenuItemVisible = true -%}
         <li
-          data-arrow=""
+          data-arrow="active"
           data-url="{{ item.url }}"
           {% if editmode %}data-visible="true"{% endif %}
-          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank %} dd-arrow{% endif %}">
+          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank and menuPos == true %} dd-arrow{% endif %}">
           {%- menulink item current-class="active" -%}
           {% if menu_dropdown != blank %}
             {{ menu_dropdown }}
