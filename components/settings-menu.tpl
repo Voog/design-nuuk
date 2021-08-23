@@ -169,10 +169,10 @@
                   $(this).attr('data-arrow', 'active');
                 }
               })
-              if ($('.menu-popover-list').children(':visible').length > 0) {
-                $('.menu_popover-list').attr('style', 'padding: 16px 0');
+              if ($('.menu_popover-list').children(':visible').length == 0) {
+                $('.menu_popover-list').css('padding', '0');
               } else {
-                $('.menu_popover-list').attr('style', 'padding: 0');
+                $('.menu_popover-list').css('padding', '16px 0');
               }
             }
 

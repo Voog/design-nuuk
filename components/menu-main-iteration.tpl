@@ -20,13 +20,7 @@
   {%- assign isProductItemVisible = true -%}
 {%- endif -%}
 
-{%- if item.layout_title == product_layout and isProductItemVisible -%}
-  {%- assign displayArrow = "dd-arrow" -%}
-{%- elsif item.layout_title == product_list_layout and isProductListItemVisible -%}
-  {%- assign displayArrow = "dd-arrow" -%}
-{%- else -%}
-  {%- assign displayArrow = "dd-arrow" -%}
-{%- endif -%}
+{% if menu_dropdown != blank %}dd-arrow{% endif %}
 
 {%- capture menu_main -%}
   {% for item in site.visible_menuitems %}
@@ -65,8 +59,8 @@
           <{{itemTag}}
             data-arrow="active"
             data-url="{{ item.url }}"
-            data-visible={{isMenuItemVisible}}
-            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %} {% if menu_dropdown != blank and item.visible_children.size > 0 %}{{ displayArrow }}{% endif %}"
+            {% if editmode %}data-visible={{isMenuItemVisible}}{% endif %}
+            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank %} dd-arrow{% endif %}"
           >
           {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" -%}
           {% if menu_dropdown != blank %}
@@ -81,8 +75,8 @@
         <li
           data-arrow="active"
           data-url="{{ item.url }}"
-          data-visible=true
-          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1 {% if menu_dropdown != blank and item.visible_children.size > 0 %}{{ displayArrow }}{% endif %}">
+          {% if editmode %}data-visible="true"{% endif %}
+          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank %} dd-arrow{% endif %}">
           {%- menulink item current-class="active" -%}
           {% if menu_dropdown != blank %}
             {{ menu_dropdown }}
