@@ -20,8 +20,6 @@
   {%- assign isProductItemVisible = true -%}
 {%- endif -%}
 
-{% if menu_dropdown != blank %}dd-arrow{% endif %}
-
 {%- capture menu_main -%}
   {% for item in site.visible_menuitems %}
     {% capture menu_main_lvl_1_item %}
@@ -57,7 +55,7 @@
             {%- assign itemTag = 'li' -%}
           {% endif %}
           <{{itemTag}}
-            data-arrow="active"
+            data-arrow=""
             data-url="{{ item.url }}"
             {% if editmode %}data-visible={{isMenuItemVisible}}{% endif %}
             class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank %} dd-arrow{% endif %}"
@@ -73,7 +71,7 @@
         {%- assign menuItemCount = menuItemCount | plus: 1 -%}
         {%- assign isMenuItemVisible = true -%}
         <li
-          data-arrow="active"
+          data-arrow=""
           data-url="{{ item.url }}"
           {% if editmode %}data-visible="true"{% endif %}
           class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank %} dd-arrow{% endif %}">
