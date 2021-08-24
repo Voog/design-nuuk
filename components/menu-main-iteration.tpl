@@ -62,10 +62,11 @@
             {%- assign menuItemCount = menuItemCount | plus: 1 -%}
             {%- assign itemTag = 'li' -%}
           {% endif %}
+
           <{{itemTag}}
             {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
             data-url="{{ item.url }}"
-            {% if editmode or isMenuItemVisible == true %}data-visible={{isMenuItemVisible}}{% endif %}
+            {% if editmode or isMenuItemVisible == true %}data-visible="{{isMenuItemVisible}}"{% endif %}
             class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
           >
           {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" -%}
@@ -129,12 +130,20 @@
                       {%- assign subItemClass = 'menu-item-product menu-item-sub' -%}
                     {%- endif -%}
 
-                    <div class="{{subItemClass}}" {% if editmode or isSubMenuItemVisible == true %}data-visible="{{isSubMenuItemVisible}}{% endif %}">
-                      {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" -%}
-                      {% if menu_dropdown != blank %}
-                        {{ menu_dropdown }}
+                    {% if editmode or isSubMenuItemVisible == true %}
+                      {% if isSubMenuItemVisible != true %}
+                        {%- assign itemTag = 'div' -%}
+                      {% else %}
+                        {%- assign itemTag = 'li' -%}
                       {% endif %}
-                    </div>
+
+                      <{{itemTag}}
+                        class="menu-item {{subItemClass}}"
+                        {% if editmode or isSubMenuItemVisible %}data-visible="{{isSubMenuItemVisible}}"{% endif %}
+                      >
+                        {%- menulink subitem current-class="active" -%}
+                      </{{itemTag}}>
+                    {% endif %}
                   {% else %}
                     {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item menu-item-sub" current-class="active" -%}
                   {% endif %}
