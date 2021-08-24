@@ -30,9 +30,11 @@
   {% for item in site.visible_menuitems %}
     {% capture menu_main_lvl_1_item %}
       {% capture menu_dropdown %}
-        {%- if item.translated? -%}
-          {% include "menu-dropdown-popover" item: item %}
-        {%- endif -%}
+        {% if editmode or menuPosTop == true %}
+          {%- if item.translated? -%}
+            {% include "menu-dropdown-popover" item: item %}
+          {%- endif -%}
+        {% endif %}
       {% endcapture %}
       {%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}
         {%- if item.layout_title == product_list_layout -%}
@@ -63,7 +65,7 @@
           <{{itemTag}}
             {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
             data-url="{{ item.url }}"
-            {% if editmode %}data-visible={{isMenuItemVisible}}{% endif %}
+            {% if editmode or isMenuItemVisible == true %}data-visible={{isMenuItemVisible}}{% endif %}
             class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
           >
           {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" -%}
@@ -105,7 +107,7 @@
     {%- if item.selected? -%}
       {%- if item.children? or editmode -%}
         {%- unless item.blog? %}
-          <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{isMenuItemVisible}}{%- endif -%}">
+          <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}}{%- endif -%}" {% if editmode or isMenuItemVisible == true %}data-visible="{{isMenuItemVisible}}"{% endif %}>
             <div class="menu-sub active">
               <ul class="menu">
                 {% for subitem in item.visible_children %}
@@ -113,21 +115,21 @@
                     {%- if subitem.layout_title == product_list_layout -%}
                       {%- assign subItemClass = 'menu-item-product-list menu-item-sub' -%}
                       {% if isProductListItemVisible == false %}
-                        {%- assign menuSubItemDisplayClass = false -%}
+                        {%- assign isSubMenuItemVisible = false -%}
                       {% else %}
-                        {%- assign menuSubItemDisplayClass = true -%}
+                        {%- assign isSubMenuItemVisible = true -%}
                       {% endif %}
 
                     {%- elsif subitem.layout_title == product_layout -%}
                       {% if isProductItemVisible == false %}
-                        {%- assign menuSubItemDisplayClass = false -%}
+                        {%- assign isSubMenuItemVisible = false -%}
                       {% else %}
-                        {%- assign menuSubItemDisplayClass = true -%}
+                        {%- assign isSubMenuItemVisible = true -%}
                       {% endif %}
                       {%- assign subItemClass = 'menu-item-product menu-item-sub' -%}
                     {%- endif -%}
 
-                    <div class="{{subItemClass}}" data-visible="{{menuSubItemDisplayClass}}">
+                    <div class="{{subItemClass}}" {% if editmode or isSubMenuItemVisible == true %}data-visible="{{isSubMenuItemVisible}}{% endif %}">
                       {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" -%}
                       {% if menu_dropdown != blank %}
                         {{ menu_dropdown }}
@@ -148,7 +150,7 @@
     {%- endif -%}
     {%- unless item.blog? -%}
       {%- if item.selected? and editmode -%}
-        <div class="add-submenu {% if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}} {{isMenuItemVisible}}{%- endif -%}">
+        <div class="add-submenu {% if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}}{%- endif -%}" {% if editmode or isMenuItemVisible == true %}data-visible="{{isMenuItemVisible}}"{% endif %}>
           <li class="edit-btn mar_b-16">{% menuadd parent="item" %}</li>
         </div>
       {%- endif -%}
