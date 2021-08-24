@@ -5543,8 +5543,8 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
 .menu-main .menu .menu_popover .menu .menu-item a,
 .menu-main .menu .menu_popover .menu .menu-item .settings-btn {
   padding: 8px 40px 8px 24px;
-  color: #ffffff;
   width: 100%;
+  color: #ffffff;
   -webkit-transition: background-color 200ms;
   -o-transition: background-color 200ms;
   transition: background-color 200ms;
@@ -5560,6 +5560,11 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
 .menu-main .menu .menu_popover .menu .menu-item a.untranslated,
 .menu-main .menu .menu_popover .menu .menu-item .settings-btn.untranslated {
   color: #C5292A;
+}
+
+.menu-main .menu .menu_popover .menu .menu-item a:hover,
+.menu-main .menu .menu_popover .menu .menu-item .settings-btn:hover {
+  color: var(--header-mainmenu-hover-color);
 }
 
 .menu-main .menu .menu_popover .menu .menu-item.dd-arrow[data-arrow="active"] {

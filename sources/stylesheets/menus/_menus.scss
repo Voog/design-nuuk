@@ -286,12 +286,16 @@
             a,
             .settings-btn {
               padding: 8px 40px 8px 24px;
-              color: $white;
               width: 100%;
+              color: $white;
               @include transition(background-color 200ms);
 
               &.untranslated {
                 color: $red;
+              }
+
+              &:hover {
+                color: var(--header-mainmenu-hover-color);
               }
             }
 
