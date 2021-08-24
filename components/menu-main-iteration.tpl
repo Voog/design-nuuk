@@ -127,7 +127,7 @@
                       {%- assign subItemClass = 'menu-item-product menu-item-sub' -%}
                     {%- endif -%}
 
-                    <div class="{{subItemClass}} {{menuSubItemDisplayClass}}">
+                    <div class="{{subItemClass}}" data-visible="{{menuSubItemDisplayClass}}">
                       {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item" current-class="active" -%}
                       {% if menu_dropdown != blank %}
                         {{ menu_dropdown }}
