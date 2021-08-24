@@ -356,7 +356,9 @@
         }
 
         .menu-sub {
-          .menu-item.active a {
+          .menu-item a.active {
+            color: $black;
+
             &:before {
               content: none;
             }

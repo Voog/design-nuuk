@@ -102,61 +102,67 @@
       {%- endif -%}
     {%- endif -%}
 
-
     {{menu_main_lvl_1_item}}
 
-    {%- if item.selected? -%}
-      {%- if item.children? or editmode -%}
-        {%- unless item.blog? %}
-          <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}}{%- endif -%}" {% if editmode or isMenuItemVisible == true %}data-visible="{{isMenuItemVisible}}"{% endif %}>
-            <div class="menu-sub active">
-              <ul class="menu">
-                {% for subitem in item.visible_children %}
-                  {%- if subitem.layout_title == product_list_layout or subitem.layout_title == product_layout -%}
-                    {%- if subitem.layout_title == product_list_layout -%}
-                      {%- assign subItemClass = 'menu-item-product-list menu-item-sub' -%}
-                      {% if isProductListItemVisible == false %}
-                        {%- assign isSubMenuItemVisible = false -%}
-                      {% else %}
-                        {%- assign isSubMenuItemVisible = true -%}
-                      {% endif %}
-
-                    {%- elsif subitem.layout_title == product_layout -%}
-                      {% if isProductItemVisible == false %}
-                        {%- assign isSubMenuItemVisible = false -%}
-                      {% else %}
-                        {%- assign isSubMenuItemVisible = true -%}
-                      {% endif %}
-                      {%- assign subItemClass = 'menu-item-product menu-item-sub' -%}
-                    {%- endif -%}
-
-                    {% if editmode or isSubMenuItemVisible == true %}
-                      {% if isSubMenuItemVisible != true %}
-                        {%- assign itemTag = 'div' -%}
-                      {% else %}
-                        {%- assign itemTag = 'li' -%}
-                      {% endif %}
-
-                      <{{itemTag}}
-                        class="menu-item {{subItemClass}}"
-                        {% if editmode or isSubMenuItemVisible %}data-visible="{{isSubMenuItemVisible}}"{% endif %}
-                      >
-                        {%- menulink subitem current-class="active" -%}
-                      </{{itemTag}}>
-                    {% endif %}
+    {% if editmode or isMenuItemVisible %}
+      {%- if item.selected? -%}
+        {%- if item.children? or editmode -%}
+          {% capture _side_submenu %}
+            {% for subitem in item.visible_children %}
+              {%- if subitem.layout_title == product_list_layout or subitem.layout_title == product_layout -%}
+                {%- if subitem.layout_title == product_list_layout -%}
+                  {%- assign subItemClass = 'menu-item-product-list menu-item-sub' -%}
+                  {% if isProductListItemVisible == false %}
+                    {%- assign isSubMenuItemVisible = false -%}
                   {% else %}
-                    {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item menu-item-sub" current-class="active" -%}
+                    {%- assign isSubMenuItemVisible = true -%}
                   {% endif %}
-                {%- endfor %}
-                {%- if item.hidden_children.size > 0 -%}
-                  <li class="edit-btn mar_t-16">{% menubtn item.hidden_children %}</li>
-                {%- endif %}
-              </ul>
+
+                {%- elsif subitem.layout_title == product_layout -%}
+                  {% if isProductItemVisible == false %}
+                    {%- assign isSubMenuItemVisible = false -%}
+                  {% else %}
+                    {%- assign isSubMenuItemVisible = true -%}
+                  {% endif %}
+                  {%- assign subItemClass = 'menu-item-product menu-item-sub' -%}
+                {%- endif -%}
+
+                {% if editmode or isSubMenuItemVisible == true %}
+                  {% if isSubMenuItemVisible != true %}
+                    {%- assign itemTag = 'div' -%}
+                  {% else %}
+                    {%- assign itemTag = 'li' -%}
+                  {% endif %}
+
+                  <{{itemTag}}
+                    class="menu-item {{subItemClass}}"
+                    {% if editmode or isSubMenuItemVisible %}data-visible="{{isSubMenuItemVisible}}"{% endif %}
+                  >
+                    {%- menulink subitem current-class="active" -%}
+                  </{{itemTag}}>
+                {% endif %}
+              {% else %}
+                {%- menulink subitem wrapper-tag="li" wrapper-class="menu-item menu-item-sub" current-class="active" -%}
+              {% endif %}
+            {%- endfor %}
+          {% endcapture %}
+          {%- unless item.blog? %}
+            <div class="{%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}}{%- endif -%}" data-visible="{% if _side_submenu != blank %}true{% else %}false{% endif %}">
+              <div class="menu-sub active">
+                <ul class="menu">
+                  {% if editmode or _side_submenu != blank %}
+                    {{ _side_submenu }}
+                  {% endif %}
+                  {%- if item.hidden_children.size > 0 -%}
+                    <li class="edit-btn mar_t-16">{% menubtn item.hidden_children %}</li>
+                  {%- endif %}
+                </ul>
+              </div>
             </div>
-          </div>
-        {%- endunless -%}
+          {%- endunless -%}
+        {%- endif -%}
       {%- endif -%}
-    {%- endif -%}
+    {% endif %}
     {%- unless item.blog? -%}
       {%- if item.selected? and editmode -%}
         <div class="add-submenu {% if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}}{%- endif -%}" {% if editmode or isMenuItemVisible == true %}data-visible="{{isMenuItemVisible}}"{% endif %}>

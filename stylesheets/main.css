@@ -5613,7 +5613,10 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
     position: absolute;
     left: 0px;
   }
-  .menu-main:not(.menu_top) .menu .menu-sub .menu-item.active a:before {
+  .menu-main:not(.menu_top) .menu .menu-sub .menu-item a.active {
+    color: #000000;
+  }
+  .menu-main:not(.menu_top) .menu .menu-sub .menu-item a.active:before {
     content: none;
   }
 }
