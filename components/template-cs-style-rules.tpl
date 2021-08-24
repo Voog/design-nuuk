@@ -373,7 +373,7 @@ body.dark-background {
   opacity: .7;
 }
 
-.menu-main .menu .menu-item a.selected:hover {
+.menu-main .menu .menu-item:not(.dd-arrow) a.selected:hover {
   color: var(--header-mainmenu-hover-color);
   -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
           text-decoration: var(--header-mainmenu-hover-decoration);

@@ -21,9 +21,9 @@
 {%- endif -%}
 
 {%- if menuSettings.positioning == 'is_top' or menuSettings.positioning == 'is_top_fixed' -%}
-  {%- assign menuPos = true -%}
+  {%- assign menuPosTop = true -%}
 {%- else -%}
-  {%- assign menuPos = false -%}
+  {%- assign menuPosTop = false -%}
 {%- endif -%}
 
 {%- capture menu_main -%}
@@ -61,10 +61,10 @@
             {%- assign itemTag = 'li' -%}
           {% endif %}
           <{{itemTag}}
-            data-arrow="active"
+            {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
             data-url="{{ item.url }}"
             {% if editmode %}data-visible={{isMenuItemVisible}}{% endif %}
-            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPos == true %} dd-arrow{% endif %}"
+            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
           >
           {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" -%}
           {% if menu_dropdown != blank %}
@@ -77,10 +77,10 @@
         {%- assign menuItemCount = menuItemCount | plus: 1 -%}
         {%- assign isMenuItemVisible = true -%}
         <li
-          data-arrow="active"
+          {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
           data-url="{{ item.url }}"
           {% if editmode %}data-visible="true"{% endif %}
-          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank and menuPos == true %} dd-arrow{% endif %}">
+          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}">
           {%- menulink item current-class="active" -%}
           {% if menu_dropdown != blank %}
             {{ menu_dropdown }}

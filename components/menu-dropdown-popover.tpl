@@ -20,12 +20,14 @@
   {% endfor %}
 {% endcapture %}
 
-{% if _dd_menuitems != blank %}
-  <div data-url="{{ item.url }}" class="js-prevent-sideclick dropdown_menu-popover--wrap" data-sideclick="prevent" {% if editmode %}data-visible="true"{% endif %}>
-    <nav class="dropdown_menu-popover">
-      <ul class="menu menu-vertical menu-public">
-        {{ _dd_menuitems }}
-      </ul>
-    </nav>
-  </div>
+{% if editmode or menuPosTop == true %}
+  {% if _dd_menuitems != blank %}
+    <div data-url="{{ item.url }}" class="js-prevent-sideclick dropdown_menu-popover--wrap" data-sideclick="prevent" {% if editmode %}data-visible="true"{% endif %}>
+      <nav class="dropdown_menu-popover">
+        <ul class="menu menu-vertical menu-public">
+          {{ _dd_menuitems }}
+        </ul>
+      </nav>
+    </div>
+  {% endif %}
 {% endif %}
