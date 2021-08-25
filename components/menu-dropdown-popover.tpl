@@ -2,13 +2,13 @@
   {% for child in item.visible_children %}
     {% if child.layout_title == product_layout %}
       {% if editmode or isProductItemVisible == true %}
-        <li class="menu-item-product menu-item" {% if editmode or isProductItemVisible == true %}data-visible="{{ isProductItemVisible }}"{% endif %}>
+        <li class="menu-item-product menu-item" {% if editmode %}data-visible="{{ isProductItemVisible }}"{% endif %}>
           {%- menulink child current-class="active" wrapper-class="menu-item lvl-2" -%}
         </li>
       {% endif %}
     {% elsif child.layout_title == product_list_layout %}
       {% if editmode or isProductListItemVisible %}
-        <li class="menu-item-product-list menu-item" {% if editmode or isProductListItemVisible == true %}data-visible="{{ isProductListItemVisible }}"{% endif %}>
+        <li class="menu-item-product-list menu-item" {% if editmode %}data-visible="{{ isProductListItemVisible }}"{% endif %}>
           {%- menulink child current-class="active" wrapper-class="menu-item lvl-2" -%}
         </li>
       {% endif %}
@@ -19,7 +19,6 @@
     {% endif %}
   {% endfor %}
 {% endcapture %}
-
 
 {% if _dd_menuitems != blank %}
   <div data-url="{{ item.url }}" class="js-prevent-sideclick dropdown_menu-popover--wrap" data-sideclick="prevent" {% if editmode %}data-visible="true"{% endif %}>

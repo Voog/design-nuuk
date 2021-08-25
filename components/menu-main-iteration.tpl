@@ -66,13 +66,13 @@
           <{{itemTag}}
             {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
             data-url="{{ item.url }}"
-            {% if editmode or isMenuItemVisible == true %}data-visible="{{isMenuItemVisible}}"{% endif %}
+            {% if editmode %}data-visible="{{isMenuItemVisible}}"{% endif %}
             class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
           >
-          {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" -%}
-          {% if menu_dropdown != blank %}
-            {{ menu_dropdown }}
-          {% endif %}
+            {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" -%}
+            {% if menu_dropdown != blank %}
+              {{ menu_dropdown }}
+            {% endif %}
           </{{itemTag}}>
         {% endif %}
 
@@ -83,11 +83,12 @@
           {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
           data-url="{{ item.url }}"
           {% if editmode %}data-visible="true"{% endif %}
-          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}">
-          {%- menulink item current-class="active" -%}
-          {% if menu_dropdown != blank %}
-            {{ menu_dropdown }}
-          {% endif %}
+          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
+        >
+            {%- menulink item current-class="active" -%}
+            {% if menu_dropdown != blank %}
+              {{ menu_dropdown }}
+            {% endif %}
         </li>
       {% endif -%}
     {%- endcapture -%}
@@ -136,7 +137,7 @@
 
                   <{{itemTag}}
                     class="menu-item {{subItemClass}}"
-                    {% if editmode or isSubMenuItemVisible %}data-visible="{{isSubMenuItemVisible}}"{% endif %}
+                    {% if editmode %}data-visible="{{isSubMenuItemVisible}}"{% endif %}
                   >
                     {%- menulink subitem current-class="active" -%}
                   </{{itemTag}}>
@@ -165,7 +166,7 @@
     {% endif %}
     {%- unless item.blog? -%}
       {%- if item.selected? and editmode -%}
-        <div class="add-submenu {% if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}}{%- endif -%}" {% if editmode or isMenuItemVisible == true %}data-visible="{{isMenuItemVisible}}"{% endif %}>
+        <div class="add-submenu {% if item.layout_title == product_list_layout or item.layout_title == product_layout %}{{itemClass}}{%- endif -%}" {% if editmode %}data-visible="{{isMenuItemVisible}}"{% endif %}>
           <li class="edit-btn mar_b-16">{% menuadd parent="item" %}</li>
         </div>
       {%- endif -%}
