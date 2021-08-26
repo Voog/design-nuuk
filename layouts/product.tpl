@@ -78,22 +78,28 @@
 
             <div class="flex_row-2--item-40">
               <div class="mar_0-32 flex_col t-sticky">
-                {% include 'product-page-nav' %}
-                <div class="content-body content-formatted mar_b-64" data-search-indexing-allowed="true">
-                  {% contentblock name="page_title" publish_default_content="true" %}
-                    <h3>{{page.title}}</h3>
-                  {% endcontentblock %}
-                  {%- assign productSettingsData = page.data[productLayoutSettingsKey] -%}
-                  {%- assign isBoxLabel = productSettingsData.is_product_label_box -%}
-                  {%- assign isLabelLineThrough = productSettingsData.is_product_label_line_through -%}
+                <div class="flex_row flex_a-center flex_j-space-between mar_32-0">
+                  <div class="content-body content-formatted" data-search-indexing-allowed="true">
+                  
+                    {% contentblock name="page_title" publish_default_content="true" %}
+                      <h3>{{page.title}}</h3>
+                    {% endcontentblock %}
+                    {%- assign productSettingsData = page.data[productLayoutSettingsKey] -%}
+                    {%- assign isBoxLabel = productSettingsData.is_product_label_box -%}
+                    {%- assign isLabelLineThrough = productSettingsData.is_product_label_line_through -%}
 
-                  {%- if buy_button.product.out_of_stock? -%}
-                    <div class="product_item-box--label mar_t-32">{{ "out_of_stock" | lc | escape_once }}</div>
-                  {%- elsif productSettingsData.product_label != blank -%}
-                    <div class="mar_t-16{% if isBoxLabel == true %} product_item-box--label{% endif %}{% if isLabelLineThrough == true %} td-lt{% endif %}">
-                      {{productSettingsData.product_label}}
-                    </div>
-                  {%- endif -%}
+                    {%- if buy_button.product.out_of_stock? -%}
+                      <div class="product_item-box--label mar_t-32">{{ "out_of_stock" | lc | escape_once }}</div>
+                    {%- elsif productSettingsData.product_label != blank -%}
+                      <div class="mar_t-16{% if isBoxLabel == true %} product_item-box--label{% endif %}{% if isLabelLineThrough == true %} td-lt{% endif %}">
+                        {{productSettingsData.product_label}}
+                      </div>
+                    {%- endif -%}
+                    
+                  </div>
+                  <div>
+                      {% include 'product-page-nav' %}
+                  </div>
                 </div>
                 <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
                   {% contentblock %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}
