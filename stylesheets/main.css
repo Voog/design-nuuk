@@ -4543,7 +4543,7 @@ article.post_wrapper .date-separator.hide-separator {
 }
 
 .product_page-nav--wrap {
-  margin-top: 32px;
+  position: absolute;
 }
 
 @media screen and (max-width: 752px) {

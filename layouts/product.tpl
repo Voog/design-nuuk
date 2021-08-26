@@ -78,7 +78,7 @@
 
             <div class="flex_row-2--item-40">
               <div class="mar_0-32 flex_col t-sticky">
-                <div class="flex_row flex_a-center flex_j-space-between mar_32-0">
+                <div class="flex_row flex_a-center flex_j-space-between mar_b-64">
                   <div class="content-body content-formatted" data-search-indexing-allowed="true">
                   
                     {% contentblock name="page_title" publish_default_content="true" %}
@@ -98,7 +98,7 @@
                     
                   </div>
                   <div>
-                      {% include 'product-page-nav' %}
+                    {% include 'product-page-nav' %}
                   </div>
                 </div>
                 <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">

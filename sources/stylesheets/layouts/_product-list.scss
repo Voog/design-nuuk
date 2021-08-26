@@ -111,7 +111,7 @@
   &page {
     &-nav {
       &--wrap {
-        margin-top: 32px;
+        position: absolute;
 
         @include query($tablet-2) {
           display: none;
