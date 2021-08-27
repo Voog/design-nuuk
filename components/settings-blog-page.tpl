@@ -13,7 +13,7 @@
       var globalDataValues = {}
     {% endif %};
 
-    var show_comments, show_dates, show_authors;
+    var show_comments, show_dates, show_authors, show_secondary;
     if (globalDataValues.show_comments != null && globalDataValues.show_comments !== '') {
       show_comments = Boolean(globalDataValues.show_comments)
     } else {
@@ -29,10 +29,16 @@
     } else {
       show_authors = true;
     }
+    if (globalDataValues.show_secondary != null && globalDataValues.show_secondary !== '') {
+      show_secondary = Boolean(globalDataValues.show_secondary)
+    } else {
+      show_secondary = true;
+    }
     var valuesObj = {
       show_comments: show_comments,
       show_dates: show_dates,
-      show_authors: show_authors
+      show_authors: show_authors,
+      show_secondary: show_secondary
     }
 
     initSettingsEditor(
@@ -69,6 +75,16 @@
               "off": false
             },
           },
+          {
+            "titleI18n": "Secondary",
+            "type": "toggle",
+            "key": "show_secondary",
+            "tooltipI18n": "Secondary",
+            "states": {
+              "on": true,
+              "off": false
+            },
+          },
         ],
         dataKey: 'article_settings',
         values: valuesObj,
@@ -78,7 +94,8 @@
         prevFunc: function(data) {
           var $articleDate = $('.post_date.site-data'),
             $dateSeparator = $('.post_date.site-data + .date-separator'),
-            $articleAuthor = $('.post_author.site-data');
+            $articleAuthor = $('.post_author.site-data'),
+            $articleSize = $('.blog_listing-item');
 
           if (data.show_dates == true) {
             $articleDate.removeClass('hide-post-date');
@@ -100,6 +117,13 @@
 
           if (data.show_authors == true && data.show_dates == true) {
             $dateSeparator.removeClass('hide-separator');
+          }
+
+          if (data.show_secondary == false) {
+            $articleSize.removeClass('secondary');
+          } else if (data.show_secondary == true) {
+            $articleSize.addClass('secondary');
+            
           }
         },
       }

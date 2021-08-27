@@ -49,29 +49,44 @@
     }
 
     &item {
-      width: calc(35% - 32px);
+      width: calc(50% - 32px);
+
       padding: 0 16px;
       margin-bottom: 16px;
       padding-bottom: 16px;
 
-      &:first-child,
-      &:last-child:nth-child(odd) {
-        width: calc(70% - 32px);
+      &:first-child {
+        width: calc(100% - 32px);
       }
 
-      &:nth-child(2) {
-        width: calc(30% - 32px);
-      }
+      &.secondary {
+        width: calc(35% - 32px);
+        padding: 0 16px;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
 
-      &:nth-child(n+2) {
-        .post_wrapper {
-          border-bottom: none;
-          h3 {
-            font-size: 18px !important;
-            line-height: 24px !important;
+        &:first-child,
+        &:last-child:nth-child(odd) {
+          width: calc(70% - 32px);
+        }
+  
+        &:nth-child(2) {
+          width: calc(30% - 32px);
+        }
+  
+        &:nth-child(n+2) {
+          .post_wrapper {
+            border-bottom: none;
+            h3 {
+              font-size: 18px !important;
+              line-height: 24px !important;
+            }
           }
         }
       }
+      
+
+      
 
       @include query($tablet-1) {
         width: 100%;
