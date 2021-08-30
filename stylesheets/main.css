@@ -3888,6 +3888,13 @@ body.edy-checkout-button-visible {
   line-height: 24px !important;
 }
 
+.blog_listing-item.list {
+  width: calc(100% - 32px);
+  padding: 0 16px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+}
+
 @media screen and (max-width: 900px) {
   .blog_listing-item {
     width: 100%;

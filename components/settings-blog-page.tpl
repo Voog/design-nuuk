@@ -13,7 +13,7 @@
       var globalDataValues = {}
     {% endif %};
 
-    var show_comments, show_dates, show_authors, show_secondary;
+    var show_comments, show_dates, show_authors;
     if (globalDataValues.show_comments != null && globalDataValues.show_comments !== '') {
       show_comments = Boolean(globalDataValues.show_comments)
     } else {
@@ -29,17 +29,36 @@
     } else {
       show_authors = true;
     }
-    if (globalDataValues.show_secondary != null && globalDataValues.show_secondary !== '') {
-      show_secondary = Boolean(globalDataValues.show_secondary)
+
+    
+
+    var blogLayouts = [{"title": "Secondary shown", "value": 1},
+                      {"title": "Secondary hidden", "value": 0},
+                      {"title": "List view", "value": 2}];
+
+    // For switching between 2 layouts (true or false)
+    /*if (globalDataValues.blog_layout != null && globalDataValues.blog_layout !== '') {
+      blog_layout = Boolean(globalDataValues.blog_layout)
     } else {
-      show_secondary = true;
+      blog_layout = true;
+    }*/
+
+    if (globalDataValues.blog_layout != null && globalDataValues.blog_layout !== '') {
+      blog_layout = globalDataValues.blog_layout;
+    } else {
+      blog_layout = 1;
     }
+
     var valuesObj = {
       show_comments: show_comments,
       show_dates: show_dates,
       show_authors: show_authors,
-      show_secondary: show_secondary
+      blog_layout: blog_layout
     }
+
+    /*if (!('blog_layout' in valuesObj)) {
+      valuesObj.blog_layout = 1;
+    }*/
 
     initSettingsEditor(
       {
@@ -76,14 +95,15 @@
             },
           },
           {
-            "titleI18n": "Secondary",
-            "type": "toggle",
-            "key": "show_secondary",
-            "tooltipI18n": "Secondary",
-            "states": {
+            "titleI18n": "Blog Layout",
+            "type": "select",
+            "key": "blog_layout",
+            "tooltipI18n": "Blog Layout",
+            "list": blogLayouts,
+            /*"states": {
               "on": true,
               "off": false
-            },
+            },*/
           },
         ],
         dataKey: 'article_settings',
@@ -119,11 +139,17 @@
             $dateSeparator.removeClass('hide-separator');
           }
 
-          if (data.show_secondary == false) {
+          if (data.blog_layout == 0) {
             $articleSize.removeClass('secondary');
-          } else if (data.show_secondary == true) {
+            $articleSize.removeClass('list')
+          } else if (data.blog_layout == 1) {
+            $articleSize.removeClass('list')
             $articleSize.addClass('secondary');
             
+          }
+          else if (data.blog_layout == 2) {
+            $articleSize.removeClass('secondary');
+            $articleSize.addClass('list');
           }
         },
       }

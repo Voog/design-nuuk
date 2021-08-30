@@ -84,6 +84,13 @@
           }
         }
       }
+
+      &.list {
+        width: calc(100% - 32px);
+        padding: 0 16px;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+      }
       
 
       
