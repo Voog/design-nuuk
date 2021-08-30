@@ -30,23 +30,14 @@
       show_authors = true;
     }
 
-    
-
-    var blogLayouts = [{"title": "Secondary shown", "value": 1},
-                      {"title": "Secondary hidden", "value": 0},
+    var blogLayouts = [{"title": "Popout article shown", "value": 0},
+                      {"title": "Popout article hidden", "value": 1},
                       {"title": "List view", "value": 2}];
-
-    // For switching between 2 layouts (true or false)
-    /*if (globalDataValues.blog_layout != null && globalDataValues.blog_layout !== '') {
-      blog_layout = Boolean(globalDataValues.blog_layout)
-    } else {
-      blog_layout = true;
-    }*/
 
     if (globalDataValues.blog_layout != null && globalDataValues.blog_layout !== '') {
       blog_layout = globalDataValues.blog_layout;
     } else {
-      blog_layout = 1;
+      blog_layout = 0;
     }
 
     var valuesObj = {
@@ -55,10 +46,6 @@
       show_authors: show_authors,
       blog_layout: blog_layout
     }
-
-    /*if (!('blog_layout' in valuesObj)) {
-      valuesObj.blog_layout = 1;
-    }*/
 
     initSettingsEditor(
       {
@@ -100,10 +87,6 @@
             "key": "blog_layout",
             "tooltipI18n": "Blog Layout",
             "list": blogLayouts,
-            /*"states": {
-              "on": true,
-              "off": false
-            },*/
           },
         ],
         dataKey: 'article_settings',
@@ -140,14 +123,12 @@
           }
 
           if (data.blog_layout == 0) {
-            $articleSize.removeClass('secondary');
-            $articleSize.removeClass('list')
-          } else if (data.blog_layout == 1) {
             $articleSize.removeClass('list')
             $articleSize.addClass('secondary');
-            
-          }
-          else if (data.blog_layout == 2) {
+          } else if (data.blog_layout == 1) {
+            $articleSize.removeClass('secondary');
+            $articleSize.removeClass('list')
+          } else if (data.blog_layout == 2) {
             $articleSize.removeClass('secondary');
             $articleSize.addClass('list');
           }
