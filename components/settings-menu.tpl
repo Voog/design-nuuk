@@ -102,12 +102,15 @@
               $('.js-menu-main').addClass('menu_top');
               $('.js-menu-popover, .js-menu-popover').removeClass('d-none');
               $('html').removeClass('semimodal-open');
+              $('li[data-arrow="active"], li[data-arrow="inactive"]').addClass('dd-arrow');
             } else {
               $('.js-menu-btn, .semimodal').removeClass('hidden-desktop');
               $('.js-menu-main-wrapper').addClass('hidden-tablet');
               $('.js-menu-main-wrapper').addClass('hidden-desktop');
               $('.js-menu-main').removeClass('menu_top');
               $('.js-menu-popover, .js-menu-popover').addClass('d-none');
+              $('.dd-arrow').data('arrow', 'inactive');
+              $('li.dd-arrow, div.dd-arrow').removeClass('dd-arrow');
             }
 
             if (data.positioning === 'is_top') {
@@ -157,20 +160,40 @@
             }
 
 
+            function checkIfDropdownEmpty() {
+              $.each($('.dd-arrow'), function () {
+                let popoverDiv = $(this).children()[1];
+                if ($(popoverDiv).find('.menu').children(':visible').length === 0) {
+                  $(this).attr('data-arrow', 'inactive');
+                } else {
+                  $(this).attr('data-arrow', 'active');
+                }
+              })
+              if ($('.menu_popover-list').children(':visible').length == 0) {
+                $('.menu_popover-list').css('padding', '0');
+              } else {
+                $('.menu_popover-list').css('padding', '16px 0');
+              }
+            }
+
             if (data.is_product_page_visible == true) {
               replaceElementTag('.menu-item-product', '<li></li>');
               $('.menu-item-product').attr('data-visible', true);
+              checkIfDropdownEmpty();
             } else {
               replaceElementTag('.menu-item-product', '<div></div>');
               $('.menu-item-product').attr('data-visible', false);
+              checkIfDropdownEmpty();
             }
 
             if (data.is_product_list_page_visible == true) {
               replaceElementTag('.menu-item-product-list', '<li></li>');
               $('.menu-item-product-list').attr('data-visible', true);
+              checkIfDropdownEmpty();
             } else {
               replaceElementTag('.menu-item-product-list', '<div></div>');
               $('.menu-item-product-list').attr('data-visible', false);
+              checkIfDropdownEmpty();
             }
 
             {%- if menuSettings.max_width != blank -%}
