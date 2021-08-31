@@ -5566,7 +5566,7 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
 
 .menu-main .menu .menu_popover .menu .menu-item a:hover,
 .menu-main .menu .menu_popover .menu .menu-item .settings-btn:hover {
-  color: var(--header-mainmenu-hover-color);
+  color: #ffffff;
 }
 
 .menu-main .menu .menu_popover .menu .menu-item.dd-arrow[data-arrow="active"] {
