@@ -30,6 +30,7 @@
   {% comment %}Page data keys{% endcomment %}
   {%- assign bodyBgKey = template_settings.page.body_bg.key -%}
   {%- assign blockSettingsKey = template_settings.page.block_settings.key -%}
+  {%- assign blogLayoutKey = template_settings.page.blog_settings.key -%}
   {%- assign itemImageKey = template_settings.page.item_image.key -%}
   {%- assign itemImageCropStateKey = template_settings.page.image_crop_state.key -%}
   {%- assign itemImageAltAttrKey = template_settings.page.image_alt_attr.key -%}
@@ -79,6 +80,14 @@
     {% assign body_bg = article.data[bodyBgKey] %}
   {% else %}
     {% assign body_bg = page.data[bodyBgKey] %}
+  {% endif %}
+
+  {% if page.data[blogLayoutKey].blog_layout == "list" %}
+    {% assign blog_layout_setting = "list" %}
+  {% elsif page.data[blogLayoutKey].blog_layout == "highlight" %}
+    {% assign blog_layout_setting = "highlight" %}
+  {% else %}
+    {% assign blog_layout_setting = "highlight_with_popout" %}
   {% endif %}
 
   {% comment %}Assign variables based on page type.{% endcomment %}

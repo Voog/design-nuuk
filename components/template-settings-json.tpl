@@ -5,6 +5,7 @@
       "show_comments": true,
       "show_authors": true
     },
+    
     "language_menu_settings": {
       "key": "PREFIX_language_menu_settings",
       "value": {
@@ -70,6 +71,12 @@
           "col_min_width": 400,
           "col_h_padding": 16
         }
+      }
+    },
+    "blog_settings": {
+      "key": "PREFIX_blog_settings",
+      "value": {
+        "blog_layout": "highlight"
       }
     },
     "swiper_bg": {

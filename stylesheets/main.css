@@ -3864,26 +3864,26 @@ body.edy-checkout-button-visible {
   width: calc(100% - 32px);
 }
 
-.blog_listing-item.secondary {
+.blog_listing-item.highlight-with-popout {
   width: calc(35% - 32px);
   padding: 0 16px;
   margin-bottom: 16px;
   padding-bottom: 16px;
 }
 
-.blog_listing-item.secondary:first-child, .blog_listing-item.secondary:last-child:nth-child(odd) {
+.blog_listing-item.highlight-with-popout:first-child, .blog_listing-item.highlight-with-popout:last-child:nth-child(odd) {
   width: calc(70% - 32px);
 }
 
-.blog_listing-item.secondary:nth-child(2) {
+.blog_listing-item.highlight-with-popout:nth-child(2) {
   width: calc(30% - 32px);
 }
 
-.blog_listing-item.secondary:nth-child(n+2) .post_wrapper {
+.blog_listing-item.highlight-with-popout:nth-child(n+2) .post_wrapper {
   border-bottom: none;
 }
 
-.blog_listing-item.secondary:nth-child(n+2) .post_wrapper h3 {
+.blog_listing-item.highlight-with-popout:nth-child(n+2) .post_wrapper h3 {
   font-size: 18px !important;
   line-height: 24px !important;
 }

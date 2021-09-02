@@ -40,7 +40,7 @@
           {% include "blog-news-tags" %}
           <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
             {% for article in articles %}
-              <div class="blog_listing-item{% if blog_layout == 0 %} secondary{% elsif blog_layout == 2 %} list{% endif %}">
+              <div class="blog_listing-item {% if blog_layout_setting == "list" %}list {% elsif blog_layout_setting == "highlight_with_popout" %}highlight-with-popout {%endif%}">
                 <a class="blog_listing-link animate_wrap" href="{{ article.url }}">
                 {% include "article-settings-variables" %}
                 {%- if forloop.index == 1 -%}
