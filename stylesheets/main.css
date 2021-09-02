@@ -2398,21 +2398,29 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   bottom: 276px !important;
 }
 
-.bottom-settings-popover.edy-popover.first, .bottom-settings-popover.edy-popover.second {
+.bottom-settings-popover.edy-popover.third {
+  bottom: 272px !important;
+}
+
+.edy-bar-open .bottom-settings-popover.edy-popover.third {
+  bottom: 400px !important;
+}
+
+.bottom-settings-popover.edy-popover.first, .bottom-settings-popover.edy-popover.second, .bottom-settings-popover.edy-popover.third {
   top: unset !important;
   position: fixed !important;
 }
 
-.bottom-settings-popover.edy-popover.first.edy-popover-bottom::after, .bottom-settings-popover.edy-popover.second.edy-popover-bottom::after {
+.bottom-settings-popover.edy-popover.first.edy-popover-bottom::after, .bottom-settings-popover.edy-popover.second.edy-popover-bottom::after, .bottom-settings-popover.edy-popover.third.edy-popover-bottom::after {
   height: 0;
 }
 
-.bottom-settings-popover.edy-popover.first .edy-popover-arrow, .bottom-settings-popover.edy-popover.second .edy-popover-arrow {
+.bottom-settings-popover.edy-popover.first .edy-popover-arrow, .bottom-settings-popover.edy-popover.second .edy-popover-arrow, .bottom-settings-popover.edy-popover.third .edy-popover-arrow {
   top: unset !important;
   bottom: unset !important;
 }
 
-.bottom-settings-popover.edy-popover.first .edy-popover-arrow::after, .bottom-settings-popover.edy-popover.second .edy-popover-arrow::after {
+.bottom-settings-popover.edy-popover.first .edy-popover-arrow::after, .bottom-settings-popover.edy-popover.second .edy-popover-arrow::after, .bottom-settings-popover.edy-popover.third .edy-popover-arrow::after {
   -webkit-filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.15));
           filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.15));
   -webkit-transform: translateX(-50%);
