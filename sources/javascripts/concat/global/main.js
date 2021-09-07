@@ -1,4 +1,4 @@
-;(function($) {
+;(function ($) {
   var editmode = function () {
     return $('html').hasClass('editmode');
   };
@@ -6,7 +6,7 @@
   // ===========================================================================
   // Binds site search functionality.
   // ===========================================================================
-  var bindSiteSearch = function(searchForm, languageCode, noResultsString) {
+  var bindSiteSearch = function (searchForm, languageCode, noResultsString) {
     if (searchForm) {
       var search = new VoogSearch(searchForm, {
         // This defines the number of results per query.
@@ -29,11 +29,12 @@
 
   // Remove comments if debouncing is used.
   // Function to limit the rate at which a function can fire.
-  var debounce = function(func, wait, immediate) {
+  var debounce = function (func, wait, immediate) {
     var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
+    return function () {
+      var context = this,
+        args = arguments;
+      var later = function () {
         timeout = null;
         if (!immediate) func.apply(context, args);
       };
@@ -44,8 +45,8 @@
     };
   };
 
-  var bindSideClicks = function() {
-    $('.container, .bg_img-cover, .content_wrap, .header_fixed, swiper-container').on('mousedown', function(event) {
+  var bindSideClicks = function () {
+    $('.container, .bg_img-cover, .content_wrap, .header_fixed, swiper-container').on('mousedown', function (event) {
       if (!$(event.target).closest('.js-prevent-sideclick').length) {
         $('.js-semimodal-toggle').removeClass('semimodal-open');
         $('.js-popover').removeClass('expanded');
@@ -59,7 +60,7 @@
       };
     });
 
-    $('body').click(function(event) {
+    $('body').click(function (event) {
       if (
         !$(event.target).closest('.layout_settings-btn, .edy-settings-editor, .layout_settings-btn--container').length
       ) {
@@ -69,23 +70,23 @@
   };
 
   // Switches the site language to the selected value from the language menu.
-  var handleLanguageSwitch = function() {
-    $('.menu-lang').find('.menu').change(function() {
+  var handleLanguageSwitch = function () {
+    $('.menu-lang').find('.menu').change(function () {
       window.location = $(this).find(':selected').val();
     });
   };
 
   // Shows/hides the popover main menu (visible on smalles screens).
-  var toggleMainMenu = function() {
-    $('.js-menu-btn, .js-close-menu').click(function() {
+  var toggleMainMenu = function () {
+    $('.js-menu-btn, .js-close-menu').click(function () {
       $('.js-semimodal-toggle').toggleClass('semimodal-open');
     });
   };
 
   // Removes optional content elements if element doesn't have any content.
-  var removeOptionalContent = function() {
+  var removeOptionalContent = function () {
     optionalContent = $('.js-content-optional');
-    $.each( $(optionalContent), function(){
+    $.each($(optionalContent), function () {
       optionalContentLength = $(this).text().trim().length;
 
       if (!optionalContentLength > 0) {
@@ -95,8 +96,8 @@
   };
 
   // Scrolls to the comment_form if comment submit failed (to show the error messages to the user)
-  var focusFormWithErrors = function() {
-    $(document).ready(function() {
+  var focusFormWithErrors = function () {
+    $(document).ready(function () {
       if ($('.comment_form').hasClass('form_with_errors')) {
         $('html, body').scrollTop($('.comment_form').offset().top);
       } else if ($('form').find('.form_error, .form_notice').length > 0) {
@@ -107,12 +108,12 @@
 
   // Wraps tables in the container.
   // TODO: remove if edicy is going to wrap table with the container.
-  var wrapTables = function() {
+  var wrapTables = function () {
     $('.content-formatted table').wrap('<div class="table-container"></div>');
   };
 
-  var handleFocus = function(el, func) {
-    el.focus(function() {
+  var handleFocus = function (el, func) {
+    el.focus(function () {
       $(window).keyup(function (e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if (code == 9) {
@@ -122,23 +123,23 @@
     });
   }
 
-  var handleElementsClick = function() {
+  var handleElementsClick = function () {
     if ($('.js-search').hasClass('active')) {
       $('.js-search').removeClass('active');
       $('.search-btn').removeClass('open');
     }
 
-    $('.js-read-more-comments').click(function() {
+    $('.js-read-more-comments').click(function () {
       togglecomments();
     });
 
-    $('.js-cart-btn').click(function() {
+    $('.js-cart-btn').click(function () {
       if ($(this).data('product-id')) {
         Voog.ShoppingCart.addProductById($(this).data('product-id'))
       }
     });
 
-    var togglecomments = function() {
+    var togglecomments = function () {
       var hiddenComments = $('.comments_secondary .comment');
       var hiddenCommentsHeight = hiddenComments.outerHeight() * hiddenComments.length;
       $('.comments_secondary').toggleClass('comments_hidden');
@@ -150,7 +151,7 @@
       }
     }
 
-    var toggleSearch = function() {
+    var toggleSearch = function () {
       $('html').removeClass('mobilemenu-open');
       $('.js-search').toggleClass('active');
       $('.js-search').hasClass('active') ? $('.js-search-input').focus() : '';
@@ -158,26 +159,41 @@
       $('html').removeClass('menu-language-popover-open');
     }
 
-    var toggleImageSettingsPopover = function() {
+    var toggleImageSettingsPopover = function () {
       $('.js-image-settings-popover').toggleClass('active');
     }
 
-    $('.js-toggle-image-settings').click(function() {
+    $('.js-toggle-image-settings').click(function () {
       toggleImageSettingsPopover();
     });
 
     handleFocus($('.js-toggle-image-settings'), toggleImageSettingsPopover);
 
-    var toggleMenuPopover = function() {
-      $('.menu_popover').toggleClass('active');
-
+    var toggleMenuDropdown = function (data_url) {
+      $('div[data-url="' + data_url + '"]:visible').toggleClass("active");
     }
 
-    $('.js-menu-popover-btn').click(function() {
-      toggleMenuPopover();
+    $('.menu-main').on('mouseenter mouseleave', '.dd-arrow', function () {
+      let popoverDiv = $(this).children()[1];
+
+      if ($('header').hasClass('menu-top') && window.innerWidth > 900 && $(popoverDiv).find('.menu').children(':visible').length > 0) {
+        let data_url = $(this).data('url');
+        toggleMenuDropdown(data_url);
+      }
     });
 
-    $('.editor_default-btn').click(function() {
+    $('.js-menu-popover-btn').on('click', function (e) {
+      setTimeout(function () {
+        toggleMenuPopover();
+        checkIfDropdownEmpty();
+      })
+    });
+
+    var toggleMenuPopover = function () {
+      $('.menu_popover').toggleClass('active');
+    }
+
+    $('.editor_default-btn').click(function () {
       $(this).closest('.editor_default-container').addClass('active');
     });
 
@@ -185,11 +201,11 @@
 
     handleFocus($('.js-search-toggle-btn'), toggleSearch);
 
-    $('.js-search-toggle-btn').click(function() {
+    $('.js-search-toggle-btn').click(function () {
       toggleSearch();
     });
 
-    $('.js-search-input').on('input', function() {
+    $('.js-search-input').on('input', function () {
       var searchCleanBtn = $(this).parent().next();
 
       if ($(this).val().length > 1) {
@@ -199,7 +215,7 @@
       }
     });
 
-    $('.js-search-reset-btn').click(function() {
+    $('.js-search-reset-btn').click(function () {
       $('html').removeClass('search-open');
       $('.js-search').removeClass('active');
     });
@@ -208,14 +224,14 @@
   // ===========================================================================
   // Function to detect if site language menu popover is open.
   // ===========================================================================
-  var languageMenuPopoverOpen = function() {
+  var languageMenuPopoverOpen = function () {
     return $('html').hasClass('menu-language-popover-open');
   };
 
   // ===========================================================================
   // Toggles language menu mode.
   // ===========================================================================
-  var bindLanguageMenuSettings = function(languageMenuValuesObj, dataKey) {
+  var bindLanguageMenuSettings = function (languageMenuValuesObj, dataKey) {
     if (!('type' in languageMenuValuesObj)) {
       languageMenuValuesObj.type = 'popover';
     }
@@ -225,28 +241,25 @@
     }
 
     var langSettingsEditor = new Edicy.SettingsEditor($('.js-menu-language-settings-toggle').get(0), {
-      menuItems: [
-        {
-          "titleI18n": "show",
-          "type": "radio",
-          "key": "item_state",
-          "list": [
-            {
-              "titleI18n": "flags_only",
-              "value": "flags_only"
-            },
-            {
-              "titleI18n": "names_only",
-              "value": "names_only"
-            }
-          ]
-        }
-      ],
+      menuItems: [{
+        "titleI18n": "show",
+        "type": "radio",
+        "key": "item_state",
+        "list": [{
+            "titleI18n": "flags_only",
+            "value": "flags_only"
+          },
+          {
+            "titleI18n": "names_only",
+            "value": "names_only"
+          }
+        ]
+      }],
 
       buttonTitleI18n: "settings",
       values: languageMenuValuesObj,
       containerClass: ['editor_default', 'js-prevent-sideclick'],
-      preview: function(data) {
+      preview: function (data) {
         var $html = $('html'),
           $languageSettingsMenuElement = $('.js-menu-language-settings');
 
@@ -265,7 +278,7 @@
         this.setPosition();
       },
 
-      commit: function(data) {
+      commit: function (data) {
         siteData.set(dataKey, data);
       }
     });
@@ -281,27 +294,27 @@
   };
 
   var bindContentItemImageLazyload = new LazyLoad({
-    threshold : 300,
+    threshold: 300,
     elements_selector: ".js-lazyload",
     callback_loaded: callback_loaded
   });
 
-  var handleProductPageContent = function() {
-    $(document).ready(function() {
+  var handleProductPageContent = function () {
+    $(document).ready(function () {
       changeProductImagePos();
     });
 
-    $(window).resize(debounce(function() {
+    $(window).resize(debounce(function () {
       changeProductImagePos();
     }, 25));
 
-    var changeProductImagePos = function() {
+    var changeProductImagePos = function () {
       var paroductImage = $('.js-product-page-image');
       var paroductImageWrap = $('.js-product-page-image-wrap');
       var buyBtnContent = $('.js-buy-btn-content');
 
       if ($('.js-buy-btn-content .edy-buy-button-container').length >= 1) {
-        if ($( window ).width() <= 752) {
+        if ($(window).width() <= 752) {
           if ($('.js-buy-btn-content .js-product-page-image').length <= 0) {
             buyBtnContent.prepend(paroductImage);
           }
@@ -314,16 +327,27 @@
     }
   }
 
+  var checkIfDropdownEmpty = function () {
+    $.each($('.dd-arrow'), function () {
+      let popoverDiv = $(this).children()[1];
+      if ($(popoverDiv).find('.dropdown_menu-popover .menu').children(':visible').length > 0) {
+        $(this).attr('data-arrow', 'active');
+      } else {
+        $(this).attr('data-arrow', 'inactive');
+      }
+    })
+  }
+
   // Initiates the table horisontal scroll function when window is resized.
-  var handleWindowResize = function() {
-    $(window).resize(debounce(function() {
+  var handleWindowResize = function () {
+    $(window).resize(debounce(function () {
       handleActivLangMenu();
       handleMenuTopPos();
     }, 25));
   };
 
-  var handleWindowScroll = function() {
-    window.addEventListener('scroll', function(e) {
+  var handleWindowScroll = function () {
+    window.addEventListener('scroll', function (e) {
       var wrapperHeight = $('.header_fixed').height();
       $('.t-sticky').css('top', $('.header_fixed').outerHeight() + 32);
 
@@ -337,9 +361,9 @@
     });
   };
 
-  var bindLanguageMenuButttons = function() {
+  var bindLanguageMenuButttons = function () {
     // Toggles language menu popover.
-    var togglePopover = function() {
+    var togglePopover = function () {
       var $html = $('html');
 
       $html.toggleClass('menu-language-popover-open');
@@ -349,33 +373,33 @@
     }
 
     if (editmode()) {
-      $('.js-toggle-menu-language .menu-language-btn').click(function() {
+      $('.js-toggle-menu-language .menu-language-btn').click(function () {
         togglePopover();
       });
     } else {
       if ("ontouchstart" in document.documentElement) {
         handleFocus($('.js-toggle-menu-language'), togglePopover);
-        $('.js-toggle-menu-language .menu-language-btn').click(function() {
+        $('.js-toggle-menu-language .menu-language-btn').click(function () {
           togglePopover();
         });
       }
     }
   };
 
-  var getCartItemsCount = function() {
+  var getCartItemsCount = function () {
     var cartItemsCount = 0;
     var cartItems = Voog.ShoppingCart.getContents().items;
 
-    for(var i=0; i < cartItems.length; i++){
+    for (var i = 0; i < cartItems.length; i++) {
       cartItemsCount += parseInt(cartItems[i].quantity);
     }
 
     return cartItemsCount;
   }
 
-  var buildCustomShoppingCartIcon = function() {
+  var buildCustomShoppingCartIcon = function () {
     // Emitted when the shopping cart button element is added to the DOM.
-    $(document).on('voog:shoppingcart:button:created', function() {
+    $(document).on('voog:shoppingcart:button:created', function () {
       if (getCartItemsCount() >= 1) {
         $('.cart_btn').addClass('visible');
         $('.cart_btn .cart_btn-count').text(getCartItemsCount());
@@ -413,99 +437,115 @@
     }
 
     // Emitted when a product is removed from the shopping cart
-    $(document).on('voog:shoppingcart:removeproduct', function(e) {
+    $(document).on('voog:shoppingcart:removeproduct', function (e) {
       handleProductCountChange(e, false);
     });
 
     // Emitted when a product's quantity changes
-    $(document).on('voog:shoppingcart:changequantity', function(e) {
+    $(document).on('voog:shoppingcart:changequantity', function (e) {
       handleProductCountChange(e, true);
     });
 
     // Emitted when a new product is added to the cart
-    $(document).on('voog:shoppingcart:addproduct', function(e) {
+    $(document).on('voog:shoppingcart:addproduct', function (e) {
       handleProductCountChange(e, true);
     });
 
-    $('.cart_btn, .cart_popover-wrap').click(function() {
+    $('.cart_btn, .cart_popover-wrap').click(function () {
       Voog.ShoppingCart.showCart()
     });
   };
 
-  var initProductListPage = function() {
+  var initProductListPage = function () {
     if ($(".js-product-whith-data").length >= 2) {
       $(".product_filters").removeClass('d-none');
     }
 
     function fadeAnimation(wrapper) {
-      wrapper.find('.js-product-item').each(function() {
+      wrapper.find('.js-product-item').each(function () {
         var item = $(this);
         var delay = item.index();
-        item.css({'opacity':'0', 'transition': 'none'});
-        setTimeout((function() {
-          item.animate({'opacity':'1'}, 500);
+        item.css({
+          'opacity': '0',
+          'transition': 'none'
+        });
+        setTimeout((function () {
+          item.animate({
+            'opacity': '1'
+          }, 500);
         }), delay * 40);
       });
     }
 
-    $(".product_list-search").on("keyup", function() {
+    $(".product_list-search").on("keyup", function () {
       var value = $(this).val().toLowerCase();
       fadeAnimation($('.product_list'));
-      $(".product_list .js-product-item").filter(function() {
+      $(".product_list .js-product-item").filter(function () {
         $(this).toggle($(this).attr("data-title").toLowerCase().indexOf(value) > -1)
       });
     });
 
-    $('.product_list-filter').on('change', function() {
+    $('.product_list-filter').on('change', function () {
       if (this.value === 'price-default') {
         var $wrapper = $('.product_list');
         fadeAnimation($wrapper);
-        $wrapper.find('.js-product-item').sort(function(a, b) {
-          return +a.dataset.index - +b.dataset.index;
-        })
-        .prependTo($wrapper);
+        $wrapper.find('.js-product-item').sort(function (a, b) {
+            return +a.dataset.index - +b.dataset.index;
+          })
+          .prependTo($wrapper);
       } else if (this.value === 'price-ascending') {
         var $wrapper = $('.product_list');
         fadeAnimation($wrapper);
-        $wrapper.find('.js-product-item[data-price]').sort(function(a, b) {
-          return +a.dataset.price - +b.dataset.price;
-        })
-        .prependTo($wrapper);
+        $wrapper.find('.js-product-item[data-price]').sort(function (a, b) {
+            return +a.dataset.price - +b.dataset.price;
+          })
+          .prependTo($wrapper);
       } else if (this.value === 'price-descending') {
         var $wrapper = $('.product_list');
         fadeAnimation($wrapper);
-        $wrapper.find('.js-product-item[data-price]').sort(function(a, b) {
-          return +b.dataset.price - +a.dataset.price;
-        })
-        .prependTo($wrapper);
+        $wrapper.find('.js-product-item[data-price]').sort(function (a, b) {
+            return +b.dataset.price - +a.dataset.price;
+          })
+          .prependTo($wrapper);
       } else if (this.value === 'title-ascending') {
         var $wrapper = $('.product_list');
         fadeAnimation($wrapper);
-        $wrapper.find('.js-product-item').sort(function(a, b) {
-          if(a.dataset.title < b.dataset.title) { return -1; }
-          if(a.dataset.title > b.dataset.title) { return 1; }
-          return 0;
-        })
-        .prependTo($wrapper);
+        $wrapper.find('.js-product-item').sort(function (a, b) {
+            if (a.dataset.title < b.dataset.title) {
+              return -1;
+            }
+            if (a.dataset.title > b.dataset.title) {
+              return 1;
+            }
+            return 0;
+          })
+          .prependTo($wrapper);
       } else if (this.value === 'title-descending') {
         var $wrapper = $('.product_list');
         fadeAnimation($wrapper);
-        $wrapper.find('.js-product-item').sort(function(a, b) {
-          if(a.dataset.title < b.dataset.title) { return 1; }
-          if(a.dataset.title > b.dataset.title) { return -1; }
-          return 0;
-        })
-        .prependTo($wrapper);
+        $wrapper.find('.js-product-item').sort(function (a, b) {
+            if (a.dataset.title < b.dataset.title) {
+              return 1;
+            }
+            if (a.dataset.title > b.dataset.title) {
+              return -1;
+            }
+            return 0;
+          })
+          .prependTo($wrapper);
       }
     });
   };
 
-  var handleMenuTopPos = function() {
-    if ($( window ).width() >= 900) {
+  var handleMenuTopPos = function () {
+    if ($(window).width() >= 900) {
       var topPos = $('.header_fixed').height() + 80;
 
       if ($('.semimodal-relative').length <= 0) {
-        $('.semimodal_bottom').css({'top': topPos, 'margin-top': topPos + 16});
+        $('.semimodal_bottom').css({
+          'top': topPos,
+          'margin-top': topPos + 16
+        });
       }
 
       if ($('.js-menu-language').length >= 1) {
@@ -518,16 +558,16 @@
     }
   };
 
-  var handleDocument = function() {
-    $(document).ready(function() {
+  var handleDocument = function () {
+    $(document).ready(function () {
       handleActivLangMenu();
       handleMenuTopPos();
 
-      $('.header_title').keyup(function(e) {
+      $('.header_title').keyup(function (e) {
         handleMenuTopPos();
       });
 
-      $('.js-menu-popover-btn').one( "click", function() {
+      $('.js-menu-popover-btn').one("click", function () {
         if (editmode()) {
           $('.semimodal_bottom .menu .menu-item.lvl-1').clone().appendTo('.menu_popover-list');
         } else {
@@ -538,8 +578,8 @@
     });
   };
 
-  var handleActivLangMenu = function() {
-    if ($( window ).width() >= 900) {
+  var handleActivLangMenu = function () {
+    if ($(window).width() >= 900) {
       $('.header_components-semimodal .menu-language-toggle').removeClass('js-toggle-menu-language');
       $('.header_components-menu--top .menu-language-toggle').addClass('js-toggle-menu-language');
     } else {
@@ -547,7 +587,7 @@
       $('.header_components-semimodal .menu-language-toggle').addClass('js-toggle-menu-language');
     }
   };
-  var setBlockColumnsWidth = function() {
+  var setBlockColumnsWidth = function () {
     $('.js-block').each(function () {
       var id = $(this).data('id');
       var maxWidth = $(this).data('max-width');
@@ -573,16 +613,16 @@
   };
 
   var handleBlockColumnsWidth = function (params) {
-    window.addEventListener('DOMContentLoaded', function(event) {
+    window.addEventListener('DOMContentLoaded', function (event) {
       setBlockColumnsWidth();
 
-      $(window).resize(function() {
+      $(window).resize(function () {
         setBlockColumnsWidth()
       });
     });
   }
 
-  var init = function() {
+  var init = function () {
     // Add site wide functions here.
     bindSideClicks();
     handleLanguageSwitch();
@@ -595,6 +635,8 @@
     handleDocument();
     buildCustomShoppingCartIcon();
     handleBlockColumnsWidth();
+    checkIfDropdownEmpty();
+
 
     if (!editmode()) {
       wrapTables();

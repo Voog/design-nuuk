@@ -30,7 +30,7 @@ body {
 
     &.visible {
       opacity: 1;
-      max-width: 36px;
+      max-width: fit-content;
       pointer-events: all;
       margin-left: 16px;
 
