@@ -1919,10 +1919,6 @@ html:not(.semimodal-relative) .semimodal {
   left: 0;
 }
 
-body .edy-popover {
-  z-index: 56502 !important;
-}
-
 body .edy-settings-editor:not(.editor_default) {
   position: fixed !important;
   left: 0 !important;
