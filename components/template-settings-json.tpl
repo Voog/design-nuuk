@@ -72,6 +72,14 @@
         }
       }
     },
+    "block_bg": {
+      "key": "PREFIX_block_bg_",
+      "value": {}
+    },
+    "block_content_bg": {
+      "key": "PREFIX_block_content_bg_",
+      "value": {}
+    },
     "swiper_bg": {
       "key": "PREFIX_swiper_bg",
       "value": {}

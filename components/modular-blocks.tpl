@@ -16,6 +16,9 @@
     {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
     {%- assign blockColumnsSettings = page.data[blockColumnsSettingsKey] -%}
 
+    {%- assign blockBgKey = template_settings.page.block_bg.key | append: id -%}
+    {%- assign block_bg = page.data[blockBgKey] -%}
+
     {%- assign blockColumnsCount = blockColumnsSettings.block_columns -%}
 
     {%- if blockColumnsCount != blank -%}
@@ -115,6 +118,7 @@
 
       .block-{{ id }} {
         width: 100%;
+        background-color: {{ block_bg.color }};
       }
 
       @media screen and (min-width: 720px) {
@@ -174,9 +178,23 @@
     </style>
 
     <section class="block-container-{{ id }} block-container content-body content-formatted{% if blockCount < id %} d-none js-lazyload{% endif %}">
-      <div class="block-{{ id }} js-block editor_default-container" data-id="{{ id }}" data-min-width="{{minWidth}}" data-max-width="{{maxBlockWidth}}">
+      <div class="block-{{ id }} block-{{ id }}-bg_color block-{{ id }}-bg_picker--area js-block editor_default-container" data-id="{{ id }}" data-min-width="{{minWidth}}" data-max-width="{{maxBlockWidth}}">
+        {%- assign blockImage = "image_fit-cover image_abs block-" | append: id | append: "-bg_image" -%}
+        {%- include "lazy-image", _data: block_bg, _className: blockImage -%}
         {%- if editmode -%}
           <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">{{ "block" | lce  | escape_once }} {{ id }}</button>
+          <button class="bg-picker"
+            data-picture="true"
+            data-color="true"
+            data-image_elem=".block-{{ id }}-bg_image"
+            data-color_elem=".block-{{ id }}-bg_color"
+            data-picker_area_elem=".block-{{ id }}-bg_picker--area"
+            data-picker_elem=".block-{{ id }}-bg_picker"
+            data-bg_key="{{blockBgKey}}"
+            data-bg="{{ block_bg | json | escape }}"
+            data-entity="pageData"
+
+          ></button>
         {%- endif -%}
         {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
         {%- assign blockColumnsCount = page.data[blockColumnsSettingsKey].block_columns -%}
@@ -201,10 +219,45 @@
         <div class="column-container-{{ id }} column-container-{{ columnCount }}-{{ id }} flex_wrap flex_j-center-mobile">
           {%- for i in (1..columnCounter) -%}
             {%- assign name = "content-" | append: i | append: "-" | append: id -%}
+            {%- assign col_item_id = i | append: "-" | append: id -%}
+            {%- assign blockContentBgKey = template_settings.page.block_content_bg.key | append: col_item_id -%}
+            {%- assign blockContent_bg = page.data[blockContentBgKey] -%}
+
             <div
-              class="col-item flex_auto b-box{% if columnCount < i %} d-none js-lazyload{% endif %}{% if columnCount == 1 %} content-formatted--overflowed-images{% endif %}"
+              class="col-item col-item-{{ col_item_id }}-bg_picker--area flex_auto b-box{% if columnCount < i %} d-none js-lazyload{% endif %}{% if columnCount == 1 %} content-formatted--overflowed-images{% endif %}"
               data-search-indexing-allowed="true"
             >
+            
+            <div class="col-item-{{ col_item_id }}-bg_color">
+            {%- assign blockContentImage = "image_fit-cover image_abs col-item-" | append: col_item_id | append: "-bg_image" -%}
+            {%- include "lazy-image", _data: blockContent_bg, _className: blockContentImage -%}
+            <style>
+              .col-item-{{ col_item_id }}-bg_color {
+                background-color: {{ blockContent_bg.color }};
+              }
+              .col-item {
+                z-index: 1;
+              }
+            </style>
+
+            <button 
+              style="
+                position: relative;
+                top: -32px;
+                " 
+              class="bg-picker"
+              data-picture="true"
+              data-color="true"
+              data-image_elem=".col-item-{{ col_item_id }}-bg_image"
+              data-color_elem=".col-item-{{ col_item_id }}-bg_color"
+              data-picker_area_elem=".col-item-{{ col_item_id }}-bg_picker--area"
+              data-picker_elem=".col-item-{{ col_item_id }}-bg_picker"
+              data-bg_key="{{blockContentBgKey}}"
+              data-bg="{{ blockContent_bg | json | escape }}"
+              data-entity="pageData"
+
+            ></button>
+
               {%- if id == 1 and i == 1 -%}
                 {%- comment -%}
                   For better migration use content with name "body" because older templates common page layout uses content with name "body".
@@ -221,6 +274,7 @@
               {%- else -%}
                 {%- content name=name -%}
               {%- endif -%}
+              </div>
             </div>
           {%- endfor -%}
         </div>
