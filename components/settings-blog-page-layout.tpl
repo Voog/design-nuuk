@@ -27,9 +27,18 @@
             "type": "radio",
             "key": "blog_layout",
             "list": [
-              {"title": "Popout article shown",   "value": "highlight_with_popout"},
-              {"title": "Popout article hidden",  "value": "highlight"},
-              {"title": "List view",              "value": "list"}
+              {
+                "title": "Popout article shown",
+                "value": "highlight_with_popout"
+              },
+              {
+                "title": "Popout article hidden",  
+                "value": "highlight"
+              },
+              {
+                "title": "List view",              
+                "value": "list"
+              }
             ]
           }
         ],

@@ -5,7 +5,6 @@
       "show_comments": true,
       "show_authors": true
     },
-    
     "language_menu_settings": {
       "key": "PREFIX_language_menu_settings",
       "value": {

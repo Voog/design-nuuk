@@ -33,7 +33,7 @@
     var valuesObj = {
       show_comments: show_comments,
       show_dates: show_dates,
-      show_authors: show_authors,
+      show_authors: show_authors
     }
 
     initSettingsEditor(
