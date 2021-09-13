@@ -193,7 +193,6 @@
             data-bg_key="{{blockBgKey}}"
             data-bg="{{ block_bg | json | escape }}"
             data-entity="pageData"
-
           ></button>
         {%- endif -%}
         {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
@@ -224,19 +223,21 @@
             {%- assign blockContent_bg = page.data[blockContentBgKey] -%}
 
             <div
-              class="col-item col-item-{{ col_item_id }}-bg_picker--area flex_auto b-box{% if columnCount < i %} d-none js-lazyload{% endif %}{% if columnCount == 1 %} content-formatted--overflowed-images{% endif %}"
+              class="col-item flex_auto b-box{% if columnCount < i %} d-none js-lazyload{% endif %}{% if columnCount == 1 %} content-formatted--overflowed-images{% endif %}"
               data-search-indexing-allowed="true"
             >
             
-            <div class="col-item-{{ col_item_id }}-bg_color">
+            <div class="col-item-{{ col_item_id }} col-item-{{ col_item_id }}-bg_color col-item-{{ col_item_id }}-bg_picker--area p-rel">
             {%- assign blockContentImage = "image_fit-cover image_abs col-item-" | append: col_item_id | append: "-bg_image" -%}
             {%- include "lazy-image", _data: blockContent_bg, _className: blockContentImage -%}
             <style>
               .col-item-{{ col_item_id }}-bg_color {
                 background-color: {{ blockContent_bg.color }};
+                z-index: 0;
               }
-              .col-item {
-                z-index: 1;
+
+              .col-item-{{ col_item_id }}-bg_image {
+                z-index: -1;
               }
             </style>
 
@@ -255,9 +256,8 @@
               data-bg_key="{{blockContentBgKey}}"
               data-bg="{{ blockContent_bg | json | escape }}"
               data-entity="pageData"
-
             ></button>
-
+              
               {%- if id == 1 and i == 1 -%}
                 {%- comment -%}
                   For better migration use content with name "body" because older templates common page layout uses content with name "body".
