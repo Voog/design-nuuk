@@ -114,6 +114,7 @@
         display: flex;
         justify-content: {{blockJustification}};
         margin-bottom: 8px;
+        position: relative;
       }
 
       .block-{{ id }} {
@@ -222,14 +223,6 @@
             {%- assign blockContentBgKey = template_settings.page.block_content_bg.key | append: col_item_id -%}
             {%- assign blockContent_bg = page.data[blockContentBgKey] -%}
 
-            <div
-              class="col-item flex_auto b-box{% if columnCount < i %} d-none js-lazyload{% endif %}{% if columnCount == 1 %} content-formatted--overflowed-images{% endif %}"
-              data-search-indexing-allowed="true"
-            >
-            
-            <div class="col-item-{{ col_item_id }} col-item-{{ col_item_id }}-bg_color col-item-{{ col_item_id }}-bg_picker--area p-rel">
-            {%- assign blockContentImage = "image_fit-cover image_abs col-item-" | append: col_item_id | append: "-bg_image" -%}
-            {%- include "lazy-image", _data: blockContent_bg, _className: blockContentImage -%}
             <style>
               .col-item-{{ col_item_id }}-bg_color {
                 background-color: {{ blockContent_bg.color }};
@@ -241,39 +234,43 @@
               }
             </style>
 
-            <button 
-              style="
-                position: relative;
-                top: -32px;
-                " 
-              class="bg-picker"
-              data-picture="true"
-              data-color="true"
-              data-image_elem=".col-item-{{ col_item_id }}-bg_image"
-              data-color_elem=".col-item-{{ col_item_id }}-bg_color"
-              data-picker_area_elem=".col-item-{{ col_item_id }}-bg_picker--area"
-              data-picker_elem=".col-item-{{ col_item_id }}-bg_picker"
-              data-bg_key="{{blockContentBgKey}}"
-              data-bg="{{ blockContent_bg | json | escape }}"
-              data-entity="pageData"
-            ></button>
-              
-              {%- if id == 1 and i == 1 -%}
-                {%- comment -%}
-                  For better migration use content with name "body" because older templates common page layout uses content with name "body".
-                {%- endcomment -%}
-
-                {%- capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture -%}
-                {%- if first_block_html == blank -%}
-                  {% assign name = "body" %}
+            <div
+              class="col-item flex_auto b-box{% if columnCount < i %} d-none js-lazyload{% endif %}{% if columnCount == 1 %} content-formatted--overflowed-images{% endif %} col-item-{{ col_item_id }} col-item-{{ col_item_id }}-bg_picker--area"
+              data-search-indexing-allowed="true"
+            >
+              <div class="col-item-{{ col_item_id }}-bg_color p-rel">
+                {%- if editmode -%}
+                  <button class="bg-picker"
+                    data-picture="true"
+                    data-color="true"
+                    data-image_elem=".col-item-{{ col_item_id }}-bg_image"
+                    data-color_elem=".col-item-{{ col_item_id }}-bg_color"
+                    data-picker_area_elem=".col-item-{{ col_item_id }}-bg_picker--area"
+                    data-picker_elem=".col-item-{{ col_item_id }}-bg_picker"
+                    data-bg_key="{{blockContentBgKey}}"
+                    data-bg="{{ blockContent_bg | json | escape }}"
+                    data-entity="pageData"
+                  ></button>
                 {%- endif -%}
+                
+                {%- if id == 1 and i == 1 -%}
+                  {%- comment -%}
+                    For better migration use content with name "body" because older templates common page layout uses content with name "body".
+                  {%- endcomment -%}
 
-                {% contentblock name=name %}
-                  {% include 'modular-content-1-1' %}
-                {% endcontentblock %}
-              {%- else -%}
-                {%- content name=name -%}
-              {%- endif -%}
+                  {%- capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture -%}
+                  {%- if first_block_html == blank -%}
+                    {% assign name = "body" %}
+                  {%- endif -%}
+
+                  {% contentblock name=name %}
+                    {% include 'modular-content-1-1' %}
+                  {% endcontentblock %}
+                {%- else -%}
+                  {%- content name=name -%}
+                {%- endif -%}
+                {%- assign blockContentImage = "image_fit-cover image_abs col-item-" | append: col_item_id | append: "-bg_image" -%}
+                {%- include "lazy-image", _data: blockContent_bg, _className: blockContentImage -%}
               </div>
             </div>
           {%- endfor -%}

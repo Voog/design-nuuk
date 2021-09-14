@@ -124,6 +124,18 @@ body * ::selection {
   right: 15px;
 }
 
+.block-container .voog-bg-picker-btn, .block-container
+.bg-picker {
+  top: -59px;
+  left: 80px;
+}
+
+.col-item .voog-bg-picker-btn, .col-item
+.bg-picker {
+  top: -56px;
+  left: 0px;
+}
+
 .bg-picker-top {
   z-index: 99;
   top: -22px;

@@ -47,6 +47,16 @@ body {
     top: -80px;
     right: 15px;
   }
+
+  .block-container & {
+    top: -59px; 
+    left: 80px;
+  }
+
+  .col-item & {
+    top: -56px;
+    left: 0px;
+  }
 }
 
 .bg-picker-top {
