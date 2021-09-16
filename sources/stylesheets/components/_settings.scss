@@ -566,9 +566,17 @@ body {
       bottom: 276px !important;
     }
   }
+  &.third {
+    bottom: 272px !important;
+
+    .edy-bar-open & {
+      bottom: 400px !important;
+    }
+  }
 
   &.first,
-  &.second {
+  &.second,
+  &.third {
     top: unset !important;
     position: fixed !important;
 

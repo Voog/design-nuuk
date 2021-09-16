@@ -253,6 +253,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/settings-blog-page-layout.tpl",
+      "layout_name": "settings-blog-page-layout",
+      "title": "settings-blog-page-layout"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/settings-blog-page.tpl",
       "layout_name": "settings-blog-page",
       "title": "settings-blog-page"

@@ -12,7 +12,7 @@
     {% else %}
       var globalDataValues = {}
     {% endif %};
-
+    
     var show_comments, show_dates, show_authors;
     if (globalDataValues.show_comments != null && globalDataValues.show_comments !== '') {
       show_comments = Boolean(globalDataValues.show_comments)
@@ -29,6 +29,7 @@
     } else {
       show_authors = true;
     }
+
     var valuesObj = {
       show_comments: show_comments,
       show_dates: show_dates,

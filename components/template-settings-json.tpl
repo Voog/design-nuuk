@@ -72,6 +72,12 @@
         }
       }
     },
+    "blog_settings": {
+      "key": "PREFIX_blog_settings",
+      "value": {
+        "blog_layout": "highlight_with_popout"
+      }
+    },
     "swiper_bg": {
       "key": "PREFIX_swiper_bg",
       "value": {}
