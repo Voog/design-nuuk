@@ -10,7 +10,7 @@
     {%- endif -%}
     {%- if _blogPage == true -%}
       {% include 'settings-blog-page' %}
-      {% include 'settings-blog-page-layout' %}
+      {% comment %}{% include 'settings-blog-page-layout' %}{% endcomment %}
     {%- endif -%}
     {%- if _articlePage == true -%}
       {% include 'settings-article-page' %}
