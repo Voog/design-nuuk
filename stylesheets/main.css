@@ -5291,15 +5291,15 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
 }
 
 .semimodal-open:not(.semimodal-relative) .menu-btn .menu-stripe {
-  -webkit-transform: rotate(45deg) translate(-4px, -4px);
-      -ms-transform: rotate(45deg) translate(-4px, -4px);
-          transform: rotate(45deg) translate(-4px, -4px);
+  -webkit-transform: rotate(45deg) translate(-3.5px, -3.5px);
+      -ms-transform: rotate(45deg) translate(-3.5px, -3.5px);
+          transform: rotate(45deg) translate(-3.5px, -3.5px);
 }
 
 .semimodal-open:not(.semimodal-relative) .menu-btn .menu-stripe:first-child {
-  -webkit-transform: rotate(-45deg) translate(-4px, 4px);
-      -ms-transform: rotate(-45deg) translate(-4px, 4px);
-          transform: rotate(-45deg) translate(-4px, 4px);
+  -webkit-transform: rotate(-45deg) translate(-3.5px, 3.5px);
+      -ms-transform: rotate(-45deg) translate(-3.5px, 3.5px);
+          transform: rotate(-45deg) translate(-3.5px, 3.5px);
 }
 
 @media screen and (max-width: 900px) {
@@ -5307,14 +5307,14 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
     width: 24px;
   }
   .semimodal-open.semimodal-relative .menu-btn .menu-stripe {
-    -webkit-transform: rotate(45deg) translate(-4px, -4px);
-        -ms-transform: rotate(45deg) translate(-4px, -4px);
-            transform: rotate(45deg) translate(-4px, -4px);
+    -webkit-transform: rotate(45deg) translate(-3.5px, -3.5px);
+        -ms-transform: rotate(45deg) translate(-3.5px, -3.5px);
+            transform: rotate(45deg) translate(-3.5px, -3.5px);
   }
   .semimodal-open.semimodal-relative .menu-btn .menu-stripe:first-child {
-    -webkit-transform: rotate(-45deg) translate(-4px, 4px);
-        -ms-transform: rotate(-45deg) translate(-4px, 4px);
-            transform: rotate(-45deg) translate(-4px, 4px);
+    -webkit-transform: rotate(-45deg) translate(-3.5px, 3.5px);
+        -ms-transform: rotate(-45deg) translate(-3.5px, 3.5px);
+            transform: rotate(-45deg) translate(-3.5px, 3.5px);
   }
 }
 
