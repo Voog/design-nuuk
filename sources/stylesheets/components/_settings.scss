@@ -169,6 +169,14 @@
   }
 }
 
+body .edy-popover {
+  z-index: $zindex-settings-popover + 1 !important;
+}
+
+body .edy-modal-mask {
+  z-index: $zindex-settings-popover + 2 !important;
+}
+
 body .edy-settings-editor:not(.editor_default) {
   position: fixed !important;
   left: 0 !important;
