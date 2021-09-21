@@ -67,14 +67,23 @@
         {%- if _defaultBlockObj[blockColumnsSettingsKey].col_h_padding -%}
           valuesObj.col_h_padding = "{{_defaultBlockObj[blockColumnsSettingsKey].col_h_padding}}";
         {%- else -%}
-          valuesObj.col_h_padding = "{{_defaultBlockObj.default.col_h_padding}}";
+          {%- if _frontPage -%}
+            valuesObj.col_h_padding = "{{_defaultBlockObj.default_front_page.col_h_padding}}";
+          {%- else -%}
+            valuesObj.col_h_padding = "{{_defaultBlockObj.default.col_h_padding}}";
+          {%- endif -%}
         {%- endif -%}
       }
+      
       if (!('col_min_width' in valuesObj)) {
         {%- if _defaultBlockObj[blockColumnsSettingsKey].col_min_width -%}
           valuesObj.col_min_width = "{{_defaultBlockObj[blockColumnsSettingsKey].col_min_width}}";
         {%- else -%}
-          valuesObj.col_min_width = "{{_defaultBlockObj.default.col_min_width}}";
+          {%- if _frontPage -%}
+            valuesObj.col_min_width = "{{_defaultBlockObj.default_front_page.col_min_width}}";
+          {%- else -%}
+            valuesObj.col_min_width = "{{_defaultBlockObj.default.col_min_width}}";
+          {%- endif -%}
         {%- endif -%}
       }
 
@@ -82,7 +91,11 @@
         {%- if _defaultBlockObj[blockColumnsSettingsKey].col_max_width -%}
           valuesObj.col_max_width = "{{_defaultBlockObj[blockColumnsSettingsKey].col_max_width}}";
         {%- else -%}
-          valuesObj.col_max_width = "{{_defaultBlockObj.default.col_max_width}}";
+          {%- if _frontPage -%}
+            valuesObj.col_max_width = "{{_defaultBlockObj.default_front_page.col_max_width}}";
+          {%- else -%}
+            valuesObj.col_max_width = "{{_defaultBlockObj.default.col_max_width}}";
+          {%- endif -%}
         {%- endif -%}
       }
 
@@ -90,7 +103,11 @@
         {%- if _defaultBlockObj[blockColumnsSettingsKey].col_justification -%}
           valuesObj.col_justification = "{{_defaultBlockObj[blockColumnsSettingsKey].col_justification}}";
         {%- else -%}
-          valuesObj.col_justification = "{{_defaultBlockObj.default.col_justification}}";
+          {%- if _frontPage -%}
+            valuesObj.col_justification = "{{_defaultBlockObj.default_front_page.col_justification}}";
+          {%- else -%}
+            valuesObj.col_justification = "{{_defaultBlockObj.default.col_justification}}";
+          {%- endif -%}
         {%- endif -%}
       }
 
@@ -98,7 +115,11 @@
       {%- if _defaultBlockObj[blockColumnsSettingsKey].block_v_padding -%}
         valuesObj.block_v_padding = "{{_defaultBlockObj[blockColumnsSettingsKey].block_v_padding}}";
       {%- else -%}
-        valuesObj.block_v_padding = "{{_defaultBlockObj.default.block_v_padding}}";
+        {%- if _frontPage -%}
+          valuesObj.block_v_padding = "{{_defaultBlockObj.default_front_page.block_v_padding}}";
+        {%- else -%}
+          valuesObj.block_v_padding = "{{_defaultBlockObj.default.block_v_padding}}";
+        {%- endif -%}
       {%- endif -%}
       }
 
@@ -106,7 +127,11 @@
         {%- if _defaultBlockObj[blockColumnsSettingsKey].block_max_width -%}
           valuesObj.block_max_width = "{{_defaultBlockObj[blockColumnsSettingsKey].block_max_width}}";
         {%- else -%}
-          valuesObj.block_max_width = "{{_defaultBlockObj.default.block_max_width}}";
+          {%- if _frontPage -%}
+            valuesObj.block_max_width = "{{_defaultBlockObj.default_front_page.block_max_width}}";
+          {%- else -%}
+            valuesObj.block_max_width = "{{_defaultBlockObj.default.block_max_width}}";
+          {%- endif -%}
         {%- endif -%}
       }
 
@@ -114,7 +139,11 @@
         {%- if _defaultBlockObj[blockColumnsSettingsKey].block_justification -%}
             valuesObj.block_justification = "{{_defaultBlockObj[blockColumnsSettingsKey].block_justification}}";
         {%- else -%}
-          valuesObj.block_justification = "{{_defaultBlockObj.default.block_justification}}";
+          {%- if _frontPage -%}
+            valuesObj.block_justification = "{{_defaultBlockObj.default_front_page.block_justification}}";
+          {%- else -%}
+            valuesObj.block_justification = "{{_defaultBlockObj.default.block_justification}}";
+          {%- endif -%}
         {%- endif -%}
       }
 
@@ -122,7 +151,11 @@
         {%- if _defaultBlockObj[blockColumnsSettingsKey].col_count %}
           valuesObj['block_columns'] = {{_defaultBlockObj[blockColumnsSettingsKey].col_count}};
         {%- else %}
-          valuesObj['block_columns'] = {{_defaultBlockObj.default.col_count}};
+          {%- if _frontPage -%}
+            valuesObj['block_columns'] = {{_defaultBlockObj.default_front_page.col_count}};
+          {%- else -%}
+            valuesObj['block_columns'] = {{_defaultBlockObj.default.col_count}};
+          {%- endif -%}
         {%- endif %}
       }
 

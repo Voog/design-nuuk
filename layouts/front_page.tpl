@@ -146,12 +146,20 @@
             ></button>
           </div>
         {% endif %}
+        
         <div class="container flex_col flex_j-space-between h-100p">
           <main class="content" role="main" data-search-indexing-allowed="true">
             <div class="content-slogan content-formatted js-content-optional" data-search-indexing-allowed="true">
               {% content name="slogan" %}
             </div>
+            {%comment%}
             <section class="content-body content-formatted{% if front_main_has_content or editmode %} mar_t-32{% endif %}" data-search-indexing-allowed="true">{% content %}</section>
+            {%endcomment%}
+            {% include 'modular-blocks',
+              _blockSettings: page.data[blockSettingsKey],
+              _frontPage: true,
+              _defaultBlockObj: template_settings.page.block_columns_settings.value
+            %}
           </main>
         </div>
       </div>
@@ -161,7 +169,7 @@
 
   {% include 'template-tooltips' %}
   {% include "site-signout" %}
-  {% include 'settings-popover', _frontPage: true %}
+  {%comment%}{% include 'settings-popover', _frontPage: true %}{%endcomment%}
   {% include "javascripts" %}
   {% include 'swiper-js' %}
 </body>
