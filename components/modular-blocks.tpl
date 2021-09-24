@@ -217,21 +217,16 @@
                 {%- comment -%}
                   For better migration use content with name "body" because older templates common page layout uses content with name "body".
                 {%- endcomment -%}
+                {%- capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture -%}
+                {%- if first_block_html == blank -%}
+                  {% assign name = "body" %}
+                {%- endif -%}
                 {%- if _commonPage -%}
-                  {%- capture first_block_html %}{% content readonly=editmode name=name %}{% endcapture -%}
-                  {%- if first_block_html == blank -%}
-                    {% assign name = "body" %}
-                  {%- endif -%}
                   {% contentblock name=name %}
                     {% include 'modular-content-1-1' %}
                   {% endcontentblock %}
-                {%- elsif _frontPage -%}
-                  {%- if first_block_html == blank -%}
-                    {% assign name = "body" %}
-                  {%- endif -%}
-                  {%- if front_main_html -%}
-                    {% content name=name %}
-                  {%- endif -%}
+                {%- else -%}
+                  {%- content name=name -%}
                 {%- endif -%}
               {%- else -%}
                 {%- content name=name -%}
