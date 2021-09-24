@@ -60,16 +60,6 @@
           "col_min_width": 400,
           "col_h_padding": 16
         },
-        "default_front_page": {
-          "col_count": 1,
-          "block_max_width": 100,
-          "block_justification": "center",
-          "block_v_padding": 0,
-          "col_max_width": "none",
-          "col_justification": "evenly",
-          "col_min_width": 400,
-          "col_h_padding": 16
-        },
         "default": {
           "col_count": 2,
           "block_max_width": 100,
@@ -77,6 +67,21 @@
           "block_v_padding": 64,
           "col_justification": "evenly",
           "col_max_width": 400,
+          "col_min_width": 400,
+          "col_h_padding": 16
+        }
+      }
+    },
+    "block_columns_settings_front_page": {
+      "key": "PREFIX_block_columns_settings_front_page_",
+      "value": {
+        "default": {
+          "col_count": 1,
+          "block_max_width": 100,
+          "block_justification": "center",
+          "block_v_padding": 0,
+          "col_max_width": "none",
+          "col_justification": "evenly",
           "col_min_width": 400,
           "col_h_padding": 16
         }

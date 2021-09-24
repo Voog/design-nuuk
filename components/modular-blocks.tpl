@@ -2,11 +2,7 @@
 {%- if _blockSettings.block_count != blank -%}
   {%- assign blockCount = _blockSettings.block_count | to_num -%}
 {%- elsif _defaultBlockObj -%}
-  {%- if _frontPage -%}
-    {%- assign blockCount = 1 -%}
-  {%- else -%}
-    {%- assign blockCount = 2 -%}
-  {%- endif -%}
+  {%- assign blockCount = _defaultBlockObj.size -%}
 {%- endif -%}
 
 {%- if editmode and blockCount < 5 -%}
@@ -17,7 +13,11 @@
 
 <div class="block-container-wrap">
   {%- for id in (1..blockCounter) -%}
-    {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
+    {%- if _frontPage -%}
+      {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings_front_page.key | append: id -%}
+    {%- else -%}
+      {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
+    {%- endif -%}
     {%- assign blockColumnsSettings = page.data[blockColumnsSettingsKey] -%}
 
     {%- assign blockColumnsCount = blockColumnsSettings.block_columns -%}
@@ -28,11 +28,7 @@
       {%- if _defaultBlockObj[blockColumnsSettingsKey].col_count -%}
         {%- assign blockColumnsCount = _defaultBlockObj[blockColumnsSettingsKey].col_count -%}
       {%- else -%}
-        {%- if _frontPage -%}
-          {%- assign blockColumnsCount = _defaultBlockObj.default_front_page.col_count -%}
-        {%- else -%}
-          {%- assign blockColumnsCount = _defaultBlockObj.default.col_count -%}
-        {%- endif -%}
+        {%- assign blockColumnsCount = _defaultBlockObj.default.col_count -%}
       {%- endif -%}
     {%- endif -%}
 
@@ -42,11 +38,7 @@
       {%- if _defaultBlockObj[blockColumnsSettingsKey].col_h_padding -%}
         {%- assign hPadding = _defaultBlockObj[blockColumnsSettingsKey].col_h_padding | plus: 0 -%}
       {%- else -%}
-        {%- if _frontPage -%}
-          {%- assign hPadding = _defaultBlockObj.default_front_page.col_h_padding | plus: 0 -%}
-        {%- else -%}
-          {%- assign hPadding = _defaultBlockObj.default.col_h_padding | plus: 0 -%}
-        {%- endif -%}
+        {%- assign hPadding = _defaultBlockObj.default.col_h_padding | plus: 0 -%}
       {%- endif -%}
     {%- endif -%}
 
@@ -56,11 +48,7 @@
       {%- if _defaultBlockObj[blockColumnsSettingsKey].block_v_padding -%}
         {%- assign vPadding = _defaultBlockObj[blockColumnsSettingsKey].block_v_padding | plus: 0 -%}
       {%- else -%}
-        {%- if _frontPage -%}
-          {%- assign vPadding = _defaultBlockObj.default_front_page.block_v_padding | plus: 0 -%}
-        {%- else -%}
-          {%- assign vPadding = _defaultBlockObj.default.block_v_padding | plus: 0 -%}
-        {%- endif -%}
+        {%- assign vPadding = _defaultBlockObj.default.block_v_padding | plus: 0 -%}
       {%- endif -%}
     {%- endif -%}
 
@@ -70,11 +58,7 @@
       {%- if _defaultBlockObj[blockColumnsSettingsKey].col_min_width -%}
         {%- assign minWidth = _defaultBlockObj[blockColumnsSettingsKey].col_min_width -%}
       {%- else -%}
-        {%- if _frontPage -%}
-          {%- assign minWidth = _defaultBlockObj.default_front_page.col_min_width -%}
-        {%- else -%}
-          {%- assign minWidth = _defaultBlockObj.default.col_min_width -%}
-       {%- endif -%} 
+        {%- assign minWidth = _defaultBlockObj.default.col_min_width -%}
       {%- endif -%}
     {%- endif -%}
 
@@ -84,11 +68,7 @@
       {%- if _defaultBlockObj[blockColumnsSettingsKey].col_justification -%}
         {%- assign colJustification = _defaultBlockObj[blockColumnsSettingsKey].col_justification -%}
       {%- else -%}
-        {%- if _frontPage -%}
-          {%- assign colJustification = _defaultBlockObj.default_front_page.col_justification -%}
-        {%- else -%}
-          {%- assign colJustification = _defaultBlockObj.default.col_justification -%}
-        {%- endif -%}
+        {%- assign colJustification = _defaultBlockObj.default.col_justification -%}
       {%- endif -%}
     {%- endif -%}
 
@@ -101,11 +81,7 @@
         {%- if _defaultBlockObj[blockColumnsSettingsKey].col_max_width -%}
           {%- assign col_max_width = _defaultBlockObj[blockColumnsSettingsKey].col_max_width -%}
         {%- else -%}
-          {%- if _frontPage -%}
-            {%- assign col_max_width = _defaultBlockObj.default_front_page.col_max_width -%}
-          {%- else -%}
-            {%- assign col_max_width = _defaultBlockObj.default.col_max_width -%}
-          {%- endif -%}
+          {%- assign col_max_width = _defaultBlockObj.default.col_max_width -%}
         {%- endif -%}
       {%- endif -%}
     {%- endif -%}
@@ -119,11 +95,7 @@
         {%- if _defaultBlockObj[blockColumnsSettingsKey].block_max_width -%}
           {%- assign maxBlockWidth = _defaultBlockObj[blockColumnsSettingsKey].block_max_width -%}
         {%- else -%}
-          {%- if _frontPage -%}
-            {%- assign maxBlockWidth = _defaultBlockObj.default_front_page.block_max_width -%}
-          {%- else -%}
-            {%- assign maxBlockWidth = _defaultBlockObj.default.block_max_width -%}
-          {%- endif -%}
+          {%- assign maxBlockWidth = _defaultBlockObj.default.block_max_width -%}
         {%- endif -%}
       {% endif %}
     {%- endif -%}
@@ -134,11 +106,7 @@
       {%- if _defaultBlockObj[blockColumnsSettingsKey].block_justification -%}
         {%- assign blockJustification = _defaultBlockObj[blockColumnsSettingsKey].block_justification -%}
       {%- else -%}
-        {%- if _frontPage -%}
-          {%- assign blockJustification = _defaultBlockObj.default_front_page.block_justification -%}
-        {%- else -%}
-          {%- assign blockJustification = _defaultBlockObj.default.block_justification -%}
-        {%- endif -%}
+        {%- assign blockJustification = _defaultBlockObj.default.block_justification -%}
       {%- endif -%}
     {%- endif -%}
 
@@ -214,7 +182,11 @@
         {%- if editmode -%}
           <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">{{ "block" | lce  | escape_once }} {{ id }}</button>
         {%- endif -%}
-        {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
+        {%- if _frontPage -%}
+          {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings_front_page.key | append: id -%}
+        {%- else -%}
+          {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
+        {%- endif -%} 
         {%- assign blockColumnsCount = page.data[blockColumnsSettingsKey].block_columns -%}
 
 
@@ -224,11 +196,7 @@
           {%- if _defaultBlockObj[blockColumnsSettingsKey].col_count %}
             {%- assign columnCount = _defaultBlockObj[blockColumnsSettingsKey].col_count -%}
           {%- else %}
-            {%- if _frontPage -%}
-              {%- assign columnCount = _defaultBlockObj.default_front_page.col_count -%}
-            {%- else -%}
-              {%- assign columnCount = _defaultBlockObj.default.col_count -%}
-            {%- endif -%}
+            {%- assign columnCount = _defaultBlockObj.default.col_count -%}
           {%- endif %}
         {%- endif -%}
 
@@ -276,10 +244,7 @@
   {%- endfor -%}
 </div>
 
-
-
 {% include 'settings-popover',
   _blockSettings: _blockSettings, _commonPage: _commonPage,
   _defaultBlockObj: _defaultBlockObj, _blockCount: blockCount
 %}
-
