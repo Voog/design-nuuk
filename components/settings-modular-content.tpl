@@ -55,7 +55,7 @@
     {%- endif -%}
 
     {% for id in (1..blockCounter) %}
-      {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
+      {%- assign blockColumnsSettingsKey = _columnBaseKey | append: id -%}
 
       {%- if page.data[blockColumnsSettingsKey] %}
         var valuesObj = {{ page.data[blockColumnsSettingsKey] | json }};
@@ -70,6 +70,7 @@
           valuesObj.col_h_padding = "{{_defaultBlockObj.default.col_h_padding}}";
         {%- endif -%}
       }
+      
       if (!('col_min_width' in valuesObj)) {
         {%- if _defaultBlockObj[blockColumnsSettingsKey].col_min_width -%}
           valuesObj.col_min_width = "{{_defaultBlockObj[blockColumnsSettingsKey].col_min_width}}";

@@ -2,10 +2,13 @@
   <div class="layout_settings-popover js-layout_settings-popover">
     {%- if _frontPage == true -%}
       {% include 'settings-swiper' %}
+      {% include 'settings-modular-content',
+        _blockSettings: _blockSettings, _defaultBlockObj: _defaultBlockObj, _columnBaseKey: _columnBaseKey
+      %}
     {%- endif -%}
     {%- if _commonPage == true -%}
       {% include 'settings-modular-content',
-        _blockSettings: _blockSettings, _defaultBlockObj: _defaultBlockObj
+        _blockSettings: _blockSettings, _defaultBlockObj: _defaultBlockObj, _columnBaseKey: _columnBaseKey
       %}
     {%- endif -%}
     {%- if _blogPage == true -%}

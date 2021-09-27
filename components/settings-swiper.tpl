@@ -110,7 +110,7 @@
         ],
         dataKey: '{{swiperSettingsKey}}',
         values: valuesObj,
-        containerClass: ['bottom-settings-popover', 'first', 'editor_default'],
+        containerClass: ['bottom-settings-popover', 'third', 'editor_default'],
         prevFunc: function(data) {
           if (data.slides_count > 1) {
             $('.swiper-settings-opt').show();
