@@ -148,7 +148,7 @@
         {% endif %}
         <div class="container flex_col flex_j-space-between h-100p">
           <main class="content" role="main" data-search-indexing-allowed="true">
-            <div class="content-slogan content-formatted js-content-optional" data-search-indexing-allowed="true">
+            <div class="content-slogan content-formatted js-content-optional{% if front_main_has_content or editmode %} mar_b-32{% endif %}" data-search-indexing-allowed="true">
               {% content name="slogan" %}
             </div>
             {% include 'modular-blocks',
