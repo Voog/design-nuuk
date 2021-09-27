@@ -11,13 +11,15 @@
   {%- assign blockCounter = blockCount -%}
 {%- endif -%}
 
+{%- if _frontPage -%}
+  {%- assign _columnBaseKey = template_settings.page.block_columns_settings_front_page.key -%}
+{%- else -%}
+  {%- assign _columnBaseKey = template_settings.page.block_columns_settings.key -%}
+{%- endif -%}
+
 <div class="block-container-wrap">
   {%- for id in (1..blockCounter) -%}
-    {%- if _frontPage -%}
-      {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings_front_page.key | append: id -%}
-    {%- else -%}
-      {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
-    {%- endif -%}
+    {%- assign blockColumnsSettingsKey = _columnBaseKey | append: id -%}
     {%- assign blockColumnsSettings = page.data[blockColumnsSettingsKey] -%}
 
     {%- assign blockColumnsCount = blockColumnsSettings.block_columns -%}
@@ -182,11 +184,7 @@
         {%- if editmode -%}
           <button disabled class="js-column-settings-btn-{{ id }} editor_default-btn js-settings-editor-btn">{{ "block" | lce  | escape_once }} {{ id }}</button>
         {%- endif -%}
-        {%- if _frontPage -%}
-          {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings_front_page.key | append: id -%}
-        {%- else -%}
-          {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
-        {%- endif -%} 
+        {%- assign blockColumnsSettingsKey = _columnBaseKey | append: id -%}
         {%- assign blockColumnsCount = page.data[blockColumnsSettingsKey].block_columns -%}
 
 
@@ -241,5 +239,6 @@
 
 {% include 'settings-popover',
   _blockSettings: _blockSettings, _commonPage: _commonPage,
+  _frontPage: _frontPage, _columnBaseKey: _columnBaseKey,
   _defaultBlockObj: _defaultBlockObj, _blockCount: blockCount
 %}

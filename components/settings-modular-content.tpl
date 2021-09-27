@@ -55,11 +55,7 @@
     {%- endif -%}
 
     {% for id in (1..blockCounter) %}
-      {%- if _frontPage -%}
-        {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings_front_page.key | append: id -%}
-      {%- else -%}
-        {%- assign blockColumnsSettingsKey = template_settings.page.block_columns_settings.key | append: id -%}
-      {%- endif -%} 
+      {%- assign blockColumnsSettingsKey = _columnBaseKey | append: id -%}
 
       {%- if page.data[blockColumnsSettingsKey] %}
         var valuesObj = {{ page.data[blockColumnsSettingsKey] | json }};
