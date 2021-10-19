@@ -1,5 +1,5 @@
 {%- if page.layout_title == product_layout -%}
-  {%- assign level_str = 'menuitems_with_hidden_on_level_' | append: page.level -%}
+  {%- assign level_str = 'visible_menuitems_on_level_' | append: page.level -%}
   {%- assign productPageUrls = ',' | split: ','-%}
   {%- for level in site[level_str] -%}
     {%- if level.layout_title == product_layout -%}
