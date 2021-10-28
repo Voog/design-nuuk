@@ -32,27 +32,37 @@
         valuesObj.is_related_product_3 = 0;
       }
 
-      var productsPageList = [{"title": '---',"value": 0}];
+      let productsPageList = [{"title": '---',"value": 0}];
 
-      $('.js-layout_settings-btn').one( "click", function(e) {
-        $.ajax({
+      const getProducts = (page = 1) => {
+        return $.ajax({
           type: 'GET',
           contentType: 'application/json',
-          url: '/admin/api/buy_buttons?q.content.parent_type=page&q.content.language_id={{page.language_id}}&per_page=250',
+          url: `/admin/api/buy_buttons?q.content.parent_type=page&q.content.language_id={{page.language_id}}&per_page=250&page=${page}`,
           dataType: 'json',
-          success: function(data) {
-            for (var i = 0; i < data.length; i++) {
-              if (data[i].product) {
+          success: function(results, status, xhr) {
+            results.forEach((result) => {
+              if (result.product) {
                 productsPageList.push(
                   {
-                    "title": data[i].product.name + " (" + data[i].parent.title + ")",
-                    "value": data[i].parent.id
+                    "title": `${result.product.name} (${result.parent.title})`,
+                    "value": result.parent.id
                   }
                 );
               }
-            };
+            });
+
+            const numberOfPages = parseInt(xhr.getResponseHeader('X-Total-Pages'))
+
+            if (page < numberOfPages) {
+              getProducts(page + 1);
+            }
           }
-        }).then(function() {
+        })
+      }
+
+      $('.js-layout_settings-btn').one( "click", function(e) {
+        getProducts().then(function() {
           initSettingsEditor(
             {
               settingsBtn: document.querySelector('.js-product-page-settings-btn'),
