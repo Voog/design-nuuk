@@ -40,15 +40,13 @@
           contentType: 'application/json',
           url: `/admin/api/buy_buttons?q.content.parent_type=page&q.content.language_id={{page.language_id}}&per_page=250&page=${page}`,
           dataType: 'json',
-          success: function(results, status, xhr) {
+          success: function (results, status, xhr) {
             results.forEach((result) => {
               if (result.product) {
-                productsPageList.push(
-                  {
-                    "title": `${result.product.name} (${result.parent.title})`,
-                    "value": result.parent.id
-                  }
-                );
+                productsPageList.push({
+                  "title": `${result.product.name} (${result.parent.title})`,
+                  "value": result.parent.id
+                });
               }
             });
 
