@@ -32,35 +32,70 @@
         valuesObj.is_related_product_3 = 0;
       }
 
-      let productsPageList = [{"title": '---',"value": 0}];
+      var productsPageList = [{"title": '---',"value": 0}];
 
-      const getProducts = (page = 1) => {
-        return $.ajax({
-          type: 'GET',
-          contentType: 'application/json',
-          url: `/admin/api/buy_buttons?q.content.parent_type=page&q.content.language_id={{page.language_id}}&per_page=250&page=${page}`,
-          dataType: 'json',
-          success: function (results, status, xhr) {
-            results.forEach((result) => {
-              if (result.product) {
-                productsPageList.push({
-                  "title": `${result.product.name} (${result.parent.title})`,
-                  "value": result.parent.id
-                });
-              }
-            });
+      function getAllProducts(pageNumber) {
+        var promises = [];
 
-            const numberOfPages = parseInt(xhr.getResponseHeader('X-Total-Pages'))
+        return getProductsPage(1).then(function (productsPage) {
+          var numberOfPages = productsPage.numberOfPages;
 
-            if (page < numberOfPages) {
-              getProducts(page + 1);
-            }
+          for (var i = 2; i <= numberOfPages; i++) {
+            promises.push(getProductsPage(i));
           }
-        })
+
+          parseResults(productsPage.products);
+
+          Promise.all(promises).then(function (results) {
+            results.forEach(function (result) {
+              parseResults(result.products);
+            });
+          });
+        });
+      }
+
+      function getProductsPage(pageNumber) {
+        var numberOfPages;
+
+        return new Promise(function (resolve, reject) {
+          $.ajax({
+            type: 'GET',
+            contentType: 'application/json',
+            url: "/admin/api/buy_buttons" +
+                  "?q.content.parent_type=page" +
+                  "&q.content.language_id={{page.language_id}}" +
+                  "&per_page=250" +
+                  "&page=" + pageNumber,
+            dataType: 'json',
+          })
+          .then(function (products, status, xhr) {
+            numberOfPages = parseInt(xhr.getResponseHeader('X-Total-Pages'));
+
+            resolve({
+              products: products,
+              numberOfPages: numberOfPages
+            });
+          })
+          .catch(function (xhr) {
+            alert('Something went wrong.');
+            reject();
+          });
+        });
+      }
+
+      function parseResults(results) {
+        results.forEach(function (result) {
+          if (result.product) {
+            productsPageList.push({
+              "title": result.product.name + " (" + result.parent.title + ") ",
+              "value": result.parent.id
+            });
+          }
+        });
       }
 
       $('.js-layout_settings-btn').one( "click", function(e) {
-        getProducts().then(function() {
+        getAllProducts().then(function() {
           initSettingsEditor(
             {
               settingsBtn: document.querySelector('.js-product-page-settings-btn'),
