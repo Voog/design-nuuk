@@ -14,6 +14,8 @@
 <script>
   {% if editmode %}
     window.addEventListener('DOMContentLoaded', function(event) {
+      var productsPageList = [{"title": '---',"value": 0}];
+
       {% if productPageSettings %}
         var valuesObj = {{ productPageSettings | json }};
       {% else %}
@@ -32,13 +34,16 @@
         valuesObj.is_related_product_3 = 0;
       }
 
-      var productsPageList = [{"title": '---',"value": 0}];
+      function productListError(e) {
+        if (window.console && window.console.error) {
+          console.error(e);
+        }
+      }
 
-      function getAllProducts(pageNumber) {
-        var promises = [];
-
+      function getAllProducts() {
         return getProductsPage(1).then(function (productsPage) {
           var numberOfPages = productsPage.numberOfPages;
+          var promises = [];
 
           for (var i = 2; i <= numberOfPages; i++) {
             promises.push(getProductsPage(i));
@@ -77,7 +82,7 @@
             });
           })
           .catch(function (xhr) {
-            alert('Something went wrong.');
+            productListError('Error while loading related products product list')
             reject();
           });
         });
