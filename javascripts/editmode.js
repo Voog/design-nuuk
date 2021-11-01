@@ -548,6 +548,122 @@
     });
   };
 
+  var initProductPageSettings = function(options) {
+    window.addEventListener('DOMContentLoaded', function() {
+      var productsPageList = [{"title": '---',"value": 0}];
+
+      if (!('is_related_product_1' in valuesObj)) {
+        valuesObj.is_related_product_1 = 0;
+      }
+
+      if (!('is_related_product_2' in valuesObj)) {
+        valuesObj.is_related_product_2 = 0;
+      }
+
+      if (!('is_related_product_3' in valuesObj)) {
+        valuesObj.is_related_product_3 = 0;
+      }
+
+      var productListError = function (e) {
+        if (window.console && window.console.error) {
+          console.error(e);
+        }
+      }
+
+      var getAllProducts = function(page, pageLanguageId) {
+        var numberOfPages;
+
+        return $.ajax({
+          type: 'GET',
+          contentType: 'application/json',
+          url: '/admin/api/buy_buttons' +
+            '?q.content.parent_type=page' +
+            '&q.content.language_id=' + pageLanguageId +
+            '&per_page=25' +
+            '&page=' + page,
+          dataType: 'json',
+          async: false,
+          success: function(results, status, xhr) {
+            results.forEach( function (result) {
+              if (result.product) {
+                productsPageList.push(
+                  {
+                    "title": result.product.name + ' (' + result.parent.title + ') ',
+                    "value": result.parent.id
+                  }
+                );
+              }
+            });
+
+            numberOfPages = parseInt(xhr.getResponseHeader('X-Total-Pages'));
+
+            if (page < numberOfPages) {
+              getAllProducts(page + 1, pageLanguageId);
+            }
+          },
+          error: productListError("Error while getting related products list")
+        })
+      };
+
+      $('.js-layout_settings-btn').one( "click", function(e) {
+        getAllProducts(1, options.pageLanguageId).then(function() {
+          initSettingsEditor(
+            {
+              settingsBtn: document.querySelector('.js-product-page-settings-btn'),
+              menuItems: [
+                {
+                  "title": options.selectRelatedProduct,
+                  "type": "select",
+                  "key": "is_related_product_1",
+                  "list": productsPageList,
+                },
+                {
+                  "title": options.selectRelatedProduct,
+                  "type": "select",
+                  "key": "is_related_product_2",
+                  "list": productsPageList,
+                },
+                {
+                  "title": options.selectRelatedProduct,
+                  "type": "select",
+                  "key": "is_related_product_3",
+                  "list": productsPageList,
+                },
+                {
+                  "title": options.addProductLabel,
+                  "type": "text",
+                  "key": "product_label",
+                  "placeholder": options.addProductLabel
+                },
+                {
+                  "title": options.crossOutLabel,
+                  "type": "checkbox",
+                  "key": "is_product_label_line_through",
+                  "states": {
+                    "on": true,
+                    "off": false
+                  }
+                },
+                {
+                  "title": options.borderAroundLabel,
+                  "type": "checkbox",
+                  "key": "is_product_label_box",
+                  "states": {
+                    "on": true,
+                    "off": false
+                  }
+                }
+              ],
+              dataKey: options.dataKey,
+              containerClass: ['bottom-settings-popover', 'first', 'editor_default'],
+              values: options.valuesObj
+            }
+          )
+        });
+      });
+    });
+  };
+
   var init = function() {
     bindCustomDataItem();
     handleDocument();
@@ -562,7 +678,8 @@
     bindContentItemImageCropToggle: bindContentItemImageCropToggle,
     bindProductListeners: bindProductListeners,
     initSettingsEditorBtn: initSettingsEditorBtn,
-    bindCustomTexteditorStyles: bindCustomTexteditorStyles
+    bindCustomTexteditorStyles: bindCustomTexteditorStyles,
+    initProductPageSettings: initProductPageSettings
   });
 
   // Initiates site wide functions.
