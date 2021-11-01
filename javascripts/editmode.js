@@ -564,6 +564,15 @@
         valuesObj.is_related_product_3 = 0;
       }
 
+      var sortProductsPageList = function () {
+        productsPageList.sort(function (a, b) {
+          var productNameA = a.title.toUpperCase();
+          var productNameB = b.title.toUpperCase();
+
+          return productNameA < productNameB ? -1 : (productNameA > productNameB ? 1 : 0);
+        })
+      }
+
       var productListError = function (e) {
         if (window.console && window.console.error) {
           console.error(e);
@@ -579,7 +588,7 @@
           url: '/admin/api/buy_buttons' +
             '?q.content.parent_type=page' +
             '&q.content.language_id=' + pageLanguageId +
-            '&per_page=25' +
+            '&per_page=250' +
             '&page=' + page,
           dataType: 'json',
           async: false,
@@ -599,10 +608,16 @@
 
             if (page < numberOfPages) {
               getAllProducts(page + 1, pageLanguageId);
+            } else {
+              sortProductsPageList();
             }
           },
-          error: productListError("Error while getting related products list")
-        })
+          error: function() {
+            if (numberOfPages === undefined) {
+              productListError("Error while getting related products list")
+            }
+          }
+        });
       };
 
       $('.js-layout_settings-btn').one( "click", function(e) {
