@@ -302,13 +302,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/settings-product-page-functions.tpl",
-      "layout_name": "settings-product-page-functions",
-      "title": "settings-product-page-functions"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/settings-product-page.tpl",
       "layout_name": "settings-product-page",
       "title": "settings-product-page"
