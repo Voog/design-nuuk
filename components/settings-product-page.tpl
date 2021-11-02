@@ -18,13 +18,15 @@
     var valuesObj = {product_note_input_count: "1"};
   {% endif %}
 
-  site.initProductPageSettings({
-    valuesObj: valuesObj,
-    selectRelatedProduct: {{ "select_related_product" | lce | json }},
-    addProductLabel: {{ "add_product_label" | lce | json }},
-    crossOutLabel: {{ "cross_out_label" | lce | json }},
-    borderAroundLabel: {{ "border_around_label" | lce | json }},
-    dataKey: "{{ productLayoutSettingsKey }}",
-    pageLanguageId: "{{ page.language_id }}"
+  window.addEventListener('DOMContentLoaded', function() {
+    site.initProductPageSettings({
+      valuesObj: valuesObj,
+      selectRelatedProduct: {{ "select_related_product" | lce | json }},
+      addProductLabel: {{ "add_product_label" | lce | json }},
+      crossOutLabel: {{ "cross_out_label" | lce | json }},
+      borderAroundLabel: {{ "border_around_label" | lce | json }},
+      dataKey: "{{ productLayoutSettingsKey }}",
+      pageLanguageId: "{{ page.language_id }}"
+    });
   });
 </script>
