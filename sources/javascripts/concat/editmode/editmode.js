@@ -606,7 +606,6 @@
           '&per_page=250' +
           '&page=' + page,
         dataType: 'json',
-        async: false,
         success: function (results, status, xhr) {
           parseResults(results);
 
