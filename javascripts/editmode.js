@@ -583,43 +583,67 @@
       })
     }
 
-    var getAllProducts = function (page, pageLanguageId) {
+    var parseResults = function (results) {
+      results.forEach(function (result) {
+        if (result.product) {
+          productsPageList.push({
+            "title": result.product.name + ' (' + result.parent.title + ') ',
+            "value": result.parent.id
+          });
+        }
+      });
+    }
+
+    var getProductsPage = function (page, pageLanguageId) {
       var numberOfPages;
 
-      return $.ajax({
+      $.ajax({
         type: 'GET',
         contentType: 'application/json',
         url: '/admin/api/buy_buttons' +
           '?q.content.parent_type=page' +
           '&q.content.language_id=' + pageLanguageId +
-          '&per_page=1' +
+          '&per_page=250' +
           '&page=' + page,
         dataType: 'json',
         async: false,
         success: function (results, status, xhr) {
-          results.forEach(function (result) {
-            if (result.product) {
-              productsPageList.push({
-                "title": result.product.name + ' (' + result.parent.title + ') ',
-                "value": result.parent.id
-              });
-            }
-          });
+          parseResults(results);
 
           numberOfPages = parseInt(xhr.getResponseHeader('X-Total-Pages'));
-
-          if (page <= numberOfPages) {
-            getAllProducts(page + 1, pageLanguageId);
-          }
         },
         error: function () {
           logError("Error while getting related products list");
         }
-      }).done(sortProductsPageList());
+      });
+
+      return numberOfPages;
+    };
+
+    var getAllProducts = function (pageLanguageId) {
+      var numberOfPages = getProductsPage(1, pageLanguageId)
+
+      return new Promise(function (resolve, reject) {
+        if (numberOfPages === 1) {
+          sortProductsPageList();
+          resolve();
+        } else if (numberOfPages > 1) {
+          for (var i = 2; i <= numberOfPages; i++) {
+            getProductsPage(i, pageLanguageId);
+
+            if (i === numberOfPages) {
+              sortProductsPageList();
+              resolve();
+            };
+          }
+        } else {
+          reject();
+        }
+      });
     };
 
     $('.js-layout_settings-btn').one("click", function (e) {
-      getAllProducts(1, options.pageLanguageId).then(function () {
+      getAllProducts(options.pageLanguageId).then(function () {
         initSettingsEditor({
           settingsBtn: document.querySelector('.js-product-page-settings-btn'),
           menuItems: [{
