@@ -36,6 +36,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/buy-button.tpl",
+      "layout_name": "buy-button",
+      "title": "buy-button"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/cart-popover.tpl",
       "layout_name": "cart-popover",
       "title": "cart-popover"
@@ -508,6 +515,13 @@
       "file": "layouts/front_page.tpl",
       "layout_name": "page_front",
       "title": "Front page"
+    },
+    {
+      "content_type": "product",
+      "component": false,
+      "file": "layouts/product-v2.tpl",
+      "layout_name": "product-v2",
+      "title": "Product-v2"
     },
     {
       "content_type": "page",
