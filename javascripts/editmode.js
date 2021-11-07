@@ -557,11 +557,6 @@
   };
 
   var initProductPageSettings = function (options) {
-    var productsPageList = [{
-      "title": '---',
-      "value": 0
-    }];
-
     if (!('is_related_product_1' in valuesObj)) {
       valuesObj.is_related_product_1 = 0;
     }
@@ -574,75 +569,92 @@
       valuesObj.is_related_product_3 = 0;
     }
 
-    var sortProductsPageList = function () {
+    var getProductsPage = function (page, pageLanguageId) {
+      return new Promise(function (resolve, reject) {
+        $.ajax({
+          type: 'GET',
+          contentType: 'application/json',
+          url: '/admin/api/buy_buttons' +
+            '?q.content.parent_type=page' +
+            '&q.content.language_id=' + pageLanguageId +
+            '&per_page=250' +
+            '&page=' + page,
+          dataType: 'json',
+          success: function (products, status, xhr) {
+            var nPages = parseInt(xhr.getResponseHeader('X-Total-Pages'));
+
+            resolve({products, nPages});
+          },
+          error: function () {
+            logError("Error while getting related products list");
+            reject();
+          }
+        });
+      });
+    };
+
+    var getProductsFromPage = function (page, pageLanguageId, productsPageList) {
+      return new Promise(function (resolve, reject) {
+        getProductsPage(page, pageLanguageId).then(function (productsPage) {
+          var nPages = productsPage.nPages;
+          var products;
+
+          if (page > nPages) {
+            resolve(productsPageList);
+          } else {
+            products = productsPage.products;
+
+            products.forEach(function (product) {
+              productsPageList.push(product);
+            });
+
+            resolve(getProductsFromPage(page + 1, pageLanguageId, productsPageList));
+          }
+        }).catch(function () {
+          reject();
+        });
+      });
+    };
+
+    var getAllProducts = function (pageLanguageId) {
+      return new Promise(function (resolve, reject) {
+        var productsPageList = [];
+
+        getProductsFromPage(1, pageLanguageId, productsPageList).then(function (productsPageList) {
+          resolve(getProductsPageList(productsPageList));
+        }).catch(function () {
+          reject();
+        });
+      });
+    };
+
+    var getProductsPageList = function (products) {
+      var productsPageList = [{
+        "title": '---',
+        "value": 0
+      }];
+
+      products.forEach(function (product) {
+        if (product.product) {
+          productsPageList.push({
+            "title": product.product.name + ' (' + product.parent.title + ')',
+            "value": product.parent.id
+          });
+        }
+      });
+
       productsPageList.sort(function (a, b) {
         var productNameA = a.title.toUpperCase();
         var productNameB = b.title.toUpperCase();
 
         return productNameA < productNameB ? -1 : (productNameA > productNameB ? 1 : 0);
-      })
-    }
-
-    var parseResults = function (results) {
-      results.forEach(function (result) {
-        if (result.product) {
-          productsPageList.push({
-            "title": result.product.name + ' (' + result.parent.title + ') ',
-            "value": result.parent.id
-          });
-        }
-      });
-    }
-
-    var getProductsPage = function (page, pageLanguageId) {
-      var numberOfPages;
-
-      $.ajax({
-        type: 'GET',
-        contentType: 'application/json',
-        url: '/admin/api/buy_buttons' +
-          '?q.content.parent_type=page' +
-          '&q.content.language_id=' + pageLanguageId +
-          '&per_page=250' +
-          '&page=' + page,
-        dataType: 'json',
-        success: function (results, status, xhr) {
-          parseResults(results);
-
-          numberOfPages = parseInt(xhr.getResponseHeader('X-Total-Pages'));
-        },
-        error: function () {
-          logError("Error while getting related products list");
-        }
       });
 
-      return numberOfPages;
-    };
-
-    var getAllProducts = function (pageLanguageId) {
-      var numberOfPages = getProductsPage(1, pageLanguageId)
-
-      return new Promise(function (resolve, reject) {
-        if (numberOfPages === 1) {
-          sortProductsPageList();
-          resolve();
-        } else if (numberOfPages > 1) {
-          for (var i = 2; i <= numberOfPages; i++) {
-            getProductsPage(i, pageLanguageId);
-
-            if (i === numberOfPages) {
-              sortProductsPageList();
-              resolve();
-            };
-          }
-        } else {
-          reject();
-        }
-      });
+      return productsPageList;
     };
 
     $('.js-layout_settings-btn').one("click", function (e) {
-      getAllProducts(options.pageLanguageId).then(function () {
+      getAllProducts(options.pageLanguageId).then(function (productsPageList) {
         initSettingsEditor({
           settingsBtn: document.querySelector('.js-product-page-settings-btn'),
           menuItems: [{
