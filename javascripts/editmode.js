@@ -583,49 +583,32 @@
           success: function (products, status, xhr) {
             var nPages = parseInt(xhr.getResponseHeader('X-Total-Pages'));
 
-            resolve({products, nPages});
+            resolve({ products, nPages});
           },
           error: function () {
-            logError("Error while getting related products list");
-            reject();
+            reject("Error while getting related products from page " + page);
           }
         });
       });
     };
 
-    var getProductsFromPage = function (page, pageLanguageId, productsPageList) {
+    var getProductsFromPage = function (page, pageLanguageId) {
       return new Promise(function (resolve, reject) {
         getProductsPage(page, pageLanguageId).then(function (productsPage) {
           var nPages = productsPage.nPages;
-          var products;
+          var products = productsPage.products;
 
-          if (page > nPages) {
-            resolve(productsPageList);
+          if (nPages <= page) {
+            resolve(products);
           } else {
-            products = productsPage.products;
-
-            products.forEach(function (product) {
-              productsPageList.push(product);
-            });
-
-            resolve(getProductsFromPage(page + 1, pageLanguageId, productsPageList));
+            resolve(products.concat(getProductsFromPage(page + 1, pageLanguageId)));
           }
-        }).catch(function () {
-          reject();
         });
       });
     };
 
     var getAllProducts = function (pageLanguageId) {
-      return new Promise(function (resolve, reject) {
-        var productsPageList = [];
-
-        getProductsFromPage(1, pageLanguageId, productsPageList).then(function (productsPageList) {
-          resolve(getProductsPageList(productsPageList));
-        }).catch(function () {
-          reject();
-        });
-      });
+      return getProductsFromPage(1, pageLanguageId);
     };
 
     var getProductsPageList = function (products) {
@@ -654,7 +637,9 @@
     };
 
     $('.js-layout_settings-btn').one("click", function (e) {
-      getAllProducts(options.pageLanguageId).then(function (productsPageList) {
+      getAllProducts(options.pageLanguageId).then(function (products) {
+        var productsPageList = getProductsPageList(products);
+
         initSettingsEditor({
           settingsBtn: document.querySelector('.js-product-page-settings-btn'),
           menuItems: [{
@@ -704,6 +689,8 @@
           containerClass: ['bottom-settings-popover', 'first', 'editor_default'],
           values: options.valuesObj
         })
+      }).catch(function () {
+        logError("Error while getting related products list")
       });
     });
   };
