@@ -1,4 +1,12 @@
 ;(function($) {
+
+  // Log a console error if the console exists
+  var logError = function (e) {
+    if (window.console && window.console.error) {
+      console.error(e);
+    }
+  }
+
   // Returns the suitable version of the image depending on the viewport width.
   var getImageByWidth = function(sizes, targetWidth) {
     var prevImage;
@@ -548,6 +556,145 @@
     });
   };
 
+  var initProductPageSettings = function (options) {
+    if (!('is_related_product_1' in valuesObj)) {
+      valuesObj.is_related_product_1 = 0;
+    }
+
+    if (!('is_related_product_2' in valuesObj)) {
+      valuesObj.is_related_product_2 = 0;
+    }
+
+    if (!('is_related_product_3' in valuesObj)) {
+      valuesObj.is_related_product_3 = 0;
+    }
+
+    var getProductsPage = function (page, pageLanguageId) {
+      return new Promise(function (resolve, reject) {
+        $.ajax({
+          type: 'GET',
+          contentType: 'application/json',
+          url: '/admin/api/buy_buttons' +
+            '?q.content.parent_type=page' +
+            '&q.content.language_id=' + pageLanguageId +
+            '&per_page=250' +
+            '&page=' + page,
+          dataType: 'json',
+          success: function (products, status, xhr) {
+            var nPages = parseInt(xhr.getResponseHeader('X-Total-Pages'));
+
+            resolve({ products, nPages});
+          },
+          error: function () {
+            reject("Error while getting related products from page " + page);
+          }
+        });
+      });
+    };
+
+    var getProductsFromPage = function (page, pageLanguageId) {
+      return new Promise(function (resolve, reject) {
+        getProductsPage(page, pageLanguageId).then(function (productsPage) {
+          var nPages = productsPage.nPages;
+          var products = productsPage.products;
+
+          if (nPages <= page) {
+            resolve(products);
+          } else {
+            resolve(products.concat(getProductsFromPage(page + 1, pageLanguageId)));
+          }
+        });
+      });
+    };
+
+    var getAllProducts = function (pageLanguageId) {
+      return getProductsFromPage(1, pageLanguageId);
+    };
+
+    var getProductsPageList = function (products) {
+      var productsPageList = [{
+        "title": '---',
+        "value": 0
+      }];
+
+      products.forEach(function (product) {
+        if (product.product) {
+          productsPageList.push({
+            "title": product.product.name + ' (' + product.parent.title + ')',
+            "value": product.parent.id
+          });
+        }
+      });
+
+      productsPageList.sort(function (a, b) {
+        var productNameA = a.title.toUpperCase();
+        var productNameB = b.title.toUpperCase();
+
+        return productNameA < productNameB ? -1 : (productNameA > productNameB ? 1 : 0);
+      });
+
+      return productsPageList;
+    };
+
+    $('.js-layout_settings-btn').one("click", function (e) {
+      getAllProducts(options.pageLanguageId).then(function (products) {
+        var productsPageList = getProductsPageList(products);
+
+        initSettingsEditor({
+          settingsBtn: document.querySelector('.js-product-page-settings-btn'),
+          menuItems: [{
+              "title": options.selectRelatedProduct,
+              "type": "select",
+              "key": "is_related_product_1",
+              "list": productsPageList,
+            },
+            {
+              "title": options.selectRelatedProduct,
+              "type": "select",
+              "key": "is_related_product_2",
+              "list": productsPageList,
+            },
+            {
+              "title": options.selectRelatedProduct,
+              "type": "select",
+              "key": "is_related_product_3",
+              "list": productsPageList,
+            },
+            {
+              "title": options.addProductLabel,
+              "type": "text",
+              "key": "product_label",
+              "placeholder": options.addProductLabel
+            },
+            {
+              "title": options.crossOutLabel,
+              "type": "checkbox",
+              "key": "is_product_label_line_through",
+              "states": {
+                "on": true,
+                "off": false
+              }
+            },
+            {
+              "title": options.borderAroundLabel,
+              "type": "checkbox",
+              "key": "is_product_label_box",
+              "states": {
+                "on": true,
+                "off": false
+              }
+            }
+          ],
+          dataKey: options.dataKey,
+          containerClass: ['bottom-settings-popover', 'first', 'editor_default'],
+          values: options.valuesObj
+        })
+      }).catch(function () {
+        logError("Error while getting related products list")
+      });
+    });
+  };
+
   var init = function() {
     bindCustomDataItem();
     handleDocument();
@@ -556,13 +703,14 @@
   // Enables the usage of the initiations outside this file.
   // For example add "<script>site.initBlogPage();</script>" at the end of the "Blog & News" page to initiate blog listing view functions.
   window.site = $.extend(window.site || {}, {
-    bgPickerPreview: bgPickerPreview,
     bgPickerCommit: bgPickerCommit,
-    bindContentItemImgDropAreas: bindContentItemImgDropAreas,
+    bgPickerPreview: bgPickerPreview,
     bindContentItemImageCropToggle: bindContentItemImageCropToggle,
+    bindContentItemImgDropAreas: bindContentItemImgDropAreas,
+    bindCustomTexteditorStyles: bindCustomTexteditorStyles,
     bindProductListeners: bindProductListeners,
-    initSettingsEditorBtn: initSettingsEditorBtn,
-    bindCustomTexteditorStyles: bindCustomTexteditorStyles
+    initProductPageSettings: initProductPageSettings,
+    initSettingsEditorBtn: initSettingsEditorBtn
   });
 
   // Initiates site wide functions.
