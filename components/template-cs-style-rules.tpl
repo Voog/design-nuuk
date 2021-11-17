@@ -1192,7 +1192,7 @@ body.dark-background {
 .content-formatted .form_field_textfield:not(#product-list-search),
 .content-formatted .form_field_textarea,
 .content-formatted .form_field_select:not(#field_field_filter),
-.content-formatted label:not(.form_field_label) {
+.content-formatted .edy-fe-fieldinputs > label:not(.form_field_label) {
   font-weight: var(--form-field-font-weight);
   font-size: var(--form-field-font-size);
   line-height: var(--form-field-line-height);
