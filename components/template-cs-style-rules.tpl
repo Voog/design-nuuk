@@ -710,7 +710,7 @@ body.dark-background {
   fill: var(--third-color);
 }
 
-.content-formatted,
+.content-formatted:not(.product_filters),
 .content-formatted .product_item-btn,
 .content-formatted p {
   font-size: var(--content-body-font-size);
@@ -721,8 +721,8 @@ body.dark-background {
           hyphens: var(--content-body-hyphens);
 }
 
-.post_page .article_item .post_content .content-formatted, .post_page .article_item
-.content-formatted .post_details, .post_page .article_item .post_content
+.post_page .article_item .post_content .content-formatted:not(.product_filters), .post_page .article_item
+.content-formatted:not(.product_filters) .post_details, .post_page .article_item .post_content
 .content-formatted .product_item-btn, .post_page .article_item
 .content-formatted .product_item-btn .post_details, .post_page .article_item .post_content
 .content-formatted p, .post_page .article_item
@@ -731,34 +731,34 @@ body.dark-background {
   line-height: var(--blog-body-line-height);
 }
 
-.post_page .content-formatted.post_tags .menu a, .post_page
+.post_page .content-formatted:not(.product_filters).post_tags .menu a, .post_page
 .content-formatted .product_item-btn.post_tags .menu a, .post_page
 .content-formatted p.post_tags .menu a {
   font-size: var(--blog-body-font-size);
   line-height: var(--blog-body-line-height);
 }
 
-.dark-background .content-formatted, .dark-background
+.dark-background .content-formatted:not(.product_filters), .dark-background
 .content-formatted .product_item-btn, .dark-background
 .content-formatted p {
   color: var(--third-color);
 }
 
-.content-formatted .horizontal-scroll,
+.content-formatted:not(.product_filters) .horizontal-scroll,
 .content-formatted .product_item-btn .horizontal-scroll,
 .content-formatted p .horizontal-scroll {
   border-left: 1px dashed var(--content-body-color);
   border-right: 1px dashed var(--content-body-color);
 }
 
-.dark-background .content-formatted .horizontal-scroll, .dark-background
+.dark-background .content-formatted:not(.product_filters) .horizontal-scroll, .dark-background
 .content-formatted .product_item-btn .horizontal-scroll, .dark-background
 .content-formatted p .horizontal-scroll {
   border-left: 1px dashed var(--third-color);
   border-right: 1px dashed var(--third-color);
 }
 
-.content-formatted h1, .content-formatted h2, .content-formatted h3, .content-formatted h4, .content-formatted h5, .content-formatted h6,
+.content-formatted:not(.product_filters) h1, .content-formatted:not(.product_filters) h2, .content-formatted:not(.product_filters) h3, .content-formatted:not(.product_filters) h4, .content-formatted:not(.product_filters) h5, .content-formatted:not(.product_filters) h6,
 .content-formatted .product_item-btn h1,
 .content-formatted .product_item-btn h2,
 .content-formatted .product_item-btn h3,
@@ -774,7 +774,7 @@ body.dark-background {
   color: var(--secondary-color);
 }
 
-.dark-background .content-formatted h1, .dark-background .content-formatted h2, .dark-background .content-formatted h3, .dark-background .content-formatted h4, .dark-background .content-formatted h5, .dark-background .content-formatted h6, .dark-background
+.dark-background .content-formatted:not(.product_filters) h1, .dark-background .content-formatted:not(.product_filters) h2, .dark-background .content-formatted:not(.product_filters) h3, .dark-background .content-formatted:not(.product_filters) h4, .dark-background .content-formatted:not(.product_filters) h5, .dark-background .content-formatted:not(.product_filters) h6, .dark-background
 .content-formatted .product_item-btn h1, .dark-background
 .content-formatted .product_item-btn h2, .dark-background
 .content-formatted .product_item-btn h3, .dark-background
@@ -790,7 +790,7 @@ body.dark-background {
   color: var(--third-color);
 }
 
-.dark-background .content-formatted .edy-content-social-button svg, .dark-background .content-formatted .edy-content-social-button path, .dark-background
+.dark-background .content-formatted:not(.product_filters) .edy-content-social-button svg, .dark-background .content-formatted:not(.product_filters) .edy-content-social-button path, .dark-background
 .content-formatted .product_item-btn .edy-content-social-button svg, .dark-background
 .content-formatted .product_item-btn .edy-content-social-button path, .dark-background
 .content-formatted p .edy-content-social-button svg, .dark-background
@@ -799,7 +799,7 @@ body.dark-background {
   border-color: var(--third-color);
 }
 
-.content-formatted h1,
+.content-formatted:not(.product_filters) h1,
 .content-formatted .product_item-btn h1,
 .content-formatted p h1 {
   font-size: var(--headings-title-font-size);
@@ -817,7 +817,7 @@ body.dark-background {
 }
 
 @media screen and (max-width: 900px) {
-  .content-formatted h1,
+  .content-formatted:not(.product_filters) h1,
   .content-formatted .product_item-btn h1,
   .content-formatted p h1 {
     font-size: calc(var(--headings-title-font-size) / 2);
@@ -825,14 +825,14 @@ body.dark-background {
 }
 
 @media screen and (max-width: 1024px) {
-  .semimodal-relative .content-formatted h1, .semimodal-relative
+  .semimodal-relative .content-formatted:not(.product_filters) h1, .semimodal-relative
   .content-formatted .product_item-btn h1, .semimodal-relative
   .content-formatted p h1 {
     font-size: calc(var(--headings-title-font-size) / 2);
   }
 }
 
-.content-formatted h2,
+.content-formatted:not(.product_filters) h2,
 .content-formatted .product_item-btn h2,
 .content-formatted p h2 {
   font-size: var(--headings-heading-font-size);
@@ -850,7 +850,7 @@ body.dark-background {
 }
 
 @media screen and (max-width: 900px) {
-  .content-formatted h2,
+  .content-formatted:not(.product_filters) h2,
   .content-formatted .product_item-btn h2,
   .content-formatted p h2 {
     font-size: calc(var(--headings-heading-font-size) / 1.8);
@@ -858,14 +858,14 @@ body.dark-background {
 }
 
 @media screen and (max-width: 1024px) {
-  .semimodal-relative .content-formatted h2, .semimodal-relative
+  .semimodal-relative .content-formatted:not(.product_filters) h2, .semimodal-relative
   .content-formatted .product_item-btn h2, .semimodal-relative
   .content-formatted p h2 {
     font-size: calc(var(--headings-heading-font-size) / 1.8);
   }
 }
 
-.content-formatted h3,
+.content-formatted:not(.product_filters) h3,
 .content-formatted .product_item-btn h3,
 .content-formatted p h3 {
   font-size: var(--headings-subheading-font-size);
@@ -883,7 +883,7 @@ body.dark-background {
 }
 
 @media screen and (max-width: 900px) {
-  .content-formatted h3,
+  .content-formatted:not(.product_filters) h3,
   .content-formatted .product_item-btn h3,
   .content-formatted p h3 {
     font-size: calc(var(--headings-subheading-font-size) / 1.4);
@@ -891,14 +891,14 @@ body.dark-background {
 }
 
 @media screen and (max-width: 1024px) {
-  .semimodal-relative .content-formatted h3, .semimodal-relative
+  .semimodal-relative .content-formatted:not(.product_filters) h3, .semimodal-relative
   .content-formatted .product_item-btn h3, .semimodal-relative
   .content-formatted p h3 {
     font-size: calc(var(--headings-subheading-font-size) / 1.4);
   }
 }
 
-.content-formatted h4,
+.content-formatted:not(.product_filters) h4,
 .content-formatted .product_item-btn h4,
 .content-formatted p h4 {
   font-size: var(--headings-heading-4-font-size);
@@ -916,7 +916,7 @@ body.dark-background {
 }
 
 @media screen and (max-width: 900px) {
-  .content-formatted h4,
+  .content-formatted:not(.product_filters) h4,
   .content-formatted .product_item-btn h4,
   .content-formatted p h4 {
     font-size: calc(var(--headings-heading-4-font-size) / 1.2);
@@ -924,14 +924,14 @@ body.dark-background {
 }
 
 @media screen and (max-width: 1024px) {
-  .semimodal-relative .content-formatted h4, .semimodal-relative
+  .semimodal-relative .content-formatted:not(.product_filters) h4, .semimodal-relative
   .content-formatted .product_item-btn h4, .semimodal-relative
   .content-formatted p h4 {
     font-size: calc(var(--headings-heading-4-font-size) / 1.2);
   }
 }
 
-.content-formatted a:not(.custom-btn),
+.content-formatted:not(.product_filters) a:not(.custom-btn),
 .content-formatted .product_item-btn a:not(.custom-btn),
 .content-formatted p a:not(.custom-btn) {
   font-style: var(--content-link-font-style);
@@ -942,13 +942,13 @@ body.dark-background {
   text-transform: var(--content-link-text-transform);
 }
 
-.dark-background .content-formatted a:not(.custom-btn), .dark-background
+.dark-background .content-formatted:not(.product_filters) a:not(.custom-btn), .dark-background
 .content-formatted .product_item-btn a:not(.custom-btn), .dark-background
 .content-formatted p a:not(.custom-btn) {
   color: var(--third-color);
 }
 
-.content-formatted a:not(.custom-btn):hover,
+.content-formatted:not(.product_filters) a:not(.custom-btn):hover,
 .content-formatted .product_item-btn a:not(.custom-btn):hover,
 .content-formatted p a:not(.custom-btn):hover {
   font-style: var(--content-link-hover-font-style);
@@ -959,13 +959,13 @@ body.dark-background {
   text-transform: var(--content-link-hover-text-transform);
 }
 
-.dark-background .content-formatted a:not(.custom-btn):hover, .dark-background
+.dark-background .content-formatted:not(.product_filters) a:not(.custom-btn):hover, .dark-background
 .content-formatted .product_item-btn a:not(.custom-btn):hover, .dark-background
 .content-formatted p a:not(.custom-btn):hover {
   color: var(--third-color);
 }
 
-.content-formatted.header_title, .content-formatted.site_title,
+.content-formatted:not(.product_filters).header_title, .content-formatted:not(.product_filters).site_title,
 .content-formatted .product_item-btn.header_title,
 .content-formatted .product_item-btn.site_title,
 .content-formatted p.header_title,
@@ -983,7 +983,7 @@ body.dark-background {
           hyphens: var(--header-site-title-hyphens);
 }
 
-.dark-background .content-formatted.header_title, .dark-background .content-formatted.site_title, .dark-background
+.dark-background .content-formatted:not(.product_filters).header_title, .dark-background .content-formatted:not(.product_filters).site_title, .dark-background
 .content-formatted .product_item-btn.header_title, .dark-background
 .content-formatted .product_item-btn.site_title, .dark-background
 .content-formatted p.header_title, .dark-background
@@ -991,7 +991,7 @@ body.dark-background {
   color: var(--third-color);
 }
 
-.content-formatted.header_title a, .content-formatted.header_title p, .content-formatted.header_title h1, .content-formatted.header_title h2, .content-formatted.header_title h3, .content-formatted.header_title h4, .content-formatted.header_title h5, .content-formatted.header_title h6, .content-formatted.site_title a, .content-formatted.site_title p, .content-formatted.site_title h1, .content-formatted.site_title h2, .content-formatted.site_title h3, .content-formatted.site_title h4, .content-formatted.site_title h5, .content-formatted.site_title h6,
+.content-formatted:not(.product_filters).header_title a, .content-formatted:not(.product_filters).header_title p, .content-formatted:not(.product_filters).header_title h1, .content-formatted:not(.product_filters).header_title h2, .content-formatted:not(.product_filters).header_title h3, .content-formatted:not(.product_filters).header_title h4, .content-formatted:not(.product_filters).header_title h5, .content-formatted:not(.product_filters).header_title h6, .content-formatted:not(.product_filters).site_title a, .content-formatted:not(.product_filters).site_title p, .content-formatted:not(.product_filters).site_title h1, .content-formatted:not(.product_filters).site_title h2, .content-formatted:not(.product_filters).site_title h3, .content-formatted:not(.product_filters).site_title h4, .content-formatted:not(.product_filters).site_title h5, .content-formatted:not(.product_filters).site_title h6,
 .content-formatted .product_item-btn.header_title a,
 .content-formatted .product_item-btn.header_title p,
 .content-formatted .product_item-btn.header_title h1,
@@ -1037,7 +1037,7 @@ body.dark-background {
           hyphens: var(--header-site-title-hyphens);
 }
 
-.dark-background .content-formatted.header_title a, .dark-background .content-formatted.header_title p, .dark-background .content-formatted.header_title h1, .dark-background .content-formatted.header_title h2, .dark-background .content-formatted.header_title h3, .dark-background .content-formatted.header_title h4, .dark-background .content-formatted.header_title h5, .dark-background .content-formatted.header_title h6, .dark-background .content-formatted.site_title a, .dark-background .content-formatted.site_title p, .dark-background .content-formatted.site_title h1, .dark-background .content-formatted.site_title h2, .dark-background .content-formatted.site_title h3, .dark-background .content-formatted.site_title h4, .dark-background .content-formatted.site_title h5, .dark-background .content-formatted.site_title h6, .dark-background
+.dark-background .content-formatted:not(.product_filters).header_title a, .dark-background .content-formatted:not(.product_filters).header_title p, .dark-background .content-formatted:not(.product_filters).header_title h1, .dark-background .content-formatted:not(.product_filters).header_title h2, .dark-background .content-formatted:not(.product_filters).header_title h3, .dark-background .content-formatted:not(.product_filters).header_title h4, .dark-background .content-formatted:not(.product_filters).header_title h5, .dark-background .content-formatted:not(.product_filters).header_title h6, .dark-background .content-formatted:not(.product_filters).site_title a, .dark-background .content-formatted:not(.product_filters).site_title p, .dark-background .content-formatted:not(.product_filters).site_title h1, .dark-background .content-formatted:not(.product_filters).site_title h2, .dark-background .content-formatted:not(.product_filters).site_title h3, .dark-background .content-formatted:not(.product_filters).site_title h4, .dark-background .content-formatted:not(.product_filters).site_title h5, .dark-background .content-formatted:not(.product_filters).site_title h6, .dark-background
 .content-formatted .product_item-btn.header_title a, .dark-background
 .content-formatted .product_item-btn.header_title p, .dark-background
 .content-formatted .product_item-btn.header_title h1, .dark-background
@@ -1074,7 +1074,7 @@ body.dark-background {
 }
 
 @media screen and (max-width: 900px) {
-  .content-formatted.header_title, .content-formatted.site_title,
+  .content-formatted:not(.product_filters).header_title, .content-formatted:not(.product_filters).site_title,
   .content-formatted .product_item-btn.header_title,
   .content-formatted .product_item-btn.site_title,
   .content-formatted p.header_title,
@@ -1085,12 +1085,12 @@ body.dark-background {
 }
 
 @media screen and (max-width: 900px) {
-  .dark-background .content-formatted.header_title, .dark-background
+  .dark-background .content-formatted:not(.product_filters).header_title, .dark-background
   .content-formatted .product_item-btn.header_title, .dark-background
   .content-formatted p.header_title {
     color: var(--header-site-title-color);
   }
-  .dark-background .content-formatted.header_title a, .dark-background .content-formatted.header_title p, .dark-background .content-formatted.header_title h1, .dark-background .content-formatted.header_title h2, .dark-background .content-formatted.header_title h3, .dark-background .content-formatted.header_title h4, .dark-background .content-formatted.header_title h5, .dark-background .content-formatted.header_title h6, .dark-background
+  .dark-background .content-formatted:not(.product_filters).header_title a, .dark-background .content-formatted:not(.product_filters).header_title p, .dark-background .content-formatted:not(.product_filters).header_title h1, .dark-background .content-formatted:not(.product_filters).header_title h2, .dark-background .content-formatted:not(.product_filters).header_title h3, .dark-background .content-formatted:not(.product_filters).header_title h4, .dark-background .content-formatted:not(.product_filters).header_title h5, .dark-background .content-formatted:not(.product_filters).header_title h6, .dark-background
   .content-formatted .product_item-btn.header_title a, .dark-background
   .content-formatted .product_item-btn.header_title p, .dark-background
   .content-formatted .product_item-btn.header_title h1, .dark-background
@@ -1111,8 +1111,8 @@ body.dark-background {
   }
 }
 
-.content-formatted .custom-btn,
-.content-formatted .form_submit input,
+.content-formatted:not(.product_filters) .custom-btn,
+.content-formatted:not(.product_filters) .form_submit input,
 .content-formatted .product_item-btn .custom-btn,
 .content-formatted .product_item-btn .form_submit input,
 .content-formatted p .custom-btn,
@@ -1131,8 +1131,8 @@ body.dark-background {
   background-color: var(--button-background-color);
 }
 
-.dark-background .content-formatted .custom-btn, .dark-background
-.content-formatted .form_submit input, .dark-background
+.dark-background .content-formatted:not(.product_filters) .custom-btn, .dark-background
+.content-formatted:not(.product_filters) .form_submit input, .dark-background
 .content-formatted .product_item-btn .custom-btn, .dark-background
 .content-formatted .product_item-btn .form_submit input, .dark-background
 .content-formatted p .custom-btn, .dark-background
@@ -1140,8 +1140,8 @@ body.dark-background {
   border: 1px solid var(--third-color);
 }
 
-.content-formatted .custom-btn:hover,
-.content-formatted .form_submit input:hover,
+.content-formatted:not(.product_filters) .custom-btn:hover,
+.content-formatted:not(.product_filters) .form_submit input:hover,
 .content-formatted .product_item-btn .custom-btn:hover,
 .content-formatted .product_item-btn .form_submit input:hover,
 .content-formatted p .custom-btn:hover,
@@ -1189,11 +1189,10 @@ body.dark-background {
   color: #C5292A;
 }
 
-.content-formatted .form_field_textfield,
+.content-formatted .form_field_textfield:not(#product-list-search),
 .content-formatted .form_field_textarea,
-.content-formatted .form_field_select,
-.content-formatted .product_filters-item,
-.content-formatted label:not(.form_field_label) {
+.content-formatted .form_field_select:not(#field_field_filter),
+.content-formatted .edy-fe-fieldinputs > label:not(.form_field_label) {
   font-weight: var(--form-field-font-weight);
   font-size: var(--form-field-font-size);
   line-height: var(--form-field-line-height);
