@@ -491,9 +491,9 @@
     {
       "content_type": "page",
       "component": false,
-      "file": "layouts/auto-generated product.tpl",
-      "layout_name": "auto_generated_product",
-      "title": "Auto-generated product"
+      "file": "layouts/auto_generated_product.tpl",
+      "layout_name": "page_default",
+      "title": "Auto generated product"
     },
     {
       "content_type": "blog",
