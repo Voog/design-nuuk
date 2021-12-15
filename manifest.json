@@ -489,6 +489,13 @@
       "title": "template-variables"
     },
     {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/auto-generated product.tpl",
+      "layout_name": "auto_generated_product",
+      "title": "Auto-generated product"
+    },
+    {
       "content_type": "blog",
       "component": false,
       "file": "layouts/blog___news.tpl",
@@ -515,13 +522,6 @@
       "file": "layouts/front_page.tpl",
       "layout_name": "page_front",
       "title": "Front page"
-    },
-    {
-      "content_type": "product",
-      "component": false,
-      "file": "layouts/product-v2.tpl",
-      "layout_name": "product-v2",
-      "title": "Product-v2"
     },
     {
       "content_type": "page",
