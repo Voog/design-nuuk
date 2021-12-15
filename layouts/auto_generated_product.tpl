@@ -18,10 +18,7 @@
   {%- capture _button_attributes %}
     data-product-id="{{ product.id }}"
     data-product="{{ product | json | escape }}"
-    data-settings="{
-      "title": "{{ 'add_to_cart' | lc | escape_once }}",
-      "button_style":"with_price"
-    }"
+    data-settings="{&quot;title&quot;:&quot;{{ 'add_to_cart' | lc | escape_once }}&quot;,&quot;button_style&quot;:&quot;with_price&quot;}"
   {% endcapture -%}
   {% include "template-svg-spritesheet" %}
   <div class="body-bg_color"></div>
@@ -58,11 +55,26 @@
             <div class="flex_row-2--item-60">
               <div class="mar_0-32 p-rel js-product-page-image-wrap">
                 {%- assign productImage = product.image -%}
-                {%- if productImage != blank or editmode -%}
-                  <div class="js-product-page-image  mar_b-32">
-                    {% include 'content-item', _isProductImage: isProductImage, _imageData: productImage, _entityData: page, _itemType: 'page', _id: page.id, _staticItem: isPostImageStatic, _targetWidth: '1280' %}
+
+                {%- if productImage != blank %}
+                  {% assign item_image_state = "with-image" %}
+                {% else %}
+                  {% assign item_image_state = "without-image" %}
+                {% endif -%}
+
+                <div class="js-product-page-image mar_b-32">
+                  <div class="content-item-box {{ item_image_state }} js-content-item-box not-loaded">
+                    <div class="item-top">
+                      <div class="top-inner of-hidden">
+                        {%- if productImage != blank -%}
+                          <div class="loader js-loader"></div>
+                          {%- assign imageClass = "item-image " | append: "not-cropped " | append: 'js-lazyload' -%}
+                          {% image_data productImage target_width="1280" class: imageClass %}
+                        {%- endif -%}
+                      </div>
+                    </div>
                   </div>
-                {%- endif -%}
+                </div>
               </div>
               <section class="content-body content-formatted mar_0-32" data-search-indexing-allowed="true">
                 {% content bind=product name="gallery" %}
@@ -94,7 +106,13 @@
                   </div>
                 </div>
                 <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
-                  {% contentblock bind=product %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}
+                  {% contentblock bind=product publish_default_content="true" %}
+                    {%- if product.description != blank %}
+                      {{ product.description }}
+                    {% else %}
+                      {{ "write_product_description_here" | lc: editor_locale }}
+                    {% endif -%}
+                  {% endcontentblock %}
                   {% include "buy-button" %}
                 </section>
               </div>
@@ -102,7 +120,11 @@
           </div>
 
           {%- if bottom_content_has_content == true or editmode -%}
-            <section class="content-body content-formatted content-formatted--overflowed-images mar_b-32" data-search-indexing-allowed="true">{% content bind=product name="content" %}</section>
+            <section
+              class="content-body content-formatted content-formatted--overflowed-images mar_b-32"
+              data-search-indexing-allowed="true">
+              {% content bind=product name="content" %}
+            </section>
           {%- endif -%}
         </main>
       </div>
