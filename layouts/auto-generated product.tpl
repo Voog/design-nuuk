@@ -8,7 +8,7 @@
   {%- assign product_page = true -%}
 </head>
 
-{% capture bottom_content_html %}{% unless editmode %}{% content bind="content" name="content" %}{% endunless %}{% endcapture %}
+{% capture bottom_content_html %}{% unless editmode %}{% content bind=product name="content" %}{% endunless %}{% endcapture %}
 {% capture bottom_content_size %}{{ bottom_content_html | size | minus: 1 }}{% endcapture %}
 {% unless bottom_content_size contains "-" %}
   {% assign bottom_content_has_content = true %}
@@ -62,7 +62,7 @@
                 {%- endif -%}
               </div>
               <section class="content-body content-formatted mar_0-32" data-search-indexing-allowed="true">
-                {% content bind="content" name="gallery" %}
+                {% content bind=product name="gallery" %}
               </section>
             </div>
 
@@ -70,7 +70,7 @@
               <div class="mar_0-32 flex_col t-sticky">
                 <div class="flex_row flex_a-center flex_j-space-between mar_b-64">
                   <div class="content-body content-formatted" data-search-indexing-allowed="true">
-                    {% contentblock bind="content" name="product_title" publish_default_content="true" %}
+                    {% contentblock bind=product name="product_title" publish_default_content="true" %}
                       <h3>{{product.title}}</h3>
                     {% endcontentblock %}
                     {%- assign productSettingsData = page.data[productLayoutSettingsKey] -%}
@@ -91,7 +91,7 @@
                   </div>
                 </div>
                 <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
-                  {% contentblock bind="content" %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}
+                  {% contentblock bind=product %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}
                   {% include "buy-button" %}
                 </section>
               </div>
@@ -99,7 +99,7 @@
           </div>
 
           {%- if bottom_content_has_content == true or editmode -%}
-            <section class="content-body content-formatted content-formatted--overflowed-images mar_b-32" data-search-indexing-allowed="true">{% content bind="content" name="content" %}</section>
+            <section class="content-body content-formatted content-formatted--overflowed-images mar_b-32" data-search-indexing-allowed="true">{% content bind=product name="content" %}</section>
           {%- endif -%}
         </main>
       </div>
