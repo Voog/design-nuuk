@@ -3,11 +3,11 @@
     <div class="edy-buy-button-variants">
       {%- for variant_type in product.variant_types -%}
       <div class="form_field" data-variation-id="{{ variant_type.id }}">
-        <label class="form_field_label">{{ variant_type.name }}</label>
+        <label class="form_field_label">{{ variant_type.name | escape_once }}</label>
         <select class="form_field_select" data-variation-attribute-id="{{ variant_type.id }}">
           <option value="">---</option>
           {%- for variant_value in variant_type.variant_values -%}
-          <option value="{{ variant_value.id }}">{{ variant_value.name }}</option>
+          <option value="{{ variant_value.id }}">{{ variant_value.name | escape_once }}</option>
           {%- endfor -%}
         </select>
       </div>
