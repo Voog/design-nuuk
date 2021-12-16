@@ -143,5 +143,5 @@
       "show_related_articles": false
     }
   },
-  "version": "nuuk-1.5.5"
+  "version": "nuuk-1.6.0"
 }
