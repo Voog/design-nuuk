@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 {% include "template-settings" %}
 {% include "template-variables" %}
-<html class="{% include "language-menu-class-names" %} {% if editmode %}editmode{% else %}publicmode{% endif %} {% include 'semimodal-class-names' %}" lang="{{ page.language_code }}">
+<html class="{% include "language-menu-class-names" %} {% if editmode %}editmode{% else %}publicmode{% endif %} {% include "semimodal-class-names" %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
   {% include "html-head" %}
   {% include "template-styles" %}
-  {%- assign product_page = true -%}
 </head>
 
 {% capture bottom_content_html %}{% unless editmode %}{% content bind=product name="content" %}{% endunless %}{% endcapture %}
@@ -18,7 +17,7 @@
   {%- capture _button_attributes %}
     data-product-id="{{ product.id }}"
     data-product="{{ product | json | escape }}"
-    data-settings="{&quot;title&quot;:&quot;{{ 'add_to_cart' | lc | escape_once }}&quot;,&quot;button_style&quot;:&quot;with_price&quot;}"
+    data-settings="{&quot;title&quot;:&quot;{{ "add_to_cart" | lc | escape_once }}&quot;,&quot;button_style&quot;:&quot;with_price&quot;}"
   {% endcapture -%}
   {% include "template-svg-spritesheet" %}
   <div class="body-bg_color"></div>
@@ -26,31 +25,12 @@
   <div class="container_wrap">
     {% include "header" %}
     <div class="pad_container p-rel">
-      {% if editmode %}
-        <div class="bg-picker-top">
-          <button
-            class="voog-bg-picker-btn body_bg-picker--btn bg-picker {{bodyBgKey}}-picker"
-            data-bg_key="{{bodyBgKey}}"
-            data-type_picture="false"
-            data-type_color="true"
-            data-color_elem=".body-bg_color"
-            data-picker_area_elem=".body-bg_picker--area"
-            data-picker_elem =".{{bodyBgKey}}-picker"
-            data-bg-color="{{ body_bg_color }}"
-          ></button>
-        </div>
-      {% endif %}
       <div class="container">
         <div class="mar_t-32 mar_b-32">
-          {% include 'menu-breadcrumbs' %}
+          {% include "menu-breadcrumbs" %}
         </div>
 
         <main class="content" role="main" data-search-indexing-allowed="true">
-          {% if editmode %}
-            {%- assign isPostImageStatic = false -%}
-          {% else %}
-            {%- assign isPostImageStatic = true -%}
-          {% endif %}
           <div class="flex_row flex_row-2 reverse-col-tablet mar_0-32-neg">
             <div class="flex_row-2--item-60">
               <div class="mar_0-32 p-rel js-product-page-image-wrap">
@@ -68,7 +48,7 @@
                       <div class="top-inner of-hidden">
                         {%- if productImage != blank -%}
                           <div class="loader js-loader"></div>
-                          {%- assign imageClass = "item-image " | append: "not-cropped " | append: 'js-lazyload' -%}
+                          {%- assign imageClass = "item-image " | append: "not-cropped " | append: "js-lazyload" -%}
                           {% image_data productImage target_width="1280" class: imageClass %}
                         {%- endif -%}
                       </div>
@@ -88,21 +68,11 @@
                     {% contentblock bind=product name="product_title" publish_default_content="true" %}
                       <h3>{{product.title}}</h3>
                     {% endcontentblock %}
-                    {%- assign productSettingsData = page.data[productLayoutSettingsKey] -%}
-                    {%- assign isBoxLabel = productSettingsData.is_product_label_box -%}
-                    {%- assign isLabelLineThrough = productSettingsData.is_product_label_line_through -%}
 
-                    {%- if buy_button.product.out_of_stock? -%}
+                    {%- if product.out_of_stock? -%}
                       <div class="product_item-box--label mar_t-32">{{ "out_of_stock" | lc | escape_once }}</div>
-                    {%- elsif productSettingsData.product_label != blank -%}
-                      <div class="mar_t-16{% if isBoxLabel == true %} product_item-box--label{% endif %}{% if isLabelLineThrough == true %} td-lt{% endif %}">
-                        {{productSettingsData.product_label}}
-                      </div>
                     {%- endif -%}
 
-                  </div>
-                  <div>
-                    {% include 'product-page-nav' %}
                   </div>
                 </div>
                 <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
@@ -132,12 +102,12 @@
     {% include "footer" %}
   </div>
 
-  {% include 'template-tooltips' %}
+  {% include "template-tooltips" %}
   {% include "site-signout" %}
-  {% include "javascripts", _productPage: true %}
+  {% include "javascripts"%}
   <script>
     site.handleProductPageContent();
   </script>
-  {% include 'settings-popover', _productPage: true %}
+  {% include "settings-popover" %}
 </body>
 </html>

@@ -1,17 +1,17 @@
-{% if product.uses_variants %}
+{%- if product.uses_variants -%}
   <div class="edy-buy-button-container edy-buy-button-view" {{ _button_attributes }}>
     <div class="edy-buy-button-variants">
-      {% for variant_type in product.variant_types %}
+      {%- for variant_type in product.variant_types -%}
       <div class="form_field" data-variation-id="{{ variant_type.id }}">
         <label class="form_field_label">{{ variant_type.name }}</label>
         <select class="form_field_select" data-variation-attribute-id="{{ variant_type.id }}">
           <option value="">---</option>
-          {% for variant_value in variant_type.variant_values %}
+          {%- for variant_value in variant_type.variant_values -%}
           <option value="{{ variant_value.id }}">{{ variant_value.name }}</option>
-          {% endfor %}
+          {%- endfor -%}
         </select>
       </div>
-      {% endfor %}
+      {%- endfor -%}
     </div>
     <div class="form_field">
       <div class="edy-buy-button custom-btn custom-btn-disabled edy-buy-button-disabled">
@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-{% else %}
+{%- else -%}
   <div class="edy-buy-button-container edy-buy-button-view">
     <div class="form_field">
       <div class="edy-buy-button custom-btn" {{ _button_attributes }}>
@@ -28,4 +28,4 @@
       </div>
     </div>
   </div>
-{% endif %}
+{%- endif -%}
