@@ -65,9 +65,9 @@
               <div class="mar_0-32 flex_col t-sticky">
                 <div class="flex_row flex_a-center flex_j-space-between mar_b-64">
                   <div class="content-body content-formatted" data-search-indexing-allowed="true">
-                    {% contentblock bind=product name="product_title" publish_default_content="true" %}
-                      <h3>{{product.title}}</h3>
-                    {% endcontentblock %}
+                    <h3>
+                      {{- product.title -}}
+                    </h3>
 
                     {%- if product.out_of_stock? -%}
                       <div class="product_item-box--label mar_t-32">{{ "out_of_stock" | lc | escape_once }}</div>
@@ -76,9 +76,12 @@
                   </div>
                 </div>
                 <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
-                  {% contentblock bind=product publish_default_content="true" %}
-                    {{ product.description }}
-                  {% endcontentblock %}
+                  {%- if product.description != blank -%}
+                    <div class="content-product-description">
+                      {{- product.description -}}
+                    </div>
+                  {%- endif -%}
+                  {% content bind=product %}
                   {% include "buy-button" %}
                 </section>
               </div>
