@@ -78,8 +78,8 @@
                 <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
                   <div class="product-price bold mar_b-16">
                     {%- if product.price_max_with_tax != product.price_min_with_tax -%}
-                      {{ product.price_min_with_tax | money_with_currency: product.currency }}
-                        <span class="pad_0-4">-</span>
+                      {{ product.price_min_with_tax | money_with_currency: product.currency -}}
+                        <span class="pad_0-4">–</span>
                       {%- endif -%}
                       {{ product.price_max_with_tax | money_with_currency: product.currency }}
                   </div>
