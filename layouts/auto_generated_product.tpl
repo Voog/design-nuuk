@@ -63,7 +63,7 @@
 
             <div class="flex_row-2--item-40">
               <div class="mar_0-32 flex_col t-sticky">
-                <div class="flex_row flex_a-center flex_j-space-between mar_b-64">
+                <div class="flex_row flex_a-center flex_j-space-between mar_b-32">
                   <div class="content-body content-formatted" data-search-indexing-allowed="true">
                     <h3>
                       {{- product.title -}}
@@ -76,13 +76,22 @@
                   </div>
                 </div>
                 <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
+                  <div class="product-price bold mar_b-16">
+                    {%- if product.price_max_with_tax != product.price_min_with_tax -%}
+                      {{ product.price_min_with_tax | money_with_currency: product.currency }}
+                        <span class="pad_0-4">-</span>
+                      {%- endif -%}
+                      {{ product.price_max_with_tax | money_with_currency: product.currency }}
+                  </div>
                   {%- if product.description != blank -%}
                     <div class="content-product-description">
                       {{- product.description -}}
                     </div>
                   {%- endif -%}
                   {% content bind=product %}
-                  {% include "buy-button" %}
+                  <div class="content-buy-button mar_t-32">
+                    {% include "buy-button" %}
+                  </div>
                 </section>
               </div>
             </div>
