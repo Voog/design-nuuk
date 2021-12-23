@@ -66,7 +66,7 @@
                 <div class="flex_row flex_a-center flex_j-space-between mar_b-32">
                   <div class="content-body content-formatted" data-search-indexing-allowed="true">
                     <h3>
-                      {{- editable product.name -}}
+                      {%- editable product.name -%}
                     </h3>
 
                     {%- if product.out_of_stock? -%}
@@ -85,7 +85,7 @@
                   </div>
                   {%- if editmode or product.description != blank -%}
                     <div class="content-product-description">
-                      {{- editable product.description -}}
+                      {%- editable product.description -%}
                     </div>
                   {%- endif -%}
                   {% content bind=product %}
