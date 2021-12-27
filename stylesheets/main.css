@@ -6051,6 +6051,7 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
   position: -webkit-sticky;
   position: sticky;
   top: 32px;
+  z-index: 10601;
 }
 
 .op-0-5 {
