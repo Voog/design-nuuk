@@ -540,46 +540,22 @@
   ],
   "assets": [
     {
-      "content_type": "application/font-woff",
-      "file": "assets/avenir-next-regular.woff2",
+      "content_type": "application/font-sfnt",
+      "file": "assets/avenir-next-bold.ttf",
       "kind": "assets",
-      "filename": "avenir-next-regular.woff2"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/chevron-up-black.svg",
-      "kind": "assets",
-      "filename": "chevron-up-black.svg"
+      "filename": "avenir-next-bold.ttf"
     },
     {
       "content_type": "application/font-woff",
-      "file": "assets/avenir-next-medium.woff2",
+      "file": "assets/avenir-next-bold.woff",
       "kind": "assets",
-      "filename": "avenir-next-medium.woff2"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-arrow-right.svg",
-      "kind": "assets",
-      "filename": "ico-arrow-right.svg"
+      "filename": "avenir-next-bold.woff"
     },
     {
       "content_type": "application/font-woff",
-      "file": "assets/avenir-next-regular.woff",
+      "file": "assets/avenir-next-bold.woff2",
       "kind": "assets",
-      "filename": "avenir-next-regular.woff"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-flags-medium-up.svg",
-      "kind": "assets",
-      "filename": "ico-flags-medium-up.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-expand.svg",
-      "kind": "assets",
-      "filename": "ico-expand.svg"
+      "filename": "avenir-next-bold.woff2"
     },
     {
       "content_type": "application/font-sfnt",
@@ -594,28 +570,46 @@
       "filename": "avenir-next-demi-bold.woff"
     },
     {
+      "content_type": "application/font-woff",
+      "file": "assets/avenir-next-demi-bold.woff2",
+      "kind": "assets",
+      "filename": "avenir-next-demi-bold.woff2"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/avenir-next-medium.ttf",
+      "kind": "assets",
+      "filename": "avenir-next-medium.ttf"
+    },
+    {
+      "content_type": "application/font-woff",
+      "file": "assets/avenir-next-medium.woff",
+      "kind": "assets",
+      "filename": "avenir-next-medium.woff"
+    },
+    {
+      "content_type": "application/font-woff",
+      "file": "assets/avenir-next-medium.woff2",
+      "kind": "assets",
+      "filename": "avenir-next-medium.woff2"
+    },
+    {
       "content_type": "application/font-sfnt",
       "file": "assets/avenir-next-regular.ttf",
       "kind": "assets",
       "filename": "avenir-next-regular.ttf"
     },
     {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-arrow-right-small.svg",
+      "content_type": "application/font-woff",
+      "file": "assets/avenir-next-regular.woff",
       "kind": "assets",
-      "filename": "ico-arrow-right-small.svg"
+      "filename": "avenir-next-regular.woff"
     },
     {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-settings.svg",
+      "content_type": "application/font-woff",
+      "file": "assets/avenir-next-regular.woff2",
       "kind": "assets",
-      "filename": "ico-settings.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-search.svg",
-      "kind": "assets",
-      "filename": "ico-search.svg"
+      "filename": "avenir-next-regular.woff2"
     },
     {
       "content_type": "image/svg+xml",
@@ -624,10 +618,16 @@
       "filename": "chevron-down-black.svg"
     },
     {
-      "content_type": "application/font-sfnt",
-      "file": "assets/avenir-next-medium.ttf",
+      "content_type": "image/svg+xml",
+      "file": "assets/chevron-down-white.svg",
       "kind": "assets",
-      "filename": "avenir-next-medium.ttf"
+      "filename": "chevron-down-white.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/chevron-up-black.svg",
+      "kind": "assets",
+      "filename": "chevron-up-black.svg"
     },
     {
       "content_type": "image/svg+xml",
@@ -637,51 +637,21 @@
     },
     {
       "content_type": "image/svg+xml",
-      "file": "assets/ico-flags.svg",
+      "file": "assets/ico-arrow-right-small.svg",
       "kind": "assets",
-      "filename": "ico-flags.svg"
-    },
-    {
-      "content_type": "application/font-woff",
-      "file": "assets/avenir-next-bold.woff",
-      "kind": "assets",
-      "filename": "avenir-next-bold.woff"
+      "filename": "ico-arrow-right-small.svg"
     },
     {
       "content_type": "image/svg+xml",
-      "file": "assets/ico-flags-medium.svg",
+      "file": "assets/ico-arrow-right-white-small.svg",
       "kind": "assets",
-      "filename": "ico-flags-medium.svg"
+      "filename": "ico-arrow-right-white-small.svg"
     },
     {
       "content_type": "image/svg+xml",
-      "file": "assets/ico-search-white.svg",
+      "file": "assets/ico-arrow-right.svg",
       "kind": "assets",
-      "filename": "ico-search-white.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-delete.svg",
-      "kind": "assets",
-      "filename": "ico-delete.svg"
-    },
-    {
-      "content_type": "application/font-sfnt",
-      "file": "assets/avenir-next-bold.ttf",
-      "kind": "assets",
-      "filename": "avenir-next-bold.ttf"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-close.svg",
-      "kind": "assets",
-      "filename": "ico-close.svg"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-placeholder.svg",
-      "kind": "assets",
-      "filename": "ico-placeholder.svg"
+      "filename": "ico-arrow-right.svg"
     },
     {
       "content_type": "image/svg+xml",
@@ -691,45 +661,75 @@
     },
     {
       "content_type": "image/svg+xml",
-      "file": "assets/ico-ellipsis.svg",
-      "kind": "assets",
-      "filename": "ico-ellipsis.svg"
-    },
-    {
-      "content_type": "application/font-woff",
-      "file": "assets/avenir-next-medium.woff",
-      "kind": "assets",
-      "filename": "avenir-next-medium.woff"
-    },
-    {
-      "content_type": "image/svg+xml",
       "file": "assets/ico-cart.svg",
       "kind": "assets",
       "filename": "ico-cart.svg"
     },
     {
       "content_type": "image/svg+xml",
-      "file": "assets/chevron-down-white.svg",
+      "file": "assets/ico-close.svg",
       "kind": "assets",
-      "filename": "chevron-down-white.svg"
-    },
-    {
-      "content_type": "application/font-woff",
-      "file": "assets/avenir-next-demi-bold.woff2",
-      "kind": "assets",
-      "filename": "avenir-next-demi-bold.woff2"
+      "filename": "ico-close.svg"
     },
     {
       "content_type": "image/svg+xml",
-      "file": "assets/ico-arrow-right-white-small.svg",
+      "file": "assets/ico-delete.svg",
       "kind": "assets",
-      "filename": "ico-arrow-right-white-small.svg"
+      "filename": "ico-delete.svg"
     },
     {
-      "content_type": "application/font-woff",
-      "file": "assets/avenir-next-bold.woff2",
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-ellipsis.svg",
       "kind": "assets",
-      "filename": "avenir-next-bold.woff2"
+      "filename": "ico-ellipsis.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-expand.svg",
+      "kind": "assets",
+      "filename": "ico-expand.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-flags-medium-up.svg",
+      "kind": "assets",
+      "filename": "ico-flags-medium-up.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-flags-medium.svg",
+      "kind": "assets",
+      "filename": "ico-flags-medium.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-flags.svg",
+      "kind": "assets",
+      "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-placeholder.svg",
+      "kind": "assets",
+      "filename": "ico-placeholder.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-search-white.svg",
+      "kind": "assets",
+      "filename": "ico-search-white.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-search.svg",
+      "kind": "assets",
+      "filename": "ico-search.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-settings.svg",
+      "kind": "assets",
+      "filename": "ico-settings.svg"
     },
     {
       "content_type": "image/png",
@@ -745,21 +745,9 @@
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/global.min.js",
-      "kind": "javascripts",
-      "filename": "global.min.js"
-    },
-    {
-      "content_type": "application/javascript",
       "file": "javascripts/editmode.js",
       "kind": "javascripts",
       "filename": "editmode.js"
-    },
-    {
-      "content_type": "application/javascript",
-      "file": "javascripts/global.js",
-      "kind": "javascripts",
-      "filename": "global.js"
     },
     {
       "content_type": "application/javascript",
@@ -769,21 +757,33 @@
     },
     {
       "content_type": "application/javascript",
+      "file": "javascripts/global.js",
+      "kind": "javascripts",
+      "filename": "global.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/global.min.js",
+      "kind": "javascripts",
+      "filename": "global.min.js"
+    },
+    {
+      "content_type": "application/javascript",
       "file": "javascripts/modernizr-custom.min.js",
       "kind": "javascripts",
       "filename": "modernizr-custom.min.js"
     },
     {
       "content_type": "text/css",
-      "file": "stylesheets/main.min.css",
-      "kind": "stylesheets",
-      "filename": "main.min.css"
-    },
-    {
-      "content_type": "text/css",
       "file": "stylesheets/main.css",
       "kind": "stylesheets",
       "filename": "main.css"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/main.min.css",
+      "kind": "stylesheets",
+      "filename": "main.min.css"
     }
   ]
 }
