@@ -906,6 +906,16 @@ p {
   padding-top: 24px;
 }
 
+.publicmode .content-formatted .edy-buy-button-container .edy-buy-button-disabled {
+  cursor: default;
+}
+
+.publicmode .content-formatted .edy-buy-button-container .edy-buy-button-disabled, .publicmode .content-formatted .edy-buy-button-container .edy-buy-button-disabled:hover {
+  color: #c4c4c4;
+  background-color: #dadada;
+  border-color: #dadada;
+}
+
 .content-formatted .edy-buy-button-align-right .edy-buy-button-variants .form_field {
   margin: 0 0 0 auto;
 }
