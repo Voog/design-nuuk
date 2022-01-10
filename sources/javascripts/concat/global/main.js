@@ -570,9 +570,6 @@
       $('.js-menu-popover-btn').one("click", function () {
         if (editmode()) {
           $('.semimodal_bottom .menu .menu-item.lvl-1').clone().appendTo('.menu_popover-list');
-        } else {
-          // Popover has items starting from 6th
-          $('.semimodal_bottom .menu .menu-item.lvl-1:nth-of-type(n+6)').clone().appendTo('.menu_popover-list');
         }
       });
     });

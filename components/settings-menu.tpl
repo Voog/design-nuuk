@@ -31,6 +31,10 @@
         valuesObj.is_product_list_page_visible = true;
       }
 
+      if (!('max_elements' in valuesObj)) {
+        valuesObj.max_elements = 5;
+      }
+
       {%- assign sideMenuTr = value -%}
 
       initSettingsEditor(
@@ -69,6 +73,15 @@
               "min": 1,
               "key": "max_width",
               "placeholder": {{ sideMenuCombinedTr | json }}
+            },
+            {
+              "title": {{ "no_of_elements" | lce | json }},
+              "type": "number",
+              "key": "max_elements",
+              "placeholder": {{ "no_of_elements" | lce | json }},
+              "step": 1,
+              "min": 1,
+              "max": 10
             },
             {
               "titleI18n": {{ "show_product_pages_in_menu" | lce | json }},
@@ -206,8 +219,17 @@
 
             var menuCount = $('.js-menu-popover-btn').data('count');
 
+            var otherElements = data.max_elements + 1;
+            $('.semimodal_bottom .menu .menu-item.lvl-1:nth-of-type(n+' + data.max_elements + 1 + ')').clone().appendTo('.menu_popover-list');
+
+            $('.menu_top.menu-main .menu.menu_top-list li.menu-item.lvl-1').removeClass('d-initial');
+            $('.menu_top.menu-main .menu.menu_top-list li.menu-item.lvl-1:nth-of-type(-n+' + data.max_elements + ')').addClass('d-initial');
+
+            $('.menu-main .menu .menu_popover .menu .menu-item').removeClass('d-inl-flex');
+            $('.menu-main .menu .menu_popover .menu .menu-item:nth-of-type(n+' + otherElements + ')').addClass('d-inl-flex');
+
             if (data.positioning === 'is_top' || data.positioning === 'is_top_fixed') {
-              if (menuCount <= 5) {
+              if (menuCount <= data.max_elements) {
                 $('.js-menu-popover-btn').addClass('d-none');
               } else {
                 $('.js-menu-popover-btn').removeClass('d-none');
