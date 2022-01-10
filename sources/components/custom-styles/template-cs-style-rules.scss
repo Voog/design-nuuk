@@ -336,93 +336,133 @@ body {
 // Styling rules for the site's main menu.
 .menu-main {
   .menu {
-    .menu-item a {
-      color: var(--header-mainmenu-color);
-      text-decoration: var(--header-mainmenu-decoration);
-      font-weight: var(--header-mainmenu-font-weight);
-      font-style: var(--header-mainmenu-font-style);
-      font-size: var(--header-mainmenu-font-size);
-      hyphens: var(--header-mainmenu-hyphens);
-      line-height: var(--header-mainmenu-line-height);
-      text-transform: var(--header-mainmenu-text-transform);
+    .menu-item {
+      .dropdown_menu-popover--wrap .dropdown_menu-popover {
+        background-color: var(--menu-dropdown-background-color);
+        a {
+          color: var(--menu-dropdown-text-color);
+          &:hover {
+            color: var(--menu-dropdown-hover-text-color);
+          }
+        }
 
-      @include query($tablet-1) {
-        font-size: 24px;
-        line-height: 28px;
-      }
-
-      &.untranslated {
-        color: $red;
-      }
-
-      .dark-background & {
-        color: var(--third-color);
-      }
-
-      &::before {
-        background-color: var(--header-mainmenu-color);
-
-        .dark-background & {
-          background-color: var(--third-color);
+        .menu .menu-item:hover {
+          background-color: var(--menu-dropdown-hover-background-color);
         }
       }
-      // scss-lint:disable NestingDepth
-      &:hover {
-        color: var(--header-mainmenu-hover-color);
-        text-decoration: var(--header-mainmenu-hover-decoration);
-        font-weight: var(--header-mainmenu-hover-font-weight);
-        font-style: var(--header-mainmenu-hover-font-style);
+
+      a {
+        color: var(--header-mainmenu-color);
+        text-decoration: var(--header-mainmenu-decoration);
+        font-weight: var(--header-mainmenu-font-weight);
+        font-style: var(--header-mainmenu-font-style);
+        font-size: var(--header-mainmenu-font-size);
+        hyphens: var(--header-mainmenu-hyphens);
+        line-height: var(--header-mainmenu-line-height);
+        text-transform: var(--header-mainmenu-text-transform);
+
+        @include query($tablet-1) {
+          font-size: 24px;
+          line-height: 28px;
+        }
+
+        &.untranslated {
+          color: $red;
+        }
+
+        .dark-background & {
+          color: var(--third-color);
+        }
+
+        &::before {
+          background-color: var(--header-mainmenu-color);
+
+          .dark-background & {
+            background-color: var(--third-color);
+          }
+        }
+        // scss-lint:disable NestingDepth
+        &:hover {
+          color: var(--header-mainmenu-hover-color);
+          text-decoration: var(--header-mainmenu-hover-decoration);
+          font-weight: var(--header-mainmenu-hover-font-weight);
+          font-style: var(--header-mainmenu-hover-font-style);
+
+          .dark-background & {
+            color: var(--third-color);
+            opacity: .7;
+          }
+        }
+      }
+
+      .menu-item a.selected {
+        color: var(--header-mainmenu-active-color);
+        font-weight: var(--header-mainmenu-active-font-weight);
+        text-decoration: var(--header-mainmenu-active-decoration);
+        font-style: var(--header-mainmenu-active-font-style);
+        line-height: var(--header-mainmenu-line-height);
+        text-transform: var(--header-mainmenu-text-transform);
+
+        @include query($tablet-1) {
+          font-size: 24px;
+          line-height: 28px;
+        }
+
+        &.untranslated {
+          color: $red;
+        }
+
+        &::before {
+          background-color: var(--header-mainmenu-active-color);
+
+          .dark-background & {
+            background-color: var(--third-color);
+            opacity: .7;
+          }
+        }
 
         .dark-background & {
           color: var(--third-color);
           opacity: .7;
+        }
+
+        &:hover {
+          color: var(--header-mainmenu-hover-color);
+          text-decoration: var(--header-mainmenu-hover-decoration);
+          text-transform: var(--header-mainmenu-text-transform);
+
+          &::before {
+            background-color: var(--header-mainmenu-hover-color);
+          }
+
+          .dark-background & {
+            color: var(--third-color);
+            opacity: 1;
+          }
         }
       }
     }
 
-    .menu-item a.selected {
-      color: var(--header-mainmenu-active-color);
-      font-weight: var(--header-mainmenu-active-font-weight);
-      text-decoration: var(--header-mainmenu-active-decoration);
-      font-style: var(--header-mainmenu-active-font-style);
-      line-height: var(--header-mainmenu-line-height);
-      text-transform: var(--header-mainmenu-text-transform);
-
-      @include query($tablet-1) {
-        font-size: 24px;
-        line-height: 28px;
+    .menu_popover {
+      &-list {
+        background-color: var(--menu-dropdown-background-color);
       }
 
-      &.untranslated {
-        color: $red;
-      }
-
-      &::before {
-        background-color: var(--header-mainmenu-active-color);
-
-        .dark-background & {
-          background-color: var(--third-color);
-          opacity: .7;
-        }
-      }
-
-      .dark-background & {
-        color: var(--third-color);
-        opacity: .7;
-      }
-
-      &:hover {
-        color: var(--header-mainmenu-hover-color);
-        text-decoration: var(--header-mainmenu-hover-decoration);
-        text-transform: var(--header-mainmenu-text-transform);
-
-        &::before {
-          background-color: var(--header-mainmenu-hover-color);
+      .menu .menu-item {
+        &:hover {
+          background-color: var(--menu-dropdown-hover-background-color);
         }
 
-        .dark-background & {
-          color: var(--third-color);
-          opacity: 1;
+        .dropdown_menu-popover {
+          background-color: var(--menu-dropdown-background-color);
+        }
+
+        a {
+          color: var(--menu-dropdown-text-color);
+  
+          &:hover {
+            color: var(--menu-dropdown-hover-text-color);
+          }
         }
       }
     }
@@ -646,6 +686,21 @@ body {
     }
   }
 }
+
+.dropwdown_menu {
+  &-popover {
+    background-color: var(--menu-dropdown-background-color);
+
+    .menu {
+      .menu-item { 
+        a {
+          color: var(--menu-dropdown-text-color);
+        }
+      }
+    }
+  }
+}
+
 
 .menu-breadcrumbs.menu-sub {
   .menu-item a {

@@ -529,4 +529,36 @@
     "featured": true
   */
   --menu-sub-active-color: #000000;
+  /* VoogStyle
+    "pathI18n": ["header", "dropdown", "normal"],
+    "titleI18n": "background_color",
+    "editor": "colorPicker",
+    "scope": "global",
+    "featured": true
+  */
+  --menu-dropdown-background-color: #000000;
+  /* VoogStyle
+    "pathI18n": ["header", "dropdown", "normal"],
+    "titleI18n": "text_color",
+    "editor": "colorPicker",
+    "scope": "global",
+    "featured": true
+  */
+  --menu-dropdown-text-color: #ffffff;
+  /* VoogStyle
+    "pathI18n": ["header", "dropdown", "hover"],
+    "titleI18n": "background_color",
+    "editor": "colorPicker",
+    "scope": "global",
+    "featured": true
+  */
+  --menu-dropdown-hover-background-color: #383a3a;
+  /* VoogStyle
+    "pathI18n": ["header", "dropdown", "hover"],
+    "titleI18n": "text_color",
+    "editor": "colorPicker",
+    "scope": "global",
+    "featured": true
+  */
+  --menu-dropdown-hover-text-color: #ffffff;
 }
