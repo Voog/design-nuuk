@@ -358,7 +358,7 @@ body.dark-background {
   opacity: .7;
 }
 
-.menu-main .menu .menu-item .menu-item a.selected {
+.menu-main .menu .menu-item a.selected {
   color: var(--header-mainmenu-active-color);
   font-weight: var(--header-mainmenu-active-font-weight);
   -webkit-text-decoration: var(--header-mainmenu-active-decoration);
@@ -369,42 +369,42 @@ body.dark-background {
 }
 
 @media screen and (max-width: 900px) {
-  .menu-main .menu .menu-item .menu-item a.selected {
+  .menu-main .menu .menu-item a.selected {
     font-size: 24px;
     line-height: 28px;
   }
 }
 
-.menu-main .menu .menu-item .menu-item a.selected.untranslated {
+.menu-main .menu .menu-item a.selected.untranslated {
   color: #C5292A;
 }
 
-.menu-main .menu .menu-item .menu-item a.selected::before {
+.menu-main .menu .menu-item a.selected::before {
   background-color: var(--header-mainmenu-active-color);
 }
 
-.dark-background .menu-main .menu .menu-item .menu-item a.selected::before {
+.dark-background .menu-main .menu .menu-item a.selected::before {
   background-color: var(--third-color);
   opacity: .7;
 }
 
-.dark-background .menu-main .menu .menu-item .menu-item a.selected {
+.dark-background .menu-main .menu .menu-item a.selected {
   color: var(--third-color);
   opacity: .7;
 }
 
-.menu-main .menu .menu-item .menu-item a.selected:hover {
+.menu-main .menu .menu-item a.selected:hover {
   color: var(--header-mainmenu-hover-color);
   -webkit-text-decoration: var(--header-mainmenu-hover-decoration);
           text-decoration: var(--header-mainmenu-hover-decoration);
   text-transform: var(--header-mainmenu-text-transform);
 }
 
-.menu-main .menu .menu-item .menu-item a.selected:hover::before {
+.menu-main .menu .menu-item a.selected:hover::before {
   background-color: var(--header-mainmenu-hover-color);
 }
 
-.dark-background .menu-main .menu .menu-item .menu-item a.selected:hover {
+.dark-background .menu-main .menu .menu-item a.selected:hover {
   color: var(--third-color);
   opacity: 1;
 }

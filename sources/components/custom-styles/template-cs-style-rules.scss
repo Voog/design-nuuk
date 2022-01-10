@@ -395,7 +395,7 @@ body {
         }
       }
 
-      .menu-item a.selected {
+      a.selected {
         color: var(--header-mainmenu-active-color);
         font-weight: var(--header-mainmenu-active-font-weight);
         text-decoration: var(--header-mainmenu-active-decoration);
