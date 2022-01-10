@@ -26,6 +26,10 @@ body {
   color: var(--primary-color);
   background-color: var(--body-background-color);
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--headings-font-family);
+  }
+
   &.dark-background {
     color: var(--third-color);
   }

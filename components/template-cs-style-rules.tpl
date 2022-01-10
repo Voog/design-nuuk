@@ -4,6 +4,10 @@ body {
   background-color: var(--body-background-color);
 }
 
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-family: var(--headings-font-family);
+}
+
 body.dark-background {
   color: var(--third-color);
 }
