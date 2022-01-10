@@ -1129,6 +1129,9 @@ body.dark-background {
       -ms-hyphens: var(--button-hyphens);
           hyphens: var(--button-hyphens);
   background-color: var(--button-background-color);
+  border-radius: var(--button-border-radius);
+  border: var(--button-border-size) solid;
+  border-color: var(--button-border-color);
 }
 
 .dark-background .content-formatted:not(.product_filters) .custom-btn, .dark-background
@@ -1155,6 +1158,7 @@ body.dark-background {
           text-decoration: var(--button-hover-text-decoration);
   text-transform: var(--button-hover-text-transform);
   background-color: var(--button-hover-background-color);
+  border-color: var(--button-hover-border-color);
 }
 
 .blog-page .post_read-more-btn {

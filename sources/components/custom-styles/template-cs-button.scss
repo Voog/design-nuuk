@@ -20,6 +20,30 @@
   // scss-lint:disable Comment, Indentation
 
   /* VoogStyle
+    "pathI18n": ["button"],
+    "titleI18n": "radius",
+    "editor": "rangePicker",
+    "min": 0,
+    "max": 30,
+    "step": 1,
+    "unit": "px",
+    "scope": "global"
+  */
+  #{--button-border-radius}: 0px;
+
+  /* VoogStyle
+    "pathI18n": ["button"],
+    "titleI18n": "border_size",
+    "editor": "rangePicker",
+    "min": 0,
+    "max": 30,
+    "step": 1,
+    "unit": "px",
+    "scope": "global"
+  */
+  #{--button-border-size}: 0px;
+
+  /* VoogStyle
     "pathI18n": ["button", "normal"],
     "titleI18n": "padding",
     "editor": "rangePicker",
@@ -48,6 +72,15 @@
     "scope": "global"
   */
   #{--button-background-color}: $primary-color;
+
+  /* VoogStyle
+    "pathI18n": ["button", "normal"],
+    "titleI18n": "border_color",
+    "editor": "colorPicker",
+    "featured": true,
+    "scope": "global"
+  */
+  #{--button-border-color}: $primary-color;
 
   /* VoogStyle
     "pathI18n": ["button", "normal"],
@@ -155,6 +188,15 @@
     "scope": "global"
   */
   #{--button-hover-background-color}: $secondary-color;
+
+   /* VoogStyle
+    "pathI18n": ["button", "hover"],
+    "titleI18n": "border_color",
+    "editor": "colorPicker",
+    "featured": true,
+    "scope": "global"
+  */
+  #{--button-hover-border-color}: $secondary-color;
 
   /* VoogStyle
     "pathI18n": ["button", "hover"],

@@ -1,5 +1,27 @@
 :root {
   /* VoogStyle
+    "pathI18n": ["button"],
+    "titleI18n": "radius",
+    "editor": "rangePicker",
+    "min": 0,
+    "max": 30,
+    "step": 1,
+    "unit": "px",
+    "scope": "global"
+  */
+  --button-border-radius: 0px;
+  /* VoogStyle
+    "pathI18n": ["button"],
+    "titleI18n": "border_size",
+    "editor": "rangePicker",
+    "min": 0,
+    "max": 30,
+    "step": 1,
+    "unit": "px",
+    "scope": "global"
+  */
+  --button-border-size: 0px;
+  /* VoogStyle
     "pathI18n": ["button", "normal"],
     "titleI18n": "padding",
     "editor": "rangePicker",
@@ -26,6 +48,14 @@
     "scope": "global"
   */
   --button-background-color: black;
+  /* VoogStyle
+    "pathI18n": ["button", "normal"],
+    "titleI18n": "border_color",
+    "editor": "colorPicker",
+    "featured": true,
+    "scope": "global"
+  */
+  --button-border-color: black;
   /* VoogStyle
     "pathI18n": ["button", "normal"],
     "titleI18n": "size",
@@ -124,6 +154,14 @@
     "scope": "global"
   */
   --button-hover-background-color: #8d9091;
+  /* VoogStyle
+    "pathI18n": ["button", "hover"],
+    "titleI18n": "border_color",
+    "editor": "colorPicker",
+    "featured": true,
+    "scope": "global"
+  */
+  --button-hover-border-color: #8d9091;
   /* VoogStyle
     "pathI18n": ["button", "hover"],
     "titleI18n": "size",
