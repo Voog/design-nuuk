@@ -36,6 +36,19 @@
       }
     }
     // sass-lint:enable class-name-format
+
+    .publicmode & {
+      .edy-buy-button-disabled {
+        cursor: default;
+
+        &,
+        &:hover {
+          color: rgba($grey-2, 1);
+          background-color: rgba($disabled, 1);
+          border-color: rgba($disabled, 1);
+        }
+      }
+    }
   }
 
   .edy-buy-button-align-right .edy-buy-button-variants .form_field {
