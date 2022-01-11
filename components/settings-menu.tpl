@@ -19,6 +19,10 @@
         valuesObj.max_width = 270;
       }
 
+      if (!('indicator' in valuesObj)) {
+        valuesObj.indicator = 'square';
+      }
+
       if (!('positioning' in valuesObj)) {
         valuesObj.positioning = 'is_side_absolute';
       }
@@ -61,6 +65,21 @@
                 {
                   "title": {{ "side_opens_on_click" | lce | json }},
                   "value": "is_side_absolute"
+                }
+              ]
+            },
+            {
+              "title": {{ "active_element_indicator" | lce | json }},
+              "type": "radio",
+              "key": "indicator",
+              "list": [
+                {
+                  "title": {{ "square" | lce | json }},
+                  "value": "square"
+                },
+                {
+                  "title": {{ "stripe" | lce | json }},
+                  "value": "stripe"
                 }
               ]
             },
@@ -207,6 +226,14 @@
               replaceElementTag('.menu-item-product-list', '<div></div>');
               $('.menu-item-product-list').attr('data-visible', false);
               checkIfDropdownEmpty();
+            }
+
+            if (data.indicator === 'stripe') {
+              $('.menu-main:not(.menu_top) .menu .menu-item').removeClass('square');
+              $('.menu-main:not(.menu_top) .menu .menu-item').addClass('stripe');
+            } else {
+              $('.menu-main:not(.menu_top) .menu .menu-item').removeClass('stripe');
+              $('.menu-main:not(.menu_top) .menu .menu-item').addClass('square');
             }
 
             {%- if menuSettings.max_width != blank -%}

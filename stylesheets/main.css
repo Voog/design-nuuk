@@ -5626,7 +5626,14 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
 }
 
 @media screen and (min-width: 900px) {
-  .menu-main:not(.menu_top) .menu .menu-item a.active:before {
+  .menu-main:not(.menu_top) .menu .menu-item.stripe a.active:before {
+    content: '';
+    height: 24px;
+    width: 1px;
+    position: absolute;
+    left: 8px;
+  }
+  .menu-main:not(.menu_top) .menu .menu-item.square a.active:before {
     content: '';
     height: 8px;
     width: 8px;

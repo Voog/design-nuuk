@@ -85,7 +85,7 @@
         </div>
       {%- endif -%}
 
-      {%- include "menu-main", _renderSemimodalMenu: true -%}
+      {%- include "menu-main", _renderSemimodalMenu: true, _indicatorStyle: menuSettings.indicator -%}
     </div>
   </header>
 </div>

@@ -21,7 +21,7 @@
 
     {% if _menuTop == true or editmode -%}
       <div class="p-rel js-menu-main-wrapper menu-main-wrapper{% if _menuTop == true %} hidden-tablet{% else %} hidden-tablet hidden-desktop{% endif %}">
-        {% include "menu-main", _menuTop: _menuTop, _renderMenuTop: true -%}
+        {% include "menu-main", _menuTop: _menuTop, _renderMenuTop: true, _indicatorStyle: menuSettings.indicator -%}
       </div>
     {% endif %}
 

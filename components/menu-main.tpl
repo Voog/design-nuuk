@@ -3,7 +3,7 @@
 
     {%- capture root_menu_item -%}
       {%- unless site.root_item.hidden? %}
-        <li data-visible=true class="menu-item lvl-1 display-menu-element">
+        <li data-visible=true class="menu-item lvl-1 display-menu-element {{ _indicatorStyle }}">
           {%- menulink site.root_item current-class="active" -%}
         </li>
       {%- endunless -%}

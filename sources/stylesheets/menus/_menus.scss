@@ -332,14 +332,20 @@
     &:not(.menu_top) {
       .menu {
         .menu-item {
-          a.active {
-            &:before {
-              content: '';
-              height: 8px;
-              width: 8px;
-              position: absolute;
-              left: 0px;
-            }
+          &.stripe a.active:before {
+            content: '';
+            height: 24px;
+            width: 1px;
+            position: absolute;
+            left: 8px;
+          }
+
+          &.square a.active:before {
+            content: '';
+            height: 8px;
+            width: 8px;
+            position: absolute;
+            left: 0px;
           }
         }
 

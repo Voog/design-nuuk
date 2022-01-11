@@ -73,7 +73,7 @@
             {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
             data-url="{{ item.url }}"
             {% if editmode %}data-visible="{{isMenuItemVisible}}"{% endif %}
-            class="{{itemClass}} menu-item lvl-1{% if showInTopMenu %} display-menu-element{% endif %}{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
+            class="{{itemClass}} {{ menuSettings.indicator }} menu-item lvl-1{% if showInTopMenu %} display-menu-element{% endif %}{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
           >
             {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" -%}
             {% if menu_dropdown != blank %}
@@ -95,7 +95,7 @@
           {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
           data-url="{{ item.url }}"
           {% if editmode %}data-visible="true"{% endif %}
-          class="menu-item{% if showInTopMenu %} display-menu-element{% endif %}{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
+          class="menu-item {{ menuSettings.indicator }}{% if showInTopMenu %} display-menu-element{% endif %}{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
         >
             {%- menulink item current-class="active" -%}
             {% if menu_dropdown != blank %}

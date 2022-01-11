@@ -15,6 +15,7 @@
       "key": "PREFIX_menu_settings",
       "value": {
         "positioning": "is_side_absolute",
+        "indicator": "square",
         "max_width": 270,
         "is_product_page_visible": true,
         "max_elements": 5
