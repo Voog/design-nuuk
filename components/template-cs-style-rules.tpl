@@ -1310,3 +1310,14 @@ body.dark-background {
 .light-background .content-formatted .form_field_select::placeholder {
   color: var(--primary-color);
 }
+
+.front-page .swiper-content {
+  min-height: calc(var(--swiper-height) - 128px);
+}
+
+.front-page .swiper-content .swiper-content-area {
+  margin-left: var(--swiper-content-position-horizontal);
+  margin-top: var(--swiper-content-position-vertical);
+  min-width: var(--swiper-content-size);
+  max-width: var(--swiper-content-size);
+}

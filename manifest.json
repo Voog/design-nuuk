@@ -442,6 +442,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/template-cs-swiper.tpl",
+      "layout_name": "template-cs-swiper",
+      "title": "template-cs-swiper"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-meta.tpl",
       "layout_name": "template-meta",
       "title": "template-meta"

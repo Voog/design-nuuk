@@ -2577,6 +2577,7 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
 
 .front-page .swiper-content .swiper-content-area {
   min-width: 80%;
+  max-width: 80%;
 }
 
 .front-page .swiper-container .edy-bgpicker-toggle-button {
