@@ -3,7 +3,7 @@
 
     {%- capture root_menu_item -%}
       {%- unless site.root_item.hidden? %}
-        <li data-visible=true class="menu-item lvl-1">
+        <li data-visible=true class="menu-item lvl-1 display-menu-element">
           {%- menulink site.root_item current-class="active" -%}
         </li>
       {%- endunless -%}
@@ -26,7 +26,7 @@
       {%- endif -%}
     {% endif -%}
 
-    <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= 5 %} d-none{% endif %}" data-count="{{menuItemCount}}">
+    <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= menuSettingsKey.max_elements %} d-none{% endif %}" data-count="{{menuItemCount}}">
       {% include 'ico-ellipsis' %}
     </div>
     {%- capture menuSettingsBtns -%}

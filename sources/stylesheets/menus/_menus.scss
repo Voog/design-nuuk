@@ -130,24 +130,18 @@
 
     &.menu_top-list {
       .menu-item.lvl-1 {
-        &.d-initial.dd-arrow[data-arrow="active"] {
-          padding-right: 16px;
+
+        &.display-menu-element {
+          &.dd-arrow[data-arrow="active"] {
+            padding-right: 16px;
+          }
+          display: initial;
         }
+
         display: none;
       }
 
     }
-
-    &.menu_top-popover {
-      .menu-item.lvl-1 {
-        display: none;
-      }
-
-      li.menu-item.lvl-1:nth-of-type(-n+5) {
-        display: initial;
-      }
-    }
-
 
     .menu-item a {
       max-width: 160px;
@@ -250,9 +244,10 @@
           flex-direction: column;
 
           .menu-item {
-
+            &.display-menu-element {
+              display: none;
+            }
             width: 100%;
-            display: none;
 
             @include query($tablet-1) {
               display: none;

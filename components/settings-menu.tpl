@@ -222,11 +222,8 @@
             var otherElements = data.max_elements + 1;
             $('.semimodal_bottom .menu .menu-item.lvl-1:nth-of-type(n+' + data.max_elements + 1 + ')').clone().appendTo('.menu_popover-list');
 
-            $('.menu_top.menu-main .menu.menu_top-list li.menu-item.lvl-1').removeClass('d-initial');
-            $('.menu_top.menu-main .menu.menu_top-list li.menu-item.lvl-1:nth-of-type(-n+' + data.max_elements + ')').addClass('d-initial');
-
-            $('.menu-main .menu .menu_popover .menu .menu-item').removeClass('d-inl-flex');
-            $('.menu-main .menu .menu_popover .menu .menu-item:nth-of-type(n+' + otherElements + ')').addClass('d-inl-flex');
+            $('.menu-main .menu .menu-item').removeClass('display-menu-element');
+            $('.menu-main .menu .menu-item:nth-of-type(-n+' + data.max_elements + ')').addClass('display-menu-element');
 
             if (data.positioning === 'is_top' || data.positioning === 'is_top_fixed') {
               if (menuCount <= data.max_elements) {

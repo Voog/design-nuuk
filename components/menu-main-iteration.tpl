@@ -59,6 +59,12 @@
           {% if isMenuItemVisible != true %}
             {%- assign itemTag = 'div' -%}
           {% else %}
+            {% if menuSettings.max_elements > menuItemCount %}
+              {%- assign showInTopMenu = true -%}
+            {% else %}
+              {%- assign showInTopMenu = false -%}
+            {% endif %}
+
             {%- assign menuItemCount = menuItemCount | plus: 1 -%}
             {%- assign itemTag = 'li' -%}
           {% endif %}
@@ -67,7 +73,7 @@
             {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
             data-url="{{ item.url }}"
             {% if editmode %}data-visible="{{isMenuItemVisible}}"{% endif %}
-            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
+            class="{{itemClass}} menu-item lvl-1{% if showInTopMenu %} display-menu-element{% endif %}{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
           >
             {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" -%}
             {% if menu_dropdown != blank %}
@@ -77,13 +83,19 @@
         {% endif %}
 
       {% else %}
+        {% if menuSettings.max_elements > menuItemCount %}
+          {%- assign showInTopMenu = true -%}
+        {% else %}
+          {%- assign showInTopMenu = false -%}
+        {% endif %}
+
         {%- assign menuItemCount = menuItemCount | plus: 1 -%}
         {%- assign isMenuItemVisible = true -%}
         <li
           {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
           data-url="{{ item.url }}"
           {% if editmode %}data-visible="true"{% endif %}
-          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
+          class="menu-item{% if showInTopMenu %} display-menu-element{% endif %}{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
         >
             {%- menulink item current-class="active" -%}
             {% if menu_dropdown != blank %}
@@ -98,7 +110,7 @@
         {%- assign menu_main_lvl_1_top_main = menu_main_lvl_1_top_main | append: menu_main_lvl_1_item  -%}
       {%- endif -%}
     {%- elsif isMenuItemVisible == true -%}
-      {%- if menuItemCount <= 5 -%}
+      {%- if menuItemCount <= menuSettings.max_elements -%}
         {%- assign menu_main_lvl_1_top_main = menu_main_lvl_1_top_main | append: menu_main_lvl_1_item  -%}
       {%- endif -%}
     {%- endif -%}
