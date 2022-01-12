@@ -228,12 +228,14 @@
               checkIfDropdownEmpty();
             }
 
-            if (data.indicator === 'stripe') {
-              $('.menu-main:not(.menu_top) .menu .menu-item').removeClass('square');
-              $('.menu-main:not(.menu_top) .menu .menu-item').addClass('stripe');
-            } else {
-              $('.menu-main:not(.menu_top) .menu .menu-item').removeClass('stripe');
-              $('.menu-main:not(.menu_top) .menu .menu-item').addClass('square');
+            if (data.positioning === 'is_top' || data.positioning === 'is_top_fixed') {
+              if (data.indicator === 'stripe') {
+                $('.menu-main:not(.menu_top) .menu .menu-item').removeClass('square');
+                $('.menu-main:not(.menu_top) .menu .menu-item').addClass('stripe');
+              } else {
+                $('.menu-main:not(.menu_top) .menu .menu-item').removeClass('stripe');
+                $('.menu-main:not(.menu_top) .menu .menu-item').addClass('square');
+              }
             }
 
             {%- if menuSettings.max_width != blank -%}
@@ -246,13 +248,15 @@
 
             var menuCount = $('.js-menu-popover-btn').data('count');
 
-            var otherElements = data.max_elements + 1;
-            $('.semimodal_bottom .menu .menu-item.lvl-1:nth-of-type(n+' + data.max_elements + 1 + ')').clone().appendTo('.menu_popover-list');
-
-            $('.menu-main .menu .menu-item').removeClass('display-menu-element');
-            $('.menu-main .menu .menu-item:nth-of-type(-n+' + data.max_elements + ')').addClass('display-menu-element');
-
             if (data.positioning === 'is_top' || data.positioning === 'is_top_fixed') {
+              var otherElements = data.max_elements + 1;
+              if (data.max_elements > 1) {
+                $('.semimodal_bottom .menu .menu-item.lvl-1:nth-of-type(n+' + data.max_elements + 1 + ')').clone().appendTo('.menu_popover-list');
+              }
+
+              $('.menu-main .menu .menu-item').removeClass('display-menu-element');
+              $('.menu-main .menu .menu-item:nth-of-type(-n+' + data.max_elements + ')').addClass('display-menu-element');
+              
               if (menuCount <= data.max_elements) {
                 $('.js-menu-popover-btn').addClass('d-none');
               } else {

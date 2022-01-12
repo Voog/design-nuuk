@@ -1,30 +1,20 @@
 :root {
   /* VoogStyle
-    "pathI18n": ["swiper"],
-    "titleI18n": "height",
-    "editor": "rangePicker",
-    "min": 528,
-    "max": 1000,
-    "unit": "px",
-    "scope": "global"
-  */
-  --swiper-height: 528px;
-  /* VoogStyle
     "pathI18n": ["swiper", "content_area", "placement"],
     "titleI18n": "position-x",
     "editor": "rangePicker",
-    "min": -15,
-    "max": 15,
+    "min": -20,
+    "max": 20,
     "unit": "%",
     "scope": "global"
   */
-  --swiper-content-position-horizontal: 0%;
+  --swiper-content-position-horizontal: 0;
   /* VoogStyle
     "pathI18n": ["swiper", "content_area", "placement"],
     "titleI18n": "position-y",
     "editor": "rangePicker",
-    "min": -30,
-    "max": 30,
+    "min": 0,
+    "max": 45,
     "unit": "%",
     "scope": "global"
   */

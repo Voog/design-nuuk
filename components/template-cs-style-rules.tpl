@@ -1311,10 +1311,6 @@ body.dark-background {
   color: var(--primary-color);
 }
 
-.front-page .swiper-content {
-  min-height: calc(var(--swiper-height) - 128px);
-}
-
 .front-page .swiper-content .swiper-content-area {
   margin-left: var(--swiper-content-position-horizontal);
   margin-top: var(--swiper-content-position-vertical);

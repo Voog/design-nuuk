@@ -59,14 +59,15 @@
           {% if isMenuItemVisible != true %}
             {%- assign itemTag = 'div' -%}
           {% else %}
+            {%- assign menuItemCount = menuItemCount | plus: 1 -%}
+            {%- assign itemTag = 'li' -%}
+
             {% if menuSettings.max_elements > menuItemCount %}
               {%- assign showInTopMenu = true -%}
             {% else %}
               {%- assign showInTopMenu = false -%}
             {% endif %}
-
-            {%- assign menuItemCount = menuItemCount | plus: 1 -%}
-            {%- assign itemTag = 'li' -%}
+            
           {% endif %}
 
           <{{itemTag}}
@@ -83,14 +84,14 @@
         {% endif %}
 
       {% else %}
+        {%- assign menuItemCount = menuItemCount | plus: 1 -%}
+        {%- assign isMenuItemVisible = true -%}
+
         {% if menuSettings.max_elements > menuItemCount %}
           {%- assign showInTopMenu = true -%}
         {% else %}
           {%- assign showInTopMenu = false -%}
         {% endif %}
-
-        {%- assign menuItemCount = menuItemCount | plus: 1 -%}
-        {%- assign isMenuItemVisible = true -%}
         <li
           {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
           data-url="{{ item.url }}"
