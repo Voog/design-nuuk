@@ -244,6 +244,10 @@
           flex-direction: column;
 
           .menu-item {
+            .publicmode & {
+              display: inline-flex;
+            }
+
             &.display-menu-element {
               display: none;
             }
@@ -265,10 +269,6 @@
               .menu-item {
                 display: inline-flex;
               }
-            }
-
-            .publicmode & {
-              display: inline-flex;
             }
 
             a,

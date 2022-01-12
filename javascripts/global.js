@@ -1109,9 +1109,7 @@ MMCQ = (function() {
       });
 
       $('.js-menu-popover-btn').one("click", function () {
-        if (editmode()) {
-          $('.semimodal_bottom .menu .menu-item.lvl-1').clone().appendTo('.menu_popover-list');
-        }
+        $('.semimodal_bottom .menu .menu-item.lvl-1').clone().appendTo('.menu_popover-list');
       });
     });
   };
