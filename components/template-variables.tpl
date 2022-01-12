@@ -162,6 +162,24 @@
     [
       {
         "type": "group",
+        "title": "Cursive",
+        "list": [
+          {
+            "title": "Comfortaa",
+            "value": "\"Comfortaa\", cursive"
+          },
+          {
+            "title": "Gruppo",
+            "value": "\"Gruppo\", cursive"
+          },
+          {
+            "title": "Yeseva One",
+            "value": "\"Yeseva One\", cursive"
+          }
+        ]
+      },
+      {
+        "type": "group",
         "title": "Sans Serif",
         "list": [
           {
@@ -183,6 +201,10 @@
           {
             "title": "Open Sans",
             "value": "\"Open Sans\", sans-serif"
+          },
+          {
+            "title": "Poppins",
+            "value": "\"Poppins\", sans-serif"
           },
           {
             "title": "PT Sans",
@@ -211,8 +233,20 @@
         "title": "Serif",
         "list": [
           {
+            "title": "Antic Didone",
+            "value": "\"Antic Didone\", serif"
+          },
+          {
             "title": "Arvo",
             "value": "\"Arvo\", serif"
+          },
+          {
+            "title": "BioRhyme Expanded",
+            "value": "\"BioRhyme Expanded\", serif"
+          },
+          {
+            "title": "Bitter",
+            "value": "\"Bitter\", serif"
           },
           {
             "title": "Crimson Text",
@@ -259,6 +293,10 @@
           {
             "title": "Roboto Mono",
             "value": "\"Roboto Mono\", monospace"
+          },
+          {
+            "title": "Source Code Pro",
+            "value": "\"Source Code Pro\", monospace"
           },
           {
             "title": "Ubuntu Mono",
