@@ -228,7 +228,7 @@
               checkIfDropdownEmpty();
             }
 
-            if (data.positioning === 'is_top' || data.positioning === 'is_top_fixed') {
+            if (data.positioning === 'is_side_absolute' || data.positioning === 'is_side_always_open') {
               if (data.indicator === 'stripe') {
                 $('.menu-main:not(.menu_top) .menu .menu-item').removeClass('square');
                 $('.menu-main:not(.menu_top) .menu .menu-item').addClass('stripe');

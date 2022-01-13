@@ -1311,9 +1311,14 @@ body.dark-background {
   color: var(--primary-color);
 }
 
-.front-page .swiper-content .swiper-content-area {
-  margin-left: var(--swiper-content-position-horizontal);
-  margin-top: var(--swiper-content-position-vertical);
-  min-width: var(--swiper-content-size);
-  max-width: var(--swiper-content-size);
-}
+/*.front-page {
+  .swiper-content {
+    .swiper-content-area {
+      margin-left: var(--swiper-content-position-horizontal);
+      margin-top: var(--swiper-content-position-vertical);
+      min-width: var(--swiper-content-size);
+      max-width: var(--swiper-content-size);
+    }
+  } 
+
+}*/

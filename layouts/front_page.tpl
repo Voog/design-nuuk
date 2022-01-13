@@ -58,7 +58,7 @@
                   {% endif %}
                 >
                   {%- if swiperSettingsData.is_content_by_slide == true -%}
-                    <div class="swiper-content content-formatted" data-swiper-parallax="-100%" data-search-indexing-allowed="true">
+                    <div class="swiper-content content-formatted swiper-content-{{ swiperSettingsData.content_position }}" data-swiper-parallax="-100%" data-search-indexing-allowed="true">
                       <div class="swiper-content-area">
                         {% content name=contentKey %}
                       </div>

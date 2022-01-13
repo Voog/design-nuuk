@@ -2645,12 +2645,6 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -2665,15 +2659,54 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   z-index: 49;
 }
 
+.front-page .swiper-content.swiper-content-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.front-page .swiper-content.swiper-content-b_left {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.front-page .swiper-content.swiper-content-b_right {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
 @media screen and (max-width: 900px) {
   .front-page .swiper-content {
     min-height: calc(400px - 128px);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
 @media screen and (max-width: 506px) {
   .front-page .swiper-content {
     min-height: calc(336px - 128px);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -2685,7 +2718,6 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
 
 .front-page .swiper-content .swiper-content-area {
   min-width: 80%;
-  max-width: 80%;
 }
 
 .front-page .swiper-container .edy-bgpicker-toggle-button {
