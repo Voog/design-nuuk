@@ -77,18 +77,24 @@
     z-index: $zindex-swiper-content;
 
     &.swiper-content-center {
-      align-items: center;
-      justify-content: center;
+      @include query($tablet-1 + 1, 'min-width') {
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     &.swiper-content-b_left {
+      @include query($tablet-1 + 1, 'min-width') {
       align-items: flex-start;
       justify-content: end;
+      }
     }
 
     &.swiper-content-b_right {
+      @include query($tablet-1 + 1, 'min-width') {
       align-items: flex-end;
       justify-content: end;
+      }
     }
 
     @include query($tablet-1) {
