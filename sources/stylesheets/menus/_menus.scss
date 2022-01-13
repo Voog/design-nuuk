@@ -127,13 +127,24 @@
   .menu_top.menu-main & {
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 
     &.menu_top-list {
       .menu-item.lvl-1 {
 
-        &.display-menu-element {
+        &.top-menu-element {
           &.dd-arrow[data-arrow="active"] {
             padding-right: 16px;
+          }
+          &.popover-list-element {
+            display: none;
+          }
+          display: initial;
+        }
+
+        &.editmode-list-element {
+          &.top-menu-element {
+            display: none;
           }
           display: initial;
         }
@@ -227,8 +238,8 @@
         opacity: 0;
         width: 216px;
         pointer-events: none;
-        position: absolute;
-        top: calc((var(--header-mainmenu-font-size) * var(--header-mainmenu-line-height)) + 8px);
+        position: relative;
+        //top: calc((var(--header-mainmenu-font-size) * var(--header-mainmenu-line-height)));
         right: 0;
         @include transition(opacity 200ms);
         border-color: rgba(0,0,0,.1);

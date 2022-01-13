@@ -254,8 +254,8 @@
                 $('.semimodal_bottom .menu .menu-item.lvl-1:nth-of-type(n+' + data.max_elements + 1 + ')').clone().appendTo('.menu_popover-list');
               }
 
-              $('.menu-main .menu .menu-item').removeClass('display-menu-element');
-              $('.menu-main .menu .menu-item:nth-of-type(-n+' + data.max_elements + ')').addClass('display-menu-element');
+              $('.menu-main .menu .menu-item').removeClass('top-menu-element');
+              $('.menu-main .menu .menu-item:nth-of-type(-n+' + data.max_elements + ')').addClass('top-menu-element');
               
               if (menuCount <= data.max_elements) {
                 $('.js-menu-popover-btn').addClass('d-none');
