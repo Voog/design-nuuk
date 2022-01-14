@@ -38,7 +38,15 @@
               {
                 "title": "List view",              
                 "value": "list"
-              }
+              },
+              {
+                "title": "List view (2 cols)",              
+                "value": "list_2"
+              },
+              {
+                "title": "List view (3 cols)",              
+                "value": "list_3"
+              },
             ]
           }
         ],
@@ -49,14 +57,21 @@
         prevFunc: function(data) {
           var $articleSize = $('.blog_listing-item');
           if (data.blog_layout == "highlight_with_popout") {
-            $articleSize.removeClass('list')
+            $articleSize.removeClass('list list-cols-2 list-cols-3')
             $articleSize.addClass('highlight-with-popout');
+
           } else if (data.blog_layout == "highlight") {
-            $articleSize.removeClass('highlight-with-popout');
-            $articleSize.removeClass('list')
+            $articleSize.removeClass('highlight-with-popout list list-cols-2 list-cols-3');
+
           } else if (data.blog_layout == "list") {
-            $articleSize.removeClass('highlight-with-popout');
+            $articleSize.removeClass('highlight-with-popout list-cols-2 list-cols-3');
             $articleSize.addClass('list');
+          } else if (data.blog_layout == "list_2") {
+            $articleSize.removeClass('highlight-with-popout list list-cols-3');
+            $articleSize.addClass('list-cols-2');
+          } else if (data.blog_layout == 'list_3') {
+            $articleSize.removeClass('highlight-with-popout list list-cols-2');
+            $articleSize.addClass('list-cols-3');
           }
         }
       }

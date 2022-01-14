@@ -40,7 +40,13 @@
           {% include "blog-news-tags" %}
           <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
             {% for article in articles %}
-              <div class="blog_listing-item{% if blog_layout_setting == "list" %} list{% elsif blog_layout_setting == "highlight_with_popout" %} highlight-with-popout{%endif%}">
+              {%- if article.data.article_settings.show_article_image_in_list == true -%}
+                {%- assign showImage = true -%}
+              {%- else -%}
+                {%- assign showImage = false -%}
+              {%- endif -%}
+
+              <div class="blog_listing-item{% if showImage == false %} blog_listing-item-border{% endif %}{% if blog_layout_setting == "list" %} list{% elsif blog_layout_setting == "highlight_with_popout" %} highlight-with-popout{%endif%}">
                 <a class="blog_listing-link animate_wrap" href="{{ article.url }}">
                 {% include "article-settings-variables" %}
                 {%- if forloop.index == 1 -%}
@@ -48,7 +54,7 @@
                 {%- else -%}
                   {%- assign targetWidth = '600' -%}
                 {%- endif -%}
-                {% include "post-box", _targetWidth: targetWidth, _showImage: article.data.article_settings.show_article_image_in_list %}
+                {% include "post-box", _targetWidth: targetWidth, _showImage: showImage %}
                 </a>
               </div>
             {% endfor %}

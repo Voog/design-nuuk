@@ -49,29 +49,33 @@
     }
 
     &item {
-      width: calc(50% - 32px);
+      border: 2px solid transparent;
+      margin: 4px;
+      &-border {
+        border-color: black;
+        border-radius: 20px;
+      }
+      width: calc(50% - 48px);
 
       padding: 0 16px;
-      margin-bottom: 16px;
       padding-bottom: 16px;
 
       &:first-child {
-        width: calc(100% - 32px);
+        width: calc(100% - 48px);
       }
 
       &.highlight-with-popout {
-        width: calc(35% - 32px);
+        width: calc(35% - 48px);
         padding: 0 16px;
-        margin-bottom: 16px;
         padding-bottom: 16px;
 
         &:first-child,
         &:last-child:nth-child(odd) {
-          width: calc(70% - 32px);
+          width: calc(70% - 48px);
         }
   
         &:nth-child(2) {
-          width: calc(30% - 32px);
+          width: calc(30% - 48px);
         }
   
         &:nth-child(n+2) {
@@ -86,9 +90,8 @@
       }
 
       &.list {
-        width: calc(100% - 32px);
+        width: calc(100% - 48px);
         padding: 0 16px;
-        margin-bottom: 16px;
         padding-bottom: 16px;
       }
 
@@ -115,14 +118,14 @@
 
       .semimodal-relative & {
         @include query($desktop-2) {
-          width: calc(50% - 32px);
+          width: calc(50% - 48px);
 
           &:first-child {
             width: 100%;
           }
 
           &:nth-child(2) {
-            width: calc(50% - 32px);
+            width: calc(50% - 48px);
           }
         }
 

@@ -4013,29 +4013,34 @@ body.edy-checkout-button-visible {
 }
 
 .blog_listing-item {
-  width: calc(50% - 32px);
+  border: 2px solid transparent;
+  margin: 4px;
+  width: calc(50% - 48px);
   padding: 0 16px;
-  margin-bottom: 16px;
   padding-bottom: 16px;
 }
 
+.blog_listing-item-border {
+  border-color: black;
+  border-radius: 20px;
+}
+
 .blog_listing-item:first-child {
-  width: calc(100% - 32px);
+  width: calc(100% - 48px);
 }
 
 .blog_listing-item.highlight-with-popout {
-  width: calc(35% - 32px);
+  width: calc(35% - 48px);
   padding: 0 16px;
-  margin-bottom: 16px;
   padding-bottom: 16px;
 }
 
 .blog_listing-item.highlight-with-popout:first-child, .blog_listing-item.highlight-with-popout:last-child:nth-child(odd) {
-  width: calc(70% - 32px);
+  width: calc(70% - 48px);
 }
 
 .blog_listing-item.highlight-with-popout:nth-child(2) {
-  width: calc(30% - 32px);
+  width: calc(30% - 48px);
 }
 
 .blog_listing-item.highlight-with-popout:nth-child(n+2) .post_wrapper {
@@ -4048,9 +4053,8 @@ body.edy-checkout-button-visible {
 }
 
 .blog_listing-item.list {
-  width: calc(100% - 32px);
+  width: calc(100% - 48px);
   padding: 0 16px;
-  margin-bottom: 16px;
   padding-bottom: 16px;
 }
 
@@ -4074,13 +4078,13 @@ body.edy-checkout-button-visible {
 
 @media screen and (max-width: 1240px) {
   .semimodal-relative .blog_listing-item {
-    width: calc(50% - 32px);
+    width: calc(50% - 48px);
   }
   .semimodal-relative .blog_listing-item:first-child {
     width: 100%;
   }
   .semimodal-relative .blog_listing-item:nth-child(2) {
-    width: calc(50% - 32px);
+    width: calc(50% - 48px);
   }
 }
 
