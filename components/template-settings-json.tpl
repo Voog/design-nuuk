@@ -140,6 +140,7 @@
       "show_date": true,
       "show_comments": true,
       "show_authors": true,
+      "show_article_image_in_list": true,
       "has_share_on_facebook_btn": false,
       "has_share_on_twitter_btn": false,
       "has_share_on_linkedin_btn": false,

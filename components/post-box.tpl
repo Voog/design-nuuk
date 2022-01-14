@@ -49,7 +49,7 @@
       {%- assign isPostImageStatic = true -%}
     {% endif %}
     {%- if article.data[itemImageKey] != blank or editmode -%}
-      <div class="p-rel">
+      <div class="p-rel{% if _showImage == false %} d-none{% endif %}">
         <div {% unless article.published? or _isArticle == true %}class="post_unpublished"{%- endunless -%}>
           {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic, _targetWidth: _targetWidth %}
         </div>

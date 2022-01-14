@@ -36,7 +36,7 @@
       <div class="container">
         <main class="content" role="main" data-search-indexing-allowed="true">
 
-          {% include "post-box", _isArticle: true, _targetWidth: '2048' %}
+          {% include "post-box", _isArticle: true, _targetWidth: '2048', _showImage: true %}
 
           <div class="post_narrow">
             {% include "tags-post" %}

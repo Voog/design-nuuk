@@ -45,6 +45,7 @@
       show_comments: show_comments,
       show_date: show_date,
       show_author: show_author,
+      show_article_image_in_list: {%- if articleSettingsData.show_article_image_in_list == true -%}true{%- else -%}false{%- endif -%},
       has_share_on_facebook_btn: {%- if articleSettingsData.has_share_on_facebook_btn == true -%}true{%- else -%}false{%- endif -%},
       has_share_on_twitter_btn: {%- if articleSettingsData.has_share_on_twitter_btn == true -%}true{%- else -%}false{%- endif -%},
       has_share_on_linkedin_btn: {%- if articleSettingsData.has_share_on_linkedin_btn == true -%}true{%- else -%}false{%- endif -%},
@@ -95,6 +96,16 @@
             }
           },
           {
+            "title": {{"show_article_image_in_list" | lce | json }},
+            "type": "toggle",
+            "key": "show_article_image_in_list",
+            "tooltip": {{"show_article_image_in_list" | lce | json }},
+            "states": {
+              "on": true,
+              "off": false
+            }
+          },
+          {
             "titleI18n": "comments",
             "type": "toggle",
             "key": "show_comments",
@@ -135,6 +146,7 @@
             $articleDate = $('.post_date'),
             $articleAuthor = $('.post_author'),
             $dateSeparator = $('.date-separator');
+            $articleImage = $('.post_header p-rel');
 
           if (data.show_date == true) {
             $articleDate.removeClass('hide-post-date');
@@ -165,7 +177,6 @@
           if (data.show_author == true && data.show_date == true) {
             $dateSeparator.removeClass('hide-separator');
           }
-
           // Share buttons script
 
           if (data.has_share_on_facebook_btn == true) {

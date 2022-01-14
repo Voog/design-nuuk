@@ -48,7 +48,7 @@
                 {%- else -%}
                   {%- assign targetWidth = '600' -%}
                 {%- endif -%}
-                {% include "post-box", _targetWidth: targetWidth %}
+                {% include "post-box", _targetWidth: targetWidth, _showImage: article.data.article_settings.show_article_image_in_list %}
                 </a>
               </div>
             {% endfor %}
