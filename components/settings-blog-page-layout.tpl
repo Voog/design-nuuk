@@ -18,6 +18,10 @@
       valuesObj.blog_layout = "highlight_with_popout";
     }
 
+    if (!('show_articles_as_list' in valuesObj)) {
+      valuesObj.show_articles_as_list = false;
+    }
+
     initSettingsEditor(
       {
         settingsBtn: document.querySelector('.js-blog-layout-settings-editor'),
@@ -41,13 +45,23 @@
               },
               {
                 "title": "List view (2 cols)",              
-                "value": "list_2"
+                "value": "list_cols_2"
               },
               {
                 "title": "List view (3 cols)",              
-                "value": "list_3"
+                "value": "list_cols_3"
               },
             ]
+          },
+          {
+            "titleI18n": "show_articles_as_list",
+            "type": "toggle",
+            "key": "show_articles_as_list",
+            "tooltipI18n": "show_articles_as_list",
+            "states": {
+              "on": true,
+              "off": false
+            },
           }
         ],
         dataKey: '{{blogLayoutKey}}',
@@ -57,21 +71,29 @@
         prevFunc: function(data) {
           var $articleSize = $('.blog_listing-item');
           if (data.blog_layout == "highlight_with_popout") {
-            $articleSize.removeClass('list list-cols-2 list-cols-3')
-            $articleSize.addClass('highlight-with-popout');
+            $articleSize.removeClass('highlight list list_cols_2 list_cols_3')
+            $articleSize.addClass('highlight_with_popout');
 
           } else if (data.blog_layout == "highlight") {
-            $articleSize.removeClass('highlight-with-popout list list-cols-2 list-cols-3');
-
+            $articleSize.removeClass('highlight_with_popout list list_cols_2 list_cols_3');
+            $articleSize.addClass('highlight')
           } else if (data.blog_layout == "list") {
-            $articleSize.removeClass('highlight-with-popout list-cols-2 list-cols-3');
+            $articleSize.removeClass('highlight highlight_with_popout list_cols_2 list_cols_3');
             $articleSize.addClass('list');
-          } else if (data.blog_layout == "list_2") {
-            $articleSize.removeClass('highlight-with-popout list list-cols-3');
-            $articleSize.addClass('list-cols-2');
-          } else if (data.blog_layout == 'list_3') {
-            $articleSize.removeClass('highlight-with-popout list list-cols-2');
-            $articleSize.addClass('list-cols-3');
+          } else if (data.blog_layout == "list_cols_2") {
+            $articleSize.removeClass('highlight highlight_with_popout list list_cols_3');
+            $articleSize.addClass('list_cols_2');
+          } else if (data.blog_layout == 'list_cols_3') {
+            $articleSize.removeClass('highlight highlight_with_popout list list_cols_2');
+            $articleSize.addClass('list_cols_3');
+          }
+
+          if (data.show_articles_as_list == true) {
+            $('.over-limit.blog_listing-item-list').removeClass('d-none');
+            $('.over-limit.blog_listing-item').addClass('d-none');
+          } else {
+            $('.over-limit.blog_listing-item-list').addClass('d-none');
+            $('.over-limit.blog_listing-item').removeClass('d-none');
           }
         }
       }

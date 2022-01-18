@@ -90,6 +90,12 @@
     {% assign blog_layout_setting = "highlight_with_popout" %}
   {% endif %}
 
+  {% if page.data[blogLayoutKey].show_articles_as_list == true %}
+    {% assign show_articles_as_list = true %}
+  {% else %}
+    {% assign show_articles_as_list = false %}
+  {% endif %}
+
   {% comment %}Assign variables based on page type.{% endcomment %}
   {% assign body_bg_color = body_bg.color %}
   {%- if body_bg_color == blank -%}

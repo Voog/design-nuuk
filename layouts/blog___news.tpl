@@ -7,6 +7,7 @@
   {% include "html-head" %}
   {% include "template-styles" %}
   {%- assign blog_listing_page = true -%}
+  {%- assign blog_settings = page.data[blogLayoutKey] -%}
 </head>
 
 <body class="blog-page body-bg_picker--area {{ body_bg_type }}">
@@ -38,6 +39,8 @@
         <main class="content" role="main" data-search-indexing-allowed="true">
           <section class="content-body content-formatted mar_b-64" {{ edy_intro_edit_text }}>{% content %}</section>
           {% include "blog-news-tags" %}
+          {% assign currentDate = "now" | date: "%s" %}
+          
           <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
             {% for article in articles %}
               {%- if article.data.article_settings.show_article_image_in_list == true -%}
@@ -46,16 +49,42 @@
                 {%- assign showImage = false -%}
               {%- endif -%}
 
-              <div class="blog_listing-item{% if showImage == false %} blog_listing-item-border{% endif %}{% if blog_layout_setting == "list" %} list{% elsif blog_layout_setting == "highlight_with_popout" %} highlight-with-popout{%endif%}">
+              {%- assign articleDate = article.created_at | date: '%s' -%}
+              {%- assign diffSeconds = currentDate | minus: articleDate -%}
+              {%- assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
+
+              {%- if diffDays > 151 -%}
+                {%- assign overLimit = true -%}
+              {%- else -%}
+                {%- assign overLimit = false -%}
+              {%- endif -%}
+
+              {% capture article_element_full %}
                 <a class="blog_listing-link animate_wrap" href="{{ article.url }}">
-                {% include "article-settings-variables" %}
-                {%- if forloop.index == 1 -%}
-                  {%- assign targetWidth = '1280' -%}
-                {%- else -%}
-                  {%- assign targetWidth = '600' -%}
-                {%- endif -%}
-                {% include "post-box", _targetWidth: targetWidth, _showImage: showImage %}
+                  {% include "article-settings-variables" %}
+                  {%- if forloop.index == 1 -%}
+                    {%- assign targetWidth = '1280' -%}
+                  {%- else -%}
+                    {%- assign targetWidth = '600' -%}
+                  {%- endif -%}
+                  {% include "post-box", _targetWidth: targetWidth, _showImage: showImage, _showArticlesAsList: false %}
                 </a>
+              {% endcapture %}
+
+              {% capture article_element_list %}
+                <a class="blog_listing-link animate_wrap" href="{{ article.url }}">
+                  {% include "article-settings-variables" %}
+                  {% include "post-box", _showArticlesAsList: true %}
+                </a>
+              {% endcapture %}
+
+
+              
+              <div class="blog_listing-item {{ blog_settings.blog_layout }}{% if showImage == false %} blog_listing-item-border{% endif %}{% if overLimit == true %} over-limit{% endif %}{% if show_articles_as_list == true and overLimit == true %} d-none{% endif %}">
+                {{ article_element_full }}
+              </div>
+              <div class="w-100p blog_listing-item-list {% if overLimit %}over-limit {% endif %}{% if show_articles_as_list != true or overLimit != true %}d-none{% endif %}">
+                {{ article_element_list }}
               </div>
             {% endfor %}
           </div>
