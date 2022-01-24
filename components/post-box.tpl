@@ -11,7 +11,7 @@
     {%- assign titleTag = 'h3' -%}
   {% endif %}
   {% capture post_title %}
-    <{{titleTag}} class="post_title{%- unless article.data[itemImageKey] != blank or editmode %} mar_t-0{%- endunless -%}">
+    <{{titleTag}} class="post_title">
       <span {% if _isArticle != true %}class="animate_border-bottom"{% endif %}>
         {% if _isArticle == true %}
           {% editable article.title %}

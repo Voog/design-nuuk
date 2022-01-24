@@ -4035,7 +4035,7 @@ body.edy-checkout-button-visible {
   padding-bottom: 16px;
 }
 
-.blog_listing-item.highlight_with_popout:first-child, .blog_listing-item.highlight_with_popout:nth-of-type(odd):last-of-type {
+.blog_listing-item.highlight_with_popout:first-child, .blog_listing-item.highlight_with_popout:last-child:nth-child(odd) {
   width: calc(70% - 48px);
 }
 
