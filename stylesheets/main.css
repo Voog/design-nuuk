@@ -3339,9 +3339,18 @@ body.edy-checkout-button-visible {
           backface-visibility: hidden;
 }
 
+.header_fixed_picker-btn {
+  top: 50px;
+  position: relative;
+}
+
 .semimodal-relative .header_fixed {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+}
+
+.header_fixed:not(.scroll):not(.relative) .semimodal-bg_color {
+  background-color: transparent !important;
 }
 
 .front-page .header_fixed {
@@ -3378,6 +3387,21 @@ body.edy-checkout-button-visible {
   -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
+  -webkit-transition: all 600ms;
+  -o-transition: all 600ms;
+  transition: all 600ms;
+  -webkit-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+       -o-transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+          transition-timing-function: cubic-bezier(0.01, 0.94, 0.22, 1.01);
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.header_fixed.scroll .semimodal-bg_color {
+  -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1);
   -webkit-transition: all 600ms;
   -o-transition: all 600ms;
   transition: all 600ms;

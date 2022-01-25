@@ -12,9 +12,17 @@
     box-sizing: border-box;
     @include transition(all 600ms);
 
+    &_picker-btn {
+      top: 50px;
+      position: relative;
+    }
 
     .semimodal-relative & {
       box-shadow: none !important;
+    }
+
+    &:not(.scroll):not(.relative) .semimodal-bg_color {
+      background-color: transparent !important;
     }
 
     .front-page & {
@@ -45,6 +53,11 @@
     &.scroll {
       box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
       background-color: $white;
+      @include transition(all 600ms);
+    }
+
+    &.scroll .semimodal-bg_color {
+      box-shadow: 0 0px 10px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1);
       @include transition(all 600ms);
     }
 

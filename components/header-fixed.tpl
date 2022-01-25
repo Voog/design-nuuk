@@ -1,4 +1,9 @@
-<header class="header_fixed{% if menuPos == 'is_top_fixed'%} relative{% endif %}{% if _menuTop == true %} menu-top{% endif %}">
+<header class="header_fixed semimodal-bg_picker--area {{semimodal_bg_type}}{% if menuPos == 'is_top_fixed'%} relative{% endif %}{% if _menuTop == true %} menu-top{% endif %}">
+  <div class="semimodal-bg_color bg_color-absolute{% if _menuTop == false %} d-none{% endif %}"
+      {%- if semimodal_bg.color != blank %}
+        style="background-color: {{ semimodal_bg.color }}; margin: -24px -32px"
+      {%- endif -%}
+    ></div>
   <div class="header_fixed-content">
     <button class="menu-btn js-menu-btn js-prevent-sideclick{% if _menuTop == true %} hidden-desktop{% endif %}">
       <div>
@@ -24,6 +29,21 @@
         {% include "menu-main", _menuTop: _menuTop, _renderMenuTop: true, _indicatorStyle: menuSettings.indicator -%}
       </div>
     {% endif %}
+
+    {%- if editmode and _menuTop == true -%}
+      <div class="header_fixed_picker-btn js-prevent-sideclick">
+        <button class="bg-picker"
+          data-type_picture="false"
+          data-type_color="true"
+          data-color_elem=".semimodal-bg_color"
+          data-picker_area_elem=".semimodal-bg_picker--area"
+          data-picker_elem=".semimodal-bg_picker"
+          data-bg_key="{{semimodalBgKey}}"
+          data-bg="{{ semimodal_bg | json | escape }}"
+          data-entity="siteData"
+        ></button>
+      </div>
+    {%- endif -%}
 
     <div class="header_components">
       <div class="header_components-menu--top">
