@@ -1,8 +1,7 @@
 <header class="header_fixed semimodal-bg_picker--area {{semimodal_bg_type}}{% if menuPos == 'is_top_fixed'%} relative{% endif %}{% if _menuTop == true %} menu-top{% endif %}">
   <div class="semimodal-bg_color bg_color-absolute{% if _menuTop == false %} d-none{% endif %}"
-      {%- if semimodal_bg.color != blank %}
-        style="background-color: {{ semimodal_bg.color }}; margin: -24px -32px"
-      {%- endif -%}
+      
+        style="margin: -24px -32px; {%- if semimodal_bg.color != blank %}background-color: {{ semimodal_bg.color }};{%- endif -%}"
     ></div>
   <div class="header_fixed-content">
     <button class="menu-btn js-menu-btn js-prevent-sideclick{% if _menuTop == true %} hidden-desktop{% endif %}">

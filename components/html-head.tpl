@@ -38,7 +38,6 @@
   {%- include "template-cs-style-rules" -%}
   {%- include "template-cs-article-list" -%}
   {%- include "template-cs-footer" -%}
-  {%- include "template-cs-swiper" -%}
 {%- endcustomstyle -%}
 
 {%- comment -%}MODERNIZR - HTML5 SUPPORT FOR OLDER BROWSERS, SVG SUPPORT DETECTION ETC{%- endcomment -%}

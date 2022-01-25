@@ -13,8 +13,12 @@
     @include transition(all 600ms);
 
     &_picker-btn {
-      top: 50px;
+      top: -24px;
       position: relative;
+      
+      .front-page & {
+        top: 30px;
+      }
     }
 
     .semimodal-relative & {
