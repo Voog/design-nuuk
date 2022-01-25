@@ -583,6 +583,10 @@ body {
     color: var(--header-mainmenu-color);
     a {
       color: var(--header-mainmenu-color);
+      
+      &.untranslated {
+        color: $red;
+      }
     }
 
     &.active a,
@@ -648,6 +652,9 @@ body {
       a {
         &:hover {
           opacity: 0.7;
+        }
+        &.untranslated {
+          color: $red;
         }
         color: var(--third-color);
       }

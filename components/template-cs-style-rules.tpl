@@ -554,6 +554,11 @@ body.dark-background {
   color: var(--header-mainmenu-color);
 }
 
+.header_fixed .menu-main .menu .menu-item a.untranslated,
+.header_fixed .menu-language-btn a.untranslated {
+  color: #C5292A;
+}
+
 .header_fixed .menu-main .menu .menu-item.active a,
 .header_fixed .menu-main .menu .menu-item a.selected,
 .header_fixed .menu-language-btn.active a,
@@ -610,6 +615,10 @@ body.dark-background {
 
 .header_fixed.dark-background.scroll .menu-main .menu .menu-item a:hover {
   opacity: 0.7;
+}
+
+.header_fixed.dark-background.scroll .menu-main .menu .menu-item a.untranslated {
+  color: #C5292A;
 }
 
 .header_fixed.dark-background.scroll .menu-main .menu .menu-item.active a,
