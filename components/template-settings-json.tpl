@@ -93,7 +93,8 @@
       "key": "PREFIX_blog_settings",
       "value": {
         "blog_layout": "highlight_with_popout",
-        "show_articles_as_list": false
+        "show_articles_as_list": false,
+        "no_of_days_old": 365
       }
     },
     "swiper_bg": {

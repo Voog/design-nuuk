@@ -53,7 +53,7 @@
               {%- assign diffSeconds = currentDate | minus: articleDate -%}
               {%- assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
 
-              {%- if diffDays > 151 -%}
+              {%- if diffDays > blog_settings.no_of_days_old -%}
                 {%- assign overLimit = true -%}
               {%- else -%}
                 {%- assign overLimit = false -%}
@@ -73,19 +73,25 @@
 
               {% capture article_element_list %}
                 <a class="blog_listing-link animate_wrap" href="{{ article.url }}">
-                  {% include "article-settings-variables" %}
                   {% include "post-box", _showArticlesAsList: true %}
                 </a>
               {% endcapture %}
 
-
-              
-              <div class="blog_listing-item {{ blog_settings.blog_layout }}{% if showImage == false %} blog_listing-item-border{% endif %}{% if overLimit == true %} over-limit{% endif %}{% if show_articles_as_list == true and overLimit == true %} d-none{% endif %}">
-                {{ article_element_full }}
-              </div>
-              <div class="w-100p blog_listing-item-list {% if overLimit %}over-limit {% endif %}{% if show_articles_as_list != true or overLimit != true %}d-none{% endif %}">
-                {{ article_element_list }}
-              </div>
+              {% if show_articles_as_list == true %}
+                {% if overLimit == false %}
+                  <div class="blog_listing-item {{ blog_settings.blog_layout }}{% if showImage == false %} blog_listing-item-border{% endif %}">
+                    {{ article_element_full }}
+                  </div>
+                {% else %}
+                  </div>
+                  <div class="w-100p mar_t-32 blog_listing-item-list">    
+                    {{ article_element_list }}
+                {% endif %}
+              {% else %}
+                <div class="blog_listing-item {{ blog_settings.blog_layout }}{% if showImage == false %} blog_listing-item-border{% endif %}">
+                  {{ article_element_full }}
+                </div>
+              {% endif %}
             {% endfor %}
           </div>
         </main>

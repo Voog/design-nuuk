@@ -22,52 +22,64 @@
       valuesObj.show_articles_as_list = false;
     }
 
+    if (!('no_of_days_old' in valuesObj)) {
+      valuesObj.no_of_days_old = 365;
+    }
+
     initSettingsEditor(
       {
         settingsBtn: document.querySelector('.js-blog-layout-settings-editor'),
         menuItems: [
           {
-            "title": "Blog layout",
+            "title": {{ "blog_layout" | lce | json }},
             "type": "radio",
             "key": "blog_layout",
             "list": [
               {
-                "title": "Popout article shown",
+                "title": {{ "highlight_with_popout" | lce | json }},
                 "value": "highlight_with_popout"
               },
               {
-                "title": "Popout article hidden",  
+                "title": {{ "highlight" | lce | json }},
                 "value": "highlight"
               },
               {
-                "title": "List view",              
+                "title": {{ "list" | lce | json }},
                 "value": "list"
               },
               {
-                "title": "List view (2 cols)",              
+                "title": {{ "list_cols_2" | lce | json }},
                 "value": "list_cols_2"
               },
               {
-                "title": "List view (3 cols)",              
+                "title": {{ "list_cols_3" | lce | json }},
                 "value": "list_cols_3"
               },
             ]
           },
           {
-            "titleI18n": "show_articles_as_list",
+            "titleI18n": {{ "show_articles_as_list" | lce | json }},
             "type": "toggle",
             "key": "show_articles_as_list",
-            "tooltipI18n": "show_articles_as_list",
+            "tooltipI18n": {{ "show_articles_as_list" | lce | json }},
             "states": {
               "on": true,
               "off": false
             },
+          },
+          {
+            "titleI18n": {{ "no_of_days_old" | lce | json }},
+            "type": "number",
+            "key": "no_of_days_old",
+            "tooltipI18n": {{ "no_of_days_old" | lce | json }},
+            "step": 1,
+            "min": 1,
+            "class": "blog-list-opt"
           }
         ],
         dataKey: '{{blogLayoutKey}}',
         containerClass: ['bottom-settings-popover', 'first', 'editor_default'],
         values: valuesObj,
-        noReload: true,
         prevFunc: function(data) {
           var $articleSize = $('.blog_listing-item');
           if (data.blog_layout == "highlight_with_popout") {
@@ -89,9 +101,11 @@
           }
 
           if (data.show_articles_as_list == true) {
+            $('.blog-list-opt').show();
             $('.over-limit.blog_listing-item-list').removeClass('d-none');
             $('.over-limit.blog_listing-item').addClass('d-none');
           } else {
+            $('.blog-list-opt').hide();
             $('.over-limit.blog_listing-item-list').addClass('d-none');
             $('.over-limit.blog_listing-item').removeClass('d-none');
           }

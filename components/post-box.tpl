@@ -37,16 +37,19 @@
 
   {%- capture post_details_list_view -%}
     <div class="post_details mar_b-32">
-    <span>
-    <time class="post_date{% if show_article_date == false %} hide-post-date{% endif %}{% if article_data_show_date_defined != true %} site-data{% endif %}"
-        datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}
-      </time>
+      <span>
+        <time class="post_date{% if show_article_date == false %} hide-post-date{% endif %}{% if article_data_show_date_defined != true %} site-data{% endif %}"
+            datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}
+        </time>
+      </span>
       <span class="date-separator{% if show_article_author == false or show_article_date == false %} hide-separator{% endif %}"> &#8212; </span>
-       <span class="post_author{% if show_article_author == false %} hide-post-author{% endif %}{% if article_data_show_author_defined != true %} site-data{% endif %}">
+      <span class="post_author{% if show_article_author == false %} hide-post-author{% endif %}{% if article_data_show_author_defined != true %} site-data{% endif %}">
         {{ article.author.name }}
       </span>
-      <span class="animate_border-bottom">{{ article.title }}</span>
-      </div>
+      <span class="animate_border-bottom">
+        {{ article.title }}
+      </span>
+    </div>
   {% endcapture %}
 
   {% if _isArticle == true %}
