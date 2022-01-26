@@ -26,7 +26,7 @@
 
     <div class="flex_col content_wrap">
       {% capture header_content %}
-        <div class="swiper-content content-formatted" data-search-indexing-allowed="true">
+        <div class="swiper-content content-formatted swiper-content-{{ swiperSettingsData.content_position }}" data-search-indexing-allowed="true">
           <div class="swiper-content-area">
             {% content name="slaider_content-1" %}
           </div>
