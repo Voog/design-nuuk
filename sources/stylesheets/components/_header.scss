@@ -12,9 +12,21 @@
     box-sizing: border-box;
     @include transition(all 600ms);
 
+    & .semimodal-bg_color {
+      margin: -24px -32px;
+
+      @include query($tablet-1) {
+        margin: -16px -16px;
+      }
+    }
+
     &_picker-btn {
       top: -24px;
       position: relative;
+
+      @include query($tablet-1) {
+        left: -50px;
+      }
       
       .front-page & {
         top: 30px;
