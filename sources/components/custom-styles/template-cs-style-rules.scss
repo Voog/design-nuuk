@@ -458,10 +458,12 @@ body {
         }
 
         a {
-          color: var(--menu-dropdown-text-color);
-  
-          &:hover {
-            color: var(--menu-dropdown-hover-text-color);
+          .header_fixed & {
+            color: var(--menu-dropdown-text-color);
+    
+            &:hover {
+              color: var(--menu-dropdown-hover-text-color);
+            }
           }
         }
       }
@@ -716,6 +718,10 @@ body {
     }
     .header_fixed-content .header_title.content-formatted:not(.product_filters) {
       color: var(--third-color);
+
+      @include query($tablet-1) {
+        color: var(--header-site-title-color);
+      }
     }
   }
 }
