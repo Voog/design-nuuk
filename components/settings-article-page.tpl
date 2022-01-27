@@ -100,7 +100,6 @@
             "title": {{ "hide_article_image_in_list" | lce | json }},
             "type": "toggle",
             "key": "hide_article_image_in_list",
-            "tooltip": {{ "hide_article_image_in_list" | lce | json }},
             "states": {
               "on": true,
               "off": false
@@ -110,7 +109,6 @@
             "title": {{ "show_border_around_article" | lce | json }},
             "type": "toggle",
             "key": "show_border_around_article",
-            "tooltip": {{ "show_border_around_article" | lce | json }},
             "states": {
               "on": true,
               "off": false
