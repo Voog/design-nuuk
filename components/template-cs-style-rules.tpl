@@ -544,130 +544,130 @@ body.dark-background {
   fill: var(--third-color);
 }
 
-.header_fixed .menu-main .menu .menu-item,
-.header_fixed .menu-language-btn {
+.header_fixed:not(.relative) .menu-main .menu .menu-item,
+.header_fixed:not(.relative) .menu-language-btn {
   color: var(--header-mainmenu-color);
 }
 
-.header_fixed .menu-main .menu .menu-item a,
-.header_fixed .menu-language-btn a {
+.header_fixed:not(.relative) .menu-main .menu .menu-item a,
+.header_fixed:not(.relative) .menu-language-btn a {
   color: var(--header-mainmenu-color);
 }
 
-.header_fixed .menu-main .menu .menu-item a.untranslated,
-.header_fixed .menu-language-btn a.untranslated {
+.header_fixed:not(.relative) .menu-main .menu .menu-item a.untranslated,
+.header_fixed:not(.relative) .menu-language-btn a.untranslated {
   color: #C5292A;
 }
 
-.header_fixed .menu-main .menu .menu-item.active a,
-.header_fixed .menu-main .menu .menu-item a.selected,
-.header_fixed .menu-language-btn.active a,
-.header_fixed .menu-language-btn a.selected {
+.header_fixed:not(.relative) .menu-main .menu .menu-item.active a,
+.header_fixed:not(.relative) .menu-main .menu .menu-item a.selected,
+.header_fixed:not(.relative) .menu-language-btn.active a,
+.header_fixed:not(.relative) .menu-language-btn a.selected {
   color: var(--header-mainmenu-active-color);
 }
 
-.header_fixed .menu-main .menu .menu-item.active a:hover,
-.header_fixed .menu-main .menu .menu-item a.selected:hover,
-.header_fixed .menu-language-btn.active a:hover,
-.header_fixed .menu-language-btn a.selected:hover {
+.header_fixed:not(.relative) .menu-main .menu .menu-item.active a:hover,
+.header_fixed:not(.relative) .menu-main .menu .menu-item a.selected:hover,
+.header_fixed:not(.relative) .menu-language-btn.active a:hover,
+.header_fixed:not(.relative) .menu-language-btn a.selected:hover {
   color: var(--header-mainmenu-hover-color);
 }
 
-.header_fixed .menu-main .menu .menu-item a:hover,
-.header_fixed .menu-language-btn a:hover {
+.header_fixed:not(.relative) .menu-main .menu .menu-item a:hover,
+.header_fixed:not(.relative) .menu-language-btn a:hover {
   color: var(--header-mainmenu-hover-color);
 }
 
-.header_fixed .header_fixed-content .header_title.content-formatted:not(.product_filters) {
+.header_fixed:not(.relative) .header_fixed-content .header_title.content-formatted:not(.product_filters) {
   color: var(--header-site-title-color);
 }
 
 @media screen and (min-width: 900px) {
-  .header_fixed:not(.scroll) .menu_popover-btn svg path {
+  .header_fixed:not(.relative):not(.scroll) .menu_popover-btn svg path {
     fill: var(--header-mainmenu-color);
   }
-  .header_fixed:not(.scroll) .menu_popover-btn:hover svg path {
+  .header_fixed:not(.relative):not(.scroll) .menu_popover-btn:hover svg path {
     fill: var(--header-mainmenu-hover-color);
   }
-  .header_fixed:not(.scroll) .search-btn:hover svg g, .header_fixed:not(.scroll) .search-btn:hover svg path {
+  .header_fixed:not(.relative):not(.scroll) .search-btn:hover svg g, .header_fixed:not(.relative):not(.scroll) .search-btn:hover svg path {
     fill: var(--header-mainmenu-color);
   }
-  .header_fixed:not(.scroll) .search-btn svg g, .header_fixed:not(.scroll) .search-btn svg path {
+  .header_fixed:not(.relative):not(.scroll) .search-btn svg g, .header_fixed:not(.relative):not(.scroll) .search-btn svg path {
     fill: var(--header-mainmenu-active-color);
   }
-  .header_fixed:not(.scroll) .menu-language-btn {
+  .header_fixed:not(.relative):not(.scroll) .menu-language-btn {
     color: var(--header-mainmenu-active-color);
   }
-  .header_fixed:not(.scroll) .menu-language-btn:hover {
+  .header_fixed:not(.relative):not(.scroll) .menu-language-btn:hover {
     color: var(--header-mainmenu-color);
   }
-  .header_fixed:not(.scroll) .menu-language-btn:hover svg path {
+  .header_fixed:not(.relative):not(.scroll) .menu-language-btn:hover svg path {
     stroke: var(--header-mainmenu-color);
   }
-  .header_fixed:not(.scroll) .menu-language-btn svg path {
+  .header_fixed:not(.relative):not(.scroll) .menu-language-btn svg path {
     stroke: var(--header-mainmenu-active-color);
   }
 }
 
-.header_fixed.dark-background.scroll .menu-main .menu .menu-item a {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a {
   color: var(--third-color);
 }
 
-.header_fixed.dark-background.scroll .menu-main .menu .menu-item a:hover {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a:hover {
   opacity: 0.7;
 }
 
-.header_fixed.dark-background.scroll .menu-main .menu .menu-item a.untranslated {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a.untranslated {
   color: #C5292A;
 }
 
-.header_fixed.dark-background.scroll .menu-main .menu .menu-item.active a,
-.header_fixed.dark-background.scroll .menu-main .menu .menu-item a.selected {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item.active a,
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a.selected {
   color: var(--third-color);
   opacity: 0.7;
 }
 
-.header_fixed.dark-background.scroll .menu-main .menu .menu-item.active a:hover,
-.header_fixed.dark-background.scroll .menu-main .menu .menu-item a.selected:hover {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item.active a:hover,
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a.selected:hover {
   opacity: 1;
 }
 
-.header_fixed.dark-background.scroll .menu_popover-btn svg path {
+.header_fixed:not(.relative).dark-background.scroll .menu_popover-btn svg path {
   fill: var(--third-color);
 }
 
 @media screen and (min-width: 900px) {
-  .header_fixed.dark-background.scroll .menu_popover-btn svg path {
+  .header_fixed:not(.relative).dark-background.scroll .menu_popover-btn svg path {
     fill: var(--third-color);
   }
-  .header_fixed.dark-background.scroll .menu_popover-btn:hover svg path {
-    fill: var(--third-color);
-    opacity: 0.7;
-  }
-  .header_fixed.dark-background.scroll .search-btn:hover svg g, .header_fixed.dark-background.scroll .search-btn:hover svg path {
+  .header_fixed:not(.relative).dark-background.scroll .menu_popover-btn:hover svg path {
     fill: var(--third-color);
     opacity: 0.7;
   }
-  .header_fixed.dark-background.scroll .search-btn svg g, .header_fixed.dark-background.scroll .search-btn svg path {
+  .header_fixed:not(.relative).dark-background.scroll .search-btn:hover svg g, .header_fixed:not(.relative).dark-background.scroll .search-btn:hover svg path {
+    fill: var(--third-color);
+    opacity: 0.7;
+  }
+  .header_fixed:not(.relative).dark-background.scroll .search-btn svg g, .header_fixed:not(.relative).dark-background.scroll .search-btn svg path {
     fill: var(--third-color);
   }
-  .header_fixed.dark-background.scroll .menu-language-btn {
+  .header_fixed:not(.relative).dark-background.scroll .menu-language-btn {
     color: var(--third-color);
   }
-  .header_fixed.dark-background.scroll .menu-language-btn:hover {
+  .header_fixed:not(.relative).dark-background.scroll .menu-language-btn:hover {
     color: var(--third-color);
     opacity: 0.7;
   }
-  .header_fixed.dark-background.scroll .menu-language-btn:hover svg path {
+  .header_fixed:not(.relative).dark-background.scroll .menu-language-btn:hover svg path {
     stroke: var(--third-color);
     opacity: 0.7;
   }
-  .header_fixed.dark-background.scroll .menu-language-btn svg path {
+  .header_fixed:not(.relative).dark-background.scroll .menu-language-btn svg path {
     stroke: var(--third-color);
   }
 }
 
-.header_fixed.dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) {
+.header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) {
   color: var(--third-color);
 }
 

@@ -577,7 +577,7 @@ body {
   }
 }
 
-.header_fixed {
+.header_fixed:not(.relative) {
   .menu-main .menu .menu-item,
   .menu-language-btn {
     color: var(--header-mainmenu-color);
