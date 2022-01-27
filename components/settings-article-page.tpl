@@ -45,7 +45,7 @@
       show_comments: show_comments,
       show_date: show_date,
       show_author: show_author,
-      show_article_image_in_list: {%- if articleSettingsData.show_article_image_in_list == true -%}true{%- else -%}false{%- endif -%},
+      hide_article_image_in_list: {%- if articleSettingsData.hide_article_image_in_list == true -%}true{%- else -%}false{%- endif -%},
       show_border_around_article: {%- if articleSettingsData.show_border_around_article == true -%}true{%- else -%}false{%- endif -%},
       has_share_on_facebook_btn: {%- if articleSettingsData.has_share_on_facebook_btn == true -%}true{%- else -%}false{%- endif -%},
       has_share_on_twitter_btn: {%- if articleSettingsData.has_share_on_twitter_btn == true -%}true{%- else -%}false{%- endif -%},
@@ -251,5 +251,9 @@
         }
       }
     );
+
+    {%- if articleSettingsData.hide_article_image_in_list != true -%}
+      $('.article-border-opt').hide();
+    {%- endif -%}
   });
 </script>

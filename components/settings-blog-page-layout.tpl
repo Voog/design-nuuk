@@ -106,7 +106,9 @@
             $('.blog-list-opt').hide();
           }
         }
-      }
-    )
+      });
+    {%- if blogLayoutSetting.show_articles_as_list != true -%}
+      $('.blog-list-opt').hide();
+    {%- endif -%}
   });
 </script>
