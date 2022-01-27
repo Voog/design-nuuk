@@ -102,12 +102,8 @@
 
           if (data.show_articles_as_list == true) {
             $('.blog-list-opt').show();
-            $('.over-limit.blog_listing-item-list').removeClass('d-none');
-            $('.over-limit.blog_listing-item').addClass('d-none');
           } else {
             $('.blog-list-opt').hide();
-            $('.over-limit.blog_listing-item-list').addClass('d-none');
-            $('.over-limit.blog_listing-item').removeClass('d-none');
           }
         }
       }

@@ -39,7 +39,7 @@
     <div class="post_details mar_b-32">
       <span>
         <time class="post_date{% if show_article_date == false %} hide-post-date{% endif %}{% if article_data_show_date_defined != true %} site-data{% endif %}"
-            datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }} &nbsp; 
+            datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: '%d.%m.%Y' }} &nbsp; 
         </time>
       </span>
       <span class="date-separator{% if show_article_author == false or show_article_date == false %} hide-separator{% endif %}"> &#8212; </span>
@@ -67,7 +67,7 @@
         {%- assign isPostImageStatic = true -%}
       {% endif %}
       {%- if article.data[itemImageKey] != blank or editmode -%}
-        <div class="p-rel{% if _showImage == false %} d-none{% endif %}">
+        <div class="p-rel{% if _hideImage == true %} d-none{% endif %}">
           <div {% unless article.published? or _isArticle == true %}class="post_unpublished"{%- endunless -%}>
             {% include 'content-item', _imageData: article.data[itemImageKey], _entityData: article, _itemType: 'article', _id: article.id, _staticItem: isPostImageStatic, _targetWidth: _targetWidth %}
           </div>

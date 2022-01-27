@@ -43,10 +43,16 @@
           
           <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
             {% for article in articles %}
-              {%- if article.data.article_settings.show_article_image_in_list == true -%}
-                {%- assign showImage = true -%}
+              {%- if article.data.article_settings.hide_article_image_in_list == true -%}
+                {%- assign hideImage = true -%}
               {%- else -%}
-                {%- assign showImage = false -%}
+                {%- assign hideImage = false -%}
+              {%- endif -%}
+
+              {%- if article.data.article_settings.show_border_around_article == true -%}
+                {%- assign showBorder = true -%}
+              {%- else -%}
+                {%- assign showBorder = false -%}
               {%- endif -%}
 
               {%- assign articleDate = article.created_at | date: '%s' -%}
@@ -67,7 +73,7 @@
                   {%- else -%}
                     {%- assign targetWidth = '600' -%}
                   {%- endif -%}
-                  {% include "post-box", _targetWidth: targetWidth, _showImage: showImage, _showArticlesAsList: false %}
+                  {% include "post-box", _targetWidth: targetWidth, _hideImage: hideImage, _showArticlesAsList: false %}
                 </a>
               {% endcapture %}
 
@@ -79,7 +85,7 @@
 
               {% if show_articles_as_list == true %}
                 {% if overLimit == false %}
-                  <div class="blog_listing-item {{ blog_settings.blog_layout }}{% if showImage == false %} blog_listing-item-border{% endif %}">
+                  <div class="blog_listing-item {{ blog_settings.blog_layout }}{% if hideImage == true and showBorder == true %} blog_listing-item-border{% endif %}">
                     {{ article_element_full }}
                   </div>
                 {% else %}
@@ -88,7 +94,7 @@
                     {{ article_element_list }}
                 {% endif %}
               {% else %}
-                <div class="blog_listing-item {{ blog_settings.blog_layout }}{% if showImage == false %} blog_listing-item-border{% endif %}">
+                <div class="blog_listing-item {{ blog_settings.blog_layout }}{% if hideImage == true and showBorder == true %} blog_listing-item-border{% endif %}">
                   {{ article_element_full }}
                 </div>
               {% endif %}

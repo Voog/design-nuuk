@@ -46,6 +46,7 @@
       show_date: show_date,
       show_author: show_author,
       show_article_image_in_list: {%- if articleSettingsData.show_article_image_in_list == true -%}true{%- else -%}false{%- endif -%},
+      show_border_around_article: {%- if articleSettingsData.show_border_around_article == true -%}true{%- else -%}false{%- endif -%},
       has_share_on_facebook_btn: {%- if articleSettingsData.has_share_on_facebook_btn == true -%}true{%- else -%}false{%- endif -%},
       has_share_on_twitter_btn: {%- if articleSettingsData.has_share_on_twitter_btn == true -%}true{%- else -%}false{%- endif -%},
       has_share_on_linkedin_btn: {%- if articleSettingsData.has_share_on_linkedin_btn == true -%}true{%- else -%}false{%- endif -%},
@@ -57,37 +58,37 @@
         settingsBtn: document.querySelector('.js-article-settings-btn'),
         menuItems: [
           {
-            "title": {{"add_share_facebook_button" | lce | json }},
+            "title": {{ "add_share_facebook_button" | lce | json }},
             "type": "checkbox",
             "key": "has_share_on_facebook_btn",
-            "tooltip": {{"visible_live_preview_visuals" | lce | json }},
+            "tooltip": {{ "visible_live_preview_visuals" | lce | json }},
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": {{"add_share_twitter_button" | lce | json }},
+            "title": {{ "add_share_twitter_button" | lce | json }},
             "type": "checkbox",
             "key": "has_share_on_twitter_btn",
-            "tooltip": {{"visible_live_preview_visuals" | lce | json }},
+            "tooltip": {{ "visible_live_preview_visuals" | lce | json }},
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": {{"add_share_linkedin_button" | lce | json }},
+            "title": {{ "add_share_linkedin_button" | lce | json }},
             "type": "checkbox",
             "key": "has_share_on_linkedin_btn",
-            "tooltip": {{"visible_live_preview_visuals" | lce | json }},
+            "tooltip": {{ "visible_live_preview_visuals" | lce | json }},
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": {{"show_related_articles_by_tags" | lce | json }},
+            "title": {{ "show_related_articles_by_tags" | lce | json }},
             "type": "checkbox",
             "key": "show_related_articles",
             "states": {
@@ -96,14 +97,25 @@
             }
           },
           {
-            "title": {{"show_article_image_in_list" | lce | json }},
+            "title": {{ "hide_article_image_in_list" | lce | json }},
             "type": "toggle",
-            "key": "show_article_image_in_list",
-            "tooltip": {{"show_article_image_in_list" | lce | json }},
+            "key": "hide_article_image_in_list",
+            "tooltip": {{ "hide_article_image_in_list" | lce | json }},
             "states": {
               "on": true,
               "off": false
             }
+          },
+          {
+            "title": {{ "show_border_around_article" | lce | json }},
+            "type": "toggle",
+            "key": "show_border_around_article",
+            "tooltip": {{ "show_border_around_article" | lce | json }},
+            "states": {
+              "on": true,
+              "off": false
+            },
+            "class": "article-border-opt"
           },
           {
             "titleI18n": "comments",
@@ -176,6 +188,12 @@
 
           if (data.show_author == true && data.show_date == true) {
             $dateSeparator.removeClass('hide-separator');
+          }
+
+          if (data.hide_article_image_in_list == true) {
+            $('.article-border-opt').show();
+          } else {
+            $('.article-border-opt').hide();
           }
           // Share buttons script
 
