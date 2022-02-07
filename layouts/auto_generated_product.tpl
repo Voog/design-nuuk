@@ -88,10 +88,12 @@
                       {%- editable product.description -%}
                     </div>
                   {%- endif -%}
-                  {% content bind=product %}
+
                   <div class="content-buy-button mar_t-32">
                     {% include "buy-button" %}
                   </div>
+
+                  {% content bind=product %}
                 </section>
               </div>
             </div>
