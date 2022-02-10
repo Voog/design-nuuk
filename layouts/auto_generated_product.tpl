@@ -27,7 +27,7 @@
     <div class="pad_container p-rel">
       <div class="container">
         <div class="mar_t-32 mar_b-32">
-          {% include "menu-breadcrumbs" %}
+          {% include "menu-breadcrumbs-sd" %}
         </div>
 
         <main class="content product-content" role="main" data-search-indexing-allowed="true">
