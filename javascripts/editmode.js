@@ -695,6 +695,14 @@
     });
   };
 
+  // Opens product admin view on product image click
+
+  var handleProductImageClick = function(product_id) {
+    $('.product-content .product-image').click(function() {
+      window.open('/admin/ecommerce/products/' + product_id, '_blank').focus();
+    });
+  };
+
   var init = function() {
     bindCustomDataItem();
     handleDocument();
@@ -710,7 +718,8 @@
     bindCustomTexteditorStyles: bindCustomTexteditorStyles,
     bindProductListeners: bindProductListeners,
     initProductPageSettings: initProductPageSettings,
-    initSettingsEditorBtn: initSettingsEditorBtn
+    initSettingsEditorBtn: initSettingsEditorBtn,
+    handleProductImageClick: handleProductImageClick
   });
 
   // Initiates site wide functions.

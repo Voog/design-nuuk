@@ -50,6 +50,10 @@
 {% include "template-meta" %}
 
 {%- comment -%}BREADCRUMBS{%- endcomment -%}
+{%- capture breadcrumbsScript -%}
+  {%- sd_breadcrumbs -%}
+{%- endcapture -%}
+
 {% sd_breadcrumbs %}
 
 {% if blog %}{{ blog.rss_link }}{% endif %}

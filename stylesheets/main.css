@@ -1,3 +1,18 @@
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  img {
+    image-rendering: -webkit-optimize-contrast !important;
+  }
+}
+
+/* Unset for Safari 11+ */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    img {
+      image-rendering: unset !important;
+    }
+  }
+}
+
 .content-formatted:after, .search:after,
 .search-form:after {
   display: table;
@@ -2625,6 +2640,10 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.editmode .item-top {
+  cursor: pointer;
 }
 
 article .item-top {
