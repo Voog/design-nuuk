@@ -30,13 +30,11 @@
           {% include "menu-breadcrumbs" %}
         </div>
 
-        <main class="content" role="main" data-search-indexing-allowed="true">
+        <main class="content product-content" role="main" data-search-indexing-allowed="true">
           <div class="flex_row flex_row-2 reverse-col-tablet mar_0-32-neg">
             <div class="flex_row-2--item-60">
               <div class="mar_0-32 p-rel js-product-page-image-wrap">
-                {%- assign productImage = product.image -%}
-
-                {%- if productImage != blank %}
+                {%- if product.image != blank %}
                   {% assign item_image_state = "with-image" %}
                 {% else %}
                   {% assign item_image_state = "without-image" %}
@@ -44,12 +42,12 @@
 
                 <div class="js-product-page-image mar_b-32">
                   <div class="content-item-box {{ item_image_state }} js-content-item-box not-loaded">
-                    <div class="item-top">
+                    <div class="item-top product-image">
                       <div class="top-inner of-hidden">
-                        {%- if productImage != blank -%}
+                        {%- if product.image != blank -%}
                           <div class="loader js-loader"></div>
                           {%- assign imageClass = "item-image " | append: "not-cropped " | append: "js-lazyload" -%}
-                          {% image_data productImage target_width="1280" class: imageClass %}
+                          {% image_data product.image target_width="1280" class: imageClass %}
                         {%- endif -%}
                       </div>
                     </div>
@@ -116,7 +114,12 @@
   {% include "site-signout" %}
   {% include "javascripts"%}
   <script>
-    site.handleProductPageContent();
+    if (site) {
+      site.handleProductPageContent();
+      {%- if product and editmode %}
+        site.handleProductImageClick({{ product.id }});
+      {% endif -%}
+    }
   </script>
   {% include "settings-popover" %}
 </body>

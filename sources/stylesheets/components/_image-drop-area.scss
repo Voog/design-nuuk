@@ -6,6 +6,10 @@
   justify-content: center;
   overflow: hidden;
 
+  .editmode & {
+    cursor: pointer;
+  }
+
   article & {
     @include aspect-ratio(2, 1);
   }

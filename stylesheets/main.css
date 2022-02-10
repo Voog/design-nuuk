@@ -2627,6 +2627,10 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   left: 0;
 }
 
+.editmode .item-top {
+  cursor: pointer;
+}
+
 article .item-top {
   position: relative;
 }
