@@ -19,7 +19,7 @@
         <ul class="menu menu_top-list">
           {{root_menu_item}}
           {{menu_main_lvl_1_top_main}}
-          <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= menuSettingsKey.max_elements %} d-none{% endif %}" data-count="{{menuItemCount}}">
+          <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= menuSettings.max_elements %} d-none{% endif %}" data-count="{{menuItemCount}}">
             {% include 'ico-ellipsis' %}
             <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
               <ul class="menu menu_popover-list"></ul>
