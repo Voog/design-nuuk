@@ -591,6 +591,15 @@ body {
       }
     }
 
+    .dropdown_menu-popover--wrap .dropdown_menu-popover {
+      a {
+        color: var(--menu-dropdown-text-color);
+        &:hover {
+          color: var(--menu-dropdown-hover-text-color);
+        }
+      }
+    }
+
     &.active a,
     a.selected {
       &:hover {
@@ -660,6 +669,16 @@ body {
         }
         color: var(--third-color);
       }
+
+      .dropdown_menu-popover--wrap .dropdown_menu-popover {
+        a {
+          color: var(--menu-dropdown-text-color);
+          &:hover {
+            color: var(--menu-dropdown-hover-text-color);
+          }
+        }
+      }
+      
       &.active a,
       a.selected {
         &:hover {
