@@ -225,6 +225,12 @@
             background-repeat: no-repeat;
             background-position: right center;
             cursor: pointer;
+
+            .header_fixed:not(.relative).scroll.dark-background &,
+            body.dark-background .header_fixed:not(.relative):not(.scroll) &,
+            body.dark-background .header_fixed:not(.scroll).dark-background & {
+              background-image: url('../assets/chevron-down-white.svg');
+            }
           }
           &[data-arrow="inactive"] {
             background: none;
@@ -304,6 +310,12 @@
               background-size: 10px 8px;
               background-position: 90% center;
               cursor: pointer;
+
+              .header_fixed:not(.relative).scroll.dark-background &,
+              body.dark-background .header_fixed:not(.relative):not(.scroll) &,
+              .header_fixed:not(.scroll).dark-background & {
+                background-image: url('../assets/ico-arrow-right-white-small.svg');
+              }
             }
 
             &.dd-arrow[data-arrow="inactive"] {

@@ -5764,6 +5764,11 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
     background-position: right center;
     cursor: pointer;
   }
+  .header_fixed:not(.relative).scroll.dark-background .menu-main .menu .menu-item:not(.menu-popover).dd-arrow[data-arrow="active"],
+  body.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item:not(.menu-popover).dd-arrow[data-arrow="active"],
+  body.dark-background .header_fixed:not(.scroll).dark-background .menu-main .menu .menu-item:not(.menu-popover).dd-arrow[data-arrow="active"] {
+    background-image: url("../assets/chevron-down-white.svg");
+  }
   .menu-main .menu .menu-item:not(.menu-popover).dd-arrow[data-arrow="inactive"] {
     background: none;
   }
@@ -5871,6 +5876,12 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
   background-size: 10px 8px;
   background-position: 90% center;
   cursor: pointer;
+}
+
+.header_fixed:not(.relative).scroll.dark-background .menu-main .menu .menu_popover .menu .menu-item.dd-arrow[data-arrow="active"],
+body.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu_popover .menu .menu-item.dd-arrow[data-arrow="active"],
+.header_fixed:not(.scroll).dark-background .menu-main .menu .menu_popover .menu .menu-item.dd-arrow[data-arrow="active"] {
+  background-image: url("../assets/ico-arrow-right-white-small.svg");
 }
 
 .menu-main .menu .menu_popover .menu .menu-item.dd-arrow[data-arrow="inactive"] {
