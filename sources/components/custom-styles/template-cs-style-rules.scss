@@ -972,7 +972,7 @@ body {
   }
 
   // Code blocks and preformatted content.
-  .custom-btn,
+  .custom-btn:not(.custom-btn-disabled),
   .form_submit input {
     padding: var(--button-padding);
     color: var(--button-color);

@@ -1111,11 +1111,11 @@ body.dark-background {
   }
 }
 
-.content-formatted:not(.product_filters) .custom-btn,
+.content-formatted:not(.product_filters) .custom-btn:not(.custom-btn-disabled),
 .content-formatted:not(.product_filters) .form_submit input,
-.content-formatted .product_item-btn .custom-btn,
+.content-formatted .product_item-btn .custom-btn:not(.custom-btn-disabled),
 .content-formatted .product_item-btn .form_submit input,
-.content-formatted p .custom-btn,
+.content-formatted p .custom-btn:not(.custom-btn-disabled),
 .content-formatted p .form_submit input {
   padding: var(--button-padding);
   color: var(--button-color);
@@ -1131,20 +1131,20 @@ body.dark-background {
   background-color: var(--button-background-color);
 }
 
-.dark-background .content-formatted:not(.product_filters) .custom-btn, .dark-background
+.dark-background .content-formatted:not(.product_filters) .custom-btn:not(.custom-btn-disabled), .dark-background
 .content-formatted:not(.product_filters) .form_submit input, .dark-background
-.content-formatted .product_item-btn .custom-btn, .dark-background
+.content-formatted .product_item-btn .custom-btn:not(.custom-btn-disabled), .dark-background
 .content-formatted .product_item-btn .form_submit input, .dark-background
-.content-formatted p .custom-btn, .dark-background
+.content-formatted p .custom-btn:not(.custom-btn-disabled), .dark-background
 .content-formatted p .form_submit input {
   border: 1px solid var(--third-color);
 }
 
-.content-formatted:not(.product_filters) .custom-btn:hover,
+.content-formatted:not(.product_filters) .custom-btn:not(.custom-btn-disabled):hover,
 .content-formatted:not(.product_filters) .form_submit input:hover,
-.content-formatted .product_item-btn .custom-btn:hover,
+.content-formatted .product_item-btn .custom-btn:not(.custom-btn-disabled):hover,
 .content-formatted .product_item-btn .form_submit input:hover,
-.content-formatted p .custom-btn:hover,
+.content-formatted p .custom-btn:not(.custom-btn-disabled):hover,
 .content-formatted p .form_submit input:hover {
   padding: var(--button-hover-padding);
   color: var(--button-hover-color);
