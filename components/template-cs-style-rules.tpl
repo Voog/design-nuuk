@@ -92,10 +92,8 @@ body.dark-background {
   background-color: var(--header-mainmenu-active-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-btn .menu-stripe {
-    background-color: var(--third-color);
-  }
+:not(.scroll).dark-background .menu-btn .menu-stripe {
+  background-color: var(--third-color);
 }
 
 .menu-btn:hover {
@@ -169,13 +167,11 @@ body.dark-background {
   fill: var(--header-mainmenu-active-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .search-btn svg path, :not(.scroll).dark-background
-  .search-btn svg g, :not(.scroll).dark-background
-  .cart_btn svg path, :not(.scroll).dark-background
-  .cart_btn svg g {
-    fill: var(--third-color);
-  }
+:not(.scroll).dark-background .search-btn svg path, :not(.scroll).dark-background
+.search-btn svg g, :not(.scroll).dark-background
+.cart_btn svg path, :not(.scroll).dark-background
+.cart_btn svg g {
+  fill: var(--third-color);
 }
 
 .search-btn:hover svg path,
@@ -185,24 +181,20 @@ body.dark-background {
   fill: var(--header-mainmenu-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .search-btn:hover svg path, :not(.scroll).dark-background
-  .search-btn:hover svg g, :not(.scroll).dark-background
-  .cart_btn:hover svg path, :not(.scroll).dark-background
-  .cart_btn:hover svg g {
-    opacity: .7;
-    fill: var(--third-color);
-  }
+:not(.scroll).dark-background .search-btn:hover svg path, :not(.scroll).dark-background
+.search-btn:hover svg g, :not(.scroll).dark-background
+.cart_btn:hover svg path, :not(.scroll).dark-background
+.cart_btn:hover svg g {
+  opacity: .7;
+  fill: var(--third-color);
 }
 
 .cart_btn .cart_btn-count {
   color: var(--header-mainmenu-active-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .cart_btn .cart_btn-count {
-    color: var(--third-color);
-  }
+:not(.scroll).dark-background .cart_btn .cart_btn-count {
+  color: var(--third-color);
 }
 
 .cart_btn:hover svg path,
@@ -588,111 +580,189 @@ body.dark-background {
   color: var(--header-mainmenu-hover-color);
 }
 
+.header_fixed:not(.relative) .menu-btn .menu-stripe {
+  background-color: var(--header-mainmenu-active-color);
+}
+
 .header_fixed:not(.relative) .header_fixed-content .header_title.content-formatted:not(.product_filters) {
   color: var(--header-site-title-color);
 }
 
-@media screen and (min-width: 900px) {
-  .header_fixed:not(.relative):not(.scroll) .menu_popover-btn svg path {
-    fill: var(--header-mainmenu-color);
-  }
-  .header_fixed:not(.relative):not(.scroll) .menu_popover-btn:hover svg path {
-    fill: var(--header-mainmenu-hover-color);
-  }
-  .header_fixed:not(.relative):not(.scroll) .search-btn:hover svg g, .header_fixed:not(.relative):not(.scroll) .search-btn:hover svg path {
-    fill: var(--header-mainmenu-color);
-  }
-  .header_fixed:not(.relative):not(.scroll) .search-btn svg g, .header_fixed:not(.relative):not(.scroll) .search-btn svg path {
-    fill: var(--header-mainmenu-active-color);
-  }
-  .header_fixed:not(.relative):not(.scroll) .menu-language-btn {
-    color: var(--header-mainmenu-active-color);
-  }
-  .header_fixed:not(.relative):not(.scroll) .menu-language-btn:hover {
-    color: var(--header-mainmenu-color);
-  }
-  .header_fixed:not(.relative):not(.scroll) .menu-language-btn:hover svg path {
-    stroke: var(--header-mainmenu-color);
-  }
-  .header_fixed:not(.relative):not(.scroll) .menu-language-btn svg path {
-    stroke: var(--header-mainmenu-active-color);
-  }
+.header_fixed:not(.relative) .header_fixed-content .header_title.content-formatted:not(.product_filters) a, .header_fixed:not(.relative) .header_fixed-content .header_title.content-formatted:not(.product_filters) p, .header_fixed:not(.relative) .header_fixed-content .header_title.content-formatted:not(.product_filters) h1, .header_fixed:not(.relative) .header_fixed-content .header_title.content-formatted:not(.product_filters) h2, .header_fixed:not(.relative) .header_fixed-content .header_title.content-formatted:not(.product_filters) h3, .header_fixed:not(.relative) .header_fixed-content .header_title.content-formatted:not(.product_filters) h4, .header_fixed:not(.relative) .header_fixed-content .header_title.content-formatted:not(.product_filters) h5, .header_fixed:not(.relative) .header_fixed-content .header_title.content-formatted:not(.product_filters) h6 {
+  color: var(--header-site-title-color);
 }
 
-.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a {
+.header_fixed:not(.relative):not(.scroll) .menu_popover-btn svg path {
+  fill: var(--header-mainmenu-color);
+}
+
+.header_fixed:not(.relative):not(.scroll) .menu_popover-btn:hover svg path {
+  fill: var(--header-mainmenu-hover-color);
+}
+
+.header_fixed:not(.relative):not(.scroll) .search-btn:hover svg g, .header_fixed:not(.relative):not(.scroll) .search-btn:hover svg path,
+.header_fixed:not(.relative):not(.scroll) .cart-btn:hover svg g,
+.header_fixed:not(.relative):not(.scroll) .cart-btn:hover svg path {
+  fill: var(--header-mainmenu-color);
+}
+
+.header_fixed:not(.relative):not(.scroll) .search-btn svg g, .header_fixed:not(.relative):not(.scroll) .search-btn svg path,
+.header_fixed:not(.relative):not(.scroll) .cart-btn svg g,
+.header_fixed:not(.relative):not(.scroll) .cart-btn svg path {
+  fill: var(--header-mainmenu-active-color);
+}
+
+.header_fixed:not(.relative):not(.scroll) .cart_btn-count {
+  color: var(--header-mainmenu-active-color);
+}
+
+.header_fixed:not(.relative):not(.scroll) .menu-language-btn {
+  color: var(--header-mainmenu-active-color);
+}
+
+.header_fixed:not(.relative):not(.scroll) .menu-language-btn:hover {
+  color: var(--header-mainmenu-color);
+}
+
+.header_fixed:not(.relative):not(.scroll) .menu-language-btn:hover svg path {
+  stroke: var(--header-mainmenu-color);
+}
+
+.header_fixed:not(.relative):not(.scroll) .menu-language-btn svg path {
+  stroke: var(--header-mainmenu-active-color);
+}
+
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item a {
   color: var(--third-color);
 }
 
-.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a:hover {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a:hover,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item a:hover {
   opacity: 0.7;
 }
 
-.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a.untranslated {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a.untranslated,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item a.untranslated {
   color: #C5292A;
 }
 
-.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item .dropdown_menu-popover--wrap .dropdown_menu-popover a {
-  color: var(--menu-dropdown-text-color);
-}
-
-.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item .dropdown_menu-popover--wrap .dropdown_menu-popover a:hover {
-  color: var(--menu-dropdown-hover-text-color);
-}
-
 .header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item.active a,
-.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a.selected {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a.selected,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item.active a,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item a.selected {
   color: var(--third-color);
   opacity: 0.7;
 }
 
 .header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item.active a:hover,
-.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a.selected:hover {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a.selected:hover,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item.active a:hover,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item a.selected:hover {
   opacity: 1;
 }
 
-.header_fixed:not(.relative).dark-background.scroll .menu_popover-btn svg path {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu.menu_popover-list .menu-item a,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu.menu_popover-list .menu-item a {
+  color: var(--menu-dropdown-text-color);
+}
+
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu.menu_popover-list .menu-item a:hover,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu.menu_popover-list .menu-item a:hover {
+  color: var(--menu-dropdown-hover-text-color);
+}
+
+.header_fixed:not(.relative).dark-background.scroll .menu_popover-btn svg path,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu_popover-btn svg path {
   fill: var(--third-color);
 }
 
-@media screen and (min-width: 900px) {
-  .header_fixed:not(.relative).dark-background.scroll .menu_popover-btn svg path {
-    fill: var(--third-color);
-  }
-  .header_fixed:not(.relative).dark-background.scroll .menu_popover-btn:hover svg path {
-    fill: var(--third-color);
-    opacity: 0.7;
-  }
-  .header_fixed:not(.relative).dark-background.scroll .search-btn:hover svg g, .header_fixed:not(.relative).dark-background.scroll .search-btn:hover svg path {
-    fill: var(--third-color);
-    opacity: 0.7;
-  }
-  .header_fixed:not(.relative).dark-background.scroll .search-btn svg g, .header_fixed:not(.relative).dark-background.scroll .search-btn svg path {
-    fill: var(--third-color);
-  }
-  .header_fixed:not(.relative).dark-background.scroll .menu-language-btn {
-    color: var(--third-color);
-  }
-  .header_fixed:not(.relative).dark-background.scroll .menu-language-btn:hover {
-    color: var(--third-color);
-    opacity: 0.7;
-  }
-  .header_fixed:not(.relative).dark-background.scroll .menu-language-btn:hover svg path {
-    stroke: var(--third-color);
-    opacity: 0.7;
-  }
-  .header_fixed:not(.relative).dark-background.scroll .menu-language-btn svg path {
-    stroke: var(--third-color);
-  }
+.header_fixed:not(.relative).dark-background.scroll .menu_popover-btn:hover svg path,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu_popover-btn:hover svg path {
+  fill: var(--third-color);
+  opacity: 0.7;
 }
 
-.header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) {
+.header_fixed:not(.relative).dark-background.scroll .search-btn:hover svg g, .header_fixed:not(.relative).dark-background.scroll .search-btn:hover svg path,
+.header_fixed:not(.relative).dark-background.scroll .cart_btn:hover svg g,
+.header_fixed:not(.relative).dark-background.scroll .cart_btn:hover svg path,
+.dark-background .header_fixed:not(.relative):not(.scroll) .search-btn:hover svg g,
+.dark-background .header_fixed:not(.relative):not(.scroll) .search-btn:hover svg path,
+.dark-background .header_fixed:not(.relative):not(.scroll) .cart_btn:hover svg g,
+.dark-background .header_fixed:not(.relative):not(.scroll) .cart_btn:hover svg path {
+  fill: var(--third-color);
+  opacity: 0.7;
+}
+
+.header_fixed:not(.relative).dark-background.scroll .search-btn svg g, .header_fixed:not(.relative).dark-background.scroll .search-btn svg path,
+.header_fixed:not(.relative).dark-background.scroll .cart_btn svg g,
+.header_fixed:not(.relative).dark-background.scroll .cart_btn svg path,
+.dark-background .header_fixed:not(.relative):not(.scroll) .search-btn svg g,
+.dark-background .header_fixed:not(.relative):not(.scroll) .search-btn svg path,
+.dark-background .header_fixed:not(.relative):not(.scroll) .cart_btn svg g,
+.dark-background .header_fixed:not(.relative):not(.scroll) .cart_btn svg path {
+  fill: var(--third-color);
+}
+
+.header_fixed:not(.relative).dark-background.scroll .cart_btn-count,
+.dark-background .header_fixed:not(.relative):not(.scroll) .cart_btn-count {
   color: var(--third-color);
 }
 
-@media screen and (max-width: 900px) {
-  .header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) {
-    color: var(--header-site-title-color);
-  }
+.header_fixed:not(.relative).dark-background.scroll .menu-language-btn,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-language-btn {
+  color: var(--third-color);
+}
+
+.header_fixed:not(.relative).dark-background.scroll .menu-language-btn:hover,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-language-btn:hover {
+  color: var(--third-color);
+  opacity: 0.7;
+}
+
+.header_fixed:not(.relative).dark-background.scroll .menu-language-btn:hover svg path,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-language-btn:hover svg path {
+  stroke: var(--third-color);
+  opacity: 0.7;
+}
+
+.header_fixed:not(.relative).dark-background.scroll .menu-language-btn svg path,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-language-btn svg path {
+  stroke: var(--third-color);
+}
+
+:not(.semimodal-open) .header_fixed:not(.relative).dark-background.scroll .menu-stripe, :not(.semimodal-open)
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-stripe {
+  background-color: var(--third-color);
+}
+
+.header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters),
+.dark-background .header_fixed:not(.relative):not(.scroll) .header_fixed-content .header_title.content-formatted:not(.product_filters) {
+  color: var(--third-color);
+}
+
+.header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) a, .header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) p, .header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) h1, .header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) h2, .header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) h3, .header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) h4, .header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) h5, .header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters) h6,
+.dark-background .header_fixed:not(.relative):not(.scroll) .header_fixed-content .header_title.content-formatted:not(.product_filters) a,
+.dark-background .header_fixed:not(.relative):not(.scroll) .header_fixed-content .header_title.content-formatted:not(.product_filters) p,
+.dark-background .header_fixed:not(.relative):not(.scroll) .header_fixed-content .header_title.content-formatted:not(.product_filters) h1,
+.dark-background .header_fixed:not(.relative):not(.scroll) .header_fixed-content .header_title.content-formatted:not(.product_filters) h2,
+.dark-background .header_fixed:not(.relative):not(.scroll) .header_fixed-content .header_title.content-formatted:not(.product_filters) h3,
+.dark-background .header_fixed:not(.relative):not(.scroll) .header_fixed-content .header_title.content-formatted:not(.product_filters) h4,
+.dark-background .header_fixed:not(.relative):not(.scroll) .header_fixed-content .header_title.content-formatted:not(.product_filters) h5,
+.dark-background .header_fixed:not(.relative):not(.scroll) .header_fixed-content .header_title.content-formatted:not(.product_filters) h6 {
+  color: var(--third-color);
+}
+
+.semimodal-open .semimodal.dark-background .menu-stripe {
+  background-color: var(--third-color);
+}
+
+.semimodal-open .semimodal.dark-background .menu-language-toggle .menu-language-btn {
+  color: var(--third-color);
+}
+
+.semimodal-open .semimodal.dark-background .menu-language-toggle .menu-language-btn svg path {
+  stroke: var(--third-color);
 }
 
 .dark-background .light-background .header_components-semimodal,
@@ -700,7 +770,7 @@ body.dark-background {
 .dark-background .light-background .semimodal_bottom-content,
 .dark-background .light-background .menu-language-btn,
 .dark-background .light-background .menu-language-name {
-  color: var(--header-mainmenu-color);
+  color: var(--header-mainmenu-active-color);
 }
 
 .dark-background .light-background .header_components-semimodal a, .dark-background .light-background .header_components-semimodal p, .dark-background .light-background .header_components-semimodal h1, .dark-background .light-background .header_components-semimodal h2, .dark-background .light-background .header_components-semimodal h3, .dark-background .light-background .header_components-semimodal h4, .dark-background .light-background .header_components-semimodal h5, .dark-background .light-background .header_components-semimodal h6,
@@ -750,7 +820,7 @@ body.dark-background {
 .dark-background .light-background .search-btn svg g,
 .dark-background .light-background .cart_btn svg g,
 .dark-background .light-background .cart_btn svg path {
-  fill: var(--header-mainmenu-color);
+  fill: var(--header-mainmenu-active-color);
 }
 
 .dark-background .light-background .search-btn:hover svg g,
@@ -1280,33 +1350,6 @@ body.dark-background {
   .content-formatted p.site_title {
     font-size: 18px;
     line-height: 18px;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .dark-background .content-formatted:not(.product_filters).header_title, .dark-background
-  .content-formatted .product_item-btn.header_title, .dark-background
-  .content-formatted p.header_title {
-    color: var(--header-site-title-color);
-  }
-  .dark-background .content-formatted:not(.product_filters).header_title a, .dark-background .content-formatted:not(.product_filters).header_title p, .dark-background .content-formatted:not(.product_filters).header_title h1, .dark-background .content-formatted:not(.product_filters).header_title h2, .dark-background .content-formatted:not(.product_filters).header_title h3, .dark-background .content-formatted:not(.product_filters).header_title h4, .dark-background .content-formatted:not(.product_filters).header_title h5, .dark-background .content-formatted:not(.product_filters).header_title h6, .dark-background
-  .content-formatted .product_item-btn.header_title a, .dark-background
-  .content-formatted .product_item-btn.header_title p, .dark-background
-  .content-formatted .product_item-btn.header_title h1, .dark-background
-  .content-formatted .product_item-btn.header_title h2, .dark-background
-  .content-formatted .product_item-btn.header_title h3, .dark-background
-  .content-formatted .product_item-btn.header_title h4, .dark-background
-  .content-formatted .product_item-btn.header_title h5, .dark-background
-  .content-formatted .product_item-btn.header_title h6, .dark-background
-  .content-formatted p.header_title a, .dark-background
-  .content-formatted p.header_title p, .dark-background
-  .content-formatted p.header_title h1, .dark-background
-  .content-formatted p.header_title h2, .dark-background
-  .content-formatted p.header_title h3, .dark-background
-  .content-formatted p.header_title h4, .dark-background
-  .content-formatted p.header_title h5, .dark-background
-  .content-formatted p.header_title h6 {
-    color: var(--header-site-title-color);
   }
 }
 

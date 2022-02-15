@@ -145,11 +145,10 @@ body {
   .menu-stripe {
     background-color: var(--header-mainmenu-active-color);
 
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        background-color: var(--third-color);
-      }
+    :not(.scroll).dark-background & {
+      background-color: var(--third-color);
     }
+
   }
 
   &:hover {
@@ -214,10 +213,8 @@ body {
   svg g {
     fill: var(--header-mainmenu-active-color);
 
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        fill: var(--third-color);
-      }
+    :not(.scroll).dark-background & {
+      fill: var(--third-color);
     }
   }
 
@@ -226,11 +223,9 @@ body {
     svg g {
       fill: var(--header-mainmenu-color);
 
-      @include query($tablet-1, 'min-width') {
-        :not(.scroll).dark-background & {
-          opacity: .7;
-          fill: var(--third-color);
-        }
+      :not(.scroll).dark-background & {
+        opacity: .7;
+        fill: var(--third-color);
       }
     }
   }
@@ -240,10 +235,8 @@ body {
   .cart_btn-count {
     color: var(--header-mainmenu-active-color);
 
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        color: var(--third-color);
-      }
+    :not(.scroll).dark-background & {
+      color: var(--third-color);
     }
   }
 
@@ -583,6 +576,7 @@ body {
   .menu-main .menu .menu-item,
   .menu-language-btn {
     color: var(--header-mainmenu-color);
+    
     a {
       color: var(--header-mainmenu-color);
       
@@ -613,11 +607,18 @@ body {
     }
   }
 
-  .header_fixed-content .header_title.content-formatted:not(.product_filters) {
-    color: var(--header-site-title-color);
+  .menu-btn .menu-stripe {
+    background-color: var(--header-mainmenu-active-color);
   }
 
-  @include query($tablet-1, min-width) {
+  .header_fixed-content .header_title.content-formatted:not(.product_filters) {
+    color: var(--header-site-title-color);
+    
+    a, p, h1, h2, h3, h4, h5, h6 {
+      color: var(--header-site-title-color);
+    }
+  }
+
     &:not(.scroll) {
       .menu_popover-btn svg path {
         fill: var(--header-mainmenu-color);
@@ -627,7 +628,8 @@ body {
         fill: var(--header-mainmenu-hover-color);
       }
   
-      .search-btn {
+      .search-btn,
+      .cart-btn {
         &:hover svg {
           g, path {
             fill: var(--header-mainmenu-color);
@@ -638,6 +640,10 @@ body {
             fill: var(--header-mainmenu-active-color);
           }
         }
+      }
+
+      .cart_btn-count {
+        color: var(--header-mainmenu-active-color);
       }
   
       .menu-language-btn {
@@ -656,9 +662,10 @@ body {
         }
       }
     }
-  }
+  
 
-  &.dark-background.scroll {
+  &.dark-background.scroll,
+  .dark-background &:not(.scroll) {
     .menu-main .menu .menu-item {
       a {
         &:hover {
@@ -668,15 +675,6 @@ body {
           color: $red;
         }
         color: var(--third-color);
-      }
-
-      .dropdown_menu-popover--wrap .dropdown_menu-popover {
-        a {
-          color: var(--menu-dropdown-text-color);
-          &:hover {
-            color: var(--menu-dropdown-hover-text-color);
-          }
-        }
       }
       
       &.active a,
@@ -689,57 +687,90 @@ body {
       }
     }
 
+    .menu-main .menu.menu_popover-list .menu-item {
+      a {
+        color: var(--menu-dropdown-text-color);
+
+        &:hover {
+          color: var(--menu-dropdown-hover-text-color);
+        }
+      }
+    }
+
     .menu_popover-btn svg path {
       fill: var(--third-color);
     }
 
-    @include query($tablet-1, min-width) {
-      .menu_popover-btn svg path {
-        fill: var(--third-color);
-      }
-  
-      .menu_popover-btn:hover svg path {
-        fill: var(--third-color);
-        opacity: 0.7;
-      }
-  
-      .search-btn {
-        &:hover svg {
-          g, path {
-            fill: var(--third-color);
-            opacity: 0.7;
-          }
-        }
-        svg {
-          g, path {
-            fill: var(--third-color);
-          }
-        }
-      }
-  
-      .menu-language-btn {
-        color: var(--third-color);
+    .menu_popover-btn:hover svg path {
+      fill: var(--third-color);
+      opacity: 0.7;
+    }
 
-        &:hover {
-          color: var(--third-color);
+    .search-btn,
+    .cart_btn {
+      &:hover svg {
+        g, path {
+          fill: var(--third-color);
           opacity: 0.7;
-
-          & svg path {
-            stroke: var(--third-color);
-            opacity: 0.7;
-          }
         }
-  
-        & svg path {
-          stroke: var(--third-color);
+      }
+      svg {
+        g, path {
+          fill: var(--third-color);
         }
       }
     }
+
+    .cart_btn-count {
+      color: var(--third-color);
+    }
+
+    .menu-language-btn {
+      color: var(--third-color);
+
+      &:hover {
+        color: var(--third-color);
+        opacity: 0.7;
+
+        & svg path {
+          stroke: var(--third-color);
+          opacity: 0.7;
+        }
+      }
+
+      & svg path {
+        stroke: var(--third-color);
+      }
+    }
+
+    .menu-stripe {
+      :not(.semimodal-open) & {
+        background-color: var(--third-color);
+      }
+    }
+    
     .header_fixed-content .header_title.content-formatted:not(.product_filters) {
       color: var(--third-color);
 
-      @include query($tablet-1) {
-        color: var(--header-site-title-color);
+      a, p, h1, h2, h3, h4, h5, h6 {
+        color: var(--third-color);
+      }
+    }
+  }
+}
+
+.semimodal-open {
+  .semimodal.dark-background {
+    .menu-stripe {
+      background-color: var(--third-color);
+    }
+    .menu-language-toggle {
+      .menu-language-btn {
+        color: var(--third-color);
+
+        svg path {
+          stroke: var(--third-color);
+        }
       }
     }
   }
@@ -751,7 +782,7 @@ body {
   .semimodal_bottom-content,
   .menu-language-btn,
   .menu-language-name {
-    color: var(--header-mainmenu-color);
+    color: var(--header-mainmenu-active-color);
 
     a, p, h1, h2, h3, h4, h5, h6 {
       color: var(--header-mainmenu-color);
@@ -769,7 +800,7 @@ body {
   .search-btn svg g,
   .cart_btn svg g,
   .cart_btn svg path {
-    fill: var(--header-mainmenu-color);
+    fill: var(--header-mainmenu-active-color);
   }
 
   .search-btn:hover svg g,
@@ -1181,20 +1212,6 @@ body {
     @include query($tablet-1) {
       font-size: 18px;
       line-height: 18px;
-    }
-  }
-
-  @include query($tablet-1) {
-    &.header_title {
-      .dark-background & {
-        color: var(--header-site-title-color);
-      }
-
-      a, p, h1, h2, h3, h4, h5, h6 {
-        .dark-background & {
-          color: var(--header-site-title-color);
-        }
-      }
     }
   }
 

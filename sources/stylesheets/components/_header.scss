@@ -79,7 +79,6 @@
 
     @include query($tablet-1) {
       padding: 16px;
-      background-color: $white;
     }
 
     &-content {
