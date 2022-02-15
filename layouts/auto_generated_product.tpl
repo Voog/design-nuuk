@@ -62,7 +62,7 @@
             <div class="flex_row-2--item-40">
               <div class="mar_0-32 flex_col t-sticky">
                 <div class="flex_row flex_a-center flex_j-space-between mar_b-32">
-                  <div class="content-body content-formatted" data-search-indexing-allowed="true">
+                  <div class="content-body content-formatted product-name w-100p" data-search-indexing-allowed="true">
                     <h3>
                       {%- editable product.name -%}
                     </h3>
