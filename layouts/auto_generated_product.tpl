@@ -14,11 +14,6 @@
 {% endunless %}
 
 <body class="product-page body-bg_picker--area {{ body_bg_type }}">
-  {%- capture _button_attributes %}
-    data-product-id="{{ product.id }}"
-    data-product="{{ product | json | escape }}"
-    data-settings="{&quot;title&quot;:&quot;{{ "add_to_cart" | lc | escape_once }}&quot;,&quot;button_style&quot;:&quot;with_price&quot;}"
-  {% endcapture -%}
   {% include "template-svg-spritesheet" %}
   <div class="body-bg_color"></div>
 
