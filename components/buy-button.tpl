@@ -46,8 +46,8 @@
         {% endif -%}
 
         {%- if with_price and product.price_min_with_tax == product.price_max_with_tax -%}
-            <span class="edy-buy-button-price">{{ product.price_with_tax | money_with_currency: product.currency }}</span>
-          {%- endif -%}
+          <span class="edy-buy-button-price">{{ product.price_with_tax | money_with_currency: product.currency }}</span>
+        {%- endif -%}
       </div>
     </div>
   </div>
