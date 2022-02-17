@@ -155,7 +155,7 @@ body {
     color: var(--header-mainmenu-active-color);
 
     @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
+      .header_fixed:not(.scroll).dark-background & {
         color: var(--third-color);
         opacity: .7;
       }
@@ -165,7 +165,7 @@ body {
       background-color: var(--header-mainmenu-color);
 
       @include query($tablet-1, 'min-width') {
-        :not(.scroll).dark-background & {
+        .header_fixed:not(.scroll).dark-background & {
           background-color: var(--third-color);
         }
       }
@@ -213,7 +213,7 @@ body {
   svg g {
     fill: var(--header-mainmenu-active-color);
 
-    :not(.scroll).dark-background & {
+    .header_fixed:not(.scroll).dark-background & {
       fill: var(--third-color);
     }
   }
@@ -223,7 +223,7 @@ body {
     svg g {
       fill: var(--header-mainmenu-color);
 
-      :not(.scroll).dark-background & {
+      .header_fixed:not(.scroll).dark-background & {
         opacity: .7;
         fill: var(--third-color);
       }
@@ -255,7 +255,7 @@ body {
     fill: var(--header-mainmenu-color);
 
     @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
+      .header_fixed:not(.scroll).dark-background & {
         fill: var(--third-color);
       }
     }
@@ -264,7 +264,7 @@ body {
   &:hover svg path {
     fill: var(--header-mainmenu-hover-color);
     @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
+      .header_fixed:not(.scroll).dark-background & {
         opacity: .7;
         fill: var(--third-color);
       }
@@ -281,14 +281,14 @@ body {
     ive-color);
 
     @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
+      .header_fixed:not(.scroll).dark-background & {
         stroke: var(--third-color);
       }
     }
   }
 
   @include query($tablet-1, 'min-width') {
-    :not(.scroll).dark-background & {
+    .header_fixed:not(.scroll).dark-background & {
       color: var(--third-color);
     }
   }
@@ -300,7 +300,7 @@ body {
       stroke: var(--header-mainmenu-color);
 
       @include query($tablet-1, 'min-width') {
-        :not(.scroll).dark-background & {
+        .header_fixed:not(.scroll).dark-background & {
           opacity: .7;
           stroke: var(--third-color);
         }
@@ -308,7 +308,7 @@ body {
     }
 
     @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
+      .header_fixed:not(.scroll).dark-background & {
         opacity: .7;
         color: var(--third-color);
       }
@@ -320,7 +320,7 @@ body {
   color: var(--header-mainmenu-active-color);
 
   @include query($tablet-1, 'min-width') {
-    :not(.scroll).dark-background & {
+    .header_fixed:not(.scroll).dark-background & {
       color: var(--third-color);
     }
   }
@@ -619,49 +619,47 @@ body {
     }
   }
 
-    &:not(.scroll) {
-      .menu_popover-btn svg path {
-        fill: var(--header-mainmenu-color);
-      }
-  
-      .menu_popover-btn:hover svg path {
-        fill: var(--header-mainmenu-hover-color);
-      }
-  
-      .search-btn,
-      .cart-btn {
-        &:hover svg {
-          g, path {
-            fill: var(--header-mainmenu-color);
-          }
-        }
-        svg {
-          g, path {
-            fill: var(--header-mainmenu-active-color);
-          }
+  &:not(.scroll) {
+    .menu_popover-btn svg path {
+      fill: var(--header-mainmenu-color);
+    }
+
+    .menu_popover-btn:hover svg path {
+      fill: var(--header-mainmenu-hover-color);
+    }
+
+    .search-btn,
+    .cart-btn {
+      &:hover svg {
+        g, path {
+          fill: var(--header-mainmenu-color);
         }
       }
-
-      .cart_btn-count {
-        color: var(--header-mainmenu-active-color);
-      }
-  
-      .menu-language-btn {
-        color: var(--header-mainmenu-active-color);
-
-        &:hover {
-          color: var(--header-mainmenu-color);
-
-          & svg path {
-            stroke: var(--header-mainmenu-color);
-          }
-        }
-  
-        & svg path {
-          stroke: var(--header-mainmenu-active-color);
+      svg {
+        g, path {
+          fill: var(--header-mainmenu-active-color);
         }
       }
     }
+
+    .cart_btn-count {
+      color: var(--header-mainmenu-active-color);
+    }
+
+    .menu-language-btn {
+      color: var(--header-mainmenu-active-color);
+      &:hover {
+        color: var(--header-mainmenu-color);
+        & svg path {
+          stroke: var(--header-mainmenu-color);
+        }
+      }
+
+      & svg path {
+        stroke: var(--header-mainmenu-active-color);
+      }
+    }
+  }
   
 
   &.dark-background.scroll,
@@ -1190,11 +1188,13 @@ body {
     color: var(--header-site-title-color);
     hyphens: var(--header-site-title-hyphens);
 
-    .dark-background & {
+    .header_fixed.dark-background &,
+    .semimodal.dark-background &,
+    .dark-background .header_fixed:not(.relative):not(.scroll) & {
       color: var(--third-color);
     }
 
-    a, p, h1, h2, h3, h4, h5, h6 {
+    a:not(.custom-btn), p, h1, h2, h3, h4, h5, h6 {
       font-size: var(--header-site-title-font-size);
       line-height: var(--header-site-title-font-size);
       font-weight: var(--header-site-title-font-weight);
@@ -1204,7 +1204,9 @@ body {
       color: var(--header-site-title-color);
       hyphens: var(--header-site-title-hyphens);
 
-      .dark-background & {
+      .header_fixed.dark-background &,
+      .semimodal.dark-background &,
+      .dark-background .header_fixed:not(.relative):not(.scroll) & {
         color: var(--third-color);
       }
     }

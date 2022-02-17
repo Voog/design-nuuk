@@ -101,7 +101,7 @@ body.dark-background {
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-btn:hover {
+  .header_fixed:not(.scroll).dark-background .menu-btn:hover {
     color: var(--third-color);
     opacity: .7;
   }
@@ -112,7 +112,7 @@ body.dark-background {
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-btn:hover .menu-stripe {
+  .header_fixed:not(.scroll).dark-background .menu-btn:hover .menu-stripe {
     background-color: var(--third-color);
   }
 }
@@ -167,9 +167,9 @@ body.dark-background {
   fill: var(--header-mainmenu-active-color);
 }
 
-:not(.scroll).dark-background .search-btn svg path, :not(.scroll).dark-background
-.search-btn svg g, :not(.scroll).dark-background
-.cart_btn svg path, :not(.scroll).dark-background
+.header_fixed:not(.scroll).dark-background .search-btn svg path, .header_fixed:not(.scroll).dark-background
+.search-btn svg g, .header_fixed:not(.scroll).dark-background
+.cart_btn svg path, .header_fixed:not(.scroll).dark-background
 .cart_btn svg g {
   fill: var(--third-color);
 }
@@ -181,9 +181,9 @@ body.dark-background {
   fill: var(--header-mainmenu-color);
 }
 
-:not(.scroll).dark-background .search-btn:hover svg path, :not(.scroll).dark-background
-.search-btn:hover svg g, :not(.scroll).dark-background
-.cart_btn:hover svg path, :not(.scroll).dark-background
+.header_fixed:not(.scroll).dark-background .search-btn:hover svg path, .header_fixed:not(.scroll).dark-background
+.search-btn:hover svg g, .header_fixed:not(.scroll).dark-background
+.cart_btn:hover svg path, .header_fixed:not(.scroll).dark-background
 .cart_btn:hover svg g {
   opacity: .7;
   fill: var(--third-color);
@@ -208,7 +208,7 @@ body.dark-background {
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu_popover-btn svg path {
+  .header_fixed:not(.scroll).dark-background .menu_popover-btn svg path {
     fill: var(--third-color);
   }
 }
@@ -218,7 +218,7 @@ body.dark-background {
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu_popover-btn:hover svg path {
+  .header_fixed:not(.scroll).dark-background .menu_popover-btn:hover svg path {
     opacity: .7;
     fill: var(--third-color);
   }
@@ -235,14 +235,14 @@ body.dark-background {
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn svg path, :not(.scroll).dark-background
+  .header_fixed:not(.scroll).dark-background .menu-language-btn svg path, .header_fixed:not(.scroll).dark-background
   .menu-language-name svg path {
     stroke: var(--third-color);
   }
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn, :not(.scroll).dark-background
+  .header_fixed:not(.scroll).dark-background .menu-language-btn, .header_fixed:not(.scroll).dark-background
   .menu-language-name {
     color: var(--third-color);
   }
@@ -259,7 +259,7 @@ body.dark-background {
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn:hover svg path, :not(.scroll).dark-background
+  .header_fixed:not(.scroll).dark-background .menu-language-btn:hover svg path, .header_fixed:not(.scroll).dark-background
   .menu-language-name:hover svg path {
     opacity: .7;
     stroke: var(--third-color);
@@ -267,7 +267,7 @@ body.dark-background {
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn:hover, :not(.scroll).dark-background
+  .header_fixed:not(.scroll).dark-background .menu-language-btn:hover, .header_fixed:not(.scroll).dark-background
   .menu-language-name:hover {
     opacity: .7;
     color: var(--third-color);
@@ -279,7 +279,7 @@ body.dark-background {
 }
 
 @media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .edy-ecommerce-product-count {
+  .header_fixed:not(.scroll).dark-background .edy-ecommerce-product-count {
     color: var(--third-color);
   }
 }
@@ -1252,16 +1252,36 @@ body.dark-background {
           hyphens: var(--header-site-title-hyphens);
 }
 
-.dark-background .content-formatted:not(.product_filters).header_title, .dark-background .content-formatted:not(.product_filters).site_title, .dark-background
-.content-formatted .product_item-btn.header_title, .dark-background
-.content-formatted .product_item-btn.site_title, .dark-background
-.content-formatted p.header_title, .dark-background
+.header_fixed.dark-background .content-formatted:not(.product_filters).header_title,
+.semimodal.dark-background .content-formatted:not(.product_filters).header_title,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).header_title, .header_fixed.dark-background .content-formatted:not(.product_filters).site_title,
+.semimodal.dark-background .content-formatted:not(.product_filters).site_title,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).site_title, .header_fixed.dark-background
+.content-formatted .product_item-btn.header_title,
+.semimodal.dark-background
+.content-formatted .product_item-btn.header_title,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.header_title, .header_fixed.dark-background
+.content-formatted .product_item-btn.site_title,
+.semimodal.dark-background
+.content-formatted .product_item-btn.site_title,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.site_title, .header_fixed.dark-background
+.content-formatted p.header_title,
+.semimodal.dark-background
+.content-formatted p.header_title,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.header_title, .header_fixed.dark-background
+.content-formatted p.site_title,
+.semimodal.dark-background
+.content-formatted p.site_title,
+.dark-background .header_fixed:not(.relative):not(.scroll)
 .content-formatted p.site_title {
   color: var(--third-color);
 }
 
-.content-formatted:not(.product_filters).header_title a, .content-formatted:not(.product_filters).header_title p, .content-formatted:not(.product_filters).header_title h1, .content-formatted:not(.product_filters).header_title h2, .content-formatted:not(.product_filters).header_title h3, .content-formatted:not(.product_filters).header_title h4, .content-formatted:not(.product_filters).header_title h5, .content-formatted:not(.product_filters).header_title h6, .content-formatted:not(.product_filters).site_title a, .content-formatted:not(.product_filters).site_title p, .content-formatted:not(.product_filters).site_title h1, .content-formatted:not(.product_filters).site_title h2, .content-formatted:not(.product_filters).site_title h3, .content-formatted:not(.product_filters).site_title h4, .content-formatted:not(.product_filters).site_title h5, .content-formatted:not(.product_filters).site_title h6,
-.content-formatted .product_item-btn.header_title a,
+.content-formatted:not(.product_filters).header_title a:not(.custom-btn), .content-formatted:not(.product_filters).header_title p, .content-formatted:not(.product_filters).header_title h1, .content-formatted:not(.product_filters).header_title h2, .content-formatted:not(.product_filters).header_title h3, .content-formatted:not(.product_filters).header_title h4, .content-formatted:not(.product_filters).header_title h5, .content-formatted:not(.product_filters).header_title h6, .content-formatted:not(.product_filters).site_title a:not(.custom-btn), .content-formatted:not(.product_filters).site_title p, .content-formatted:not(.product_filters).site_title h1, .content-formatted:not(.product_filters).site_title h2, .content-formatted:not(.product_filters).site_title h3, .content-formatted:not(.product_filters).site_title h4, .content-formatted:not(.product_filters).site_title h5, .content-formatted:not(.product_filters).site_title h6,
+.content-formatted .product_item-btn.header_title a:not(.custom-btn),
 .content-formatted .product_item-btn.header_title p,
 .content-formatted .product_item-btn.header_title h1,
 .content-formatted .product_item-btn.header_title h2,
@@ -1269,7 +1289,7 @@ body.dark-background {
 .content-formatted .product_item-btn.header_title h4,
 .content-formatted .product_item-btn.header_title h5,
 .content-formatted .product_item-btn.header_title h6,
-.content-formatted .product_item-btn.site_title a,
+.content-formatted .product_item-btn.site_title a:not(.custom-btn),
 .content-formatted .product_item-btn.site_title p,
 .content-formatted .product_item-btn.site_title h1,
 .content-formatted .product_item-btn.site_title h2,
@@ -1277,7 +1297,7 @@ body.dark-background {
 .content-formatted .product_item-btn.site_title h4,
 .content-formatted .product_item-btn.site_title h5,
 .content-formatted .product_item-btn.site_title h6,
-.content-formatted p.header_title a,
+.content-formatted p.header_title a:not(.custom-btn),
 .content-formatted p.header_title p,
 .content-formatted p.header_title h1,
 .content-formatted p.header_title h2,
@@ -1285,7 +1305,7 @@ body.dark-background {
 .content-formatted p.header_title h4,
 .content-formatted p.header_title h5,
 .content-formatted p.header_title h6,
-.content-formatted p.site_title a,
+.content-formatted p.site_title a:not(.custom-btn),
 .content-formatted p.site_title p,
 .content-formatted p.site_title h1,
 .content-formatted p.site_title h2,
@@ -1306,38 +1326,198 @@ body.dark-background {
           hyphens: var(--header-site-title-hyphens);
 }
 
-.dark-background .content-formatted:not(.product_filters).header_title a, .dark-background .content-formatted:not(.product_filters).header_title p, .dark-background .content-formatted:not(.product_filters).header_title h1, .dark-background .content-formatted:not(.product_filters).header_title h2, .dark-background .content-formatted:not(.product_filters).header_title h3, .dark-background .content-formatted:not(.product_filters).header_title h4, .dark-background .content-formatted:not(.product_filters).header_title h5, .dark-background .content-formatted:not(.product_filters).header_title h6, .dark-background .content-formatted:not(.product_filters).site_title a, .dark-background .content-formatted:not(.product_filters).site_title p, .dark-background .content-formatted:not(.product_filters).site_title h1, .dark-background .content-formatted:not(.product_filters).site_title h2, .dark-background .content-formatted:not(.product_filters).site_title h3, .dark-background .content-formatted:not(.product_filters).site_title h4, .dark-background .content-formatted:not(.product_filters).site_title h5, .dark-background .content-formatted:not(.product_filters).site_title h6, .dark-background
-.content-formatted .product_item-btn.header_title a, .dark-background
-.content-formatted .product_item-btn.header_title p, .dark-background
-.content-formatted .product_item-btn.header_title h1, .dark-background
-.content-formatted .product_item-btn.header_title h2, .dark-background
-.content-formatted .product_item-btn.header_title h3, .dark-background
-.content-formatted .product_item-btn.header_title h4, .dark-background
-.content-formatted .product_item-btn.header_title h5, .dark-background
-.content-formatted .product_item-btn.header_title h6, .dark-background
-.content-formatted .product_item-btn.site_title a, .dark-background
-.content-formatted .product_item-btn.site_title p, .dark-background
-.content-formatted .product_item-btn.site_title h1, .dark-background
-.content-formatted .product_item-btn.site_title h2, .dark-background
-.content-formatted .product_item-btn.site_title h3, .dark-background
-.content-formatted .product_item-btn.site_title h4, .dark-background
-.content-formatted .product_item-btn.site_title h5, .dark-background
-.content-formatted .product_item-btn.site_title h6, .dark-background
-.content-formatted p.header_title a, .dark-background
-.content-formatted p.header_title p, .dark-background
-.content-formatted p.header_title h1, .dark-background
-.content-formatted p.header_title h2, .dark-background
-.content-formatted p.header_title h3, .dark-background
-.content-formatted p.header_title h4, .dark-background
-.content-formatted p.header_title h5, .dark-background
-.content-formatted p.header_title h6, .dark-background
-.content-formatted p.site_title a, .dark-background
-.content-formatted p.site_title p, .dark-background
-.content-formatted p.site_title h1, .dark-background
-.content-formatted p.site_title h2, .dark-background
-.content-formatted p.site_title h3, .dark-background
-.content-formatted p.site_title h4, .dark-background
-.content-formatted p.site_title h5, .dark-background
+.header_fixed.dark-background .content-formatted:not(.product_filters).header_title a:not(.custom-btn),
+.semimodal.dark-background .content-formatted:not(.product_filters).header_title a:not(.custom-btn),
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).header_title a:not(.custom-btn), .header_fixed.dark-background .content-formatted:not(.product_filters).header_title p,
+.semimodal.dark-background .content-formatted:not(.product_filters).header_title p,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).header_title p, .header_fixed.dark-background .content-formatted:not(.product_filters).header_title h1,
+.semimodal.dark-background .content-formatted:not(.product_filters).header_title h1,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).header_title h1, .header_fixed.dark-background .content-formatted:not(.product_filters).header_title h2,
+.semimodal.dark-background .content-formatted:not(.product_filters).header_title h2,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).header_title h2, .header_fixed.dark-background .content-formatted:not(.product_filters).header_title h3,
+.semimodal.dark-background .content-formatted:not(.product_filters).header_title h3,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).header_title h3, .header_fixed.dark-background .content-formatted:not(.product_filters).header_title h4,
+.semimodal.dark-background .content-formatted:not(.product_filters).header_title h4,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).header_title h4, .header_fixed.dark-background .content-formatted:not(.product_filters).header_title h5,
+.semimodal.dark-background .content-formatted:not(.product_filters).header_title h5,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).header_title h5, .header_fixed.dark-background .content-formatted:not(.product_filters).header_title h6,
+.semimodal.dark-background .content-formatted:not(.product_filters).header_title h6,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).header_title h6, .header_fixed.dark-background .content-formatted:not(.product_filters).site_title a:not(.custom-btn),
+.semimodal.dark-background .content-formatted:not(.product_filters).site_title a:not(.custom-btn),
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).site_title a:not(.custom-btn), .header_fixed.dark-background .content-formatted:not(.product_filters).site_title p,
+.semimodal.dark-background .content-formatted:not(.product_filters).site_title p,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).site_title p, .header_fixed.dark-background .content-formatted:not(.product_filters).site_title h1,
+.semimodal.dark-background .content-formatted:not(.product_filters).site_title h1,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).site_title h1, .header_fixed.dark-background .content-formatted:not(.product_filters).site_title h2,
+.semimodal.dark-background .content-formatted:not(.product_filters).site_title h2,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).site_title h2, .header_fixed.dark-background .content-formatted:not(.product_filters).site_title h3,
+.semimodal.dark-background .content-formatted:not(.product_filters).site_title h3,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).site_title h3, .header_fixed.dark-background .content-formatted:not(.product_filters).site_title h4,
+.semimodal.dark-background .content-formatted:not(.product_filters).site_title h4,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).site_title h4, .header_fixed.dark-background .content-formatted:not(.product_filters).site_title h5,
+.semimodal.dark-background .content-formatted:not(.product_filters).site_title h5,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).site_title h5, .header_fixed.dark-background .content-formatted:not(.product_filters).site_title h6,
+.semimodal.dark-background .content-formatted:not(.product_filters).site_title h6,
+.dark-background .header_fixed:not(.relative):not(.scroll) .content-formatted:not(.product_filters).site_title h6, .header_fixed.dark-background
+.content-formatted .product_item-btn.header_title a:not(.custom-btn),
+.semimodal.dark-background
+.content-formatted .product_item-btn.header_title a:not(.custom-btn),
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.header_title a:not(.custom-btn), .header_fixed.dark-background
+.content-formatted .product_item-btn.header_title p,
+.semimodal.dark-background
+.content-formatted .product_item-btn.header_title p,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.header_title p, .header_fixed.dark-background
+.content-formatted .product_item-btn.header_title h1,
+.semimodal.dark-background
+.content-formatted .product_item-btn.header_title h1,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.header_title h1, .header_fixed.dark-background
+.content-formatted .product_item-btn.header_title h2,
+.semimodal.dark-background
+.content-formatted .product_item-btn.header_title h2,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.header_title h2, .header_fixed.dark-background
+.content-formatted .product_item-btn.header_title h3,
+.semimodal.dark-background
+.content-formatted .product_item-btn.header_title h3,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.header_title h3, .header_fixed.dark-background
+.content-formatted .product_item-btn.header_title h4,
+.semimodal.dark-background
+.content-formatted .product_item-btn.header_title h4,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.header_title h4, .header_fixed.dark-background
+.content-formatted .product_item-btn.header_title h5,
+.semimodal.dark-background
+.content-formatted .product_item-btn.header_title h5,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.header_title h5, .header_fixed.dark-background
+.content-formatted .product_item-btn.header_title h6,
+.semimodal.dark-background
+.content-formatted .product_item-btn.header_title h6,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.header_title h6, .header_fixed.dark-background
+.content-formatted .product_item-btn.site_title a:not(.custom-btn),
+.semimodal.dark-background
+.content-formatted .product_item-btn.site_title a:not(.custom-btn),
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.site_title a:not(.custom-btn), .header_fixed.dark-background
+.content-formatted .product_item-btn.site_title p,
+.semimodal.dark-background
+.content-formatted .product_item-btn.site_title p,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.site_title p, .header_fixed.dark-background
+.content-formatted .product_item-btn.site_title h1,
+.semimodal.dark-background
+.content-formatted .product_item-btn.site_title h1,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.site_title h1, .header_fixed.dark-background
+.content-formatted .product_item-btn.site_title h2,
+.semimodal.dark-background
+.content-formatted .product_item-btn.site_title h2,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.site_title h2, .header_fixed.dark-background
+.content-formatted .product_item-btn.site_title h3,
+.semimodal.dark-background
+.content-formatted .product_item-btn.site_title h3,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.site_title h3, .header_fixed.dark-background
+.content-formatted .product_item-btn.site_title h4,
+.semimodal.dark-background
+.content-formatted .product_item-btn.site_title h4,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.site_title h4, .header_fixed.dark-background
+.content-formatted .product_item-btn.site_title h5,
+.semimodal.dark-background
+.content-formatted .product_item-btn.site_title h5,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.site_title h5, .header_fixed.dark-background
+.content-formatted .product_item-btn.site_title h6,
+.semimodal.dark-background
+.content-formatted .product_item-btn.site_title h6,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted .product_item-btn.site_title h6, .header_fixed.dark-background
+.content-formatted p.header_title a:not(.custom-btn),
+.semimodal.dark-background
+.content-formatted p.header_title a:not(.custom-btn),
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.header_title a:not(.custom-btn), .header_fixed.dark-background
+.content-formatted p.header_title p,
+.semimodal.dark-background
+.content-formatted p.header_title p,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.header_title p, .header_fixed.dark-background
+.content-formatted p.header_title h1,
+.semimodal.dark-background
+.content-formatted p.header_title h1,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.header_title h1, .header_fixed.dark-background
+.content-formatted p.header_title h2,
+.semimodal.dark-background
+.content-formatted p.header_title h2,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.header_title h2, .header_fixed.dark-background
+.content-formatted p.header_title h3,
+.semimodal.dark-background
+.content-formatted p.header_title h3,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.header_title h3, .header_fixed.dark-background
+.content-formatted p.header_title h4,
+.semimodal.dark-background
+.content-formatted p.header_title h4,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.header_title h4, .header_fixed.dark-background
+.content-formatted p.header_title h5,
+.semimodal.dark-background
+.content-formatted p.header_title h5,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.header_title h5, .header_fixed.dark-background
+.content-formatted p.header_title h6,
+.semimodal.dark-background
+.content-formatted p.header_title h6,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.header_title h6, .header_fixed.dark-background
+.content-formatted p.site_title a:not(.custom-btn),
+.semimodal.dark-background
+.content-formatted p.site_title a:not(.custom-btn),
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.site_title a:not(.custom-btn), .header_fixed.dark-background
+.content-formatted p.site_title p,
+.semimodal.dark-background
+.content-formatted p.site_title p,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.site_title p, .header_fixed.dark-background
+.content-formatted p.site_title h1,
+.semimodal.dark-background
+.content-formatted p.site_title h1,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.site_title h1, .header_fixed.dark-background
+.content-formatted p.site_title h2,
+.semimodal.dark-background
+.content-formatted p.site_title h2,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.site_title h2, .header_fixed.dark-background
+.content-formatted p.site_title h3,
+.semimodal.dark-background
+.content-formatted p.site_title h3,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.site_title h3, .header_fixed.dark-background
+.content-formatted p.site_title h4,
+.semimodal.dark-background
+.content-formatted p.site_title h4,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.site_title h4, .header_fixed.dark-background
+.content-formatted p.site_title h5,
+.semimodal.dark-background
+.content-formatted p.site_title h5,
+.dark-background .header_fixed:not(.relative):not(.scroll)
+.content-formatted p.site_title h5, .header_fixed.dark-background
+.content-formatted p.site_title h6,
+.semimodal.dark-background
+.content-formatted p.site_title h6,
+.dark-background .header_fixed:not(.relative):not(.scroll)
 .content-formatted p.site_title h6 {
   color: var(--third-color);
 }
