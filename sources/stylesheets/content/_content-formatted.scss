@@ -154,12 +154,10 @@
     cursor: pointer;
     border: 0;
     position: relative;
-    background: black;
     display: inline-block;
     color: white;
     padding: 16px;
     text-align: center;
-    color: $primary-color;
     outline: none;
     @include bg($black);
 
