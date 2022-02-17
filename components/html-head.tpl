@@ -33,6 +33,7 @@
   {%- include "template-cs-headings" -%}
   {%- include "template-cs-content" -%}
   {%- include "template-cs-product-list" -%}
+  {%- include "template-cs-product" -%}
   {%- include "template-cs-button" -%}
   {%- include "template-cs-form" -%}
   {%- include "template-cs-style-rules" -%}

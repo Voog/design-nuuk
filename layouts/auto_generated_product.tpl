@@ -14,11 +14,6 @@
 {% endunless %}
 
 <body class="product-page body-bg_picker--area {{ body_bg_type }}">
-  {%- capture _button_attributes %}
-    data-product-id="{{ product.id }}"
-    data-product="{{ product | json | escape }}"
-    data-settings="{&quot;title&quot;:&quot;{{ "add_to_cart" | lc | escape_once }}&quot;,&quot;button_style&quot;:&quot;with_price&quot;}"
-  {% endcapture -%}
   {% include "template-svg-spritesheet" %}
   <div class="body-bg_color"></div>
 
@@ -62,7 +57,7 @@
             <div class="flex_row-2--item-40">
               <div class="mar_0-32 flex_col t-sticky">
                 <div class="flex_row flex_a-center flex_j-space-between mar_b-32">
-                  <div class="content-body content-formatted" data-search-indexing-allowed="true">
+                  <div class="content-body content-formatted product-name w-100p" data-search-indexing-allowed="true">
                     <h3>
                       {%- editable product.name -%}
                     </h3>

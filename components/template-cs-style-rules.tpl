@@ -1111,11 +1111,11 @@ body.dark-background {
   }
 }
 
-.content-formatted:not(.product_filters) .custom-btn,
+.content-formatted:not(.product_filters) .custom-btn:not(.custom-btn-disabled),
 .content-formatted:not(.product_filters) .form_submit input,
-.content-formatted .product_item-btn .custom-btn,
+.content-formatted .product_item-btn .custom-btn:not(.custom-btn-disabled),
 .content-formatted .product_item-btn .form_submit input,
-.content-formatted p .custom-btn,
+.content-formatted p .custom-btn:not(.custom-btn-disabled),
 .content-formatted p .form_submit input {
   padding: var(--button-padding);
   color: var(--button-color);
@@ -1131,20 +1131,20 @@ body.dark-background {
   background-color: var(--button-background-color);
 }
 
-.dark-background .content-formatted:not(.product_filters) .custom-btn, .dark-background
+.dark-background .content-formatted:not(.product_filters) .custom-btn:not(.custom-btn-disabled), .dark-background
 .content-formatted:not(.product_filters) .form_submit input, .dark-background
-.content-formatted .product_item-btn .custom-btn, .dark-background
+.content-formatted .product_item-btn .custom-btn:not(.custom-btn-disabled), .dark-background
 .content-formatted .product_item-btn .form_submit input, .dark-background
-.content-formatted p .custom-btn, .dark-background
+.content-formatted p .custom-btn:not(.custom-btn-disabled), .dark-background
 .content-formatted p .form_submit input {
   border: 1px solid var(--third-color);
 }
 
-.content-formatted:not(.product_filters) .custom-btn:hover,
+.content-formatted:not(.product_filters) .custom-btn:not(.custom-btn-disabled):hover,
 .content-formatted:not(.product_filters) .form_submit input:hover,
-.content-formatted .product_item-btn .custom-btn:hover,
+.content-formatted .product_item-btn .custom-btn:not(.custom-btn-disabled):hover,
 .content-formatted .product_item-btn .form_submit input:hover,
-.content-formatted p .custom-btn:hover,
+.content-formatted p .custom-btn:not(.custom-btn-disabled):hover,
 .content-formatted p .form_submit input:hover {
   padding: var(--button-hover-padding);
   color: var(--button-hover-color);
@@ -1257,4 +1257,32 @@ body.dark-background {
 .light-background .content-formatted .form_field_textarea::placeholder,
 .light-background .content-formatted .form_field_select::placeholder {
   color: var(--primary-color);
+}
+
+.product-page .content-body.product-name h3 {
+  font-size: var(--product-title-size);
+  font-weight: var(--product-title-font-weight);
+  font-style: var(--product-title-font-style);
+  -webkit-text-decoration: var(--product-title-font-text-decoration);
+          text-decoration: var(--product-title-font-text-decoration);
+  color: var(--product-title-color);
+  text-align: var(--product-title-alignment);
+}
+
+.product-page .content-formatted .content-product-description {
+  color: var(--product-description-color);
+  font-size: var(--product-description-size);
+  font-weight: var(--product-description-font-weight);
+  font-style: var(--product-description-font-style);
+  -webkit-text-decoration: var(--product-description-font-text-decoration);
+          text-decoration: var(--product-description-font-text-decoration);
+}
+
+.product-page .product-price {
+  color: var(--product-price-color);
+  font-size: var(--product-price-size);
+  font-weight: var(--product-price-font-weight);
+  font-style: var(--product-price-font-style);
+  -webkit-text-decoration: var(--product-price-font-text-decoration);
+          text-decoration: var(--product-price-font-text-decoration);
 }
