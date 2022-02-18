@@ -54,13 +54,13 @@
           {%- assign itemClass = 'menu-item-product' -%}
         {%- endif -%}
 
-        {% if editmode or isMenuItemVisible == true %}
-
-          {% if menuSettings.max_elements > menuItemCount %}
+        {% if menuSettings.max_elements > menuItemCount %}
             {%- assign showInTopMenu = true -%}
           {% else %}
             {%- assign showInTopMenu = false -%}
           {% endif %}
+
+        {% if editmode or isMenuItemVisible == true %}
 
           {% if isMenuItemVisible != true %}
             {%- assign itemTag = 'div' -%}
@@ -83,12 +83,6 @@
         {% endif %}
 
       {% else %}
-
-        {% if menuSettings.max_elements > menuItemCount %}
-          {%- assign showInTopMenu = true -%}
-        {% else %}
-          {%- assign showInTopMenu = false -%}
-        {% endif %}
         
         {%- assign menuItemCount = menuItemCount | plus: 1 -%}
         {%- assign isMenuItemVisible = true -%}

@@ -1,4 +1,4 @@
-<header class="header_fixed semimodal-bg_picker--area {{semimodal_bg_type}}{% if menuPos == 'is_top_fixed'%} relative{% endif %}{% if _menuTop == true %} menu-top{% endif %}">
+<header class="header_fixed semimodal-bg_picker--area {{ semimodal_bg_type }}{% if menuPos == 'is_top_fixed'%} relative{% endif %}{% if _menuTop == true %} menu-top{% endif %}">
   <div class="semimodal-bg_color bg_color-absolute{% if _menuTop == false %} d-none{% endif %}"
       {%- if semimodal_bg.color != blank %}
         style="background-color: {{ semimodal_bg.color }};"
