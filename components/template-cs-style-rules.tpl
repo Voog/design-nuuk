@@ -421,6 +421,10 @@ body.dark-background {
   color: var(--menu-dropdown-hover-text-color);
 }
 
+.header_fixed .menu-main .menu .menu_popover .menu .menu-item a.untranslated {
+  color: #C5292A;
+}
+
 .semimodal .menu-main .menu .menu-sub .menu-item {
   border-left: 1px solid var(--menu-sub-color);
 }
@@ -902,6 +906,10 @@ body.dark-background {
 
 .dropwdown_menu-popover .menu .menu-item a {
   color: var(--menu-dropdown-text-color);
+}
+
+.dropwdown_menu-popover .menu .menu-item a.untranslated {
+  color: #C5292A;
 }
 
 .menu-breadcrumbs.menu-sub .menu-item a {

@@ -9,7 +9,7 @@
 
 {%- include 'menu-main-iteration' -%}
 {%- include "site-search" %}
-{% include 'header-fixed', _menuTop: menuTop -%}
+{% include 'header-fixed', _menuTop: menuTop, _menuPos: menuPos -%}
 {% include 'cart-popover' %}
 
 {%- if menuSettings.max_width >= 1 -%}

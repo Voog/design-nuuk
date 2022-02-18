@@ -457,6 +457,10 @@ body {
             &:hover {
               color: var(--menu-dropdown-hover-text-color);
             }
+
+            &.untranslated {
+              color: $red;
+            }
           }
         }
       }
@@ -894,6 +898,10 @@ body {
       .menu-item { 
         a {
           color: var(--menu-dropdown-text-color);
+
+          &.untranslated {
+            color: $red;
+          }
         }
       }
     }
