@@ -26,6 +26,12 @@
   {%- assign menuPosTop = false -%}
 {%- endif -%}
 
+{%- if menuSettings.max_elements -%}
+  {%- assign maxMenuElements = menuSettings.max_elements -%}
+{%- else -%}
+  {%- assign maxMenuElements = template_settings.site.menu_settings.value.max_elements -%}
+{%- endif -%}
+
 {%- capture menu_main -%}
   {% for item in site.visible_menuitems %}
     {% capture menu_main_lvl_1_item %}
@@ -37,7 +43,7 @@
         {% endif %}
       {% endcapture %}
 
-      {% if menuSettings.max_elements > menuItemCount %}
+      {% if maxMenuElements > menuItemCount %}
         {%- assign showInTopMenu = true -%}
       {% else %}
         {%- assign showInTopMenu = false -%}
@@ -107,7 +113,7 @@
         {%- assign menu_main_lvl_1_top_main = menu_main_lvl_1_top_main | append: menu_main_lvl_1_item  -%}
       {%- endif -%}
     {%- elsif isMenuItemVisible == true -%}
-      {%- if menuItemCount <= menuSettings.max_elements -%}
+      {%- if menuItemCount <= maxMenuElements -%}
         {%- assign menu_main_lvl_1_top_main = menu_main_lvl_1_top_main | append: menu_main_lvl_1_item  -%}
       {%- endif -%}
     {%- endif -%}
