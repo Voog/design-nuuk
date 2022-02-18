@@ -55,11 +55,7 @@
                 {%- assign showBorder = false -%}
               {%- endif -%}
 
-              {%- assign articleDate = article.created_at | date: '%s' -%}
-              {%- assign diffSeconds = currentDate | minus: articleDate -%}
-              {%- assign diffDays = diffSeconds | divided_by: 3600 | divided_by: 24 -%}
-
-              {%- if diffDays > blog_settings.no_of_days_old -%}
+              {%- if forloop.index > blog_settings.no_of_articles_shown -%}
                 {%- assign overLimit = true -%}
               {%- else -%}
                 {%- assign overLimit = false -%}

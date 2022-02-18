@@ -94,7 +94,7 @@
       "value": {
         "blog_layout": "highlight_with_popout",
         "show_articles_as_list": false,
-        "no_of_days_old": 365
+        "no_of_articles_shown": 5
       }
     },
     "swiper_bg": {

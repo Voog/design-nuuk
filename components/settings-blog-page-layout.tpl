@@ -22,8 +22,8 @@
       valuesObj.show_articles_as_list = false;
     }
 
-    if (!('no_of_days_old' in valuesObj)) {
-      valuesObj.no_of_days_old = 365;
+    if (!('no_of_articles_shown' in valuesObj)) {
+      valuesObj.no_of_articles_shown = 5;
     }
 
     initSettingsEditor(
@@ -68,12 +68,12 @@
             },
           },
           {
-            "titleI18n": {{ "no_of_days_old" | lce | json }},
+            "titleI18n": {{ "no_of_articles_shown" | lce | json }},
             "type": "number",
-            "key": "no_of_days_old",
-            "tooltipI18n": {{ "no_of_days_old" | lce | json }},
+            "key": "no_of_articles_shown",
+            "tooltipI18n": {{ "no_of_articles_shown" | lce | json }},
             "step": 1,
-            "min": 1,
+            "min": 3,
             "class": "blog-list-opt"
           }
         ],
