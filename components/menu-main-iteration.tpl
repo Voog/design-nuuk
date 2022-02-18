@@ -36,6 +36,13 @@
           {%- endif -%}
         {% endif %}
       {% endcapture %}
+
+      {% if menuSettings.max_elements > menuItemCount %}
+        {%- assign showInTopMenu = true -%}
+      {% else %}
+        {%- assign showInTopMenu = false -%}
+      {% endif %}
+
       {%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}
         {%- if item.layout_title == product_list_layout -%}
           {%- assign itemClass = 'menu-item-product-list' -%}
@@ -53,12 +60,6 @@
           {%- endif -%}
           {%- assign itemClass = 'menu-item-product' -%}
         {%- endif -%}
-
-        {% if menuSettings.max_elements > menuItemCount %}
-            {%- assign showInTopMenu = true -%}
-          {% else %}
-            {%- assign showInTopMenu = false -%}
-          {% endif %}
 
         {% if editmode or isMenuItemVisible == true %}
 
@@ -83,7 +84,7 @@
         {% endif %}
 
       {% else %}
-        
+
         {%- assign menuItemCount = menuItemCount | plus: 1 -%}
         {%- assign isMenuItemVisible = true -%}
 
