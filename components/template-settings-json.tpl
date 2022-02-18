@@ -150,5 +150,5 @@
       "show_related_articles": false
     }
   },
-  "version": "nuuk-1.6.6"
+  "version": "nuuk-1.6.7"
 }

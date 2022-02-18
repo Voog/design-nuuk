@@ -189,7 +189,8 @@
 
     &-disabled {
       // scss-lint:disable NestingDepth
-      .publicmode & {
+      .publicmode &,
+      .product-content & {
         cursor: default;
 
         &,

@@ -1501,11 +1501,14 @@ p {
   opacity: .8;
 }
 
-.publicmode .content-formatted .custom-btn-disabled {
+.publicmode .content-formatted .custom-btn-disabled,
+.product-content .content-formatted .custom-btn-disabled {
   cursor: default;
 }
 
-.publicmode .content-formatted .custom-btn-disabled, .publicmode .content-formatted .custom-btn-disabled:hover {
+.publicmode .content-formatted .custom-btn-disabled, .publicmode .content-formatted .custom-btn-disabled:hover,
+.product-content .content-formatted .custom-btn-disabled,
+.product-content .content-formatted .custom-btn-disabled:hover {
   color: #c4c4c4;
   background-color: #dadada;
   border-color: #dadada;
