@@ -53,6 +53,12 @@
 
   &b-16 {
     margin-bottom: 16px;
+
+    &-mob {
+      @include query($tablet-2) {
+        margin-bottom: 16px;
+      }
+    }
   }
 
   &b-32 {

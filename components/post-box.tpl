@@ -36,17 +36,19 @@
   {%- endcapture -%}
 
   {%- capture post_details_list_view -%}
-    <div class="post_details mar_b-32">
-      <span>
-        <time class="post_date{% if show_article_date == false %} hide-post-date{% endif %}{% if article_data_show_date_defined != true %} site-data{% endif %}"
-            datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: '%d.%m.%Y' }} &nbsp; 
-        </time>
-      </span>
-      <span class="date-separator{% if show_article_author == false or show_article_date == false %} hide-separator{% endif %}"> &#8212; </span>
-      <span class="post_author{% if show_article_author == false %} hide-post-author{% endif %}{% if article_data_show_author_defined != true %} site-data{% endif %}">
-        {{ article.author.name }} &nbsp; 
-      </span>
-      <span class="animate_border-bottom">
+    <div class="post_details mar_b-32 pad_r-40-mob flex_row reverse-col-tablet">
+      <div class="post_details_wrap no-wrap">
+        <span class="w-auto">
+          <time class="post_date {% if show_article_date == false %} hide-post-date{% endif %}{% if show_article_author == false or show_article_date == false %} mar_r-8{% endif %}{% if article_data_show_date_defined != true %} site-data{% endif %}"
+              datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: '%d.%m.%Y' }}
+          </time>
+        </span>
+        <span class="date-separator{% if show_article_author == false or show_article_date == false %} hide-separator{% endif %}">&#8212;</span>
+        <span class="mar_r-8 no-wrap post_author{% if show_article_author == false %} hide-post-author{% endif %}{% if article_data_show_author_defined != true %} site-data{% endif %}">
+          {{ article.author.name }}
+        </span>
+      </div>
+      <span class="animate_border-bottom mar_b-16-mob">
         {{ article.title }}
       </span>
     </div>
