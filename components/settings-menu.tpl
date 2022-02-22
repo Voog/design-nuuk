@@ -101,7 +101,8 @@
               "placeholder": {{ "no_of_elements" | lce | json }},
               "step": 1,
               "min": 1,
-              "max": 10
+              "max": 10,
+              "class": "menu-elements-opt"
             },
             {
               "titleI18n": {{ "show_product_pages_in_menu" | lce | json }},
@@ -136,9 +137,9 @@
               $('.js-menu-popover, .js-menu-popover').removeClass('d-none');
               $('html').removeClass('semimodal-open');
               $('li[data-arrow="active"], li[data-arrow="inactive"]').addClass('dd-arrow');
-              
               $('.header_fixed_picker-btn').removeClass('d-none');
               $('.menu-indicator-opt').addClass('d-none');
+              $('.menu-elements-opt').removeClass('d-none');
             } else {
               $('.js-menu-btn, .semimodal').removeClass('hidden-desktop');
               $('.js-menu-main-wrapper').addClass('hidden-tablet');
@@ -149,6 +150,7 @@
               $('li.dd-arrow, div.dd-arrow').removeClass('dd-arrow');
               $('.header_fixed_picker-btn').addClass('d-none');
               $('.menu-indicator-opt').removeClass('d-none');
+              $('.menu-elements-opt').addClass('d-none');
             }
 
             if (data.positioning !== 'is_side_always_open') {
@@ -280,6 +282,8 @@
       );
       {%- if menuSettings.positioning == 'is_top_fixed' or menuSettings.positioning == 'is_top' -%}
         $('.menu-indicator-opt').addClass('d-none');
+      {%- else -%}
+        $('.menu-elements-opt').addClass('d-none');
       {%- endif -%}
     });
     
