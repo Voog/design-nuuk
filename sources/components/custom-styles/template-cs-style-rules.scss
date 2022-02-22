@@ -138,14 +138,14 @@ body {
 .menu-btn {
   color: var(--header-mainmenu-active-color);
 
-  :not(.scroll).dark-background & {
+  header:not(.scroll).dark-background & {
     color: var(--third-color);
   }
 
   .menu-stripe {
     background-color: var(--header-mainmenu-active-color);
 
-    :not(.scroll).dark-background & {
+    header:not(.scroll).dark-background & {
       background-color: var(--third-color);
     }
 
@@ -154,31 +154,27 @@ body {
   &:hover {
     color: var(--header-mainmenu-active-color);
 
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        color: var(--third-color);
-        opacity: .7;
-      }
+    header:not(.scroll).dark-background & {
+      color: var(--third-color);
+      opacity: .7;
     }
 
     .menu-stripe {
       background-color: var(--header-mainmenu-color);
 
-      @include query($tablet-1, 'min-width') {
-        :not(.scroll).dark-background & {
-          background-color: var(--third-color);
-        }
+      header:not(.scroll).dark-background & {
+        background-color: var(--third-color);
       }
     }
   }
 }
 
-.scroll.dark-background {
+header.header_fixed.scroll.dark-background {
   .menu-main .menu .menu-item,
   .content-formatted.header_title {
     color: var(--header-mainmenu-color);
 
-    a, p, h1, h2, h3, h4, h5, h6 {
+    a {
       color: var(--header-mainmenu-color);
     }
 
@@ -196,7 +192,7 @@ body {
   .menu-main .menu_popover .menu .menu-item {
     color: var(--third-color);
 
-    a, p, h1, h2, h3, h4, h5, h6 {
+    a {
       color: var(--third-color);
     }
 
@@ -207,13 +203,12 @@ body {
   }
 }
 
-.search-btn,
-.cart_btn {
+.search-btn {
   svg path,
   svg g {
     fill: var(--header-mainmenu-active-color);
 
-    :not(.scroll).dark-background & {
+    header.dark-background & {
       fill: var(--third-color);
     }
   }
@@ -223,7 +218,7 @@ body {
     svg g {
       fill: var(--header-mainmenu-color);
 
-      :not(.scroll).dark-background & {
+      header.dark-background & {
         opacity: .7;
         fill: var(--third-color);
       }
@@ -232,10 +227,31 @@ body {
 }
 
 .cart_btn {
+  svg path,
+  svg g {
+    fill: var(--header-mainmenu-active-color);
+
+    header.dark-background & {
+      fill: var(--third-color);
+    }
+  }
+
+  &:hover {
+    svg path,
+    svg g {
+      fill: var(--header-mainmenu-color);
+
+      header.dark-background & {
+        opacity: .7;
+        fill: var(--third-color);
+      }
+    }
+  }
+
   .cart_btn-count {
     color: var(--header-mainmenu-active-color);
 
-    :not(.scroll).dark-background & {
+    header.dark-background & {
       color: var(--third-color);
     }
   }
@@ -254,21 +270,20 @@ body {
     svg path {
     fill: var(--header-mainmenu-color);
 
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        fill: var(--third-color);
-      }
+    header.dark-background & {
+      fill: var(--third-color);
     }
+    
   }
 
   &:hover svg path {
     fill: var(--header-mainmenu-hover-color);
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        opacity: .7;
-        fill: var(--third-color);
-      }
+
+    header.dark-background & {
+      opacity: .7;
+      fill: var(--third-color);
     }
+    
   }
 }
 
@@ -280,18 +295,18 @@ body {
     stroke: var(--header-mainmenu-act
     ive-color);
 
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        stroke: var(--third-color);
-      }
+
+    header.dark-background & {
+      stroke: var(--third-color);
     }
+    
   }
 
-  @include query($tablet-1, 'min-width') {
-    :not(.scroll).dark-background & {
-      color: var(--third-color);
-    }
+
+  header.dark-background & {
+    color: var(--third-color);
   }
+  
 
   &:hover {
     color: var(--header-mainmenu-color);
@@ -299,31 +314,30 @@ body {
     svg path {
       stroke: var(--header-mainmenu-color);
 
-      @include query($tablet-1, 'min-width') {
-        :not(.scroll).dark-background & {
-          opacity: .7;
-          stroke: var(--third-color);
-        }
+      header.dark-background & {
+        opacity: .7;
+        stroke: var(--third-color);
       }
+      
     }
 
-    @include query($tablet-1, 'min-width') {
-      :not(.scroll).dark-background & {
-        opacity: .7;
-        color: var(--third-color);
-      }
+
+    header.dark-background & {
+      opacity: .7;
+      color: var(--third-color);
     }
+    
   }
 }
 
 .edy-ecommerce-product-count {
   color: var(--header-mainmenu-active-color);
 
-  @include query($tablet-1, 'min-width') {
-    :not(.scroll).dark-background & {
-      color: var(--third-color);
-    }
+
+  header.dark-background & {
+    color: var(--third-color);
   }
+  
 }
 
 // Styling rules for the site's main menu.
@@ -363,14 +377,14 @@ body {
           color: $red;
         }
 
-        .dark-background & {
+        header.dark-background & {
           color: var(--third-color);
         }
 
         &::before {
           background-color: var(--header-mainmenu-color);
 
-          .dark-background & {
+          header.dark-background & {
             background-color: var(--third-color);
           }
         }
@@ -381,7 +395,7 @@ body {
           font-weight: var(--header-mainmenu-hover-font-weight);
           font-style: var(--header-mainmenu-hover-font-style);
 
-          .dark-background & {
+          header.dark-background & {
             color: var(--third-color);
             opacity: .7;
           }
@@ -408,13 +422,13 @@ body {
         &::before {
           background-color: var(--header-mainmenu-active-color);
 
-          .dark-background & {
+          header.dark-background & {
             background-color: var(--third-color);
             opacity: .7;
           }
         }
 
-        .dark-background & {
+        header.dark-background & {
           color: var(--third-color);
           opacity: .7;
         }
@@ -428,7 +442,7 @@ body {
             background-color: var(--header-mainmenu-hover-color);
           }
 
-          .dark-background & {
+          header.dark-background & {
             color: var(--third-color);
             opacity: 1;
           }
@@ -490,7 +504,7 @@ body {
             line-height: 21px;
           }
 
-          .dark-background & {
+          .semimodal_inner.dark-background & {
             color: var(--third-color);
           }
 
@@ -505,14 +519,14 @@ body {
             font-style: var(--menu-sub-hover-font-style);
             text-transform: var(--menu-sub-hover-text-transform);
 
-            .dark-background & {
+            .semimodal_inner.dark-background & {
               color: var(--third-color);
             }
 
             &::before {
               border-color: var(--menu-sub-hover-color);
 
-              .dark-background & {
+              .semimodal_inner.dark-background & {
                 border-color: var(--third-color);
               }
             }
@@ -521,7 +535,7 @@ body {
           &::before {
             border-color: var(--menu-sub-hover-color);
 
-            .dark-background & {
+            .semimodal_inner.dark-background & {
               border-color: var(--third-color);
             }
           }
@@ -544,14 +558,14 @@ body {
           color: $red;
         }
 
-        .dark-background & {
+        .semimodal_inner.dark-background & {
           color: var(--third-color);
         }
 
         &::before {
           border-color: var(--menu-sub-active-color);
 
-          .dark-background & {
+          .semimodal_inner.dark-background & {
             border-color: var(--third-color);
           }
         }
@@ -566,7 +580,7 @@ body {
           path {
             fill: var(--menu-sub-color);
 
-            .dark-background & {
+            .semimodal_inner.dark-background & {
               fill: var(--third-color);
             }
           }
@@ -611,8 +625,24 @@ body {
     }
   }
 
-  .menu-btn .menu-stripe {
-    background-color: var(--header-mainmenu-active-color);
+  .menu-btn {
+    div > .menu-stripe {
+      background-color: var(--header-mainmenu-active-color);
+    }
+
+    > label {
+      color: var(--header-mainmenu-active-color);
+    }
+
+    &:hover {
+      div > .menu-stripe {
+        background-color: var(--header-mainmenu-hover-color);
+      }
+  
+      > label {
+        color: var(--header-mainmenu-hover-color);
+      }
+    }
   }
 
   .header_fixed-content .header_title.content-formatted:not(.product_filters) {
@@ -633,7 +663,7 @@ body {
       }
   
       .search-btn,
-      .cart-btn {
+      .cart_btn {
         &:hover svg {
           g, path {
             fill: var(--header-mainmenu-color);
@@ -671,7 +701,7 @@ body {
   &.dark-background.scroll,
   .dark-background &:not(.scroll) {
     .menu-main .menu .menu-item {
-      a {
+      a:not(.dd-menu-element) {
         &:hover {
           opacity: 0.7;
         }
@@ -752,6 +782,12 @@ body {
         background-color: var(--third-color);
       }
     }
+
+    .menu-btn > label {
+      :not(.semimodal-open) & {
+        color: var(--third-color);
+      }
+    }
     
     .header_fixed-content .header_title.content-formatted:not(.product_filters) {
       color: var(--third-color);
@@ -780,7 +816,7 @@ body {
   }
 }
 
-.dark-background .light-background {
+.dark-background .light-background.scroll {
   .header_components-semimodal,
   .site_title.content-formatted,
   .semimodal_bottom-content,
@@ -816,7 +852,7 @@ body {
 
   .menu-main {
     .menu {
-      .menu-item a {
+      .menu-item.top-menu-element > a {
         color: var(--header-mainmenu-color);
 
         &::before {
@@ -829,7 +865,7 @@ body {
         }
       }
 
-      .menu-item a.selected {
+      .menu-item.top-menu-element > a.selected {
         color: var(--header-mainmenu-active-color);
         opacity: 1;
 
@@ -896,7 +932,7 @@ body {
 
     .menu {
       .menu-item { 
-        a {
+       .dd-menu-element {
           color: var(--menu-dropdown-text-color);
 
           &.untranslated {
@@ -1168,7 +1204,8 @@ body {
     text-decoration: var(--content-link-text-decoration);
     text-transform: var(--content-link-text-transform);
 
-    .dark-background & {
+    body.dark-background header:not(.light-background) &,
+    header.dark-background & {
       color: var(--third-color);
     }
 
@@ -1180,7 +1217,8 @@ body {
       text-transform: var(--content-link-hover-text-transform);
 
       // scss-lint:disable NestingDepth
-      .dark-background & {
+      body.dark-background header:not(.light-background) &,
+      header.dark-background & {
         color: var(--third-color);
       }
       // scss-lint:enable NestingDepth
@@ -1198,7 +1236,7 @@ body {
     color: var(--header-site-title-color);
     hyphens: var(--header-site-title-hyphens);
 
-    .dark-background & {
+    header.dark-background & {
       color: var(--third-color);
     }
 
@@ -1212,7 +1250,7 @@ body {
       color: var(--header-site-title-color);
       hyphens: var(--header-site-title-hyphens);
 
-      .dark-background & {
+      header.dark-background & {
         color: var(--third-color);
       }
     }

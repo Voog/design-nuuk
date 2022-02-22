@@ -1,5 +1,5 @@
 <header class="header_fixed semimodal-bg_picker--area {{ semimodal_bg_type }}{% if _menuPos == 'is_top_fixed' %} relative{% endif %}{% if _menuTop == true %} menu-top{% endif %}">
-  <div class="semimodal-bg_color bg_color-absolute{% if _menuPos == 'is_side_absolute' %} hidden-desktop{% endif %}"
+  <div class="semimodal-bg_color bg_color-absolute{% if _menuPos == 'is_side_always_open' %} hidden-desktop{% endif %}"
       {%- if semimodal_bg.color != blank %}
         style="background-color: {{ semimodal_bg.color }};"
       {%- endif -%}

@@ -28,11 +28,7 @@
   </style>
 {%- endif -%}
 
-<div class="
-  semimodal js-prevent-sideclick semimodal-bg_picker--area {{semimodal_bg_type}}
-  {%- if menuTop == true %} hidden-desktop{% endif -%}
-  "
->
+<div class="semimodal js-prevent-sideclick {%- if menuTop == true %} hidden-desktop{% endif -%}">
   {%- assign imageClass = "image_fit-cover image_abs semimodal-bg_image" -%}
   {%- include "lazy-image", _data: semimodal_bg, _className: imageClass -%}
 
@@ -42,7 +38,7 @@
     {%- endif -%}
   ></div>
 
-  <header class="semimodal_inner">
+  <header class="semimodal_inner semimodal-bg_picker--area {{ semimodal_bg_type }}">
     <div class="flex_box">
       <button class="menu-btn js-menu-btn js-prevent-sideclick{% if menuTop == true %} hidden-desktop{% endif %}">
         <div>

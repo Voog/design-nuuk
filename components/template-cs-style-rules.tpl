@@ -84,7 +84,7 @@ body.dark-background {
   color: var(--header-mainmenu-active-color);
 }
 
-:not(.scroll).dark-background .menu-btn {
+header:not(.scroll).dark-background .menu-btn {
   color: var(--third-color);
 }
 
@@ -92,7 +92,7 @@ body.dark-background {
   background-color: var(--header-mainmenu-active-color);
 }
 
-:not(.scroll).dark-background .menu-btn .menu-stripe {
+header:not(.scroll).dark-background .menu-btn .menu-stripe {
   background-color: var(--third-color);
 }
 
@@ -100,90 +100,92 @@ body.dark-background {
   color: var(--header-mainmenu-active-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-btn:hover {
-    color: var(--third-color);
-    opacity: .7;
-  }
+header:not(.scroll).dark-background .menu-btn:hover {
+  color: var(--third-color);
+  opacity: .7;
 }
 
 .menu-btn:hover .menu-stripe {
   background-color: var(--header-mainmenu-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-btn:hover .menu-stripe {
-    background-color: var(--third-color);
-  }
+header:not(.scroll).dark-background .menu-btn:hover .menu-stripe {
+  background-color: var(--third-color);
 }
 
-.scroll.dark-background .menu-main .menu .menu-item,
-.scroll.dark-background .content-formatted.header_title {
+header.header_fixed.scroll.dark-background .menu-main .menu .menu-item,
+header.header_fixed.scroll.dark-background .content-formatted.header_title {
   color: var(--header-mainmenu-color);
 }
 
-.scroll.dark-background .menu-main .menu .menu-item a, .scroll.dark-background .menu-main .menu .menu-item p, .scroll.dark-background .menu-main .menu .menu-item h1, .scroll.dark-background .menu-main .menu .menu-item h2, .scroll.dark-background .menu-main .menu .menu-item h3, .scroll.dark-background .menu-main .menu .menu-item h4, .scroll.dark-background .menu-main .menu .menu-item h5, .scroll.dark-background .menu-main .menu .menu-item h6,
-.scroll.dark-background .content-formatted.header_title a,
-.scroll.dark-background .content-formatted.header_title p,
-.scroll.dark-background .content-formatted.header_title h1,
-.scroll.dark-background .content-formatted.header_title h2,
-.scroll.dark-background .content-formatted.header_title h3,
-.scroll.dark-background .content-formatted.header_title h4,
-.scroll.dark-background .content-formatted.header_title h5,
-.scroll.dark-background .content-formatted.header_title h6 {
+header.header_fixed.scroll.dark-background .menu-main .menu .menu-item a,
+header.header_fixed.scroll.dark-background .content-formatted.header_title a {
   color: var(--header-mainmenu-color);
 }
 
-.scroll.dark-background .menu-main .menu .menu-item.active a,
-.scroll.dark-background .menu-main .menu .menu-item a.selected,
-.scroll.dark-background .content-formatted.header_title.active a,
-.scroll.dark-background .content-formatted.header_title a.selected {
+header.header_fixed.scroll.dark-background .menu-main .menu .menu-item.active a,
+header.header_fixed.scroll.dark-background .menu-main .menu .menu-item a.selected,
+header.header_fixed.scroll.dark-background .content-formatted.header_title.active a,
+header.header_fixed.scroll.dark-background .content-formatted.header_title a.selected {
   color: var(--header-mainmenu-active-color);
 }
 
-.scroll.dark-background .menu-main .menu .menu-item a:hover,
-.scroll.dark-background .content-formatted.header_title a:hover {
+header.header_fixed.scroll.dark-background .menu-main .menu .menu-item a:hover,
+header.header_fixed.scroll.dark-background .content-formatted.header_title a:hover {
   color: var(--header-mainmenu-color);
   opacity: .7;
 }
 
-.scroll.dark-background .menu-main .menu_popover .menu .menu-item {
+header.header_fixed.scroll.dark-background .menu-main .menu_popover .menu .menu-item {
   color: var(--third-color);
 }
 
-.scroll.dark-background .menu-main .menu_popover .menu .menu-item a, .scroll.dark-background .menu-main .menu_popover .menu .menu-item p, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h1, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h2, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h3, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h4, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h5, .scroll.dark-background .menu-main .menu_popover .menu .menu-item h6 {
+header.header_fixed.scroll.dark-background .menu-main .menu_popover .menu .menu-item a {
   color: var(--third-color);
 }
 
-.scroll.dark-background .menu-main .menu_popover .menu .menu-item a:hover,
-.scroll.dark-background .menu-main .menu_popover .menu .menu-item.active a {
+header.header_fixed.scroll.dark-background .menu-main .menu_popover .menu .menu-item a:hover,
+header.header_fixed.scroll.dark-background .menu-main .menu_popover .menu .menu-item.active a {
   color: var(--third-color);
 }
 
 .search-btn svg path,
-.search-btn svg g,
+.search-btn svg g {
+  fill: var(--header-mainmenu-active-color);
+}
+
+header.dark-background .search-btn svg path, header.dark-background
+.search-btn svg g {
+  fill: var(--third-color);
+}
+
+.search-btn:hover svg path,
+.search-btn:hover svg g {
+  fill: var(--header-mainmenu-color);
+}
+
+header.dark-background .search-btn:hover svg path, header.dark-background
+.search-btn:hover svg g {
+  opacity: .7;
+  fill: var(--third-color);
+}
+
 .cart_btn svg path,
 .cart_btn svg g {
   fill: var(--header-mainmenu-active-color);
 }
 
-:not(.scroll).dark-background .search-btn svg path, :not(.scroll).dark-background
-.search-btn svg g, :not(.scroll).dark-background
-.cart_btn svg path, :not(.scroll).dark-background
+header.dark-background .cart_btn svg path, header.dark-background
 .cart_btn svg g {
   fill: var(--third-color);
 }
 
-.search-btn:hover svg path,
-.search-btn:hover svg g,
 .cart_btn:hover svg path,
 .cart_btn:hover svg g {
   fill: var(--header-mainmenu-color);
 }
 
-:not(.scroll).dark-background .search-btn:hover svg path, :not(.scroll).dark-background
-.search-btn:hover svg g, :not(.scroll).dark-background
-.cart_btn:hover svg path, :not(.scroll).dark-background
+header.dark-background .cart_btn:hover svg path, header.dark-background
 .cart_btn:hover svg g {
   opacity: .7;
   fill: var(--third-color);
@@ -193,7 +195,7 @@ body.dark-background {
   color: var(--header-mainmenu-active-color);
 }
 
-:not(.scroll).dark-background .cart_btn .cart_btn-count {
+header.dark-background .cart_btn .cart_btn-count {
   color: var(--third-color);
 }
 
@@ -207,21 +209,17 @@ body.dark-background {
   fill: var(--header-mainmenu-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu_popover-btn svg path {
-    fill: var(--third-color);
-  }
+header.dark-background .menu_popover-btn svg path {
+  fill: var(--third-color);
 }
 
 .menu_popover-btn:hover svg path {
   fill: var(--header-mainmenu-hover-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu_popover-btn:hover svg path {
-    opacity: .7;
-    fill: var(--third-color);
-  }
+header.dark-background .menu_popover-btn:hover svg path {
+  opacity: .7;
+  fill: var(--third-color);
 }
 
 .menu-language-btn,
@@ -234,18 +232,14 @@ body.dark-background {
   stroke: var(--header-mainmenu-act ive-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn svg path, :not(.scroll).dark-background
-  .menu-language-name svg path {
-    stroke: var(--third-color);
-  }
+header.dark-background .menu-language-btn svg path, header.dark-background
+.menu-language-name svg path {
+  stroke: var(--third-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn, :not(.scroll).dark-background
-  .menu-language-name {
-    color: var(--third-color);
-  }
+header.dark-background .menu-language-btn, header.dark-background
+.menu-language-name {
+  color: var(--third-color);
 }
 
 .menu-language-btn:hover,
@@ -258,30 +252,24 @@ body.dark-background {
   stroke: var(--header-mainmenu-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn:hover svg path, :not(.scroll).dark-background
-  .menu-language-name:hover svg path {
-    opacity: .7;
-    stroke: var(--third-color);
-  }
+header.dark-background .menu-language-btn:hover svg path, header.dark-background
+.menu-language-name:hover svg path {
+  opacity: .7;
+  stroke: var(--third-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .menu-language-btn:hover, :not(.scroll).dark-background
-  .menu-language-name:hover {
-    opacity: .7;
-    color: var(--third-color);
-  }
+header.dark-background .menu-language-btn:hover, header.dark-background
+.menu-language-name:hover {
+  opacity: .7;
+  color: var(--third-color);
 }
 
 .edy-ecommerce-product-count {
   color: var(--header-mainmenu-active-color);
 }
 
-@media screen and (min-width: 900px) {
-  :not(.scroll).dark-background .edy-ecommerce-product-count {
-    color: var(--third-color);
-  }
+header.dark-background .edy-ecommerce-product-count {
+  color: var(--third-color);
 }
 
 .menu-main .menu .menu-item .dropdown_menu-popover--wrap .dropdown_menu-popover {
@@ -325,7 +313,7 @@ body.dark-background {
   color: #C5292A;
 }
 
-.dark-background .menu-main .menu .menu-item a {
+header.dark-background .menu-main .menu .menu-item a {
   color: var(--third-color);
 }
 
@@ -333,7 +321,7 @@ body.dark-background {
   background-color: var(--header-mainmenu-color);
 }
 
-.dark-background .menu-main .menu .menu-item a::before {
+header.dark-background .menu-main .menu .menu-item a::before {
   background-color: var(--third-color);
 }
 
@@ -345,7 +333,7 @@ body.dark-background {
   font-style: var(--header-mainmenu-hover-font-style);
 }
 
-.dark-background .menu-main .menu .menu-item a:hover {
+header.dark-background .menu-main .menu .menu-item a:hover {
   color: var(--third-color);
   opacity: .7;
 }
@@ -375,12 +363,12 @@ body.dark-background {
   background-color: var(--header-mainmenu-active-color);
 }
 
-.dark-background .menu-main .menu .menu-item a.selected::before {
+header.dark-background .menu-main .menu .menu-item a.selected::before {
   background-color: var(--third-color);
   opacity: .7;
 }
 
-.dark-background .menu-main .menu .menu-item a.selected {
+header.dark-background .menu-main .menu .menu-item a.selected {
   color: var(--third-color);
   opacity: .7;
 }
@@ -396,7 +384,7 @@ body.dark-background {
   background-color: var(--header-mainmenu-hover-color);
 }
 
-.dark-background .menu-main .menu .menu-item a.selected:hover {
+header.dark-background .menu-main .menu .menu-item a.selected:hover {
   color: var(--third-color);
   opacity: 1;
 }
@@ -453,7 +441,7 @@ body.dark-background {
   }
 }
 
-.dark-background .menu-main .menu .menu-sub .menu-item a {
+.semimodal_inner.dark-background .menu-main .menu .menu-sub .menu-item a {
   color: var(--third-color);
 }
 
@@ -470,7 +458,7 @@ body.dark-background {
   text-transform: var(--menu-sub-hover-text-transform);
 }
 
-.dark-background .menu-main .menu .menu-sub .menu-item a:hover {
+.semimodal_inner.dark-background .menu-main .menu .menu-sub .menu-item a:hover {
   color: var(--third-color);
 }
 
@@ -478,7 +466,7 @@ body.dark-background {
   border-color: var(--menu-sub-hover-color);
 }
 
-.dark-background .menu-main .menu .menu-sub .menu-item a:hover::before {
+.semimodal_inner.dark-background .menu-main .menu .menu-sub .menu-item a:hover::before {
   border-color: var(--third-color);
 }
 
@@ -486,7 +474,7 @@ body.dark-background {
   border-color: var(--menu-sub-hover-color);
 }
 
-.dark-background .menu-main .menu .menu-sub .menu-item a::before {
+.semimodal_inner.dark-background .menu-main .menu .menu-sub .menu-item a::before {
   border-color: var(--third-color);
 }
 
@@ -510,7 +498,7 @@ body.dark-background {
   color: #C5292A;
 }
 
-.dark-background .menu-main .menu .menu-sub .menu-item.active a {
+.semimodal_inner.dark-background .menu-main .menu .menu-sub .menu-item.active a {
   color: var(--third-color);
 }
 
@@ -518,7 +506,7 @@ body.dark-background {
   border-color: var(--menu-sub-active-color);
 }
 
-.dark-background .menu-main .menu .menu-sub .menu-item.active a::before {
+.semimodal_inner.dark-background .menu-main .menu .menu-sub .menu-item.active a::before {
   border-color: var(--third-color);
 }
 
@@ -535,7 +523,7 @@ body.dark-background {
   fill: var(--menu-sub-color);
 }
 
-.dark-background .menu-main .menu .menu-sub .menu-item.active a:hover svg, .dark-background
+.semimodal_inner.dark-background .menu-main .menu .menu-sub .menu-item.active a:hover svg, .semimodal_inner.dark-background
 .menu-main .menu .menu-sub .menu-item.active a:hover path {
   fill: var(--third-color);
 }
@@ -584,8 +572,20 @@ body.dark-background {
   color: var(--header-mainmenu-hover-color);
 }
 
-.header_fixed:not(.relative) .menu-btn .menu-stripe {
+.header_fixed:not(.relative) .menu-btn div > .menu-stripe {
   background-color: var(--header-mainmenu-active-color);
+}
+
+.header_fixed:not(.relative) .menu-btn > label {
+  color: var(--header-mainmenu-active-color);
+}
+
+.header_fixed:not(.relative) .menu-btn:hover div > .menu-stripe {
+  background-color: var(--header-mainmenu-hover-color);
+}
+
+.header_fixed:not(.relative) .menu-btn:hover > label {
+  color: var(--header-mainmenu-hover-color);
 }
 
 .header_fixed:not(.relative) .header_fixed-content .header_title.content-formatted:not(.product_filters) {
@@ -605,14 +605,14 @@ body.dark-background {
 }
 
 .header_fixed:not(.relative):not(.scroll) .search-btn:hover svg g, .header_fixed:not(.relative):not(.scroll) .search-btn:hover svg path,
-.header_fixed:not(.relative):not(.scroll) .cart-btn:hover svg g,
-.header_fixed:not(.relative):not(.scroll) .cart-btn:hover svg path {
+.header_fixed:not(.relative):not(.scroll) .cart_btn:hover svg g,
+.header_fixed:not(.relative):not(.scroll) .cart_btn:hover svg path {
   fill: var(--header-mainmenu-color);
 }
 
 .header_fixed:not(.relative):not(.scroll) .search-btn svg g, .header_fixed:not(.relative):not(.scroll) .search-btn svg path,
-.header_fixed:not(.relative):not(.scroll) .cart-btn svg g,
-.header_fixed:not(.relative):not(.scroll) .cart-btn svg path {
+.header_fixed:not(.relative):not(.scroll) .cart_btn svg g,
+.header_fixed:not(.relative):not(.scroll) .cart_btn svg path {
   fill: var(--header-mainmenu-active-color);
 }
 
@@ -636,18 +636,18 @@ body.dark-background {
   stroke: var(--header-mainmenu-active-color);
 }
 
-.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a,
-.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item a {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a:not(.dd-menu-element),
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item a:not(.dd-menu-element) {
   color: var(--third-color);
 }
 
-.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a:hover,
-.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item a:hover {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a:not(.dd-menu-element):hover,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item a:not(.dd-menu-element):hover {
   opacity: 0.7;
 }
 
-.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a.untranslated,
-.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item a.untranslated {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu .menu-item a:not(.dd-menu-element).untranslated,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu .menu-item a:not(.dd-menu-element).untranslated {
   color: #C5292A;
 }
 
@@ -740,6 +740,11 @@ body.dark-background {
   background-color: var(--third-color);
 }
 
+:not(.semimodal-open) .header_fixed:not(.relative).dark-background.scroll .menu-btn > label, :not(.semimodal-open)
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-btn > label {
+  color: var(--third-color);
+}
+
 .header_fixed:not(.relative).dark-background.scroll .header_fixed-content .header_title.content-formatted:not(.product_filters),
 .dark-background .header_fixed:not(.relative):not(.scroll) .header_fixed-content .header_title.content-formatted:not(.product_filters) {
   color: var(--third-color);
@@ -769,134 +774,134 @@ body.dark-background {
   stroke: var(--third-color);
 }
 
-.dark-background .light-background .header_components-semimodal,
-.dark-background .light-background .site_title.content-formatted,
-.dark-background .light-background .semimodal_bottom-content,
-.dark-background .light-background .menu-language-btn,
-.dark-background .light-background .menu-language-name {
+.dark-background .light-background.scroll .header_components-semimodal,
+.dark-background .light-background.scroll .site_title.content-formatted,
+.dark-background .light-background.scroll .semimodal_bottom-content,
+.dark-background .light-background.scroll .menu-language-btn,
+.dark-background .light-background.scroll .menu-language-name {
   color: var(--header-mainmenu-active-color);
 }
 
-.dark-background .light-background .header_components-semimodal a, .dark-background .light-background .header_components-semimodal p, .dark-background .light-background .header_components-semimodal h1, .dark-background .light-background .header_components-semimodal h2, .dark-background .light-background .header_components-semimodal h3, .dark-background .light-background .header_components-semimodal h4, .dark-background .light-background .header_components-semimodal h5, .dark-background .light-background .header_components-semimodal h6,
-.dark-background .light-background .site_title.content-formatted a,
-.dark-background .light-background .site_title.content-formatted p,
-.dark-background .light-background .site_title.content-formatted h1,
-.dark-background .light-background .site_title.content-formatted h2,
-.dark-background .light-background .site_title.content-formatted h3,
-.dark-background .light-background .site_title.content-formatted h4,
-.dark-background .light-background .site_title.content-formatted h5,
-.dark-background .light-background .site_title.content-formatted h6,
-.dark-background .light-background .semimodal_bottom-content a,
-.dark-background .light-background .semimodal_bottom-content p,
-.dark-background .light-background .semimodal_bottom-content h1,
-.dark-background .light-background .semimodal_bottom-content h2,
-.dark-background .light-background .semimodal_bottom-content h3,
-.dark-background .light-background .semimodal_bottom-content h4,
-.dark-background .light-background .semimodal_bottom-content h5,
-.dark-background .light-background .semimodal_bottom-content h6,
-.dark-background .light-background .menu-language-btn a,
-.dark-background .light-background .menu-language-btn p,
-.dark-background .light-background .menu-language-btn h1,
-.dark-background .light-background .menu-language-btn h2,
-.dark-background .light-background .menu-language-btn h3,
-.dark-background .light-background .menu-language-btn h4,
-.dark-background .light-background .menu-language-btn h5,
-.dark-background .light-background .menu-language-btn h6,
-.dark-background .light-background .menu-language-name a,
-.dark-background .light-background .menu-language-name p,
-.dark-background .light-background .menu-language-name h1,
-.dark-background .light-background .menu-language-name h2,
-.dark-background .light-background .menu-language-name h3,
-.dark-background .light-background .menu-language-name h4,
-.dark-background .light-background .menu-language-name h5,
-.dark-background .light-background .menu-language-name h6 {
+.dark-background .light-background.scroll .header_components-semimodal a, .dark-background .light-background.scroll .header_components-semimodal p, .dark-background .light-background.scroll .header_components-semimodal h1, .dark-background .light-background.scroll .header_components-semimodal h2, .dark-background .light-background.scroll .header_components-semimodal h3, .dark-background .light-background.scroll .header_components-semimodal h4, .dark-background .light-background.scroll .header_components-semimodal h5, .dark-background .light-background.scroll .header_components-semimodal h6,
+.dark-background .light-background.scroll .site_title.content-formatted a,
+.dark-background .light-background.scroll .site_title.content-formatted p,
+.dark-background .light-background.scroll .site_title.content-formatted h1,
+.dark-background .light-background.scroll .site_title.content-formatted h2,
+.dark-background .light-background.scroll .site_title.content-formatted h3,
+.dark-background .light-background.scroll .site_title.content-formatted h4,
+.dark-background .light-background.scroll .site_title.content-formatted h5,
+.dark-background .light-background.scroll .site_title.content-formatted h6,
+.dark-background .light-background.scroll .semimodal_bottom-content a,
+.dark-background .light-background.scroll .semimodal_bottom-content p,
+.dark-background .light-background.scroll .semimodal_bottom-content h1,
+.dark-background .light-background.scroll .semimodal_bottom-content h2,
+.dark-background .light-background.scroll .semimodal_bottom-content h3,
+.dark-background .light-background.scroll .semimodal_bottom-content h4,
+.dark-background .light-background.scroll .semimodal_bottom-content h5,
+.dark-background .light-background.scroll .semimodal_bottom-content h6,
+.dark-background .light-background.scroll .menu-language-btn a,
+.dark-background .light-background.scroll .menu-language-btn p,
+.dark-background .light-background.scroll .menu-language-btn h1,
+.dark-background .light-background.scroll .menu-language-btn h2,
+.dark-background .light-background.scroll .menu-language-btn h3,
+.dark-background .light-background.scroll .menu-language-btn h4,
+.dark-background .light-background.scroll .menu-language-btn h5,
+.dark-background .light-background.scroll .menu-language-btn h6,
+.dark-background .light-background.scroll .menu-language-name a,
+.dark-background .light-background.scroll .menu-language-name p,
+.dark-background .light-background.scroll .menu-language-name h1,
+.dark-background .light-background.scroll .menu-language-name h2,
+.dark-background .light-background.scroll .menu-language-name h3,
+.dark-background .light-background.scroll .menu-language-name h4,
+.dark-background .light-background.scroll .menu-language-name h5,
+.dark-background .light-background.scroll .menu-language-name h6 {
   color: var(--header-mainmenu-color);
 }
 
-.dark-background .light-background .menu-btn {
+.dark-background .light-background.scroll .menu-btn {
   color: var(--header-mainmenu-color);
 }
 
-.dark-background .light-background .menu-btn .menu-stripe {
+.dark-background .light-background.scroll .menu-btn .menu-stripe {
   background-color: var(--header-mainmenu-color);
 }
 
-.dark-background .light-background .search-btn svg g,
-.dark-background .light-background .cart_btn svg g,
-.dark-background .light-background .cart_btn svg path {
+.dark-background .light-background.scroll .search-btn svg g,
+.dark-background .light-background.scroll .cart_btn svg g,
+.dark-background .light-background.scroll .cart_btn svg path {
   fill: var(--header-mainmenu-active-color);
 }
 
-.dark-background .light-background .search-btn:hover svg g,
-.dark-background .light-background .cart_btn:hover svg g,
-.dark-background .light-background .cart_btn:hover svg path {
+.dark-background .light-background.scroll .search-btn:hover svg g,
+.dark-background .light-background.scroll .cart_btn:hover svg g,
+.dark-background .light-background.scroll .cart_btn:hover svg path {
   fill: var(--header-mainmenu-hover-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-item a {
+.dark-background .light-background.scroll .menu-main .menu .menu-item.top-menu-element > a {
   color: var(--header-mainmenu-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-item a::before {
+.dark-background .light-background.scroll .menu-main .menu .menu-item.top-menu-element > a::before {
   background-color: var(--header-mainmenu-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-item a:hover {
+.dark-background .light-background.scroll .menu-main .menu .menu-item.top-menu-element > a:hover {
   color: var(--header-mainmenu-hover-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-item a.selected {
+.dark-background .light-background.scroll .menu-main .menu .menu-item.top-menu-element > a.selected {
   color: var(--header-mainmenu-active-color);
   opacity: 1;
 }
 
-.dark-background .light-background .menu-main .menu .menu-item a.selected::before {
+.dark-background .light-background.scroll .menu-main .menu .menu-item.top-menu-element > a.selected::before {
   background-color: var(--header-mainmenu-active-color);
   opacity: 1;
 }
 
-.dark-background .light-background .menu-main .menu .menu-item a.selected:hover {
+.dark-background .light-background.scroll .menu-main .menu .menu-item.top-menu-element > a.selected:hover {
   color: var(--header-mainmenu-hover-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-item a.selected:hover::before {
+.dark-background .light-background.scroll .menu-main .menu .menu-item.top-menu-element > a.selected:hover::before {
   background-color: var(--header-mainmenu-hover-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a {
+.dark-background .light-background.scroll .menu-main .menu .menu-sub .menu-item a {
   color: var(--menu-sub-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a::after {
+.dark-background .light-background.scroll .menu-main .menu .menu-sub .menu-item a::after {
   background-color: var(--menu-sub-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active {
+.dark-background .light-background.scroll .menu-main .menu .menu-sub .menu-item a.active {
   color: var(--menu-sub-hover-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active::before {
+.dark-background .light-background.scroll .menu-main .menu .menu-sub .menu-item a.active::before {
   border-color: var(--menu-sub-active-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover {
+.dark-background .light-background.scroll .menu-main .menu .menu-sub .menu-item a.active:hover {
   color: var(--menu-sub-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover svg,
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a.active:hover path {
+.dark-background .light-background.scroll .menu-main .menu .menu-sub .menu-item a.active:hover svg,
+.dark-background .light-background.scroll .menu-main .menu .menu-sub .menu-item a.active:hover path {
   fill: var(--menu-sub-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a:hover {
+.dark-background .light-background.scroll .menu-main .menu .menu-sub .menu-item a:hover {
   color: var(--menu-sub-hover-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a:hover::before {
+.dark-background .light-background.scroll .menu-main .menu .menu-sub .menu-item a:hover::before {
   border-color: var(--menu-sub-hover-color);
 }
 
-.dark-background .light-background .menu-main .menu .menu-sub .menu-item a::before {
+.dark-background .light-background.scroll .menu-main .menu .menu-sub .menu-item a::before {
   border-color: var(--menu-sub-hover-color);
 }
 
@@ -904,11 +909,11 @@ body.dark-background {
   background-color: var(--menu-dropdown-background-color);
 }
 
-.dropwdown_menu-popover .menu .menu-item a {
+.dropwdown_menu-popover .menu .menu-item .dd-menu-element {
   color: var(--menu-dropdown-text-color);
 }
 
-.dropwdown_menu-popover .menu .menu-item a.untranslated {
+.dropwdown_menu-popover .menu .menu-item .dd-menu-element.untranslated {
   color: #C5292A;
 }
 
@@ -1219,8 +1224,13 @@ body.dark-background {
   text-transform: var(--content-link-text-transform);
 }
 
-.dark-background .content-formatted:not(.product_filters) a:not(.custom-btn), .dark-background
-.content-formatted .product_item-btn a:not(.custom-btn), .dark-background
+body.dark-background header:not(.light-background) .content-formatted:not(.product_filters) a:not(.custom-btn),
+header.dark-background .content-formatted:not(.product_filters) a:not(.custom-btn), body.dark-background header:not(.light-background)
+.content-formatted .product_item-btn a:not(.custom-btn),
+header.dark-background
+.content-formatted .product_item-btn a:not(.custom-btn), body.dark-background header:not(.light-background)
+.content-formatted p a:not(.custom-btn),
+header.dark-background
 .content-formatted p a:not(.custom-btn) {
   color: var(--third-color);
 }
@@ -1236,8 +1246,13 @@ body.dark-background {
   text-transform: var(--content-link-hover-text-transform);
 }
 
-.dark-background .content-formatted:not(.product_filters) a:not(.custom-btn):hover, .dark-background
-.content-formatted .product_item-btn a:not(.custom-btn):hover, .dark-background
+body.dark-background header:not(.light-background) .content-formatted:not(.product_filters) a:not(.custom-btn):hover,
+header.dark-background .content-formatted:not(.product_filters) a:not(.custom-btn):hover, body.dark-background header:not(.light-background)
+.content-formatted .product_item-btn a:not(.custom-btn):hover,
+header.dark-background
+.content-formatted .product_item-btn a:not(.custom-btn):hover, body.dark-background header:not(.light-background)
+.content-formatted p a:not(.custom-btn):hover,
+header.dark-background
 .content-formatted p a:not(.custom-btn):hover {
   color: var(--third-color);
 }
@@ -1260,10 +1275,10 @@ body.dark-background {
           hyphens: var(--header-site-title-hyphens);
 }
 
-.dark-background .content-formatted:not(.product_filters).header_title, .dark-background .content-formatted:not(.product_filters).site_title, .dark-background
-.content-formatted .product_item-btn.header_title, .dark-background
-.content-formatted .product_item-btn.site_title, .dark-background
-.content-formatted p.header_title, .dark-background
+header.dark-background .content-formatted:not(.product_filters).header_title, header.dark-background .content-formatted:not(.product_filters).site_title, header.dark-background
+.content-formatted .product_item-btn.header_title, header.dark-background
+.content-formatted .product_item-btn.site_title, header.dark-background
+.content-formatted p.header_title, header.dark-background
 .content-formatted p.site_title {
   color: var(--third-color);
 }
@@ -1314,38 +1329,38 @@ body.dark-background {
           hyphens: var(--header-site-title-hyphens);
 }
 
-.dark-background .content-formatted:not(.product_filters).header_title a, .dark-background .content-formatted:not(.product_filters).header_title p, .dark-background .content-formatted:not(.product_filters).header_title h1, .dark-background .content-formatted:not(.product_filters).header_title h2, .dark-background .content-formatted:not(.product_filters).header_title h3, .dark-background .content-formatted:not(.product_filters).header_title h4, .dark-background .content-formatted:not(.product_filters).header_title h5, .dark-background .content-formatted:not(.product_filters).header_title h6, .dark-background .content-formatted:not(.product_filters).site_title a, .dark-background .content-formatted:not(.product_filters).site_title p, .dark-background .content-formatted:not(.product_filters).site_title h1, .dark-background .content-formatted:not(.product_filters).site_title h2, .dark-background .content-formatted:not(.product_filters).site_title h3, .dark-background .content-formatted:not(.product_filters).site_title h4, .dark-background .content-formatted:not(.product_filters).site_title h5, .dark-background .content-formatted:not(.product_filters).site_title h6, .dark-background
-.content-formatted .product_item-btn.header_title a, .dark-background
-.content-formatted .product_item-btn.header_title p, .dark-background
-.content-formatted .product_item-btn.header_title h1, .dark-background
-.content-formatted .product_item-btn.header_title h2, .dark-background
-.content-formatted .product_item-btn.header_title h3, .dark-background
-.content-formatted .product_item-btn.header_title h4, .dark-background
-.content-formatted .product_item-btn.header_title h5, .dark-background
-.content-formatted .product_item-btn.header_title h6, .dark-background
-.content-formatted .product_item-btn.site_title a, .dark-background
-.content-formatted .product_item-btn.site_title p, .dark-background
-.content-formatted .product_item-btn.site_title h1, .dark-background
-.content-formatted .product_item-btn.site_title h2, .dark-background
-.content-formatted .product_item-btn.site_title h3, .dark-background
-.content-formatted .product_item-btn.site_title h4, .dark-background
-.content-formatted .product_item-btn.site_title h5, .dark-background
-.content-formatted .product_item-btn.site_title h6, .dark-background
-.content-formatted p.header_title a, .dark-background
-.content-formatted p.header_title p, .dark-background
-.content-formatted p.header_title h1, .dark-background
-.content-formatted p.header_title h2, .dark-background
-.content-formatted p.header_title h3, .dark-background
-.content-formatted p.header_title h4, .dark-background
-.content-formatted p.header_title h5, .dark-background
-.content-formatted p.header_title h6, .dark-background
-.content-formatted p.site_title a, .dark-background
-.content-formatted p.site_title p, .dark-background
-.content-formatted p.site_title h1, .dark-background
-.content-formatted p.site_title h2, .dark-background
-.content-formatted p.site_title h3, .dark-background
-.content-formatted p.site_title h4, .dark-background
-.content-formatted p.site_title h5, .dark-background
+header.dark-background .content-formatted:not(.product_filters).header_title a, header.dark-background .content-formatted:not(.product_filters).header_title p, header.dark-background .content-formatted:not(.product_filters).header_title h1, header.dark-background .content-formatted:not(.product_filters).header_title h2, header.dark-background .content-formatted:not(.product_filters).header_title h3, header.dark-background .content-formatted:not(.product_filters).header_title h4, header.dark-background .content-formatted:not(.product_filters).header_title h5, header.dark-background .content-formatted:not(.product_filters).header_title h6, header.dark-background .content-formatted:not(.product_filters).site_title a, header.dark-background .content-formatted:not(.product_filters).site_title p, header.dark-background .content-formatted:not(.product_filters).site_title h1, header.dark-background .content-formatted:not(.product_filters).site_title h2, header.dark-background .content-formatted:not(.product_filters).site_title h3, header.dark-background .content-formatted:not(.product_filters).site_title h4, header.dark-background .content-formatted:not(.product_filters).site_title h5, header.dark-background .content-formatted:not(.product_filters).site_title h6, header.dark-background
+.content-formatted .product_item-btn.header_title a, header.dark-background
+.content-formatted .product_item-btn.header_title p, header.dark-background
+.content-formatted .product_item-btn.header_title h1, header.dark-background
+.content-formatted .product_item-btn.header_title h2, header.dark-background
+.content-formatted .product_item-btn.header_title h3, header.dark-background
+.content-formatted .product_item-btn.header_title h4, header.dark-background
+.content-formatted .product_item-btn.header_title h5, header.dark-background
+.content-formatted .product_item-btn.header_title h6, header.dark-background
+.content-formatted .product_item-btn.site_title a, header.dark-background
+.content-formatted .product_item-btn.site_title p, header.dark-background
+.content-formatted .product_item-btn.site_title h1, header.dark-background
+.content-formatted .product_item-btn.site_title h2, header.dark-background
+.content-formatted .product_item-btn.site_title h3, header.dark-background
+.content-formatted .product_item-btn.site_title h4, header.dark-background
+.content-formatted .product_item-btn.site_title h5, header.dark-background
+.content-formatted .product_item-btn.site_title h6, header.dark-background
+.content-formatted p.header_title a, header.dark-background
+.content-formatted p.header_title p, header.dark-background
+.content-formatted p.header_title h1, header.dark-background
+.content-formatted p.header_title h2, header.dark-background
+.content-formatted p.header_title h3, header.dark-background
+.content-formatted p.header_title h4, header.dark-background
+.content-formatted p.header_title h5, header.dark-background
+.content-formatted p.header_title h6, header.dark-background
+.content-formatted p.site_title a, header.dark-background
+.content-formatted p.site_title p, header.dark-background
+.content-formatted p.site_title h1, header.dark-background
+.content-formatted p.site_title h2, header.dark-background
+.content-formatted p.site_title h3, header.dark-background
+.content-formatted p.site_title h4, header.dark-background
+.content-formatted p.site_title h5, header.dark-background
 .content-formatted p.site_title h6 {
   color: var(--third-color);
 }
