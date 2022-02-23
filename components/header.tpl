@@ -7,9 +7,15 @@
   {%- assign menuTop = false -%}
 {%- endif -%}
 
-{%- include 'menu-main-iteration' -%}
+{%- if menuSettings.indicator -%}
+  {%- assign indicatorStyle = menuSettings.indicator -%}
+{%- else -%}
+  {%- assign indicatorStyle = template_settings.site.menu_settings.value.indicator -%}
+{%- endif -%}
+
+{%- include 'menu-main-iteration', _indicatorStyle: indicatorStyle -%}
 {%- include "site-search" %}
-{% include 'header-fixed', _menuTop: menuTop, _menuPos: menuPos -%}
+{% include 'header-fixed', _menuTop: menuTop, _menuPos: menuPos, _indicatorStyle: indicatorStyle -%}
 {% include 'cart-popover' %}
 
 {%- if menuSettings.max_width >= 1 -%}
@@ -81,7 +87,7 @@
         </div>
       {%- endif -%}
 
-      {%- include "menu-main", _renderSemimodalMenu: true, _indicatorStyle: menuSettings.indicator -%}
+      {%- include "menu-main", _renderSemimodalMenu: true, _indicatorStyle: indicatorStyle -%}
     </div>
   </header>
 </div>
