@@ -132,6 +132,12 @@
       }
     }
   },
+  "product": {
+    "body_bg": {
+      "key": "PREFIX_product_body_bg",
+      "value": {}
+    }
+  },
   "article": {
     "article_settings": {
       "show_date": true,

@@ -1269,6 +1269,10 @@ body.dark-background {
   text-align: var(--product-title-alignment);
 }
 
+.product-page.dark-background .content-body.product-name h3 {
+  color: var(--third-color);
+}
+
 .product-page .content-formatted .content-product-description {
   color: var(--product-description-color);
   font-size: var(--product-description-size);
@@ -1278,6 +1282,10 @@ body.dark-background {
           text-decoration: var(--product-description-font-text-decoration);
 }
 
+.product-page.dark-background .content-formatted .content-product-description {
+  color: var(--third-color);
+}
+
 .product-page .product-price {
   color: var(--product-price-color);
   font-size: var(--product-price-size);
@@ -1285,6 +1293,10 @@ body.dark-background {
   font-style: var(--product-price-font-style);
   -webkit-text-decoration: var(--product-price-font-text-decoration);
           text-decoration: var(--product-price-font-text-decoration);
+}
+
+.product-page.dark-background .product-price {
+  color: var(--third-color);
 }
 
 body.dark-background .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-title,
