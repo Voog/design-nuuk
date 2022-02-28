@@ -26,7 +26,6 @@
   }
 {%- endcapture -%}
 {%- assign swiper_bg = swiper_bg_json | json_parse -%}
-<script>console.log('{{ site.data.nuuk_product_body_bg }}');</script>
 {% capture dont_render %}
   {% comment %}Page data keys{% endcomment %}
   {%- assign bodyBgKey = template_settings.page.body_bg.key -%}

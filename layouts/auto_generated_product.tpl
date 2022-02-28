@@ -57,7 +57,7 @@
                         {%- if product.image != blank -%}
                           <div class="loader js-loader"></div>
                           {%- assign imageClass = "item-image " | append: "not-cropped " | append: "js-lazyload" -%}
-                          {% image_data product.image target_width="1280" class: imageClass %}
+                          {% image_data product.image target_width="600" class: imageClass %}
                         {%- endif -%}
                       </div>
                     </div>
