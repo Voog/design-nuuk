@@ -1259,6 +1259,10 @@ body.dark-background {
   color: var(--primary-color);
 }
 
+.content-formatted option {
+  color: var(--primary-color);
+}
+
 .product-page .content-body.product-name h3 {
   font-size: var(--product-title-size);
   font-weight: var(--product-title-font-weight);
@@ -1378,4 +1382,11 @@ body.dark-background .edy-product-widget-grid .edy-product-widget-item:hover .ed
 
 .dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
   border: 1px solid var(--third-color);
+}
+
+.dark-background .edy-product-widget-filter-name,
+.dark-background .edy-product-widget-filter-sort,
+.dark-background .edy-product-widget-filter-label,
+.dark-background .edy-product-widget-filter-search-input {
+  color: var(--third-color);
 }
