@@ -1259,6 +1259,10 @@ body.dark-background {
   color: var(--primary-color);
 }
 
+.content-formatted option {
+  color: var(--primary-color);
+}
+
 .product-page .content-body.product-name h3 {
   font-size: var(--product-title-size);
   font-weight: var(--product-title-font-weight);
@@ -1267,6 +1271,10 @@ body.dark-background {
           text-decoration: var(--product-title-font-text-decoration);
   color: var(--product-title-color);
   text-align: var(--product-title-alignment);
+}
+
+.product-page.dark-background .content-body.product-name h3 {
+  color: var(--third-color);
 }
 
 .product-page .content-formatted .content-product-description {
@@ -1278,6 +1286,10 @@ body.dark-background {
           text-decoration: var(--product-description-font-text-decoration);
 }
 
+.product-page.dark-background .content-formatted .content-product-description {
+  color: var(--third-color);
+}
+
 .product-page .product-price {
   color: var(--product-price-color);
   font-size: var(--product-price-size);
@@ -1285,4 +1297,96 @@ body.dark-background {
   font-style: var(--product-price-font-style);
   -webkit-text-decoration: var(--product-price-font-text-decoration);
           text-decoration: var(--product-price-font-text-decoration);
+}
+
+.product-page.dark-background .product-price {
+  color: var(--third-color);
+}
+
+body.dark-background .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-title,
+body.dark-background .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-link {
+  color: var(--third-color);
+}
+
+body.dark-background .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-price,
+body.dark-background .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-description {
+  color: var(--third-color);
+  opacity: .7;
+}
+
+body.dark-background .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-top-outer .edy-product-widget-item-top.edy-product-widget-item-without-image {
+  border: 1px solid var(--third-color);
+  opacity: .5;
+}
+
+body.dark-background .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-flex-wrap .edy-product-widget-item-out-of-stock,
+body.dark-background .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-flex-wrap .edy-product-widget-item-btn {
+  color: var(--third-color);
+}
+
+body.dark-background .edy-product-widget-grid .edy-product-widget-item:hover .edy-product-widget-item-price {
+  opacity: 0;
+}
+
+.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-header .edy-product-widget-item-title .edy-product-widget-item-link {
+  color: var(--third-color);
+}
+
+.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-header .edy-product-widget-item-price {
+  color: var(--third-color);
+  opacity: .7;
+}
+
+.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-header .edy-product-widget-item-out-of-stock {
+  color: var(--third-color);
+}
+
+.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-description {
+  color: var(--third-color);
+}
+
+.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-without-image {
+  border: 1px solid var(--third-color);
+  opacity: .5;
+}
+
+.light-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn,
+.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
+  padding: var(--button-padding);
+  color: var(--button-color);
+  font-size: var(--button-font-size);
+  font-style: var(--button-font-style);
+  font-weight: var(--button-font-weight);
+  -webkit-hyphens: var(--button-hyphens);
+      -ms-hyphens: var(--button-hyphens);
+          hyphens: var(--button-hyphens);
+  -webkit-text-decoration: var(--button-text-decoration);
+          text-decoration: var(--button-text-decoration);
+  text-transform: var(--button-text-transform);
+  background-color: var(--button-background-color);
+}
+
+.light-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:hover,
+.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:hover {
+  padding: var(--button-hover-padding);
+  color: var(--button-hover-color);
+  font-size: var(--button-hover-font-size);
+  font-style: var(--button-hover-font-style);
+  font-weight: var(--button-hover-font-weight);
+  -webkit-text-decoration: var(--button-hover-text-decoration);
+          text-decoration: var(--button-hover-text-decoration);
+  text-transform: var(--button-hover-text-transform);
+  background-color: var(--button-hover-background-color);
+  opacity: .8;
+}
+
+.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
+  border: 1px solid var(--third-color);
+}
+
+.dark-background .edy-product-widget-filter-name,
+.dark-background .edy-product-widget-filter-sort,
+.dark-background .edy-product-widget-filter-label,
+.dark-background .edy-product-widget-filter-search-input {
+  color: var(--third-color);
 }

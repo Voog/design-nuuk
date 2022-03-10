@@ -42,6 +42,7 @@
   {%- assign languageMenuSettingsKey = template_settings.site.language_menu_settings.key -%}
   {%- assign menuSettingsKey = template_settings.site.menu_settings.key -%}
   {%- assign semimodalBgKey = template_settings.site.semimodal_bg.key -%}
+  {%- assign productBodyBgKey = template_settings.product.body_bg.key -%}
 
   {%- assign swiperBg1Key = swiperBgKey | append: 1 -%}
   {% assign swiper_bg_1 = page.data[swiperBg1Key] %}
@@ -78,6 +79,8 @@
   {% comment %}Assign variables based on page type.{% endcomment %}
   {% if blog_article_page %}
     {% assign body_bg = article.data[bodyBgKey] %}
+  {% elsif product_page %}
+    {% assign body_bg = site.data[productBodyBgKey] %}
   {% else %}
     {% assign body_bg = page.data[bodyBgKey] %}
   {% endif %}

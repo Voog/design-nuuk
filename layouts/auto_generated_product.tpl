@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-{% include "template-settings" %}
-{% include "template-variables" %}
+{%- include "template-settings"-%}
+{%- include "template-variables" product_page: true -%}
 <html class="{% include "language-menu-class-names" %} {% if editmode %}editmode{% else %}publicmode{% endif %} {% include "semimodal-class-names" %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
   {% include "html-head" %}
@@ -20,6 +20,21 @@
   <div class="container_wrap">
     {% include "header" %}
     <div class="pad_container p-rel">
+      {% if editmode %}
+        <div class="bg-picker-top">
+          <button
+            class="voog-bg-picker-btn body_bg-picker--btn bg-picker {{ productBodyBgKey }}-picker"
+            data-bg_key="{{ productBodyBgKey }}"
+            data-type_picture="false"
+            data-type_color="true"
+            data-color_elem=".body-bg_color"
+            data-picker_area_elem=".body-bg_picker--area"
+            data-picker_elem =".{{ productBodyBgKey }}-picker"
+            data-bg-color="{{ body_bg_color }}"
+            data-entity="siteData"
+          ></button>
+        </div>
+      {% endif %}
       <div class="container">
         <div class="mar_t-32 mar_b-32">
           {% include "menu-breadcrumbs-sd" %}
@@ -42,7 +57,7 @@
                         {%- if product.image != blank -%}
                           <div class="loader js-loader"></div>
                           {%- assign imageClass = "item-image " | append: "not-cropped " | append: "js-lazyload" -%}
-                          {% image_data product.image target_width="1280" class: imageClass %}
+                          {% image_data product.image target_width="600" class: imageClass %}
                         {%- endif -%}
                       </div>
                     </div>
