@@ -26,11 +26,7 @@
   {%- assign menuPosTop = false -%}
 {%- endif -%}
 
-{%- if menuSettings.max_elements -%}
-  {%- assign maxMenuElements = menuSettings.max_elements -%}
-{%- else -%}
-  {%- assign maxMenuElements = template_settings.site.menu_settings.value.max_elements -%}
-{%- endif -%}
+{%- assign maxMenuElements = menuSettings.max_elements | default: template_settings.site.menu_settings.value.max_elements -%}
 
 {%- capture menu_main -%}
   {% for item in site.visible_menuitems %}

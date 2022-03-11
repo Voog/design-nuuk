@@ -1,4 +1,5 @@
 {%- assign blogLayoutSetting = page.data[blogLayoutKey] -%}
+{%- assign defaultBlogLayoutSetting = template_settings.page.blog_settings.value -%}
 {% include 'settings-editor-button',
   _titleKey: "blog_layout",
   _descriptionKey: "edit_blog_layout",
@@ -15,15 +16,15 @@
     {%- endif -%}
 
     if (!('blog_layout' in valuesObj)) {
-      valuesObj.blog_layout = "highlight_with_popout";
+      valuesObj.blog_layout = '{{ defaultBlogLayoutSetting.blog_layout }}';
     }
 
     if (!('show_articles_as_list' in valuesObj)) {
-      valuesObj.show_articles_as_list = false;
+      valuesObj.show_articles_as_list = {{ defaultBlogLayoutSetting.show_articles_as_list }};
     }
 
     if (!('no_of_articles_shown' in valuesObj)) {
-      valuesObj.no_of_articles_shown = 5;
+      valuesObj.no_of_articles_shown = {{ defaultBlogLayoutSetting.no_of_articles_shown }};
     }
 
     initSettingsEditor(

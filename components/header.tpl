@@ -7,11 +7,7 @@
   {%- assign menuTop = false -%}
 {%- endif -%}
 
-{%- if menuSettings.indicator -%}
-  {%- assign indicatorStyle = menuSettings.indicator -%}
-{%- else -%}
-  {%- assign indicatorStyle = template_settings.site.menu_settings.value.indicator -%}
-{%- endif -%}
+{%- assign indicatorStyle = menuSettings.indicator | default: template_settings.site.menu_settings.value.indicator -%}
 
 {%- include 'menu-main-iteration', _indicatorStyle: indicatorStyle -%}
 {%- include "site-search" %}

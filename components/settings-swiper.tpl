@@ -14,15 +14,15 @@
     {% endif %}
 
     if (!('slides_count' in valuesObj)) {
-      valuesObj.slides_count = {{template_settings.page.swiper_settings.value.slides_count}};
+      valuesObj.slides_count = {{ template_settings.page.swiper_settings.value.slides_count }};
     }
 
     if (!('autoplay_interval' in valuesObj)) {
-      valuesObj.autoplay_interval = {{template_settings.page.swiper_settings.value.autoplay_interval}};
+      valuesObj.autoplay_interval = {{ template_settings.page.swiper_settings.value.autoplay_interval }};
     }
 
     if (!('content_position' in valuesObj)) {
-      valuesObj.content_position = "{{template_settings.page.swiper_settings.value.content_position}}";
+      valuesObj.content_position = "{{ template_settings.page.swiper_settings.value.content_position }}";
     }
 
     initSettingsEditor(
@@ -131,7 +131,7 @@
           }
 
         ],
-        dataKey: '{{swiperSettingsKey}}',
+        dataKey: '{{ swiperSettingsKey }}',
         values: valuesObj,
         containerClass: ['bottom-settings-popover', 'third', 'editor_default'],
         prevFunc: function(data) {

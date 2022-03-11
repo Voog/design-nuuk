@@ -1,4 +1,5 @@
 {%- assign menuSettings = site.data[menuSettingsKey] -%}
+{%- assign menuSettingsDefault = template_settings.site.menu_settings.value -%}
 {% include 'settings-editor-button',
   _titleKey: "navigation",
   _descriptionKey: "change_menu_settings",
@@ -16,19 +17,19 @@
       {%- endif -%}
 
       if (!('max_width' in valuesObj)) {
-        valuesObj.max_width = 270;
+        valuesObj.max_width = {{ menuSettingsDefault.max_width }};
       }
 
       if (!('indicator' in valuesObj)) {
-        valuesObj.indicator = 'square';
+        valuesObj.indicator = '{{ menuSettingsDefault.indicator }}';
       }
 
       if (!('positioning' in valuesObj)) {
-        valuesObj.positioning = 'is_side_absolute';
+        valuesObj.positioning = '{{ menuSettingsDefault.positioning }}';
       }
 
       if (!('is_product_page_visible' in valuesObj)) {
-        valuesObj.is_product_page_visible = true;
+        valuesObj.is_product_page_visible = {{ menuSettingsDefault.is_product_page_visible }};
       }
 
       if (!('is_product_list_page_visible' in valuesObj)) {
@@ -36,7 +37,7 @@
       }
 
       if (!('max_elements' in valuesObj)) {
-        valuesObj.max_elements = 5;
+        valuesObj.max_elements = {{ menuSettingsDefault.max_elements }};
       }
 
       {%- assign sideMenuTr = value -%}
@@ -123,7 +124,7 @@
               },
             }
           ],
-          dataKey: '{{menuSettingsKey}}',
+          dataKey: '{{ menuSettingsKey }}',
           values: valuesObj,
           entityData: 'siteData',
           noReload: true,
@@ -153,7 +154,7 @@
               $('.menu-elements-opt').addClass('d-none');
             }
 
-            if (data.positioning !== 'is_side_always_open') {
+            if (data.positioning === 'is_side_always_open') {
               $('.header_fixed .semimodal-bg_color').addClass('hidden-desktop');
             } else {
               $('.header_fixed .semimodal-bg_color').removeClass('hidden-desktop');

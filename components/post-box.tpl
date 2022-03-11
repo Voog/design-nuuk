@@ -101,7 +101,7 @@
       {% endunless %}
 
       {% if _isArticle == true %}
-        <div class="post_excerpt content-formatted content-formatted--overflowed-images mar_t-48 mar_b-64" {{ edy_intro_edit_text }}>{% editable article.excerpt %}</div>
+        <div class="post_excerpt content-formatted content-formatted--overflowed-images mar_t-48 mar_b-64">{% editable article.excerpt %}</div>
         <div class="post_body content-formatted content-formatted--overflowed-images mar_b-64">{% editable article.body %}</div>
         <div class="post_body content-formatted content-formatted--overflowed-images">{% content name="additional_body" bind="Article" %}</div>
       {% endif %}
