@@ -19,8 +19,8 @@
       {%- else -%}
         {%- assign isReadOnly = false -%}
       {%- endif -%}
-      {% contentblock name="site_title" xpage="true"  publish_default_content="true" readonly=isReadOnly %}
-        {{site.header}}
+      {% contentblock name="site_title" xpage="true" publish_default_content="true" readonly=isReadOnly %}
+        {{ site.header }}
       {% endcontentblock %}
     </div>
 
@@ -38,7 +38,7 @@
           data-color_elem=".semimodal-bg_color"
           data-picker_area_elem=".semimodal-bg_picker--area"
           data-picker_elem=".semimodal-bg_picker"
-          data-bg_key="{{semimodalBgKey}}"
+          data-bg_key="{{ semimodalBgKey }}"
           data-bg="{{ semimodal_bg | json | escape }}"
           data-entity="siteData"
         ></button>
