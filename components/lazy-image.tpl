@@ -12,7 +12,7 @@
 
 {%- if _targetWidth != blank -%}
   {%- assign _maxWidth = _targetWidth | plus:0 -%}
-  {%- assign sizes = "(min-width: " | append: _targetWidth | append: "px) " | append: _targetWidth | append: 'px' -%}
+  {%- assign sizes = "(min-width: " | append: _targetWidth | append: "px) " | append: _targetWidth | append: 'px' | append: ', 100vw' -%}
 {%- else -%}
   {%- assign _maxWidth = _data.width -%}
   {%- assign sizes = '100vw' -%}
