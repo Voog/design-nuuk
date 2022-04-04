@@ -321,3 +321,14 @@
     min-height: 32px;
   }
 }
+
+.dark-background {
+  .edy-product-widget-filter-sort,
+  .edy-product-widget-filter-search-input {
+    opacity: .7;
+  }
+
+  .edy-product-widget-filter-label {
+    opacity: .5;
+  }
+}

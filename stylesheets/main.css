@@ -1641,6 +1641,15 @@ p {
   min-height: 32px;
 }
 
+.dark-background .edy-product-widget-filter-sort,
+.dark-background .edy-product-widget-filter-search-input {
+  opacity: .7;
+}
+
+.dark-background .edy-product-widget-filter-label {
+  opacity: .5;
+}
+
 .semimodal {
   position: fixed;
   top: 0;

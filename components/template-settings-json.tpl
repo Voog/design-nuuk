@@ -137,6 +137,12 @@
       }
     }
   },
+  "product": {
+    "body_bg": {
+      "key": "PREFIX_product_body_bg",
+      "value": {}
+    }
+  },
   "article": {
     "article_settings": {
       "show_date": true,
@@ -150,5 +156,5 @@
       "show_related_articles": false
     }
   },
-  "version": "nuuk-1.6.7"
+  "version": "nuuk-1.6.8"
 }
