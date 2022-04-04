@@ -12,7 +12,7 @@
 
 {%- if _targetWidth != blank -%}
   {%- assign _maxWidth = _targetWidth | plus:0 -%}
-  {%- assign sizes = "(min-width: " | append: _targetWidth | append: "px) " | append: _targetWidth | append: 'px' -%}
+  {%- assign sizes = "(min-width: " | append: _targetWidth | append: "px) " | append: _targetWidth | append: 'px' | append: ', 100vw' -%}
 {%- else -%}
   {%- assign _maxWidth = _data.width -%}
   {%- assign sizes = '100vw' -%}
@@ -27,10 +27,11 @@
     {%- if _data[imageSizes].size >= 1 %}
       data-srcset="
         {%- for image in _data[imageSizes] -%}
-          {{image[urlKey]}} {{image.width}}w
-          {%- unless forloop.last -%}
-          ,
-          {%- endunless -%}
+          {%- capture srcsetString -%}
+            {%- if image.width != blank %}{{ image[urlKey] }} {{ image.width }}w{%- endif -%}
+          {%- endcapture -%}
+          {{- srcsetString -}}
+          {%- unless forloop.last or srcsetString == blank -%}, {% endunless -%}
         {%- endfor -%}
       "
     {%- endif -%}
