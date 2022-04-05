@@ -36,7 +36,7 @@
       {% endcapture %}
 
       {%- if swiperSettingsData.slides_count >= 2 -%}
-        <div class="swiper-container">
+        <div class="swiper-container{% if swiperSettingsData.is_full_height %} h-100vh{% endif %}">
           <div class="swiper-wrapper{%- if swiperSettingsData.is_content_by_slide != true %} p-abs{% endif -%}">
             {%- for i in (1..swiperSettingsData.slides_count) -%}
               {% assign swiperDataKey = swiperBgKey | append: i %}
@@ -54,7 +54,7 @@
                 {%- assign imageClass = "image_fit-cover img-absolute swiper-lazy front_header-image-" | append: i -%}
 
                 {% include "lazy-image", _data: imagedata, _targetWidth: '2048', _className: imageClass, disableLazyLoad: true  %}
-                <div class="w-100p h-100p front_header-color-{{i}}"
+                <div class="w-100p h-100p front_header-color-{{i}} d-flex"
                   {% if page.data[swiperDataKey].color != blank %}
                     style="background-color: {{ page.data[swiperDataKey].color }};"
                   {% endif %}
@@ -102,7 +102,7 @@
         </div>
       {%- else -%}
         <div
-          class="swiper-container image_header flex_box front-header-bg_picker--area-1"
+          class="swiper-container image_header flex_box front-header-bg_picker--area-1{% if swiperSettingsData.is_full_height %} h-100vh{% endif %}"
         >
           {%- assign imageClass = "image_fit-cover img-absolute front_header-image-1" -%}
           {% include "lazy-image", _data: swiper_bg_1, _targetWidth: '2048', _className: imageClass  %}

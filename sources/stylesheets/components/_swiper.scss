@@ -85,15 +85,15 @@
 
     &.swiper-content-b_left {
       @include query($tablet-1 + 1, 'min-width') {
-      align-items: flex-start;
-      justify-content: end;
+        align-items: flex-start;
+        justify-content: end;
       }
     }
 
     &.swiper-content-b_right {
       @include query($tablet-1 + 1, 'min-width') {
-      align-items: flex-end;
-      justify-content: end;
+        align-items: flex-end;
+        justify-content: end;
       }
     }
 

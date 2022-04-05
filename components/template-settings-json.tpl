@@ -133,7 +133,8 @@
         "autoplay_interval": 1000,
         "are_navigation_arrows": false,
         "are_navigation_bullets": false,
-        "content_position": "center"
+        "content_position": "center",
+        "is_full_height": false
       }
     }
   },

@@ -25,6 +25,10 @@
       valuesObj.content_position = "{{ template_settings.page.swiper_settings.value.content_position }}";
     }
 
+    if (!('is_full_height' in valuesObj)) {
+      valuesObj.is_full_height = {{ template_settings.page.swiper_settings.value.is_full_height }}
+    }
+
     initSettingsEditor(
       {
         settingsBtn: document.querySelector('.js-swiper-settings-btn'),
@@ -36,6 +40,15 @@
             "placeholder": {{ "no_of_slides" | lce | json }},
             "step": 1,
             "min": 1
+          },
+          {
+            "title": {{ "show_slider_full_height" | lce | json }},
+            "type": "checkbox",
+            "key": "is_full_height",
+            "states": {
+              "on": true,
+              "off": false
+            }
           },
           {
             "title": {{ "content_position" | lce | json }},
@@ -156,6 +169,12 @@
           } else {
             $('.swiper-content').removeClass('swiper-content-b_left swiper-content-b_right');
             $('.swiper-content').addClass('swiper-content-center');
+          }
+
+          if (data.is_full_height === true) {
+            $('.swiper-container').addClass('h-100vh');
+          } else {
+            $('.swiper-container').removeClass('h-100vh');
           }
         }
       }
