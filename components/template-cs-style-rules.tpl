@@ -993,7 +993,6 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 }
 
 .content-formatted:not(.product_filters),
-.content-formatted .product_item-btn,
 .content-formatted p {
   font-size: var(--content-body-font-size);
   line-height: var(--content-body-line-height);
@@ -1005,8 +1004,6 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 
 .post_page .article_item .post_content .content-formatted:not(.product_filters), .post_page .article_item
 .content-formatted:not(.product_filters) .post_details, .post_page .article_item .post_content
-.content-formatted .product_item-btn, .post_page .article_item
-.content-formatted .product_item-btn .post_details, .post_page .article_item .post_content
 .content-formatted p, .post_page .article_item
 .content-formatted p .post_details {
   font-size: var(--blog-body-font-size);
@@ -1014,39 +1011,29 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 }
 
 .post_page .content-formatted:not(.product_filters).post_tags .menu a, .post_page
-.content-formatted .product_item-btn.post_tags .menu a, .post_page
 .content-formatted p.post_tags .menu a {
   font-size: var(--blog-body-font-size);
   line-height: var(--blog-body-line-height);
 }
 
 .dark-background .content-formatted:not(.product_filters), .dark-background
-.content-formatted .product_item-btn, .dark-background
 .content-formatted p {
   color: var(--third-color);
 }
 
 .content-formatted:not(.product_filters) .horizontal-scroll,
-.content-formatted .product_item-btn .horizontal-scroll,
 .content-formatted p .horizontal-scroll {
   border-left: 1px dashed var(--content-body-color);
   border-right: 1px dashed var(--content-body-color);
 }
 
 .dark-background .content-formatted:not(.product_filters) .horizontal-scroll, .dark-background
-.content-formatted .product_item-btn .horizontal-scroll, .dark-background
 .content-formatted p .horizontal-scroll {
   border-left: 1px dashed var(--third-color);
   border-right: 1px dashed var(--third-color);
 }
 
 .content-formatted:not(.product_filters) h1, .content-formatted:not(.product_filters) h2, .content-formatted:not(.product_filters) h3, .content-formatted:not(.product_filters) h4, .content-formatted:not(.product_filters) h5, .content-formatted:not(.product_filters) h6,
-.content-formatted .product_item-btn h1,
-.content-formatted .product_item-btn h2,
-.content-formatted .product_item-btn h3,
-.content-formatted .product_item-btn h4,
-.content-formatted .product_item-btn h5,
-.content-formatted .product_item-btn h6,
 .content-formatted p h1,
 .content-formatted p h2,
 .content-formatted p h3,
@@ -1057,12 +1044,6 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 }
 
 .dark-background .content-formatted:not(.product_filters) h1, .dark-background .content-formatted:not(.product_filters) h2, .dark-background .content-formatted:not(.product_filters) h3, .dark-background .content-formatted:not(.product_filters) h4, .dark-background .content-formatted:not(.product_filters) h5, .dark-background .content-formatted:not(.product_filters) h6, .dark-background
-.content-formatted .product_item-btn h1, .dark-background
-.content-formatted .product_item-btn h2, .dark-background
-.content-formatted .product_item-btn h3, .dark-background
-.content-formatted .product_item-btn h4, .dark-background
-.content-formatted .product_item-btn h5, .dark-background
-.content-formatted .product_item-btn h6, .dark-background
 .content-formatted p h1, .dark-background
 .content-formatted p h2, .dark-background
 .content-formatted p h3, .dark-background
@@ -1073,8 +1054,6 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 }
 
 .dark-background .content-formatted:not(.product_filters) .edy-content-social-button svg, .dark-background .content-formatted:not(.product_filters) .edy-content-social-button path, .dark-background
-.content-formatted .product_item-btn .edy-content-social-button svg, .dark-background
-.content-formatted .product_item-btn .edy-content-social-button path, .dark-background
 .content-formatted p .edy-content-social-button svg, .dark-background
 .content-formatted p .edy-content-social-button path {
   fill: var(--third-color);
@@ -1082,7 +1061,6 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 }
 
 .content-formatted:not(.product_filters) h1,
-.content-formatted .product_item-btn h1,
 .content-formatted p h1 {
   font-size: var(--headings-title-font-size);
   font-style: var(--headings-title-font-style);
@@ -1100,7 +1078,6 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 
 @media screen and (max-width: 900px) {
   .content-formatted:not(.product_filters) h1,
-  .content-formatted .product_item-btn h1,
   .content-formatted p h1 {
     font-size: calc(var(--headings-title-font-size) / 2);
   }
@@ -1108,14 +1085,12 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 
 @media screen and (max-width: 1024px) {
   .semimodal-relative .content-formatted:not(.product_filters) h1, .semimodal-relative
-  .content-formatted .product_item-btn h1, .semimodal-relative
   .content-formatted p h1 {
     font-size: calc(var(--headings-title-font-size) / 2);
   }
 }
 
 .content-formatted:not(.product_filters) h2,
-.content-formatted .product_item-btn h2,
 .content-formatted p h2 {
   font-size: var(--headings-heading-font-size);
   font-style: var(--headings-heading-font-style);
@@ -1133,7 +1108,6 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 
 @media screen and (max-width: 900px) {
   .content-formatted:not(.product_filters) h2,
-  .content-formatted .product_item-btn h2,
   .content-formatted p h2 {
     font-size: calc(var(--headings-heading-font-size) / 1.8);
   }
@@ -1141,14 +1115,12 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 
 @media screen and (max-width: 1024px) {
   .semimodal-relative .content-formatted:not(.product_filters) h2, .semimodal-relative
-  .content-formatted .product_item-btn h2, .semimodal-relative
   .content-formatted p h2 {
     font-size: calc(var(--headings-heading-font-size) / 1.8);
   }
 }
 
 .content-formatted:not(.product_filters) h3,
-.content-formatted .product_item-btn h3,
 .content-formatted p h3 {
   font-size: var(--headings-subheading-font-size);
   font-style: var(--headings-subheading-font-style);
@@ -1166,7 +1138,6 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 
 @media screen and (max-width: 900px) {
   .content-formatted:not(.product_filters) h3,
-  .content-formatted .product_item-btn h3,
   .content-formatted p h3 {
     font-size: calc(var(--headings-subheading-font-size) / 1.4);
   }
@@ -1174,14 +1145,12 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 
 @media screen and (max-width: 1024px) {
   .semimodal-relative .content-formatted:not(.product_filters) h3, .semimodal-relative
-  .content-formatted .product_item-btn h3, .semimodal-relative
   .content-formatted p h3 {
     font-size: calc(var(--headings-subheading-font-size) / 1.4);
   }
 }
 
 .content-formatted:not(.product_filters) h4,
-.content-formatted .product_item-btn h4,
 .content-formatted p h4 {
   font-size: var(--headings-heading-4-font-size);
   font-style: var(--headings-heading-4-font-style);
@@ -1199,7 +1168,6 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 
 @media screen and (max-width: 900px) {
   .content-formatted:not(.product_filters) h4,
-  .content-formatted .product_item-btn h4,
   .content-formatted p h4 {
     font-size: calc(var(--headings-heading-4-font-size) / 1.2);
   }
@@ -1207,14 +1175,12 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 
 @media screen and (max-width: 1024px) {
   .semimodal-relative .content-formatted:not(.product_filters) h4, .semimodal-relative
-  .content-formatted .product_item-btn h4, .semimodal-relative
   .content-formatted p h4 {
     font-size: calc(var(--headings-heading-4-font-size) / 1.2);
   }
 }
 
 .content-formatted:not(.product_filters) a:not(.custom-btn),
-.content-formatted .product_item-btn a:not(.custom-btn),
 .content-formatted p a:not(.custom-btn) {
   font-style: var(--content-link-font-style);
   font-weight: var(--content-link-font-weight);
@@ -1226,9 +1192,6 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
 
 body.dark-background header:not(.light-background) .content-formatted:not(.product_filters) a:not(.custom-btn),
 header.dark-background .content-formatted:not(.product_filters) a:not(.custom-btn), body.dark-background header:not(.light-background)
-.content-formatted .product_item-btn a:not(.custom-btn),
-header.dark-background
-.content-formatted .product_item-btn a:not(.custom-btn), body.dark-background header:not(.light-background)
 .content-formatted p a:not(.custom-btn),
 header.dark-background
 .content-formatted p a:not(.custom-btn) {
@@ -1236,7 +1199,6 @@ header.dark-background
 }
 
 .content-formatted:not(.product_filters) a:not(.custom-btn):hover,
-.content-formatted .product_item-btn a:not(.custom-btn):hover,
 .content-formatted p a:not(.custom-btn):hover {
   font-style: var(--content-link-hover-font-style);
   font-weight: var(--content-link-hover-font-weight);
@@ -1248,9 +1210,6 @@ header.dark-background
 
 body.dark-background header:not(.light-background) .content-formatted:not(.product_filters) a:not(.custom-btn):hover,
 header.dark-background .content-formatted:not(.product_filters) a:not(.custom-btn):hover, body.dark-background header:not(.light-background)
-.content-formatted .product_item-btn a:not(.custom-btn):hover,
-header.dark-background
-.content-formatted .product_item-btn a:not(.custom-btn):hover, body.dark-background header:not(.light-background)
 .content-formatted p a:not(.custom-btn):hover,
 header.dark-background
 .content-formatted p a:not(.custom-btn):hover {
@@ -1258,8 +1217,6 @@ header.dark-background
 }
 
 .content-formatted:not(.product_filters).header_title, .content-formatted:not(.product_filters).site_title,
-.content-formatted .product_item-btn.header_title,
-.content-formatted .product_item-btn.site_title,
 .content-formatted p.header_title,
 .content-formatted p.site_title {
   font-size: var(--header-site-title-font-size);
@@ -1276,30 +1233,12 @@ header.dark-background
 }
 
 header.dark-background .content-formatted:not(.product_filters).header_title, header.dark-background .content-formatted:not(.product_filters).site_title, header.dark-background
-.content-formatted .product_item-btn.header_title, header.dark-background
-.content-formatted .product_item-btn.site_title, header.dark-background
 .content-formatted p.header_title, header.dark-background
 .content-formatted p.site_title {
   color: var(--third-color);
 }
 
 .content-formatted:not(.product_filters).header_title a, .content-formatted:not(.product_filters).header_title p, .content-formatted:not(.product_filters).header_title h1, .content-formatted:not(.product_filters).header_title h2, .content-formatted:not(.product_filters).header_title h3, .content-formatted:not(.product_filters).header_title h4, .content-formatted:not(.product_filters).header_title h5, .content-formatted:not(.product_filters).header_title h6, .content-formatted:not(.product_filters).site_title a, .content-formatted:not(.product_filters).site_title p, .content-formatted:not(.product_filters).site_title h1, .content-formatted:not(.product_filters).site_title h2, .content-formatted:not(.product_filters).site_title h3, .content-formatted:not(.product_filters).site_title h4, .content-formatted:not(.product_filters).site_title h5, .content-formatted:not(.product_filters).site_title h6,
-.content-formatted .product_item-btn.header_title a,
-.content-formatted .product_item-btn.header_title p,
-.content-formatted .product_item-btn.header_title h1,
-.content-formatted .product_item-btn.header_title h2,
-.content-formatted .product_item-btn.header_title h3,
-.content-formatted .product_item-btn.header_title h4,
-.content-formatted .product_item-btn.header_title h5,
-.content-formatted .product_item-btn.header_title h6,
-.content-formatted .product_item-btn.site_title a,
-.content-formatted .product_item-btn.site_title p,
-.content-formatted .product_item-btn.site_title h1,
-.content-formatted .product_item-btn.site_title h2,
-.content-formatted .product_item-btn.site_title h3,
-.content-formatted .product_item-btn.site_title h4,
-.content-formatted .product_item-btn.site_title h5,
-.content-formatted .product_item-btn.site_title h6,
 .content-formatted p.header_title a,
 .content-formatted p.header_title p,
 .content-formatted p.header_title h1,
@@ -1330,22 +1269,6 @@ header.dark-background .content-formatted:not(.product_filters).header_title, he
 }
 
 header.dark-background .content-formatted:not(.product_filters).header_title a, header.dark-background .content-formatted:not(.product_filters).header_title p, header.dark-background .content-formatted:not(.product_filters).header_title h1, header.dark-background .content-formatted:not(.product_filters).header_title h2, header.dark-background .content-formatted:not(.product_filters).header_title h3, header.dark-background .content-formatted:not(.product_filters).header_title h4, header.dark-background .content-formatted:not(.product_filters).header_title h5, header.dark-background .content-formatted:not(.product_filters).header_title h6, header.dark-background .content-formatted:not(.product_filters).site_title a, header.dark-background .content-formatted:not(.product_filters).site_title p, header.dark-background .content-formatted:not(.product_filters).site_title h1, header.dark-background .content-formatted:not(.product_filters).site_title h2, header.dark-background .content-formatted:not(.product_filters).site_title h3, header.dark-background .content-formatted:not(.product_filters).site_title h4, header.dark-background .content-formatted:not(.product_filters).site_title h5, header.dark-background .content-formatted:not(.product_filters).site_title h6, header.dark-background
-.content-formatted .product_item-btn.header_title a, header.dark-background
-.content-formatted .product_item-btn.header_title p, header.dark-background
-.content-formatted .product_item-btn.header_title h1, header.dark-background
-.content-formatted .product_item-btn.header_title h2, header.dark-background
-.content-formatted .product_item-btn.header_title h3, header.dark-background
-.content-formatted .product_item-btn.header_title h4, header.dark-background
-.content-formatted .product_item-btn.header_title h5, header.dark-background
-.content-formatted .product_item-btn.header_title h6, header.dark-background
-.content-formatted .product_item-btn.site_title a, header.dark-background
-.content-formatted .product_item-btn.site_title p, header.dark-background
-.content-formatted .product_item-btn.site_title h1, header.dark-background
-.content-formatted .product_item-btn.site_title h2, header.dark-background
-.content-formatted .product_item-btn.site_title h3, header.dark-background
-.content-formatted .product_item-btn.site_title h4, header.dark-background
-.content-formatted .product_item-btn.site_title h5, header.dark-background
-.content-formatted .product_item-btn.site_title h6, header.dark-background
 .content-formatted p.header_title a, header.dark-background
 .content-formatted p.header_title p, header.dark-background
 .content-formatted p.header_title h1, header.dark-background
@@ -1367,8 +1290,6 @@ header.dark-background .content-formatted:not(.product_filters).header_title a, 
 
 @media screen and (max-width: 900px) {
   .content-formatted:not(.product_filters).header_title, .content-formatted:not(.product_filters).site_title,
-  .content-formatted .product_item-btn.header_title,
-  .content-formatted .product_item-btn.site_title,
   .content-formatted p.header_title,
   .content-formatted p.site_title {
     font-size: 18px;
@@ -1378,8 +1299,6 @@ header.dark-background .content-formatted:not(.product_filters).header_title a, 
 
 .content-formatted:not(.product_filters) .custom-btn:not(.custom-btn-disabled),
 .content-formatted:not(.product_filters) .form_submit input,
-.content-formatted .product_item-btn .custom-btn:not(.custom-btn-disabled),
-.content-formatted .product_item-btn .form_submit input,
 .content-formatted p .custom-btn:not(.custom-btn-disabled),
 .content-formatted p .form_submit input {
   padding: var(--button-padding);
@@ -1401,8 +1320,6 @@ header.dark-background .content-formatted:not(.product_filters).header_title a, 
 
 .dark-background .content-formatted:not(.product_filters) .custom-btn:not(.custom-btn-disabled), .dark-background
 .content-formatted:not(.product_filters) .form_submit input, .dark-background
-.content-formatted .product_item-btn .custom-btn:not(.custom-btn-disabled), .dark-background
-.content-formatted .product_item-btn .form_submit input, .dark-background
 .content-formatted p .custom-btn:not(.custom-btn-disabled), .dark-background
 .content-formatted p .form_submit input {
   border: 1px solid var(--third-color);
@@ -1410,8 +1327,6 @@ header.dark-background .content-formatted:not(.product_filters).header_title a, 
 
 .content-formatted:not(.product_filters) .custom-btn:not(.custom-btn-disabled):hover,
 .content-formatted:not(.product_filters) .form_submit input:hover,
-.content-formatted .product_item-btn .custom-btn:not(.custom-btn-disabled):hover,
-.content-formatted .product_item-btn .form_submit input:hover,
 .content-formatted p .custom-btn:not(.custom-btn-disabled):hover,
 .content-formatted p .form_submit input:hover {
   padding: var(--button-hover-padding);
