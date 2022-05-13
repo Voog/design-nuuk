@@ -6,6 +6,9 @@
     {%- assign footerBlocskCount = template_settings.site.footer_blocks_settings.value.blocks_count -%}
     {%- assign footerBlocColumnskCount = template_settings.site.footer_block_columns_settings.value.col_count -%}
 
+    {%- assign footer_content_title = "footer" | lce -%}
+    {%- assign footer_content_title_tooltip = "content_tooltip_all_pages_same_language" | lce -%}
+
     {%- for i in (1..footerBlocskCount) -%}
 
       {%- for id in (1..footerBlocColumnskCount) -%}
@@ -26,7 +29,7 @@
           {% endunless %}
 
           <div class="flex_row-{{footerBlocColumnskCount}}--item footer_content{%- unless editmode or footer_item_has_content == true %} footer_content-hidden{%- endunless -%}" >
-            <div class="content-formatted mar_0-8">{% xcontent name=name %}</div>
+            <div class="content-formatted mar_0-8">{% xcontent name=name title=footer_content_title title_tooltip=footer_content_title_tooltip %}</div>
           </div>
 
         {%- endfor -%}
