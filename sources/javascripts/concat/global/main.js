@@ -436,6 +436,19 @@
       }
     }
 
+    var handleProductCountSync = function (e) {
+      var itemsCount = getCartItemsCount();
+      var counterElement = $('.cart_btn .cart_btn-count');
+
+      if (itemsCount >= 1) {
+        $('.cart_btn').addClass('visible');
+        counterElement.text(itemsCount);
+      } else {
+        $('.cart_btn').removeClass('visible');
+        counterElement.text('');
+      }
+    }
+
     // Emitted when a product is removed from the shopping cart
     $(document).on('voog:shoppingcart:removeproduct', function (e) {
       handleProductCountChange(e, false);
@@ -450,6 +463,10 @@
     $(document).on('voog:shoppingcart:addproduct', function (e) {
       handleProductCountChange(e, true);
     });
+
+    $(document).on('voog:shoppingcart:contentschanged', function (e) {
+      handleProductCountSync(e);
+    })
 
     $('.cart_btn, .cart_popover-wrap').click(function () {
       Voog.ShoppingCart.showCart()
