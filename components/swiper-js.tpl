@@ -49,7 +49,7 @@
           },
           effect: sliderEffect,
           fadeEffect: {
-            crossFade: sliderEffect === 'fade' ? true : false
+            crossFade: sliderEffect === 'fade'
           },
           speed: 800,
           parallax: true,
