@@ -72,7 +72,9 @@
                 {%- endif -%}
               </div>
               <section class="content-body content-formatted mar_0-32" data-search-indexing-allowed="true">
-                {% content name="gallery" %}
+                {%- assign gallery_title = "gallery" | lce -%}
+                {%- assign gallery_title_tooltip = "content_tooltip_additional_images" | lce -%}
+                {% content name="gallery" title=gallery_title title_tooltip=gallery_title_tooltip %}
               </section>
             </div>
 
@@ -80,7 +82,7 @@
               <div class="mar_0-32 flex_col t-sticky">
                 <div class="flex_row flex_a-center flex_j-space-between mar_b-64">
                   <div class="content-body content-formatted" data-search-indexing-allowed="true">
-                  
+
                     {% contentblock name="page_title" publish_default_content="true" %}
                       <h3>{{page.title}}</h3>
                     {% endcontentblock %}
@@ -95,21 +97,25 @@
                         {{productSettingsData.product_label}}
                       </div>
                     {%- endif -%}
-                    
+
                   </div>
                   <div>
                     {% include 'product-page-nav' %}
                   </div>
                 </div>
                 <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
-                  {% contentblock %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}
+                  {%- assign content_title = "content" | lce -%}
+                  {%- assign content_title_tooltip = "content_tooltip_specific_page" | lce -%}
+                  {% contentblock title=content_title title_tooltip=content_title_tooltip %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}
                 </section>
               </div>
             </div>
           </div>
 
           {%- if bottom_content_has_content == true or editmode -%}
-            <section class="content-body content-formatted content-formatted--overflowed-images mar_b-32" data-search-indexing-allowed="true">{% content name="content" %}</section>
+            {%- assign bottom_content_title = "additional_content" | lce -%}
+            {%- assign bottom_content_title_tooltip = "content_tooltip_additional_information" | lce -%}
+            <section class="content-body content-formatted content-formatted--overflowed-images mar_b-32" data-search-indexing-allowed="true">{% content name="content" title=bottom_content_title title_tooltip=bottom_content_title_tooltip %}</section>
           {%- endif -%}
 
           <div>
