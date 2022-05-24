@@ -35,7 +35,12 @@
           <div class="content-body content-formatted mar_b-48">
             {%- assign page_title_content_title = "title" | lce -%}
             {%- assign page_title_content_title_tooltip = "content_tooltip_current_page_title" | lce -%}
-            {% contentblock name="page_title" publish_default_content="true" title=page_title_content_title title_tooltip=page_title_content_title_tooltip %}
+            {% contentblock
+              name="page_title"
+              publish_default_content="true"
+              title=page_title_content_title
+              title_tooltip=page_title_content_title_tooltip
+            %}
               <h1>{{page.title}}</h1>
             {% endcontentblock %}
           </div>

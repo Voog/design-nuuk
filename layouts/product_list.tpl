@@ -39,7 +39,12 @@
           <div class="content-body content-formatted mar_b-48" data-search-indexing-allowed="true">
             {%- assign page_title_content_title = "title" | lce -%}
             {%- assign page_title_content_title_tooltip = "content_tooltip_current_page_title" | lce -%}
-            {% contentblock name="page_title" publish_default_content="true" title=page_title_content_title title_tooltip=page_title_content_title_tooltip %}
+            {% contentblock
+              name="page_title"
+              publish_default_content="true"
+              title=page_title_content_title
+              title_tooltip=page_title_content_title_tooltip
+            %}
               <h1>{{page.title}}</h1>
             {% endcontentblock %}
           </div>
@@ -49,7 +54,12 @@
 
           {%- assign bottom_content_title = "additional_content" | lce -%}
           {%- assign bottom_content_title_tooltip = "content_tooltip_additional_information" | lce -%}
-          {%- capture _bottom_content_html %}{% content name="bottom_content" title=bottom_content_title title_tooltip=bottom_content_title_tooltip %}{% endcapture -%}
+          {%- capture _bottom_content_html %}
+            {% content name="bottom_content"
+              title=bottom_content_title
+              title_tooltip=bottom_content_title_tooltip
+            %}
+          {% endcapture -%}
           {%- if _bottom_content_html != blank -%}
             <div class="content-body content-formatted content-formatted--overflowed-images mar_b-56" data-search-indexing-allowed="true">
               {{ _bottom_content_html }}

@@ -67,7 +67,14 @@
         {% assign isReadOnly = true %}
       {%- endif -%}
 
-      {% contentblock name="site_title" xpage="true" publish_default_content="true" readonly=isReadOnly title=cross_site_title title_tooltip=cross_site_title_tooltip %}
+      {% contentblock
+        name="site_title"
+        xpage="true"
+        publish_default_content="true"
+        readonly=isReadOnly
+        title=cross_site_title
+        title_tooltip=cross_site_title_tooltip
+      %}
         {{site.header}}
       {% endcontentblock %}
     </div>

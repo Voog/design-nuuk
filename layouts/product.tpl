@@ -106,7 +106,9 @@
                 <section class="content-body content-formatted js-buy-btn-content mar_32-0" data-search-indexing-allowed="true">
                   {%- assign content_title = "content" | lce -%}
                   {%- assign content_title_tooltip = "content_tooltip_specific_page" | lce -%}
-                  {% contentblock title=content_title title_tooltip=content_title_tooltip %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}
+                  {% contentblock title=content_title title_tooltip=content_title_tooltip %}
+                    {{ "write_product_description_here" | lc: editor_locale }}
+                  {% endcontentblock %}
                 </section>
               </div>
             </div>
@@ -115,7 +117,13 @@
           {%- if bottom_content_has_content == true or editmode -%}
             {%- assign bottom_content_title = "additional_content" | lce -%}
             {%- assign bottom_content_title_tooltip = "content_tooltip_additional_information" | lce -%}
-            <section class="content-body content-formatted content-formatted--overflowed-images mar_b-32" data-search-indexing-allowed="true">{% content name="content" title=bottom_content_title title_tooltip=bottom_content_title_tooltip %}</section>
+            <section class="content-body content-formatted content-formatted--overflowed-images mar_b-32" data-search-indexing-allowed="true">
+              {% content
+                name="content"
+                title=bottom_content_title
+                title_tooltip=bottom_content_title_tooltip
+              %}
+            </section>
           {%- endif -%}
 
           <div>

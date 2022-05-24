@@ -436,7 +436,7 @@
       }
     }
 
-    var handleProductCountSync = function (e) {
+    var handleProductCountSync = function () {
       var itemsCount = getCartItemsCount();
       var counterElement = $('.cart_btn .cart_btn-count');
 
@@ -464,8 +464,8 @@
       handleProductCountChange(e, true);
     });
 
-    $(document).on('voog:shoppingcart:contentschanged', function (e) {
-      handleProductCountSync(e);
+    $(document).on('voog:shoppingcart:contentschanged', function () {
+      handleProductCountSync();
     })
 
     $('.cart_btn, .cart_popover-wrap').click(function () {
