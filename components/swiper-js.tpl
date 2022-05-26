@@ -48,6 +48,9 @@
             onlyInViewport: false,
           },
           effect: sliderEffect,
+          fadeEffect: {
+            crossFade: sliderEffect === 'fade'
+          },
           speed: 800,
           parallax: true,
           allowTouchMove: conditionalBool,
