@@ -7,6 +7,9 @@
   {%- assign menuTop = false -%}
 {%- endif -%}
 
+{%- assign cross_site_title = "cross_site_title" | lce -%}
+{%- assign cross_site_title_tooltip = "content_tooltip_all_pages_same_language" | lce -%}
+
 {%- include 'menu-main-iteration' -%}
 {%- include "site-search" %}
 {% include 'header-fixed', _menuTop: menuTop -%}
@@ -63,7 +66,15 @@
       {%- else -%}
         {% assign isReadOnly = true %}
       {%- endif -%}
-      {% contentblock name="site_title" xpage="true"  publish_default_content="true" readonly=isReadOnly %}
+
+      {% contentblock
+        name="site_title"
+        xpage="true"
+        publish_default_content="true"
+        readonly=isReadOnly
+        title=cross_site_title
+        title_tooltip=cross_site_title_tooltip
+      %}
         {{site.header}}
       {% endcontentblock %}
     </div>
