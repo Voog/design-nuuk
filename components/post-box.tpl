@@ -103,7 +103,16 @@
       {% if _isArticle == true %}
         <div class="post_excerpt content-formatted content-formatted--overflowed-images mar_t-48 mar_b-64">{% editable article.excerpt %}</div>
         <div class="post_body content-formatted content-formatted--overflowed-images mar_b-64">{% editable article.body %}</div>
-        <div class="post_body content-formatted content-formatted--overflowed-images">{% content name="additional_body" bind="Article" %}</div>
+        {%- assign bottom_content_title = "additional_content" | lce -%}
+        {%- assign bottom_content_title_tooltip = "content_tooltip_additional_information" | lce -%}
+        <div class="post_body content-formatted content-formatted--overflowed-images">
+          {% content
+            name="additional_body"
+            bind="Article"
+            title=bottom_content_title
+            title_tooltip=bottom_content_title_tooltip
+          %}
+        </div>
       {% endif %}
 
       {% assign article_year = article.created_at | format_date: "%Y" | to_num %}

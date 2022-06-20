@@ -10,6 +10,9 @@
 {%- assign indicatorStyle = menuSettings.indicator | default: template_settings.site.menu_settings.value.indicator -%}
 
 {%- include 'menu-main-iteration', _indicatorStyle: indicatorStyle -%}
+{%- assign cross_site_title = "cross_site_title" | lce -%}
+{%- assign cross_site_title_tooltip = "content_tooltip_all_pages_same_language" | lce -%}
+
 {%- include "site-search" %}
 {% include 'header-fixed', _menuTop: menuTop, _menuPos: menuPos, _indicatorStyle: indicatorStyle -%}
 {% include 'cart-popover' %}
@@ -61,7 +64,15 @@
       {%- else -%}
         {% assign isReadOnly = true %}
       {%- endif -%}
-      {% contentblock name="site_title" xpage="true"  publish_default_content="true" readonly=isReadOnly %}
+
+      {% contentblock
+        name="site_title"
+        xpage="true"
+        publish_default_content="true"
+        readonly=isReadOnly
+        title=cross_site_title
+        title_tooltip=cross_site_title_tooltip
+      %}
         {{site.header}}
       {% endcontentblock %}
     </div>

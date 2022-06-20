@@ -38,9 +38,13 @@
     {% endif %}
       <div class="container">
         <main class="content" role="main" data-search-indexing-allowed="true">
-          <section class="content-body content-formatted mar_b-64">{% content %}</section>
+          {%- assign content_title = "content" | lce -%}
+          {%- assign content_title_tooltip = "content_tooltip_specific_page" | lce -%}
+          <section class="content-body content-formatted mar_b-64">
+            {% content title=content_title title_tooltip=content_title_tooltip %}
+          </section>
           {% include "blog-news-tags" %}
-          
+
           <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
             {% for article in articles %}
               {%- if article.data.article_settings.hide_article_image_in_list == true -%}
@@ -87,7 +91,7 @@
                   </div>
                 {% else %}
                   </div>
-                  <div class="w-100p mar_t-32 blog_listing-item-list">    
+                  <div class="w-100p mar_t-32 blog_listing-item-list">
                     {{ article_element_list }}
                 {% endif %}
               {% else %}
