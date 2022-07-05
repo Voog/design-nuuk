@@ -3370,6 +3370,7 @@ body.edy-checkout-button-visible {
 
 .header_fixed .semimodal-bg_color {
   margin: -24px -32px;
+  z-index: -1;
 }
 
 @media screen and (max-width: 900px) {

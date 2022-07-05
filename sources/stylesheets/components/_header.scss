@@ -14,6 +14,7 @@
 
     & .semimodal-bg_color {
       margin: -24px -32px;
+      z-index: -1;
 
       @include query($tablet-1) {
         margin: -16px -16px;
@@ -27,7 +28,7 @@
       @include query($tablet-1) {
         left: -50px;
       }
-      
+
       .front-page & {
         top: 30px;
       }

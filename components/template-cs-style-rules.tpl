@@ -280,12 +280,13 @@ header.dark-background .edy-ecommerce-product-count {
   color: var(--menu-dropdown-text-color);
 }
 
-.menu-main .menu .menu-item .dropdown_menu-popover--wrap .dropdown_menu-popover a:hover {
-  color: var(--menu-dropdown-hover-text-color);
-}
-
 .menu-main .menu .menu-item .dropdown_menu-popover--wrap .dropdown_menu-popover .menu .menu-item:hover {
   background-color: var(--menu-dropdown-hover-background-color);
+}
+
+.menu-main .menu .menu-item .dropdown_menu-popover--wrap .dropdown_menu-popover .menu .menu-item:hover a {
+  color: var(--menu-dropdown-hover-text-color);
+  opacity: 1;
 }
 
 .menu-main .menu .menu-item a {
@@ -393,24 +394,21 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
   background-color: var(--menu-dropdown-background-color);
 }
 
-.menu-main .menu .menu_popover .menu .menu-item:hover {
+.header_fixed .menu-main .menu .menu_popover .menu .menu-item a {
+  color: var(--menu-dropdown-text-color);
+  opacity: 1;
+}
+
+.header_fixed .menu-main .menu .menu_popover .menu .menu-item:hover {
   background-color: var(--menu-dropdown-hover-background-color);
+}
+
+.header_fixed .menu-main .menu .menu_popover .menu .menu-item:hover a {
+  color: var(--menu-dropdown-hover-text-color);
 }
 
 .menu-main .menu .menu_popover .menu .menu-item .dropdown_menu-popover {
   background-color: var(--menu-dropdown-background-color);
-}
-
-.header_fixed .menu-main .menu .menu_popover .menu .menu-item a {
-  color: var(--menu-dropdown-text-color);
-}
-
-.header_fixed .menu-main .menu .menu_popover .menu .menu-item a:hover {
-  color: var(--menu-dropdown-hover-text-color);
-}
-
-.header_fixed .menu-main .menu .menu_popover .menu .menu-item a.untranslated {
-  color: #C5292A;
 }
 
 .semimodal .menu-main .menu .menu-sub .menu-item {
@@ -671,9 +669,10 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
   color: var(--menu-dropdown-text-color);
 }
 
-.header_fixed:not(.relative).dark-background.scroll .menu-main .menu.menu_popover-list .menu-item a:hover,
-.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu.menu_popover-list .menu-item a:hover {
+.header_fixed:not(.relative).dark-background.scroll .menu-main .menu.menu_popover-list .menu-item:hover a,
+.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu.menu_popover-list .menu-item:hover a {
   color: var(--menu-dropdown-hover-text-color);
+  opacity: 1;
 }
 
 .header_fixed:not(.relative).dark-background.scroll .menu_popover-btn svg path,

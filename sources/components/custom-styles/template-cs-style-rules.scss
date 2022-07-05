@@ -273,7 +273,7 @@ header.header_fixed.scroll.dark-background {
     header.dark-background & {
       fill: var(--third-color);
     }
-    
+
   }
 
   &:hover svg path {
@@ -283,7 +283,7 @@ header.header_fixed.scroll.dark-background {
       opacity: .7;
       fill: var(--third-color);
     }
-    
+
   }
 }
 
@@ -299,14 +299,14 @@ header.header_fixed.scroll.dark-background {
     header.dark-background & {
       stroke: var(--third-color);
     }
-    
+
   }
 
 
   header.dark-background & {
     color: var(--third-color);
   }
-  
+
 
   &:hover {
     color: var(--header-mainmenu-color);
@@ -318,7 +318,7 @@ header.header_fixed.scroll.dark-background {
         opacity: .7;
         stroke: var(--third-color);
       }
-      
+
     }
 
 
@@ -326,7 +326,7 @@ header.header_fixed.scroll.dark-background {
       opacity: .7;
       color: var(--third-color);
     }
-    
+
   }
 }
 
@@ -337,7 +337,7 @@ header.header_fixed.scroll.dark-background {
   header.dark-background & {
     color: var(--third-color);
   }
-  
+
 }
 
 // Styling rules for the site's main menu.
@@ -348,13 +348,15 @@ header.header_fixed.scroll.dark-background {
         background-color: var(--menu-dropdown-background-color);
         a {
           color: var(--menu-dropdown-text-color);
-          &:hover {
-            color: var(--menu-dropdown-hover-text-color);
-          }
         }
 
         .menu .menu-item:hover {
           background-color: var(--menu-dropdown-hover-background-color);
+
+          a {
+            color: var(--menu-dropdown-hover-text-color);
+            opacity: 1;
+          }
         }
       }
 
@@ -456,26 +458,23 @@ header.header_fixed.scroll.dark-background {
       }
 
       .menu .menu-item {
-        &:hover {
-          background-color: var(--menu-dropdown-hover-background-color);
+        .header_fixed & {
+          a {
+            color: var(--menu-dropdown-text-color);
+            opacity: 1;
+          }
+
+          &:hover {
+            background-color: var(--menu-dropdown-hover-background-color);
+
+            a {
+              color: var(--menu-dropdown-hover-text-color);
+            }
+          }
         }
 
         .dropdown_menu-popover {
           background-color: var(--menu-dropdown-background-color);
-        }
-
-        a {
-          .header_fixed & {
-            color: var(--menu-dropdown-text-color);
-    
-            &:hover {
-              color: var(--menu-dropdown-hover-text-color);
-            }
-
-            &.untranslated {
-              color: $red;
-            }
-          }
         }
       }
     }
@@ -594,10 +593,10 @@ header.header_fixed.scroll.dark-background {
   .menu-main .menu .menu-item,
   .menu-language-btn {
     color: var(--header-mainmenu-color);
-    
+
     a {
       color: var(--header-mainmenu-color);
-      
+
       &.untranslated {
         color: $red;
       }
@@ -638,7 +637,7 @@ header.header_fixed.scroll.dark-background {
       div > .menu-stripe {
         background-color: var(--header-mainmenu-hover-color);
       }
-  
+
       > label {
         color: var(--header-mainmenu-hover-color);
       }
@@ -647,7 +646,7 @@ header.header_fixed.scroll.dark-background {
 
   .header_fixed-content .header_title.content-formatted:not(.product_filters) {
     color: var(--header-site-title-color);
-    
+
     a, p, h1, h2, h3, h4, h5, h6 {
       color: var(--header-site-title-color);
     }
@@ -657,11 +656,11 @@ header.header_fixed.scroll.dark-background {
       .menu_popover-btn svg path {
         fill: var(--header-mainmenu-color);
       }
-  
+
       .menu_popover-btn:hover svg path {
         fill: var(--header-mainmenu-hover-color);
       }
-  
+
       .search-btn,
       .cart_btn {
         &:hover svg {
@@ -679,7 +678,7 @@ header.header_fixed.scroll.dark-background {
       .cart_btn-count {
         color: var(--header-mainmenu-active-color);
       }
-  
+
       .menu-language-btn {
         color: var(--header-mainmenu-active-color);
 
@@ -690,13 +689,13 @@ header.header_fixed.scroll.dark-background {
             stroke: var(--header-mainmenu-color);
           }
         }
-  
+
         & svg path {
           stroke: var(--header-mainmenu-active-color);
         }
       }
     }
-  
+
 
   &.dark-background.scroll,
   .dark-background &:not(.scroll) {
@@ -710,7 +709,7 @@ header.header_fixed.scroll.dark-background {
         }
         color: var(--third-color);
       }
-      
+
       &.active a,
       a.selected {
         &:hover {
@@ -724,9 +723,12 @@ header.header_fixed.scroll.dark-background {
     .menu-main .menu.menu_popover-list .menu-item {
       a {
         color: var(--menu-dropdown-text-color);
+      }
 
-        &:hover {
+      &:hover {
+        a {
           color: var(--menu-dropdown-hover-text-color);
+          opacity: 1;
         }
       }
     }
@@ -788,7 +790,7 @@ header.header_fixed.scroll.dark-background {
         color: var(--third-color);
       }
     }
-    
+
     .header_fixed-content .header_title.content-formatted:not(.product_filters) {
       color: var(--third-color);
 
@@ -931,7 +933,7 @@ header.header_fixed.scroll.dark-background {
     background-color: var(--menu-dropdown-background-color);
 
     .menu {
-      .menu-item { 
+      .menu-item {
        .dd-menu-element {
           color: var(--menu-dropdown-text-color);
 
