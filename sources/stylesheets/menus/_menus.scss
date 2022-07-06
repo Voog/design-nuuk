@@ -322,7 +322,7 @@
             }
 
             &:hover {
-              background-color: #383A3A;
+              background-color: $grey-5;
               color: $white;
             }
           }
@@ -558,7 +558,7 @@
         width: calc(100% - 48px);
 
         &:hover {
-          background-color: #383A3A;
+          background-color: $grey-5;
           opacity: 1;
         }
 

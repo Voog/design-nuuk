@@ -552,7 +552,7 @@
     "scope": "global",
     "featured": true
   */
-  --menu-dropdown-hover-background-color: #383a3a;
+  --menu-dropdown-hover-background-color: #383A3A;
   /* VoogStyle
     "pathI18n": ["header", "dropdown", "hover"],
     "titleI18n": "text_color",
