@@ -25,15 +25,10 @@
       "key": "PREFIX_semimodal_bg",
       "value": {}
     },
-    "footer_blocks_settings": {
-      "key": "PREFIX_footer_blocks_settings_",
+    "footer_settings": {
+      "key": "PREFIX_footer_settings",
       "value": {
-        "blocks_count": 2
-      }
-    },
-    "footer_block_columns_settings": {
-      "key": "PREFIX_footer_block_columns_settings_",
-      "value": {
+        "block_count": 2,
         "col_count": 4
       }
     }

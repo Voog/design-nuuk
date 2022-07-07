@@ -295,6 +295,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/settings-footer.tpl",
+      "layout_name": "settings-footer",
+      "title": "settings-footer"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/settings-menu.tpl",
       "layout_name": "settings-menu",
       "title": "settings-menu"

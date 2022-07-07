@@ -43,6 +43,7 @@
   {%- assign menuSettingsKey = template_settings.site.menu_settings.key -%}
   {%- assign semimodalBgKey = template_settings.site.semimodal_bg.key -%}
   {%- assign productBodyBgKey = template_settings.product.body_bg.key -%}
+  {%- assign footerSettingsKey = template_settings.site.footer_settings.key -%}
 
   {%- assign swiperBg1Key = swiperBgKey | append: 1 -%}
   {% assign swiper_bg_1 = page.data[swiperBg1Key] %}

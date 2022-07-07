@@ -113,6 +113,14 @@
     margin-top: 32px;
   }
 
+  &t-32-neg {
+    margin-top: -32px;
+
+    @include query($tablet-1) {
+      margin-top: -16px;
+    }
+  }
+
   &t-48 {
     margin-top: 48px;
 

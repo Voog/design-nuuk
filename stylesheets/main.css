@@ -6419,6 +6419,16 @@ body.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu 
   }
 }
 
+.pad_t-32 {
+  padding-top: 32px;
+}
+
+@media screen and (max-width: 900px) {
+  .pad_t-32 {
+    padding-top: 16px;
+  }
+}
+
 .animate_border-bottom {
   padding-bottom: 3px;
   text-decoration: none;
@@ -6570,6 +6580,16 @@ body.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu 
 
 .mar_t-32 {
   margin-top: 32px;
+}
+
+.mar_t-32-neg {
+  margin-top: -32px;
+}
+
+@media screen and (max-width: 900px) {
+  .mar_t-32-neg {
+    margin-top: -16px;
+  }
 }
 
 .mar_t-48 {
