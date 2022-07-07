@@ -137,6 +137,7 @@
           width: 60%;
           display: flex;
           justify-content: center;
+          align-self: center;
         }
 
         @include query($tablet-1, 'min-width') {

@@ -467,7 +467,7 @@ header.header_fixed.scroll.dark-background {
           &:hover {
             background-color: var(--menu-dropdown-hover-background-color);
 
-            a {
+            > a {
               color: var(--menu-dropdown-hover-text-color);
             }
           }

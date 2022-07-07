@@ -403,7 +403,7 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
   background-color: var(--menu-dropdown-hover-background-color);
 }
 
-.header_fixed .menu-main .menu .menu_popover .menu .menu-item:hover a {
+.header_fixed .menu-main .menu .menu_popover .menu .menu-item:hover > a {
   color: var(--menu-dropdown-hover-text-color);
 }
 
