@@ -59,7 +59,7 @@
                 {%- assign showBorder = false -%}
               {%- endif -%}
 
-              {%- assign articleCount = blog_settings.no_of_articles_shown | default: default_blog_settings.no_of_articles_shown -%}
+              {%- assign articleCount = blog_settings.no_of_unarchived_articles | default: default_blog_settings.no_of_unarchived_articles -%}
               {%- if forloop.index > articleCount -%}
                 {%- assign overLimit = true -%}
               {%- else -%}
@@ -84,7 +84,9 @@
                 </a>
               {%- endcapture -%}
 
-              {% if show_articles_as_list == true %}
+              {%- assign show_older_articles_as_list = blog_settings.show_older_articles_as_list | default: default_blog_settings.show_older_articles_as_list -%}
+
+              {% if show_older_articles_as_list == true %}
                 {% if overLimit == false %}
                   <div class="blog_listing-item {{ blog_settings.blog_layout | default: default_blog_settings.blog_layout }}{% if hideImage == true and showBorder == true %} blog_listing-item-border{% endif %}">
                     {{ article_element_full }}

@@ -19,12 +19,12 @@
       valuesObj.blog_layout = '{{ defaultBlogLayoutSetting.blog_layout }}';
     }
 
-    if (!('show_articles_as_list' in valuesObj)) {
-      valuesObj.show_articles_as_list = {{ defaultBlogLayoutSetting.show_articles_as_list }};
+    if (!('show_older_articles_as_list' in valuesObj)) {
+      valuesObj.show_older_articles_as_list = {{ defaultBlogLayoutSetting.show_older_articles_as_list }};
     }
 
-    if (!('no_of_articles_shown' in valuesObj)) {
-      valuesObj.no_of_articles_shown = {{ defaultBlogLayoutSetting.no_of_articles_shown }};
+    if (!('no_of_unarchived_articles' in valuesObj)) {
+      valuesObj.no_of_unarchived_articles = {{ defaultBlogLayoutSetting.no_of_unarchived_articles }};
     }
 
     initSettingsEditor(
@@ -59,20 +59,18 @@
             ]
           },
           {
-            "titleI18n": {{ "show_articles_as_list" | lce | json }},
+            "titleI18n": {{ "show_older_articles_as_list" | lce | json }},
             "type": "toggle",
-            "key": "show_articles_as_list",
-            "tooltipI18n": {{ "show_articles_as_list" | lce | json }},
+            "key": "show_older_articles_as_list",
             "states": {
               "on": true,
               "off": false
             },
           },
           {
-            "titleI18n": {{ "no_of_articles_shown" | lce | json }},
+            "titleI18n": {{ "no_of_unarchived_articles" | lce | json }},
             "type": "number",
-            "key": "no_of_articles_shown",
-            "tooltipI18n": {{ "no_of_articles_shown" | lce | json }},
+            "key": "no_of_unarchived_articles",
             "step": 1,
             "min": 3,
             "class": "blog-list-opt"
@@ -86,7 +84,6 @@
           if (data.blog_layout == "highlight_with_popout") {
             $articleSize.removeClass('highlight list list_cols_2 list_cols_3')
             $articleSize.addClass('highlight_with_popout');
-
           } else if (data.blog_layout == "highlight") {
             $articleSize.removeClass('highlight_with_popout list list_cols_2 list_cols_3');
             $articleSize.addClass('highlight')
@@ -101,14 +98,14 @@
             $articleSize.addClass('list_cols_3');
           }
 
-          if (data.show_articles_as_list == true) {
+          if (data.show_older_articles_as_list == true) {
             $('.blog-list-opt').show();
           } else {
             $('.blog-list-opt').hide();
           }
         }
       });
-    {%- if blogLayoutSetting.show_articles_as_list != true -%}
+    {%- if blogLayoutSetting.show_older_articles_as_list != true -%}
       $('.blog-list-opt').hide();
     {%- endif -%}
   });
