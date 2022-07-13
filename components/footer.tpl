@@ -2,7 +2,7 @@
 <footer class="footer content-formatted">
   <div class="w-100p">
     <div class="footer_separator"></div>
-    <div class="editor_default-container {% if editmode %}pad_t-32 mar_t-32-neg{% endif %}">
+    <div class="editor_default-container{% if editmode %} pad_t-32 mar_t-32-neg{% endif %}">
 
       {%- assign footerSettings = site.data[footerSettingsKey] -%}
       {%- assign defaultFooterSettings = template_settings.site.footer_settings.value -%}
@@ -12,27 +12,18 @@
           {{ "footer" | lce | escape_once }}
         </button>
         {%- include "settings-footer"
-          _footerSettings: footerSettings,
+          _footerSettings: footerSettings
           _defaultFooterSettings: defaultFooterSettings
         -%}
       {%- endif -%}
 
-      {%- if footerSettings.block_count != blank -%}
-        {%- assign block_count = footerSettings.block_count -%}
-      {%- else -%}
-        {%- assign block_count = defaultFooterSettings.block_count -%}
-      {%- endif -%}
+      {%- assign row_count = footerSettings.row_count | default: defaultFooterSettings.row_count -%}
+      {%- assign col_count = footerSettings.col_count | default: defaultFooterSettings.col_count -%}
 
-      {%- if footerSettings.col_count != blank -%}
-        {%- assign col_count = footerSettings.col_count -%}
+      {%- if editmode and row_count < defaultFooterSettings.row_count -%}
+        {%- assign footer_row_count = defaultFooterSettings.row_count -%}
       {%- else -%}
-        {%- assign col_count = defaultFooterSettings.col_count -%}
-      {%- endif -%}
-
-      {%- if editmode and block_count < defaultFooterSettings.block_count -%}
-        {%- assign footer_block_count = defaultFooterSettings.block_count -%}
-      {%- else -%}
-        {%- assign footer_block_count = block_count -%}
+        {%- assign footer_row_count = row_count -%}
       {%- endif -%}
 
       {%- if editmode and col_count < defaultFooterSettings.col_count -%}
@@ -43,8 +34,8 @@
 
       {%- assign footer_content_title_tooltip = "content_tooltip_all_pages_same_language" | lce -%}
 
-      {%- for i in (1..footer_block_count) -%}
-        <div class="flex_row flex_row-{{ footer_block_count }} mar_0-8-neg flex_j-center{% if editmode and footerSettings.block_count < i %} d-none{% endif %}">
+      {%- for i in (1..footer_row_count) -%}
+        <div class="flex_row flex_row-{{ footer_row_count }} mar_0-8-neg flex_j-center{% if editmode and footerSettings.row_count < i %} d-none{% endif %}">
           {%- for id in (1..footer_col_count) -%}
             {%- assign name = "footer_row-" | append: i | append: "-" | append: id -%}
 

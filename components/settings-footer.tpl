@@ -6,8 +6,8 @@
       var valuesObj = {};
     {%- endif -%}
 
-    if (!('block_count' in valuesObj)) {
-      valuesObj.block_count = {{ _defaultFooterSettings.block_count }};
+    if (!('row_count' in valuesObj)) {
+      valuesObj.row_count = {{ _defaultFooterSettings.row_count }};
     }
 
     if (!('col_count' in valuesObj)) {
@@ -21,7 +21,7 @@
           {
             "title": {{ "rows" | lce | json }},
             "type": "select",
-            "key": "block_count",
+            "key": "row_count",
             "list": [
               {"title": "1", "value": 1},
               {"title": "2", "value": 2}
@@ -46,13 +46,13 @@
         noReload: true,
         prevFunc: function(data) {
           if (data.col_count >= 1) {
-            $('footer .flex_row-{{ _defaultFooterSettings.block_count }} .flex_row-{{ _defaultFooterSettings.col_count }}--item:nth-child(n+' + (data.col_count + 1) + ')').addClass('d-none');
-            $('footer .flex_row-{{ _defaultFooterSettings.block_count }} .flex_row-{{ _defaultFooterSettings.col_count }}--item:nth-child(-n+' + data.col_count + ')').removeClass('d-none');
+            $('footer .flex_row-{{ _defaultFooterSettings.row_count }} .flex_row-{{ _defaultFooterSettings.col_count }}--item:nth-child(n+' + (data.col_count + 1) + ')').addClass('d-none');
+            $('footer .flex_row-{{ _defaultFooterSettings.row_count }} .flex_row-{{ _defaultFooterSettings.col_count }}--item:nth-child(-n+' + data.col_count + ')').removeClass('d-none');
           }
 
-          if (data.block_count >= 1) {
-            $('footer .flex_row-{{ _defaultFooterSettings.block_count }}:nth-of-type(n+' + (data.block_count + 1) + ')').addClass('d-none');
-            $('footer .flex_row-{{ _defaultFooterSettings.block_count }}:nth-of-type(-n+' + data.block_count + ')').removeClass('d-none');
+          if (data.row_count >= 1) {
+            $('footer .flex_row-{{ _defaultFooterSettings.row_count }}:nth-of-type(n+' + (data.row_count + 1) + ')').addClass('d-none');
+            $('footer .flex_row-{{ _defaultFooterSettings.row_count }}:nth-of-type(-n+' + data.row_count + ')').removeClass('d-none');
           }
         }
       }

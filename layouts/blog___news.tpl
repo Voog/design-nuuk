@@ -47,19 +47,11 @@
 
           <div class="blog_listing-wrapper" data-search-indexing-allowed="false">
             {% for article in articles %}
-              {%- if article.data.article_settings.hide_article_image_in_list == true -%}
-                {%- assign hideImage = true -%}
-              {%- else -%}
-                {%- assign hideImage = false -%}
-              {%- endif -%}
-
-              {%- if article.data.article_settings.show_border_around_article == true -%}
-                {%- assign showBorder = true -%}
-              {%- else -%}
-                {%- assign showBorder = false -%}
-              {%- endif -%}
+              {%- assign hideImage = article.data.article_settings.hide_article_image_in_list -%}
+              {%- assign showBorder = article.data.article_settings.show_border_around_article -%}
 
               {%- assign articleCount = blog_settings.no_of_unarchived_articles | default: default_blog_settings.no_of_unarchived_articles -%}
+
               {%- if forloop.index > articleCount -%}
                 {%- assign overLimit = true -%}
               {%- else -%}
@@ -86,9 +78,9 @@
 
               {%- assign show_older_articles_as_list = blog_settings.show_older_articles_as_list | default: default_blog_settings.show_older_articles_as_list -%}
 
-              {% if show_older_articles_as_list == true %}
+              {% if show_older_articles_as_list %}
                 {% if overLimit == false %}
-                  <div class="blog_listing-item {{ blog_settings.blog_layout | default: default_blog_settings.blog_layout }}{% if hideImage == true and showBorder == true %} blog_listing-item-border{% endif %}">
+                  <div class="blog_listing-item {{ blog_settings.blog_layout | default: default_blog_settings.blog_layout }}{% if hideImage and showBorder %} blog_listing-item-border{% endif %}">
                     {{ article_element_full }}
                   </div>
                 {% else %}
@@ -97,7 +89,7 @@
                     {{ article_element_list }}
                 {% endif %}
               {% else %}
-                <div class="blog_listing-item {{ blog_settings.blog_layout | default: default_blog_settings.blog_layout }}{% if hideImage == true and showBorder == true %} blog_listing-item-border{% endif %}">
+                <div class="blog_listing-item {{ blog_settings.blog_layout | default: default_blog_settings.blog_layout }}{% if hideImage and showBorder %} blog_listing-item-border{% endif %}">
                   {{ article_element_full }}
                 </div>
               {% endif %}

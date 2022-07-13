@@ -28,7 +28,7 @@
     "footer_settings": {
       "key": "PREFIX_footer_settings",
       "value": {
-        "block_count": 2,
+        "row_count": 2,
         "col_count": 4
       }
     }

@@ -28,7 +28,10 @@
 
     <div class="flex_col content_wrap">
       {% capture header_content %}
-        <div class="swiper-content content-formatted swiper-content-{{ swiperSettingsData.content_position | default: default_swiper_position }}" data-search-indexing-allowed="true">
+        <div
+          class="swiper-content content-formatted swiper-content-{{ swiperSettingsData.content_position | default: default_swiper_position }}"
+          data-search-indexing-allowed="true"
+        >
           <div class="swiper-content-area">
             {% content name="slaider_content-1" %}
           </div>
@@ -60,7 +63,11 @@
                   {% endif %}
                 >
                   {%- if swiperSettingsData.is_content_by_slide == true -%}
-                    <div class="swiper-content content-formatted swiper-content-{{ swiperSettingsData.content_position | default: default_swiper_position }}" data-swiper-parallax="-100%" data-search-indexing-allowed="true">
+                    <div
+                      class="swiper-content content-formatted swiper-content-{{ swiperSettingsData.content_position | default: default_swiper_position }}"
+                      data-swiper-parallax="-100%"
+                      data-search-indexing-allowed="true"
+                    >
                       <div class="swiper-content-area">
                         {% content name=contentKey %}
                       </div>

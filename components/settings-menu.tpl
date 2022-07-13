@@ -133,25 +133,28 @@
             if (data.positioning === 'is_top' || data.positioning === 'is_top_fixed') {
               $('.js-menu-btn, .semimodal').addClass('hidden-desktop');
               $('.js-menu-main-wrapper').addClass('hidden-tablet');
-              $('.js-menu-main-wrapper').removeClass('hidden-desktop');
               $('.js-menu-main').addClass('menu_top');
+              $('li[data-arrow="active"], li[data-arrow="inactive"]').addClass('dd-arrow');
+              $('.menu-indicator-opt').addClass('d-none');
+
+              $('.js-menu-main-wrapper').removeClass('hidden-desktop');
               $('.js-menu-popover, .js-menu-popover').removeClass('d-none');
               $('html').removeClass('semimodal-open');
-              $('li[data-arrow="active"], li[data-arrow="inactive"]').addClass('dd-arrow');
               $('.header_fixed_picker-btn').removeClass('d-none');
-              $('.menu-indicator-opt').addClass('d-none');
               $('.menu-elements-opt').removeClass('d-none');
             } else {
-              $('.js-menu-btn, .semimodal').removeClass('hidden-desktop');
               $('.js-menu-main-wrapper').addClass('hidden-tablet');
               $('.js-menu-main-wrapper').addClass('hidden-desktop');
-              $('.js-menu-main').removeClass('menu_top');
               $('.js-menu-popover, .js-menu-popover').addClass('d-none');
-              $('.dd-arrow').data('arrow', 'inactive');
-              $('li.dd-arrow, div.dd-arrow').removeClass('dd-arrow');
               $('.header_fixed_picker-btn').addClass('d-none');
-              $('.menu-indicator-opt').removeClass('d-none');
               $('.menu-elements-opt').addClass('d-none');
+
+              $('.dd-arrow').data('arrow', 'inactive');
+
+              $('.js-menu-btn, .semimodal').removeClass('hidden-desktop');
+              $('.js-menu-main').removeClass('menu_top');
+              $('li.dd-arrow, div.dd-arrow').removeClass('dd-arrow');
+              $('.menu-indicator-opt').removeClass('d-none');
             }
 
             if (data.positioning === 'is_side_always_open') {
@@ -159,7 +162,7 @@
             } else {
               $('.header_fixed .semimodal-bg_color').removeClass('hidden-desktop');
             }
-            
+
             if (data.positioning === 'is_top') {
               $('.header_fixed').removeClass('relative');
               $('.header_fixed').addClass('menu-top');
@@ -271,7 +274,7 @@
 
               $('.menu-main .menu .menu-item').removeClass('top-menu-element');
               $('.menu-main .menu .menu-item:nth-of-type(-n+' + data.max_elements + ')').addClass('top-menu-element');
-              
+
               if (menuCount <= data.max_elements) {
                 $('.js-menu-popover-btn').addClass('d-none');
               } else {
@@ -287,6 +290,6 @@
         $('.menu-elements-opt').addClass('d-none');
       {%- endif -%}
     });
-    
+
   {%- endif -%}
 </script>
