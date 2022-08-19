@@ -61,7 +61,7 @@
               {%- capture article_element_full -%}
                 <a class="blog_listing-link animate_wrap" href="{{ article.url }}">
                   {% include "article-settings-variables" %}
-                  {%- if forloop.index == 1 -%}
+                  {%- if forloop.first -%}
                     {%- assign targetWidth = '1280' -%}
                   {%- else -%}
                     {%- assign targetWidth = '600' -%}

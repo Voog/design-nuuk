@@ -144,7 +144,7 @@
       "show_date": true,
       "show_comments": true,
       "show_authors": true,
-      "hide_article_image_in_list": true,
+      "hide_article_image_in_list": false,
       "show_border_around_article": false,
       "has_share_on_facebook_btn": false,
       "has_share_on_twitter_btn": false,

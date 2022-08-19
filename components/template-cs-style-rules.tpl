@@ -978,16 +978,16 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
   border-color: var(--third-color);
 }
 
-.footer .content-formatted {
+.footer .footer_content .content-formatted {
   font-size: var(--layout-footer-font-size);
   line-height: var(--layout-footer-line-height);
 }
 
-.footer .content-formatted .voog-reference svg path {
+.footer .footer_content .content-formatted .voog-reference svg path {
   fill: var(--primary-color);
 }
 
-.dark-background .footer .content-formatted .voog-reference svg path {
+.dark-background .footer .footer_content .content-formatted .voog-reference svg path {
   fill: var(--third-color);
 }
 

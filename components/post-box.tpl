@@ -40,7 +40,7 @@
       <div class="post_details_wrap no-wrap">
         <span class="w-auto">
           <time class="post_date{% if show_article_date == false %} hide-post-date{% endif %}{% if show_article_author == false or show_article_date == false %} mar_r-8{% endif %}{% if article_data_show_date_defined != true %} site-data{% endif %}"
-              datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: '%d.%m.%Y' }}
+            datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: 'long' }}
           </time>
         </span>
         <span class="date-separator{% if show_article_author == false or show_article_date == false %} hide-separator{% endif %}">&#8212;</span>

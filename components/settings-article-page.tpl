@@ -188,7 +188,7 @@
             $dateSeparator.removeClass('hide-separator');
           }
 
-          if (data.hide_article_image_in_list == true) {
+          if (data.hide_article_image_in_list) {
             $('.article-border-opt').show();
           } else {
             $('.article-border-opt').hide();

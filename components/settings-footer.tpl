@@ -19,7 +19,7 @@
         settingsBtn: document.querySelector('.js-footer-settings-btn'),
         menuItems: [
           {
-            "title": {{ "rows" | lce | json }},
+            "title": {{ "no_of_rows" | lce | json }},
             "type": "select",
             "key": "row_count",
             "list": [
@@ -28,7 +28,7 @@
             ]
           },
           {
-            "title": {{ "columns" | lce | json }},
+            "title": {{ "no_of_columns" | lce | json }},
             "type": "select",
             "key": "col_count",
             "list": [

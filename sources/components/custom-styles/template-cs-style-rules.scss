@@ -1031,15 +1031,17 @@ header.header_fixed.scroll.dark-background {
 // =============================================================================
 // Styling rules for the site's footer. These rules affect the entire site.
 .footer {
-  .content-formatted {
-    font-size: var(--layout-footer-font-size);
-    line-height: var(--layout-footer-line-height);
+  .footer_content {
+    .content-formatted {
+      font-size: var(--layout-footer-font-size);
+      line-height: var(--layout-footer-line-height);
 
-    .voog-reference svg path {
-      fill: var(--primary-color);
+      .voog-reference svg path {
+        fill: var(--primary-color);
 
-      .dark-background & {
-        fill: var(--third-color);
+        .dark-background & {
+          fill: var(--third-color);
+        }
       }
     }
   }

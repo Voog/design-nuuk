@@ -98,7 +98,7 @@
             $articleSize.addClass('list_cols_3');
           }
 
-          if (data.show_older_articles_as_list === true) {
+          if (data.show_older_articles_as_list) {
             $('.blog-list-opt').show();
           } else {
             $('.blog-list-opt').hide();
