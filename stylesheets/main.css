@@ -4153,12 +4153,13 @@ body.edy-checkout-button-visible {
   padding-bottom: 16px;
 }
 
-.blog_listing-item.list_cols_3 {
-  width: calc(33% - 48px);
-}
-
-.blog_listing-item.list_cols_2 {
-  width: calc(50% - 48px);
+@media screen and (min-width: 901px) {
+  .blog_listing-item.list_cols_3 {
+    width: calc(33% - 48px);
+  }
+  .blog_listing-item.list_cols_2 {
+    width: calc(50% - 48px);
+  }
 }
 
 @media screen and (max-width: 900px) {

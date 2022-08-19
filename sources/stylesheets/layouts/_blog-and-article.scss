@@ -85,11 +85,11 @@
         &:last-child:nth-child(odd) {
           width: calc(70% - 48px);
         }
-  
+
         &:nth-child(2) {
           width: calc(30% - 48px);
         }
-  
+
         &:nth-child(n+2) {
           .post_wrapper {
             border-bottom: none;
@@ -106,15 +106,17 @@
         padding: 0 16px;
         padding-bottom: 16px;
 
-        &_cols {
-          &_3 {
-            width: calc(33% - 48px);
+        @include query($tablet-1 + 1, 'min-width') {
+          &_cols {
+            &_3 {
+              width: calc(33% - 48px);
+            }
+
+            &_2 {
+              width: calc(50% - 48px);
+            }
           }
-  
-          &_2 {
-            width: calc(50% - 48px);
-          }
-        }  
+        }
       }
 
       @include query($tablet-1) {
@@ -143,10 +145,7 @@
           font-size: 18px;
           line-height: 24px;
         }
-
-
       }
-
 
       .semimodal-relative & {
         @include query($desktop-2) {
@@ -208,7 +207,7 @@
             font-size: 18px;
             line-height: 24px;
           }
-        } 
+        }
       }
     }
   }
