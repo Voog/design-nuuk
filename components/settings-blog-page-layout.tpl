@@ -45,15 +45,15 @@
                 "value": "highlight"
               },
               {
-                "title": {{ "list" | lce | json }},
+                "title": "{{ "list" | lce }} ({{ "cols_n" | lcce: 1 }})",
                 "value": "list"
               },
               {
-                "title": {{ "list_cols_2" | lce | json }},
+                "title": "{{ "list" | lce }} ({{ "cols_n" | lcce: 2 }})",
                 "value": "list_cols_2"
               },
               {
-                "title": {{ "list_cols_3" | lce | json }},
+                "title": "{{ "list" | lce }} ({{ "cols_n" | lcce: 3 }})",
                 "value": "list_cols_3"
               },
             ]

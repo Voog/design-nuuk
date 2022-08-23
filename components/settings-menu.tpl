@@ -70,7 +70,7 @@
               ]
             },
             {
-              "title": {{ "active_element_indicator" | lce | json }},
+              "title": {{ "active_page_indicator" | lce | json }},
               "type": "radio",
               "key": "indicator",
               "list": [
@@ -96,10 +96,10 @@
               "placeholder": {{ sideMenuCombinedTr | json }}
             },
             {
-              "title": {{ "no_of_elements" | lce | json }},
+              "title": {{ "max_no_of_menu_pages" | lce | json }},
               "type": "number",
               "key": "max_elements",
-              "placeholder": {{ "no_of_elements" | lce | json }},
+              "placeholder": {{ "max_no_of_menu_pages" | lce | json }},
               "step": 1,
               "min": 1,
               "max": 10,

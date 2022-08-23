@@ -42,7 +42,7 @@
             "min": 1
           },
           {
-            "title": {{ "show_slider_full_height" | lce | json }},
+            "title": {{ "show_full_height_slider" | lce | json }},
             "type": "checkbox",
             "key": "is_full_height",
             "states": {

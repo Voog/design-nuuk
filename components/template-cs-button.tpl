@@ -1,7 +1,7 @@
 :root {
   /* VoogStyle
     "pathI18n": ["button"],
-    "titleI18n": "radius",
+    "titleI18n": "border_radius",
     "editor": "rangePicker",
     "min": 0,
     "max": 30,

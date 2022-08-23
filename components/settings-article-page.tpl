@@ -97,7 +97,7 @@
             }
           },
           {
-            "title": {{ "hide_article_image_in_list" | lce | json }},
+            "title": {{ "hide_article_image_in_articles_list" | lce | json }},
             "type": "toggle",
             "key": "hide_article_image_in_list",
             "states": {
