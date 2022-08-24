@@ -43,6 +43,7 @@
   {%- assign menuSettingsKey = template_settings.site.menu_settings.key -%}
   {%- assign semimodalBgKey = template_settings.site.semimodal_bg.key -%}
   {%- assign productBodyBgKey = template_settings.product.body_bg.key -%}
+  {%- assign footerSettingsKey = template_settings.site.footer_settings.key -%}
 
   {%- assign swiperBg1Key = swiperBgKey | append: 1 -%}
   {% assign swiper_bg_1 = page.data[swiperBg1Key] %}
@@ -83,14 +84,6 @@
     {% assign body_bg = site.data[productBodyBgKey] %}
   {% else %}
     {% assign body_bg = page.data[bodyBgKey] %}
-  {% endif %}
-
-  {% if page.data[blogLayoutKey].blog_layout == "list" %}
-    {% assign blog_layout_setting = "list" %}
-  {% elsif page.data[blogLayoutKey].blog_layout == "highlight" %}
-    {% assign blog_layout_setting = "highlight" %}
-  {% else %}
-    {% assign blog_layout_setting = "highlight_with_popout" %}
   {% endif %}
 
   {% comment %}Assign variables based on page type.{% endcomment %}
@@ -165,6 +158,24 @@
     [
       {
         "type": "group",
+        "title": "Cursive",
+        "list": [
+          {
+            "title": "Comfortaa",
+            "value": "\"Comfortaa\", cursive"
+          },
+          {
+            "title": "Gruppo",
+            "value": "\"Gruppo\", cursive"
+          },
+          {
+            "title": "Yeseva One",
+            "value": "\"Yeseva One\", cursive"
+          }
+        ]
+      },
+      {
+        "type": "group",
         "title": "Sans Serif",
         "list": [
           {
@@ -186,6 +197,10 @@
           {
             "title": "Open Sans",
             "value": "\"Open Sans\", sans-serif"
+          },
+          {
+            "title": "Poppins",
+            "value": "\"Poppins\", sans-serif"
           },
           {
             "title": "PT Sans",
@@ -214,8 +229,20 @@
         "title": "Serif",
         "list": [
           {
+            "title": "Antic Didone",
+            "value": "\"Antic Didone\", serif"
+          },
+          {
             "title": "Arvo",
             "value": "\"Arvo\", serif"
+          },
+          {
+            "title": "BioRhyme Expanded",
+            "value": "\"BioRhyme Expanded\", serif"
+          },
+          {
+            "title": "Bitter",
+            "value": "\"Bitter\", serif"
           },
           {
             "title": "Crimson Text",
@@ -262,6 +289,10 @@
           {
             "title": "Roboto Mono",
             "value": "\"Roboto Mono\", monospace"
+          },
+          {
+            "title": "Source Code Pro",
+            "value": "\"Source Code Pro\", monospace"
           },
           {
             "title": "Ubuntu Mono",

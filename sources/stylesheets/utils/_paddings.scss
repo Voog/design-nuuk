@@ -31,4 +31,22 @@
   &0-4 {
     padding: 0 4px;
   }
+
+  &r-40-mob {
+    @include query($tablet-1) {
+      padding-right: 40px;
+    }
+
+    @include query($tablet-2) {
+      padding-right: 24px;
+    }
+  }
+
+  &t-32 {
+    padding-top: 32px;
+
+    @include query($tablet-1) {
+      padding-top: 16px;
+    }
+  }
 }

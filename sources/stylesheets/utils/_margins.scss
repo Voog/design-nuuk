@@ -53,6 +53,12 @@
 
   &b-16 {
     margin-bottom: 16px;
+
+    &-mob {
+      @include query($tablet-2) {
+        margin-bottom: 16px;
+      }
+    }
   }
 
   &b-32 {
@@ -105,6 +111,14 @@
 
   &t-32 {
     margin-top: 32px;
+  }
+
+  &t-32-neg {
+    margin-top: -32px;
+
+    @include query($tablet-1) {
+      margin-top: -16px;
+    }
   }
 
   &t-48 {

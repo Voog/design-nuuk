@@ -295,6 +295,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/settings-footer.tpl",
+      "layout_name": "settings-footer",
+      "title": "settings-footer"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/settings-menu.tpl",
       "layout_name": "settings-menu",
       "title": "settings-menu"
@@ -553,6 +560,114 @@
     }
   ],
   "assets": [
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/AnticDidone-Regular.ttf",
+      "kind": "assets",
+      "filename": "AnticDidone-Regular.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/BioRhymeExpanded-Bold.ttf",
+      "kind": "assets",
+      "filename": "BioRhymeExpanded-Bold.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/BioRhymeExpanded-Light.ttf",
+      "kind": "assets",
+      "filename": "BioRhymeExpanded-Light.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/BioRhymeExpanded-Regular.ttf",
+      "kind": "assets",
+      "filename": "BioRhymeExpanded-Regular.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/Bitter-Bold.ttf",
+      "kind": "assets",
+      "filename": "Bitter-Bold.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/Bitter-Light.ttf",
+      "kind": "assets",
+      "filename": "Bitter-Light.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/Bitter-Regular.ttf",
+      "kind": "assets",
+      "filename": "Bitter-Regular.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/Comfortaa-Bold.ttf",
+      "kind": "assets",
+      "filename": "Comfortaa-Bold.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/Comfortaa-Light.ttf",
+      "kind": "assets",
+      "filename": "Comfortaa-Light.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/Comfortaa-Regular.ttf",
+      "kind": "assets",
+      "filename": "Comfortaa-Regular.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/Gruppo-Regular.ttf",
+      "kind": "assets",
+      "filename": "Gruppo-Regular.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/Poppins-Bold.ttf",
+      "kind": "assets",
+      "filename": "Poppins-Bold.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/Poppins-Light.ttf",
+      "kind": "assets",
+      "filename": "Poppins-Light.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/Poppins-Regular.ttf",
+      "kind": "assets",
+      "filename": "Poppins-Regular.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/SourceCodePro-Bold.ttf",
+      "kind": "assets",
+      "filename": "SourceCodePro-Bold.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/SourceCodePro-Light.ttf",
+      "kind": "assets",
+      "filename": "SourceCodePro-Light.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/SourceCodePro-Regular.ttf",
+      "kind": "assets",
+      "filename": "SourceCodePro-Regular.ttf"
+    },
+    {
+      "content_type": "application/font-sfnt",
+      "file": "assets/YesevaOne-Regular.ttf",
+      "kind": "assets",
+      "filename": "YesevaOne-Regular.ttf"
+    },
     {
       "content_type": "application/font-sfnt",
       "file": "assets/avenir-next-bold.ttf",

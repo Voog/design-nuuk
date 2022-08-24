@@ -30,6 +30,10 @@
   &64 {
     width: 64px;
   }
+
+  &auto {
+    width: auto;
+  }
 }
 
 .mw-24 {
@@ -47,6 +51,10 @@
 
   &64 {
     height: 64px;
+  }
+
+  &100vh {
+    height: 100vh;
   }
 }
 

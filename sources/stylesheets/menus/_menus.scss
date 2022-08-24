@@ -124,38 +124,35 @@
   flex-direction: column;
   position: relative;
 
-  .menu_top.menu-main & {
+  .menu-main-wrapper .menu_top & {
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 
     &.menu_top-list {
       .menu-item.lvl-1 {
-        display: none;
 
-        &:nth-of-type(-n+5).dd-arrow[data-arrow="active"] {
-          padding-right: 16px;
+        &.top-menu-element {
+          &.dd-arrow[data-arrow="active"] {
+            padding-right: 16px;
+          }
+          &.popover-list-element {
+            display: none;
+          }
+          display: initial;
         }
 
-        &:nth-of-type(-n+5).dd-arrow[data-arrow="inactive"] {
-          padding-right: 0;
+        &.editmode-list-element {
+          &.top-menu-element {
+            display: none;
+          }
+          display: initial;
         }
-      }
 
-      li.menu-item.lvl-1:nth-of-type(-n+5) {
-        display: initial;
-      }
-    }
-
-    &.menu_top-popover {
-      .menu-item.lvl-1 {
         display: none;
       }
 
-      li.menu-item.lvl-1:nth-of-type(-n+5) {
-        display: initial;
-      }
     }
-
 
     .menu-item a {
       max-width: 160px;
@@ -228,6 +225,12 @@
             background-repeat: no-repeat;
             background-position: right center;
             cursor: pointer;
+
+            .header_fixed:not(.relative).scroll.dark-background &,
+            body.dark-background .header_fixed:not(.relative):not(.scroll) &,
+            .header_fixed.relative.dark-background & {
+              background-image: url('../assets/chevron-down-white.svg');
+            }
           }
           &[data-arrow="inactive"] {
             background: none;
@@ -241,10 +244,12 @@
         opacity: 0;
         width: 216px;
         pointer-events: none;
-        position: absolute;
-        top: calc((var(--header-mainmenu-font-size) * var(--header-mainmenu-line-height)) + 8px);
+        position: relative;
         right: 0;
         @include transition(opacity 200ms);
+        border-color: rgba(0,0,0,.1);
+        border-style: solid;
+        border-width: 1px;
 
         &-list {
           background-color: $black;
@@ -255,19 +260,22 @@
           flex-direction: column;
 
           .menu-item {
-
-            width: 100%;
-            display: none;
-
-            &:nth-of-type(n+6) {
+            .publicmode & {
               display: inline-flex;
-
-              @include query($tablet-1) {
-                display: none;
-              }
             }
 
+            &.display-menu-element {
+              display: none;
+            }
+            width: 100%;
+
+            @include query($tablet-1) {
+              display: none;
+            }
+
+
             .dropdown_menu-popover {
+              background-color: $black;
               &--wrap {
                 top: 0;
                 left: 100%;
@@ -277,10 +285,6 @@
               .menu-item {
                 display: inline-flex;
               }
-            }
-
-            .publicmode & {
-              display: inline-flex;
             }
 
             a,
@@ -305,6 +309,12 @@
               background-size: 10px 8px;
               background-position: 90% center;
               cursor: pointer;
+
+              .header_fixed:not(.relative).scroll.dark-background &,
+              body.dark-background .header_fixed:not(.relative):not(.scroll) &,
+              .header_fixed:not(.scroll).dark-background & {
+                background-image: url('../assets/ico-arrow-right-white-small.svg');
+              }
             }
 
             &.dd-arrow[data-arrow="inactive"] {
@@ -312,7 +322,7 @@
             }
 
             &:hover {
-              background-color: #383A3A;
+              background-color: $grey-5;
               color: $white;
             }
           }
@@ -344,20 +354,25 @@
     &:not(.menu_top) {
       .menu {
         .menu-item {
-          a.active {
-            &:before {
-              content: '';
-              height: 8px;
-              width: 8px;
-              position: absolute;
-              left: 0px;
-            }
+          &.stripe a.active:before {
+            content: '';
+            height: 24px;
+            width: 1px;
+            position: absolute;
+            left: 8px;
+          }
+
+          &.square a.active:before {
+            content: '';
+            height: 8px;
+            width: 8px;
+            position: absolute;
+            left: 0px;
           }
         }
 
         .menu-sub {
           .menu-item a.active {
-            color: $black;
 
             &:before {
               content: none;
@@ -543,12 +558,12 @@
         width: calc(100% - 48px);
 
         &:hover {
-          background-color: #383A3A;
+          background-color: $grey-5;
           opacity: 1;
         }
 
         a {
-          color: $white !important;
+          color: $white;
           min-height: 40px;
           font-size: 18px;
           line-height: 36px;

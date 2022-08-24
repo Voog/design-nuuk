@@ -15,23 +15,20 @@
       "key": "PREFIX_menu_settings",
       "value": {
         "positioning": "is_side_absolute",
+        "indicator": "square",
         "max_width": 270,
-        "is_product_page_visible": true
+        "is_product_page_visible": true,
+        "max_elements": 5
       }
     },
     "semimodal_bg": {
       "key": "PREFIX_semimodal_bg",
       "value": {}
     },
-    "footer_blocks_settings": {
-      "key": "PREFIX_footer_blocks_settings_",
+    "footer_settings": {
+      "key": "PREFIX_footer_settings",
       "value": {
-        "blocks_count": 2
-      }
-    },
-    "footer_block_columns_settings": {
-      "key": "PREFIX_footer_block_columns_settings_",
-      "value": {
+        "row_count": 2,
         "col_count": 4
       }
     }
@@ -90,7 +87,9 @@
     "blog_settings": {
       "key": "PREFIX_blog_settings",
       "value": {
-        "blog_layout": "highlight_with_popout"
+        "blog_layout": "highlight_with_popout",
+        "show_older_articles_as_list": false,
+        "no_of_unarchived_articles": 5
       }
     },
     "swiper_bg": {
@@ -128,7 +127,9 @@
         "is_autoplay": false,
         "autoplay_interval": 1000,
         "are_navigation_arrows": false,
-        "are_navigation_bullets": false
+        "are_navigation_bullets": false,
+        "content_position": "center",
+        "is_full_height": false
       }
     }
   },
@@ -143,6 +144,8 @@
       "show_date": true,
       "show_comments": true,
       "show_authors": true,
+      "hide_article_image_in_list": false,
+      "show_border_around_article": false,
       "has_share_on_facebook_btn": false,
       "has_share_on_twitter_btn": false,
       "has_share_on_linkedin_btn": false,

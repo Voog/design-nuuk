@@ -599,5 +599,41 @@
   */
   #{--menu-sub-active-color}: $black;
 
+  /* VoogStyle
+    "pathI18n": ["header", "dropdown", "normal"],
+    "titleI18n": "background_color",
+    "editor": "colorPicker",
+    "scope": "global",
+    "featured": true
+  */
+  #{--menu-dropdown-background-color}: $black;
+
+  /* VoogStyle
+    "pathI18n": ["header", "dropdown", "normal"],
+    "titleI18n": "text_color",
+    "editor": "colorPicker",
+    "scope": "global",
+    "featured": true
+  */
+  #{--menu-dropdown-text-color}: $white;
+
+  /* VoogStyle
+    "pathI18n": ["header", "dropdown", "hover"],
+    "titleI18n": "background_color",
+    "editor": "colorPicker",
+    "scope": "global",
+    "featured": true
+  */
+  #{--menu-dropdown-hover-background-color}: $grey-5;
+
+  /* VoogStyle
+    "pathI18n": ["header", "dropdown", "hover"],
+    "titleI18n": "text_color",
+    "editor": "colorPicker",
+    "scope": "global",
+    "featured": true
+  */
+  #{--menu-dropdown-hover-text-color}: $white;
+
   // scss-lint:enable Comment, Indentation
 }

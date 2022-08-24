@@ -17,6 +17,8 @@
   {% unless front_main_size contains "-" %}
     {% assign front_main_has_content = true %}
   {% endunless %}
+
+  {%- assign default_swiper_position = template_settings.page.swiper_settings.value.content_position -%}
 </head>
 
 <body class="front-page body-bg_picker--area {{ body_bg_type }}">
@@ -26,7 +28,10 @@
 
     <div class="flex_col content_wrap">
       {% capture header_content %}
-        <div class="swiper-content content-formatted" data-search-indexing-allowed="true">
+        <div
+          class="swiper-content content-formatted swiper-content-{{ swiperSettingsData.content_position | default: default_swiper_position }}"
+          data-search-indexing-allowed="true"
+        >
           <div class="swiper-content-area">
             {% content name="slaider_content-1" %}
           </div>
@@ -34,7 +39,7 @@
       {% endcapture %}
 
       {%- if swiperSettingsData.slides_count >= 2 -%}
-        <div class="swiper-container">
+        <div class="swiper-container{% if swiperSettingsData.is_full_height %} h-100vh{% endif %}">
           <div class="swiper-wrapper{%- if swiperSettingsData.is_content_by_slide != true %} p-abs{% endif -%}">
             {%- for i in (1..swiperSettingsData.slides_count) -%}
               {% assign swiperDataKey = swiperBgKey | append: i %}
@@ -52,13 +57,17 @@
                 {%- assign imageClass = "image_fit-cover img-absolute swiper-lazy front_header-image-" | append: i -%}
 
                 {% include "lazy-image", _data: imagedata, _targetWidth: '2048', _className: imageClass, disableLazyLoad: true  %}
-                <div class="w-100p h-100p front_header-color-{{i}}"
+                <div class="w-100p h-100p front_header-color-{{i}} d-flex"
                   {% if page.data[swiperDataKey].color != blank %}
                     style="background-color: {{ page.data[swiperDataKey].color }};"
                   {% endif %}
                 >
                   {%- if swiperSettingsData.is_content_by_slide == true -%}
-                    <div class="swiper-content content-formatted" data-swiper-parallax="-100%" data-search-indexing-allowed="true">
+                    <div
+                      class="swiper-content content-formatted swiper-content-{{ swiperSettingsData.content_position | default: default_swiper_position }}"
+                      data-swiper-parallax="-100%"
+                      data-search-indexing-allowed="true"
+                    >
                       <div class="swiper-content-area">
                         {% content name=contentKey %}
                       </div>
@@ -100,7 +109,7 @@
         </div>
       {%- else -%}
         <div
-          class="swiper-container image_header flex_box front-header-bg_picker--area-1"
+          class="swiper-container image_header flex_box front-header-bg_picker--area-1{% if swiperSettingsData.is_full_height %} h-100vh{% endif %}"
         >
           {%- assign imageClass = "image_fit-cover img-absolute front_header-image-1" -%}
           {% include "lazy-image", _data: swiper_bg_1, _targetWidth: '2048', _className: imageClass  %}
@@ -115,7 +124,7 @@
               data-color_elem=".front_header-color-1"
               data-picker_area_elem=".front-header-bg_picker--area-1"
               data-picker_elem=".front-header-bg_picker-1"
-              data-bg_key="{{swiperDataKey}}"
+              data-bg_key="{{ swiperDataKey }}"
               data-bg="{{ swiper_bg_1 | json | escape }}"
               data-wrapper_class="image_header"
             ></button>
@@ -141,7 +150,7 @@
               data-type_color="true"
               data-color_elem=".body-bg_color"
               data-picker_area_elem=".body-bg_picker--area"
-              data-picker_elem=".{{bodyBgKey}}-picker"
+              data-picker_elem=".{{ bodyBgKey }}-picker"
               data-bg-color="{{ body_bg_color }}"
             ></button>
           </div>

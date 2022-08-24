@@ -45,6 +45,8 @@
       show_comments: show_comments,
       show_date: show_date,
       show_author: show_author,
+      hide_article_image_in_list: {%- if articleSettingsData.hide_article_image_in_list == true -%}true{%- else -%}false{%- endif -%},
+      show_border_around_article: {%- if articleSettingsData.show_border_around_article == true -%}true{%- else -%}false{%- endif -%},
       has_share_on_facebook_btn: {%- if articleSettingsData.has_share_on_facebook_btn == true -%}true{%- else -%}false{%- endif -%},
       has_share_on_twitter_btn: {%- if articleSettingsData.has_share_on_twitter_btn == true -%}true{%- else -%}false{%- endif -%},
       has_share_on_linkedin_btn: {%- if articleSettingsData.has_share_on_linkedin_btn == true -%}true{%- else -%}false{%- endif -%},
@@ -56,43 +58,62 @@
         settingsBtn: document.querySelector('.js-article-settings-btn'),
         menuItems: [
           {
-            "title": {{"add_share_facebook_button" | lce | json }},
+            "title": {{ "add_share_facebook_button" | lce | json }},
             "type": "checkbox",
             "key": "has_share_on_facebook_btn",
-            "tooltip": {{"visible_live_preview_visuals" | lce | json }},
+            "tooltip": {{ "visible_live_preview_visuals" | lce | json }},
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": {{"add_share_twitter_button" | lce | json }},
+            "title": {{ "add_share_twitter_button" | lce | json }},
             "type": "checkbox",
             "key": "has_share_on_twitter_btn",
-            "tooltip": {{"visible_live_preview_visuals" | lce | json }},
+            "tooltip": {{ "visible_live_preview_visuals" | lce | json }},
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": {{"add_share_linkedin_button" | lce | json }},
+            "title": {{ "add_share_linkedin_button" | lce | json }},
             "type": "checkbox",
             "key": "has_share_on_linkedin_btn",
-            "tooltip": {{"visible_live_preview_visuals" | lce | json }},
+            "tooltip": {{ "visible_live_preview_visuals" | lce | json }},
             "states": {
               "on": true,
               "off": false
             }
           },
           {
-            "title": {{"show_related_articles_by_tags" | lce | json }},
+            "title": {{ "show_related_articles_by_tags" | lce | json }},
             "type": "checkbox",
             "key": "show_related_articles",
             "states": {
               "on": true,
               "off": false
             }
+          },
+          {
+            "title": {{ "hide_article_image_in_articles_list" | lce | json }},
+            "type": "toggle",
+            "key": "hide_article_image_in_list",
+            "states": {
+              "on": true,
+              "off": false
+            }
+          },
+          {
+            "title": {{ "show_border_around_article" | lce | json }},
+            "type": "toggle",
+            "key": "show_border_around_article",
+            "states": {
+              "on": true,
+              "off": false
+            },
+            "class": "article-border-opt"
           },
           {
             "titleI18n": "comments",
@@ -135,6 +156,7 @@
             $articleDate = $('.post_date'),
             $articleAuthor = $('.post_author'),
             $dateSeparator = $('.date-separator');
+            $articleImage = $('.post_header p-rel');
 
           if (data.show_date == true) {
             $articleDate.removeClass('hide-post-date');
@@ -166,6 +188,11 @@
             $dateSeparator.removeClass('hide-separator');
           }
 
+          if (data.hide_article_image_in_list) {
+            $('.article-border-opt').show();
+          } else {
+            $('.article-border-opt').hide();
+          }
           // Share buttons script
 
           if (data.has_share_on_facebook_btn == true) {
@@ -222,5 +249,9 @@
         }
       }
     );
+
+    {%- if articleSettingsData.hide_article_image_in_list != true -%}
+      $('.article-border-opt').hide();
+    {%- endif -%}
   });
 </script>

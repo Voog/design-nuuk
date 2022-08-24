@@ -7,12 +7,14 @@
   {%- assign menuTop = false -%}
 {%- endif -%}
 
+{%- assign indicatorStyle = menuSettings.indicator | default: template_settings.site.menu_settings.value.indicator -%}
+
+{%- include 'menu-main-iteration', _indicatorStyle: indicatorStyle -%}
 {%- assign cross_site_title = "cross_site_title" | lce -%}
 {%- assign cross_site_title_tooltip = "content_tooltip_all_pages_same_language" | lce -%}
 
-{%- include 'menu-main-iteration' -%}
 {%- include "site-search" %}
-{% include 'header-fixed', _menuTop: menuTop -%}
+{% include 'header-fixed', _menuTop: menuTop, _menuPos: menuPos, _indicatorStyle: indicatorStyle -%}
 {% include 'cart-popover' %}
 
 {%- if menuSettings.max_width >= 1 -%}
@@ -31,11 +33,7 @@
   </style>
 {%- endif -%}
 
-<div class="
-  semimodal js-prevent-sideclick semimodal-bg_picker--area {{semimodal_bg_type}}
-  {%- if menuTop == true %} hidden-desktop{% endif -%}
-  "
->
+<div class="semimodal js-prevent-sideclick {%- if menuTop == true %} hidden-desktop{% endif -%}">
   {%- assign imageClass = "image_fit-cover image_abs semimodal-bg_image" -%}
   {%- include "lazy-image", _data: semimodal_bg, _className: imageClass -%}
 
@@ -45,7 +43,7 @@
     {%- endif -%}
   ></div>
 
-  <header class="semimodal_inner">
+  <header class="semimodal_inner semimodal-bg_picker--area {{ semimodal_bg_type }}">
     <div class="flex_box">
       <button class="menu-btn js-menu-btn js-prevent-sideclick{% if menuTop == true %} hidden-desktop{% endif %}">
         <div>
@@ -96,7 +94,7 @@
         </div>
       {%- endif -%}
 
-      {%- include "menu-main", _renderSemimodalMenu: true -%}
+      {%- include "menu-main", _renderSemimodalMenu: true, _indicatorStyle: indicatorStyle -%}
     </div>
   </header>
 </div>

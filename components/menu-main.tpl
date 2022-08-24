@@ -3,7 +3,7 @@
 
     {%- capture root_menu_item -%}
       {%- unless site.root_item.hidden? %}
-        <li data-visible=true class="menu-item lvl-1">
+        <li data-visible=true class="menu-item lvl-1 top-menu-element {{ _indicatorStyle }}">
           {%- menulink site.root_item current-class="active" -%}
         </li>
       {%- endunless -%}
@@ -19,16 +19,17 @@
         <ul class="menu menu_top-list">
           {{root_menu_item}}
           {{menu_main_lvl_1_top_main}}
+          <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= menuSettings.max_elements %} d-none{% endif %}" data-count="{{menuItemCount}}">
+            {% include 'ico-ellipsis' %}
+            <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
+              <ul class="menu menu_popover-list"></ul>
+            </li>
+          </div>
         </ul>
-        <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
-          <ul class="menu menu_popover-list"></ul>
-        </li>
+        
       {%- endif -%}
     {% endif -%}
 
-    <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= 5 %} d-none{% endif %}" data-count="{{menuItemCount}}">
-      {% include 'ico-ellipsis' %}
-    </div>
     {%- capture menuSettingsBtns -%}
       {% if site.hidden_menuitems.size > 0 %}
         <li class="edit-btn mar_t-16">{% menubtn site.hidden_menuitems %}</li>

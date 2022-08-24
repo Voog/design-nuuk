@@ -12,6 +12,17 @@
   --container-max-width: 992px;
   /* VoogStyle
     "pathI18n": ["main_styles"],
+    "titleI18n": "headings_font",
+    "editor": "listPicker",
+    "list": {{ base_font_set }},
+    "featured": true,
+    "scope": "global",
+    "boundVariables": [
+    ]
+  */
+  --headings-font-family: "Avenir Next", sans-serif;
+  /* VoogStyle
+    "pathI18n": ["main_styles"],
     "titleI18n": "font",
     "editor": "listPicker",
     "list": {{ base_font_set }},

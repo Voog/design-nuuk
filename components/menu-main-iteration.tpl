@@ -26,6 +26,8 @@
   {%- assign menuPosTop = false -%}
 {%- endif -%}
 
+{%- assign maxMenuElements = menuSettings.max_elements | default: template_settings.site.menu_settings.value.max_elements -%}
+
 {%- capture menu_main -%}
   {% for item in site.visible_menuitems %}
     {% capture menu_main_lvl_1_item %}
@@ -36,6 +38,13 @@
           {%- endif -%}
         {% endif %}
       {% endcapture %}
+
+      {% if maxMenuElements > menuItemCount %}
+        {%- assign showInTopMenu = true -%}
+      {% else %}
+        {%- assign showInTopMenu = false -%}
+      {% endif %}
+
       {%- if item.layout_title == product_list_layout or item.layout_title == product_layout %}
         {%- if item.layout_title == product_list_layout -%}
           {%- assign itemClass = 'menu-item-product-list' -%}
@@ -67,7 +76,7 @@
             {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
             data-url="{{ item.url }}"
             {% if editmode %}data-visible="{{isMenuItemVisible}}"{% endif %}
-            class="{{itemClass}} menu-item lvl-1{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
+            class="{{itemClass}} {{ _indicatorStyle }} menu-item lvl-1{% if showInTopMenu %} top-menu-element{% endif %}{% if item.children? and item.blog? != true and item.selected? %} has-children{% endif %}{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
           >
             {%- menulink item current-class="active" wrapper-class="menu-item lvl-1" -%}
             {% if menu_dropdown != blank %}
@@ -77,13 +86,15 @@
         {% endif %}
 
       {% else %}
+
         {%- assign menuItemCount = menuItemCount | plus: 1 -%}
         {%- assign isMenuItemVisible = true -%}
+
         <li
           {% if editmode or menu_dropdown != blank %}data-arrow="active"{% endif %}
           data-url="{{ item.url }}"
           {% if editmode %}data-visible="true"{% endif %}
-          class="menu-item{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
+          class="menu-item {{ _indicatorStyle }}{% if showInTopMenu %} top-menu-element{% endif %}{% if item.children? and item.blog? != true and item.selected?%} has-children{% endif %} lvl-1{% if menu_dropdown != blank and menuPosTop == true %} dd-arrow{% endif %}"
         >
             {%- menulink item current-class="active" -%}
             {% if menu_dropdown != blank %}
@@ -98,7 +109,7 @@
         {%- assign menu_main_lvl_1_top_main = menu_main_lvl_1_top_main | append: menu_main_lvl_1_item  -%}
       {%- endif -%}
     {%- elsif isMenuItemVisible == true -%}
-      {%- if menuItemCount <= 5 -%}
+      {%- if menuItemCount <= maxMenuElements -%}
         {%- assign menu_main_lvl_1_top_main = menu_main_lvl_1_top_main | append: menu_main_lvl_1_item  -%}
       {%- endif -%}
     {%- endif -%}
