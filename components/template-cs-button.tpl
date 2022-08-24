@@ -12,7 +12,7 @@
   --button-border-radius: 0px;
   /* VoogStyle
     "pathI18n": ["button"],
-    "titleI18n": "border_size",
+    "titleI18n": "border_thickness",
     "editor": "rangePicker",
     "min": 0,
     "max": 30,
