@@ -72,6 +72,7 @@
     margin: 64px 48px;
     box-sizing: border-box;
     min-height: calc(528px - 128px);
+    height: calc(100% - 128px);
     position: relative;
     text-align: center;
     z-index: $zindex-swiper-content;
