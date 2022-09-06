@@ -2689,6 +2689,7 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   min-height: calc(528px - 128px);
+  height: calc(100% - 128px);
   position: relative;
   text-align: center;
   z-index: 49;
