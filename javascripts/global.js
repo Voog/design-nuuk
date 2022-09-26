@@ -1198,6 +1198,12 @@ MMCQ = (function() {
     if (!editmode()) {
       wrapTables();
     }
+
+    window.onbeforeunload = function () {
+      if ($('.js-semimodal-toggle').hasClass('semimodal-open')) {
+        $('.js-semimodal-toggle').removeClass('semimodal-open');
+      }
+    };
   };
 
   // Enables the usage of the initiations outside this file.
