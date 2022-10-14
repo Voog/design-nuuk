@@ -11,22 +11,21 @@
 
     {%- if _renderSemimodalMenu == true -%}
       <ul class="menu menu_semimodal-list">
-        {{root_menu_item}}
-        {{menu_main}}
+        {{ root_menu_item }}
+        {{ menu_main }}
       </ul>
     {% elsif _renderMenuTop == true %}
       {%- if editmode or _menuTop == true -%}
         <ul class="menu menu_top-list">
-          {{root_menu_item}}
-          {{menu_main_lvl_1_top_main}}
-          <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= menuSettings.max_elements %} d-none{% endif %}" data-count="{{menuItemCount}}">
+          {{ root_menu_item }}
+          {{ menu_main_lvl_1_top_main }}
+          <div class="js-menu-popover-btn menu_popover-btn{% if _menuTop != true or menuItemCount <= maxMenuElements %} d-none{% endif %}" data-count="{{ menuItemCount }}">
             {% include 'ico-ellipsis' %}
             <li class="menu_popover js-menu-popover{% if _menuTop != true %} d-none{% endif %}">
               <ul class="menu menu_popover-list"></ul>
             </li>
           </div>
         </ul>
-        
       {%- endif -%}
     {% endif -%}
 
@@ -35,7 +34,7 @@
         <li class="edit-btn mar_t-16">{% menubtn site.hidden_menuitems %}</li>
       {% endif %}
 
-      <li class="edit-btn mar_t-16" {{ edy_intro_add_page }}>{% menuadd %}</li>
+      <li class="edit-btn mar_t-16">{% menuadd %}</li>
     {%- endcapture -%}
 
     {%- if _renderSemimodalMenu -%}
@@ -46,7 +45,7 @@
   </ul>
   {% if _renderSemimodalMenu != true -%}
     {% if editmode %}
-      <ul class="menu-edy-btns">{{menuSettingsBtns}}</ul>
+      <ul class="menu-edy-btns">{{ menuSettingsBtns }}</ul>
     {% endif %}
   {%- endif %}
 </nav>
