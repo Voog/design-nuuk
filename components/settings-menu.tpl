@@ -47,7 +47,7 @@
           settingsBtn: document.querySelector('.js-menu-settings-btn'),
           menuItems: [
             {
-              "title": {{ "menu_alignment" | lce | json }},
+              "title": "{{ "menu_alignment" | lce }} ({{ "desktop" | lce }})",
               "type": "radio",
               "key": "positioning",
               "list": [
@@ -70,7 +70,7 @@
               ]
             },
             {
-              "title": {{ "active_page_indicator" | lce | json }},
+              "title": "{{ "active_page_indicator" | lce }} ({{ "desktop" | lce }})",
               "type": "radio",
               "key": "indicator",
               "list": [
@@ -89,14 +89,14 @@
             {%- assign pxTr = "units.px" | lce -%}
             {%- assign sideMenuCombinedTr = sideMenuWidthTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": {{ sideMenuCombinedTr | json }},
+              "title": "{{ sideMenuCombinedTr }} ({{ "desktop" | lce }})",
               "type": "number",
               "min": 1,
               "key": "max_width",
               "placeholder": {{ sideMenuCombinedTr | json }}
             },
             {
-              "title": {{ "max_no_of_menu_pages" | lce | json }},
+              "title": "{{ "max_no_of_menu_pages" | lce }} ({{ "desktop" | lce }})",
               "type": "number",
               "key": "max_elements",
               "placeholder": {{ "max_no_of_menu_pages" | lce | json }},

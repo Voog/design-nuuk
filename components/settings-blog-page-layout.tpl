@@ -32,7 +32,7 @@
         settingsBtn: document.querySelector('.js-blog-layout-settings-editor'),
         menuItems: [
           {
-            "title": {{ "blog_layout" | lce | json }},
+            "title": "{{ "blog_layout" | lce }} ({{ "desktop" | lce }})",
             "type": "radio",
             "key": "blog_layout",
             "list": [

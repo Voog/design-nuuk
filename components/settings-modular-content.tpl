@@ -70,7 +70,7 @@
           valuesObj.col_h_padding = "{{_defaultBlockObj.default.col_h_padding}}";
         {%- endif -%}
       }
-      
+
       if (!('col_min_width' in valuesObj)) {
         {%- if _defaultBlockObj[blockColumnsSettingsKey].col_min_width -%}
           valuesObj.col_min_width = "{{_defaultBlockObj[blockColumnsSettingsKey].col_min_width}}";
@@ -143,15 +143,6 @@
                 {"title": "5", "value": 5}
               ]
             },
-            {%- assign blockMaxWidthTr = "max_width" | lce -%}
-            {%- assign blockMaxWidthCombinedTr = blockMaxWidthTr | append: ' (%)' -%}
-            {
-              "title": {{ blockMaxWidthCombinedTr| json }},
-              "type": "number",
-              "min": 1,
-              "key": "block_max_width",
-              "placeholder": {{ blockMaxWidthCombinedTr| json }}
-            },
             {%- assign verticalSpacingTr = "vertical_spacing" | lce -%}
             {%- assign pxTr = "units.px" | lce -%}
             {%- assign verticalSpacingCombinedTr = verticalSpacingTr | append: ' (' | append: pxTr | append: ')' -%}
@@ -162,8 +153,17 @@
               "key": "block_v_padding",
               "placeholder": {{verticalSpacingCombinedTr | json }}
             },
+            {%- assign blockMaxWidthTr = "max_width" | lce -%}
+            {%- assign blockMaxWidthCombinedTr = blockMaxWidthTr | append: ' (%)' -%}
             {
-              "title": {{ "column_distribution" | lce | json }},
+              "title": "{{ blockMaxWidthCombinedTr }} ({{ "desktop" | lce }})" ,
+              "type": "number",
+              "min": 1,
+              "key": "block_max_width",
+              "placeholder": {{ blockMaxWidthCombinedTr| json }}
+            },
+            {
+              "title": "{{ "column_distribution" | lce }} ({{ "desktop" | lce }})",
               "type": "select",
               "key": "block_justification",
               "list": [
@@ -188,7 +188,7 @@
             {%- assign pxTr = "units.px" | lce -%}
             {%- assign colMaxWidthCombinedTr = colMaxWidthTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": {{ colMaxWidthCombinedTr | json }},
+              "title": "{{ colMaxWidthCombinedTr }} ({{ "desktop" | lce }})",
               "type": "number",
               "min": 1,
               "key": "col_max_width",
@@ -198,7 +198,7 @@
             {%- assign pxTr = "units.px" | lce -%}
             {%- assign colMinWidthCombinedTr = colMinWidthTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": {{ colMinWidthCombinedTr | json }},
+              "title": "{{ colMinWidthCombinedTr }} ({{ "desktop" | lce }})",
               "type": "number",
               "min": 1,
               "key": "col_min_width",
@@ -208,14 +208,14 @@
             {%- assign pxTr = "units.px" | lce -%}
             {%- assign colHPadCombinedTr = colHPadTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": {{ colHPadCombinedTr | json }},
+              "title": "{{ colHPadCombinedTr }} ({{ "desktop" | lce }})",
               "type": "number",
               "min": 0,
               "key": "col_h_padding",
               "placeholder": {{ colHPadCombinedTr | json }}
             },
             {
-              "title": {{ "column_distribution" | lce | json }},
+              "title": "{{ "column_distribution" | lce }} ({{ "desktop" | lce }})",
               "type": "select",
               "key": "col_justification",
               "list": [

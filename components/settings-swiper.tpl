@@ -51,7 +51,7 @@
             }
           },
           {
-            "title": {{ "content_position" | lce | json }},
+            "title": "{{ "content_position" | lce }} ({{ "desktop" | lce }})",
             "type": "radio",
             "key": "content_position",
             "list": [
