@@ -168,8 +168,8 @@
     "icon": "uppercase",
     "scope": "global",
     "boundVariables": [
-      "header-mainmenu-hover-text-transform",
-      "header-mainmenu-active-text-transform"
+      "--header-mainmenu-hover-text-transform",
+      "--header-mainmenu-active-text-transform"
     ]
   */
   --header-mainmenu-text-transform: none;
@@ -239,7 +239,7 @@
     "icon": "uppercase",
     "scope": "global",
     "boundVariables": [
-      "header-mainmenu-active-text-transform"
+      "--header-mainmenu-active-text-transform"
     ]
   */
   --header-mainmenu-hover-text-transform: none;
