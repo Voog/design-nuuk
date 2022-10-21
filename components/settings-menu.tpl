@@ -47,7 +47,7 @@
           settingsBtn: document.querySelector('.js-menu-settings-btn'),
           menuItems: [
             {
-              "title": "{{ "menu_alignment" | lce }} ({{ "desktop" | lce }})",
+              "title": '{{ "menu_alignment" | lce | append: desktop-icon }}',
               "type": "radio",
               "key": "positioning",
               "list": [
@@ -70,7 +70,7 @@
               ]
             },
             {
-              "title": "{{ "active_page_indicator" | lce }} ({{ "desktop" | lce }})",
+              "title": '{{ "active_page_indicator" | lce | append: desktop-icon }}',
               "type": "radio",
               "key": "indicator",
               "list": [
@@ -89,14 +89,14 @@
             {%- assign pxTr = "units.px" | lce -%}
             {%- assign sideMenuCombinedTr = sideMenuWidthTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": "{{ sideMenuCombinedTr }} ({{ "desktop" | lce }})",
+              "title": '{{ sideMenuCombinedTr | append: desktop-icon }}',
               "type": "number",
               "min": 1,
               "key": "max_width",
               "placeholder": {{ sideMenuCombinedTr | json }}
             },
             {
-              "title": "{{ "max_no_of_menu_pages" | lce }} ({{ "desktop" | lce }})",
+              "title": '{{ "max_no_of_menu_pages" | lce | append: desktop-icon }}',
               "type": "number",
               "key": "max_elements",
               "placeholder": {{ "max_no_of_menu_pages" | lce | json }},

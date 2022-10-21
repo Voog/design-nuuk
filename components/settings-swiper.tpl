@@ -51,7 +51,7 @@
             }
           },
           {
-            "title": "{{ "content_position" | lce }} ({{ "desktop" | lce }})",
+            "title": '{{ "content_position" | lce | append: desktop-icon }}',
             "type": "radio",
             "key": "content_position",
             "list": [

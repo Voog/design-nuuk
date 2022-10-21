@@ -156,14 +156,14 @@
             {%- assign blockMaxWidthTr = "max_width" | lce -%}
             {%- assign blockMaxWidthCombinedTr = blockMaxWidthTr | append: ' (%)' -%}
             {
-              "title": "{{ blockMaxWidthCombinedTr }} ({{ "desktop" | lce }})" ,
+              "title": '{{ blockMaxWidthCombinedTr | append: desktop-icon }}',
               "type": "number",
               "min": 1,
               "key": "block_max_width",
               "placeholder": {{ blockMaxWidthCombinedTr| json }}
             },
             {
-              "title": "{{ "column_distribution" | lce }} ({{ "desktop" | lce }})",
+              "title": '{{ "column_distribution" | lce | append: desktop-icon }}',
               "type": "select",
               "key": "block_justification",
               "list": [
@@ -188,7 +188,7 @@
             {%- assign pxTr = "units.px" | lce -%}
             {%- assign colMaxWidthCombinedTr = colMaxWidthTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": "{{ colMaxWidthCombinedTr }} ({{ "desktop" | lce }})",
+              "title": '{{ colMaxWidthCombinedTr | append: desktop-icon }}',
               "type": "number",
               "min": 1,
               "key": "col_max_width",
@@ -198,7 +198,7 @@
             {%- assign pxTr = "units.px" | lce -%}
             {%- assign colMinWidthCombinedTr = colMinWidthTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": "{{ colMinWidthCombinedTr }} ({{ "desktop" | lce }})",
+              "title": '{{ colMinWidthCombinedTr | append: desktop-icon }}',
               "type": "number",
               "min": 1,
               "key": "col_min_width",
@@ -208,14 +208,14 @@
             {%- assign pxTr = "units.px" | lce -%}
             {%- assign colHPadCombinedTr = colHPadTr | append: ' (' | append: pxTr | append: ')' -%}
             {
-              "title": "{{ colHPadCombinedTr }} ({{ "desktop" | lce }})",
+              "title": '{{ colHPadCombinedTr | append: desktop-icon }}',
               "type": "number",
               "min": 0,
               "key": "col_h_padding",
               "placeholder": {{ colHPadCombinedTr | json }}
             },
             {
-              "title": "{{ "column_distribution" | lce }} ({{ "desktop" | lce }})",
+              "title": '{{ "column_distribution" | lce | append: desktop-icon }}',
               "type": "select",
               "key": "col_justification",
               "list": [
