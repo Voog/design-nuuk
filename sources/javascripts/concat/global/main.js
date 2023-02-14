@@ -420,7 +420,18 @@
         }
 
         if (itemsCount > prevCount && !isCartModalOpen) {
-          $('.cart_popover-content--product').text(e.detail.product_name);
+          var currentLanguage = $('html').attr('lang');
+          var productName = e.detail.product_name;
+
+          if (
+            Object.prototype.hasOwnProperty.call(e.detail, 'translations') &&
+            Object.prototype.hasOwnProperty.call(e.detail.translations, 'name') &&
+            Object.prototype.hasOwnProperty.call(e.detail.translations.name, currentLanguage)
+          ) {
+            productName = e.detail.translations.name[currentLanguage];
+          }
+
+          $('.cart_popover-content--product').text(productName);
           $(':not(body.edy-ecommerce-modal-open) .cart_popover-wrap').addClass('visible');
 
           this.timer = setTimeout(function () {
