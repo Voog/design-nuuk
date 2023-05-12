@@ -140,7 +140,7 @@
           align-self: center;
         }
 
-        @include query($tablet-1, 'min-width') {
+        @include query($tablet-1 + 1, 'min-width') {
           .header_components {
             width: 20%;
           }
@@ -204,7 +204,7 @@
       }
     }
 
-    @include query($tablet-1, 'min-width') {
+    @include query($tablet-1 + 1, 'min-width') {
       .semimodal-relative & {
         position: absolute;
         background-color: transparent;
@@ -245,7 +245,7 @@
       padding: 0;
       box-sizing: border-box;
 
-      @include query($tablet-1, 'min-width') {
+      @include query($tablet-1 + 1, 'min-width') {
         display: none;
       }
     }
@@ -259,7 +259,7 @@
       padding-left: 16px;
     }
 
-    @include query($tablet-1, 'min-width') {
+    @include query($tablet-1 + 1, 'min-width') {
       .semimodal-relative & {
         display: none;
       }

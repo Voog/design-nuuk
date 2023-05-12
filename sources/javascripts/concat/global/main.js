@@ -566,7 +566,7 @@
   };
 
   var handleMenuTopPos = function () {
-    if ($(window).width() >= 900) {
+    if ($(window).width() > 900) {
       var topPos = $('.header_fixed').height() + 80;
 
       if ($('.semimodal-relative').length <= 0) {
