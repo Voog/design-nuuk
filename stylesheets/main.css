@@ -834,6 +834,7 @@ body * ::selection {
 .body-bg_color {
   position: fixed;
   z-index: -2;
+  height: 100vh;
 }
 
 .container .body-bg_color {
