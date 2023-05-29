@@ -37,7 +37,7 @@
     }
   }
 
-  @include query($tablet-1, 'min-width') {
+  @include query($tablet-1 + 1, 'min-width') {
     .semimodal-relative & {
       display: none;
     }
@@ -217,7 +217,7 @@
         }
       }
 
-      @include query($tablet-1, 'min-width') {
+      @include query($tablet-1 + 1, 'min-width') {
         &:not(.menu-popover).dd-arrow {
           &[data-arrow="active"] {
             background-image: url('../assets/chevron-down-black.svg');
@@ -350,7 +350,7 @@
     }
   }
 
-  @include query($tablet-1, 'min-width') {
+  @include query($tablet-1 + 1, 'min-width') {
     &:not(.menu_top) {
       .menu {
         .menu-item {

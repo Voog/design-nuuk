@@ -834,6 +834,7 @@ body * ::selection {
 .body-bg_color {
   position: fixed;
   z-index: -2;
+  height: 100vh;
 }
 
 .container .body-bg_color {
@@ -4124,7 +4125,7 @@ body.edy-checkout-button-visible {
       align-self: center;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 901px) {
   .menu-top .header_fixed-content .header_components {
     width: 20%;
   }
@@ -4192,7 +4193,7 @@ body.edy-checkout-button-visible {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 901px) {
   .semimodal-relative .header_fixed {
     position: absolute;
     background-color: transparent;
@@ -4248,7 +4249,7 @@ body.edy-checkout-button-visible {
           box-sizing: border-box;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 901px) {
   .header_components-semimodal {
     display: none;
   }
@@ -4265,7 +4266,7 @@ body.edy-checkout-button-visible {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 901px) {
   .semimodal-relative .header_title {
     display: none;
   }
@@ -6119,7 +6120,7 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 901px) {
   .semimodal-relative .menu-btn {
     display: none;
   }
@@ -6339,7 +6340,7 @@ body:not(.edy-editmode) .menu-language-toggle:hover .lang_menu-popover--wrap {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 901px) {
   .menu-main .menu .menu-item:not(.menu-popover).dd-arrow[data-arrow="active"] {
     background-image: url("../assets/chevron-down-black.svg");
     background-size: 10px 8px;
@@ -6495,7 +6496,7 @@ body.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu 
   padding: 0;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 901px) {
   .menu-main:not(.menu_top) .menu .menu-item.stripe a.active:before {
     content: '';
     height: 24px;
@@ -6891,7 +6892,7 @@ body.dark-background .header_fixed:not(.relative):not(.scroll) .menu-main .menu 
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 901px) {
   .hidden-desktop {
     display: none;
   }
