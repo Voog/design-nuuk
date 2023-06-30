@@ -5,6 +5,8 @@
 <head prefix="og: http://ogp.me/ns#">
   {% include "html-head" %}
   {% include "template-styles" %}
+
+  {% sd_product %}
 </head>
 
 {% capture bottom_content_html %}{% unless editmode %}{% content bind=product name="content" %}{% endunless %}{% endcapture %}
