@@ -1001,6 +1001,16 @@ header.dark-background .menu-main .menu .menu-item a.selected:hover {
           hyphens: var(--content-body-hyphens);
 }
 
+.content-formatted:not(.product_filters) .edy-buy-button-price-container .edy-buy-button-price-original,
+.content-formatted p .edy-buy-button-price-container .edy-buy-button-price-original {
+  color: var(--content-body-color);
+}
+
+.dark-background .content-formatted:not(.product_filters) .edy-buy-button-price-container .edy-buy-button-price-original, .dark-background
+.content-formatted p .edy-buy-button-price-container .edy-buy-button-price-original {
+  color: var(--third-color);
+}
+
 .post_page .article_item .post_content .content-formatted:not(.product_filters), .post_page .article_item
 .content-formatted:not(.product_filters) .post_details, .post_page .article_item .post_content
 .content-formatted p, .post_page .article_item

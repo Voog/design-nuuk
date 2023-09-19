@@ -1058,6 +1058,13 @@ header.header_fixed.scroll.dark-background {
   color: var(--content-body-color);
   hyphens: var(--content-body-hyphens);
 
+  .edy-buy-button-price-container .edy-buy-button-price-original {
+    color: var(--content-body-color);
+
+    .dark-background & {
+      color: var(--third-color);
+    }
+  }
 
   .post_content &,
   .post_details {

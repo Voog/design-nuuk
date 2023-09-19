@@ -1608,6 +1608,10 @@ p {
   border-color: #dadada;
 }
 
+.content-formatted .edy-buy-button-price-container .edy-buy-button-price-original {
+  opacity: .4;
+}
+
 .content-formatted .edy-buy-button-align-right .edy-buy-button-variants .form_field {
   margin: 0 0 0 auto;
 }
@@ -4590,6 +4594,16 @@ body.edy-checkout-button-visible {
 
 .voog-search-modal-result:first-of-type {
   border-top: 1px solid transparent;
+}
+
+.product-price-original {
+  padding-right: 4px;
+  opacity: .4;
+  display: inline-block;
+}
+
+.product-price-final {
+  display: inline-block;
 }
 
 /* BLOG & BLOG ARTICLE */
