@@ -3811,6 +3811,18 @@ body.edy-checkout-button-visible {
   margin-left: 8px;
 }
 
+body.dark-background .edy-product-widget-item-price-original {
+  opacity: .4;
+}
+
+body.dark-background .edy-product-widget-item-price-final {
+  opacity: .7;
+}
+
+body.dark-background .edy-product-widget-grid .edy-product-widget-item:hover .edy-product-widget-item-price {
+  opacity: 0;
+}
+
 /* FOOTER */
 .footer {
   max-width: calc(var(--container-max-width) + 304px);
