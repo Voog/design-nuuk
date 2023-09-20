@@ -1516,11 +1516,15 @@ body.dark-background .edy-product-widget-grid .edy-product-widget-item:hover .ed
 
 body.dark-background .edy-product-widget-masonry .edy-product-widget-item-content .edy-product-widget-item-title,
 body.dark-background .edy-product-widget-masonry .edy-product-widget-item-content .edy-product-widget-item-link,
-body.dark-background .edy-product-widget-masonry .edy-product-widget-item-content .edy-product-widget-item-btn {
+body.dark-background .edy-product-widget-masonry .edy-product-widget-item-content .edy-product-widget-item-btn,
+body.dark-background .edy-product-widget-catalogue .edy-product-widget-item .edy-product-widget-item-title,
+body.dark-background .edy-product-widget-catalogue .edy-product-widget-item .edy-product-widget-item-link,
+body.dark-background .edy-product-widget-catalogue .edy-product-widget-item .edy-product-widget-item-btn {
   color: var(--third-color);
 }
 
-body.dark-background .edy-product-widget-masonry .edy-product-widget-item-content .edy-product-widget-item-without-image {
+body.dark-background .edy-product-widget-masonry .edy-product-widget-item-content .edy-product-widget-item-without-image,
+body.dark-background .edy-product-widget-catalogue .edy-product-widget-item .edy-product-widget-item-without-image {
   border: 1px solid var(--third-color);
   opacity: .5;
 }
