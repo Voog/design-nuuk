@@ -16,12 +16,6 @@
     box-sizing: border-box;
     display: inline-flex;
     width: auto;
-
-
-  }
-
-  &.js-buy-btn-content .edy-buy-button {
-    width: 100%;
   }
 
   .edy-buy-button-container {
@@ -49,6 +43,10 @@
         }
       }
     }
+  }
+
+  .edy-buy-button-price-container .edy-buy-button-price-original {
+    opacity: .4;
   }
 
   .edy-buy-button-align-right .edy-buy-button-variants .form_field {
