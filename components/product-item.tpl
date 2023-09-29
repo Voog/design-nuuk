@@ -111,11 +111,11 @@
             <span{% if product_label != blank %} class="mar_r-16"{% endif %}>
               {%- if _buyButton.product.on_sale? -%}
                 <s class="product-price-original">
-                  {{- _buyButton.product.effective_price_min_with_tax | money_with_currency: _buyButton.product.currency -}}
+                  {{- _buyButton.product.price_min_with_tax | money_with_currency: _buyButton.product.currency -}}
                 </s>
               {%- endif -%}
               <span class="product-price-final">
-                {{ _buyButton.product.price_min_with_tax | money_with_currency: _buyButton.product.currency }}
+                {{ _buyButton.product.effective_price_min_with_tax | money_with_currency: _buyButton.product.currency }}
               </span>
             </span>
             {{ product_label }}
