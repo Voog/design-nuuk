@@ -294,7 +294,7 @@
     }
   }
 
-  ul,
+  ul:not(.edys-gallery-product-slider-slide),
   ol {
     padding-left: 32px;
 
