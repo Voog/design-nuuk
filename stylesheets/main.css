@@ -2177,30 +2177,30 @@ p {
   padding-left: 24px;
 }
 
-.content-formatted ul:not(.edys-gallery-product-slider-slide),
+.content-formatted ul,
 .content-formatted ol {
   padding-left: 32px;
 }
 
-.content-formatted ul:not(.edys-gallery-product-slider-slide) li,
+.content-formatted ul li,
 .content-formatted ol li {
   font-size: 14px;
   line-height: 20px;
   padding-bottom: 8px;
 }
 
-.content-formatted ul:not(.edys-gallery-product-slider-slide) li ul,
+.content-formatted ul li ul,
 .content-formatted ol li ul {
   padding-left: 32px;
 }
 
-.content-formatted ul:not(.edys-gallery-product-slider-slide) li ul li,
+.content-formatted ul li ul li,
 .content-formatted ol li ul li {
   list-style: disc;
 }
 
-.content-formatted ul:not(.edys-gallery-product-slider-slide) li ol,
-.content-formatted ul:not(.edys-gallery-product-slider-slide) li ul,
+.content-formatted ul li ol,
+.content-formatted ul li ul,
 .content-formatted ol li ol,
 .content-formatted ol li ul {
   padding-top: 8px;
