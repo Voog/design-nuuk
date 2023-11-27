@@ -54,20 +54,20 @@
           <div class="flex_row flex_row-2 reverse-col-tablet mar_0-32-neg">
             <div class="flex_row-2--item-60">
               <div class="mar_0-32 p-rel js-product-page-image-wrap">
-                {%- if product.image != blank %}
-                  {% assign item_image_state = "with-image" %}
+                {%- if product.photos != blank %}
+                  {% assign item_image_state = "with-images" %}
                 {% else %}
-                  {% assign item_image_state = "without-image" %}
+                  {% assign item_image_state = "without-images" %}
                 {% endif -%}
 
                 <div class="js-product-page-image mar_b-32">
-                  <div class="content-item-box {{ item_image_state }} js-content-item-box not-loaded">
-                    <div class="item-top product-image">
+                  <div class="content-item-box {{ item_image_state }}">
+                    <div class="item-top without-pointer">
                       <div class="top-inner of-hidden">
-                        {%- if product.image != blank -%}
-                          <div class="loader js-loader"></div>
-                          {%- assign imageClass = "item-image " | append: "not-cropped " | append: "js-lazyload" -%}
-                          {% image_data product.image target_width="600" class: imageClass %}
+                        {%- if product.photos != blank -%}
+                          <div class="item-image">
+                            {% gallery product layout="product_slider" %}
+                          </div>
                         {%- endif -%}
                       </div>
                     </div>
@@ -185,9 +185,6 @@
   <script>
     if (site) {
       site.handleProductPageContent();
-      {%- if product and editmode %}
-        site.handleProductImageClick({{ product.id }});
-      {% endif -%}
     }
   </script>
   {% include "settings-popover" %}

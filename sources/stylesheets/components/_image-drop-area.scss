@@ -6,8 +6,10 @@
   justify-content: center;
   overflow: hidden;
 
-  .editmode & {
-    cursor: pointer;
+  &:not(.without-pointer) {
+    .editmode & {
+      cursor: pointer;
+    }
   }
 
   article & {
@@ -60,13 +62,15 @@
     }
   }
 
-  .without-image & {
+  .without-image &,
+  .without-images & {
     background-color: $white;
     background-image: url('../assets/ico-placeholder.svg');
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: center;
   }
+
   .top-inner {
     // scss-lint:disable ImportantRule
     display: flex !important;
@@ -80,7 +84,8 @@
     width: 100%;
     background: transparent;
 
-    .without-image .editmode & {
+    .without-image .editmode &,
+    .without-images .editmode & {
       border: none;
     }
 

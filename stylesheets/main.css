@@ -4970,7 +4970,7 @@ body .edy-tick-checkbox-btn .edy-tick-checkbox-label-padded:hover {
   left: 0;
 }
 
-.editmode .item-top {
+.editmode .item-top:not(.without-pointer) {
   cursor: pointer;
 }
 
@@ -5042,7 +5042,8 @@ article .item-top > .aspect-ratio-inner {
   display: none;
 }
 
-.without-image .item-top {
+.without-image .item-top,
+.without-images .item-top {
   background-color: #ffffff;
   background-image: url("../assets/ico-placeholder.svg");
   background-size: 40px;
@@ -5068,7 +5069,8 @@ article .item-top > .aspect-ratio-inner {
   background: transparent;
 }
 
-.without-image .editmode .item-top .top-inner {
+.without-image .editmode .item-top .top-inner,
+.without-images .editmode .item-top .top-inner {
   border: none;
 }
 
