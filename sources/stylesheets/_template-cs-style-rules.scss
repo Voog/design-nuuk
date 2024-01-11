@@ -1258,38 +1258,47 @@ header.header_fixed.scroll.dark-background {
       line-height: 18px;
     }
   }
+}
 
-  // Code blocks and preformatted content.
-  .custom-btn:not(.custom-btn-disabled),
-  .form_submit input {
-    padding: var(--button-padding);
-    color: var(--button-color);
-    font-size: var(--button-font-size);
-    font-style: var(--button-font-style);
-    font-weight: var(--button-font-weight);
-    text-decoration: var(--button-text-decoration);
-    text-transform: var(--button-text-transform);
-    hyphens: var(--button-hyphens);
-    background-color: var(--button-background-color);
-    border-radius: var(--button-border-radius);
-    border: var(--button-border-size) solid;
-    border-color: var(--button-border-color);
+// Code blocks and preformatted content.
+.custom-btn:not(.custom-btn-disabled),
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn.custom-btn:not(.custom-btn-disabled),
+.form_submit input {
+  padding: var(--button-padding);
+  color: var(--button-color);
+  font-size: var(--button-font-size);
+  font-style: var(--button-font-style);
+  font-weight: var(--button-font-weight);
+  text-decoration: var(--button-text-decoration);
+  text-transform: var(--button-text-transform);
+  hyphens: var(--button-hyphens);
+  background-color: var(--button-background-color);
+  border-radius: var(--button-border-radius);
+  border: var(--button-border-size) solid;
+  border-color: var(--button-border-color);
 
-    .dark-background & {
-      border: 1px solid var(--third-color);
-    }
+  .dark-background & {
+    border: 1px solid var(--third-color);
+  }
 
-    &:hover {
-      padding: var(--button-hover-padding);
-      color: var(--button-hover-color);
-      font-size: var(--button-hover-font-size);
-      font-style: var(--button-hover-font-style);
-      font-weight: var(--button-hover-font-weight);
-      text-decoration: var(--button-hover-text-decoration);
-      text-transform: var(--button-hover-text-transform);
-      background-color: var(--button-hover-background-color);
-      border-color: var(--button-hover-border-color);
-    }
+  &:hover {
+    padding: var(--button-hover-padding);
+    color: var(--button-hover-color);
+    font-size: var(--button-hover-font-size);
+    font-style: var(--button-hover-font-style);
+    font-weight: var(--button-hover-font-weight);
+    text-decoration: var(--button-hover-text-decoration);
+    text-transform: var(--button-hover-text-transform);
+    background-color: var(--button-hover-background-color);
+    border-color: var(--button-hover-border-color);
+  }
+}
+
+.edy-product-widget-modal {
+  .edy-product-widget-modal-title,
+  .edy-buy-button-price-container .edy-buy-button-price-original,
+  .edy-buy-button-price-container .edy-buy-button-effective-price {
+    color: var(--primary-color);
   }
 }
 

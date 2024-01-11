@@ -56,8 +56,10 @@
   .edy-buy-button-align-center .edy-buy-button-variants .form_field {
     margin: 0 auto;
   }
+}
 
-  .edy-buy-button-variants {
+.edy-buy-button-variants {
+  .content-formatted &, .edy-product-widget-modal-container & {
     flex-direction: column;
     display: inline-flex;
 
@@ -105,6 +107,21 @@
     .form_field_select {
       width: initial;
     }
-    // sass-lint:enable class-name-format
   }
+
+  .edy-product-widget-modal-container & {
+    padding-bottom: 24px;
+
+    .form_field {
+      &:first-child {
+        padding-top: 16px;
+      }
+
+      &:last-child {
+        padding-bottom: 16px;
+      }
+    }
+  }
+
+  // sass-lint:enable class-name-format
 }
