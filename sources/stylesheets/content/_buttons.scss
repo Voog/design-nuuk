@@ -1,4 +1,5 @@
 .content-formatted .custom-btn,
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn,
 .custom-btn {
   cursor: pointer;
   border: 0;
@@ -33,6 +34,14 @@
     &:active {
       top: unset;
     }
+  }
+}
+
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn {
+  opacity: 1;
+
+  &.custom-btn-disabled {
+    border: none;
   }
 }
 
