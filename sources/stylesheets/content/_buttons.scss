@@ -37,8 +37,12 @@
   }
 }
 
-.edy-product-widget-modal-btn-wrapper .custom-btn.custom-btn-disabled {
-  border: none;
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn {
+  opacity: 1;
+
+  &.custom-btn-disabled {
+    border: none;
+  }
 }
 
 .content-formatted .button_,

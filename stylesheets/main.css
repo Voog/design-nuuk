@@ -1833,7 +1833,11 @@ p {
   top: unset;
 }
 
-.edy-product-widget-modal-btn-wrapper .custom-btn.custom-btn-disabled {
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn {
+  opacity: 1;
+}
+
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn.custom-btn-disabled {
   border: none;
 }
 
@@ -8766,9 +8770,13 @@ header.dark-background .content-formatted:not(.product_filters).header_title a, 
   }
 }
 
-.custom-btn:not(.custom-btn-disabled),
+.custom-btn:not(.custom-btn-disabled), .content-formatted .custom-btn:not(.custom-btn-disabled),
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn.custom-btn:not(.custom-btn-disabled), .content-formatted
 .edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn.custom-btn:not(.custom-btn-disabled),
-.form_submit input {
+.form_submit input, .content-formatted
+.form_submit input,
+.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn, .content-formatted
+.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
   padding: var(--button-padding);
   color: var(--button-color);
   font-size: var(--button-font-size);
@@ -8786,15 +8794,23 @@ header.dark-background .content-formatted:not(.product_filters).header_title a, 
   border-color: var(--button-border-color);
 }
 
-.dark-background .custom-btn:not(.custom-btn-disabled), .dark-background
+.dark-background .custom-btn:not(.custom-btn-disabled), .dark-background .content-formatted .custom-btn:not(.custom-btn-disabled), .dark-background
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn.custom-btn:not(.custom-btn-disabled), .dark-background .content-formatted
 .edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn.custom-btn:not(.custom-btn-disabled), .dark-background
-.form_submit input {
+.form_submit input, .dark-background .content-formatted
+.form_submit input, .dark-background
+.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn, .dark-background .content-formatted
+.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
   border: 1px solid var(--third-color);
 }
 
-.custom-btn:not(.custom-btn-disabled):hover,
+.custom-btn:not(.custom-btn-disabled):hover, .content-formatted .custom-btn:not(.custom-btn-disabled):hover,
+.edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn.custom-btn:not(.custom-btn-disabled):hover, .content-formatted
 .edy-product-widget-modal .edy-product-widget-modal-btn-wrapper .custom-btn.custom-btn:not(.custom-btn-disabled):hover,
-.form_submit input:hover {
+.form_submit input:hover, .content-formatted
+.form_submit input:hover,
+.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:hover, .content-formatted
+.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:hover {
   padding: var(--button-hover-padding);
   color: var(--button-hover-color);
   font-size: var(--button-hover-font-size);
@@ -9019,40 +9035,6 @@ body.dark-background .edy-product-widget-catalogue .edy-product-widget-item .edy
 .dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-without-image {
   border: 1px solid var(--third-color);
   opacity: .5;
-}
-
-.light-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn,
-.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
-  padding: var(--button-padding);
-  color: var(--button-color);
-  font-size: var(--button-font-size);
-  font-style: var(--button-font-style);
-  font-weight: var(--button-font-weight);
-  -webkit-hyphens: var(--button-hyphens);
-      -ms-hyphens: var(--button-hyphens);
-          hyphens: var(--button-hyphens);
-  -webkit-text-decoration: var(--button-text-decoration);
-          text-decoration: var(--button-text-decoration);
-  text-transform: var(--button-text-transform);
-  background-color: var(--button-background-color);
-}
-
-.light-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:hover,
-.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn:hover {
-  padding: var(--button-hover-padding);
-  color: var(--button-hover-color);
-  font-size: var(--button-hover-font-size);
-  font-style: var(--button-hover-font-style);
-  font-weight: var(--button-hover-font-weight);
-  -webkit-text-decoration: var(--button-hover-text-decoration);
-          text-decoration: var(--button-hover-text-decoration);
-  text-transform: var(--button-hover-text-transform);
-  background-color: var(--button-hover-background-color);
-  opacity: .8;
-}
-
-.dark-background .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
-  border: 1px solid var(--third-color);
 }
 
 .dark-background .edy-product-widget-filter-name,
