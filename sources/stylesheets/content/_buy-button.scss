@@ -87,9 +87,11 @@
       }
 
       .form_field_select {
+        background: none;
         padding-bottom: 0;
         padding-top: 0;
         margin-top: 0;
+        padding-right: 16px;
         border: none;
         flex: auto;
         background-position: 100% 50%;
@@ -97,6 +99,11 @@
         font-size: 14px;
         line-height: 194%;
         width: 50%;
+        outline: none;
+        appearance: none;
+        border-radius: 0;
+        background-image: url('../assets/chevron-down-black.svg');
+        background-repeat: no-repeat;
       }
 
       + .form_field {

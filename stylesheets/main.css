@@ -1654,9 +1654,11 @@ p {
 }
 
 .content-formatted .edy-buy-button-variants .form_field .form_field_select, .edy-product-widget-modal-container .edy-buy-button-variants .form_field .form_field_select {
+  background: none;
   padding-bottom: 0;
   padding-top: 0;
   margin-top: 0;
+  padding-right: 16px;
   border: none;
   -webkit-box-flex: 1;
       -ms-flex: auto;
@@ -1666,6 +1668,13 @@ p {
   font-size: 14px;
   line-height: 194%;
   width: 50%;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+  background-image: url("../assets/chevron-down-black.svg");
+  background-repeat: no-repeat;
 }
 
 .content-formatted .edy-buy-button-variants .form_field + .form_field, .edy-product-widget-modal-container .edy-buy-button-variants .form_field + .form_field {
