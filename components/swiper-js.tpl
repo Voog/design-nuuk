@@ -3,10 +3,6 @@
   <script>
     initSwiper();
 
-    $( window ).resize(function() {
-      initSwiper();
-    });
-
     function initSwiper() {
       {%- unless editmode -%}
         var conditionalBool = true;
