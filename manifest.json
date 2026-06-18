@@ -106,6 +106,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/ico-desktop.tpl",
+      "layout_name": "ico-desktop",
+      "title": "ico-desktop"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/ico-ellipsis.tpl",
       "layout_name": "ico-ellipsis",
       "title": "ico-ellipsis"

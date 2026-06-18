@@ -98,3 +98,5 @@
     </div>
   </header>
 </div>
+
+{%- include "ico-desktop" -%}
